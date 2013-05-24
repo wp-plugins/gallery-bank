@@ -1,0 +1,209 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2013-05-23 15:18+0530\n"
+"PO-Revision-Date: 2013-05-23 15:21+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\wordpress\\wp-content\\plugins\\gallery-"
+"bank\\\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: lib/gallery-bank-class.php:7 lib/gallery-bank-class.php:8
+msgid "Gallery Bank"
+msgstr ""
+
+#: views/add-album.php:11 views/album.php:11 views/edit-album.php:11
+#: views/menus-gallery-bank.php:7 views/view-album.php:11
+msgid "GALLERY BANK"
+msgstr ""
+
+#: views/add-album.php:16 views/album.php:16 views/album.php:29
+#: views/edit-album.php:16 views/view-album.php:16
+msgid "ALBUMS"
+msgstr "Albumy"
+
+#: views/add-album.php:21
+msgid "CREATE NEW ALBUM"
+msgstr "Utwórz nowy albumów"
+
+#: views/add-album.php:28 views/edit-album.php:28 views/view-album.php:28
+msgid "Back to Albums"
+msgstr "z powrotem do Albumy"
+
+#: views/add-album.php:35
+msgid "Success! Album has been saved."
+msgstr "Sukces! albumów ma było zapisany."
+
+#: views/add-album.php:40 views/edit-album.php:38
+msgid "Error! Slide Interval should have value greater than 1."
+msgstr "Błąd! Interval slajdów powinien mieć wartość większą niż 1."
+
+#: views/add-album.php:48 views/edit-album.php:59 views/view-album.php:53
+msgid "Album Name :"
+msgstr "Nazwa albumu :"
+
+#: views/add-album.php:55 views/add-album.php:304 views/edit-album.php:66
+#: views/edit-album.php:191 views/edit-album.php:566 views/view-album.php:63
+#: views/view-album.php:136
+msgid "Description :"
+msgstr "Opis :"
+
+#: views/add-album.php:64 views/edit-album.php:76
+msgid "Image Thumbnail :"
+msgstr "obraz Miniatury."
+
+#: views/add-album.php:68 views/edit-album.php:80
+msgid "Width ( in px )"
+msgstr "Szerokość (w pikselach)"
+
+#: views/add-album.php:71 views/edit-album.php:83
+msgid "Height ( in px ) "
+msgstr "wzrost(w pikselach)"
+
+#: views/add-album.php:76 views/edit-album.php:88
+msgid "Image with borders :"
+msgstr "obraz z granicami :"
+
+#: views/add-album.php:83 views/edit-album.php:108
+msgid "Border Width ( in px )"
+msgstr "Szerokość krawędzi (w pikselach)"
+
+#: views/add-album.php:85 views/edit-album.php:110
+msgid "Border Color"
+msgstr "granica Kolor "
+
+#: views/add-album.php:90 views/edit-album.php:115
+msgid "Images in row :"
+msgstr "Obrazy w wierszu :"
+
+#: views/add-album.php:98 views/edit-album.php:123
+msgid "Start Slideshow :"
+msgstr "Rozpocząć pokaz slajdów :"
+
+#: views/add-album.php:106 views/edit-album.php:144
+msgid "Slideshow Interval :"
+msgstr "Przesuń Interwał pokazu :"
+
+#: views/add-album.php:110 views/edit-album.php:148
+msgid "( in secs ) "
+msgstr "(W sek)"
+
+#: views/add-album.php:115 views/edit-album.php:153
+msgid "Upload Media :"
+msgstr "przesłać mediów :"
+
+#: views/add-album.php:120 views/edit-album.php:158
+msgid "Upload Images"
+msgstr "przesłać zdjęcia :"
+
+#: views/add-album.php:134 views/edit-album.php:216 views/edit-album.php:231
+msgid "Submit & Save Changes"
+msgstr "przedkładać & oszczędzać zmiany"
+
+#: views/add-album.php:163 views/edit-album.php:486 views/edit-album.php:527
+msgid "Are you sure you want to delete this Picture?"
+msgstr "Czy na pewno chcesz usunąć ten obraz?"
+
+#: views/add-album.php:299 views/edit-album.php:180 views/edit-album.php:561
+msgid "Remove Image"
+msgstr "Usuń obraz"
+
+#: views/add-album.php:301 views/edit-album.php:183 views/edit-album.php:563
+#: views/view-album.php:127
+msgid "Title :"
+msgstr "Tytuł :"
+
+#: views/album.php:23
+msgid "Create New Album"
+msgstr "Utwórz nowy albumu"
+
+#: views/album.php:35
+msgid "Album Name"
+msgstr "Nazwa Albumu"
+
+#: views/album.php:36
+msgid "Short Code"
+msgstr "krótki kod"
+
+#: views/album.php:37
+msgid "No. of Pictures"
+msgstr "Liczba zdjęcia"
+
+#: views/album.php:38
+msgid "Author"
+msgstr "autor"
+
+#: views/album.php:39
+msgid "Album Date"
+msgstr "Albumu Data"
+
+#: views/album.php:40
+msgid "Action"
+msgstr "Akcja"
+
+#: views/album.php:62
+msgid "Edit Album?"
+msgstr "Edytuj albumu?"
+
+#: views/album.php:63
+msgid "Delete Album"
+msgstr "Usuń albumu"
+
+#: views/album.php:105
+msgid "Are you sure you want to delete this Album?"
+msgstr "Czy na pewno chcesz usunąć ten albumu?"
+
+#: views/album.php:115
+msgid "Sorry! you are unable to delete this Album until Album have Pictures."
+msgstr "Przykro mi!ty nie są w stanie usunąć ten album aż albumu mieć zdjęcia."
+
+#: views/edit-album.php:21
+msgid "EDIT ALBUM"
+msgstr "Edytuj albumu"
+
+#: views/edit-album.php:33
+msgid "Success! Album has been Updated."
+msgstr "Sukces! Album został zaktualizowany."
+
+#: views/view-album.php:21
+msgid "ALBUM DETAILS"
+msgstr "ALBUMU SZCZEGÓŁY"
+
+#: views/view-album.php:74
+msgid "Author Name :"
+msgstr "Autor Nazwa :"
+
+#: views/view-album.php:85
+msgid "No. of Pics:"
+msgstr "Liczba zdjęcia :"
+
+#: views/view-album.php:96
+msgid "Album Date:"
+msgstr "Data albumu :"
+
+#~ msgid "Xpress Panel"
+#~ msgstr "Xpress panele"
+
+#~ msgid "Success! Settings has been saved."
+#~ msgstr "Sukces! Ustawienia zostały zapisane."
+
+#~ msgid "Image Thumbnail:"
+#~ msgstr "obraz Miniatury."
+
+#~ msgid "Images in row: "
+#~ msgstr "Obrazy w wierszu :"
+
+#~ msgid "Start Slideshow: "
+#~ msgstr "Rozpocząć pokaz slajdów :"
+
+#~ msgid "Slideshow Interval: "
+#~ msgstr "Przesuń Interwał pokazu :"
+
+#~ msgid "XPRESS PANEL"
+#~ msgstr "XPRESS PANELE"

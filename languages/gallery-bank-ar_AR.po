@@ -1,0 +1,214 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2013-05-23 18:50+0530\n"
+"PO-Revision-Date: 2013-05-23 18:50+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\Event_Handler\\wp-content\\plugins"
+"\\gallery-bank\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: lib/gallery-bank-class.php:7 lib/gallery-bank-class.php:8
+#: views/add-album.php:11 views/album.php:11 views/edit-album.php:11
+#: views/menus-gallery-bank.php:7 views/view-album.php:11
+msgid "Gallery Bank"
+msgstr ""
+
+#: views/add-album.php:16 views/album.php:16 views/album.php:27
+#: views/edit-album.php:16 views/view-album.php:16
+msgid "Albums"
+msgstr "اسم الألبوم"
+
+#: views/add-album.php:21 views/album.php:22
+msgid "Create New Album"
+msgstr "إنشاء ألبوم جديد"
+
+#: views/add-album.php:27 views/edit-album.php:27 views/view-album.php:27
+msgid "Back to Albums"
+msgstr "الرجوع إلى الألبومات"
+
+#: views/add-album.php:33
+msgid "Success! Album has been saved."
+msgstr "النجاح! تم حفظ الألبوم."
+
+#: views/add-album.php:38 views/edit-album.php:36
+msgid "Error! Slide Interval should have value greater than 1."
+msgstr "خطأ! الفاصل الزمني الشريحة يجب أن تكون أكبر من ١."
+
+#: views/add-album.php:46 views/edit-album.php:57 views/view-album.php:51
+msgid "Album Name :"
+msgstr "اسم الألبوم :"
+
+#: views/add-album.php:53 views/add-album.php:302 views/edit-album.php:64
+#: views/edit-album.php:189 views/edit-album.php:564 views/view-album.php:61
+#: views/view-album.php:148
+msgid "Description :"
+msgstr "الوصف :"
+
+#: views/add-album.php:62 views/edit-album.php:74
+msgid "Image Thumbnail :"
+msgstr "تصغير صورة :"
+
+#: views/add-album.php:66 views/edit-album.php:78
+msgid "Width ( in px )"
+msgstr "عرض (في بكسل)"
+
+#: views/add-album.php:69 views/edit-album.php:81
+msgid "Height ( in px ) "
+msgstr "الارتفاع (في بكسل)"
+
+#: views/add-album.php:74 views/edit-album.php:86
+msgid "Image with borders :"
+msgstr "صورة مع الحدود :"
+
+#: views/add-album.php:81 views/edit-album.php:106
+msgid "Border Width ( in px )"
+msgstr "عرض الحدود (في بكسل)"
+
+#: views/add-album.php:83 views/edit-album.php:108
+msgid "Border Color"
+msgstr "لون الحدود"
+
+#: views/add-album.php:88 views/edit-album.php:113
+msgid "Images in row :"
+msgstr "الصور في السطر :"
+
+#: views/add-album.php:96 views/edit-album.php:121
+msgid "Start Slideshow :"
+msgstr "بدء عرض الشرائح :"
+
+#: views/add-album.php:104 views/edit-album.php:142
+msgid "Slideshow Interval :"
+msgstr "الفاصل الزمني لعرض الشرائح :"
+
+#: views/add-album.php:108 views/edit-album.php:146
+msgid "( in secs ) "
+msgstr "(في ثانية)"
+
+#: views/add-album.php:113 views/edit-album.php:151
+msgid "Upload Media :"
+msgstr "الإضافات سائل الإعلام"
+
+#: views/add-album.php:118 views/edit-album.php:156
+msgid "Upload Images"
+msgstr "تحميل الصور"
+
+#: views/add-album.php:132 views/edit-album.php:214 views/edit-album.php:229
+msgid "Submit & Save Changes"
+msgstr "إرسال وحفظ التغييرات"
+
+#: views/add-album.php:161 views/edit-album.php:484 views/edit-album.php:525
+msgid "Are you sure you want to delete this Picture?"
+msgstr "هل أنت متأكد أنك تريد حذف هذه الصورة؟"
+
+#: views/add-album.php:297 views/edit-album.php:178 views/edit-album.php:559
+msgid "Remove Image"
+msgstr "إزالة صورة"
+
+#: views/add-album.php:299 views/edit-album.php:181 views/edit-album.php:561
+#: views/view-album.php:139
+msgid "Title :"
+msgstr "لقب"
+
+#: views/album.php:33
+msgid "Album Name"
+msgstr "اسم الألبوم"
+
+#: views/album.php:34
+msgid "Short Code"
+msgstr "رمز قصير"
+
+#: views/album.php:35
+msgid "No. of Pictures"
+msgstr "عدد الصور"
+
+#: views/album.php:36
+msgid "Author"
+msgstr "الكاتب"
+
+#: views/album.php:37
+msgid "Album Date"
+msgstr "ألبوم التسجيل"
+
+#: views/album.php:38
+msgid "Action"
+msgstr "عمل"
+
+#: views/album.php:60
+msgid "Edit Album?"
+msgstr "تعديل الألبوم؟"
+
+#: views/album.php:61
+msgid "Delete Album"
+msgstr "حذف الألبوم"
+
+#: views/album.php:103
+msgid "Are you sure you want to delete this Album?"
+msgstr "هل أنت متأكد أنك تريد حذف هذا الألبوم؟"
+
+#: views/album.php:113
+msgid "Error! you are unable to delete this Album until Album has Pictures."
+msgstr "عذرا! كنت غير قادر على حذف هذا الألبوم حتى يكون الألبوم صور."
+
+#: views/edit-album.php:21
+msgid "Edit Album"
+msgstr "تعديل الألبوم؟"
+
+#: views/edit-album.php:31
+msgid "Success! Album has been Updated."
+msgstr "النجاح! تم تحديث الألبوم."
+
+#: views/view-album.php:21
+msgid "Album Details"
+msgstr "ألبوم التسجيل"
+
+#: views/view-album.php:72
+msgid "Author Name :"
+msgstr "اسم المؤلف :"
+
+#: views/view-album.php:83
+msgid "No. of Pics:"
+msgstr "عدد الصور:"
+
+#: views/view-album.php:94
+msgid "Album Date:"
+msgstr "ألبوم التسجيل"
+
+#~ msgid "ALBUMS"
+#~ msgstr "ألبومات"
+
+#~ msgid "CREATE NEW ALBUM"
+#~ msgstr "إنشاء ألبوم جديد"
+
+#~ msgid "EDIT ALBUM"
+#~ msgstr "تعديل الألبوم"
+
+#~ msgid "ALBUM DETAILS"
+#~ msgstr "تفاصيل الألبوم"
+
+#~ msgid "Xpress Panel"
+#~ msgstr "شركة إكسبرس لوحة"
+
+#~ msgid "Success! Settings has been saved."
+#~ msgstr "النجاح! تم حفظ الإعدادات."
+
+#~ msgid "Image Thumbnail:"
+#~ msgstr "تصغير صورة :"
+
+#~ msgid "Images in row: "
+#~ msgstr "الصور في السطر :"
+
+#~ msgid "Start Slideshow: "
+#~ msgstr "بدء عرض الشرائح :"
+
+#~ msgid "Slideshow Interval: "
+#~ msgstr "الفاصل الزمني لعرض الشرائح :"
+
+#~ msgid "XPRESS PANEL"
+#~ msgstr "شركة إكسبرس لوحة"
