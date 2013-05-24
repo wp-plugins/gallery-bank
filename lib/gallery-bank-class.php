@@ -104,6 +104,12 @@ function plugin_js_scripts_gallery_bank()
 	wp_enqueue_script('colorpicker.min.js', GALLERY_BK_PLUGIN_URL .'/js/colorpicker.js');
 	wp_enqueue_script('visuallightbox.js', GALLERY_BK_PLUGIN_URL .'/js/visuallightbox.js');
 }
+function frontend_plugin_js_scripts_gallery_bank()
+{
+	wp_enqueue_script('jquery');
+	wp_enqueue_script('visuallightbox.js', GALLERY_BK_PLUGIN_URL .'/js/visuallightbox.js');
+}
+
 //--------------------------------------------------------------------------------------------------------------//
 // CODE FOR CALLING STYLE SHEETS
 function plugin_css_scripts_gallery_bank()
@@ -119,6 +125,11 @@ function plugin_css_scripts_gallery_bank()
 	wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
 	wp_enqueue_style('vlightbox1.css', GALLERY_BK_PLUGIN_URL .'/css/vlightbox1.css');
 	wp_enqueue_style('plugins.css', GALLERY_BK_PLUGIN_URL .'/css/plugins.css');
+}
+function frontend_plugin_css_scripts_gallery_bank()
+{
+	wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
+	wp_enqueue_style('vlightbox1.css', GALLERY_BK_PLUGIN_URL .'/css/vlightbox1.css');
 }
 //--------------------------------------------------------------------------------------------------------------//
 // REGISTER AJAX BASED FUNCTIONS TO BE CALLED ON ACTION TYPE AS PER WORDPRESS GUIDELINES
@@ -181,12 +192,6 @@ function extract_short_code($con)
 	<?php
 	
 }
-add_action('init','plugin_js_scripts_gallery_bank');
-add_action('init','plugin_css_scripts_gallery_bank');
-add_action('admin_menu','create_global_menus_for_gallery_bank');
-add_shortcode('gallery_bank', 'gallery_bank_short_code' );
-
-
 
 function checkApiKey()
 {
@@ -216,4 +221,10 @@ function checkApiKey()
 		<?php
 	}
 }
+add_action('admin_init','plugin_js_scripts_gallery_bank');
+add_action('admin_init','plugin_css_scripts_gallery_bank');
+add_action('init','frontend_plugin_js_scripts_gallery_bank');
+add_action('init','frontend_plugin_css_scripts_gallery_bank');
+add_action('admin_menu','create_global_menus_for_gallery_bank');
+add_shortcode('gallery_bank', 'gallery_bank_short_code' );
 ?>

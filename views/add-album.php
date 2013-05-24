@@ -274,7 +274,7 @@ var ar = [];
 				img.attr('height', '200px');
 				img.css('margin-left', '10px !important');
 				div.append(img);
-				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left:-190px; margin-top:210px; margin-bottom: 10px; cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic('+dynamicId+')\"><img src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span><?php _e("Remove Image",gallery_bank);?></span></a>");
+				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left:-190px; margin-top:210px; margin-bottom: 10px; cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span><?php _e("Remove Image",gallery_bank);?></span></a>");
 				div.append(del);
 				var box = jQuery("<div class=\"row\" style=\"margin-left:230px !important;\"><label><?php _e("Title :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><input type=\"text\" id=\"title_img_"+dynamicId+"\"/></div></div>");
 				box.css('margin-bottom', '20px');
