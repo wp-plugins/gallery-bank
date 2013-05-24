@@ -11,20 +11,22 @@ Gallery Bank is an interactive WordPress photo gallery plugin, best fit for crea
 
 == Description ==
 
-This plugin makes it possible to implement as many galleries as you want into your website. You can add multiple pictures and description for each gallery, show them all at one page, view each one separately. Moreover, you can upload HQ images.
+Create responsive and filterable portfolios with ease on your website. Gallery Bank comes with masonry layout, is designed to adapt each portfolio to any situation and is mobile optimized for responsive themes.
 
 = Features =
 
-* Actions: Create any amount of albums in the gallery.
-* Description: Add description to each album.
-* Actions: Set a featured image as an album cover.
-* Actions: Upoad any number of photos to each album in the gallery.
-* Actions: Add Single Gallery to your page or post using a shortcode.
-* Actions: Attachment sorting settings in the admin panel.
-* Caption: Add a caption to each photo in the album.
-* Display: Change the size of album cover thumbnails and photos in the album. 
-* Display: Choose a number of pictures to display in one row in the gallery album.
-* Slideshow: View pictures as a slide show and in a full size.
+* Create any amount of albums in the gallery.
+* Add description to each album and then title & description to each image in your album.
+* Upoad any number of photos to each album in the gallery.
+* Add Single Gallery to your page or post using a shortcode.
+* Add a caption to each photo in the album.
+* Change the size of album cover thumbnails and photos in the album. 
+* Choose a number of pictures to display in one row in the gallery album.
+* View pictures as a slide show and in a full size.
+* 3 different Widgets: Display a single album, create a list of album links, display latest/random media
+* User-friendly AJAX admin
+* Upload different types of media
+
 
 = Technical support =
 
