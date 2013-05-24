@@ -30,7 +30,7 @@ Create responsive and filterable portfolios with ease on your website. Gallery B
 
 = Technical support =
 
-Dear users, our plugins are available for free download. If you have any questions or recommendations regarding the functionality of our plugins (existing options, new options, current issues), please feel free to contact us. Please note that we accept requests in English only. All messages in another languages won't be accepted.
+Please email all your queries/issues at support@gallery-bank.com
 
 == Installation ==
 
