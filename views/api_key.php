@@ -81,7 +81,7 @@
 							<div class="right">
 								<button type="submit" class="events-container-button green">
 									<span>
-										<?php _e( "Register your API Key to start using Events Handler", gallery_bank ); ?>
+										<?php _e( "Register your API Key to start using Gallery Bank", gallery_bank ); ?>
 									</span>
 								</button>
 							</div>
