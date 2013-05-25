@@ -28,9 +28,9 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_pics() . '"')) == 0
 	pic_id INTEGER(10) UNSIGNED NOT NULL AUTO_INCREMENT,
 	album_id INTEGER(10) UNSIGNED NOT NULL,
 	pic_path TEXT NOT NULL,
-	allowed_download BIT NOT NULL,
-	title VARCHAR(40) NOT NULL,
+	title VARCHAR(100) NOT NULL,
 	description TEXT NOT NULL,
+	thumbnail_url TEXT NOT NULL,
 	date DATE,
 	PRIMARY KEY (pic_id)
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';

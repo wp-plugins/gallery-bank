@@ -26,8 +26,7 @@
 			<a href="admin.php?page=gallery_bank" class="events-container-button blue" style="text-decoration: none; margin-top: 10px; margin-left: 10px;">
 				<span><?php _e('Back to Albums', gallery_bank); ?></span>
 			</a>
-			<div id="view_album" style="display: block;margin-left: -20px;padding: 10px;">
-				<form id="view_bank_album" class="form-horizontal" method="post" action="">
+			<form id="view_bank_album" class="form-horizontal" method="post" action="" style="padding:10px 10px 10px 0px">
 					<div class="body">
 						<div class="box">
 							<div class="content">
@@ -60,9 +59,9 @@
 									<label style="top:10px;">
 										<?php _e( "Description :", gallery_bank ); ?>
 									</label>
-									<div class="right">
+									<div class="right" style="margin-top: -10px;margin-bottom: -25px;">
 										<span>
-											<?php echo strip_tags($album->description);?>
+											<?php echo stripslashes($album->description);?>
 											&nbsp;
 										</span>
 									</div>
@@ -117,38 +116,38 @@
 							for ($flag = 0; $flag < count($pic_detail); $flag++)
 							{
 								?>
-								</br><div id="bank_pics" style="padding: 10px; display: inline-block; width: 95%;">
+								<div id="bank_pics" style="padding: 10px; display: inline-block; width:860px;border-bottom:solid 1px #E5E5E5;">
 										<?php
 										if($pic_detail[$flag]->description == "")
 										{
 											?>
 											<a class="vlightbox1" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
-											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->pic_path; ?>" style="border:3px solid #e5e5e5"; height ="200px;" width="200px;"/></a>
+											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px;"/></a>
 										<?php
 										}
 										else 
 										{
 											?>
 											<a class="vlightbox1" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
-											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->pic_path; ?>" style="border:3px solid #e5e5e5"; height ="200px;" width="200px;"/></a>
+											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px;"/></a>
 											<?php
 										}
 										?>
-										<div class="row" style="margin-left:230px !important;">
+										<div class="row" style="margin-left:180px !important;">
 											<label style="top:10px;">
 												<strong><?php _e( "Title :", gallery_bank ); ?></strong>
 											</label>
 											<div class="right" style="margin-left:40px !important;">
-												<?php echo $pic_detail[$flag]->title; ?>
+												<span><?php echo $pic_detail[$flag]->title; ?></span>
 												&nbsp;
 											</div>
 										</div>
-										<div class="row" style="margin-left:230px !important;">
+										<div class="row" style="margin-left:180px !important;">
 											<label style="top:10px;">
 												<strong><?php _e( "Description :", gallery_bank ); ?></strong>
 											</label>
 											<div class="right" style="margin-left:80px !important; ">
-												<?php echo $pic_detail[$flag]->description;?>
+												<span><?php echo $pic_detail[$flag]->description;?></span>
 												&nbsp;
 											</div>
 										</div>
@@ -159,7 +158,7 @@
 						</div>
 					</div>
 				</form>
-			</div>
+
 		</div>
 		<div id="footer">
 			<div class="split">

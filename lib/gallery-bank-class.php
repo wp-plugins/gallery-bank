@@ -61,12 +61,32 @@ function gallery_bank()
 	checkApiKey();
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/album.php';
 }
+
 function add_album()
 {
 	global $wpdb;
-	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
-	include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
-	include_once GALLERY_BK_PLUGIN_DIR .'/views/add-album.php';
+	$album_count = $wpdb->get_var
+	(
+		$wpdb->prepare
+		(
+			"SELECT count(album_id) FROM ".gallery_bank_albums(),""
+		)
+	);
+	if($album_count < 1)
+	{
+		global $wpdb;
+		include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
+		include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
+		include_once GALLERY_BK_PLUGIN_DIR .'/views/add-album.php';
+	}
+	else 
+	{
+		?>
+		<script type="text/javascript">
+			window.location.href="admin.php?page=gallery_bank"; 
+		</script>
+		<?php
+	}
 }
 function view_album()
 {
@@ -129,7 +149,6 @@ function plugin_css_scripts_gallery_bank()
 function frontend_plugin_css_scripts_gallery_bank()
 {
 	wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
-	wp_enqueue_style('vlightbox1.css', GALLERY_BK_PLUGIN_URL .'/css/vlightbox1.css');
 }
 //--------------------------------------------------------------------------------------------------------------//
 // REGISTER AJAX BASED FUNCTIONS TO BE CALLED ON ACTION TYPE AS PER WORDPRESS GUIDELINES

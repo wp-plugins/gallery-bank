@@ -23,10 +23,10 @@
 					</li>
 				</ul>
 			</div>
-				<a href="admin.php?page=gallery_bank"class="events-container-button blue" style="margin-top:10px; margin-left:135px; style="text-decoration: none;">
+				<a href="admin.php?page=gallery_bank"class="events-container-button blue" style="margin-top:10px;text-decoration: none;">
 					<span><?php _e('Back to Album', gallery_bank); ?></span>
 				</a>
-			<div class="message green" id="success_update_album_message" style="display: none;">
+			<div class="message green" id="success_update_album_message" style="margin-left :20px; display: none;">
 				<span>
 					<strong><?php _e( "Success! Album has been Updated.", gallery_bank); ?></strong>
 				</span>
@@ -41,7 +41,7 @@
 					<strong><?php _e( "Error! Border width can't be zero.", gallery_bank); ?></strong>
 				</span>
 			</div>
-			<div id="edit-album"  style="display: block;margin-left: -20px;padding: 10px;">
+			<div id="edit-album"  style="display: block;padding:10px 10px 10px 0px;">
 				<form id="edit_album" class="form-horizontal" method="post" action="">
 					<div class="body">
 						<div class="box">
@@ -76,12 +76,12 @@
 								</div>
 								<div class="row">
 									<label>
-										<?php _e( "Upload Media :", gallery_bank ); ?>
+										<?php _e( "Upload Images :", gallery_bank ); ?>
 									</label>
 									<div class="right">
 										<button type="button" id="upload_image_button" class="blue">
 											<span>
-												<?php _e( "Upload Images", gallery_bank ); ?>
+												<?php _e( "Browse Here", gallery_bank ); ?>
 											</span>
 										</button>
 									</div>
@@ -96,75 +96,61 @@
 										)
 									);
 								?>
-								<div class="box" style=" margin-left: 20px; margin-top: 10px; padding: 10px">
-									<?php
-									for ($flag = 0; $flag < count($pic_detail); $flag++)
-									{
-										?>
-										<div id="<?php echo $pic_detail[$flag]->pic_id; ?>"  style="margin-bottom: 30px; border-bottom: solid 1px #e5e5e5; !important">
-											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->pic_path; ?>" style="border:3px solid #e5e5e5"; height ="200px" width="200px"/>
-											<a class="imgHolder orange" style="margin-left:-190px; margin-top:210px; margin-bottom: 10px; cursor: pointer;"  id="del_img" onclick="edit_delete_pic(<?php echo $pic_detail[$flag]->pic_id; ?>);"><img src="<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>" alt="">&nbsp; <span><?php _e( "Remove Image", gallery_bank);?></span></a>
-											<div class="row" style="margin-left:230px !important;">
-												<label>
-													<?php _e( "Title :", gallery_bank ); ?>
-												</label>
-												<div class="right" style="margin-left:80px !important; margin-bottom: 20px;">
-													<input type="text" id="ux_edit_title_<?php echo $pic_detail[$flag]->pic_id ;?>" value= " <?php echo $pic_detail[$flag]->title ;?>" />
-												</div>
-											</div>
-											<div class="row" style="margin-left:230px!important;">
-												<label>
-													<?php _e( "Description :", gallery_bank ); ?>
-												</label>
-												<div class="right">
-													<textarea style="margin-left:-43px !important; width: 106%;" id="ux_edit_desc_<?php echo $pic_detail[$flag]->pic_id ;?>" rows="6"><?php echo $pic_detail[$flag]->description ;?></textarea>
-												</div>
-												
-											</div>
-										</br>
-											<label><input type="hidden" id="hidden_pic_id_<?php  echo $pic_detail[$flag]->pic_id; ?>" value="<?php echo $pic_detail[$flag]->pic_id ;?>" /></label>
+							</div>
+						</div>
+						<?php
+							for ($flag = 0; $flag < count($pic_detail); $flag++)
+							{
+								?>
+								<div class="box">
+									<div class="content" style="margin-left:20px;" id="<?php echo $pic_detail[$flag]->pic_id; ?>"  style="border-bottom: solid 1px #e5e5e5; !important">
+										<div style="float:left;width:170px;">
+											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px"/>
+											<a class="imgHolder orange" style="margin-left:20px;"  id="del_img" onclick="edit_delete_pic(<?php echo $pic_detail[$flag]->pic_id; ?>);">
+												<img style="vertical-align:middle;cursor:pointer" src="<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>" alt="">&nbsp; 
+												<span style="vertical-align:middle;cursor:pointer"><?php _e( "Remove Image", gallery_bank);?></span>
+											</a>
 										</div>
-										<?php
-									}
-									?>
-									<div id="edit_media" style="margin-bottom: 30px;">
+										<div class="row" style="margin-left:180px!important;margin-top:10px!important;">
+											<label>
+												<?php _e( "Title :", gallery_bank ); ?>
+											</label>
+											<div class="right" >
+												<input type="text" id="ux_edit_title_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo $pic_detail[$flag]->title ;?>" />
+											</div>
+										</div>
+										<div class="row" style="margin-left:180px!important;">
+											<label>
+												<?php _e( "Description :", gallery_bank ); ?>
+											</label>
+											<div class="right">
+												<textarea rows="10" id="ux_edit_desc_<?php echo $pic_detail[$flag]->pic_id ;?>" ><?php echo $pic_detail[$flag]->description ;?></textarea>
+											</div>
+											
+										</div>
+										<input type="hidden" id="hidden_pic_id_<?php  echo $pic_detail[$flag]->pic_id; ?>" value="<?php echo $pic_detail[$flag]->pic_id ;?>" />
 									</div>
 								</div>
 								<?php
-								if($album->number_of_pics == 0)
-								{
-									?>
-									<div class="row" style="border-bottom:!important; margin-top: -61px;">
-										<label></label>
-										<div class="right">
-											<button type="submit" class="blue">
-												<span>
-													<?php _e( "Submit & Save Changes", gallery_bank ); ?>
-												</span>
-											</button>
-										</div>
-									</div>
-									<?php
-								}
-								else
-								{
-									?>
-									<div class="row" style="border-bottom:!important; margin-top: -37px;">
-									<label><input type="hidden" id="hidden_album_id" value="<?php echo $album_id;?>" /></label>
-									<div class="right" style=" margin-left: 238px;">
+							}
+							?>
+							<div class="box">
+								<div id="edit_media" class="content" style="margin-left:20px;">
+								</div>
+							</div>
+							<div class="box">
+								<div class="content">
+									<div class="row">
+										<input type="hidden" id="hidden_album_id" value="<?php echo $album_id;?>" />
 										<button type="submit" class="blue">
 											<span>
-												<?php _e( "Submit & Save Changes", gallery_bank ); ?>
+											<?php _e( "Submit & Save Changes", gallery_bank ); ?>
 											</span>
 										</button>
 									</div>
 								</div>
-								<?php
-								}
-								?>
 							</div>
-						</div>	
-					</div>
+					</div>	
 				</form>
 			</div>
 		</div>
@@ -185,6 +171,7 @@
 	var arr =[];
 	var array = [];
 	var ar = [];
+	var thumb_array = [];
 	jQuery(document).ready(function() 
 	{
 		jQuery("#ux_edit_border_color").ColorPicker
@@ -207,8 +194,8 @@
 	({
 		rules: 
 		{
-			ux_album_name: "required",
-			ux_description: 
+			ux_edit_album_name: "required",
+			ux_edit_description: 
 			{
 				required: true
 			},
@@ -243,6 +230,7 @@
 		},
 		submitHandler: function(form)
 		{
+			
 			var albumId = jQuery('#hidden_album_id').val();
 			var ux_edit_slide = jQuery('#ux_edit_slide').prop("checked");
 			var ux_edit_slide_interval = jQuery('#ux_edit_slide_interval').val();
@@ -256,98 +244,31 @@
 			{
 				var uxeditdescription = encodeURIComponent(jQuery('#ux_edit_description').val());
 			}
-			if((ux_edit_image_border == true) && (ux_edit_boder_width == 0))
+			jQuery.post(ajaxurl, jQuery(form).serialize() + "&param=update_general_settings&action=album_gallery_library", function(data)
 			{
-				jQuery('#error_update_album_message').css('display','none');
-				jQuery('#success_update_album_message').css('display','none');
-				jQuery('#error_edit_border_album_message').css('display','block');
-			}
-			else if((ux_edit_slide == true) && (ux_edit_slide_interval < 1))
-			{
-				jQuery('#error_edit_border_album_message').css('display','none');
-				jQuery('#success_update_album_message').css('display','none');
-				jQuery('#error_update_album_message').css('display','block');
-			}
-			else
-			{
-				jQuery.post(ajaxurl, jQuery(form).serialize() + "&param=update_general_settings&action=album_gallery_library", function(data)
-				{
-					
-				});
-			}
+			});
 			var image;
 			for(image = 0; image < arr.length; image++ )
 			{
-				if((ux_edit_image_border == true) && (ux_edit_boder_width == 0))
+				jQuery.post(ajaxurl, "id="+arr[image]+"&albumId="+albumId+"&param=delete_pic&action=album_gallery_library", function(data)
 				{
-					jQuery('#error_update_album_message').css('display','none');
-					jQuery('#success_update_album_message').css('display','none');
-					jQuery('#error_edit_border_album_message').css('display','block');
-				}
-				else if((ux_edit_slide == true) && (ux_edit_slide_interval < 1))
-				{
-					jQuery('#error_edit_border_album_message').css('display','none');
-					jQuery('#success_update_album_message').css('display','none');
-					jQuery('#error_update_album_message').css('display','block');
-				}
-				else
-				{
-					jQuery.post(ajaxurl, "id="+arr[image]+"&param=delete_pic&action=album_gallery_library", function(data)
-					{
-					});
-				}
+				});
 			}
-			if((ux_edit_image_border == true) && (ux_edit_boder_width == 0))
+			jQuery.post(ajaxurl, jQuery(form).serialize() +"&albumId="+albumId+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
 			{
-				jQuery('#error_update_album_message').css('display','none');
-				jQuery('#success_update_album_message').css('display','none');
-				jQuery('#error_edit_border_album_message').css('display','block');
-			}
-			else if((ux_edit_slide == true) && (ux_edit_slide_interval < 1))
-			{
-				jQuery('#error_edit_border_album_message').css('display','none');
-				jQuery('#success_update_album_message').css('display','none');
-				jQuery('#error_update_album_message').css('display','block');
-			}
-			else
-			{
-				jQuery.post(ajaxurl, jQuery(form).serialize() +"&albumId="+albumId+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
-				{
 					var pics;
 					for(pics = 0; pics < array.length; pics++ )
 					{
 						var pic_path = array[pics];
+						var thumb = thumb_array[pics];
 						var pic_title = jQuery("#pic_title_" + ar[pics]).val();
 						var pic_detail= jQuery("#pic_des_" + ar[pics]).val();
-						if((ux_edit_image_border == true) && (ux_edit_boder_width == 0))
+						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
 						{
-							jQuery('#error_update_album_message').css('display','none');
-							jQuery('#success_update_album_message').css('display','none');
-							jQuery('#error_edit_border_album_message').css('display','block');
-						}
-						else if((ux_edit_slide == true) && (ux_edit_slide_interval < 1))
-						{
-							jQuery('#error_edit_border_album_message').css('display','none');
-							jQuery('#success_update_album_message').css('display','none');
-							jQuery('#error_update_album_message').css('display','block');
-						}
-						else
-						{
-							jQuery.post(ajaxurl, "albumId="+albumId+"&pic_title="+pic_title+"&pic_detail="+pic_detail+"&pic_path="+pic_path+"&param=add_new_pics&action=album_gallery_library", function(data)
-							{
-							});
-						}
+							
+						});
 					}
-					jQuery('#error_edit_border_album_message').css('display','none');
-					jQuery('#error_update_album_message').css('display','none');
-					jQuery('#success_update_album_message').css('display','block');
-					setTimeout(function() 
-					{
-						jQuery('#success_update_album_message').css('display','none');
-						window.location.href = "admin.php?page=gallery_bank";
-					}, 2000);
-				});
-			}
+			});
 			<?php
 			for ($flag = 0; $flag < count($pic_detail); $flag++)
 			{
@@ -355,36 +276,26 @@
 				var picId = <?php  echo $pic_detail[$flag]->pic_id; ?>;
 				var edit_title = jQuery("#ux_edit_title_" + picId).val();
 				var edit_detail = jQuery("#ux_edit_desc_" + picId).val();
-				if((ux_edit_image_border == true) && (ux_edit_boder_width == 0))
+				jQuery.post(ajaxurl,"albumId="+albumId+"&picId="+picId+"&edit_title="+edit_title+"&edit_detail="+edit_detail+"&param=update_pic&action=album_gallery_library", function(data)
 				{
-					jQuery('#error_update_album_message').css('display','none');
-					jQuery('#success_update_album_message').css('display','none');
-					jQuery('#error_edit_border_album_message').css('display','block');
-				}
-				else if((ux_edit_slide == true) && (ux_edit_slide_interval < 1))
-				{
-					jQuery('#error_edit_border_album_message').css('display','none');
-					jQuery('#success_update_album_message').css('display','none');
-					jQuery('#error_update_album_message').css('display','block');
-				}
-				else
-				{
-					jQuery.post(ajaxurl,"albumId="+albumId+"&picId="+picId+"&edit_title="+edit_title+"&edit_detail="+edit_detail+"&param=update_pic&action=album_gallery_library", function(data)
+					jQuery.post(ajaxurl,"album_id="+albumId+"&param=add_pic_count&action=album_gallery_library", function(data)
 					{
-						jQuery('#error_edit_border_album_message').css('display','none');
-						jQuery('#error_update_album_message').css('display','none');
-						jQuery('#success_update_album_message').css('display','block');
-						setTimeout(function() 
-						{
-							jQuery('#success_update_album_message').css('display','none');
-							window.location.href = "admin.php?page=gallery_bank";
-						}, 2000);
 					});
-				}
-				
+				});
 			<?php
 			}
 			?>
+			
+			jQuery('#error_edit_border_album_message').css('display','none');
+			jQuery('#error_update_album_message').css('display','none');
+			jQuery('#success_update_album_message').css('display','block');
+			jQuery('body').animate({
+			scrollTop: jQuery('body').position().top}, 'slow');
+			setTimeout(function() 
+			{
+				jQuery('#success_update_album_message').css('display','none');
+				window.location.href = "admin.php?page=gallery_bank";
+			}, 4000);
 		}
 	});
 	function delete_pic(dynamicId)
@@ -452,36 +363,43 @@
 			},
 			multiple: true
 		});
-		file_frame.on( 'select', function() {
+				file_frame.on( 'select', function() {
 			var selection = file_frame.state().get('selection');
 			selection.map( function( attachment ) {
 				attachment = attachment.toJSON();
 				array.push(attachment.url);
 				var dynamicId = Math.floor((Math.random() * 1000)+1);
-				var div = jQuery("<div class=\"box\" style=\"border-bottom: solid 1px #e5e5e5;\" id=\""+dynamicId+"\">");
-				var img = jQuery("<br><img class=\"imgHolder\" id=\"edit_images\" style= \"border:3px solid #e5e5e5;\" />");
-				img.attr('src', attachment.url)
-				img.attr('width', '200px');
-				img.attr('height', '200px');
-				img.css('margin-left', '10px !important');
-				div.append(img);
-				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left:-190px; margin-top:210px; margin-bottom: 10px; cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span><?php _e("Remove Image",gallery_bank);?></span></a>");
-				div.append(del);
-				var box = jQuery("<div class=\"row\" style=\"margin-left:230px !important;\"><label> <?php _e("Title :", gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><input type=\"text\" id=\"pic_title_"+dynamicId+"\"/></div></div>");
+				var div = jQuery("<div class=\"box\" style=\"border-bottom: solid 1px #e5e5e5;\"id=\""+dynamicId+"\">");
+				var innerDiv = jQuery("<div style=\"float:left;width:170px;\">");
+				var img = jQuery("<img class=\"imgHolder\" style=\"border:3px solid #e5e5e5;margin-top:10px;\"; id=\"up_img\"/>");
+				if(attachment.sizes.medium != undefined)
+				{
+					img.attr('src', attachment.url);
+					thumb_array.push(attachment.url);
+				}
+				else
+				{
+					img.attr('src', attachment.url);
+					thumb_array.push(attachment.sizes.medium.url);	
+				}
+				
+				img.attr('width', '150px');
+				innerDiv.append(img);
+				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img style=\"vertical-align:middle;cursor:pointer\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span style=\"vertical-align:middle;cursor:pointer;\"><?php _e("Remove Image",gallery_bank);?></span></a>");
+				innerDiv.append(del);
+				div.append(innerDiv);
+				var box = jQuery("<div class=\"row\" style=\"margin-left:180px;margin-top:10px;\"><label><?php _e("Title :",gallery_bank);?></label><div class=\"right\" ><input type=\"text\" id=\"pic_title_"+dynamicId+"\"/></div></div>");
 				box.css('margin-bottom', '20px');
 				div.append(box);
-				var text = jQuery("<div class=\"row\" style=\"margin-left:230px!important;\"><label> <?php _e("Description :", gallery_bank);?> </label><div class=\"right\" style=\"margin-left:80px !important;\"><textarea id=\"pic_des_"+dynamicId+"\" rows=\"6\"/></div></div></br>");
+				var text = jQuery("<div class=\"row\" style=\"margin-left:180px\"><label><?php _e("Description :",gallery_bank);?></label><div class=\"right\" ><textarea id=\"pic_des_"+dynamicId+"\" rows=\"10\"></textarea></div></div></br>");
 				text.css('margin-bottom', '10px');
 				div.append(text);
 				ar.push(dynamicId);
 				div.append('</div>');
 				jQuery("#edit_media").append(div);
 			});
-			wp.media.model.settings.post.id = wp_media_post_id;
+		
 		});
 		file_frame.open();
-	});
-	jQuery('a.add_media').on('click', function() {
-		wp.media.model.settings.post.id = wp_media_post_id;
 	});
 </script>

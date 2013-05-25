@@ -114,33 +114,19 @@ else
 			$ux_albumid = intval($_REQUEST["album_id"]);
 			$ux_title = esc_attr($_REQUEST["title"]);
 			$ux_detail = esc_attr($_REQUEST["detail"]);
+			$thumbnail_url = esc_attr($_REQUEST["thumb"]);
 			$wpdb->query
 			(
 				$wpdb->prepare
 				(
-					"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,title,description )
-					VALUES(%d,%s,%s,%s)",
+					"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,thumbnail_url,title,description,date)
+					VALUES(%d,%s,%s,%s,%s,CURDATE())",
 					$ux_albumid,
 					$ux_path,
+					$thumbnail_url,
 					$ux_title,
 					$ux_detail
-				)
-			);
-			$pics = $wpdb->get_var
-			(
-				$wpdb->prepare
-				(
-					" SELECT count(pic_id) FROM " . gallery_bank_pics() . " WHERE album_id = %d",
-					$ux_albumid
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					" UPDATE ".gallery_bank_albums()." SET number_of_pics = %d  WHERE album_id = %d ",
-					$pics,
-					$ux_albumid
+					
 				)
 			);
 			die();
@@ -161,71 +147,19 @@ else
 					$pic_id
 				)
 			);
-			$pics = $wpdb->get_var
-			(
-				$wpdb->prepare
-				(
-					" SELECT count(pic_id) FROM " . gallery_bank_pics() . " WHERE album_id = %d",
-					$albumId
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					" UPDATE ".gallery_bank_albums()." SET number_of_pics = %d  WHERE album_id = %d ",
-					$pics,
-					$albumId
-				)
-			);
+			
 			die();
 		}
 		else if($_REQUEST['param'] == "delete_pic")
 		{
 			$pic_id = intval($_REQUEST['id']);
+			$albumId = intval($_REQUEST['albumId']);
 			$wpdb->query
 			(
 				$wpdb->prepare
 				(
 					"DELETE FROM ".gallery_bank_pics()." WHERE pic_id = %d",
 					$pic_id
-				)
-			);
-			die();
-		}
-		else if($_REQUEST["param"] == "add_new_pics")
-		{
-			$ux_pic_path = esc_attr($_REQUEST["pic_path"]);
-			$ux_pic_albumid = intval($_REQUEST["albumId"]);
-			$ux_pic_title = esc_attr($_REQUEST["pic_title"]);
-			$ux_pic_detail = esc_attr($_REQUEST["pic_detail"]);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,title,description )
-					VALUES(%d,%s,%s,%s)",
-					$ux_pic_albumid,
-					$ux_pic_path,
-					$ux_pic_title,
-					$ux_pic_detail
-				)
-			);
-			$pics = $wpdb->get_var
-			(
-				$wpdb->prepare
-				(
-					" SELECT count(pic_id) FROM " . gallery_bank_pics() . " WHERE album_id = %d",
-					$ux_pic_albumid
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					" UPDATE ".gallery_bank_albums()." SET number_of_pics = %d  WHERE album_id = %d ",
-					$pics,
-					$ux_pic_albumid
 				)
 			);
 			die();

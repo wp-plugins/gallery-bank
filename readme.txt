@@ -3,7 +3,7 @@ Contributors: gallery-bank
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.5.1
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -21,7 +21,7 @@ Create responsive and filterable portfolios with ease on your website. Gallery B
 * Add Single Gallery to your page or post using a shortcode.
 * Add a caption to each photo in the album.
 * Change the size of album cover thumbnails and photos in the album. 
-* Choose a number of pictures to display in one row in the gallery album.
+* Choose a number of pictures to display in one row in the gallery album. 
 * View pictures as a slide show and in a full size.
 * 3 different Widgets: Display a single album, create a list of album links, display latest/random media
 * User-friendly AJAX admin
@@ -48,6 +48,11 @@ Please email all your queries/issues at support@gallery-bank.com
 5. PrettyPhoto pop-up window containing the album images.
 
 == Changelog ==
+
+= 1.1 =
+
+Few Bugs Fixed
+
 
 = 1.0 =
 Initial Version Release

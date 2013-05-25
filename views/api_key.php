@@ -3,19 +3,20 @@
 		<ul>
 			<li class="first"></li>
 			<li>
-						<a href="admin.php?page=gallery_bank">
-							<?php _e( "Gallery Bank", gallery_bank ); ?>
-						</a>
-					</li>
+				<a href="admin.php?page=gallery_bank">
+					<?php _e( "Gallery Bank", gallery_bank ); ?>
+				</a>
+			</li>
 			<li class="last">
 				<a href="#">
 					<?php _e( "API KEY", gallery_bank); ?>
 				</a>
+			</li>
 		</ul>
 	</div>
 	<div class="section">
 		<div class="box">
-			<div class="title"><span>API KEY</span>
+			<div class="title"><span><?php _e("API KEY", gallery_bank);?></span>
 			</div>
 			<div id="content">
 				<form id="uxFrmApikey" class="events-container-form" method="post" action="">
@@ -79,7 +80,7 @@
 							<label>
 							</label>
 							<div class="right">
-								<button type="submit" class="events-container-button green">
+								<button type="submit" class="events-container-button blue">
 									<span>
 										<?php _e( "Register your API Key to start using Gallery Bank", gallery_bank ); ?>
 									</span>

@@ -23,10 +23,10 @@
 					</li>
 				</ul>
 			</div>
-			<a href="admin.php?page=gallery_bank" class="events-container-button blue" style="margin-top:10px; margin-left:135px; style="text-decoration: none;">
-				<span><?php _e('Back to Albums', gallery_bank); ?></span>
+			<a href="admin.php?page=gallery_bank" class="events-container-button blue" style="margin-top:10px;style="text-decoration: none;">
+				<span><?php _e('Back to Albums Page', gallery_bank); ?></span>
 			</a>
-			<div id="add-album"  style="display: block;margin-left: -20px; padding: 10px;">
+			<div id="add-album"  style="display: block;padding:10px 10px 10px 0px;">
 				<form id="add_new_album" class="form-horizontal" method="post" action="">
 					<div class="message green" id="success_album_message" style="margin-left :20px; display: none;">
 						<span>
@@ -63,31 +63,33 @@
 									</div>
 								</div>
 								
-								<div class="row">
-									<label style="top: 10px;">
-										<?php _e( "Upload Media :", gallery_bank ); ?>
+								<div class="row" >
+									<label>
+										<?php _e( "Upload Images :", gallery_bank ); ?>
 									</label>
 									<div class="right">
 										<button type="button" id="upload_image_button" class="blue">
 											<span>
-												<?php _e( "Upload Images", gallery_bank ); ?>
+												<?php _e( "Browse Here", gallery_bank ); ?>
 											</span>
 										</button>
 									</div>
 								</div>
-								<div class="box">
-									<div id="add_media">
-									</div>
-								</div>
-								<div class="row" style="border-bottom:!important;">
-									<label></label>
-									<div class="right">
+							</div>
+						</div>
+						<div class="box">
+							<div id="add_media" class="content" >
+							</div>
+						</div>
+						<div class="box">
+							<div class="content">
+								<div class="row" style="border-bottom:none!important;">
 										<button type="submit" class="blue">
 											<span>
 												<?php _e( "Submit & Save Changes", gallery_bank ); ?>
 											</span>
 										</button>
-									</div>
+									
 								</div>
 							</div>
 						</div>	
@@ -111,6 +113,7 @@
 <script type="text/javascript">
 var arr =[];
 var ar = [];
+var thumb_array = [];
 	function delete_pic(dynamicId)
 	{
 		bootbox.confirm("<?php _e( "Are you sure you want to delete this Picture?", gallery_bank ); ?>", function(confirmed)
@@ -165,7 +168,6 @@ var ar = [];
 		},
 		submitHandler: function(form)
 		{
-			
 			if (jQuery("#wp-ux_description-wrap").hasClass("tmce-active"))
 			{
 				var uxDescription  = encodeURIComponent(tinyMCE.get('ux_description').getContent());
@@ -176,79 +178,36 @@ var ar = [];
 			}
 			var ux_slide_interval = jQuery('#ux_slide_interval').val();
 			
-			var ux_border_width = jQuery('#ux_border_width').val();
-			var ux_border = jQuery('#ux_image_border').prop("checked");
-			if((ux_border == true) && (ux_border_width == 0))
+			jQuery.post(ajaxurl, jQuery(form).serialize() +"&ux_description="+uxDescription+"&param=add_new_album&action=album_gallery_library", function(data)
 			{
-				jQuery('#error_album_message').css('display','none');
-				jQuery('#success_album_message').css('display','none');
-				jQuery('#error_border_album_message').css('display','block');
-			}
-			else if(ux_slide_interval < 1)
-			{
-				jQuery('#error_border_album_message').css('display','none');
-				jQuery('#success_album_message').css('display','none');
-				jQuery('#error_album_message').css('display','block');
-			}
-			else
-			{
-				jQuery.post(ajaxurl, jQuery(form).serialize() +"&ux_description="+uxDescription+"&param=add_new_album&action=album_gallery_library", function(data)
+					
+				var album_id= jQuery.trim(data);
+				var pic;
+				for(pic = 0; pic < arr.length; pic++ )
 				{
-					
-					var album_id= jQuery.trim(data);
-					var pic;
-					for(pic = 0; pic < arr.length; pic++ )
+					var path = arr[pic];
+					var thumb = thumb_array[pic];
+					var title = jQuery("#title_img_" + ar[pic]).val();
+					var detail= jQuery("#des_img_" + ar[pic]).val();
+					jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&path="+path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
 					{
-						var path = arr[pic];
-						var title = jQuery("#title_img_" + ar[pic]).val();
-						var detail= jQuery("#des_img_" + ar[pic]).val();
-						if((ux_border == true) && (ux_border_width == 0))
+						jQuery.post(ajaxurl,"album_id="+album_id+"&param=add_pic_count&action=album_gallery_library", function(data)
 						{
-							jQuery('#error_album_message').css('display','none');
-							jQuery('#success_album_message').css('display','none');
-							jQuery('#error_border_album_message').css('display','block');
-						}
-						else if(ux_slide_interval < 1)
-						{
-							jQuery('#error_border_album_message').css('display','none');
-							jQuery('#success_album_message').css('display','none');
-							jQuery('#error_album_message').css('display','block');
-						}
-						else
-						{
-							jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&path="+path+"&param=add_pic&action=album_gallery_library", function(data)
-							{
-								
-							});
-						}
-						
-					}
-					jQuery.post(ajaxurl,"album_id="+album_id+"&param=add_pic_count&action=album_gallery_library", function(data)
-					{
-						if((ux_border == true) && (ux_border_width == 0))
-						{
-							jQuery('#error_album_message').css('display','none');
-							jQuery('#success_album_message').css('display','none');
-							jQuery('#error_border_album_message').css('display','block');
-						}
-						else if(ux_slide_interval < 1)
-						{
-							jQuery('#error_border_album_message').css('display','none');
-							jQuery('#success_album_message').css('display','none');
-							jQuery('#error_album_message').css('display','block');
-						}
+						});
 					});
-					jQuery('#error_album_message').css('display','none');
-					jQuery('#error_border_album_message').css('display','none');
-					jQuery('#success_album_message').css('display','block');
-					setTimeout(function()
-					{
-						jQuery('#success_album_message').css('display','none');
-						window.location.href = "admin.php?page=gallery_bank";
-					}, 2000);
+				}
+				jQuery('#error_album_message').css('display','none');
+				jQuery('#error_border_album_message').css('display','none');
+				jQuery('#success_album_message').css('display','block');
+				jQuery('body').animate({
+				scrollTop: jQuery('body').position().top}, 'slow');
+				setTimeout(function()
+				{
+					jQuery('#success_album_message').css('display','none');
+					window.location.href = "admin.php?page=gallery_bank";
+				}, 4000);
 					
-				});
-			}
+			});
 		}	
 	});
 	var file_frame;
@@ -265,34 +224,42 @@ var ar = [];
 			var selection = file_frame.state().get('selection');
 			selection.map( function( attachment ) {
 				attachment = attachment.toJSON();
-				arr.push(attachment.url);
+				
 				var dynamicId = Math.floor((Math.random() * 1000)+1);
-				var div = jQuery("<div class=\"box\" style=\"margin-left: 20px; border-bottom: solid 1px #e5e5e5;\"id=\""+dynamicId+"\">");
-				var img = jQuery("<br><img class=\"imgHolder\" style=\"border:3px solid #e5e5e5\"; id=\"up_img\"/>");
-				img.attr('src', attachment.url);
-				img.attr('width', '200px');
-				img.attr('height', '200px');
-				img.css('margin-left', '10px !important');
-				div.append(img);
-				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left:-190px; margin-top:210px; margin-bottom: 10px; cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span><?php _e("Remove Image",gallery_bank);?></span></a>");
-				div.append(del);
-				var box = jQuery("<div class=\"row\" style=\"margin-left:230px !important;\"><label><?php _e("Title :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><input type=\"text\" id=\"title_img_"+dynamicId+"\"/></div></div>");
+				var div = jQuery("<div class=\"box\" style=\"border-bottom: solid 1px #e5e5e5;\"id=\""+dynamicId+"\">");
+				var innerDiv = jQuery("<div style=\"float:left;width:170px;margin-left:10px;\">");
+				var img = jQuery("<img class=\"imgHolder\" style=\"border:3px solid #e5e5e5;margin-top:10px;\"; id=\"up_img\"/>");
+				if(attachment.sizes.medium != undefined)
+				{
+					img.attr('src', attachment.sizes.medium.url);
+					thumb_array.push(attachment.sizes.medium.url);
+				}
+				else
+				{
+					img.attr('src', attachment.url);
+					thumb_array.push(attachment.url);	
+				}
+				arr.push(attachment.url);
+				img.attr('width', '150px');
+								
+				innerDiv.append(img);
+				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img style=\"cursor: pointer;vertical-align:middle;\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span  style=\"cursor: pointer;vertical-align:middle;\"><?php _e("Remove Image",gallery_bank);?></span></a>");
+				innerDiv.append(del);
+				div.append(innerDiv);
+				var box = jQuery("<div class=\"row\" style=\"margin-left:180px\"><label><?php _e("Title :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><input type=\"text\" id=\"title_img_"+dynamicId+"\"/></div></div>");
 				box.css('margin-bottom', '20px');
 				div.append(box);
-				var text = jQuery("<div class=\"row\" style=\"margin-left:230px!important;\"><label><?php _e("Description :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><textarea id=\"des_img_"+dynamicId+"\" rows=\"6\"></textarea></div></div></br>");
+				var text = jQuery("<div class=\"row\" style=\"margin-left:180px\"><label><?php _e("Description :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><textarea id=\"des_img_"+dynamicId+"\" rows=\"10\"></textarea></div></div></br>");
 				text.css('margin-bottom', '10px');
 				div.append(text);
 				ar.push(dynamicId);
 				div.append('</div>');
 				jQuery("#add_media").append(div);
 			});
-			wp.media.model.settings.post.id = wp_media_post_id;
 		});
 		file_frame.open();
 	});
-	jQuery('a.add_media').on('click', function() {
-		wp.media.model.settings.post.id = wp_media_post_id;
-	});
+	
 	jQuery(document).ready(function() 
 	{
 		div_control();
@@ -312,7 +279,6 @@ var ar = [];
 			jQuery(this).ColorPickerSetColor(this.value);
 		});
 	});
-	
 	function div_control()
 	{
 		var border = jQuery("#ux_image_border").prop("checked");

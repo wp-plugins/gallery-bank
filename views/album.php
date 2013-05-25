@@ -19,6 +19,7 @@ $url = plugins_url('', __FILE__);
 				</ul>
 			</div>
 			<?php
+			$url1 = $_REQUEST['page'];
 			$album_count = $wpdb->get_var
 			(
 				$wpdb->prepare
@@ -26,7 +27,7 @@ $url = plugins_url('', __FILE__);
 					"SELECT count(album_id) FROM ".gallery_bank_albums(),""
 				)
 			);
-			if($album_count < 1)
+			if($album_count < 1 )
 			{
 				?>
 					<a href="admin.php?page=add_album" class="events-container-button blue" style="margin-top:20px; margin-left:20px; text-decoration: none;">
@@ -34,8 +35,7 @@ $url = plugins_url('', __FILE__);
 					</a>
 				<?php
 			}
-			?>
-				
+			?>	
 			<div class="section">
 				<div class="box">
 					<div class="title">
@@ -47,7 +47,7 @@ $url = plugins_url('', __FILE__);
 								<tr>
 									<th style="width:10%"><?php _e( "Album Name", gallery_bank ); ?></th>
 									<th style="width:20%"><?php _e( "Short Code", gallery_bank ); ?></th>
-									<th style="width:8%"><?php _e( "No. of Pictures", gallery_bank ); ?></th>
+									<th style="width:10%"><?php _e( "No. of Pictures", gallery_bank ); ?></th>
 									<th style="width:8%"><?php _e( "Author", gallery_bank ); ?></th>
 									<th style="width:10%"><?php _e( "Album Date", gallery_bank ); ?></th>
 									<th style="width:4%"><?php _e( "Action", gallery_bank ); ?></th>
