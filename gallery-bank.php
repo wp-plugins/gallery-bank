@@ -2,9 +2,9 @@
 /*
  Plugin Name: Gallery Bank
  Plugin URI: http://wordpress.org/extend/plugins/gallery-bank/
- Description: Gallery Bank is an interactive WordPress photo gallery plugin, best fit for creative and corporate portfolio websites, that lets you create beautifully animated galleries with a modern look and smooth animations.
+ Description: Gallery Bank is an interactive WordPress photo gallery plugin, best fit for creative and corporate portfolio websites.
  Author: gallery-bank
- Version: 1.0
+ Version: 1.1
  Author URI: http://wordpress.org/extend/plugins/gallery-bank/
 */
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -7,7 +7,7 @@ Stable tag: 1.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Gallery Bank is an interactive WordPress photo gallery plugin, best fit for creative and corporate portfolio websites, that lets you create beautifully animated galleries with a modern look and smooth animations.
+Gallery Bank is an interactive WordPress photo gallery plugin, best fit for creative and corporate portfolio websites.
 
 == Description ==
 
