@@ -230,7 +230,6 @@
 		},
 		submitHandler: function(form)
 		{
-			
 			var albumId = jQuery('#hidden_album_id').val();
 			var ux_edit_slide = jQuery('#ux_edit_slide').prop("checked");
 			var ux_edit_slide_interval = jQuery('#ux_edit_slide_interval').val();
@@ -265,7 +264,9 @@
 						var pic_detail= jQuery("#pic_des_" + ar[pics]).val();
 						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
 						{
-							
+							jQuery.post(ajaxurl,"album_id="+albumId+"&param=add_pic_count&action=album_gallery_library", function(data)
+							{
+							});
 						});
 					}
 			});
@@ -285,7 +286,6 @@
 			<?php
 			}
 			?>
-			
 			jQuery('#error_edit_border_album_message').css('display','none');
 			jQuery('#error_update_album_message').css('display','none');
 			jQuery('#success_update_album_message').css('display','block');
@@ -314,7 +314,6 @@
 			}
 		});
 	}
-	
 	function edit_div_control()
 	{
 		var border = jQuery("#ux_edit_image_border").prop("checked");
@@ -339,7 +338,6 @@
 			jQuery("#div_edit_slide_interval").css('display','none');
 		}
 	}
-			
 	function edit_delete_pic(pic_id)
 	{
 		bootbox.confirm("<?php _e( "Are you sure you want to delete this Picture?", gallery_bank ); ?>", function(confirmed)
@@ -363,7 +361,7 @@
 			},
 			multiple: true
 		});
-				file_frame.on( 'select', function() {
+			file_frame.on( 'select', function() {
 			var selection = file_frame.state().get('selection');
 			selection.map( function( attachment ) {
 				attachment = attachment.toJSON();
@@ -382,7 +380,6 @@
 					img.attr('src', attachment.url);
 					thumb_array.push(attachment.sizes.medium.url);	
 				}
-				
 				img.attr('width', '150px');
 				innerDiv.append(img);
 				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img style=\"vertical-align:middle;cursor:pointer\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span style=\"vertical-align:middle;cursor:pointer;\"><?php _e("Remove Image",gallery_bank);?></span></a>");
@@ -398,7 +395,6 @@
 				div.append('</div>');
 				jQuery("#edit_media").append(div);
 			});
-		
 		});
 		file_frame.open();
 	});
