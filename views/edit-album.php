@@ -288,14 +288,14 @@
 			
 			jQuery('#error_edit_border_album_message').css('display','none');
 			jQuery('#error_update_album_message').css('display','none');
-			//jQuery('#success_update_album_message').css('display','block');
+			jQuery('#success_update_album_message').css('display','block');
 			jQuery('body').animate({
 			scrollTop: jQuery('body').position().top}, 'slow');
-			// setTimeout(function() 
-			// {
-				// jQuery('#success_update_album_message').css('display','none');
-// 				
-			// }, 5000);
+			setTimeout(function() 
+			{
+				jQuery('#success_update_album_message').css('display','none');	
+				window.location.href = "admin.php?page=gallery_bank";
+			}, 5000);
 		}
 	});
 	function delete_pic(dynamicId)
@@ -342,16 +342,15 @@
 			
 	function edit_delete_pic(pic_id)
 	{
-		arr.push(pic_id);
-				jQuery('#' + pic_id ).remove();
-		// bootbox.confirm("<?php _e( "Are you sure you want to delete this Picture?", gallery_bank ); ?>", function(confirmed)
-		// {
-			// console.log("Confirmed: "+confirmed);
-			// if(confirmed == true)
-			// {
-// 				
-			// }
-		// });
+		bootbox.confirm("<?php _e( "Are you sure you want to delete this Picture?", gallery_bank ); ?>", function(confirmed)
+		{
+			console.log("Confirmed: "+confirmed);
+			if(confirmed == true)
+			{
+				arr.push(pic_id);
+				jQuery('#' + pic_id ).remove();	
+			}
+		});
 	}
 	var file_frame;
 	jQuery('#upload_image_button').live('click', function( event ){

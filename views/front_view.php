@@ -17,7 +17,6 @@
 		$album_id
 		)
 	);
-	
 ?>
 					<div id="view_bank_album_<?php echo $album_id;?>" class="box" style=" margin-top: 10px; border: solid 1px #e5e5e5; padding: 10px; width=100%;"> 
 						<?php
