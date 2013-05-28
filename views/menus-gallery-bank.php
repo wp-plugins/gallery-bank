@@ -7,11 +7,7 @@
 					<?php _e( "Gallery Bank", gallery_bank ); ?>
 				</a>
 			</li> 
-			<li id="APIkey">
-				<a href="admin.php?page=apikey">
-					<?php _e( "API KEY", gallery_bank ); ?>
-				</a>
-			</li>
+			
 		</ul>
 	</div>
 </div>

@@ -6,6 +6,5 @@
 	$sql = "DROP TABLE " .gallery_bank_pics();
 	$wpdb->query($sql);
 	
-	$sql = "DROP TABLE " .settingTable();
-	$wpdb->query($sql);
+	
 ?>

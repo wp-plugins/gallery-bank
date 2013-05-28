@@ -198,14 +198,21 @@ var thumb_array = [];
 				}
 				jQuery('#error_album_message').css('display','none');
 				jQuery('#error_border_album_message').css('display','none');
-				jQuery('#success_album_message').css('display','block');
-				jQuery('body').animate({
-				scrollTop: jQuery('body').position().top}, 'slow');
-				setTimeout(function()
-				{
-					jQuery('#success_album_message').css('display','none');
-					window.location.href = "admin.php?page=gallery_bank";
-				}, 4000);
+				//jQuery('#success_album_message').css('display','block');
+				//jQuery('html,body').animate({ scrollTop: top }, 'slow');
+				//jQuery('body,html').animate({scrollTop:jQuery(this).offset().top},'slow');
+				//jQuery("body").scrollTop( jQuery('body').height() ); 
+				//jQuery("body,html").scrollTop(250);
+				//document.getElementsByTagName('body')[0].clientHeight
+				 //jQuery(window).animate({ scrollTop: 0 }, "slow");
+				//jQuery('html, body').animate({ scrollTop: top }, 1000);
+				 jQuery('body').animate({
+				 scrollTop: jQuery('body').position().top}, 'slow');
+				// setTimeout(function()
+				// {
+					// jQuery('#success_album_message').css('display','none');
+					// window.location.href = "admin.php?page=gallery_bank";
+				// }, 4000);
 					
 			});
 		}	

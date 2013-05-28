@@ -5,31 +5,13 @@
 function create_global_menus_for_gallery_bank()
 {
 	global $wpdb;
-	$license = $wpdb->get_var
-	(
-		$wpdb->prepare
-		(	
-			'SELECT SettingsValue FROM ' . settingTable() . ' where SettingsKey = %s',
-			"events_handler_api"
-		)
-	);
-	if($license == "")
-	{
-		$menu = add_menu_page('Gallery Bank', __('Gallery Bank', gallery_bank), 'administrator', 'gallery_bank','',GALLERY_BK_PLUGIN_URL . '/icon.png');
-		add_submenu_page('', 'Gallery Bank', __('Gallery Bank', gallery_bank), 'administrator', 'gallery_bank', 'gallery_bank');
-		add_submenu_page( 'gallery_bank', 'API Key', __('API Key', gallery_bank), 'administrator', 'apikey', 'apikey');
-		add_submenu_page('', '','' , 'administrator', 'add_album', 'add_album');
-		add_submenu_page('', '','' , 'administrator', 'view_album', 'view_album');
-		add_submenu_page('', '','' , 'administrator', 'edit_album', 'edit_album');
-	}
-	else 
-	{
+	
 		$menu = add_menu_page('Gallery Bank', __('Gallery Bank', gallery_bank), 'administrator', 'gallery_bank','',GALLERY_BK_PLUGIN_URL . '/icon.png');
 		add_submenu_page('', 'Gallery Bank', __('Gallery Bank', gallery_bank), 'administrator', 'gallery_bank', 'gallery_bank');
 		add_submenu_page('', '','' , 'administrator', 'add_album', 'add_album');
 		add_submenu_page('', '','' , 'administrator', 'view_album', 'view_album');
 		add_submenu_page('', '','' , 'administrator', 'edit_album', 'edit_album');
-	}
+	
 }
 //--------------------------------------------------------------------------------------------------------------//
 // FUNCTIONS FOR REPLACING TABLE NAMES
@@ -58,7 +40,7 @@ function gallery_bank()
 	global $wpdb;
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
-	checkApiKey();
+	
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/album.php';
 }
 
@@ -93,7 +75,7 @@ function view_album()
 	global $wpdb;
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
-	checkApiKey();
+	
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/view-album.php';
 }
 function edit_album()
@@ -101,16 +83,10 @@ function edit_album()
 	global $wpdb;
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
-	checkApiKey();
+
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/edit-album.php';
 }
-function apikey()
-{
-	global $wpdb;
-	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
-	include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
-	include_once GALLERY_BK_PLUGIN_DIR .'/views/api_key.php';
-}
+
 //--------------------------------------------------------------------------------------------------------------//
 //CODE FOR CALLING JAVASCRIPT FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------//
@@ -212,34 +188,6 @@ function extract_short_code($con)
 	
 }
 
-function checkApiKey()
-{
-	global $wpdb;
-	$license = $wpdb->get_var
-	(
-		$wpdb->prepare
-		(	
-			'SELECT SettingsValue FROM ' . settingTable() . ' where SettingsKey = %s',
-			"events_handler_api"
-		)
-	);
-	if($license == "")
-	{
-		?>
-		<script type="text/javascript">
-			window.location.href = "admin.php?page=apikey";
-		</script>
-		<?php
-	}
-	else 
-	{
-		?>
-		<script type="text/javascript">
-			jQuery("#APIkey").attr("style","display:none");
-		</script>
-		<?php
-	}
-}
 add_action('admin_init','plugin_js_scripts_gallery_bank');
 add_action('admin_init','plugin_css_scripts_gallery_bank');
 add_action('init','frontend_plugin_js_scripts_gallery_bank');

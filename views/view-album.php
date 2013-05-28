@@ -59,7 +59,7 @@
 									<label style="top:10px;">
 										<?php _e( "Description :", gallery_bank ); ?>
 									</label>
-									<div class="right" style="margin-top: -10px;margin-bottom: -25px;">
+									<div class="right" >
 										<span>
 											<?php echo stripslashes($album->description);?>
 											&nbsp;

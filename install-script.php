@@ -36,24 +36,5 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_pics() . '"')) == 0
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';
 	dbDelta($sql);
 }
-if (count($wpdb->get_var('SHOW TABLES LIKE "' . settingTable() . '"')) == 0)
-	{
-		$sql= 'CREATE TABLE '.settingTable(). '(
-		SettingsId INTEGER(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-		SettingsKey VARCHAR(200) NOT NULL,
-		SettingsValue VARCHAR(200) NOT NULL,
-		PRIMARY KEY (SettingsId)
-		) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';		
-		dbDelta($sql);
-		$wpdb->query
-		(
-			$wpdb->prepare
-			(
-				"INSERT INTO ".settingTable()."(SettingsKey,SettingsValue) VALUES(%s, %s)",
-				"events_handler_api",
-				""
-				
-			)
-		);
-	}
+
 ?>

@@ -164,28 +164,7 @@ else
 			);
 			die();
 		}
-		else if($_REQUEST["param"] == "add_pic_count")
-		{
-			$ux_albumid = intval($_REQUEST["album_id"]);
-			$pics = $wpdb->get_var
-			(
-				$wpdb->prepare
-				(
-					" SELECT count(pic_id) FROM " . gallery_bank_pics() . " WHERE album_id = %d",
-					$ux_albumid
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					" UPDATE ".gallery_bank_albums()." SET number_of_pics = %d  WHERE album_id = %d ",
-					$pics,
-					$ux_albumid
-				)
-			);
-			die();
-		}
+		
 		else if($_REQUEST["param"] == "update_general_settings")
 		{
 			$ux_edit_image_width = intval($_REQUEST['ux_edit_image_width']);

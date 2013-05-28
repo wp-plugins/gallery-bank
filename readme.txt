@@ -49,10 +49,16 @@ Please email all your queries/issues at support@gallery-bank.com
 
 == Changelog ==
 
+= 1.2 =
+
+* Few Bugs Fixed
+* Lightbox logic changes
+* Thumbnails Fixed
+
 = 1.1 =
 
-Few Bugs Fixed
-
+* Few Bugs Fixed
 
 = 1.0 =
-Initial Version Release
+
+* Initial Version Release
