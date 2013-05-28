@@ -1,5 +1,5 @@
 === Gallery Bank ===
-Contributors: gallery-bank
+Contributors: Gallery-Bank
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
 Tested up to: 3.5.1
