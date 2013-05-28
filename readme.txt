@@ -27,7 +27,23 @@ Create responsive and filterable portfolios with ease on your website. Gallery B
 * User-friendly AJAX admin
 * Upload different types of media
 
+= Pro Version = 
 
+* Domain Installation (x1 change anytime)
+* Responsive Gallery
+* Creates unlimited amount of albums in the gallery
+* Upload unlimited number of photos to each album
+* Technical Support for 1 month
+* Plugin Updates for Lifetime
+* Add Gallery to your Page or Post
+* Set featured image as an album cover
+* Add description to each album
+* Change size of album cover thumbnails & pics
+* Choose number of pictures to display in row
+* View pictures as a slide show and in a full size
+* Change background color
+
+Visit [here](http://gallery-bank.com) to purchase Pro Version now.
 = Technical support =
 
 Please email all your queries/issues at support@gallery-bank.com
