@@ -375,12 +375,13 @@
 				if(attachment.sizes.medium != undefined)
 				{
 					img.attr('src', attachment.url);
-					thumb_array.push(attachment.url);
+					thumb_array.push(attachment.sizes.medium.url);
+					
 				}
 				else
 				{
 					img.attr('src', attachment.url);
-					thumb_array.push(attachment.sizes.medium.url);	
+					thumb_array.push(attachment.url);
 				}
 				
 				img.attr('width', '150px');
