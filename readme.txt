@@ -13,8 +13,8 @@ Gallery Bank is an interactive WordPress photo gallery plugin, best fit for crea
 
 Create responsive and filterable portfolios with ease on your website. Gallery Bank comes with masonry layout, is designed to adapt each portfolio to any situation and is mobile optimized for responsive themes.
 
-*[Forum for Gallery Bank](http://gallery-bank.com/forum/support-forum/), feel free to ask  your queries.
-*[Purchase Pro Version](http://gallery-bank.com/) with access to all the features of the amazing gallery bank plugin.
+[Forum for Gallery Bank](http://gallery-bank.com/forum/support-forum/), feel free to ask  your queries.<br/>
+[Purchase Pro Version](http://gallery-bank.com/) with access to all the features of the amazing gallery bank plugin.
 
 = Features =
 
