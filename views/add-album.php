@@ -125,6 +125,7 @@ var thumb_array = [];
 					var index = ar.indexOf(dynamicId);
 					arr.splice(index, 1);
 					ar.splice(index, 1);
+					thumb_array.splice(index, 1);
 				}
 			}
 		});
