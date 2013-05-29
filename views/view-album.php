@@ -192,7 +192,7 @@ jQuery(document).ready(function(){
 		classNames:'vlightbox1',
 		descSliding:true,
 		enableRightClick:false,
-		enableSlideshow:true,
+		enableSlideshow:false,
 		prefix:'vlb1',
 		resizeSpeed:7,
 		slideTime:4,

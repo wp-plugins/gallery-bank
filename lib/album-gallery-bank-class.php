@@ -152,102 +152,20 @@ else
 		}
 		else if($_REQUEST['param'] == "delete_pic")
 		{
-			$pic_id = intval($_REQUEST['id']);
-			$albumId = intval($_REQUEST['albumId']);
-			$wpdb->query
-			(
-				$wpdb->prepare
+			$picture_id = $_REQUEST['id'];
+			$count_pic = intval($_REQUEST['count_pic']);
+			$Pic_id =  (explode(",",$picture_id));
+			for($flag = 0; $flag < $count_pic; $flag++ )
+			{
+				$wpdb->query
 				(
-					"DELETE FROM ".gallery_bank_pics()." WHERE pic_id = %d",
-					$pic_id
-				)
-			);
-			die();
-		}
-		
-		else if($_REQUEST["param"] == "update_general_settings")
-		{
-			$ux_edit_image_width = intval($_REQUEST['ux_edit_image_width']);
-			$ux_edit_image_height = intval($_REQUEST['ux_edit_image_height']);
-			$ux_edit_border = intval($_REQUEST['ux_edit_image_border']);
-			$ux_edit_border_width = intval($_REQUEST['ux_edit_border_width']);
-			$ux_edit_border_color = esc_attr($_REQUEST['ux_edit_border_color']);
-			$ux_edit_image_no = intval($_REQUEST['ux_edit_image_no']);
-			$ux_edit_slide =  intval($_REQUEST['ux_edit_slide']);
-			$ux_edit_slide_interval =  intval($_REQUEST['ux_edit_slide_interval']);
-			
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					"UPDATE ".gallery_general_settings()." SET general_settings_value = %d  WHERE general_settings_key = %s",
-					$ux_edit_image_width,
-					"image-width"
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					"UPDATE ".gallery_general_settings()." SET general_settings_value = %d  WHERE general_settings_key = %s",
-					$ux_edit_image_height,
-					"image-height"
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					"UPDATE ".gallery_general_settings()." SET general_settings_value = %d  WHERE general_settings_key = %s",
-					$ux_edit_border,
-					"border-enable"
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					"UPDATE ".gallery_general_settings()." SET general_settings_value = %d  WHERE general_settings_key = %s",
-					$ux_edit_border_width,
-					"border-width"
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					"UPDATE ".gallery_general_settings()." SET general_settings_value = %s  WHERE general_settings_key = %s",
-					$ux_edit_border_color,
-					"border-color"
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					"UPDATE ".gallery_general_settings()." SET general_settings_value = %d  WHERE general_settings_key = %s",
-					$ux_edit_image_no,
-					"images-in-row"
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					"UPDATE ".gallery_general_settings()." SET general_settings_value = %s  WHERE general_settings_key = %s",
-					$ux_edit_slide,
-					"slide-show"
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
-				(
-					"UPDATE ".gallery_general_settings()." SET general_settings_value = %d  WHERE general_settings_key = %s",
-					$ux_edit_slide_interval,
-					"slide-show-interval"
-				)
-			);
+					$wpdb->prepare
+					(
+						"DELETE FROM ".gallery_bank_pics()." WHERE pic_id = %d",
+						$Pic_id[$flag]
+					)
+				);
+			}
 			die();
 		}
 	}

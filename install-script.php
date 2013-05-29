@@ -18,7 +18,8 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) ==
 	images_in_row INTEGER(5) UNSIGNED NOT NULL,
 	slideshow BIT NOT NULL,
 	slideshow_interval INTEGER(5) UNSIGNED NOT NULL,
-	PRIMARY KEY (album_id)
+	PRIMARY KEY (album_id),
+	KEY `idx_album_id` (`album_id`)
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';
 	dbDelta($sql);
 }
@@ -32,7 +33,8 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_pics() . '"')) == 0
 	description TEXT NOT NULL,
 	thumbnail_url TEXT NOT NULL,
 	date DATE,
-	PRIMARY KEY (pic_id)
+	PRIMARY KEY (pic_id),
+	KEY `idx_pic_id` (`pic_id`)			 
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';
 	dbDelta($sql);
 }

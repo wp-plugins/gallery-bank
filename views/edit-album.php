@@ -103,7 +103,7 @@
 							{
 								?>
 								<div class="box">
-									<div class="content" style="margin-left:20px;" id="<?php echo $pic_detail[$flag]->pic_id; ?>"  style="border-bottom: solid 1px #e5e5e5; !important">
+									<div class="content" style="margin-left:20px; border-bottom: solid 1px #e5e5e5;" id="<?php echo $pic_detail[$flag]->pic_id; ?>"  style="border-bottom: solid 1px #e5e5e5; !important">
 										<div style="float:left;width:170px;">
 											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px"/>
 											<a class="imgHolder orange" style="margin-left:20px;"  id="del_img" onclick="edit_delete_pic(<?php echo $pic_detail[$flag]->pic_id; ?>);">
@@ -111,7 +111,7 @@
 												<span style="vertical-align:middle;cursor:pointer"><?php _e( "Remove Image", gallery_bank);?></span>
 											</a>
 										</div>
-										<div class="row" style="margin-left:180px!important;margin-top:10px!important;">
+										<div class="row" style="margin-left:180px!important;margin-top:10px;">
 											<label>
 												<?php _e( "Title :", gallery_bank ); ?>
 											</label>
@@ -119,7 +119,7 @@
 												<input type="text" id="ux_edit_title_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo $pic_detail[$flag]->title ;?>" />
 											</div>
 										</div>
-										<div class="row" style="margin-left:180px!important;">
+										<div class="row" style="margin-left:180px!important;border-bottom:none !important">
 											<label>
 												<?php _e( "Description :", gallery_bank ); ?>
 											</label>
@@ -244,31 +244,26 @@
 			{
 				var uxeditdescription = encodeURIComponent(jQuery('#ux_edit_description').val());
 			}
-			jQuery.post(ajaxurl, jQuery(form).serialize() + "&param=update_general_settings&action=album_gallery_library", function(data)
-			{
+			var count_pic = arr.length;
+			jQuery.post(ajaxurl, "id="+arr+"&count_pic="+count_pic+"&param=delete_pic&action=album_gallery_library", function(data)
+			{	
 			});
-			var image;
-			for(image = 0; image < arr.length; image++ )
+			
+			jQuery.post(ajaxurl, jQuery(form).serialize() +"&albumId="+albumId+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
 			{
-				jQuery.post(ajaxurl, "id="+arr[image]+"&albumId="+albumId+"&param=delete_pic&action=album_gallery_library", function(data)
+					
+			});
+			var pics;
+			for(pics = 0; pics < array.length; pics++ )
+			{
+				var pic_path = array[pics];
+				var thumb = thumb_array[pics];
+				var pic_title = jQuery("#pic_title_" + ar[pics]).val();
+				var pic_detail= jQuery("#pic_des_" + ar[pics]).val();
+				jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
 				{
 				});
 			}
-			jQuery.post(ajaxurl, jQuery(form).serialize() +"&albumId="+albumId+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
-			{
-					var pics;
-					for(pics = 0; pics < array.length; pics++ )
-					{
-						var pic_path = array[pics];
-						var thumb = thumb_array[pics];
-						var pic_title = jQuery("#pic_title_" + ar[pics]).val();
-						var pic_detail= jQuery("#pic_des_" + ar[pics]).val();
-						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
-						{
-							
-						});
-					}
-			});
 			<?php
 			for ($flag = 0; $flag < count($pic_detail); $flag++)
 			{
@@ -374,32 +369,29 @@
 				var img = jQuery("<img class=\"imgHolder\" style=\"border:3px solid #e5e5e5;margin-top:10px;\"; id=\"up_img\"/>");
 				if(attachment.sizes.medium != undefined)
 				{
-					img.attr('src', attachment.url);
+					img.attr('src', attachment.sizes.medium.url);
 					thumb_array.push(attachment.sizes.medium.url);
-					
 				}
 				else
 				{
 					img.attr('src', attachment.url);
 					thumb_array.push(attachment.url);
 				}
-				
 				img.attr('width', '150px');
 				innerDiv.append(img);
 				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img style=\"vertical-align:middle;cursor:pointer\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span style=\"vertical-align:middle;cursor:pointer;\"><?php _e("Remove Image",gallery_bank);?></span></a>");
 				innerDiv.append(del);
 				div.append(innerDiv);
 				var box = jQuery("<div class=\"row\" style=\"margin-left:180px;margin-top:10px;\"><label><?php _e("Title :",gallery_bank);?></label><div class=\"right\" ><input type=\"text\" id=\"pic_title_"+dynamicId+"\"/></div></div>");
-				box.css('margin-bottom', '20px');
+				//box.css('margin-bottom', '20px');
 				div.append(box);
-				var text = jQuery("<div class=\"row\" style=\"margin-left:180px\"><label><?php _e("Description :",gallery_bank);?></label><div class=\"right\" ><textarea id=\"pic_des_"+dynamicId+"\" rows=\"10\"></textarea></div></div></br>");
-				text.css('margin-bottom', '10px');
+				var text = jQuery("<div class=\"row\" style=\"margin-left:180px; border-bottom:none !important;\"><label><?php _e("Description :",gallery_bank);?></label><div class=\"right\" ><textarea id=\"pic_des_"+dynamicId+"\" rows=\"10\"></textarea></div></div></br>");
+				//text.css('margin-bottom', '10px');
 				div.append(text);
 				ar.push(dynamicId);
 				div.append('</div>');
 				jQuery("#edit_media").append(div);
 			});
-		
 		});
 		file_frame.open();
 	});

@@ -34,6 +34,7 @@
 	height:auto; /* without this line error in IE8 detected */
 	margin:0 auto;
 	position:relative;
+	border: none !important;
 }
 
 #vlb1lightboxImage{
@@ -131,9 +132,6 @@
 #vlb1prevLinkDetails, #vlb1nextLinkDetails, #vlb1slideShowControl{ background-repeat:no-repeat; outline-style:none; display:block; float:left;}
 #vlb1prevLinkDetails { margin:3px; margin-top:0px; width:24px;height:24px; background:url(../images/prevlabel.gif) left center;}
 #vlb1nextLinkDetails { margin:3px; margin-top:0px; width:24px;height:24px; background:url(../images/nextlabel.gif) right center;}
-
-#vlb1slideShowControl.started{
-	background-image:url(../images/pause.gif);
 }
 
 #vlb1slideShowControl{
@@ -191,7 +189,7 @@
 
 #vlb1outerImageContainer td, #vlb1outerImageContainer tr{
 	font-size:0;
-	border:0 none;
+	border:0 none !important;
 }
 /* frame style */
 #vlb1outerImageContainer td.tl, #vlb1outerImageContainer td.br{

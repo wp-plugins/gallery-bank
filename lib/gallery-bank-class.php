@@ -119,11 +119,11 @@ function plugin_css_scripts_gallery_bank()
 	wp_enqueue_style('forms-btn.css', GALLERY_BK_PLUGIN_URL .'/css/forms-btn.css');
 	wp_enqueue_style('colorpicker.css', GALLERY_BK_PLUGIN_URL .'/css/colorpicker.css');
 	wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
-	wp_enqueue_style('vlightbox1.css', GALLERY_BK_PLUGIN_URL .'/css/vlightbox1.css');
 	wp_enqueue_style('plugins.css', GALLERY_BK_PLUGIN_URL .'/css/plugins.css');
 }
 function frontend_plugin_css_scripts_gallery_bank()
 {
+	
 	wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
 }
 //--------------------------------------------------------------------------------------------------------------//

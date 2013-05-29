@@ -89,7 +89,6 @@
 												<?php _e( "Submit & Save Changes", gallery_bank ); ?>
 											</span>
 										</button>
-									
 								</div>
 							</div>
 						</div>	
@@ -224,11 +223,10 @@ var thumb_array = [];
 			var selection = file_frame.state().get('selection');
 			selection.map( function( attachment ) {
 				attachment = attachment.toJSON();
-				
 				var dynamicId = Math.floor((Math.random() * 1000)+1);
 				var div = jQuery("<div class=\"box\" style=\"border-bottom: solid 1px #e5e5e5;\"id=\""+dynamicId+"\">");
 				var innerDiv = jQuery("<div style=\"float:left;width:170px;margin-left:10px;\">");
-				var img = jQuery("<img class=\"imgHolder\" style=\"border:3px solid #e5e5e5;margin-top:10px;\"; id=\"up_img\"/>");
+				var img = jQuery("<img class=\"imgHolder\" style=\"border:3px solid #e5e5e5;margin-top:10px;\" id=\"up_img\"/>");
 				if(attachment.sizes.medium != undefined)
 				{
 					img.attr('src', attachment.sizes.medium.url);
@@ -237,20 +235,19 @@ var thumb_array = [];
 				else
 				{
 					img.attr('src', attachment.url);
-					thumb_array.push(attachment.url);	
+					thumb_array.push(attachment.url);
 				}
 				arr.push(attachment.url);
 				img.attr('width', '150px');
-								
 				innerDiv.append(img);
 				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img style=\"cursor: pointer;vertical-align:middle;\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span  style=\"cursor: pointer;vertical-align:middle;\"><?php _e("Remove Image",gallery_bank);?></span></a>");
 				innerDiv.append(del);
 				div.append(innerDiv);
-				var box = jQuery("<div class=\"row\" style=\"margin-left:180px\"><label><?php _e("Title :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><input type=\"text\" id=\"title_img_"+dynamicId+"\"/></div></div>");
-				box.css('margin-bottom', '20px');
+				var box = jQuery("<div class=\"row\" style=\"margin-left:180px;\"><label><?php _e("Title :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><input type=\"text\" id=\"title_img_"+dynamicId+"\"/></div></div>");
+				//box.css('margin-bottom', '10px');
 				div.append(box);
-				var text = jQuery("<div class=\"row\" style=\"margin-left:180px\"><label><?php _e("Description :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><textarea id=\"des_img_"+dynamicId+"\" rows=\"10\"></textarea></div></div></br>");
-				text.css('margin-bottom', '10px');
+				var text = jQuery("<div class=\"row\" style=\"margin-left:180px;border-bottom:none !important;\"><label><?php _e("Description :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><textarea id=\"des_img_"+dynamicId+"\" rows=\"10\"></textarea></div></div></br>");
+				// text.css('margin-bottom', '10px');
 				div.append(text);
 				ar.push(dynamicId);
 				div.append('</div>');

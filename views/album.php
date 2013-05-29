@@ -27,7 +27,7 @@ $url = plugins_url('', __FILE__);
 					"SELECT count(album_id) FROM ".gallery_bank_albums(),""
 				)
 			);
-			if($album_count < 1 )
+			if($album_count < 2 )
 			{
 				?>
 					<a href="admin.php?page=add_album" class="events-container-button blue" style="margin-top:20px; margin-left:20px; text-decoration: none;">
@@ -93,8 +93,8 @@ $url = plugins_url('', __FILE__);
 										<td><?php echo $album[$flag] -> author;?></td>
 										<td><?php echo $album[$flag] -> album_date;?></td>
 										<td>
-											<a class="icon-edit hovertip"  data-original-title="<?php _e("Edit Album?", gallery_bank ); ?>" href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>"></a>
-											<a class="icon-trash hovertip" data-original-title="<?php _e("Delete Album", gallery_bank ); ?>" onclick="delete_album(<?php echo $album[$flag]->album_id;?>)"></a>
+											<a class="icon-edit"  href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>"></a>
+											<a class="icon-trash" style="cursor: pointer;" onclick="delete_album(<?php echo $album[$flag]->album_id;?>)"></a>
 										</td>
 									</tr>
 								<?php
