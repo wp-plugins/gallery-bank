@@ -49,7 +49,8 @@ Create responsive and filterable portfolios with ease on your website. Gallery B
 Visit [here](http://gallery-bank.com) to purchase Pro Version now.
 = Technical support =
 
-Please email all your queries/issues at support@gallery-bank.com
+* Please email all your queries/issues at support@gallery-bank.com or use
+* [Forum for Gallery Bank](http://gallery-bank.com/forum/support-forum/), feel free to ask  your queries.
 
 == Installation ==
 
