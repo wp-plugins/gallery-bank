@@ -168,6 +168,7 @@
 	</div>
 </div>
 <script type="text/javascript">
+jQuery("#gallery_bank").addClass("current");
 	var arr =[];
 	var array = [];
 	var ar = [];
@@ -284,8 +285,8 @@
 			jQuery('#error_edit_border_album_message').css('display','none');
 			jQuery('#error_update_album_message').css('display','none');
 			jQuery('#success_update_album_message').css('display','block');
-			jQuery('body').animate({
-			scrollTop: jQuery('body').position().top}, 'slow');
+			jQuery('body,html').animate({
+			scrollTop: jQuery('body,html').position().top}, 'slow');
 			setTimeout(function() 
 			{
 				jQuery('#success_update_album_message').css('display','none');	

@@ -120,52 +120,64 @@
 								$album_id
 							)
 						);
-						?>
-						<div class="box" style=" margin-top: 10px; margin-left: 20px; border: solid 1px #e5e5e5; padding: 10px">
-							<?php
-							for ($flag = 0; $flag < count($pic_detail); $flag++)
-							{
-								?>
-								<div id="bank_pics" style="padding: 10px; display: inline-block; width:860px;border-bottom:solid 1px #E5E5E5;">
-										<?php
-										if($pic_detail[$flag]->description == "")
-										{
-											?>
-											<a class="vlightbox1" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
-											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px;"/></a>
-										<?php
-										}
-										else 
-										{
-											?>
-											<a class="vlightbox1" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
-											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px;"/></a>
-											<?php
-										}
-										?>
-										<div class="row" style="margin-left:180px !important;">
-											<label style="top:10px;">
-												<strong><?php _e( "Title :", gallery_bank ); ?></strong>
-											</label>
-											<div class="right" style="margin-left:40px !important;">
-												<span><?php echo $pic_detail[$flag]->title; ?></span>
-												&nbsp;
-											</div>
-										</div>
-										<div class="row" style="margin-left:180px !important;">
-											<label style="top:10px;">
-												<strong><?php _e( "Description :", gallery_bank ); ?></strong>
-											</label>
-											<div class="right" style="margin-left:80px !important; ">
-												<span><?php echo $pic_detail[$flag]->description;?></span>
-												&nbsp;
-											</div>
-										</div>
-									</div>
-								<?php
-							}
+						if( count($pic_detail) == 0)
+						{
 							?>
-						</div>
+							<div class="box" style=" margin-top: 10px; margin-left: 20px; border: solid 1px #e5e5e5; padding: 10px; display: none;">
+							</div>
+							<?php	
+						}
+						else 
+						{
+						?>
+							<div class="box" style=" margin-top: 10px; margin-left: 20px; border: solid 1px #e5e5e5; padding: 10px">
+								<?php
+								for ($flag = 0; $flag < count($pic_detail); $flag++)
+								{
+									?>
+									<div id="bank_pics" style="padding: 10px; display: inline-block; width:860px;border-bottom:solid 1px #E5E5E5;">
+											<?php
+											if($pic_detail[$flag]->description == "")
+											{
+												?>
+												<a class="vlightbox1" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
+												<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px;"/></a>
+											<?php
+											}
+											else 
+											{
+												?>
+												<a class="vlightbox1" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
+												<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px;"/></a>
+												<?php
+											}
+											?>
+											<div class="row" style="margin-left:180px !important;">
+												<label style="top:10px;">
+													<strong><?php _e( "Title :", gallery_bank ); ?></strong>
+												</label>
+												<div class="right" style="margin-left:40px !important;">
+													<span><?php echo $pic_detail[$flag]->title; ?></span>
+													&nbsp;
+												</div>
+											</div>
+											<div class="row" style="margin-left:180px !important;">
+												<label style="top:10px;">
+													<strong><?php _e( "Description :", gallery_bank ); ?></strong>
+												</label>
+												<div class="right" style="margin-left:80px !important; ">
+													<span><?php echo $pic_detail[$flag]->description;?></span>
+													&nbsp;
+												</div>
+											</div>
+										</div>
+									<?php
+								}
+								?>
+							</div>
+						<?php
+						}
+							?>
 					</div>
 				</form>
 		</div>

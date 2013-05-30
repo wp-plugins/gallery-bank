@@ -26,23 +26,23 @@
 			<a href="admin.php?page=gallery_bank" class="events-container-button blue" style="margin-top:10px;style="text-decoration: none;">
 				<span><?php _e('Back to Albums Page', gallery_bank); ?></span>
 			</a>
+			<div class="message green" id="success_album_message" style="margin-left :20px; display: none;">
+				<span>
+					<strong><?php _e( "Success! Album has been saved.", gallery_bank); ?></strong>
+				</span>
+			</div>
+			<div class="message red" id="error_album_message" style="margin-left :20px; display: none;">
+				<span>
+					<strong><?php _e( "Error! Slide Interval can't be zero.", gallery_bank); ?></strong>
+				</span>
+			</div>
+			<div class="message red" id="error_border_album_message" style="margin-left :20px; display: none;">
+				<span>
+					<strong><?php _e( "Error! Border width can't be zero.", gallery_bank); ?></strong>
+				</span>
+			</div>
 			<div id="add-album"  style="display: block;padding:10px 10px 10px 0px;">
 				<form id="add_new_album" class="form-horizontal" method="post" action="">
-					<div class="message green" id="success_album_message" style="margin-left :20px; display: none;">
-						<span>
-							<strong><?php _e( "Success! Album has been saved.", gallery_bank); ?></strong>
-						</span>
-					</div>
-					<div class="message red" id="error_album_message" style="margin-left :20px; display: none;">
-						<span>
-							<strong><?php _e( "Error! Slide Interval can't be zero.", gallery_bank); ?></strong>
-						</span>
-					</div>
-					<div class="message red" id="error_border_album_message" style="margin-left :20px; display: none;">
-						<span>
-							<strong><?php _e( "Error! Border width can't be zero.", gallery_bank); ?></strong>
-						</span>
-					</div>
 					<div class="body">
 						<div class="box">
 							<div class="content">
@@ -110,6 +110,7 @@
 	</div>
 </div>
 <script type="text/javascript">
+jQuery("#gallery_bank").addClass("current");
 var arr =[];
 var ar = [];
 var thumb_array = [];
@@ -199,8 +200,8 @@ var thumb_array = [];
 				jQuery('#error_album_message').css('display','none');
 				jQuery('#error_border_album_message').css('display','none');
 				jQuery('#success_album_message').css('display','block');
-				jQuery('body').animate({
-				scrollTop: jQuery('body').position().top}, 'slow');
+				jQuery('body,html').animate({
+				scrollTop: jQuery('body,html').position().top}, 'slow');
 				setTimeout(function()
 				{
 					jQuery('#success_album_message').css('display','none');
