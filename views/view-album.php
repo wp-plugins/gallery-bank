@@ -156,7 +156,7 @@
 												<label style="top:10px;">
 													<strong><?php _e( "Title :", gallery_bank ); ?></strong>
 												</label>
-												<div class="right" style="margin-left:40px !important;">
+												<div class="right">
 													<span><?php echo $pic_detail[$flag]->title; ?></span>
 													&nbsp;
 												</div>
@@ -165,7 +165,7 @@
 												<label style="top:10px;">
 													<strong><?php _e( "Description :", gallery_bank ); ?></strong>
 												</label>
-												<div class="right" style="margin-left:80px !important; ">
+												<div class="right" >
 													<span><?php echo $pic_detail[$flag]->description;?></span>
 													&nbsp;
 												</div>
@@ -195,7 +195,7 @@
 	</div>
 </div>
 <script type="text/javascript">
-
+jQuery("#gallery_bank").addClass("current");
 jQuery(document).ready(function(){
 	window.Lightbox = new jQuery().visualLightbox({
 		autoPlay:false,
@@ -209,5 +209,4 @@ jQuery(document).ready(function(){
 		slideTime:4,
 		startZoom:true}) 
 		});
-
 </script>
