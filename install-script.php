@@ -38,22 +38,42 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_pics() . '"')) == 0
 }
 if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) != 0)
 {
-	$wpdb->query
+	$check = $wpdb->get_var
 	(
 		$wpdb->prepare
 		(
-			"ALTER TABLE " . gallery_bank_albums() . " DROP number_of_pics",""
+			"SHOW COLUMNS FROM " . gallery_bank_albums() . " LIKE 'number_of_pics'",""
 		)
 	);
+	if($check != "")
+	{
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"ALTER TABLE " . gallery_bank_albums() . " DROP number_of_pics",""
+			)
+		);
+	}
 }
 if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_pics() . '"')) != 0)
 {
-	$wpdb->query
+	$check = $wpdb->get_var
 	(
 		$wpdb->prepare
 		(
-			"ALTER TABLE " . gallery_bank_pics() . " ADD album_cover BIT NOT NULL",""
+			"SHOW COLUMNS FROM " . gallery_bank_pics() . " LIKE 'album_cover'",""
 		)
 	);
+	if($check != "album_cover")
+	{
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"ALTER TABLE " . gallery_bank_pics() . " ADD album_cover BIT NOT NULL",""
+			)
+		);
+	}
 }
 ?>
