@@ -13,9 +13,12 @@ Gallery Bank is an interactive WordPress photo gallery plugin, best fit for crea
 
 Create responsive and filterable portfolios with ease on your website. Gallery Bank comes with masonry layout, is designed to adapt each portfolio to any situation and is mobile optimized for responsive themes.
 
+<a href="http://gallery-bank.com/forum/support-forum/" target="_blank">Support - feel free to ask your queries</a>
+
+<a href="http://gallery-bank.com/" target="_blank">Upgrade to Pro Version</a>
+
 = Features =
-* [Forum for Gallery Bank](http://gallery-bank.com/forum/support-forum/), feel free to ask  your queries.
-* [Purchase Pro Version](http://gallery-bank.com/) with access to all the features of the amazing gallery bank plugin.
+
 * Create any amount of albums in the gallery.
 * Add description to each album and then title & description to each image in your album.
 * Upoad any number of photos to each album in the gallery.
@@ -44,7 +47,31 @@ Create responsive and filterable portfolios with ease on your website. Gallery B
 * View pictures as a slide show and in a full size
 * Change background color
 
-Visit [here](http://gallery-bank.com) to purchase Pro Version now.
+Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
+
+= Tramslations = 
+
+* Arabic (ar_AR)
+* Brazilian Portuguese (pt_BR)
+* Czech (cs_CZ)
+* Danish (da_DA)
+* Dutch (nl_NL)
+* English (en)
+* Finnish (fi_FI)
+* French (fr_FR)
+* German (de_DE)
+* Hebrew (he_IL)
+* Korean (ko_KR)
+* Italian (it_IT)
+* Korean (hu_HU)
+* Polish (pl_PL) 
+* Russian (ru_RU)
+* Serbian (sr_RS)
+* Spanish (es_ES)
+* Swedish (sv_SV)
+* Turkish (tr_TR)
+
+
 = Technical support =
 
 * Please email all your queries/issues at support@gallery-bank.com or use
