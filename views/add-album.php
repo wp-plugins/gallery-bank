@@ -190,11 +190,19 @@ var thumb_array = [];
 					var thumb = thumb_array[pic];
 					var title = jQuery("#title_img_" + ar[pic]).val();
 					var detail= jQuery("#des_img_" + ar[pic]).val();
-					jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&path="+path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
+					var alb_cover = jQuery('input:radio[id=cover_'+ar[pic]+']:checked').val();
+					if(alb_cover == "on")
 					{
-						jQuery.post(ajaxurl,"album_id="+album_id+"&param=add_pic_count&action=album_gallery_library", function(data)
-						{
-						});
+						alb_cover1 = 1;
+					}
+					else
+					{
+						alb_cover1 = 0;
+					}
+					
+					jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&alb_cover="+alb_cover1+"&path="+path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
+					{
+
 					});
 				}
 				jQuery('#error_album_message').css('display','none');
@@ -242,14 +250,17 @@ var thumb_array = [];
 				arr.push(attachment.url);
 				img.attr('width', '150px');
 				innerDiv.append(img);
+				var cover = jQuery("<input type=\"radio\" checked=\"checked\" style=\"cursor: pointer;\" id=\"cover_"+dynamicId+"\" name = \"album_cover\"><?php _e(" Set Image as Album Cover",gallery_bank);?>");
+				cover.css('margin-bottom', '10px');
+				innerDiv.append(cover);
 				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img style=\"cursor: pointer;vertical-align:middle;\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span  style=\"cursor: pointer;vertical-align:middle;\"><?php _e("Remove Image",gallery_bank);?></span></a>");
 				innerDiv.append(del);
 				div.append(innerDiv);
 				var box = jQuery("<div class=\"row\" style=\"margin-left:180px;\"><label><?php _e("Title :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><input type=\"text\" id=\"title_img_"+dynamicId+"\"/></div></div>");
-				//box.css('margin-bottom', '10px');
+				box.css('margin-bottom', '10px');
 				div.append(box);
 				var text = jQuery("<div class=\"row\" style=\"margin-left:180px;border-bottom:none !important;\"><label><?php _e("Description :",gallery_bank);?></label><div class=\"right\" style=\"margin-left:80px !important;\"><textarea id=\"des_img_"+dynamicId+"\" rows=\"10\"></textarea></div></div></br>");
-				// text.css('margin-bottom', '10px');
+				text.css('margin-bottom', '10px');
 				div.append(text);
 				ar.push(dynamicId);
 				div.append('</div>');

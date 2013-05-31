@@ -22,7 +22,7 @@ img { border: 0; }
 	position : relative;
 	background : url(../gfx/main-left.png) repeat-y left top #FFFFFF;
 	margin : 10px;
-	width : 980px;
+	width : 1024px;
 	
 	height : auto !important;
 	height : 100%;

@@ -4,7 +4,7 @@
  Plugin URI: http://gallery-bank.com
  Description: Gallery Bank is an interactive WordPress photo gallery plugin, best fit for creative and corporate portfolio websites.
  Author: Gallery-Bank
- Version: 1.4
+ Version: 1.5
  Author URI: http://gallery-bank.com
 */
 	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

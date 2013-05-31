@@ -91,8 +91,17 @@
 									(
 										$wpdb->prepare
 										(
-										"SELECT * FROM ". gallery_bank_pics(). " WHERE album_id = %d",
+										"SELECT * FROM ". gallery_bank_pics(). " WHERE album_id = %d order by pic_id asc",
 										$album_id
+										)
+									);
+									$cover = $wpdb->get_var
+									(
+										$wpdb->prepare
+										(
+										"SELECT pic_id FROM ". gallery_bank_pics(). " WHERE album_id = %d and album_cover = %d",
+										$album_id,
+										1
 										)
 									);
 								?>
@@ -106,12 +115,18 @@
 									<div class="content" style="margin-left:20px; border-bottom: solid 1px #e5e5e5;" id="<?php echo $pic_detail[$flag]->pic_id; ?>"  style="border-bottom: solid 1px #e5e5e5; !important">
 										<div style="float:left;width:170px;">
 											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px"/>
+											<input type="radio" style="cursor: pointer; margin-bottom: 10px;" id="edit_cover_<?php echo $pic_detail[$flag]->pic_id ;?>" name="edit_album_cover"/><?php _e(" Set Image as Album Cover",gallery_bank);?>
+											<script>
+												var id = "<?php echo $cover; ?>";
+												jQuery("#edit_cover_" + id).attr('checked',true);
+												
+											</script>
 											<a class="imgHolder orange" style="margin-left:20px;"  id="del_img" onclick="edit_delete_pic(<?php echo $pic_detail[$flag]->pic_id; ?>);">
 												<img style="vertical-align:middle;cursor:pointer" src="<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>" alt="">&nbsp; 
 												<span style="vertical-align:middle;cursor:pointer"><?php _e( "Remove Image", gallery_bank);?></span>
 											</a>
 										</div>
-										<div class="row" style="margin-left:180px!important;margin-top:10px;">
+										<div class="row" style="margin-left:180px!important;margin-top:10px; margin-bottom: 10px;">
 											<label>
 												<?php _e( "Title :", gallery_bank ); ?>
 											</label>
@@ -119,7 +134,7 @@
 												<input type="text" id="ux_edit_title_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo $pic_detail[$flag]->title ;?>" />
 											</div>
 										</div>
-										<div class="row" style="margin-left:180px!important;border-bottom:none !important">
+										<div class="row" style="margin-left:180px!important;border-bottom:none !important; margin-bottom: 20px;">
 											<label>
 												<?php _e( "Description :", gallery_bank ); ?>
 											</label>
@@ -261,7 +276,16 @@ jQuery("#gallery_bank").addClass("current");
 				var thumb = thumb_array[pics];
 				var pic_title = jQuery("#pic_title_" + ar[pics]).val();
 				var pic_detail= jQuery("#pic_des_" + ar[pics]).val();
-				jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
+				var cover_pic = jQuery('input:radio[id=cover_pic_'+ar[pics]+']:checked').val();
+				if(cover_pic == undefined)
+				{
+					cover_pic = 0;
+				}
+				else
+				{
+					cover_pic = 1;
+				}
+				jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&alb_cover="+cover_pic+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
 				{
 				});
 			}
@@ -272,11 +296,17 @@ jQuery("#gallery_bank").addClass("current");
 				var picId = <?php  echo $pic_detail[$flag]->pic_id; ?>;
 				var edit_title = jQuery("#ux_edit_title_" + picId).val();
 				var edit_detail = jQuery("#ux_edit_desc_" + picId).val();
-				jQuery.post(ajaxurl,"albumId="+albumId+"&picId="+picId+"&edit_title="+edit_title+"&edit_detail="+edit_detail+"&param=update_pic&action=album_gallery_library", function(data)
+				var edit_cover = jQuery('input:radio[id=edit_cover_' + picId+']:checked').val();
+				if(edit_cover == "on")
 				{
-					jQuery.post(ajaxurl,"album_id="+albumId+"&param=add_pic_count&action=album_gallery_library", function(data)
-					{
-					});
+					edit_cover = 1;
+				}
+				else
+				{
+					edit_cover = 0;
+				}
+				jQuery.post(ajaxurl,"albumId="+albumId+"&picId="+picId+"&edit_title="+edit_title+"&edit_detail="+edit_detail+"&edit_cover="+edit_cover+"&param=update_pic&action=album_gallery_library", function(data)
+				{
 				});
 			<?php
 			}
@@ -335,8 +365,7 @@ jQuery("#gallery_bank").addClass("current");
 		{
 			jQuery("#div_edit_slide_interval").css('display','none');
 		}
-	}
-			
+	}		
 	function edit_delete_pic(pic_id)
 	{
 		bootbox.confirm("<?php _e( "Are you sure you want to delete this Picture?", gallery_bank ); ?>", function(confirmed)
@@ -381,14 +410,17 @@ jQuery("#gallery_bank").addClass("current");
 				}
 				img.attr('width', '150px');
 				innerDiv.append(img);
+				var cover = jQuery("<input type=\"radio\" style=\"cursor: pointer;\" id=\"cover_pic_"+dynamicId+"\" name = \"edit_album_cover\"><?php _e(" Set Image as Album Cover",gallery_bank);?>");
+				cover.css('margin-bottom', '10px');
+				innerDiv.append(cover);
 				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img style=\"vertical-align:middle;cursor:pointer\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span style=\"vertical-align:middle;cursor:pointer;\"><?php _e("Remove Image",gallery_bank);?></span></a>");
 				innerDiv.append(del);
 				div.append(innerDiv);
 				var box = jQuery("<div class=\"row\" style=\"margin-left:180px;margin-top:10px;\"><label><?php _e("Title :",gallery_bank);?></label><div class=\"right\" ><input type=\"text\" id=\"pic_title_"+dynamicId+"\"/></div></div>");
-				//box.css('margin-bottom', '20px');
+				box.css('margin-bottom', '10px');
 				div.append(box);
 				var text = jQuery("<div class=\"row\" style=\"margin-left:180px; border-bottom:none !important;\"><label><?php _e("Description :",gallery_bank);?></label><div class=\"right\" ><textarea id=\"pic_des_"+dynamicId+"\" rows=\"10\"></textarea></div></div></br>");
-				//text.css('margin-bottom', '10px');
+				text.css('margin-bottom', '10px');
 				div.append(text);
 				ar.push(dynamicId);
 				div.append('</div>');

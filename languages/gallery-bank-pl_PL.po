@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-05-29 10:00+0530\n"
-"PO-Revision-Date: 2013-05-29 10:00+0530\n"
+"POT-Creation-Date: 2013-05-31 15:45+0530\n"
+"PO-Revision-Date: 2013-05-31 15:50+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,7 +16,7 @@ msgstr ""
 
 #: lib/gallery-bank-class.php:9 lib/gallery-bank-class.php:10
 #: views/add-album.php:11 views/album.php:11 views/edit-album.php:11
-#: views/menus-gallery-bank.php:7 views/view-album.php:11
+#: views/menus-gallery-bank.php:8 views/view-album.php:11
 msgid "Gallery Bank"
 msgstr ""
 
@@ -33,15 +33,15 @@ msgstr "Utwórz nowy albumu"
 msgid "Back to Albums Page"
 msgstr "z powrotem do Albumy"
 
-#: views/add-album.php:33
+#: views/add-album.php:31
 msgid "Success! Album has been saved."
 msgstr "Sukces! albumów ma było zapisany."
 
-#: views/add-album.php:38 views/edit-album.php:36
+#: views/add-album.php:36 views/edit-album.php:36
 msgid "Error! Slide Interval can't be zero."
 msgstr "Błąd! slajdów  Interval  nie może być zero."
 
-#: views/add-album.php:43 views/edit-album.php:41
+#: views/add-album.php:41 views/edit-album.php:41
 msgid "Error! Border width can't be zero."
 msgstr "Błąd! granica szerokość nie może być zero."
 
@@ -49,9 +49,9 @@ msgstr "Błąd! granica szerokość nie może być zero."
 msgid "Album Name :"
 msgstr "Nazwa albumu :"
 
-#: views/add-album.php:58 views/add-album.php:249 views/edit-album.php:69
-#: views/edit-album.php:124 views/edit-album.php:388 views/view-album.php:60
-#: views/view-album.php:157
+#: views/add-album.php:58 views/add-album.php:262 views/edit-album.php:69
+#: views/edit-album.php:139 views/edit-album.php:422 views/view-album.php:60
+#: views/view-album.php:166
 msgid "Description :"
 msgstr "Opis :"
 
@@ -63,20 +63,24 @@ msgstr "przesłać zdjęcia :"
 msgid "Browse Here"
 msgstr "przeglądaj tutaj"
 
-#: views/add-album.php:89 views/edit-album.php:147
+#: views/add-album.php:89 views/edit-album.php:162
 msgid "Submit & Save Changes"
 msgstr "przedkładać & oszczędzać zmiany"
 
-#: views/add-album.php:118 views/edit-album.php:298 views/edit-album.php:340
+#: views/add-album.php:119 views/edit-album.php:329 views/edit-album.php:371
 msgid "Are you sure you want to delete this Picture?"
 msgstr "Czy na pewno chcesz usunąć ten obraz?"
 
-#: views/add-album.php:243 views/edit-album.php:111 views/edit-album.php:382
+#: views/add-album.php:253 views/edit-album.php:118 views/edit-album.php:413
+msgid " Set Image as Album Cover"
+msgstr "zestaw obrazu jako okładkę albumu"
+
+#: views/add-album.php:256 views/edit-album.php:126 views/edit-album.php:416
 msgid "Remove Image"
 msgstr "Usuń obraz"
 
-#: views/add-album.php:246 views/edit-album.php:116 views/edit-album.php:385
-#: views/view-album.php:148
+#: views/add-album.php:259 views/edit-album.php:131 views/edit-album.php:419
+#: views/view-album.php:157
 msgid "Title :"
 msgstr "Tytuł :"
 
@@ -85,30 +89,38 @@ msgid "Album Name"
 msgstr "Nazwa Albumu"
 
 #: views/album.php:49
-msgid "Short Code"
-msgstr "krótki kod"
+msgid "Shortcode - Only Pics"
+msgstr "Krótki kod - tylko zdjęcia"
 
 #: views/album.php:50
-msgid "No. of Pictures"
-msgstr "Liczba zdjęcia"
+msgid "Shortcode - Album Cover with Pics"
+msgstr "Krótki kod -  albumu okładka z fotki "
 
 #: views/album.php:51
+msgid "Total Pics"
+msgstr "łączny zdjęcia"
+
+#: views/album.php:52
 msgid "Author"
 msgstr "autor"
 
-#: views/album.php:52
-msgid "Album Date"
-msgstr "Albumu Data"
-
 #: views/album.php:53
+msgid "Date"
+msgstr "data"
+
+#: views/album.php:54
 msgid "Action"
 msgstr "Akcja"
 
-#: views/album.php:139
+#: views/album.php:78
+msgid "View Album"
+msgstr "Zobacz albumu"
+
+#: views/album.php:128
 msgid "Are you sure you want to delete this Album?"
 msgstr "Czy na pewno chcesz usunąć ten albumu?"
 
-#: views/album.php:149
+#: views/album.php:138
 msgid "Error! you are unable to delete this Album until Album has Pictures."
 msgstr "Błąd!ty nie są w stanie usunąć ten album aż albumu mieć zdjęcia."
 
@@ -124,25 +136,29 @@ msgstr "z powrotem do Albumy"
 msgid "Success! Album has been Updated."
 msgstr "Sukces! Album został zaktualizowany."
 
-#: views/edit-album.php:159
+#: views/edit-album.php:174
 msgid "&copy; 2013 Gallery-Bank"
 msgstr ""
 
-#: views/edit-album.php:162
+#: views/edit-album.php:177
 msgid "Powered by "
 msgstr ""
 
-#: views/edit-album.php:164
+#: views/edit-album.php:179
 msgid "Gallery Bank!"
 msgstr ""
+
+#: views/front-view-albums.php:32 views/view-album.php:27
+msgid "Back to Albums"
+msgstr "z powrotem do Albumy"
+
+#: views/front-view-albums.php:47
+msgid "See Album images"
+msgstr "Zobacz zdjęcia albumu  :"
 
 #: views/view-album.php:21
 msgid "Album Details"
 msgstr "Szczegóły Albumu"
-
-#: views/view-album.php:27
-msgid "Back to Albums"
-msgstr "z powrotem do Albumy"
 
 #: views/view-album.php:71
 msgid "Author Name :"
@@ -155,3 +171,12 @@ msgstr "Liczba zdjęcia :"
 #: views/view-album.php:103
 msgid "Album Date:"
 msgstr "Data albumu :"
+
+#~ msgid "Short Code"
+#~ msgstr "krótki kod"
+
+#~ msgid "No. of Pictures"
+#~ msgstr "Liczba zdjęcia"
+
+#~ msgid "Album Date"
+#~ msgstr "Albumu Data"

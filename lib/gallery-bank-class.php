@@ -11,6 +11,7 @@ function create_global_menus_for_gallery_bank()
 		add_submenu_page('', '','' , 'administrator', 'add_album', 'add_album');
 		add_submenu_page('', '','' , 'administrator', 'view_album', 'view_album');
 		add_submenu_page('', '','' , 'administrator', 'edit_album', 'edit_album');
+		add_submenu_page('', '','' , 'administrator', 'pro_version', 'pro_version');
 	
 }
 //--------------------------------------------------------------------------------------------------------------//
@@ -154,7 +155,13 @@ if(isset($_REQUEST['action']))
 			global $wpdb;
 			include_once GALLERY_BK_PLUGIN_DIR . '/lib/api_key-class.php';
 		}
-		
+		case "front_albums_gallery_library":
+		add_action( 'admin_init', 'front_albums_gallery_library');
+		function front_albums_gallery_library()
+		{
+			global $wpdb;
+			include_once GALLERY_BK_PLUGIN_DIR . '/lib/front-view-album-class.php';
+		}
 	}
 }
 function gallery_bank_short_code($atts) 
@@ -169,9 +176,22 @@ function gallery_bank_short_code($atts)
 	}
 	return extract_short_code($con);
 }
+function gallery_bank_short_code_album($atts) 
+{
+	extract(shortcode_atts(array(
+	"album_id" => '',
+	), $atts));
+	$con = '';
+	foreach((array)$album_id as $f)
+	{
+		$con .=  $f;
+	}
+	return extract_short_code_album($con);
+}
 function extract_short_code($con) 
 {
 	$album_id = $con;
+	ob_start();
 	?>
 		<div style="display:block">
 			<div id="view_bank_album_<?php echo $album_id; ?>">
@@ -185,13 +205,36 @@ function extract_short_code($con)
 			</div> 
 		</div>
 	<?php
-	
+		$gallerybank_output_album = ob_get_clean();
+		wp_reset_query();
+		return $gallerybank_output_album;	
 }
-
+function extract_short_code_album($con) 
+{
+	$album_id = $con;
+	ob_start();
+	?>
+		<div style="display:block" >
+			<div id="view_bank_album_<?php echo $album_id; ?>">
+				<div class="body">
+					<div class="box">
+						<div class="content">
+							<?php require GALLERY_BK_PLUGIN_DIR.'/views/front-view-albums.php';?>
+						</div>
+					</div>
+				</div> 
+			</div> 
+		</div>
+	<?php
+	$gallerybank_output = ob_get_clean();
+	wp_reset_query();
+	return $gallerybank_output;	
+}
 add_action('admin_init','plugin_js_scripts_gallery_bank');
 add_action('admin_init','plugin_css_scripts_gallery_bank');
 add_action('init','frontend_plugin_js_scripts_gallery_bank');
 add_action('init','frontend_plugin_css_scripts_gallery_bank');
 add_action('admin_menu','create_global_menus_for_gallery_bank');
 add_shortcode('gallery_bank', 'gallery_bank_short_code' );
+add_shortcode('gallery_bank_album_cover', 'gallery_bank_short_code_album');
 ?>

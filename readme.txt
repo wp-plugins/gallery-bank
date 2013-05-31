@@ -2,8 +2,8 @@
 Contributors: Gallery-Bank
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
 Requires at least: 3.0
-Tested up to: 3.5.1
-Stable tag: 1.4
+Tested up to: 3.6 Beta
+Stable tag: 1.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -67,6 +67,12 @@ Visit [here](http://gallery-bank.com) to purchase Pro Version now.
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 1.5 =
+
+* Album Covers Introduced
+* Css Conflicts Fixed
+* All Translations Updated
 
 = 1.4 =
 

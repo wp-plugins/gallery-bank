@@ -115,17 +115,19 @@ else
 			$ux_title = esc_attr($_REQUEST["title"]);
 			$ux_detail = esc_attr($_REQUEST["detail"]);
 			$thumbnail_url = esc_attr($_REQUEST["thumb"]);
+			$alb_cover = intval($_REQUEST["alb_cover"]);
 			$wpdb->query
 			(
 				$wpdb->prepare
 				(
-					"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,thumbnail_url,title,description,date)
-					VALUES(%d,%s,%s,%s,%s,CURDATE())",
+					"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,thumbnail_url,title,description,date,album_cover)
+					VALUES(%d,%s,%s,%s,%s,CURDATE(),%d)",
 					$ux_albumid,
 					$ux_path,
 					$thumbnail_url,
 					$ux_title,
-					$ux_detail
+					$ux_detail,
+					$alb_cover
 					
 				)
 			);
@@ -137,13 +139,15 @@ else
 			$albumId = intval($_REQUEST['albumId']);
 			$edit_title = esc_attr($_REQUEST['edit_title']);
 			$edit_detail = esc_attr($_REQUEST['edit_detail']);
+			$edit_cover = esc_attr($_REQUEST["edit_cover"]);
 			$wpdb->query
 			(
 				$wpdb->prepare
 				(
-					"UPDATE " .gallery_bank_pics(). " SET title = %s, description= %s WHERE pic_id = %d",
+					"UPDATE " .gallery_bank_pics(). " SET title = %s, description= %s, album_cover = %d WHERE pic_id = %d",
 					$edit_title,
 					$edit_detail,
+					$edit_cover,
 					$pic_id
 				)
 			);

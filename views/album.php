@@ -46,10 +46,11 @@ $url = plugins_url('', __FILE__);
 		 					<thead>
 								<tr>
 									<th style="width:10%"><?php _e( "Album Name", gallery_bank ); ?></th>
-									<th style="width:20%"><?php _e( "Short Code", gallery_bank ); ?></th>
-									<th style="width:10%"><?php _e( "No. of Pictures", gallery_bank ); ?></th>
-									<th style="width:8%"><?php _e( "Author", gallery_bank ); ?></th>
-									<th style="width:10%"><?php _e( "Album Date", gallery_bank ); ?></th>
+									<th style="width:15%"><?php _e( "Shortcode - Only Pics", gallery_bank ); ?></th>
+									<th style="width:25%"><?php _e( "Shortcode - Album Cover with Pics", gallery_bank ); ?></th>
+									<th style="width:10%"><?php _e( "Total Pics", gallery_bank ); ?></th>
+									<th style="width:7%"><?php _e( "Author", gallery_bank ); ?></th>
+									<th style="width:8%"><?php _e( "Date", gallery_bank ); ?></th>
 									<th style="width:4%"><?php _e( "Action", gallery_bank ); ?></th>
 								</tr>
 							</thead>
@@ -68,28 +69,16 @@ $url = plugins_url('', __FILE__);
 									(
 										$wpdb->prepare
 										(
-											"SELECT count(".gallery_bank_albums().".number_of_pics) FROM ".gallery_bank_albums()." join ".gallery_bank_pics()." on ".gallery_bank_albums().".album_id =  ".gallery_bank_pics().".album_id where ".gallery_bank_albums().".album_id = %d ",
+											"SELECT count(".gallery_bank_albums().".album_id) FROM ".gallery_bank_albums()." join ".gallery_bank_pics()." on ".gallery_bank_albums().".album_id =  ".gallery_bank_pics().".album_id where ".gallery_bank_albums().".album_id = %d ",
 											$album[$flag]->album_id
 										)
 									);
 								?>
 									<tr>
-										<td><a href="admin.php?page=view_album&album_id=<?php echo $album[$flag]->album_id;?>" style="text-decoration: none;"><?php echo $album[$flag] -> album_name;?></a></td>
+										<td><a href="admin.php?page=view_album&album_id=<?php echo $album[$flag]->album_id;?>"  title="<?php _e( "View Album", gallery_bank);?>" style="text-decoration: none;"><?php echo $album[$flag] -> album_name;?></a></td>
 										<td id="view_bank_album">[gallery_bank album_id=<?php echo $album[$flag]->album_id;?>][/gallery_bank]</td>
-										<?php
-										if($count_pic == "")
-										{
-											?>
-											<td><?php echo 0;?></td>
-											<?php
-										}
-										else 
-										{
-											?>
-											<td><?php echo $count_pic;?></td>
-											<?php
-										}	
-										?>		
+										<td id="view_bank_album">[gallery_bank_album_cover album_id=<?php echo $album[$flag]->album_id;?>][/gallery_bank_album_cover]</td>
+										<td><?php echo $count_pic;?></td>
 										<td><?php echo $album[$flag] -> author;?></td>
 										<td><?php echo $album[$flag] -> album_date;?></td>
 										<td>
@@ -131,8 +120,8 @@ $url = plugins_url('', __FILE__);
 		{
 			"sLengthMenu": "_MENU_"
 		},
-		"aaSorting": [[ 5, "asc" ]],
-		"aoColumnDefs": [{ "bSortable": false, "aTargets": [5] }]
+		"aaSorting": [[ 6, "asc" ]],
+		"aoColumnDefs": [{ "bSortable": false, "aTargets": [6] }]
 	});
 	function delete_album(album_id) 
 	{
