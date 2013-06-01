@@ -1,6 +1,6 @@
 === Gallery Bank ===
 Contributors: Gallery-Bank
-Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery
+Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery, photo gallery, lightbox
 Requires at least: 3.0
 Tested up to: 3.6 Beta
 Stable tag: 1.5
