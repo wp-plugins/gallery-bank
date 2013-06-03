@@ -35,7 +35,7 @@
 						<br/>
 						<div id="bank_pics_<?php echo $flag; ?>" style="padding:10px; display: inline-block;">
 							<a class="vlightbox1<?php echo $album_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
-							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;" /></a>
+							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;"  width="150px" /></a>
 						</div>
 					<?php
 					}
@@ -44,7 +44,7 @@
 					?>
 						<div id="bank_pics_<?php echo $flag; ?>" style="padding: 10px; display: inline-block;">
 							<a class="vlightbox1<?php echo $album_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
-							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;" /></a>
+							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;"   width="150px" /></a>
 						</div>
 					<?php
 					}
@@ -57,7 +57,7 @@
 						<br/>
 						<div id="bank_pics_<?php echo $flag; ?>" style="padding: 10px; display: inline-block;">
 							<a class="vlightbox1<?php echo $album_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
-							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;" /></a>
+							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;"  width="150px" /></a>
 						</div>
 					<?php
 					}
@@ -66,7 +66,7 @@
 					?>
 						<div id="bank_pics_<?php echo $flag; ?>" style="padding: 10px; display: inline-block;">
 							<a class="vlightbox1<?php echo $album_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
-							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;" /></a>
+							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;"  width="150px" /></a>
 						</div>
 					<?php
 					}
