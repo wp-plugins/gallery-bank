@@ -76,7 +76,6 @@ function view_album()
 	global $wpdb;
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
-	
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/view-album.php';
 }
 function edit_album()
@@ -84,7 +83,6 @@ function edit_album()
 	global $wpdb;
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
-
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/edit-album.php';
 }
 

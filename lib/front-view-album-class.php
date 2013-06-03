@@ -1,11 +1,4 @@
 <?php
-global $wpdb;
-if (!current_user_can("edit_posts") && ! current_user_can("edit_pages"))
-{
-	return;
-}
-else
-{
 	if(isset($_REQUEST["param"]))
 	{
 		if($_REQUEST["param"] == "show_images")
@@ -42,7 +35,7 @@ else
 						<br/>
 						<div id="bank_pics_<?php echo $flag; ?>" style="padding:10px; display: inline-block;">
 							<a class="vlightbox1<?php echo $album_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
-							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>; height: <?php echo $album->image_height; ?>px; width: <?php echo $album->image_width; ?>px;" /></a>
+							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;" /></a>
 						</div>
 					<?php
 					}
@@ -51,7 +44,7 @@ else
 					?>
 						<div id="bank_pics_<?php echo $flag; ?>" style="padding: 10px; display: inline-block;">
 							<a class="vlightbox1<?php echo $album_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
-							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>; height: <?php echo $album->image_height; ?>px; width: <?php echo $album->image_width; ?>px;" /></a>
+							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;" /></a>
 						</div>
 					<?php
 					}
@@ -64,7 +57,7 @@ else
 						<br/>
 						<div id="bank_pics_<?php echo $flag; ?>" style="padding: 10px; display: inline-block;">
 							<a class="vlightbox1<?php echo $album_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
-							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>; height: <?php echo $album->image_height; ?>px; width: <?php echo $album->image_width; ?>px;" /></a>
+							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;" /></a>
 						</div>
 					<?php
 					}
@@ -73,7 +66,7 @@ else
 					?>
 						<div id="bank_pics_<?php echo $flag; ?>" style="padding: 10px; display: inline-block;">
 							<a class="vlightbox1<?php echo $album_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
-							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>; height: <?php echo $album->image_height; ?>px; width: <?php echo $album->image_width; ?>px;" /></a>
+							<img src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border: <?php echo $album->border_width;?>px solid <?php echo $album->border_color;?>;" /></a>
 						</div>
 					<?php
 					}
@@ -140,5 +133,5 @@ else
 			die();
 		}
 	}
-}
+
 ?>

@@ -34,7 +34,7 @@
 <div id="main_div<?php echo $album_id;?>" style="display: block;" class="album-cover">
 	<div class="box" style=" margin-top: 10px;">
 		<div id="view_bank_album_<?php echo $album_id;?>" style=" margin-top: 10px; padding: 10px;" > 
-			<img class="imgHolder" src="<?php echo $album_cover->thumbnail_url; ?>" onclick="view_images(<?php echo $album_id;?>);" style="display:inline-block;border:5px solid #000; cursor:pointer; height: <?php echo $album->image_height; ?>px; width: <?php echo $album->image_width; ?>px;" />
+			<img class="imgHolder" src="<?php echo $album_cover->thumbnail_url; ?>" onclick="view_images(<?php echo $album_id;?>);" style="display:inline-block;border:5px solid #000; cursor:pointer;" />
 			<div style="text-align: justify;display:inline-block;vertical-align:middle;margin-left:20px;">
 				<div>
 					<h3><?php echo $album->album_name; ?>&nbsp;</h3>
