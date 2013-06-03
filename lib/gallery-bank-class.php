@@ -28,11 +28,7 @@ function gallery_bank_pics()
 	global $wpdb;
 	return $wpdb->prefix . 'gallery_pics';
 }
-function settingTable()
-{
-	global $wpdb;
-	return $wpdb->prefix . 'gallery_settings';
-}
+
 //--------------------------------------------------------------------------------------------------------------//
 // CODE FOR CREATING PAGES
 //---------------------------------------------------------------------------------------------------------------//
@@ -148,13 +144,7 @@ if(isset($_REQUEST['action']))
 			global $wpdb;
 			include_once GALLERY_BK_PLUGIN_DIR . '/lib/album-gallery-bank-class.php';
 		}
-		case "apikeyLibrary":
-		add_action( 'admin_init', 'apikeyLibrary');
-		function apikeyLibrary()
-		{
-			global $wpdb;
-			include_once GALLERY_BK_PLUGIN_DIR . '/lib/api_key-class.php';
-		}
+		
 		case "front_albums_gallery_library":
 		add_action( 'admin_init', 'front_albums_gallery_library');
 		function front_albums_gallery_library()
