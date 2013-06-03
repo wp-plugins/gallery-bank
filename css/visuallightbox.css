@@ -17,6 +17,7 @@
 	text-align:center;
 	color:#151410;
 	line-height:0;
+	z-index:99999;
 }
 #vlb1lightbox td{
 	vertical-align:top;
