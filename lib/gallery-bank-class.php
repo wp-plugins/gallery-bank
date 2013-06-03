@@ -103,6 +103,7 @@ function frontend_plugin_js_scripts_gallery_bank()
 {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('visuallightbox.js', GALLERY_BK_PLUGIN_URL .'/js/visuallightbox.js');
+	wp_enqueue_script('jquery.masonry.min.js', GALLERY_BK_PLUGIN_URL .'/js/jquery.masonry.min.js');
 }
 
 //--------------------------------------------------------------------------------------------------------------//
@@ -119,6 +120,7 @@ function plugin_css_scripts_gallery_bank()
 	wp_enqueue_style('colorpicker.css', GALLERY_BK_PLUGIN_URL .'/css/colorpicker.css');
 	wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
 	wp_enqueue_style('plugins.css', GALLERY_BK_PLUGIN_URL .'/css/plugins.css');
+	
 }
 function frontend_plugin_css_scripts_gallery_bank()
 {
@@ -190,40 +192,16 @@ function extract_short_code($con)
 {
 	$album_id = $con;
 	ob_start();
-	?>
-		<div style="display:block">
-			<div id="view_bank_album_<?php echo $album_id; ?>">
-				<div class="body">
-					<div class="box">
-						<div class="content">
-							<?php require GALLERY_BK_PLUGIN_DIR.'/views/front_view.php';?>
-						</div>
-					</div>
-				</div> 
-			</div> 
-		</div>
-	<?php
-		$gallerybank_output_album = ob_get_clean();
-		wp_reset_query();
-		return $gallerybank_output_album;	
+	require GALLERY_BK_PLUGIN_DIR.'/views/front_view.php';
+	$gallerybank_output_album = ob_get_clean();
+	wp_reset_query();
+	return $gallerybank_output_album;
 }
 function extract_short_code_album($con) 
 {
 	$album_id = $con;
 	ob_start();
-	?>
-		<div style="display:block" >
-			<div id="view_bank_album_<?php echo $album_id; ?>">
-				<div class="body">
-					<div class="box">
-						<div class="content">
-							<?php require GALLERY_BK_PLUGIN_DIR.'/views/front-view-albums.php';?>
-						</div>
-					</div>
-				</div> 
-			</div> 
-		</div>
-	<?php
+	require GALLERY_BK_PLUGIN_DIR.'/views/front-view-albums.php';
 	$gallerybank_output = ob_get_clean();
 	wp_reset_query();
 	return $gallerybank_output;	

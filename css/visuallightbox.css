@@ -1,3 +1,28 @@
+.imagecontainter {
+	background: #FFF;
+	padding: 5px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  clear: both;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.centered { margin: 0 auto; }
+
+.imgContainerSingle {
+  margin: 5px;
+  padding: 5px;
+  background: #D8D5D2;
+  font-size: 11px;
+  line-height: 1.4em;
+  float: left;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
 #vlb1overlay{
 	position:absolute;
 	top:0;
