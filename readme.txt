@@ -16,7 +16,15 @@ Create responsive and filterable portfolios with ease on your website. Gallery B
 <a href="http://gallery-bank.com/forum/support-forum/" target="_blank">Support Desk - feel free to ask your queries</a>
 
 <a href="http://gallery-bank.com/" target="_blank">Upgrade to Pro Version</a>
-
+<div class="fb-like" data-href="https://www.facebook.com/GalleryBank" data-send="true" data-width="450" data-show-faces="true"></div>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=465156596896093";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 = Features =
 
 * Create any amount of albums in the gallery.
