@@ -28,7 +28,7 @@
 				</a>
 			<div class="message green" id="success_update_album_message" style="margin-left :20px; display: none;">
 				<span>
-					<strong><?php _e( "Success! Album has been Updated.", gallery_bank); ?></strong>
+					<strong><?php _e( "Success! We are in the middle of updating the data. Kindly wait for the redirect.", gallery_bank); ?></strong>
 				</span>
 			</div>
 			<div class="message red" id="error_update_album_message" style="margin-left :20px; display: none;">
@@ -264,31 +264,6 @@ jQuery("#gallery_bank").addClass("current");
 			jQuery.post(ajaxurl, "id="+arr+"&count_pic="+count_pic+"&param=delete_pic&action=album_gallery_library", function(data)
 			{	
 			});
-			
-			jQuery.post(ajaxurl, jQuery(form).serialize() +"&albumId="+albumId+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
-			{
-					
-			});
-			var pics;
-			for(pics = 0; pics < array.length; pics++ )
-			{
-				var pic_path = array[pics];
-				var thumb = thumb_array[pics];
-				var pic_title = jQuery("#pic_title_" + ar[pics]).val();
-				var pic_detail= jQuery("#pic_des_" + ar[pics]).val();
-				var cover_pic = jQuery('input:radio[id=cover_pic_'+ar[pics]+']:checked').val();
-				if(cover_pic == undefined)
-				{
-					cover_pic = 0;
-				}
-				else
-				{
-					cover_pic = 1;
-				}
-				jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&alb_cover="+cover_pic+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
-				{
-				});
-			}
 			<?php
 			for ($flag = 0; $flag < count($pic_detail); $flag++)
 			{
@@ -311,17 +286,60 @@ jQuery("#gallery_bank").addClass("current");
 			<?php
 			}
 			?>
-			
-			jQuery('#error_edit_border_album_message').css('display','none');
-			jQuery('#error_update_album_message').css('display','none');
-			jQuery('#success_update_album_message').css('display','block');
-			jQuery('body,html').animate({
-			scrollTop: jQuery('body,html').position().top}, 'slow');
-			setTimeout(function() 
+			jQuery.post(ajaxurl, jQuery(form).serialize() +"&albumId="+albumId+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
 			{
-				jQuery('#success_update_album_message').css('display','none');	
-				window.location.href = "admin.php?page=gallery_bank";
-			}, 5000);
+				var pics;
+				var count = 0;
+				if(array.length > 0)
+				{
+					for(pics = 0; pics < array.length; pics++ )
+					{
+						var pic_path = array[pics];
+						var thumb = thumb_array[pics];
+						var pic_title = jQuery("#pic_title_" + ar[pics]).val();
+						var pic_detail= jQuery("#pic_des_" + ar[pics]).val();
+						var cover_pic = jQuery('input:radio[id=cover_pic_'+ar[pics]+']:checked').val();
+						if(cover_pic == undefined)
+						{
+							cover_pic = 0;
+						}
+						else
+						{
+							cover_pic = 1;
+						}
+						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&alb_cover="+cover_pic+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
+						{
+							jQuery('#error_edit_border_album_message').css('display','none');
+							jQuery('#error_update_album_message').css('display','none');
+							jQuery('#success_update_album_message').css('display','block');
+							jQuery('body,html').animate({
+							scrollTop: jQuery('body,html').position().top}, 'slow');
+							count++;
+							if(count == array.length)
+							{
+								setTimeout(function() 
+								{
+									jQuery('#success_update_album_message').css('display','none');	
+									window.location.href = "admin.php?page=gallery_bank";
+								}, 3000);
+							}
+						});
+					}	
+				}
+				else
+				{
+					jQuery('#error_edit_border_album_message').css('display','none');
+					jQuery('#error_update_album_message').css('display','none');
+					jQuery('#success_update_album_message').css('display','block');
+					jQuery('body,html').animate({
+					scrollTop: jQuery('body,html').position().top}, 'slow');
+					setTimeout(function() 
+					{
+						jQuery('#success_update_album_message').css('display','none');	
+						window.location.href = "admin.php?page=gallery_bank";
+					}, 3000);
+				}
+			});
 		}
 	});
 	function delete_pic(dynamicId)
@@ -410,7 +428,7 @@ jQuery("#gallery_bank").addClass("current");
 				}
 				img.attr('width', '150px');
 				innerDiv.append(img);
-				var cover = jQuery("<input type=\"radio\" style=\"cursor: pointer;\" id=\"cover_pic_"+dynamicId+"\" name = \"edit_album_cover\"><?php _e(" Set Image as Album Cover",gallery_bank);?>");
+				var cover = jQuery("<input type=\"radio\" style=\"cursor: pointer;\" id=\"cover_pic_"+dynamicId+"\" name = \"edit_album_cover\" /><label><?php _e(" Set Image as Album Cover",gallery_bank);?></label>");
 				cover.css('margin-bottom', '10px');
 				innerDiv.append(cover);
 				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img style=\"vertical-align:middle;cursor:pointer\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span style=\"vertical-align:middle;cursor:pointer;\"><?php _e("Remove Image",gallery_bank);?></span></a>");

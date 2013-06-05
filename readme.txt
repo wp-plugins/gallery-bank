@@ -3,7 +3,7 @@ Contributors: Gallery-Bank
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery, photo gallery, lightbox
 Requires at least: 3.0
 Tested up to: 3.6 Beta
-Stable tag: 1.7
+Stable tag: 1.7.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -96,6 +96,13 @@ Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 1.7.5 =
+
+* Possible to upload upto 300 images at 1 instance in a n album
+* Few Bugs fixed.
+* All Languages updated
+
 = 1.7 =
 
 * Introducing Jquery Masonry

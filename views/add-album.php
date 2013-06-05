@@ -23,12 +23,12 @@
 					</li>
 				</ul>
 			</div>
-			<a href="admin.php?page=gallery_bank" class="events-container-button blue" style="margin-top:10px;style="text-decoration: none;">
+			<a href="admin.php?page=gallery_bank" class="events-container-button blue" style="margin-top:10px;text-decoration: none;">
 				<span><?php _e('Back to Albums Page', gallery_bank); ?></span>
 			</a>
 			<div class="message green" id="success_album_message" style="margin-left :20px; display: none;">
 				<span>
-					<strong><?php _e( "Success! Album has been saved.", gallery_bank); ?></strong>
+					<strong><?php _e( "Success! We are in the middle of updating the data. Kindly wait for the redirect.", gallery_bank); ?></strong>
 				</span>
 			</div>
 			<div class="message red" id="error_album_message" style="margin-left :20px; display: none;">
@@ -184,37 +184,58 @@ var thumb_array = [];
 					
 				var album_id= jQuery.trim(data);
 				var pic;
-				for(pic = 0; pic < arr.length; pic++ )
+				var count = 0;
+				if(arr.length > 0)
 				{
-					var path = arr[pic];
-					var thumb = thumb_array[pic];
-					var title = jQuery("#title_img_" + ar[pic]).val();
-					var detail= jQuery("#des_img_" + ar[pic]).val();
-					var alb_cover = jQuery('input:radio[id=cover_'+ar[pic]+']:checked').val();
-					if(alb_cover == "on")
+					for(pic = 0; pic < arr.length; pic++ )
 					{
-						alb_cover1 = 1;
+						var path = arr[pic];
+						var thumb = thumb_array[pic];
+						var title = jQuery("#title_img_" + ar[pic]).val();
+						var detail= jQuery("#des_img_" + ar[pic]).val();
+						var alb_cover = jQuery('input:radio[id=cover_'+ar[pic]+']:checked').val();
+						if(alb_cover == "on")
+						{
+							alb_cover1 = 1;
+						}
+						else
+						{
+							alb_cover1 = 0;
+						}
+						
+						jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&alb_cover="+alb_cover1+"&path="+path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
+						{
+							jQuery('#error_album_message').css('display','none');
+							jQuery('#error_border_album_message').css('display','none');
+							jQuery('#success_album_message').css('display','block');
+							jQuery('body,html').animate({
+							scrollTop: jQuery('body,html').position().top}, 'slow');
+							count++;
+							if(count == arr.length)
+							{
+								setTimeout(function()
+								{
+									jQuery('#success_album_message').css('display','none');
+									window.location.href = "admin.php?page=gallery_bank";
+								}, 2000);
+							}
+						});
 					}
-					else
-					{
-						alb_cover1 = 0;
-					}
-					
-					jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&alb_cover="+alb_cover1+"&path="+path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
-					{
-
-					});
 				}
-				jQuery('#error_album_message').css('display','none');
-				jQuery('#error_border_album_message').css('display','none');
-				jQuery('#success_album_message').css('display','block');
-				jQuery('body,html').animate({
-				scrollTop: jQuery('body,html').position().top}, 'slow');
-				setTimeout(function()
+				else
 				{
-					jQuery('#success_album_message').css('display','none');
-					window.location.href = "admin.php?page=gallery_bank";
-				}, 5000);
+					jQuery('#error_album_message').css('display','none');
+					jQuery('#error_border_album_message').css('display','none');
+					jQuery('#success_album_message').css('display','block');
+					jQuery('body,html').animate({
+					scrollTop: jQuery('body,html').position().top}, 'slow');
+					setTimeout(function()
+					{
+						jQuery('#success_album_message').css('display','none');
+						window.location.href = "admin.php?page=gallery_bank";
+					}, 2000);
+				}
+				
 					
 			});
 		}	
@@ -250,7 +271,7 @@ var thumb_array = [];
 				arr.push(attachment.url);
 				img.attr('width', '150px');
 				innerDiv.append(img);
-				var cover = jQuery("<input type=\"radio\" checked=\"checked\" style=\"cursor: pointer;\" id=\"cover_"+dynamicId+"\" name = \"album_cover\"><?php _e(" Set Image as Album Cover",gallery_bank);?>");
+				var cover = jQuery("<input type=\"radio\" checked=\"checked\" style=\"cursor: pointer;\" id=\"cover_"+dynamicId+"\" name = \"album_cover\" /><label><?php _e(" Set Image as Album Cover",gallery_bank);?></label>");
 				cover.css('margin-bottom', '10px');
 				innerDiv.append(cover);
 				var del = jQuery("<a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_pic("+dynamicId+")\"><img style=\"cursor: pointer;vertical-align:middle;\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/images/button-cross.png'?>\">&nbsp; <span  style=\"cursor: pointer;vertical-align:middle;\"><?php _e("Remove Image",gallery_bank);?></span></a>");
