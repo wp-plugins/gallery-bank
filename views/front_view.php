@@ -22,7 +22,6 @@
 		<h3><?php echo $album->album_name;?></h3>
 		<div id="view_bank_album_<?php echo $unique_id;?>">
 			<?php
-			 $row = $album ->images_in_row;
 			for ($flag = 0; $flag <count($pic_detail); $flag++)
 			{
 				if($pic_detail[$flag]->description == "")

@@ -160,4 +160,24 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 		
 	}
 }
+if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) != 0)
+{
+	$check = $wpdb->get_var
+	(
+		$wpdb->prepare
+		(
+			"SHOW COLUMNS FROM " . gallery_bank_albums() . " LIKE 'images_in_row'",""
+		)
+	);
+	if($check != "")
+	{
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"ALTER TABLE " . gallery_bank_albums() . " DROP images_in_row",""
+			)
+		);
+	}
+}
 ?>

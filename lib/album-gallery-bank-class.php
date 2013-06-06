@@ -27,8 +27,8 @@ else
 				$wpdb->prepare
 				(
 					"INSERT INTO ".gallery_bank_albums()."(album_name,description,image_width,image_height,border_enable,
-					border_width,border_color,images_in_row,slideshow,slideshow_interval,album_date,author)
-					VALUES(%s,%s,%d,%d,%d,%d,%s,%d,%d,%d,CURDATE(),%s)",
+					border_width,border_color,slideshow,slideshow_interval,album_date,author)
+					VALUES(%s,%s,%d,%d,%d,%d,%s,%d,%d,CURDATE(),%s)",
 					$ux_album_name,
 					$ux_desciption,
 					$ux_image_width,
@@ -36,7 +36,6 @@ else
 					$ux_border,
 					$ux_border_width,
 					$ux_border_color,
-					$ux_image_no,
 					$ux_slide,
 					$ux_slide_interval,
 					$current_user->display_name
@@ -64,7 +63,7 @@ else
 				$wpdb->prepare
 				(
 					"UPDATE " .gallery_bank_albums(). " SET album_name = %s, description = %s, image_width = %d, image_height = %d,
-					border_enable = %d, border_width = %d, border_color = %s, images_in_row = %d, slideshow = %d, slideshow_interval = %d WHERE album_id = %d",
+					border_enable = %d, border_width = %d, border_color = %s, slideshow = %d, slideshow_interval = %d WHERE album_id = %d",
 					$ux_edit_album_name,
 					$ux_edit_desciption,
 					$ux_edit_image_width,
@@ -72,7 +71,6 @@ else
 					$ux_edit_image_border,
 					$ux_edit_border_width,
 					$ux_edit_border_color,
-					$ux_edit_image_no,
 					$ux_edit_slide,
 					$ux_edit_slide_interval,
 					$albumId
