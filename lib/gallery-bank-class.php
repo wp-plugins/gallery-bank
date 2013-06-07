@@ -92,7 +92,6 @@ function plugin_js_scripts_gallery_bank()
 	wp_enqueue_script('jquery.validate.min.js', GALLERY_BK_PLUGIN_URL .'/js/jquery.validate.min.js');
 	wp_enqueue_script('bootstrap-bootbox.min.js', GALLERY_BK_PLUGIN_URL .'/js/bootstrap-bootbox.min.js');
 	wp_enqueue_script('bootstrap.min.js', GALLERY_BK_PLUGIN_URL .'/js/bootstrap.min.js');
-	wp_enqueue_script('colorpicker.min.js', GALLERY_BK_PLUGIN_URL .'/js/colorpicker.js');
 	wp_enqueue_script('visuallightbox.js', GALLERY_BK_PLUGIN_URL .'/js/visuallightbox.js');
 }
 function frontend_plugin_js_scripts_gallery_bank()
@@ -113,8 +112,7 @@ function plugin_css_scripts_gallery_bank()
 	wp_enqueue_style('datatables.css', GALLERY_BK_PLUGIN_URL .'/css/datatables.css');
 	wp_enqueue_style('system-message.css', GALLERY_BK_PLUGIN_URL .'/css/system-message.css');
 	wp_enqueue_style('forms-btn.css', GALLERY_BK_PLUGIN_URL .'/css/forms-btn.css');
-	wp_enqueue_style('colorpicker.css', GALLERY_BK_PLUGIN_URL .'/css/colorpicker.css');
-	wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
+		wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
 	wp_enqueue_style('plugins.css', GALLERY_BK_PLUGIN_URL .'/css/plugins.css');
 	
 }

@@ -140,31 +140,6 @@ var thumb_array = [];
 			{
 				required: true
 				
-			},
-			ux_image_width: 
-			{
-				required: true,
-				digits: true
-			},
-			ux_image_height: 
-			{
-				required: true,
-				digits: true
-			},
-			ux_border_width:
-			{
-				required : true,
-				digits: true
-			},
-			ux_image_no:
-			{
-				required : true,
-				digits: true
-			},
-			ux_slide_interval:
-			{
-				required : true,
-				digits: true
 			}
 		},
 		submitHandler: function(form)
@@ -289,26 +264,6 @@ var thumb_array = [];
 			});
 		});
 		file_frame.open();
-	});
-	
-	jQuery(document).ready(function() 
-	{
-		div_control();
-		jQuery("#ux_border_color").ColorPicker
-		({		
-			onSubmit: function(hsb, hex, rgb, el) 
-			{
-				jQuery(el).val( '#' + hex);
-				jQuery(el).ColorPickerHide();
-			},
-			onBeforeShow: function() 
-			{
-				jQuery(this).ColorPickerSetColor(this.value);
-			}
-		}).bind('onblur', function()
-		{
-			jQuery(this).ColorPickerSetColor(this.value);
-		});
 	});
 	function div_control()
 	{

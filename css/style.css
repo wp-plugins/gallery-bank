@@ -1022,33 +1022,3 @@ img { border: 0; }
 .form-wizard .tab-pane .chzn-container {
   position: absolute !important;
 }
-
-.timeCol-blocked
-{
-	border: 1px solid #DDD !important;
-	background-color:#ECECEC;
-	color: #000 !important;
-	font-size:10px !important;
-	padding:5px !important;
-	margin:5px 0px 5px 6px !important;
-	width:45px !important;
-	display:inline-block !important;
-	text-decoration: none !important;
-}
-.timeCol
-{
-	border: 1px solid #DDD !important;
-	color: #000 !important;
-	font-size:10px !important;
-	padding:5px !important;
-	margin:5px 0px 5px 6px !important;
-	width:45px !important;
-	display:inline-block !important;
-	text-decoration: none !important;
-}
-.timeCol:hover
-{
-	background-color:#86c301 !important;
-	color:#fff !important;
-	text-decoration: none !important;
-}

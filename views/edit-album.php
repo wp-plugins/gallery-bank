@@ -188,24 +188,6 @@ jQuery("#gallery_bank").addClass("current");
 	var array = [];
 	var ar = [];
 	var thumb_array = [];
-	jQuery(document).ready(function() 
-	{
-		jQuery("#ux_edit_border_color").ColorPicker
-		({		
-			onSubmit: function(hsb, hex, rgb, el) 
-			{
-				jQuery(el).val( '#' + hex);
-				jQuery(el).ColorPickerHide();
-			},
-			onBeforeShow: function() 
-			{
-				jQuery(this).ColorPickerSetColor(this.value);
-			}
-		}).bind('onblur', function()
-		{
-			jQuery(this).ColorPickerSetColor(this.value);
-		});
-	});
 	jQuery("#edit_album").validate
 	({
 		rules: 
@@ -225,22 +207,8 @@ jQuery("#gallery_bank").addClass("current");
 				required: true,
 				digits: true
 			},
-			ux_edit_border_width:
-			{
-				required : true,
-				digits: true
-			},
-			ux_edit_border_color:
-			{
-				required : true
-			},
 			ux_edit_image_no:
 			{
-				digits: true
-			},
-			ux_edit_slide_interval:
-			{
-				required : true,
 				digits: true
 			}
 		},
@@ -248,10 +216,6 @@ jQuery("#gallery_bank").addClass("current");
 		{
 			
 			var albumId = jQuery('#hidden_album_id').val();
-			var ux_edit_slide = jQuery('#ux_edit_slide').prop("checked");
-			var ux_edit_slide_interval = jQuery('#ux_edit_slide_interval').val();
-			var ux_edit_image_border = jQuery('#ux_edit_image_border').prop("checked");
-			var ux_edit_boder_width = jQuery('#ux_edit_border_width').val();
 			if (jQuery("#wp-ux_edit_description-wrap").hasClass("tmce-active"))
 			{
 				var uxeditdescription = encodeURIComponent(tinyMCE.get('ux_edit_description').getContent());
