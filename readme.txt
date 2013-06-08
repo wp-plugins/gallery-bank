@@ -3,7 +3,7 @@ Contributors: Gallery-Bank
 Tags: gallery, image, gallery image, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery, photo gallery, lightbox
 Requires at least: 3.0
 Tested up to: 3.6 Beta
-Stable tag: 1.7.9
+Stable tag: 1.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -53,8 +53,11 @@ Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
 
 = Gallery Bank in following Languages = 
 
+* Albanian (sq_AL)
 * Arabic (ar_AR)
 * Brazilian Portuguese (pt_BR)
+* Bulgarian (bg_BG)
+* Chinese (zh_CN)
 * Czech (cs_CZ)
 * Danish (da_DA)
 * Dutch (nl_NL)
@@ -63,12 +66,16 @@ Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
 * French (fr_FR)
 * German (de_DE)
 * Hebrew (he_IL)
+* Hungarian (hu_HU)
 * Korean (ko_KR)
+* Indonesian (id_ID)
 * Italian (it_IT)
 * Korean (hu_HU)
 * Polish (pl_PL) 
+* Romanian (ro_RO)
 * Russian (ru_RU)
 * Serbian (sr_RS)
+* Slovak (sk_SK)
 * Spanish (es_ES)
 * Swedish (sv_SV)
 * Turkish (tr_TR)
@@ -96,6 +103,10 @@ Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 1.8.0 =
+
+* Added 7 new Languages.
 
 = 1.7.9 =
 
