@@ -51,7 +51,7 @@
 									</label>
 									<div class="right">
 										<span>
-											<?php echo $album->album_name;?>
+											<?php echo stripcslashes($album->album_name);?>
 										</span>
 									</div>
 								</div>
@@ -157,7 +157,7 @@
 													<strong><?php _e( "Title :", gallery_bank ); ?></strong>
 												</label>
 												<div class="right">
-													<span><?php echo $pic_detail[$flag]->title; ?></span>
+													<span><?php echo stripcslashes($pic_detail[$flag]->title); ?></span>
 													&nbsp;
 												</div>
 											</div>
@@ -166,7 +166,7 @@
 													<strong><?php _e( "Description :", gallery_bank ); ?></strong>
 												</label>
 												<div class="right" >
-													<span><?php echo $pic_detail[$flag]->description;?></span>
+													<span><?php echo stripcslashes($pic_detail[$flag]->description);?></span>
 													&nbsp;
 												</div>
 											</div>

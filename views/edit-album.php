@@ -62,7 +62,7 @@
 										<?php _e( "Album Name :", gallery_bank ); ?>
 									</label>
 									<div class="right">
-										<input type="text" class="required span12" name="ux_edit_album_name" id="ux_edit_album_name" value="<?php echo $album->album_name ;?>"/> 
+										<input type="text" class="required span12" name="ux_edit_album_name" id="ux_edit_album_name" value="<?php echo stripcslashes($album->album_name) ;?>"/> 
 									</div>
 								</div>
 								<div class="row">
@@ -131,7 +131,7 @@
 												<?php _e( "Title :", gallery_bank ); ?>
 											</label>
 											<div class="right" >
-												<input type="text" id="ux_edit_title_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo $pic_detail[$flag]->title ;?>" />
+												<input type="text" id="ux_edit_title_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo stripcslashes($pic_detail[$flag]->title) ;?>" />
 											</div>
 										</div>
 										<div class="row" style="margin-left:180px!important;border-bottom:none !important; margin-bottom: 20px;">
@@ -139,7 +139,7 @@
 												<?php _e( "Description :", gallery_bank ); ?>
 											</label>
 											<div class="right">
-												<textarea rows="10" id="ux_edit_desc_<?php echo $pic_detail[$flag]->pic_id ;?>" ><?php echo $pic_detail[$flag]->description ;?></textarea>
+												<textarea rows="10" id="ux_edit_desc_<?php echo $pic_detail[$flag]->pic_id ;?>" ><?php echo stripcslashes($pic_detail[$flag]->description) ;?></textarea>
 											</div>
 											
 										</div>
@@ -225,6 +225,7 @@ jQuery("#gallery_bank").addClass("current");
 				var uxeditdescription = encodeURIComponent(jQuery('#ux_edit_description').val());
 			}
 			var count_pic = arr.length;
+			var edit_album_name = encodeURIComponent(jQuery('#ux_edit_album_name').val());
 			jQuery.post(ajaxurl, "id="+arr+"&count_pic="+count_pic+"&param=delete_pic&action=album_gallery_library", function(data)
 			{	
 			});
@@ -250,7 +251,7 @@ jQuery("#gallery_bank").addClass("current");
 			<?php
 			}
 			?>
-			jQuery.post(ajaxurl, jQuery(form).serialize() +"&albumId="+albumId+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
+			jQuery.post(ajaxurl, jQuery(form).serialize() +"&edit_album_name="+edit_album_name+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
 			{
 				var pics;
 				var count = 0;

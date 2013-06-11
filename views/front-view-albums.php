@@ -48,7 +48,7 @@ if($album_cover_count == 0)
 	?>
 		<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
 		<img class="imgHolder" src="<?php echo stripcslashes($url); ?>" onclick="view_images(<?php echo $album_id;?>);" style="display:inline-block;border:5px solid #000; cursor:pointer;" width="150px" />
-			<div style="text-align: justify;display:inline-block;vertical-align:middle;margin-left:20px;">
+			<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
 				<h3><?php echo $album->album_name; ?>&nbsp;</h3>
 				<span><?php echo $album->description;?>&nbsp;</span><br/>
 				<a style="cursor: pointer;" onclick="view_images(<?php echo $album_id;?>)">
@@ -63,7 +63,7 @@ else
 	?>
 	<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
 		<img class="imgHolder" src="<?php echo stripcslashes($album_cover->thumbnail_url); ?>" onclick="view_images(<?php echo $album_id;?>);" style="display:inline-block;border:5px solid #000; cursor:pointer;" width="150px" />
-			<div style="text-align: justify;display:inline-block;vertical-align:middle;margin-left:20px;">
+			<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
 				<h3><?php echo $album->album_name; ?>&nbsp;</h3>
 				<span><?php echo $album->description;?>&nbsp;</span><br/>
 				<a style="cursor: pointer;" onclick="view_images(<?php echo $album_id;?>)">

@@ -12,7 +12,7 @@ else
 	{
 		if($_REQUEST["param"] == "add_new_album")
 		{
-			$ux_album_name = esc_attr($_REQUEST["ux_album_name"]);
+			$ux_album_name = html_entity_decode($_REQUEST["album_name"]);
 			$ux_desciption = html_entity_decode(esc_attr($_REQUEST["ux_description"]));
 			$ux_image_width = 160;
 			$ux_image_height = 120;
@@ -48,7 +48,7 @@ else
 		elseif($_REQUEST["param"] == "update_album")
 		{
 			$albumId = intval($_REQUEST["albumId"]);
-			$ux_edit_album_name = esc_attr($_REQUEST["ux_edit_album_name"]);
+			$ux_edit_album_name = html_entity_decode($_REQUEST["edit_album_name"]);
 			$ux_edit_desciption = html_entity_decode(esc_attr($_REQUEST["ux_edit_description"]));
 			$ux_edit_image_width = 160;
 			$ux_edit_image_height = 120;

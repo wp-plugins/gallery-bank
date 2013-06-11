@@ -153,10 +153,10 @@ var thumb_array = [];
 				var uxDescription  = encodeURIComponent(jQuery('#ux_description').val());
 			}
 			var ux_slide_interval = jQuery('#ux_slide_interval').val();
+			var album_name = encodeURIComponent(jQuery('#ux_album_name').val());
 			
-			jQuery.post(ajaxurl, jQuery(form).serialize() +"&ux_description="+uxDescription+"&param=add_new_album&action=album_gallery_library", function(data)
+			jQuery.post(ajaxurl, jQuery(form).serialize() +"&album_name="+album_name+"&ux_description="+uxDescription+"&param=add_new_album&action=album_gallery_library", function(data)
 			{
-					
 				var album_id= jQuery.trim(data);
 				var pic;
 				var count = 0;
@@ -177,7 +177,6 @@ var thumb_array = [];
 						{
 							alb_cover1 = 0;
 						}
-						
 						jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&alb_cover="+alb_cover1+"&path="+path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
 						{
 							jQuery('#error_album_message').css('display','none');
