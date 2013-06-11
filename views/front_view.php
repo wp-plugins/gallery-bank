@@ -69,7 +69,6 @@
 					enableSlideshow:false,
 					startZoom:true
 				});
-				
 				var $container_<?php echo $unique_id;?> = jQuery('#view_bank_album_<?php echo $unique_id;?>');
 				$container_<?php echo $unique_id;?>.imagesLoaded( function(){
 					$container_<?php echo $unique_id;?>.masonry({

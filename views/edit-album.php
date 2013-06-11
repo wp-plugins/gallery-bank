@@ -226,6 +226,7 @@ jQuery("#gallery_bank").addClass("current");
 			}
 			var count_pic = arr.length;
 			var edit_album_name = encodeURIComponent(jQuery('#ux_edit_album_name').val());
+		
 			jQuery.post(ajaxurl, "id="+arr+"&count_pic="+count_pic+"&param=delete_pic&action=album_gallery_library", function(data)
 			{	
 			});
@@ -234,8 +235,8 @@ jQuery("#gallery_bank").addClass("current");
 			{
 			?>
 				var picId = <?php  echo $pic_detail[$flag]->pic_id; ?>;
-				var edit_title = jQuery("#ux_edit_title_" + picId).val();
-				var edit_detail = jQuery("#ux_edit_desc_" + picId).val();
+				var edit_title = encodeURIComponent(jQuery("#ux_edit_title_" + picId).val());
+				var edit_detail = encodeURIComponent(jQuery("#ux_edit_desc_" + picId).val());
 				var edit_cover = jQuery('input:radio[id=edit_cover_' + picId+']:checked').val();
 				if(edit_cover == "on")
 				{
@@ -251,8 +252,9 @@ jQuery("#gallery_bank").addClass("current");
 			<?php
 			}
 			?>
-			jQuery.post(ajaxurl, jQuery(form).serialize() +"&edit_album_name="+edit_album_name+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
+			jQuery.post(ajaxurl, jQuery(form).serialize() +"&albumId="+albumId+"&edit_album_name="+edit_album_name+"&ux_edit_description="+uxeditdescription+"&param=update_album&action=album_gallery_library", function(data)
 			{
+				
 				var pics;
 				var count = 0;
 				if(array.length > 0)
@@ -261,8 +263,8 @@ jQuery("#gallery_bank").addClass("current");
 					{
 						var pic_path = array[pics];
 						var thumb = thumb_array[pics];
-						var pic_title = jQuery("#pic_title_" + ar[pics]).val();
-						var pic_detail= jQuery("#pic_des_" + ar[pics]).val();
+						var pic_title = encodeURIComponent(jQuery("#pic_title_" + ar[pics]).val());
+						var pic_detail= encodeURIComponent(jQuery("#pic_des_" + ar[pics]).val());
 						var cover_pic = jQuery('input:radio[id=cover_pic_'+ar[pics]+']:checked').val();
 						if(cover_pic == undefined)
 						{

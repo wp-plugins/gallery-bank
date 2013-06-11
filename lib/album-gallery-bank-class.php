@@ -48,7 +48,7 @@ else
 		elseif($_REQUEST["param"] == "update_album")
 		{
 			$albumId = intval($_REQUEST["albumId"]);
-			$ux_edit_album_name = html_entity_decode($_REQUEST["edit_album_name"]);
+			echo $ux_edit_album_name = html_entity_decode($_REQUEST["edit_album_name"]);
 			$ux_edit_desciption = html_entity_decode(esc_attr($_REQUEST["ux_edit_description"]));
 			$ux_edit_image_width = 160;
 			$ux_edit_image_height = 120;
@@ -110,8 +110,8 @@ else
 		{
 			$ux_path = esc_attr($_REQUEST["path"]);
 			$ux_albumid = intval($_REQUEST["album_id"]);
-			$ux_title = esc_attr($_REQUEST["title"]);
-			$ux_detail = esc_attr($_REQUEST["detail"]);
+			$ux_title = html_entity_decode($_REQUEST["title"]);
+			$ux_detail = html_entity_decode($_REQUEST["detail"]);
 			$thumbnail_url = esc_attr($_REQUEST["thumb"]);
 			$alb_cover = intval($_REQUEST["alb_cover"]);
 			$wpdb->query
@@ -135,8 +135,8 @@ else
 		{
 			$pic_id = intval($_REQUEST['picId']);
 			$albumId = intval($_REQUEST['albumId']);
-			$edit_title = esc_attr($_REQUEST['edit_title']);
-			$edit_detail = esc_attr($_REQUEST['edit_detail']);
+			$edit_title = html_entity_decode($_REQUEST['edit_title']);
+			$edit_detail = html_entity_decode($_REQUEST['edit_detail']);
 			$edit_cover = esc_attr($_REQUEST["edit_cover"]);
 			$wpdb->query
 			(

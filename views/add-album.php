@@ -166,8 +166,8 @@ var thumb_array = [];
 					{
 						var path = arr[pic];
 						var thumb = thumb_array[pic];
-						var title = jQuery("#title_img_" + ar[pic]).val();
-						var detail= jQuery("#des_img_" + ar[pic]).val();
+						var title = encodeURIComponent(jQuery("#title_img_" + ar[pic]).val());
+						var detail= encodeURIComponent(jQuery("#des_img_" + ar[pic]).val());
 						var alb_cover = jQuery('input:radio[id=cover_'+ar[pic]+']:checked').val();
 						if(alb_cover == "on")
 						{
