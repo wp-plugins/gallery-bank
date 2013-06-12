@@ -114,7 +114,7 @@
 								<div class="box">
 									<div class="content" style="margin-left:20px; border-bottom: solid 1px #e5e5e5;" id="<?php echo $pic_detail[$flag]->pic_id; ?>"  style="border-bottom: solid 1px #e5e5e5; !important">
 										<div style="float:left;width:170px;">
-											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->thumbnail_url; ?>" style="border:3px solid #e5e5e5"; width="150px"/>
+											<img class="imgHolder" src="<?php echo $pic_detail[$flag]->pic_path; ?>" style="border:3px solid #e5e5e5"; width="150px"/>
 											<input type="radio" style="cursor: pointer; margin-bottom: 10px;" id="edit_cover_<?php echo $pic_detail[$flag]->pic_id ;?>" name="edit_album_cover"/><?php _e(" Set Image as Album Cover",gallery_bank);?>
 											<script>
 												var id = "<?php echo $cover; ?>";
@@ -187,7 +187,6 @@ jQuery("#gallery_bank").addClass("current");
 	var arr =[];
 	var array = [];
 	var ar = [];
-	var thumb_array = [];
 	jQuery("#edit_album").validate
 	({
 		rules: 
@@ -262,7 +261,6 @@ jQuery("#gallery_bank").addClass("current");
 					for(pics = 0; pics < array.length; pics++ )
 					{
 						var pic_path = array[pics];
-						var thumb = thumb_array[pics];
 						var pic_title = encodeURIComponent(jQuery("#pic_title_" + ar[pics]).val());
 						var pic_detail= encodeURIComponent(jQuery("#pic_des_" + ar[pics]).val());
 						var cover_pic = jQuery('input:radio[id=cover_pic_'+ar[pics]+']:checked').val();
@@ -274,7 +272,7 @@ jQuery("#gallery_bank").addClass("current");
 						{
 							cover_pic = 1;
 						}
-						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&alb_cover="+cover_pic+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
+						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&alb_cover="+cover_pic+"&path="+pic_path+"&param=add_pic&action=album_gallery_library", function(data)
 						{
 							jQuery('#error_edit_border_album_message').css('display','none');
 							jQuery('#error_update_album_message').css('display','none');
@@ -383,16 +381,7 @@ jQuery("#gallery_bank").addClass("current");
 				var div = jQuery("<div class=\"box\" style=\"border-bottom: solid 1px #e5e5e5;\"id=\""+dynamicId+"\">");
 				var innerDiv = jQuery("<div style=\"float:left;width:170px;\">");
 				var img = jQuery("<img class=\"imgHolder\" style=\"border:3px solid #e5e5e5;margin-top:10px;\"; id=\"up_img\"/>");
-				if(attachment.sizes.medium != undefined)
-				{
-					img.attr('src', attachment.sizes.medium.url);
-					thumb_array.push(attachment.sizes.medium.url);
-				}
-				else
-				{
-					img.attr('src', attachment.url);
-					thumb_array.push(attachment.url);
-				}
+				img.attr('src', attachment.url);
 				img.attr('width', '150px');
 				innerDiv.append(img);
 				var cover = jQuery("<input type=\"radio\" style=\"cursor: pointer;\" id=\"cover_pic_"+dynamicId+"\" name = \"edit_album_cover\" /><label><?php _e(" Set Image as Album Cover",gallery_bank);?></label>");

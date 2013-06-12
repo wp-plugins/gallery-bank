@@ -38,7 +38,7 @@
 	$unique_id = rand(100,10000);
 	
 ?>
-<button id="back_button" style="margin-top:10px; display: none;" onclick="view_albums();">
+<button id="back_button<?php echo $unique_id;?>" style="margin-top:10px; display: none;" onclick="view_albums();">
 	<span style="color: #000;">&laquo <?php _e('Back to Albums', gallery_bank); ?></span>
 </button>
 <?php
@@ -49,8 +49,8 @@ if($album_cover_count == 0)
 		<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
 		<img class="imgHolder" src="<?php echo stripcslashes($url); ?>" onclick="view_images(<?php echo $album_id;?>);" style="display:inline-block;border:5px solid #000; cursor:pointer;" width="150px" />
 			<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
-				<h3><?php echo $album->album_name; ?>&nbsp;</h3>
-				<span><?php echo $album->description;?>&nbsp;</span><br/>
+				<h3><?php echo stripcslashes($album->album_name); ?>&nbsp;</h3>
+				<span><?php echo stripcslashes($album->description);?>&nbsp;</span><br/>
 				<a style="cursor: pointer;" onclick="view_images(<?php echo $album_id;?>)">
 					<?php _e("See Album images", gallery_bank ); ?> &raquo
 				</a>
@@ -62,10 +62,10 @@ else
 {
 	?>
 	<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
-		<img class="imgHolder" src="<?php echo stripcslashes($album_cover->thumbnail_url); ?>" onclick="view_images(<?php echo $album_id;?>);" style="display:inline-block;border:5px solid #000; cursor:pointer;" width="150px" />
+		<img class="imgHolder" src="<?php echo stripcslashes($album_cover->pic_path); ?>" onclick="view_images(<?php echo $album_id;?>);" style="display:inline-block;border:5px solid #000; cursor:pointer;" width="150px" />
 			<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
-				<h3><?php echo $album->album_name; ?>&nbsp;</h3>
-				<span><?php echo $album->description;?>&nbsp;</span><br/>
+				<h3><?php echo stripcslashes($album->album_name); ?>&nbsp;</h3>
+				<span><?php echo stripcslashes($album->description);?>&nbsp;</span><br/>
 				<a style="cursor: pointer;" onclick="view_images(<?php echo $album_id;?>)">
 					<?php _e("See Album images", gallery_bank ); ?> &raquo
 				</a>
@@ -76,7 +76,7 @@ else
 ?>
 
 <div id="image_show_div<?php echo $unique_id;?>" style="display: none;" class="images-cover">
-	<h3><?php echo $album->album_name;?></h3>
+	<h3 id="album_title<?php echo $unique_id;?>"><?php echo stripcslashes($album->album_name); ?>&nbsp;</h3>
 	<div id="show_images_<?php echo $unique_id;?>" >
 	</div>
 </div>
@@ -87,11 +87,11 @@ else
 					
 					jQuery(".album-cover").css('display','none');
 					jQuery("#main_div<?php echo $unique_id;?>").css('display','none');
-					jQuery("#back_button").css('display','none');
+					jQuery("#back_button<?php echo $unique_id;?>").css('display','none');
 					jQuery("#image_show_div<?php echo $unique_id;?>").css('display','block');
 					jQuery.post(ajaxurl, "album_id="+album_id+"&param=show_images&action=front_albums_gallery_library", function(data)
 					{
-						jQuery("#back_button").css('display','block');
+						jQuery("#back_button<?php echo $unique_id;?>").css('display','block');
 						
 						jQuery('#show_images_<?php echo $unique_id;?>').html(data);
 						var $container_<?php echo $unique_id;?> = jQuery('#show_images_<?php echo $unique_id;?>');
@@ -108,12 +108,16 @@ else
 						});
 						$container_<?php echo $unique_id;?>.masonry('reload');
 					});
+					jQuery.post(ajaxurl, "album_id="+album_id+"&param=get_album_name&action=front_albums_gallery_library", function(data)
+					{
+						jQuery("#album_title<?php echo $unique_id;?>").html(data);
+					});
 				}
 				function view_albums()
 				{
 					jQuery(".album-cover").css('display','block');
 					jQuery(".images-cover").css('display','none');
-					jQuery("#back_button").css('display','none');
+					jQuery("#back_button<?php echo $unique_id;?>").css('display','none');
 				}
 		
 			

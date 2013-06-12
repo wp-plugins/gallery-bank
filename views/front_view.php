@@ -28,7 +28,7 @@
 				{
 					?><div class="imgContainerSingle">
 						<a class="vlightbox1<?php echo $unique_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
-						<img  src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url); ?>" width="150px" /></a>
+						<img  src="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" width="150px" /></a>
 						</div>
 					<?php
 					
@@ -38,7 +38,7 @@
 					?>
 					<div class="imgContainerSingle">
 						<a class="vlightbox1<?php echo $unique_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
-						<img  src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url); ?>" width="150px" /></a>
+						<img  src="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" width="150px" /></a>
 					</div>
 					<?php
 				}
