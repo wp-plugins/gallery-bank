@@ -113,7 +113,7 @@
 jQuery("#gallery_bank").addClass("current");
 var arr =[];
 var ar = [];
-
+var thumb_array = [];
 	function delete_pic(dynamicId)
 	{
 		bootbox.confirm("<?php _e( "Are you sure you want to delete this Picture?", gallery_bank ); ?>", function(confirmed)
@@ -165,6 +165,7 @@ var ar = [];
 					for(pic = 0; pic < arr.length; pic++ )
 					{
 						var path = arr[pic];
+						var thumb = thumb_array[pic];
 						var title = encodeURIComponent(jQuery("#title_img_" + ar[pic]).val());
 						var detail= encodeURIComponent(jQuery("#des_img_" + ar[pic]).val());
 						var alb_cover = jQuery('input:radio[id=cover_'+ar[pic]+']:checked').val();
@@ -176,7 +177,7 @@ var ar = [];
 						{
 							alb_cover1 = 0;
 						}
-						jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&alb_cover="+alb_cover1+"&path="+path+"&param=add_pic&action=album_gallery_library", function(data)
+						jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&alb_cover="+alb_cover1+"&path="+path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
 						{
 							jQuery('#error_album_message').css('display','none');
 							jQuery('#error_border_album_message').css('display','none');
@@ -232,6 +233,7 @@ var ar = [];
 				var innerDiv = jQuery("<div style=\"float:left;width:170px;margin-left:10px;\">");
 				var img = jQuery("<img class=\"imgHolder\" style=\"border:3px solid #e5e5e5;margin-top:10px;\" id=\"up_img\"/>");
 				img.attr('src', attachment.url);
+				thumb_array.push(attachment.url);
 				arr.push(attachment.url);
 				img.attr('width', '150px');
 				innerDiv.append(img);
