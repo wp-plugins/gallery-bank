@@ -22,13 +22,14 @@ else
 			$ux_slide_interval = 2;
 			$ux_slide = 0;
 			$ux_border = 1;
+			$images_in_row = 3;
 			$wpdb->query
 			(
 				$wpdb->prepare
 				(
 					"INSERT INTO ".gallery_bank_albums()."(album_name,description,image_width,image_height,border_enable,
-					border_width,border_color,slideshow,slideshow_interval,album_date,author)
-					VALUES(%s,%s,%d,%d,%d,%d,%s,%d,%d,CURDATE(),%s)",
+					border_width,border_color,slideshow,slideshow_interval,album_date,author,images_in_row)
+					VALUES(%s,%s,%d,%d,%d,%d,%s,%d,%d,CURDATE(),%s,%d)",
 					$ux_album_name,
 					$ux_desciption,
 					$ux_image_width,
@@ -38,7 +39,8 @@ else
 					$ux_border_color,
 					$ux_slide,
 					$ux_slide_interval,
-					$current_user->display_name
+					$current_user->display_name,
+					$images_in_row
 				)
 			);
 			echo $EventLastId=$wpdb->insert_id;
@@ -58,6 +60,7 @@ else
 			$ux_edit_slide_interval = 2;
 			$ux_edit_slide = 0;
 			$ux_edit_image_border = 1;
+			
 			$wpdb->query
 			(
 				$wpdb->prepare

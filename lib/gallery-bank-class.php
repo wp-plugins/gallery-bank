@@ -98,7 +98,6 @@ function frontend_plugin_js_scripts_gallery_bank()
 {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('visuallightbox.js', GALLERY_BK_PLUGIN_URL .'/js/visuallightbox.js');
-	wp_enqueue_script('jquery.masonry.min.js', GALLERY_BK_PLUGIN_URL .'/js/jquery.masonry.min.js');
 }
 
 //--------------------------------------------------------------------------------------------------------------//

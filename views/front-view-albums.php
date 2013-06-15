@@ -62,7 +62,7 @@ else
 {
 	?>
 	<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
-		<img class="imgHolder" src="<?php echo stripcslashes($album_cover->pic_path); ?>" onclick="view_images(<?php echo $album_id;?>);" style="display:inline-block;border:5px solid #000; cursor:pointer;" width="150px" />
+		<img onclick="view_images(<?php echo $album_id;?>);" style="display:inline-block;border:5px solid #000; cursor:pointer;" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($album_cover->pic_path).'&h=150&w=150&zc=1&q=100';?>"/></a>
 			<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
 				<h3><?php echo stripcslashes($album->album_name); ?>&nbsp;</h3>
 				<span><?php echo stripcslashes($album->description);?>&nbsp;</span><br/>
@@ -92,21 +92,7 @@ else
 					jQuery.post(ajaxurl, "album_id="+album_id+"&param=show_images&action=front_albums_gallery_library", function(data)
 					{
 						jQuery("#back_button<?php echo $unique_id;?>").css('display','block');
-						
 						jQuery('#show_images_<?php echo $unique_id;?>').html(data);
-						var $container_<?php echo $unique_id;?> = jQuery('#show_images_<?php echo $unique_id;?>');
-						$container_<?php echo $unique_id;?>.imagesLoaded( function(){
-							$container_<?php echo $unique_id;?>.masonry({
-							itemSelector : '.imgContainerSingle',
-							isAnimated: true,
-							animationOptions: {
-								duration: 750,
-								easing: 'linear',
-								queue: false
-								}
-							});
-						});
-						$container_<?php echo $unique_id;?>.masonry('reload');
 					});
 					jQuery.post(ajaxurl, "album_id="+album_id+"&param=get_album_name&action=front_albums_gallery_library", function(data)
 					{

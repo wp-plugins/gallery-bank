@@ -76,8 +76,8 @@ $url = plugins_url('', __FILE__);
 								?>
 									<tr>
 										<td><a href="admin.php?page=view_album&album_id=<?php echo $album[$flag]->album_id;?>"  title="<?php _e( "View Album", gallery_bank);?>" style="text-decoration: none;"><?php echo $album[$flag] -> album_name;?></a></td>
-										<td id="view_bank_album">[gallery_bank album_id=<?php echo $album[$flag]->album_id;?>][/gallery_bank]</td>
-										<td id="view_bank_album">[gallery_bank_album_cover album_id=<?php echo $album[$flag]->album_id;?>][/gallery_bank_album_cover]</td>
+										<td id="view_bank_album">[gallery_bank album_id=<?php echo $album[$flag]->album_id;?>]</td>
+										<td id="view_bank_album">[gallery_bank_album_cover album_id=<?php echo $album[$flag]->album_id;?>]</td>
 										<td><?php echo $count_pic;?></td>
 										<td><?php echo $album[$flag] -> author;?></td>
 										<td><?php echo $album[$flag] -> album_date;?></td>

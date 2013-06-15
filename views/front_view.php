@@ -22,25 +22,44 @@
 		<h3><?php echo $album->album_name;?></h3>
 		<div id="view_bank_album_<?php echo $unique_id;?>">
 			<?php
+			$row = $album ->images_in_row;
 			for ($flag = 0; $flag <count($pic_detail); $flag++)
 			{
 				if($pic_detail[$flag]->description == "")
 				{
-					?><div class="imgContainerSingle">
+					if(($flag % $row ==0) && $flag != 0)
+					{
+					?>
+						<br/>
 						<a class="vlightbox1<?php echo $unique_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
-						<img  src="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" width="150px" /></a>
-						</div>
+							<img style="margin:5px;" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>"/></a>
 					<?php
-					
-				}
+					}
+					else
+					{
+						?>
+						<a class="vlightbox1<?php echo $unique_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
+							<img style="margin:5px;" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>"/></a>
+						<?php
+					}		
+				}	
 				else
 				{
-					?>
-					<div class="imgContainerSingle">
+					if(($flag % $row ==0) && $flag != 0)
+					{
+						?>
+						<br/>
 						<a class="vlightbox1<?php echo $unique_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
-						<img  src="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" width="150px" /></a>
-					</div>
-					<?php
+							<img style="margin:5px;" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>"/></a>
+						<?php
+					}
+					else 
+					{
+						?>
+						<a class="vlightbox1<?php echo $unique_id;?>" id="<?php echo $pic_detail[$flag]->pic_id; ?>" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo $pic_detail[$flag]->title; ?> (<?php echo $pic_detail[$flag]->description; ?>)">
+							<img style="margin:5px;" src="<?php echo GALLERY_BK_PLUGIN_URL.'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>"/></a>
+						<?php
+					}
 				}
 			}
 			?>
@@ -69,18 +88,4 @@
 					enableSlideshow:false,
 					startZoom:true
 				});
-				var $container_<?php echo $unique_id;?> = jQuery('#view_bank_album_<?php echo $unique_id;?>');
-				$container_<?php echo $unique_id;?>.imagesLoaded( function(){
-					$container_<?php echo $unique_id;?>.masonry({
-					itemSelector : '.imgContainerSingle',
-					isAnimated: true,
-					animationOptions: {
-						duration: 750,
-						easing: 'linear',
-						queue: false
-						}
-					});
-					
-				});
-				
 			</script>

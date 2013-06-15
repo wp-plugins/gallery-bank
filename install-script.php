@@ -17,6 +17,7 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) ==
 	border_color VARCHAR(10) NOT NULL,
 	slideshow INTEGER(1) NOT NULL,
 	slideshow_interval INTEGER(5) UNSIGNED NOT NULL,
+	images_in_row INTEGER(5) UNSIGNED NOT NULL,
 	PRIMARY KEY (album_id)
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';
 	dbDelta($sql);
@@ -169,13 +170,13 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 			"SHOW COLUMNS FROM " . gallery_bank_albums() . " LIKE 'images_in_row'",""
 		)
 	);
-	if($check != "")
+	if($check != "images_in_row")
 	{
 		$wpdb->query
 		(
 			$wpdb->prepare
 			(
-				"ALTER TABLE " . gallery_bank_albums() . " DROP images_in_row",""
+				"ALTER TABLE " . gallery_bank_albums() . " ADD images_in_row INTEGER(5) NOT NULL",""
 			)
 		);
 	}

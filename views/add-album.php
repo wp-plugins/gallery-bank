@@ -62,7 +62,9 @@
 										?>
 									</div>
 								</div>
-								
+								<div class="row" >
+									<img src="<?php echo GALLERY_BK_PLUGIN_URL."/images/screenshot.png";?>"/>
+								</div>
 								<div class="row" >
 									<label>
 										<?php _e( "Upload Images :", gallery_bank ); ?>
@@ -135,12 +137,7 @@ var thumb_array = [];
 	({
 		rules: 
 		{
-			ux_album_name: "required",
-			ux_description: 
-			{
-				required: true
-				
-			}
+			ux_album_name: "required"
 		},
 		submitHandler: function(form)
 		{

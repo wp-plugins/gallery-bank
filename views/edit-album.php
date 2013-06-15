@@ -193,10 +193,6 @@ jQuery("#gallery_bank").addClass("current");
 		rules: 
 		{
 			ux_edit_album_name: "required",
-			ux_edit_description: 
-			{
-				required: true
-			},
 			ux_edit_image_width: 
 			{
 				required: true,
