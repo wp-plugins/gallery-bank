@@ -74,6 +74,9 @@
 										?>
 									</div>
 								</div>
+								<div class="row" >
+									<img src="<?php echo GALLERY_BK_PLUGIN_URL."/images/screenshot.png";?>"/>
+								</div>
 								<div class="row">
 									<label>
 										<?php _e( "Upload Images :", gallery_bank ); ?>

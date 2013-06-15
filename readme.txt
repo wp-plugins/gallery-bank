@@ -104,7 +104,7 @@ Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
 
 == Changelog ==
 
-= 1.8.2 =
+= 1.8.3 =
 
 * Introduced Timthumb for Thumbnails
 * Title Alignment - Fixed.
