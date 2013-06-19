@@ -94,7 +94,7 @@
 									(
 										$wpdb->prepare
 										(
-										"SELECT * FROM ". gallery_bank_pics(). " WHERE album_id = %d order by pic_id asc",
+										"SELECT * FROM ". gallery_bank_pics(). " WHERE album_id = %d order by sorting_order asc",
 										$album_id
 										)
 									);
@@ -213,7 +213,9 @@ jQuery("#gallery_bank").addClass("current");
 		},
 		submitHandler: function(form)
 		{
-			
+			jQuery('#success_update_album_message').css('display','block');
+			jQuery('body,html').animate({
+			scrollTop: jQuery('body,html').position().top}, 'slow');
 			var albumId = jQuery('#hidden_album_id').val();
 			if (jQuery("#wp-ux_edit_description-wrap").hasClass("tmce-active"))
 			{
@@ -225,7 +227,6 @@ jQuery("#gallery_bank").addClass("current");
 			}
 			var count_pic = arr.length;
 			var edit_album_name = encodeURIComponent(jQuery('#ux_edit_album_name').val());
-		
 			jQuery.post(ajaxurl, "id="+arr+"&count_pic="+count_pic+"&param=delete_pic&action=album_gallery_library", function(data)
 			{	
 			});
@@ -277,9 +278,6 @@ jQuery("#gallery_bank").addClass("current");
 						{
 							jQuery('#error_edit_border_album_message').css('display','none');
 							jQuery('#error_update_album_message').css('display','none');
-							jQuery('#success_update_album_message').css('display','block');
-							jQuery('body,html').animate({
-							scrollTop: jQuery('body,html').position().top}, 'slow');
 							count++;
 							if(count == array.length)
 							{

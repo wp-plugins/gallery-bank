@@ -33,6 +33,7 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_pics() . '"')) == 0
 	description TEXT NOT NULL,
 	thumbnail_url TEXT NOT NULL,
 	date DATE,
+	sorting_order INTEGER(20),
 	PRIMARY KEY (pic_id)		 
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';
 	dbDelta($sql);
@@ -177,6 +178,40 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 			$wpdb->prepare
 			(
 				"ALTER TABLE " . gallery_bank_albums() . " ADD images_in_row INTEGER(5) NOT NULL",""
+			)
+		);
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"update " . gallery_bank_albums() . " set images_in_row =%d","3"
+			)
+		);
+	}
+}
+if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_pics() . '"')) != 0)
+{
+	$check = $wpdb->get_var
+	(
+		$wpdb->prepare
+		(
+			"SHOW COLUMNS FROM " . gallery_bank_pics() . " LIKE 'sorting_order'",""
+		)
+	);
+	if($check != "sorting_order")
+	{
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"ALTER TABLE " . gallery_bank_pics() . " ADD sorting_order INTEGER(20)",""
+			)
+		);
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"update " . gallery_bank_pics() . " set ". gallery_bank_pics() .".sorting_order = " . gallery_bank_pics() . ".pic_id",""
 			)
 		);
 	}

@@ -48,10 +48,10 @@ $url = plugins_url('', __FILE__);
 									<th style="width:10%"><?php _e( "Album Name", gallery_bank ); ?></th>
 									<th style="width:15%"><?php _e( "Shortcode - Only Pics", gallery_bank ); ?></th>
 									<th style="width:25%"><?php _e( "Shortcode - Album Cover with Pics", gallery_bank ); ?></th>
-									<th style="width:10%"><?php _e( "Total Pics", gallery_bank ); ?></th>
+									<th style="width:8%"><?php _e( "Total Pics", gallery_bank ); ?></th>
 									<th style="width:7%"><?php _e( "Author", gallery_bank ); ?></th>
 									<th style="width:8%"><?php _e( "Date", gallery_bank ); ?></th>
-									<th style="width:4%"><?php _e( "Action", gallery_bank ); ?></th>
+									<th style="width:6%"><?php _e( "Action", gallery_bank ); ?></th>
 								</tr>
 							</thead>
 							<tbody>
@@ -82,8 +82,10 @@ $url = plugins_url('', __FILE__);
 										<td><?php echo $album[$flag] -> author;?></td>
 										<td><?php echo $album[$flag] -> album_date;?></td>
 										<td>
-											<a class="icon-edit"  href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>"></a>
-											<a class="icon-trash" style="cursor: pointer;" onclick="delete_album(<?php echo $album[$flag]->album_id;?>)"></a>
+											<a data-original-title="<?php _e("Edit Album?", gallery_bank ); ?>" data-placement="top"class="icon-edit hovertip"  href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>" ></a>
+											<a data-original-title="<?php _e("Sort Images?", gallery_bank ); ?>" data-placement="top" class="icon-move hovertip" style="cursor: pointer;"href="admin.php?page=images_sorting&album_id=<?php echo $album[$flag]->album_id;?>" ></a>
+											<a data-original-title="<?php _e("Delete Album?", gallery_bank ); ?>" data-placement="top" class="icon-trash hovertip" style="cursor: pointer;" onclick="delete_album(<?php echo $album[$flag]->album_id;?>)"></a>
+											
 										</td>
 									</tr>
 								<?php

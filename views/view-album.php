@@ -116,7 +116,7 @@
 						(
 							$wpdb->prepare
 							(
-								"SELECT * FROM ". gallery_bank_pics(). " WHERE album_id = %d",
+								"SELECT * FROM ". gallery_bank_pics(). " WHERE album_id = %d order by sorting_order asc",
 								$album_id
 							)
 						);

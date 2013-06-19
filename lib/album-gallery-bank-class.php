@@ -173,6 +173,26 @@ else
 			}
 			die();
 		}
+		else if($_REQUEST["param"] == "reorderControls")
+		{
+			
+			$updateRecordsArray = $_POST['recordsArray'];
+			$listingCounter = 1;
+			foreach ($updateRecordsArray as $recordIDValue)
+			{
+				$wpdb->query
+				(
+					$wpdb->prepare
+					(
+						"UPDATE ".gallery_bank_pics()." SET sorting_order = %d WHERE pic_id = %d",
+						$listingCounter,
+						$recordIDValue
+					)
+				);
+				$listingCounter = $listingCounter + 1;	
+			}
+			die();
+		}
 	}
 }
 ?>

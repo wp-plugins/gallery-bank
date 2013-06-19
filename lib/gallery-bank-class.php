@@ -10,6 +10,7 @@ function create_global_menus_for_gallery_bank()
 		add_submenu_page('', 'Gallery Bank', __('Gallery Bank', gallery_bank), 'administrator', 'gallery_bank', 'gallery_bank');
 		add_submenu_page('', '','' , 'administrator', 'add_album', 'add_album');
 		add_submenu_page('', '','' , 'administrator', 'view_album', 'view_album');
+		add_submenu_page('', '','' , 'administrator', 'images_sorting', 'images_sorting');
 		add_submenu_page('', '','' , 'administrator', 'edit_album', 'edit_album');
 		add_submenu_page('', '','' , 'administrator', 'pro_version', 'pro_version');
 	
@@ -81,13 +82,21 @@ function edit_album()
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/edit-album.php';
 }
-
+function images_sorting()
+{
+	global $wpdb;
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/menus-gallery-bank.php';
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/images_sorting.php';
+}
 //--------------------------------------------------------------------------------------------------------------//
 //CODE FOR CALLING JAVASCRIPT FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------//
 function plugin_js_scripts_gallery_bank()
 {
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery-ui-sortable');
+	wp_enqueue_script('jquery-ui-draggable');
 	wp_enqueue_script('jquery.datatables.js', GALLERY_BK_PLUGIN_URL .'/js/jquery.datatables.js');
 	wp_enqueue_script('jquery.validate.min.js', GALLERY_BK_PLUGIN_URL .'/js/jquery.validate.min.js');
 	wp_enqueue_script('bootstrap-bootbox.min.js', GALLERY_BK_PLUGIN_URL .'/js/bootstrap-bootbox.min.js');
@@ -111,7 +120,7 @@ function plugin_css_scripts_gallery_bank()
 	wp_enqueue_style('datatables.css', GALLERY_BK_PLUGIN_URL .'/css/datatables.css');
 	wp_enqueue_style('system-message.css', GALLERY_BK_PLUGIN_URL .'/css/system-message.css');
 	wp_enqueue_style('forms-btn.css', GALLERY_BK_PLUGIN_URL .'/css/forms-btn.css');
-		wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
+	wp_enqueue_style('visuallightbox.css', GALLERY_BK_PLUGIN_URL .'/css/visuallightbox.css');
 	wp_enqueue_style('plugins.css', GALLERY_BK_PLUGIN_URL .'/css/plugins.css');
 	
 }
@@ -200,4 +209,5 @@ add_action('init','frontend_plugin_css_scripts_gallery_bank');
 add_action('admin_menu','create_global_menus_for_gallery_bank');
 add_shortcode('gallery_bank', 'gallery_bank_short_code' );
 add_shortcode('gallery_bank_album_cover', 'gallery_bank_short_code_album');
+remove_filter( 'the_content', 'wpautop' );
 ?>
