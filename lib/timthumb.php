@@ -20,6 +20,7 @@
 	a new version of timthumb.
 
 */
+require_once 'class.jpeg_icc.php';
 define ('VERSION', '2.8.2');										// Version of this script 
 //Load a config file if it exists. Otherwise, use the values below
 if( file_exists(dirname(__FILE__) . '/timthumb-config.php'))	require_once('timthumb-config.php');
@@ -706,7 +707,13 @@ class timthumb {
 		$tempfile = tempnam($this->cacheDirectory, 'timthumb_tmpimg_');
 		if(preg_match('/^image\/(?:jpg|jpeg)$/i', $mimeType)){ 
 			$imgType = 'jpg';
-			imagejpeg($canvas, $tempfile, $quality); 
+			imagejpeg($canvas, $tempfile, $quality);
+ 
+			// Add sRGB ICC profile
+			$icc = new JPEG_ICC();
+			$icc->LoadFromJPEG('in-srgb.jpg');
+			$icc->SaveToJPEG($tempfile);
+ 
 		} else if(preg_match('/^image\/png$/i', $mimeType)){ 
 			$imgType = 'png';
 			imagepng($canvas, $tempfile, floor($quality * 0.09));

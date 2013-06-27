@@ -209,5 +209,4 @@ add_action('init','frontend_plugin_css_scripts_gallery_bank');
 add_action('admin_menu','create_global_menus_for_gallery_bank');
 add_shortcode('gallery_bank', 'gallery_bank_short_code' );
 add_shortcode('gallery_bank_album_cover', 'gallery_bank_short_code_album');
-remove_filter( 'the_content', 'wpautop' );
 ?>
