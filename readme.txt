@@ -39,7 +39,7 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 * User-friendly AJAX admin
 * Choose a number of pictures to display in one row in the gallery album.
 * Easy to delete images/pictures.
-* Upload different types of media
+* Upload different types of media(.jpg,.jpeg,.gif,.png)
 
 = Pro Version = 
 
