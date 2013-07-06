@@ -2,16 +2,21 @@
 Contributors: Gallery-Bank
 Tags: gallery, image, gallery images, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery, photo gallery, lightbox,media, nextgen, nextgen gallery,photo, photo albums, picture, pictures, thumbnails, slideshow
 Requires at least: 3.0
-Tested up to: 3.6 Beta
-Stable tag: 1.8.5
+Tested up to: 3.5.2
+Stable tag: 1.8.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Gallery Bank is an interactive WordPress photo gallery plugin, best fit for creative and corporate portfolio websites.
+Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos galleries and albums.
 
 == Description ==
 
-Create responsive and filterable portfolios with ease on your website. Gallery Bank comes with masonry layout, is designed to adapt each portfolio to any situation and is mobile optimized for responsive themes.
+Gallery Bank is the WordPress plugin that allows you to create photo galleries with an ease in your WordPress websites.
+Multiple albums can be added along with titles and descriptions in the gallery. 
+It has the ability to upload   images, with options like adding, deleting and sorting image, and editing thumbnails; group galleries into albums.
+You can enjoy the slide show feature in the Gallery Bank. 
+Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive plugin.
+
 
 <a href="http://gallery-bank.com/forum/support-forum/" target="_blank">Support Desk - feel free to ask your queries</a>
 
@@ -21,33 +26,35 @@ Create responsive and filterable portfolios with ease on your website. Gallery B
 
 = Features =
 
-* Create any amount of albums in the gallery.
-* Add description to each album and then title & description to each image in your album.
-* Upoad any number of photos to each album in the gallery.
-* Add Single Gallery to your page or post using a shortcode.
-* Add a caption to each photo in the album.
+* In an album you can add unlimited number of pictures /images.
+* Easy to edit pictures/images.
+* Set the cover for the album.
+* Add Single Gallery or Display Images to your page or post using a shortcode.
+* Sorting can be done in albums.
+* Caption to photo album.
 * Change the size of album cover thumbnails and photos in the album. 
-* Choose a number of pictures to display in one row in the gallery album. 
-* View pictures as a slide show and in a full size.
-* 3 different Widgets: Display a single album, create a list of album links, display latest/random media
+* Light box view of the images/pictures.
+* Option to add description and titles to the images.
+* View pictures in a slide show and in a full size.
 * User-friendly AJAX admin
+* Choose a number of pictures to display in one row in the gallery album.
+* Easy to delete images/pictures.
 * Upload different types of media
 
 = Pro Version = 
 
 * Domain Installation (x1 change anytime)
 * Responsive Gallery
-* Creates unlimited amount of albums in the gallery
-* Upload unlimited number of photos to each album
-* Technical Support for 1 month
-* Plugin Updates for Lifetime
-* Add Gallery to your Page or Post
-* Set featured image as an album cover
-* Add description to each album
-* Change size of album cover thumbnails & pics
-* Choose number of pictures to display in row
-* View pictures as a slide show and in a full size
-* Change background color
+* Creates unlimited amount of albums in the gallery.
+* Upload unlimited number of photos to each album.
+* Technical Support for 1 month.
+* Plugin Updates for Lifetime.
+* Add Gallery to your Page or Post.
+* Set featured image as an album cover.
+* Add description to each album.
+* Change size of album cover thumbnails & pics.
+* Choose number of pictures to display in row.
+* View pictures as a slide show and in a full size.
 
 Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
 
@@ -103,6 +110,10 @@ Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+= 1.8.5 =
+
+* Readme.txt Updated
+* Languages Updated
 
 = 1.8.4 =
 
