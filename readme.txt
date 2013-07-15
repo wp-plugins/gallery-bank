@@ -3,7 +3,7 @@ Contributors: Gallery-Bank
 Tags: gallery, image, gallery images, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery, photo gallery, lightbox,media, nextgen, nextgen gallery,photo, photo albums, picture, pictures, thumbnails, slideshow
 Requires at least: 3.0
 Tested up to: 3.5.2
-Stable tag: 1.8.6
+Stable tag: 1.8.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -110,12 +110,17 @@ Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
-= 1.8.5 =
+
+= 1.8.7 =
+
+* Timbthumb Thumbnails Issue fixed.
+
+= 1.8.6 =
 
 * Readme.txt Updated
 * Languages Updated
 
-= 1.8.4 =
+= 1.8.5 =
 
 * Timbthumb Quality Issues Fixed
 * Formatting Issue Resolved
