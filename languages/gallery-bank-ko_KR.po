@@ -1,0 +1,173 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2013-06-05 19:11+0530\n"
+"PO-Revision-Date: 2013-06-05 19:24+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\wordpress\\wp-content\\plugins\\gallery-"
+"bank\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: lib/gallery-bank-class.php:9 lib/gallery-bank-class.php:10
+#: views/add-album.php:11 views/album.php:11 views/edit-album.php:11
+#: views/menus-gallery-bank.php:8 views/view-album.php:11
+msgid "Gallery Bank"
+msgstr ""
+
+#: views/add-album.php:16 views/album.php:16 views/album.php:42
+#: views/edit-album.php:16 views/view-album.php:16
+msgid "Albums"
+msgstr "앨범"
+
+#: views/add-album.php:21 views/album.php:34
+msgid "Create New Album"
+msgstr "새 앨범 만들기"
+
+#: views/add-album.php:27
+msgid "Back to Albums Page"
+msgstr "다시 앨범 페이지로"
+
+#: views/add-album.php:31 views/edit-album.php:31
+msgid ""
+"Success! We are in the middle of updating the data. Kindly wait for the "
+"redirect."
+msgstr ""
+"성공! 우리는 데이터를 업데이트의 중간에 있습니다. 친절하게 기다리다 리디렉션"
+"에 대한."
+
+#: views/add-album.php:36 views/edit-album.php:36
+msgid "Error! Slide Interval can't be zero."
+msgstr "오류! 슬라이드 간격 0 일 수 없습니다."
+
+#: views/add-album.php:41 views/edit-album.php:41
+msgid "Error! Border width can't be zero."
+msgstr "오류! 테두리 너비는 0 일 수 없습니다."
+
+#: views/add-album.php:51 views/edit-album.php:62 views/view-album.php:50
+msgid "Album Name :"
+msgstr "앨범 이름 :"
+
+#: views/add-album.php:58 views/add-album.php:283 views/edit-album.php:69
+#: views/edit-album.php:139 views/edit-album.php:440 views/view-album.php:60
+#: views/view-album.php:166
+msgid "Description :"
+msgstr "설명 :"
+
+#: views/add-album.php:68 views/edit-album.php:79
+msgid "Upload Images :"
+msgstr "업로드 이미지 :"
+
+#: views/add-album.php:73 views/edit-album.php:84
+msgid "Browse Here"
+msgstr "찾아보기 여기 "
+
+#: views/add-album.php:89 views/edit-album.php:162
+msgid "Submit & Save Changes"
+msgstr "제출 & 저장 변경"
+
+#: views/add-album.php:119 views/edit-album.php:347 views/edit-album.php:389
+msgid "Are you sure you want to delete this Picture?"
+msgstr "당신은 확실히 있습니다 이 사진을 삭제하려면?"
+
+#: views/add-album.php:274 views/edit-album.php:118 views/edit-album.php:431
+msgid " Set Image as Album Cover"
+msgstr "앨범 으로 커버로 이미지 설정"
+
+#: views/add-album.php:277 views/edit-album.php:126 views/edit-album.php:434
+msgid "Remove Image"
+msgstr "이미지를 제거"
+
+#: views/add-album.php:280 views/edit-album.php:131 views/edit-album.php:437
+#: views/view-album.php:157
+msgid "Title :"
+msgstr "제목 :"
+
+#: views/album.php:48
+msgid "Album Name"
+msgstr "앨범 이름"
+
+#: views/album.php:49
+msgid "Shortcode - Only Pics"
+msgstr "단축 코드 - 만 사진"
+
+#: views/album.php:50
+msgid "Shortcode - Album Cover with Pics"
+msgstr "단축 코드 -  앨범 커버 와 사진"
+
+#: views/album.php:51
+msgid "Total Pics"
+msgstr "합계 사진"
+
+#: views/album.php:52
+msgid "Author"
+msgstr "저자"
+
+#: views/album.php:53
+msgid "Date"
+msgstr "날짜"
+
+#: views/album.php:54
+msgid "Action"
+msgstr "행동"
+
+#: views/album.php:78
+msgid "View Album"
+msgstr "앨범보기"
+
+#: views/album.php:128
+msgid "Are you sure you want to delete this Album?"
+msgstr "당신은 확실히 이 앨범을 삭제하려면?"
+
+#: views/album.php:138
+msgid "Error! you are unable to delete this Album until Album has Pictures."
+msgstr "오류! 은 앨범 사진을 보유하고 있습니다 당신 앨범을 삭제할 수 없습니다."
+
+#: views/edit-album.php:21
+msgid "Edit Album"
+msgstr "앨범 편집"
+
+#: views/edit-album.php:27
+msgid "Back to Album"
+msgstr "앨범을 맞댄"
+
+#: views/edit-album.php:174
+msgid "&copy; 2013 Gallery-Bank"
+msgstr ""
+
+#: views/edit-album.php:177
+msgid "Powered by "
+msgstr ""
+
+#: views/edit-album.php:179
+msgid "Gallery Bank!"
+msgstr ""
+
+#: views/front-view-albums.php:42 views/view-album.php:27
+msgid "Back to Albums"
+msgstr "앨범에 다시"
+
+#: views/front-view-albums.php:55 views/front-view-albums.php:70
+msgid "See Album images"
+msgstr "전망 앨범 이미지 :"
+
+#: views/view-album.php:21
+msgid "Album Details"
+msgstr "앨범 상세 정보"
+
+#: views/view-album.php:71
+msgid "Author Name :"
+msgstr "저자 이름 :"
+
+#: views/view-album.php:82
+msgid "No. of Pics:"
+msgstr "의 번호 사진 :"
+
+#: views/view-album.php:103
+msgid "Album Date:"
+msgstr "앨범 날짜 :"
