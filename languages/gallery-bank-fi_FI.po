@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-06-05 19:16+0530\n"
-"PO-Revision-Date: 2013-06-05 19:17+0530\n"
+"POT-Creation-Date: 2013-07-10 11:55+0530\n"
+"PO-Revision-Date: 2013-07-10 17:37+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -10,163 +10,312 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: C:\\wamp\\www\\gallery-bank\\wp-content\\plugins\\gallery-"
-"bank\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\gallery bank testing 2.0\\wp-content"
+"\\plugins\\gallery-bank\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: lib/gallery-bank-class.php:9 lib/gallery-bank-class.php:10
-#: views/add-album.php:11 views/album.php:11 views/edit-album.php:11
-#: views/menus-gallery-bank.php:8 views/view-album.php:11
+#: lib/gallery-bank-class.php:8 views/menus-gallery-bank.php:7
 msgid "Gallery Bank"
 msgstr ""
 
-#: views/add-album.php:16 views/album.php:16 views/album.php:42
-#: views/edit-album.php:16 views/view-album.php:16
-msgid "Albums"
-msgstr "albumit"
+#: lib/gallery-bank-class.php:9 views/dashboard.php:4
+msgid "Dashboard"
+msgstr "kojelauta"
 
-#: views/add-album.php:21 views/album.php:34
-msgid "Create New Album"
-msgstr "Luo uusi albumi"
+#: lib/gallery-bank-class.php:10 views/add-new-album.php:203
+#: views/edit-album.php:319 views/settings.php:83
+msgid "Default Settings"
+msgstr "oletusasetukset"
 
-#: views/add-album.php:27
-msgid "Back to Albums Page"
-msgstr "Takaisin kansioihin"
+#: lib/gallery-bank-class.php:262
+msgid "Select Gallery:"
+msgstr "Valitse Galleria:"
 
-#: views/add-album.php:31 views/edit-album.php:31
-msgid ""
-"Success! We are in the middle of updating the data. Kindly wait for the "
-"redirect."
-msgstr ""
-"Menestys! -Olemme keskellä tietojen päivittämiseksi. Odota uudelleenohjaus."
+#: lib/gallery-bank-class.php:264
+msgid "All albums"
+msgstr "kaikki albumit"
 
-#: views/add-album.php:36 views/edit-album.php:36
-msgid "Error! Slide Interval can't be zero."
-msgstr "Virhe! Dia Interval ei voi olla nolla."
+#: views/add-new-album.php:83 views/dashboard.php:9 views/dashboard.php:11
+msgid "Add New Album"
+msgstr "lisätä uusi albumit"
 
-#: views/add-album.php:41 views/edit-album.php:41
-msgid "Error! Border width can't be zero."
-msgstr "Virhe! raja leveys ei voi olla nolla."
+#: views/add-new-album.php:88 views/album_preview.php:99
+#: views/edit-album.php:10 views/images_sorting.php:62 views/settings.php:88
+msgid "Back to Album Overview"
+msgstr "Takaisin albumiin yleiskatsaus"
 
-#: views/add-album.php:51 views/edit-album.php:62 views/view-album.php:50
-msgid "Album Name :"
-msgstr "Albumin nimi :"
+#: views/add-new-album.php:90
+msgid "Publish Album"
+msgstr "Julkaise albumi"
 
-#: views/add-album.php:58 views/add-album.php:283 views/edit-album.php:69
-#: views/edit-album.php:139 views/edit-album.php:440 views/view-album.php:60
-#: views/view-album.php:166
-msgid "Description :"
-msgstr "Kuvaus :"
+#: views/add-new-album.php:95
+msgid "Album published.Kindly wait for the redirect."
+msgstr "albumi julkistaa. ystävällisesti odota uudelleenohjaus."
 
-#: views/add-album.php:68 views/edit-album.php:79
-msgid "Upload Images :"
+#: views/add-new-album.php:103 views/edit-album.php:30
+msgid "Album Details"
+msgstr "Albumin tarkemmat tiedot"
+
+#: views/add-new-album.php:108 views/edit-album.php:46
+msgid "Enter your Album title here"
+msgstr "Anna Albumin otsikko täällä"
+
+#: views/add-new-album.php:120 views/edit-album.php:60
+msgid "Upload Images"
 msgstr "ladata kuvia"
 
-#: views/add-album.php:73 views/edit-album.php:84
-msgid "Browse Here"
-msgstr "selaa täällä"
+#: views/add-new-album.php:125 views/edit-album.php:65
+msgid "Upload Images to your Album "
+msgstr "selailla kuva omaan albumi"
 
-#: views/add-album.php:89 views/edit-album.php:162
-msgid "Submit & Save Changes"
-msgstr "Jätä Tallenna muutokset"
+#: views/add-new-album.php:130 views/edit-album.php:70
+msgid "Delete "
+msgstr "poistaa"
 
-#: views/add-album.php:119 views/edit-album.php:347 views/edit-album.php:389
-msgid "Are you sure you want to delete this Picture?"
-msgstr "Oletko varma, että haluat poistaa tämän kuva?"
+#: views/add-new-album.php:142 views/edit-album.php:243
+msgid "Album Cover"
+msgstr "albumi kattaa"
 
-#: views/add-album.php:274 views/edit-album.php:118 views/edit-album.php:431
-msgid " Set Image as Album Cover"
-msgstr "Aseta Image koska Albumin kansi"
+#: views/add-new-album.php:156 views/edit-album.php:272
+msgid "Set Cover Image "
+msgstr "asettaa kansikuva kuva"
 
-#: views/add-album.php:277 views/edit-album.php:126 views/edit-album.php:434
+#: views/add-new-album.php:164 views/edit-album.php:280
+msgid "Short Codes For Page/Post"
+msgstr "Lyhyt koodit varten Sivu / Post"
+
+#: views/add-new-album.php:175 views/edit-album.php:291
+msgid "All Albums"
+msgstr "kaikki albumit"
+
+#: views/add-new-album.php:179 views/edit-album.php:295
+msgid "Single Album"
+msgstr "sinkku albumi"
+
+#: views/add-new-album.php:183 views/edit-album.php:299
+msgid "Album with Cover"
+msgstr "Albumi kanssa Cover"
+
+#: views/add-new-album.php:192 views/edit-album.php:308
+msgid "Album Settings"
+msgstr "albumin asetukset"
+
+#: views/add-new-album.php:216 views/edit-album.php:356
+msgid "Thumbnails Settings"
+msgstr "thumbnail asetukset"
+
+#: views/add-new-album.php:227 views/edit-album.php:367 views/settings.php:117
+msgid "Thumbnail Size"
+msgstr "Pienoiskuva Koko:"
+
+#: views/add-new-album.php:248 views/add-new-album.php:333
+#: views/edit-album.php:388 views/edit-album.php:473 views/settings.php:138
+#: views/settings.php:223
+msgid "Width"
+msgstr "leveys"
+
+#: views/add-new-album.php:255 views/add-new-album.php:340
+#: views/edit-album.php:395 views/edit-album.php:480 views/settings.php:145
+#: views/settings.php:230
+msgid "Height"
+msgstr "korkeus"
+
+#: views/add-new-album.php:262 views/edit-album.php:402 views/settings.php:152
+msgid "Images in Row"
+msgstr "Kuvien sisään Row"
+
+#: views/add-new-album.php:269 views/add-new-album.php:347
+#: views/add-new-album.php:390 views/edit-album.php:409
+#: views/edit-album.php:487 views/edit-album.php:530 views/settings.php:159
+#: views/settings.php:237 views/settings.php:280
+msgid "Opacity"
+msgstr "sameus"
+
+#: views/add-new-album.php:276 views/add-new-album.php:354
+#: views/add-new-album.php:397 views/edit-album.php:416
+#: views/edit-album.php:494 views/edit-album.php:537 views/settings.php:166
+#: views/settings.php:244 views/settings.php:287
+msgid "Border Size"
+msgstr "border Koko"
+
+#: views/add-new-album.php:283 views/add-new-album.php:361
+#: views/add-new-album.php:404 views/edit-album.php:423
+#: views/edit-album.php:501 views/edit-album.php:544 views/settings.php:173
+#: views/settings.php:251 views/settings.php:294
+msgid "Border Radius"
+msgstr "raja Säde"
+
+#: views/add-new-album.php:290 views/add-new-album.php:368
+#: views/add-new-album.php:417 views/edit-album.php:430
+#: views/edit-album.php:508 views/edit-album.php:557 views/settings.php:180
+#: views/settings.php:258 views/settings.php:307
+msgid "Border Color"
+msgstr "Reunan väri"
+
+#: views/add-new-album.php:301 views/edit-album.php:441 views/settings.php:191
+msgid "Album Cover Settings"
+msgstr "albumi kattaa asetus"
+
+#: views/add-new-album.php:312 views/edit-album.php:452 views/settings.php:202
+msgid "Cover Size"
+msgstr "kattaa size"
+
+#: views/add-new-album.php:379 views/edit-album.php:519 views/settings.php:269
+msgid "Lightbox Settings"
+msgstr "valopöy asetukset"
+
+#: views/add-new-album.php:411 views/edit-album.php:551 views/settings.php:301
+msgid "Text Color"
+msgstr "tekstin väri:"
+
+#: views/add-new-album.php:423 views/edit-album.php:563 views/settings.php:313
+msgid "Inline Background"
+msgstr "Inline Taustaa"
+
+#: views/add-new-album.php:429 views/edit-album.php:569 views/settings.php:319
+msgid "Overlay Background"
+msgstr "Overlay Taustaa"
+
+#: views/add-new-album.php:440 views/edit-album.php:580 views/settings.php:330
+msgid "Slide Show Settings"
+msgstr "Kuvaesitysasetuksia"
+
+#: views/add-new-album.php:451 views/edit-album.php:591 views/settings.php:341
+msgid "Auto Play"
+msgstr "Automaattinen toisto"
+
+#: views/add-new-album.php:472 views/edit-album.php:612 views/settings.php:363
+msgid "Interval"
+msgstr "aikaväli"
+
+#: views/add-new-album.php:484 views/edit-album.php:624 views/settings.php:375
+msgid "Pagination Settings"
+msgstr "sivutuksen Settings"
+
+#: views/add-new-album.php:495 views/edit-album.php:635 views/settings.php:386
+msgid "Paging"
+msgstr "Kaukohakulaitteille:"
+
+#: views/add-new-album.php:792 views/edit-album.php:97
+#: views/edit-album.php:1097
 msgid "Remove Image"
 msgstr "Poista kuva"
 
-#: views/add-album.php:280 views/edit-album.php:131 views/edit-album.php:437
-#: views/view-album.php:157
-msgid "Title :"
-msgstr "Otsikko :"
+#: views/add-new-album.php:797 views/edit-album.php:102
+#: views/edit-album.php:1102
+msgid "Enter your Image Title"
+msgstr "Anna Kuvan nimi"
 
-#: views/album.php:48
-msgid "Album Name"
-msgstr "Albumin nimi"
+#: views/add-new-album.php:799 views/edit-album.php:1104
+msgid "Enter your Image Description"
+msgstr "Anna Image Kuvaus"
 
-#: views/album.php:49
-msgid "Shortcode - Only Pics"
-msgstr "lyhyt-koodi - Vain Kuvia"
+#: views/add-new-album.php:816 views/edit-album.php:1124
+#: views/edit-album.php:1143
+msgid "Are you sure you want to delete this Image?"
+msgstr "Oletko varma, että haluat poistaa tämän kuvan?"
 
-#: views/album.php:50
-msgid "Shortcode - Album Cover with Pics"
-msgstr "lyhyt-koodi - Album Cover kanssa kuvilla "
+#: views/add-new-album.php:938
+msgid "Are you sure you want to delete these Images?"
+msgstr "Oletko varma, että haluat poistaa nämä kuvat?"
 
-#: views/album.php:51
-msgid "Total Pics"
-msgstr "Yhteensä Kuvia"
+#: views/album_preview.php:95
+msgid "Album Preview"
+msgstr "albumi esikatselu"
 
-#: views/album.php:52
-msgid "Author"
-msgstr "kirjailija"
+#: views/dashboard.php:15 views/dashboard.php:17
+msgid "Global Settings"
+msgstr "maailmanlaajuinen asetukset"
 
-#: views/album.php:53
-msgid "Date"
-msgstr "päivämäärä"
+#: views/dashboard.php:21 views/dashboard.php:23
+msgid "Delete All Albums"
+msgstr "Poista kaikki albumit"
 
-#: views/album.php:54
-msgid "Action"
-msgstr "toiminta"
+#: views/dashboard.php:32
+msgid "Existing Albums Overview"
+msgstr "Olemassa Albumit yleiskatsaus"
 
-#: views/album.php:78
-msgid "View Album"
-msgstr "Näytä albumi"
+#: views/dashboard.php:40
+msgid "Album Title"
+msgstr "Albumin otsikko"
 
-#: views/album.php:128
-msgid "Are you sure you want to delete this Album?"
-msgstr "Oletko varma, että haluat poistaa tämän Albumi?"
+#: views/dashboard.php:41
+msgid "Images in Album"
+msgstr "kuvat sisään Albumi"
 
-#: views/album.php:138
-msgid "Error! you are unable to delete this Album until Album has Pictures."
-msgstr "Virhe! et voi poistaa tämän albumi kokoelman kunnes albumi on kuvia."
+#: views/dashboard.php:42
+msgid "Published By"
+msgstr "Kustantaja"
 
-#: views/edit-album.php:21
+#: views/dashboard.php:43
+msgid "Date of Creation"
+msgstr "Luontiajankohtia"
+
+#: views/dashboard.php:75 views/edit-album.php:4
 msgid "Edit Album"
 msgstr "Muokkaa Albumi?"
 
-#: views/edit-album.php:27
-msgid "Back to Album"
-msgstr "Takaisin albumiin"
+#: views/dashboard.php:80
+msgid "Re-order Images"
+msgstr "Re kertaluvun kuvat"
 
-#: views/edit-album.php:174
-msgid "&copy; 2013 Gallery-Bank"
-msgstr ""
+#: views/dashboard.php:85
+msgid "Preview Album"
+msgstr "esikatselu albumi"
 
-#: views/edit-album.php:177
-msgid "Powered by "
-msgstr ""
+#: views/dashboard.php:90 views/edit-album.php:13
+msgid "Delete Album"
+msgstr "poistaa albumi"
 
-#: views/edit-album.php:179
-msgid "Gallery Bank!"
-msgstr ""
+#: views/dashboard.php:123 views/edit-album.php:1161
+msgid "Are you sure you want to delete this Album?"
+msgstr "Oletko varma, että haluat poistaa tämän Albumi?"
 
-#: views/front-view-albums.php:42 views/view-album.php:27
+#: views/dashboard.php:133
+msgid "Error! you are unable to delete this Album until Album has Pictures."
+msgstr "Virhe! et voi poistaa tämän albumi kokoelman kunnes albumi on kuvia."
+
+#: views/dashboard.php:146
+msgid "Are you sure you want to delete all Albums ?"
+msgstr "Oletko varma, että haluat poistaa kaikki albumit?"
+
+#: views/edit-album.php:16
+msgid "Update Album"
+msgstr "Päivitä albumi"
+
+#: views/edit-album.php:21
+msgid "Album updated. Kindly wait for the redirect."
+msgstr "Albumin on päivitetty. Ystävällisesti odottamaan ohjata muualle."
+
+#: views/edit-album.php:105
+msgid "Enter your Image Descriction"
+msgstr "Anna Image Kuvaus"
+
+#: views/edit-album.php:1177
+msgid "Are you sure you want to delete these Images"
+msgstr "Oletko varma, että haluat poistaa nämä kuvat"
+
+#: views/front-view-albums.php:68 views/front-view-all-albums.php:13
 msgid "Back to Albums"
 msgstr "Takaisin kansioihin"
 
-#: views/front-view-albums.php:55 views/front-view-albums.php:70
+#: views/front-view-albums.php:84 views/front-view-albums.php:114
+#: views/front-view-all-albums.php:77 views/front-view-all-albums.php:109
 msgid "See Album images"
 msgstr "Katso Albumin kuvia"
 
-#: views/view-album.php:21
-msgid "Album Details"
-msgstr "Albumin Päivämäärä"
+#: views/images_sorting.php:58
+msgid "Sorting"
+msgstr "lajitella"
 
-#: views/view-album.php:71
-msgid "Author Name :"
-msgstr "kirjailija Nimi :"
+#: views/settings.php:90
+msgid "Save and Submit Changes"
+msgstr "Tallenna ja Jätä muutokset"
 
-#: views/view-album.php:82
-msgid "No. of Pics:"
-msgstr "No Kuvia :"
+#: views/settings.php:95
+msgid "Success! Settings have been saved."
+msgstr "Menestys! Asetukset on tallennettu."
 
-#: views/view-album.php:103
-msgid "Album Date:"
-msgstr "Album Päivämäärä :"
+#: views/settings.php:106
+msgid "Thumbnail Settings"
+msgstr "thumbnail asetukset"
