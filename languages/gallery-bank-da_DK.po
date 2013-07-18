@@ -1,0 +1,319 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2013-07-10 16:43+0530\n"
+"PO-Revision-Date: 2013-07-10 18:31+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\Gallery-Bank\\wp-content\\plugins\\gallery-"
+"bank\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: lib/gallery-bank-class.php:8 views/menus-gallery-bank.php:7
+msgid "Gallery Bank"
+msgstr ""
+
+#: lib/gallery-bank-class.php:9 views/dashboard.php:4
+msgid "Dashboard"
+msgstr "instrumentbræt"
+
+#: lib/gallery-bank-class.php:10 views/add-new-album.php:203
+#: views/edit-album.php:319 views/settings.php:83
+msgid "Default Settings"
+msgstr "standardindstillinger indstillinger"
+
+#: lib/gallery-bank-class.php:262
+msgid "Select Gallery:"
+msgstr "Vælg galleri"
+
+#: lib/gallery-bank-class.php:264
+msgid "All albums"
+msgstr "samtlige albummer"
+
+#: views/add-new-album.php:83 views/dashboard.php:9 views/dashboard.php:11
+msgid "Add New Album"
+msgstr "Tilføj nye albummet"
+
+#: views/add-new-album.php:88 views/album_preview.php:99
+#: views/edit-album.php:10 views/images_sorting.php:62 views/settings.php:88
+msgid "Back to Album Overview"
+msgstr "Tilbage til albummet indtastede adresse "
+
+#: views/add-new-album.php:90
+msgid "Publish Album"
+msgstr "offentliggøre albummet "
+
+#: views/add-new-album.php:95
+msgid "Album published.Kindly wait for the redirect."
+msgstr "Album offentliggjort. Venlig at vente på omdirigering."
+
+#: views/add-new-album.php:103 views/edit-album.php:30
+msgid "Album Details"
+msgstr "Albumdetaljer"
+
+#: views/add-new-album.php:108 views/edit-album.php:46
+msgid "Enter your Album title here"
+msgstr "Indtast din Albumtitel her"
+
+#: views/add-new-album.php:120 views/edit-album.php:60
+msgid "Upload Images"
+msgstr "uploade billeder"
+
+#: views/add-new-album.php:125 views/edit-album.php:65
+msgid "Upload Images to your Album "
+msgstr "Uploade billeder til dit albummet "
+
+#: views/add-new-album.php:130 views/edit-album.php:70
+msgid "Delete "
+msgstr "Slet"
+
+#: views/add-new-album.php:142 views/edit-album.php:243
+msgid "Album Cover"
+msgstr "albummets omslag"
+
+#: views/add-new-album.php:156 views/edit-album.php:272
+msgid "Set Cover Image "
+msgstr "Indstil Dæksel Billede"
+
+#: views/add-new-album.php:164 views/edit-album.php:280
+msgid "Short Codes For Page/Post"
+msgstr "Kortkoder Til Side / Indlæg"
+
+#: views/add-new-album.php:175 views/edit-album.php:291
+msgid "All Albums"
+msgstr "alle Albummer"
+
+#: views/add-new-album.php:179 views/edit-album.php:295
+msgid "Single Album"
+msgstr "Enkeltværelse albummet"
+
+#: views/add-new-album.php:183 views/edit-album.php:299
+msgid "Album with Cover"
+msgstr "album med dække"
+
+#: views/add-new-album.php:192 views/edit-album.php:308
+msgid "Album Settings"
+msgstr "albummet indstillinger"
+
+#: views/add-new-album.php:216 views/edit-album.php:356
+msgid "Thumbnails Settings"
+msgstr "miniaturer Indstillinger"
+
+#: views/add-new-album.php:227 views/edit-album.php:367 views/settings.php:117
+msgid "Thumbnail Size"
+msgstr "Miniaturebilledstørrelse"
+
+#: views/add-new-album.php:248 views/add-new-album.php:333
+#: views/edit-album.php:388 views/edit-album.php:473 views/settings.php:138
+#: views/settings.php:223
+msgid "Width"
+msgstr "Bredde"
+
+#: views/add-new-album.php:255 views/add-new-album.php:340
+#: views/edit-album.php:395 views/edit-album.php:480 views/settings.php:145
+#: views/settings.php:230
+msgid "Height"
+msgstr "Højde"
+
+#: views/add-new-album.php:262 views/edit-album.php:402 views/settings.php:152
+msgid "Images in Row"
+msgstr "Billeder i træk"
+
+#: views/add-new-album.php:269 views/add-new-album.php:347
+#: views/add-new-album.php:390 views/edit-album.php:409
+#: views/edit-album.php:487 views/edit-album.php:530 views/settings.php:159
+#: views/settings.php:237 views/settings.php:280
+msgid "Opacity"
+msgstr "opacitet"
+
+#: views/add-new-album.php:276 views/add-new-album.php:354
+#: views/add-new-album.php:397 views/edit-album.php:416
+#: views/edit-album.php:494 views/edit-album.php:537 views/settings.php:166
+#: views/settings.php:244 views/settings.php:287
+msgid "Border Size"
+msgstr "grænse Størrelse"
+
+#: views/add-new-album.php:283 views/add-new-album.php:361
+#: views/add-new-album.php:404 views/edit-album.php:423
+#: views/edit-album.php:501 views/edit-album.php:544 views/settings.php:173
+#: views/settings.php:251 views/settings.php:294
+msgid "Border Radius"
+msgstr "grænsen radiusen"
+
+#: views/add-new-album.php:290 views/add-new-album.php:368
+#: views/add-new-album.php:417 views/edit-album.php:430
+#: views/edit-album.php:508 views/edit-album.php:557 views/settings.php:180
+#: views/settings.php:258 views/settings.php:307
+msgid "Border Color"
+msgstr "border farve"
+
+#: views/add-new-album.php:301 views/edit-album.php:441 views/settings.php:191
+msgid "Album Cover Settings"
+msgstr "Albummets omslag Indstillin"
+
+#: views/add-new-album.php:312 views/edit-album.php:452 views/settings.php:202
+msgid "Cover Size"
+msgstr "dækker størrelse"
+
+#: views/add-new-album.php:379 views/edit-album.php:519 views/settings.php:269
+msgid "Lightbox Settings"
+msgstr "Lightbox-indstillinger"
+
+#: views/add-new-album.php:411 views/edit-album.php:551 views/settings.php:301
+msgid "Text Color"
+msgstr "Tekstfarve"
+
+#: views/add-new-album.php:423 views/edit-album.php:563 views/settings.php:313
+msgid "Inline Background"
+msgstr "Inline Baggrund"
+
+#: views/add-new-album.php:429 views/edit-album.php:569 views/settings.php:319
+msgid "Overlay Background"
+msgstr "overlejringen Baggrund"
+
+#: views/add-new-album.php:440 views/edit-album.php:580 views/settings.php:330
+msgid "Slide Show Settings"
+msgstr "Indstillinger for diasshow"
+
+#: views/add-new-album.php:451 views/edit-album.php:591 views/settings.php:341
+msgid "Auto Play"
+msgstr "Autoafspilning"
+
+#: views/add-new-album.php:472 views/edit-album.php:612 views/settings.php:363
+msgid "Interval"
+msgstr "intervallet"
+
+#: views/add-new-album.php:484 views/edit-album.php:624 views/settings.php:375
+msgid "Pagination Settings"
+msgstr "paginering Indstillinger"
+
+#: views/add-new-album.php:495 views/edit-album.php:635 views/settings.php:386
+msgid "Paging"
+msgstr "personsøgning"
+
+#: views/add-new-album.php:792 views/edit-album.php:97
+#: views/edit-album.php:1097
+msgid "Remove Image"
+msgstr "Fjern Billede"
+
+#: views/add-new-album.php:797 views/edit-album.php:102
+#: views/edit-album.php:1102
+msgid "Enter your Image Title"
+msgstr "Indtast din Billedets titel"
+
+#: views/add-new-album.php:799 views/edit-album.php:105
+#: views/edit-album.php:1104
+msgid "Enter your Image Description"
+msgstr "Indtast din foto Beskrivelse"
+
+#: views/add-new-album.php:816 views/edit-album.php:1124
+#: views/edit-album.php:1143
+msgid "Are you sure you want to delete this Image?"
+msgstr "Er du sikker på du vil slette dette Billede?"
+
+#: views/add-new-album.php:938
+msgid "Are you sure you want to delete these Images?"
+msgstr "Er du sikker på du vil slette disse billeder?"
+
+#: views/album_preview.php:95
+msgid "Album Preview"
+msgstr "albummet Eksempel"
+
+#: views/dashboard.php:15 views/dashboard.php:17
+msgid "Global Settings"
+msgstr "globale indstillinger"
+
+#: views/dashboard.php:21 views/dashboard.php:23
+msgid "Delete All Albums"
+msgstr "Slet alle Albummer"
+
+#: views/dashboard.php:32
+msgid "Existing Albums Overview"
+msgstr "Eksisterende albummer indtastede adresse"
+
+#: views/dashboard.php:40
+msgid "Album Title"
+msgstr "Titel på album"
+
+#: views/dashboard.php:41
+msgid "Images in Album"
+msgstr "Billeder i albummet"
+
+#: views/dashboard.php:42
+msgid "Published By"
+msgstr "Udgivet af"
+
+#: views/dashboard.php:43
+msgid "Date of Creation"
+msgstr "Dato for oprettelse"
+
+#: views/dashboard.php:75 views/edit-album.php:4
+msgid "Edit Album"
+msgstr "Rediger album?"
+
+#: views/dashboard.php:80
+msgid "Re-order Images"
+msgstr "Omarranger Billeder Vis"
+
+#: views/dashboard.php:85
+msgid "Preview Album"
+msgstr "forhåndsvisning albummet"
+
+#: views/dashboard.php:90 views/edit-album.php:13
+msgid "Delete Album"
+msgstr "Slet albummet"
+
+#: views/dashboard.php:123 views/edit-album.php:1161
+msgid "Are you sure you want to delete this Album?"
+msgstr "Er du sikker på, at du vil slette dette album?"
+
+#: views/dashboard.php:133
+msgid "Error! you are unable to delete this Album until Album has Pictures."
+msgstr ""
+"Fejl! du er ikke i stand til at slette dette album indtil album har billeder."
+
+#: views/dashboard.php:146
+msgid "Are you sure you want to delete all Albums ?"
+msgstr "Er du sikker på, at du vil slette alle albummer?"
+
+#: views/edit-album.php:16
+msgid "Update Album"
+msgstr "ajourføre albummet"
+
+#: views/edit-album.php:21
+msgid "Album updated. Kindly wait for the redirect."
+msgstr "albummet opdateret. Venlig at vente på omdirigering."
+
+#: views/edit-album.php:1177
+msgid "Are you sure you want to delete these Images"
+msgstr "Er du sikker på du vil slette disse Billeder Vis"
+
+#: views/front-view-albums.php:68 views/front-view-all-albums.php:13
+msgid "Back to Albums"
+msgstr "tilbage til album"
+
+#: views/front-view-albums.php:84 views/front-view-albums.php:114
+#: views/front-view-all-albums.php:77 views/front-view-all-albums.php:109
+msgid "See Album images"
+msgstr "Se Album billeder"
+
+#: views/images_sorting.php:58
+msgid "Sorting"
+msgstr "sortering"
+
+#: views/settings.php:90
+msgid "Save and Submit Changes"
+msgstr "Gem og Indsend ændringer"
+
+#: views/settings.php:95
+msgid "Success! Settings have been saved."
+msgstr "Succes! Indstillinger er blevet gemt."
+
+#: views/settings.php:106
+msgid "Thumbnail Settings"
+msgstr "miniaturer Indstillinger"
