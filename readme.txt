@@ -11,12 +11,9 @@ Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos ga
 
 == Description ==
 
-Gallery Bank is the WordPress plugin that allows you to create photo galleries with an ease in your WordPress websites.
-Multiple albums can be added along with titles and descriptions in the gallery. 
-It has the ability to upload   images, with options like adding, deleting and sorting image, and editing thumbnails; group galleries into albums.
-You can enjoy the slide show feature in the Gallery Bank. 
-Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive plugin.
-
+Gallery Bank is the best WordPress plugin that allows you to create photo galleries with an ease in your WordPress websites.<br/>
+It has the ability to upload images, with options like adding, editing, re-order/sorting and deleting images in the Album.<br/>
+Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
 <a href="http://gallery-bank.com/forum/support-forum/" target="_blank">Support Desk - feel free to ask your queries</a>
 
@@ -24,24 +21,22 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 <a href="https://www.facebook.com/GalleryBank/" target="_blank">Like & Support us on Facebook</a>
 
-= Features =
+= Key Features in Standard Version =
 
-* In an album you can add unlimited number of pictures /images.
-* Easy to edit pictures/images.
-* Set the cover for the album.
-* Add Single Gallery or Display Images to your page or post using a shortcode.
-* Sorting can be done in albums.
-* Caption to photo album.
-* Change the size of album cover thumbnails and photos in the album. 
+* Creates upto 2 Albums in your Gallery Bank
+* Unlimited Images could be uploaded to each Album.
+* Feature to set the cover for the album.
+* Bulk Delete option available to delete all or selected images in an Album.
+* Various Shortcodes available for displaying albums on Pages/Posts.
+* Albums could be easily editable
+* Images could be re-ordered or sorted in a customized way.
 * Light box view of the images/pictures.
 * Option to add description and titles to the images.
 * View pictures in a slide show and in a full size.
 * User-friendly AJAX admin
-* Choose a number of pictures to display in one row in the gallery album.
-* Easy to delete images/pictures.
 * Upload different types of media(.jpg,.jpeg,.gif,.png)
 
-= Pro Version = 
+= Key Features in Pro Version = 
 
 * Domain Installation (x1 change anytime)
 * Responsive Gallery
@@ -55,10 +50,38 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 * Change size of album cover thumbnails & pics.
 * Choose number of pictures to display in row.
 * View pictures as a slide show and in a full size.
+* Pagination option availble.
+* Bulk Delete option available to delete all or selected images in an Album.
+* Preview Images while on the Backend.
+* Widget Introducted to show all images in a particular album in your Sidebars/Footers.
+* General Settings for Images, Album Covers, Lightbox and Slideshow
+* Individual Settings for Images, Album Covers, Lightbox and Slideshow
 
 Visit [here](http://gallery-bank.com) to upgrade to Pro Version now.
 
-= Gallery Bank in following Languages = 
+= Editing Albums = 
+In albums, editing can be done easily. You can edit or add more images/ pictures in your albums. You can change title/description of an album as well as title/description of each image uploaded in a particular album.
+
+= Sorting of Albums = 
+Sorting of Images can be done in your albums. With this feature, you can change the order of pictures according to your requirement/choice.
+
+= Album Preview =
+In album preview you can view the pictures/images on your backennd before implementing the shortcodes on your Pages/Posts.
+
+= Cover Image = 
+You can easily set the cover image in your album. This cover image would be used to display on your Pages/Post when using the Album shortcodes.
+
+= Short Codes = 
+You can use 3 of the shortcodes availble for displaying albums on your Pages/Posts
+
+= Titlle/Description = 
+You can easily give the titles/ descriptions to the pictures/ images of your album and you can also provide title and description for each image you upload in your Album.
+
+= Bulk Deletion =
+With this bulk deletion feature, you can now delete the pictures you want in bulk. It is difficult to delete images one by one so the, so this feature would save a lot of time.
+
+
+= Gallery Bank in available in the following Languages = 
 
 * Albanian (sq_AL)
 * Arabic (ar_AR)
