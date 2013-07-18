@@ -111,6 +111,7 @@ function backend_scripts_calls()
 	wp_enqueue_script('mColorPicker_small.js', GALLERY_BK_PLUGIN_URL .'/assets/js/colorpicker/js/mColorPicker_small.js');
 	wp_enqueue_script('jquery.validate.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/forms/jquery.validate.min.js');
 	wp_enqueue_script('jquery.titanlighbox.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.titanlighbox.js');
+	wp_enqueue_script('jquery.tooltip.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.tooltip.js');
 }
 function frontend_plugin_js_scripts_gallery_bank()
 {

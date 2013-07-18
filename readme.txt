@@ -11,8 +11,8 @@ Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos ga
 
 == Description ==
 
-Gallery Bank is the best WordPress plugin that allows you to create photo galleries with an ease in your WordPress websites.<br/>
-It has the ability to upload images, with options like adding, editing, re-order/sorting and deleting images in the Album.<br/>
+Gallery Bank is the best WordPress plugin that allows you to create photo galleries with an ease in your WordPress websites.
+It has the ability to upload images, with options like adding, editing, re-order/sorting and deleting images in the Album.
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
 <a href="http://gallery-bank.com/forum/support-forum/" target="_blank">Support Desk - feel free to ask your queries</a>
