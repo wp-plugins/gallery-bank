@@ -112,6 +112,14 @@ else
 			(
 				$wpdb->prepare
 				(
+					"DELETE FROM ".gallery_bank_pics()." WHERE album_id = %d",
+					$album_id
+				)
+			);
+			$wpdb->query
+			(
+				$wpdb->prepare
+				(
 					"DELETE FROM ".gallery_bank_albums()." WHERE album_id = %d",
 					$album_id
 				)
@@ -247,9 +255,40 @@ else
 		}
 		else if($_REQUEST['param'] == "delete_all_albums")
 		{
-			include_once 'gallery-bank.php';
-			plugin_uninstall_script_for_gallery_bank();
-			plugin_install_script_for_gallery_bank();
+			$album = $wpdb->get_results
+			(
+				$wpdb->prepare
+				(
+					"SELECT * FROM ".gallery_bank_albums(),""
+				)
+			);
+			for($flag=0; $flag < count($album); $flag++)
+			{
+				$wpdb->query
+				(
+					$wpdb->prepare
+					(
+						"DELETE FROM ".gallery_bank_pics()." WHERE album_id = %d",
+						$album[$flag]->album_id
+					)
+				);
+				$wpdb->query
+				(
+					$wpdb->prepare
+					(
+						"DELETE FROM ".gallery_bank_settings()." WHERE album_id = %d",
+						$album[$flag]->album_id
+					)
+				);
+				$wpdb->query
+				(
+					$wpdb->prepare
+					(
+						"DELETE FROM ".gallery_bank_albums()." WHERE album_id = %d",
+						$album[$flag]->album_id
+					)
+				);
+			}
 			die();
 		}
 	}
