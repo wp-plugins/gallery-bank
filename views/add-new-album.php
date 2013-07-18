@@ -109,6 +109,7 @@
 							</div>
 						</div>
 					</div>
+					<a href="http://gallery-bank.com/" target="_blank"><img style="cursor: pointer;width:95%" src="<?php echo GALLERY_BK_PLUGIN_URL.'/sidebar.png' ?>"/></a>
 				</div>
 			</div>
 		</form>
