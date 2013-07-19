@@ -175,13 +175,13 @@
     overflow: hidden;
     display: none;
     z-index: 8010;
-    background: url(../images/lightbox_overlay.png);
 }
 
 .lightbox-overlay-fixed {
     position: fixed;
     bottom: 0;
     right: 0;
+    z-index: 99999 !important;
 }
 
 .lightbox-lock .lightbox-overlay { }

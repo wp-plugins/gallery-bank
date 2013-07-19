@@ -70,26 +70,7 @@ jQuery(document).ready(function($) {
     showLogo: false
   };
 
-  $.fn.mColorPicker.defaults = {
-    currentId: false,
-    currentInput: false,
-    currentColor: false,
-    changeColor: false,
-    color: false,
-    imageFolder: '../wp-content/plugins/gallery-bank/assets/js/colorpicker/images/',
-    swatches: [
-      "#ffffff",
-      "#ffff00",
-      "#00ff00",
-      "#00ffff",
-      "#0000ff",
-      "#ff00ff",
-      "#ff0000",
-      "#4c2b11",
-      "#3b3b3b",
-      "#000000"
-    ]
-  };
+  
 
   $.fn.mColorPicker.start = function() {
 

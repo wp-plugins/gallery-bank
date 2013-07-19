@@ -94,37 +94,21 @@ else
 		<?php
 		if($cover_content[1] == 1)
 		{
-			if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-			{
+			
 				$album_custom_cover_css = "border:" . $cover_border_value . ";border-radius:" . $cover_border_radius[1].";opacity:". $cover_opacity[1];
 				?>
 				<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h=150&w=150&zc=1&q=100';?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor:pointer;<?php echo $album_custom_cover_css; ?>" />
 				<?php
-			}
-			else 
-			{
-				$album_custom_cover_css = "border:" . $cover_border_value . ";border-radius:" . $cover_border_radius[1].";opacity:". $cover_opacity[1];
-				?>
-				<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h=150&w=150&zc=1&q=100';?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor:pointer;<?php echo $album_custom_cover_css; ?>" />
-				<?php
-			}
+			
 		}
 		else 
 		{
-			if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-			{
+			
 				$album_cover_css = "border:" . $cover_border_value . ";border-radius:" . $cover_border_radius[1].";opacity:". $cover_opacity[1];
 				?>
 				<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h='.$cover_height[1].'&w='.$cover_width[1].'&zc=1&q=100';?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor:pointer;<?php echo $album_cover_css; ?>" />
 				<?php
-			}
-			else 
-			{
-				$album_cover_css = "border:" . $cover_border_value . ";border-radius:" . $cover_border_radius[1].";opacity:". $cover_opacity[1];
-				?>
-				<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h='.$cover_height[1].'&w='.$cover_width[1].'&zc=1&q=100';?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor:pointer;<?php echo $album_cover_css; ?>" />
-				<?php
-			}
+			
 		}
 		?>
 		<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">

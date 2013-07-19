@@ -124,37 +124,21 @@
 								<?php
 								if($image_content[1] == 1)
 								{
-									if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-									{
+									
 										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
 										?>
 											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
 										<?php
-									}
-									else 
-									{
-										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
-										<?php
-									}
+									
 								}
 								else 
 								{
-									if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-									{
+									
 										$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
 										?>
 											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
 										<?php
-									}
-									else 
-									{
-										$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
-										<?php
-									}
+									
 								}
 						}
 						else
@@ -164,37 +148,21 @@
 								<?php
 								if($image_content[1] == 1)
 								{
-									if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-									{
+									
 										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
 										?>
 											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
 										<?php
-									}
-									else 
-									{
-										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
-										<?php
-									}
+									
 								}
 								else 
 								{
-									if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-									{
+									
 										$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
 										?>
 											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
 										<?php
-									}
-									else 
-									{
-										$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
-										<?php
-									}
+									
 								}
 						}
 					}
@@ -208,37 +176,21 @@
 								<?php
 								if($image_content[1] == 1)
 								{
-									if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-									{
+									
 										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
 										?>
 											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
 										<?php
-									}
-									else
-									{
-										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
-										<?php
-									}
+									
 								}
 								else 
 								{
-									if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-									{
+									
 										$css_custom_image_thumbnail = "width:" .$image_width[1] . ";height:" . $image_height[1] . ";border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
 										?>
 											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
 										<?php
-									}
-									else 
-									{
-										$css_custom_image_thumbnail = "width:" .$image_width[1] . ";height:" . $image_height[1] . ";border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
-										<?php
-									}
+									
 								}
 						}
 						else
@@ -248,37 +200,21 @@
 								<?php
 								if($image_content[1] == 1)
 								{
-									if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-									{
+									
 										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
 										?>
 											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
 										<?php
-									}
-									else 
-									{
-										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
-										<?php
-									}
+									
 								}
 								else 
 								{
-									if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') 
-									{
+									
 										$css_custom_image_thumbnail = "width:" .$image_width[1] . ";height:" . $image_height[1] . ";border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
 										?>
 											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
 										<?php
-									}
-									else 
-									{
-										$css_custom_image_thumbnail = "width:" .$image_width[1] . ";height:" . $image_height[1] . ";border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($domain).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
-										<?php
-									}
+									
 								}
 						}
 					}
