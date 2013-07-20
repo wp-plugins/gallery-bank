@@ -106,6 +106,7 @@ function album_preview()
 function backend_scripts_calls()
 {
 	wp_enqueue_script('jquery');
+	wp_enqueue_script('jquery-ui-sortable');
 	wp_enqueue_script('bootstrap.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/bootstrap/bootstrap.min.js');
 	wp_enqueue_script('bootstrap-bootbox.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/bootstrap/bootstrap-bootbox.min.js');
 	wp_enqueue_script('jquery.dataTables.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/tables/jquery.dataTables.min.js');
