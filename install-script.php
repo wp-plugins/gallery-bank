@@ -39,7 +39,7 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_settings() . '"')) 
 	PRIMARY KEY (setting_id)
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';
 	dbDelta($sql);
-	$default_setting = "image_size:1;width:160px;height:120px;images_in_row:3;image_opacity:1;image_border_size:2px;image_border_radius:2px;image_border_color:rgb(0, 0, 0);/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:0;slide_interval:2;/pagination:0;";
+	$default_setting = "image_size:1;width:160px;height:120px;images_in_row:3;image_opacity:1;image_border_size:2px;image_border_radius:2px;image_border_color:rgb(0, 0, 0);/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:0;slide_interval:2;/pagination:1;";
 	$wpdb->query
 	(
 		$wpdb->prepare
@@ -123,7 +123,15 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 		);
 		if($check_album_id == 0)
 		{
-			$default_setting = "image_size:".$thumbnail.";width:".$check[$flag]->image_width.";height:".$check[$flag]->image_height.";images_in_row:".$check[$flag]->images_in_row.";image_opacity:1;image_border_size:".$check[$flag]->border_width."px;image_border_radius:2px;image_border_color:rgb(".HexToRGB($check[$flag]->border_color).")/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:".$check[$flag]->slideshow.";slide_interval:".$check[$flag]->slideshow_interval.";/pagination:1;";
+			if($check[$flag]->images_in_row == "")
+			{
+				$images_row = 3;
+			}
+			else 
+			{
+				$images_row = $check[$flag]->images_in_row;
+			}
+			$default_setting = "image_size:".$thumbnail.";width:".$check[$flag]->image_width.";height:".$check[$flag]->image_height.";images_in_row:".$images_row.";image_opacity:1;image_border_size:".$check[$flag]->border_width."px;image_border_radius:2px;image_border_color:rgb(".HexToRGB($check[$flag]->border_color).")/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:".$check[$flag]->slideshow.";slide_interval:".$check[$flag]->slideshow_interval.";/pagination:1;";
 			$wpdb->query
 			(
 				$wpdb->prepare
@@ -319,6 +327,23 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 			$wpdb->prepare
 			(
 				"ALTER TABLE " . gallery_bank_pics() . " DROP album_cover ",""
+			)
+		);
+	}
+	$check10 = $wpdb->get_var
+	(
+		$wpdb->prepare
+		(
+			"SHOW COLUMNS FROM " . gallery_bank_pics() . " LIKE 'sorting_order'",""
+		)
+	);
+	if($check10 != "sorting_order")
+	{
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"ALTER TABLE " . gallery_bank_pics() . " ADD sorting_order INTEGER(10) NOT NULL",""
 			)
 		);
 	}

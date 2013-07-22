@@ -3,7 +3,7 @@ Contributors: Gallery-Bank
 Tags: gallery, image, gallery images, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery, photo gallery, lightbox,media, nextgen, nextgen gallery,photo, photo albums, picture, pictures, thumbnails, slideshow
 Requires at least: 3.0
 Tested up to: 3.5.2
-Stable tag: 2.0.2
+Stable tag: 2.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -133,6 +133,10 @@ With this bulk deletion feature, you can now delete the pictures you want in bul
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 2.0.3 =
+
+* Plugin Update Conflicts Fixed
 
 = 2.0.2 =
 
