@@ -119,6 +119,7 @@ function frontend_plugin_js_scripts_gallery_bank()
 {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('jquery.titanlighbox.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.titanlighbox.js');
+	wp_enqueue_script('bootstrap.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/bootstrap/bootstrap.min.js');
 	wp_enqueue_script('jquery.dataTables.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/tables/jquery.dataTables.min.js');
 	
 }
@@ -242,7 +243,6 @@ add_action('admin_menu','create_global_menus_for_gallery_bank');
 add_shortcode('gallery_bank', 'gallery_bank_short_code' );
 add_shortcode('gallery_bank_album_cover', 'gallery_bank_short_code_album');
 add_shortcode('gallery_bank_all_albums', 'gallery_bank_short_code_all_albums');
-remove_filter( 'the_content', 'wpautop' );
 add_filter('widget_text', 'do_shortcode');
 class GalleryAllAlbumsWidget extends WP_Widget
 {
@@ -290,17 +290,28 @@ class GalleryAllAlbumsWidget extends WP_Widget
 	}
 	function widget($args, $instance)
 	{
+		global $wpdb;
+		$albums = $wpdb->get_var
+		(
+			$wpdb->prepare
+			(
+				"SELECT count(*) FROM ". gallery_bank_albums() . " WHERE album_id = %d",
+				$instance['galleryid']
+			)
+		);
 		extract($args, EXTR_SKIP);
 		echo $before_widget;
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
-		if (!empty($title))
 		
-		if($instance['galleryid'] != 0)
+		if($albums > 0)
 		{
-			echo $before_title . $title . $after_title;
-			$shortcode_for_albums = "[gallery_bank album_id=" . $instance['galleryid'] . "]";
-			echo do_shortcode( $shortcode_for_albums );
-			echo $after_widget;
+			if($instance['galleryid'] != 0)
+			{
+				echo $before_title . $title . $after_title;
+				$shortcode_for_albums = "[gallery_bank album_id=" . $instance['galleryid'] . "]";
+				echo do_shortcode( $shortcode_for_albums );
+				echo $after_widget;
+			}
 		}
 		
 		

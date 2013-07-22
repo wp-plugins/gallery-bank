@@ -45,8 +45,10 @@ function plugin_load_textdomain()
 		load_plugin_textdomain(gallery_bank, false, GALLERY_BK_PLUGIN_DIRNAME .'/languages');
 	}
 }
+
 /*************************************************************************************/
 add_action('plugins_loaded', 'plugin_load_textdomain');
 register_activation_hook(__FILE__,'plugin_install_script_for_gallery_bank');
+
 /*************************************************************************************/
 ?>
