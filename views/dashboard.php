@@ -16,14 +16,14 @@
 		);
 		if($album_count < 2)
 		{
-			?>
-			<li>
-				<a href="admin.php?page=add_album" class="hovertip" data-original-title="<?php _e( "Add New Album", gallery_bank ); ?>">
-					<img src="<?php echo GALLERY_BK_PLUGIN_URL . '/assets/images/icons/color/photography.png'?>"/>
-					<span><?php _e( "Add New Album", gallery_bank ); ?></span>
-				</a>
-			</li>
-			<?php
+		?>
+		<li>
+			<a href="admin.php?page=add_album" class="hovertip" data-original-title="<?php _e( "Add New Album", gallery_bank ); ?>">
+				<img src="<?php echo GALLERY_BK_PLUGIN_URL . '/assets/images/icons/color/photography.png'?>"/>
+				<span><?php _e( "Add New Album", gallery_bank ); ?></span>
+			</a>
+		</li>
+		<?php
 		}
 		?>
 		<li>
@@ -142,25 +142,28 @@
 				{
 					jQuery.post(ajaxurl, "album_id="+album_id+"&param=Delete_album&action=album_gallery_library", function(data)
 					{
-						var check_page = "<?php echo $_REQUEST['page']; ?>";
-						window.location.href = "admin.php?page="+check_page;
+						
+							var check_page = "<?php echo $_REQUEST['page']; ?>";
+							window.location.href = "admin.php?page="+check_page;
+						
 					});
 				}
 			});
 	}
 	function delete_all_albums()
-	{
-		bootbox.confirm("<?php _e("Are you sure you want to delete all Albums ?", gallery_bank ); ?>", function(confirmed) 
 		{
-			console.log("Confirmed: "+confirmed);
-			if(confirmed == true)
+			bootbox.confirm("<?php _e("Are you sure you want to delete all Albums ?", gallery_bank ); ?>", function(confirmed) 
 			{
-				jQuery.post(ajaxurl, "&param=delete_all_albums&action=album_gallery_library", function(data)
+				console.log("Confirmed: "+confirmed);
+				if(confirmed == true)
 				{
-					var check_page = "<?php echo $_REQUEST['page']; ?>";
-					window.location.href = "admin.php?page="+check_page;
-				});
-			}
-		});
-	}
+					jQuery.post(ajaxurl, "&param=delete_all_albums&action=album_gallery_library", function(data)
+					{
+						var check_page = "<?php echo $_REQUEST['page']; ?>";
+						window.location.href = "admin.php?page="+check_page;
+					});
+					
+				}
+			});
+		}
 </script>

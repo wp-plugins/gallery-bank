@@ -1,5 +1,16 @@
 <?php
+
 global $wpdb;
+	$albums = $wpdb->get_var
+	(
+		$wpdb->prepare
+		(
+			"SELECT count(*) FROM ". gallery_bank_albums() . " WHERE album_id = %d",
+			$album_id
+		)
+	);
+	if($albums > 0)
+	{
 	$album = $wpdb->get_row
 	(
 		$wpdb->prepare
@@ -73,7 +84,7 @@ if(($setting_cover->album_cover == "undefined") || ($setting_cover->album_cover 
 	?>
 	<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
 		<?php
-			$album_custom_cover_css = "border:"  . $cover_border_value . ";border-radius:" . $cover_border_radius[1].";opacity:". $cover_opacity[1];
+			$album_custom_cover_css = "border:"  . $cover_border_value . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
 		?>
 		<img class="imgHolder" src="<?php echo stripcslashes($url); ?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor:pointer;<?php echo $album_custom_cover_css; ?>" />	
 		<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
@@ -94,20 +105,18 @@ else
 		<?php
 		if($cover_content[1] == 1)
 		{
-			
-				$album_custom_cover_css = "border:" . $cover_border_value . ";border-radius:" . $cover_border_radius[1].";opacity:". $cover_opacity[1];
-				?>
-				<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h=150&w=150&zc=1&q=100';?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor:pointer;<?php echo $album_custom_cover_css; ?>" />
-				<?php
+			$album_custom_cover_css = "border:" .$cover_border_value.";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] .";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
+			?>
+			<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h=150&w=150&zc=1&q=100';?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor:pointer;<?php echo $album_custom_cover_css; ?>" />
+			<?php
 			
 		}
 		else 
 		{
-			
-				$album_cover_css = "border:" . $cover_border_value . ";border-radius:" . $cover_border_radius[1].";opacity:". $cover_opacity[1];
-				?>
-				<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h='.$cover_height[1].'&w='.$cover_width[1].'&zc=1&q=100';?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor:pointer;<?php echo $album_cover_css; ?>" />
-				<?php
+			$album_cover_css = "border:" . $cover_border_value . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
+			?>
+			<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h='.$cover_height[1].'&w='.$cover_width[1].'&zc=1&q=100';?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor:pointer;<?php echo $album_cover_css; ?>" />
+			<?php
 			
 		}
 		?>
@@ -152,3 +161,6 @@ else
 		jQuery("#back_button<?php echo $unique_id;?>").css('display','none');
 	}
 </script>
+<?php
+}
+?>

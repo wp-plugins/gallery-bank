@@ -122,11 +122,19 @@
 					</div>
 				</div>
 				<?php
-					$settings_count = $wpdb->get_var
+				$settings_count = $wpdb->get_var
 					(
 						$wpdb->prepare
 						(
 							"SELECT count(setting_id) FROM ". gallery_bank_settings(),""
+						)
+					);
+					$settings_count_album = $wpdb->get_var
+					(
+						$wpdb->prepare
+						(
+							"SELECT album_settings FROM ". gallery_bank_settings(). " WHERE album_id = %d",
+							$album_id
 						)
 					);
 					$settings_cover = $wpdb->get_var
@@ -228,7 +236,6 @@
 					</div>
 					<a href="http://gallery-bank.com/" target="_blank"><img style="cursor: pointer;width:95%" src="<?php echo GALLERY_BK_PLUGIN_URL.'/sidebar.png' ?>"/></a>
 				</div>
-				
 			</div>
 		</form>
 	</div>
@@ -245,6 +252,8 @@
 	var exist_array = [];
 	jQuery(document).ready(function()
 	{
+		
+		jQuery('.hovertip').tooltip();
 		oTable = jQuery('#edit-album-data-table').dataTable
 		({
 			"bJQueryUI": false,
@@ -260,6 +269,8 @@
 			"aoColumnDefs": [{ "bSortable": false, "aTargets": [0] },{ "bSortable": false, "aTargets": [0] }],
 			"bSort": false
 		});
+		
+		
 		jQuery(".dataTables_filter").css("margin-top", "24px");
 		<?php
 		for ($flag = 0; $flag < count($pic_detail); $flag++)
@@ -272,7 +283,8 @@
 	});
 	jQuery(function()
 	{  
-			jQuery('#delete_selected').click(function(){
+		jQuery('#delete_selected').click(function()
+		{
 			var oTable = jQuery("#edit-album-data-table").dataTable();
 			var  checkProp = jQuery("#delete_selected").prop("checked");
 			jQuery("input:checkbox", oTable.fnGetNodes()).each(function(){
@@ -287,6 +299,7 @@
 			});
 		});
 	});
+	
 	jQuery("#edit_album").validate
 	({
 		rules: 
@@ -431,12 +444,15 @@
 				attachment = attachment.toJSON();
 				jQuery("#edit_cover_image").attr('src', attachment.url);
 				jQuery("#edit_cover_image").attr('width','250px');
-				
+			
 				cover_array = attachment.url;
 			});
 		});
 		cover_file_frame.open();
 	});
+	
+	
+	
 	var file_frame;
 	jQuery('#upload_img_button').live('click', function( event ){
 		event.preventDefault();

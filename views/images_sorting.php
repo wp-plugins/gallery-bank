@@ -72,10 +72,10 @@
 	$litebox_bg_color_substring = str_replace("rgb","rgba",substr($lightbox_bg_color[1], 0, -1));
 	$litebox_bg_color_with_opacity = $litebox_bg_color_substring. "," . $overlay_opacity[1] . ")";
 	$lightbox_bg_color_value= $overlay_border_size_value[1] . " solid " . $overlay_border_color[1];
-	
-	$slideshow_settings = explode(";", $content[3]);
-	$auto_play = explode(":", $slideshow_settings[0]);
-	$slide_interval = explode(":", $slideshow_settings[1]);
+	$pagination = explode(":", $content[4]);
+	$pagination_value = str_replace(";","",$pagination[1]);
+	$count = 1;
+	$row_id_images = "";
 ?>
 <div class="block well" style="min-height:400px;">
 	<div class="navbar">
@@ -83,6 +83,7 @@
 			<h5><?php _e( "Re-order Images", gallery_bank ); ?></h5>
 		</div>
 	</div>
+	<input type="hidden" id="pagination_val" name="pagination_val" value="<?php echo $pagination_value; ?>" />
 	<div class="body" style="margin:10px;">
 		<a class="btn btn-inverse" href="admin.php?page=gallery_bank"><?php _e( "Back to Album Overview", gallery_bank ); ?></a>
 		<div class="separator-doubled"></div>
@@ -97,8 +98,25 @@
 					<form id="sort_album" class="form-horizontal" method="post" action="">
 						<div id="view_bank_album">
 						<?php
+						if($pagination_value == 1)
+						{	
+						?>
+						<table class='table table-striped' id='images_view_data_table'>
+						<tbody>
+						<?php
+						}
 							for ($flag = 0; $flag <count($pic_detail); $flag++)
 							{
+								$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1].";filter:alpha(opacity=".$image_opacity[1] * 100 . ");-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=".$image_opacity[1] * 100 . ")';-moz-opacity:" . $image_opacity[1] . ";-khtml-opacity:".$image_opacity[1]. ";";
+								if($pagination_value == 1)
+								{	
+									if($count == 1)
+									{
+									?>
+										<tr id="row_<?php echo $pic_detail[$flag]->pic_id; ?>"><td><div class="sort_table">
+									<?php
+									}
+								}
 								if($pic_detail[$flag]->description == "")
 								{
 									if(($flag % $images_in_row[1] == 0) && $flag != 0)
@@ -108,37 +126,38 @@
 											<?php
 											if($image_content[1] == 1)
 											{
-												$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
+												
 												?>
 												<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
 												<?php
 											}
 											else
 											{
-												$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
+												
 												?>
-												<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  />
+												<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
 											}
+											$row_id_images .= "/" . $pic_detail[$flag]->pic_id;
 									}
 									else 
 									{
-										?>
-											<?php
+										
 											if($image_content[1] == 1)
 											{
-												$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
+												
 												?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
 											}
 											else 
 											{
-												$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
+												
 												?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  />
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
 											}
+											$row_id_images .=  "-". $pic_detail[$flag]->pic_id;
 									}
 								}
 								else 
@@ -150,18 +169,19 @@
 											<?php
 											if($image_content[1] == 1)
 											{
-												$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
+												
 												?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
 											}
 											else 
 											{
-												$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
+												
 												?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  />
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
 											}
+											$row_id_images .= "/" . $pic_detail[$flag]->pic_id;
 									}
 									else
 									{
@@ -170,25 +190,48 @@
 											<?php
 											if($image_content[1] == 1)
 											{
-												$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
+												
 												?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
 											}
 											else 
 											{
-												$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
+												
 												?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  />
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
 											}
+											$row_id_images .=  "-". $pic_detail[$flag]->pic_id;
+									}
+								}
+								if($pagination_value == 1)
+								{
+									if($count == $images_in_row[1])
+									{
+										?></div>
+										</td></tr>
+										<?php
+										$count = 1;
+									}
+									else 
+									{
+										$count++;	
 									}
 								}
 								
 							}
+							if($pagination_value == 1)
+							{	
 							
 							?>
+							</tbody>
+								</table>
+							<?php
+							}
+							?>
 						</div>
+						<input type="hidden" id="uxHdn_ids" name="uxHdn_ids" value="aa" />
 					</form>
 				</div>
 			</div>
@@ -215,6 +258,20 @@
 				{
 				});
 			}
+		});
+		oTable = jQuery('#images_view_data_table').dataTable
+		({
+			"bJQueryUI": false,
+			"bAutoWidth": true,
+			"sPaginationType": "full_numbers",
+			"sDom": '<"datatable-header"fl>t<"datatable-footer"ip>',
+			"oLanguage": 
+			{
+				"sLengthMenu": "_MENU_"
+			},
+			"aaSorting": [[ 0, "desc" ]],
+			"aoColumnDefs": [{ "bSortable": false, "aTargets": [0] },{ "bSortable": false, "aTargets": [0] }],
+			"bSort": false
 		});
 	});
 </script>

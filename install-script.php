@@ -61,7 +61,7 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 			"Select * FROM " . gallery_bank_albums(),""
 		)
 	);
-	function HexToRGB($img_color) 
+	function HexToRGBA($img_color) 
 	{
 		$hex = ereg_replace("#", "", $img_color);
 		$color = array();
@@ -100,10 +100,19 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 				)
 			);
 		
-			if($check[$flag]->thumbnail_enable == 1)
+			if($check[$flag]->thumbnail_enable == 1 || $check[$flag]->border_enable == 1 || $check[$flag]->slideshow == 1)
 			{
-				$setting_content=0;
-				$thumbnail=0;
+				if($check[$flag]->thumbnail_enable == 1)
+				{
+					$setting_content=0;
+					$thumbnail=0;
+				}
+				else
+				{
+					$setting_content=0;
+					$thumbnail=1;
+				}
+				
 			}
 			else
 			{
@@ -132,7 +141,7 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 			{
 				$images_row = $check[$flag]->images_in_row;
 			}
-			$default_setting = "image_size:".$thumbnail.";width:".$check[$flag]->image_width.";height:".$check[$flag]->image_height.";images_in_row:".$images_row.";image_opacity:1;image_border_size:".$check[$flag]->border_width."px;image_border_radius:2px;image_border_color:rgb(".HexToRGB($check[$flag]->border_color).")/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:".$check[$flag]->slideshow.";slide_interval:".$check[$flag]->slideshow_interval.";/pagination:1;";
+			$default_setting = "image_size:".$thumbnail.";width:".$check[$flag]->image_width.";height:".$check[$flag]->image_height.";images_in_row:".$images_row.";image_opacity:1;image_border_size:".$check[$flag]->border_width."px;image_border_radius:2px;image_border_color:rgb(".HexToRGBA($check[$flag]->border_color).")/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:".$check[$flag]->slideshow.";slide_interval:".$check[$flag]->slideshow_interval.";/pagination:1;";
 			$wpdb->query
 			(
 				$wpdb->prepare

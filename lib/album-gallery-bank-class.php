@@ -15,47 +15,57 @@ else
 			$ux_album_name = html_entity_decode(esc_attr($_REQUEST["album_name"]));
 			$ux_desciption = html_entity_decode(esc_attr($_REQUEST["ux_description"]));
 			$cover = esc_attr($_REQUEST["cover_array"]);
-			$wpdb->query
+			$album_count = $wpdb->get_var
 			(
 				$wpdb->prepare
 				(
-					"INSERT INTO ".gallery_bank_albums()."(album_name, description, album_date, author)
-					VALUES(%s, %s, CURDATE(), %s)",
-					$ux_album_name,
-					$ux_desciption,
-					$current_user->display_name
+					"SELECT count(album_id) FROM ".gallery_bank_albums(),""
 				)
 			);
-			echo $EventLastId=$wpdb->insert_id;
-			$setting = "image_size:1;width:160px;height:120px;images_in_row:3;image_opacity:1;image_border_size:2px;image_border_radius:2px;image_border_color:rgb(0, 0, 0);/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:0;slide_interval:2;/pagination:0;";
-			if($cover == "undefined")
+			if($album_count < 2)
 			{
 				$wpdb->query
 				(
 					$wpdb->prepare
 					(
-						"INSERT INTO ".gallery_bank_settings()."(album_id, album_settings, setting_content)
-						VALUES(%d, %d, %s)",
-						$EventLastId,
-						1,
-						$setting
+						"INSERT INTO ".gallery_bank_albums()."(album_name, description, album_date, author)
+						VALUES(%s, %s, CURDATE(), %s)",
+						$ux_album_name,
+						$ux_desciption,
+						$current_user->display_name
 					)
 				);
-			}
-			else
-			{
-				$wpdb->query
-				(
-					$wpdb->prepare
+				echo $EventLastId=$wpdb->insert_id;
+				$setting = "image_size:1;width:160px;height:120px;images_in_row:3;image_opacity:1;image_border_size:2px;image_border_radius:2px;image_border_color:rgb(0, 0, 0);/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:0;slide_interval:2;/pagination:0;";
+				if($cover == "undefined")
+				{
+					$wpdb->query
 					(
-						"INSERT INTO ".gallery_bank_settings()."(album_id, album_settings, setting_content, album_cover)
-						VALUES(%d, %d, %s, %s)",
-						$EventLastId,
-						1,
-						$setting,
-						$cover
-					)
-				);
+						$wpdb->prepare
+						(
+							"INSERT INTO ".gallery_bank_settings()."(album_id, album_settings, setting_content)
+							VALUES(%d, %d, %s)",
+							$EventLastId,
+							1,
+							$setting
+						)
+					);
+				}
+				else
+				{
+					$wpdb->query
+					(
+						$wpdb->prepare
+						(
+							"INSERT INTO ".gallery_bank_settings()."(album_id, album_settings, setting_content,album_cover)
+							VALUES(%d, %d, %s, %s)",
+							$EventLastId,
+							1,
+							$setting,
+							$cover
+						)
+					);
+				}
 			}
 			die();
 		}
@@ -75,16 +85,16 @@ else
 					$albumId
 				)
 			);
-			$setting = "image_size:1;width:160px;height:120px;images_in_row:3;image_opacity:1;image_border_size:2px;image_border_radius:2px;image_border_color:rgb(0, 0, 0);/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:0;slide_interval:2;/pagination:0;";
+			$new_settings = "image_size:1;width:160px;height:120px;images_in_row:3;image_opacity:1;image_border_size:2px;image_border_radius:2px;image_border_color:rgb(0, 0, 0);/cover_size:1;width:160px;height:120px;cover_opacity:1;cover_border_size:2px;cover_border_radius:2px;border_color:rgb(0, 0, 0);/overlay_opacity:0.6;overlay_border_size:0px;overlay_border_radius:0px;text_color:rgb(0, 0, 0);overlay_border_color:rgb(255, 255, 255);inline_bg_color:rgb(255, 255, 255);overlay_bg_color:rgb(0, 0, 0);/autoplay:0;slide_interval:2;/pagination:0;";
 			if($edit_cover == "undefined")
 			{
 				$wpdb->query
 				(
 					$wpdb->prepare
 					(
-						"UPDATE ".gallery_bank_settings()." SET album_settings = %d ,setting_content = %s WHERE album_id = %d",
+						"UPDATE ".gallery_bank_settings()." SET setting_content = %s, album_settings = %d WHERE album_id = %d",
+						$new_settings,
 						1,
-						$setting,
 						$albumId
 					)
 				);
@@ -95,10 +105,10 @@ else
 				(
 					$wpdb->prepare
 					(
-						"UPDATE ".gallery_bank_settings()." SET album_cover = %s, album_settings = %d ,setting_content = %s WHERE album_id = %d",
-						$edit_cover,
+						"UPDATE ".gallery_bank_settings()." SET setting_content = %s, album_settings = %d, album_cover = %s WHERE album_id = %d",
+						$new_settings,
 						1,
-						$setting,
+						$edit_cover,
 						$albumId
 					)
 				);
@@ -108,30 +118,31 @@ else
 		else if($_REQUEST['param'] == "Delete_album")
 		{
 			$album_id = intval($_REQUEST['album_id']);
-			$wpdb->query
-			(
-				$wpdb->prepare
+				$wpdb->query
 				(
-					"DELETE FROM ".gallery_bank_pics()." WHERE album_id = %d",
-					$album_id
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
+					$wpdb->prepare
+					(
+						"DELETE FROM ".gallery_bank_pics()." WHERE album_id = %d",
+						$album_id
+					)
+				);
+				$wpdb->query
 				(
-					"DELETE FROM ".gallery_bank_albums()." WHERE album_id = %d",
-					$album_id
-				)
-			);
-			$wpdb->query
-			(
-				$wpdb->prepare
+					$wpdb->prepare
+					(
+						"DELETE FROM ".gallery_bank_albums()." WHERE album_id = %d",
+						$album_id
+					)
+				);
+				$wpdb->query
 				(
-					"DELETE FROM ".gallery_bank_settings()." WHERE album_id = %d",
-					$album_id
-				)
-			);
+					$wpdb->prepare
+					(
+						"DELETE FROM ".gallery_bank_settings()." WHERE album_id = %d",
+						$album_id
+					)
+				);
+			
 			die();
 		}
 		else if($_REQUEST["param"] == "add_pic")
@@ -253,6 +264,7 @@ else
 			}
 			die();
 		}
+		
 		else if($_REQUEST['param'] == "delete_all_albums")
 		{
 			$album = $wpdb->get_results

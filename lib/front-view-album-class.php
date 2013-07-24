@@ -112,7 +112,7 @@
 							<?php
 						}
 					}
-					$domain = strstr($pic_detail[$flag]->pic_path, '/wp-content');
+					$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1].";filter:alpha(opacity=".$image_opacity[1] * 100 . ");-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=".$image_opacity[1] * 100 . ")';-moz-opacity:" . $image_opacity[1] . ";-khtml-opacity:".$image_opacity[1]. ";";
 					if($pic_detail[$flag]->description == "")
 					{
 						
@@ -121,49 +121,45 @@
 							?>
 							</br>
 							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes($pic_detail[$flag]->title); ?>">
+							<?php
+							if($image_content[1] == 1)
+							{
+								
+								?>
+									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
 								<?php
-								if($image_content[1] == 1)
-								{
-									
-										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
-										<?php
-									
-								}
-								else 
-								{
-									
-										$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
-										<?php
-									
-								}
+								
+							}
+							else 
+							{
+								
+								?>
+									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
+								<?php
+								
+							}
 						}
 						else
 						{
 							?>
 							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo $pic_detail[$flag]->title; ?>">
+							<?php
+							if($image_content[1] == 1)
+							{
+								
+								?>
+									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
 								<?php
-								if($image_content[1] == 1)
-								{
-									
-										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
-										<?php
-									
-								}
-								else 
-								{
-									
-										$css_custom_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
-										<?php
-									
-								}
+								
+							}
+							else 
+							{
+								
+								?>
+									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
+								<?php
+								
+							}
 						}
 					}
 					else 
@@ -173,49 +169,45 @@
 							?>
 							</br>
 							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes($pic_detail[$flag]->title); ?> (<?php echo stripcslashes($pic_detail[$flag]->description); ?>)">
+							<?php
+							if($image_content[1] == 1)
+							{
+								
+								?>
+									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
 								<?php
-								if($image_content[1] == 1)
-								{
-									
-										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
-										<?php
-									
-								}
-								else 
-								{
-									
-										$css_custom_image_thumbnail = "width:" .$image_width[1] . ";height:" . $image_height[1] . ";border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
-										<?php
-									
-								}
+								
+							}
+							else 
+							{
+								
+								?>
+									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
+								<?php
+								
+							}
 						}
 						else
 						{
 							?>
 							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes($pic_detail[$flag]->title); ?> (<?php echo stripcslashes($pic_detail[$flag]->description); ?>)">
+							<?php
+							if($image_content[1] == 1)
+							{
+								
+								?>
+									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
 								<?php
-								if($image_content[1] == 1)
-								{
-									
-										$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
-										<?php
-									
-								}
-								else 
-								{
-									
-										$css_custom_image_thumbnail = "width:" .$image_width[1] . ";height:" . $image_height[1] . ";border:" . $image_border_size_value[1]. " solid " . $border_color[1]  . ";border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1];
-										?>
-											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_custom_image_thumbnail; ?>"  /></a>
-										<?php
-									
-								}
+								
+							}
+							else 
+							{
+								
+								?>
+									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($pic_detail[$flag]->pic_path).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  /></a>
+								<?php
+								
+							}
 						}
 					}
 					if($pagination[1] == 1)
@@ -252,7 +244,7 @@
 			}
 			else 
 			{
-				$interval = 10000 * 1000 ;
+				$interval = $slide_interval[1] * 1000;	
 			}
 			?>
 				jQuery(document).ready(function(){
@@ -263,6 +255,10 @@
 							jQuery(".lightbox-skin").css("background","<?php echo $lightbox_inline_bg_color[1]; ?>");
 							jQuery(".lightbox-overlay").css("background","<?php echo $litebox_bg_color_with_opacity; ?>");
 							jQuery(".lightbox-wrap").css("border-radius","<?php echo $overlay_border_radius[1]; ?>");
+							jQuery(".lightbox-wrap").css("-moz-border-radius","<?php echo $overlay_border_radius[1]; ?>");
+							jQuery(".lightbox-wrap").css("-webkit-border-radius","<?php echo $overlay_border_radius[1]; ?>");
+							jQuery(".lightbox-wrap").css("-khtml-border-radius","<?php echo $overlay_border_radius[1]; ?>");
+							jQuery(".lightbox-wrap").css("-o-border-radius","<?php echo $overlay_border_radius[1]; ?>");
 							jQuery(".lightbox-wrap").css("border","<?php echo $lightbox_bg_color_value; ?>");
 						},
 						afterShow : function()

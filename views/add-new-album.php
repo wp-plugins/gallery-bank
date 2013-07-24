@@ -1,3 +1,4 @@
+
 <div class="block well" style="min-height:400px;">
 	<div class="navbar">
 		<div class="navbar-inner">
@@ -136,7 +137,8 @@
 			"aoColumnDefs": [{ "bSortable": false, "aTargets": [0] },{ "bSortable": false, "aTargets": [0] }]
 		});
 	});
-
+	
+	
 	var cover_file_frame;  
 	jQuery('#upload_cover_image_button').live('click', function( event ){
 		event.preventDefault();
@@ -357,4 +359,6 @@
 			}
 		});
 	}
+	
+	
 </script>

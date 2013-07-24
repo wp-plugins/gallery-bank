@@ -4,16 +4,17 @@
 //---------------------------------------------------------------------------------------------------------------//
 function create_global_menus_for_gallery_bank()
 {
-	//add_cap("editor", "manage_options", true);  
-	add_menu_page('Gallery Bank', __('Gallery Bank', gallery_bank), 'read', 'gallery_bank','',GALLERY_BK_PLUGIN_URL . '/icon.png');
+	global $wpdb;
+	$menu = add_menu_page('Gallery Bank', __('Gallery Bank', gallery_bank), 'read', 'gallery_bank','',GALLERY_BK_PLUGIN_URL . '/icon.png');
 	add_submenu_page('', 'Dashboard', __('Dashboard', gallery_bank), 'read', 'gallery_bank', 'gallery_bank');
-	add_submenu_page('gallery_bank', 'Gallery Bank', __('Global Settings', gallery_bank), 'read', 'settings', 'settings');
+	$submenu1 = add_submenu_page('gallery_bank', 'Gallery Bank', __('Global Settings', gallery_bank), 'read', 'settings', 'settings');
 	add_submenu_page('', '','' , 'read', 'add_album', 'add_album');
 	add_submenu_page('', '','' , 'read', 'view_album', 'view_album');
 	add_submenu_page('', '','' , 'read', 'images_sorting', 'images_sorting');
 	add_submenu_page('', '','' , 'read', 'album_preview', 'album_preview');
 	add_submenu_page('', '','' , 'read', 'edit_album', 'edit_album');
 	add_submenu_page('', '','' , 'read', 'pro_version', 'pro_version');
+	
 }
 //--------------------------------------------------------------------------------------------------------------//
 // FUNCTIONS FOR REPLACING TABLE NAMES
@@ -44,7 +45,6 @@ function gallery_bank()
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/dashboard.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/footer.php';
 }
-
 function add_album()
 {
 	global $wpdb;
@@ -57,7 +57,6 @@ function add_album()
 	);
 	if($album_count < 2)
 	{
-		global $wpdb;
 		include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
 		include_once GALLERY_BK_PLUGIN_DIR .'/views/add-new-album.php';
 		include_once GALLERY_BK_PLUGIN_DIR .'/views/footer.php';
@@ -66,7 +65,7 @@ function add_album()
 	{
 		?>
 		<script type="text/javascript">
-			window.location.href="admin.php?page=gallery_bank"; 
+			window.location.href="admin.php?page=gallery_bank";
 		</script>
 		<?php
 	}
@@ -92,7 +91,6 @@ function images_sorting()
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/images_sorting.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/footer.php';
 }
-
 function album_preview()
 {
 	global $wpdb;
@@ -113,15 +111,13 @@ function backend_scripts_calls()
 	wp_enqueue_script('mColorPicker_small.js', GALLERY_BK_PLUGIN_URL .'/assets/js/colorpicker/js/mColorPicker_small.js');
 	wp_enqueue_script('jquery.validate.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/forms/jquery.validate.min.js');
 	wp_enqueue_script('jquery.titanlighbox.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.titanlighbox.js');
-	
 }
 function frontend_plugin_js_scripts_gallery_bank()
 {
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('jquery.titanlighbox.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.titanlighbox.js');
-	wp_enqueue_script('bootstrap.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/bootstrap/bootstrap.min.js');
 	wp_enqueue_script('jquery.dataTables.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/tables/jquery.dataTables.min.js');
-	
+	wp_enqueue_script('bootstrap.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/bootstrap/bootstrap.min.js');
 }
 
 //--------------------------------------------------------------------------------------------------------------//
@@ -168,6 +164,14 @@ if(isset($_REQUEST['action']))
 		{
 			global $wpdb;
 			include_once GALLERY_BK_PLUGIN_DIR . '/lib/front-view-album-class.php';
+		}
+		break;
+		case "settings_gallery_library":
+		add_action( 'admin_init', 'settings_gallery_library');
+		function settings_gallery_library()
+		{
+			global $wpdb;
+			include_once GALLERY_BK_PLUGIN_DIR . '/lib/settings-class.php';
 		}
 		break;
 	}
@@ -267,7 +271,7 @@ class GalleryAllAlbumsWidget extends WP_Widget
 		<p><label for="<?php echo $this->get_field_id('title'); ?>">Title: <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></label></p>
 		<p><label for="<?php echo $this->get_field_id('galleryid'); ?>"><?php _e('Select Gallery:', gallery_bank); ?></label>
 			<select size="1" name="<?php echo $this->get_field_name('galleryid'); ?>" id="<?php echo $this->get_field_id('galleryid'); ?>" class="widefat">
-				<option value="0"><?php _e('Select Album', gallery_bank); ?></option>
+				<option value="0"  ><?php _e('Select Album', gallery_bank); ?></option>
 			<?php
 			if($albums) {
 				foreach($albums as $album) {
@@ -302,7 +306,6 @@ class GalleryAllAlbumsWidget extends WP_Widget
 		extract($args, EXTR_SKIP);
 		echo $before_widget;
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
-		
 		if($albums > 0)
 		{
 			if($instance['galleryid'] != 0)
@@ -313,8 +316,6 @@ class GalleryAllAlbumsWidget extends WP_Widget
 				echo $after_widget;
 			}
 		}
-		
-		
 	}
 }
 add_action( 'widgets_init', create_function('', 'return register_widget("GalleryAllAlbumsWidget");') );
