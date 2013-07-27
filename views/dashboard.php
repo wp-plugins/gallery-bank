@@ -80,7 +80,7 @@
 							);
 						?>
 							<tr>
-								<td><?php echo stripcslashes($album[$flag] -> album_name);?></td>
+								<td><?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?></td>
 								<td><?php echo $count_pic;?></td>
 								<td><?php echo $album[$flag] -> author;?></td>
 								<td><?php echo date("d-M-Y", strtotime($album[$flag] -> album_date));?></td>

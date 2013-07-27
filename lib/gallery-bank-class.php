@@ -7,12 +7,26 @@ function create_global_menus_for_gallery_bank()
 	global $wpdb;
 	$menu = add_menu_page('Gallery Bank', __('Gallery Bank', gallery_bank), 'read', 'gallery_bank','',GALLERY_BK_PLUGIN_URL . '/icon.png');
 	add_submenu_page('', 'Dashboard', __('Dashboard', gallery_bank), 'read', 'gallery_bank', 'gallery_bank');
+	$album_count = $wpdb->get_var
+	(
+		$wpdb->prepare
+		(
+			"SELECT count(album_id) FROM ".gallery_bank_albums(),""
+		)
+	);
+	if($album_count < 2)
+	{
+		add_submenu_page('gallery_bank', 'Add New Album',__('Add New Album', gallery_bank) , 'read', 'add_album', 'add_album');
+	}
+	
+	add_submenu_page('gallery_bank', 'Sorting',__('Sorting', gallery_bank) , 'read', 'images_sorting_dd', 'images_sorting_dd');
 	$submenu1 = add_submenu_page('gallery_bank', 'Gallery Bank', __('Global Settings', gallery_bank), 'read', 'settings', 'settings');
-	add_submenu_page('', '','' , 'read', 'add_album', 'add_album');
+	add_submenu_page('gallery_bank','Documentation',__('Documentation', gallery_bank),'read','documentation','documentation');
+	add_submenu_page('gallery_bank','Get More Features',__('Get More Features', gallery_bank),'read','get_more_features','get_more_features');
 	add_submenu_page('', '','' , 'read', 'view_album', 'view_album');
-	add_submenu_page('', '','' , 'read', 'images_sorting', 'images_sorting');
 	add_submenu_page('', '','' , 'read', 'album_preview', 'album_preview');
 	add_submenu_page('', '','' , 'read', 'edit_album', 'edit_album');
+	add_submenu_page('', '','' , 'read', 'images_sorting', 'images_sorting');
 	add_submenu_page('', '','' , 'read', 'pro_version', 'pro_version');
 	
 }
@@ -57,6 +71,7 @@ function add_album()
 	);
 	if($album_count < 2)
 	{
+		global $wpdb;
 		include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
 		include_once GALLERY_BK_PLUGIN_DIR .'/views/add-new-album.php';
 		include_once GALLERY_BK_PLUGIN_DIR .'/views/footer.php';
@@ -84,6 +99,13 @@ function settings()
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/settings.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/footer.php';
 }
+function images_sorting_dd()
+{
+	global $wpdb;
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/images_sorting_ddl.php';
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/footer.php';
+}
 function images_sorting()
 {
 	global $wpdb;
@@ -96,6 +118,20 @@ function album_preview()
 	global $wpdb;
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/album_preview.php';
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/footer.php';
+}
+function documentation()
+{
+	global $wpdb;
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/documentation.php';
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/footer.php';
+}
+function get_more_features()
+{
+	global $wpdb;
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/header.php';
+	include_once GALLERY_BK_PLUGIN_DIR .'/views/more_feature.php';
 	include_once GALLERY_BK_PLUGIN_DIR .'/views/footer.php';
 }
 //--------------------------------------------------------------------------------------------------------------//
@@ -111,6 +147,8 @@ function backend_scripts_calls()
 	wp_enqueue_script('mColorPicker_small.js', GALLERY_BK_PLUGIN_URL .'/assets/js/colorpicker/js/mColorPicker_small.js');
 	wp_enqueue_script('jquery.validate.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/forms/jquery.validate.min.js');
 	wp_enqueue_script('jquery.titanlighbox.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.titanlighbox.js');
+	wp_enqueue_script('compare.js', GALLERY_BK_PLUGIN_URL .'/assets/js/compare.js');
+	wp_enqueue_script('frontend.js', GALLERY_BK_PLUGIN_URL .'/assets/js/frontend.js');
 }
 function frontend_plugin_js_scripts_gallery_bank()
 {
@@ -118,6 +156,7 @@ function frontend_plugin_js_scripts_gallery_bank()
 	wp_enqueue_script('jquery.titanlighbox.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.titanlighbox.js');
 	wp_enqueue_script('jquery.dataTables.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/tables/jquery.dataTables.min.js');
 	wp_enqueue_script('bootstrap.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/bootstrap/bootstrap.min.js');
+	wp_enqueue_script('frontend.js', GALLERY_BK_PLUGIN_URL .'/assets/js/frontend.js');
 }
 
 //--------------------------------------------------------------------------------------------------------------//
@@ -125,13 +164,16 @@ function frontend_plugin_js_scripts_gallery_bank()
 function backend_css_calls()
 {
 	wp_enqueue_style('main', GALLERY_BK_PLUGIN_URL . '/assets/css/main.css');
+	wp_enqueue_style('compare', GALLERY_BK_PLUGIN_URL . '/assets/css/compare.css');
 	wp_enqueue_style('system-message', GALLERY_BK_PLUGIN_URL . '/assets/css/system-message.css');
 	wp_enqueue_style('jquery.titanlighbox.css', GALLERY_BK_PLUGIN_URL .'/assets/css/jquery.titanlighbox.css');
+	wp_enqueue_style('frontend.css', GALLERY_BK_PLUGIN_URL .'/assets/css/frontend.css');
 }
 function frontend_plugin_css_scripts_gallery_bank()
 {
 	wp_enqueue_style('jquery.titanlighbox.css', GALLERY_BK_PLUGIN_URL .'/assets/css/jquery.titanlighbox.css');
 	wp_enqueue_style('main', GALLERY_BK_PLUGIN_URL . '/assets/css/main.css');
+	wp_enqueue_style('frontend.css', GALLERY_BK_PLUGIN_URL .'/assets/css/frontend.css');
 
 	
 }
@@ -172,6 +214,14 @@ if(isset($_REQUEST['action']))
 		{
 			global $wpdb;
 			include_once GALLERY_BK_PLUGIN_DIR . '/lib/settings-class.php';
+		}
+		break;
+		case "image_sorting_library":
+		add_action( 'admin_init', 'image_sorting_library');
+		function image_sorting_library()
+		{
+			global $wpdb;
+			include_once GALLERY_BK_PLUGIN_DIR . '/lib/image_sorting_class.php';
 		}
 		break;
 	}
@@ -277,7 +327,7 @@ class GalleryAllAlbumsWidget extends WP_Widget
 				foreach($albums as $album) {
 				echo '<option value="'.$album->album_id.'" ';
 				if ($album->album_id == $instance['galleryid']) echo "selected='selected' ";
-				echo '>'.$album->album_name.'</option>'."\n\t"; 
+				echo '>'.stripslashes(html_entity_decode($album->album_name)).'</option>'."\n\t"; 
 				}
 			}
 			?>

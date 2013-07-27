@@ -70,18 +70,38 @@
 		$pagination_settings = explode(";", $content[4]);
 		$pagination = explode(":", $pagination_settings[0]);
 		
+		$default_height = 151 + ($cover_border_value * 2) . "px;" . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
+		$default_width = 155 + ($cover_border_value * 2) . "px;" . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
+		$custom_height = $cover_height[1] + 1 + ($cover_border_value * 2) . "px;" . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
+		$custom_width = $cover_width[1] + 5 + ($cover_border_value * 2) . "px;" . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
+		$radius_for_shutter = ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
+		
 		if(($get_settings->album_cover == "undefined") || ($get_settings->album_cover == "") )
 		{
 			$url = GALLERY_BK_PLUGIN_URL."/album-cover.png";
 			?>
 				<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
 					<?php
-						$album_custom_cover_css = "border:"  . $cover_border_value . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
+						$album_custom_cover_css = "Height:150px;Width:150px;"."border:"  . $cover_border_value . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
 					?>
-					<img class="imgHolder" src="<?php echo stripcslashes($url); ?>" onclick="view_images<?php echo $unique_id;?>(<?php echo $album[$flag]->album_id;?>);" style="cursor:pointer;<?php echo $album_custom_cover_css; ?>" />	
+						
+					<div class="view da-thumbs" style="height:<?php echo $default_height; ?>;width:<?php echo $default_width; ?>;">
+						<a onclick="view_images<?php echo $unique_id;?>(<?php echo $album[$flag]->album_id;?>);" style="cursor: pointer" >
+							<img class="imgHolder" src="<?php echo stripcslashes($url); ?>" style="cursor:pointer;margin-left:5px;;margin-top:3p;<?php echo $album_custom_cover_css; ?>" />	
+							<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+								<p <?php if ( $album[$flag]->album_name == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+									<?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->album_name)); ?>
+								</p>
+									<div class="forspan">
+										<span class="zoom">
+										</span>
+									</div>
+							</article>
+						</a>
+					</div>
 					<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
-						<h3><?php echo stripcslashes($album[$flag]->album_name); ?>&nbsp;</h3>
-						<span><?php echo stripcslashes($album[$flag]->description);?>&nbsp;</span><br/>
+						<h3><?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->album_name)); ?>&nbsp;</h3>
+						<span><?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->description));?>&nbsp;</span><br/>
 						<a style="cursor: pointer;" onclick="view_images<?php echo $unique_id;?>(<?php echo $album[$flag]->album_id;?>)">
 							<?php _e("See Album images", gallery_bank ); ?> &raquo
 						</a>
@@ -99,20 +119,49 @@
 				{
 					$album_custom_cover_css = "border:" .$cover_border_value. ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] .";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
 					?>
-					<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($get_settings->album_cover).'&h=150&w=150&zc=1&q=100';?>" onclick="view_images<?php echo $unique_id;?>(<?php echo $album[$flag]->album_id;?>);" style="cursor:pointer;<?php echo $album_custom_cover_css; ?>" />
+					
+					<div class="view da-thumbs" style="height:<?php echo $default_height; ?>;width:<?php echo $default_width; ?>;">
+						<a onclick="view_images<?php echo $unique_id;?>(<?php echo $album[$flag]->album_id;?>);" style="cursor: pointer" >
+							<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($get_settings->album_cover).'&h=150&w=150&zc=1&q=100';?>" style="cursor:pointer;margin-left:5px;;margin-top:3p;<?php echo $album_custom_cover_css; ?>" />	
+							<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+								<p <?php if ( $album[$flag]->album_name == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+									<?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->album_name)); ?>
+								</p>
+									<div class="forspan">
+										<span class="zoom">
+										</span>
+									</div>
+							</article>
+						</a>
+					</div>
+					
 					<?php
 				}
 				else 
 				{
 					$album_cover_css = "border:" . $cover_border_value . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
 					?>
-					<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($get_settings->album_cover).'&h='.$cover_height[1].'&w='.$cover_width[1].'&zc=1&q=100';?>" onclick="view_images<?php echo $unique_id;?>(<?php echo $album[$flag]->album_id;?>);" style="cursor:pointer;<?php echo $album_cover_css; ?>" />
+					<div class="view da-thumbs" style="height:<?php echo $custom_height; ?>;width:<?php echo $custom_width; ?>;">
+						<a onclick="view_images<?php echo $unique_id;?>(<?php echo $album[$flag]->album_id;?>);" style="cursor: pointer" >
+							<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($get_settings->album_cover).'&h='.$cover_height[1].'&w='.$cover_width[1].'&zc=1&q=100';?>" style="cursor:pointer;margin-left:5px;;margin-top:3p;<?php echo $album_cover_css; ?>" />	
+							<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+								<p <?php if ( $album[$flag]->album_name == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+									<?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->album_name)); ?>
+								</p>
+									<div class="forspan">
+										<span class="zoom">
+										</span>
+									</div>
+							</article>
+						</a>
+					</div>
+					
 					<?php
 				}
 				?>
 				<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
-					<h3><?php echo stripcslashes($album[$flag]->album_name); ?>&nbsp;</h3>
-					<span><?php echo stripcslashes($album[$flag]->description);?>&nbsp;</span><br/>
+					<h3><?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->album_name)); ?>&nbsp;</h3>
+					<span><?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->description));?>&nbsp;</span><br/>
 					<a style="cursor: pointer;" onclick="view_images<?php echo $unique_id;?>(<?php echo $album[$flag]->album_id;?>)">
 						<?php _e("See Album images", gallery_bank ); ?> &raquo
 					</a>
@@ -122,7 +171,7 @@
 		}
 		?>
 			<div id="image_show_div<?php echo $unique_id;?>" style="display: none;" class="images-cover">
-			<h3 id="album_title<?php echo $unique_id;?>"><?php echo stripcslashes($album[$flag]->album_name); ?>&nbsp;</h3>
+			<h3 id="album_title<?php echo $unique_id;?>"><?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->album_name)); ?>&nbsp;</h3>
 			<div id="show_images_<?php echo $unique_id;?>" >
 			</div>
 		</div>
@@ -155,6 +204,7 @@
 		jQuery("#back_button<?php echo $unique_id;?>").css('display','none');
 	}
 </script>
+
 <?php
 }
 ?>
