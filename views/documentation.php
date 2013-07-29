@@ -39,7 +39,7 @@
 								<li>Now if you want to delete some images, you have to click on the remove image button.<br/> When you click on remove image button, a dialog box would open.<br/> You would have an option to Press OK to delete the image from the album or Press cancel to ignore.</li>
 								<li>In order to delete all images select check all option and then click on Delete button.<br/> All the Images would be deleted of the particular album.</li>
 								<li> Once you are done with the delete option, you would have to click on Publish Album button to implement your deletion of images.</li>
-								<li>Further you need to give the Title of the album which is mandatory don't.</li>
+								<li>Further you need to give the Title of the album which is mandatory.</li>
 								</ul>
 							</div>
 						</div>
