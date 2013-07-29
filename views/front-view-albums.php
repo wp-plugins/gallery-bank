@@ -80,17 +80,17 @@ global $wpdb;
 	$radius_for_shutter = "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
 	
 	?>
-	<table style="width: 100%;margin:0px;"><tr><td>
 	<button id="back_button<?php echo $unique_id;?>" style="margin-top:10px; display: none;" onclick="view_albums<?php echo $unique_id;?>();">
 		<span style="color: #000;"> &laquo <?php _e('Back to Albums', gallery_bank); ?></span>
 	</button>
+	<table style="width: 100%;margin:0px;border:0px;" class="album-cover" id="tbl_<?php echo $unique_id;?>"><tr><td style="border:0px">
 	<?php
 	
 if(($setting_cover->album_cover == "undefined") || ($setting_cover->album_cover == "") )
 {
 	$url = GALLERY_BK_PLUGIN_URL."/album-cover.png";
 	?>
-	<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
+	<div id="main_div<?php echo $unique_id;?>" style="display: block;">
 		<?php
 			$album_custom_cover_css = "Height:150px;Width:150px;". "border:"  . $cover_border_value . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
 		?>
@@ -182,17 +182,19 @@ else
 	<?php
 }
 ?>
+</td></tr></table>
 <div id="image_show_div<?php echo $unique_id;?>" style="display: none;" class="images-cover">
 	<h3 id="album_title<?php echo $unique_id;?>"><?php echo stripcslashes(htmlspecialchars_decode($album->album_name)); ?>&nbsp;</h3>
 	<div id="show_images_<?php echo $unique_id;?>" >
 	</div>
 </div>
-</td></tr></table>
+
 <script type="text/javascript">
 	var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 	function view_images_<?php echo $unique_id;?>(album_id)
 	{
 		jQuery(".album-cover").css('display','none');
+		jQuery("#tbl_<?php echo $unique_id;?>").css('display','none');
 		jQuery("#main_div<?php echo $unique_id;?>").css('display','none');
 		jQuery("#back_button<?php echo $unique_id;?>").css('display','none');
 		jQuery("#image_show_div<?php echo $unique_id;?>").css('display','block');
@@ -208,11 +210,13 @@ else
 	}
 	function view_albums<?php echo $unique_id;?>()
 	{
+		jQuery("#tbl_<?php echo $unique_id;?>").css('display','block');
 		jQuery(".album-cover").css('display','block');
 		jQuery(".images-cover").css('display','none');
 		jQuery("#back_button<?php echo $unique_id;?>").css('display','none');
 	}
 </script>
+
 <?php
 }
 ?>

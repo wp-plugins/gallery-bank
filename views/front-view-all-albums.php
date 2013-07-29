@@ -22,7 +22,7 @@
 	<span style="color: #000;">&laquo <?php _e('Back to Albums', gallery_bank); ?></span>
 </button>
 
-<table style="width:100%">
+<table style="width:100%;border:0px;" >
 <?php
 	for($flag = 0; $flag < count($album); $flag++)
 	{
@@ -78,7 +78,7 @@
 		$custom_width = $cover_width[1] + 5 + ($cover_border_value * 2) . "px;" . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
 		$radius_for_shutter = ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
 		?>
-		<tr><td>
+		<tr id="tr_<?php echo $album[$flag]->album_id;?>"><td style="border:0px;">
 		<?php
 		if(($get_settings->album_cover == "undefined") || ($get_settings->album_cover == "") )
 		{
@@ -171,6 +171,7 @@
 					</a>
 				</div>
 			</div>	
+			
 			<?php
 		}
 		?>
@@ -193,6 +194,21 @@
 		jQuery("#main_div<?php echo $unique_id;?>").css('display','none');
 		jQuery("#back_button<?php echo $unique_id;?>").css('display','none');
 		jQuery("#image_show_div<?php echo $unique_id;?>").css('display','block');
+		<?php
+			for($flag = 0; $flag < count($album); $flag++)
+			{
+				?>
+				if("<?php echo $flag; ?>" == 0)
+				{
+					jQuery("#tr_"+<?php echo $album[$flag]->album_id; ?>).css('display','block');
+				}
+				else
+				{
+					jQuery("#tr_"+<?php echo $album[$flag]->album_id; ?>).css('display','none');
+				}
+				<?php
+			}
+		?>
 		jQuery.post(ajaxurl, "album_id="+album_id+"&param=show_images&action=front_albums_gallery_library", function(data)
 		{
 			jQuery("#back_button<?php echo $unique_id;?>").css('display','block');
@@ -208,6 +224,14 @@
 		jQuery(".album-cover").css('display','block');
 		jQuery(".images-cover").css('display','none');
 		jQuery("#back_button<?php echo $unique_id;?>").css('display','none');
+		<?php
+			for($flag = 0; $flag < count($album); $flag++)
+			{
+				?>
+				jQuery("#tr_"+<?php echo $album[$flag]->album_id; ?>).css('display','block');
+				<?php
+			}
+		?>
 	}
 </script>
 
