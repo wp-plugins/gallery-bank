@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-07-26 15:36+0530\n"
-"PO-Revision-Date: 2013-07-26 15:36+0530\n"
+"POT-Creation-Date: 2013-07-31 16:25+0530\n"
+"PO-Revision-Date: 2013-07-31 18:07+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -11,49 +11,49 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: C:\\wamp\\www\\gallery-bank\\wp-content\\plugins\\gallery-"
-"bank-standard-version-3.0.0\\\n"
+"bank\\\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: lib/gallery-bank-class.php:8
+#: lib/gallery-bank-class.php:19
 msgid "Gallery Bank"
 msgstr ""
 
-#: lib/gallery-bank-class.php:9 views/dashboard.php:4
+#: lib/gallery-bank-class.php:20 views/dashboard.php:4
 msgid "Dashboard"
 msgstr "instrumentbræt"
 
-#: lib/gallery-bank-class.php:19 views/add-new-album.php:83
+#: lib/gallery-bank-class.php:30 views/add-new-album.php:83
 #: views/dashboard.php:21 views/dashboard.php:23
 msgid "Add New Album"
 msgstr "Tilføj nye albummet"
 
-#: lib/gallery-bank-class.php:21
+#: lib/gallery-bank-class.php:33
 msgid "Sorting"
 msgstr "sortering"
 
-#: lib/gallery-bank-class.php:22 views/dashboard.php:30 views/dashboard.php:32
+#: lib/gallery-bank-class.php:34 views/dashboard.php:30 views/dashboard.php:32
 #: views/edit-album.php:326 views/settings.php:83
 msgid "Global Settings"
 msgstr "globale indstillinger"
 
-#: lib/gallery-bank-class.php:23 views/documentation.php:4
+#: lib/gallery-bank-class.php:35 views/documentation.php:4
 msgid "Documentation"
 msgstr "dokumentation"
 
-#: lib/gallery-bank-class.php:24
-msgid "Get More Features"
-msgstr "Få flere funktioner"
+#: lib/gallery-bank-class.php:36
+msgid "Purchase Pro Version"
+msgstr "Køb professionel versionen"
 
-#: lib/gallery-bank-class.php:321
+#: lib/gallery-bank-class.php:333
 msgid "Select Gallery:"
 msgstr "Vælg galleri"
 
-#: lib/gallery-bank-class.php:323 views/images_sorting_ddl.php:18
+#: lib/gallery-bank-class.php:335 views/images_sorting_ddl.php:18
 #: views/images_sorting_ddl.php:20
 msgid "Select Album"
 msgstr "vælg albummet"
 
-#: views/add-new-album.php:88 views/album_preview.php:99
+#: views/add-new-album.php:88 views/album_preview.php:112
 #: views/edit-album.php:10 views/images_sorting.php:89
 #: views/images_sorting_ddl.php:8 views/settings.php:88
 msgid "Back to Album Overview"
@@ -281,7 +281,7 @@ msgstr "Er du sikker på du vil slette dette Billede?"
 msgid "Are you sure you want to delete these Images?"
 msgstr "Er du sikker på du vil slette disse billeder?"
 
-#: views/album_preview.php:95
+#: views/album_preview.php:108
 msgid "Preview Album "
 msgstr "forhåndsvisning albummet"
 
@@ -346,14 +346,32 @@ msgstr "albummet opdateret. Venlig at vente på omdirigering."
 msgid "Are you sure you want to delete these Images"
 msgstr "Er du sikker på du vil slette disse Billeder Vis"
 
-#: views/front-view-albums.php:82 views/front-view-all-albums.php:22
+#: views/front-view-albums.php:84 views/front-view-all-albums.php:22
 msgid "Back to Albums"
 msgstr "tilbage til album"
 
-#: views/front-view-albums.php:111 views/front-view-albums.php:174
-#: views/front-view-all-albums.php:105 views/front-view-all-albums.php:165
+#: views/front-view-albums.php:115 views/front-view-albums.php:178
+#: views/front-view-all-albums.php:110 views/front-view-all-albums.php:170
 msgid "See Album images"
 msgstr "Se Album billeder"
+
+#: views/header.php:12
+msgid ""
+"You will be only allowed to add 2 galleries and upto 10 images in each "
+"album. Kindly purchase Pro Version for full access."
+msgstr ""
+"Du vil kun blive tilladt at tilføje 2 gallerier og op til 10 billeder i "
+"hvert album. Venlig at køb af Pro version for fuld adgang."
+
+#: views/header.php:23
+msgid ""
+"Error : Thumbnails could not be displayed as permissions are missing.Kindly "
+"contact Gallery Bank or your Host to prove Read/Write/Execute permissions to "
+"cache folder inside the lib folder of Gallery Bank Plugin."
+msgstr ""
+"Fejl: Miniaturer kunne ikke vises, da tilladelserne mangler. Kontakt "
+"venligst galleri banken eller din Host at bevise Læs / Skriv / "
+"køretilladelse til cache mappe inde lib mappen af Galleri banken plugin."
 
 #: views/more_feature.php:6
 msgid "Get more features"
@@ -382,3 +400,6 @@ msgstr "miniaturer Indstillinger"
 #: views/settings.php:733
 msgid "Are you sure you want to restore settings ?"
 msgstr "Er du sikker på, du vil gendanne indstillinger?"
+
+#~ msgid "Get More Features"
+#~ msgstr "Få flere funktioner"

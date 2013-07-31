@@ -1,59 +1,59 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-07-26 15:53+0530\n"
-"PO-Revision-Date: 2013-07-26 15:53+0530\n"
+"POT-Creation-Date: 2013-07-31 17:46+0530\n"
+"PO-Revision-Date: 2013-07-31 17:54+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: C:\\wamp\\www\\gallery-bank\\wp-content\\plugins\\gallery-"
-"bank-standard-version-3.0.0\\\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\Gallery-Bank\\wp-content\\plugins\\gallery-"
+"bank\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: lib/gallery-bank-class.php:8
+#: lib/gallery-bank-class.php:19
 msgid "Gallery Bank"
 msgstr ""
 
-#: lib/gallery-bank-class.php:9 views/dashboard.php:4
+#: lib/gallery-bank-class.php:20 views/dashboard.php:4
 msgid "Dashboard"
 msgstr "painel de instrumentos"
 
-#: lib/gallery-bank-class.php:19 views/add-new-album.php:83
+#: lib/gallery-bank-class.php:30 views/add-new-album.php:83
 #: views/dashboard.php:21 views/dashboard.php:23
 msgid "Add New Album"
 msgstr "Adicionar Novo Álbum"
 
-#: lib/gallery-bank-class.php:21
+#: lib/gallery-bank-class.php:33
 msgid "Sorting"
 msgstr "Classificando"
 
-#: lib/gallery-bank-class.php:22 views/dashboard.php:30 views/dashboard.php:32
+#: lib/gallery-bank-class.php:34 views/dashboard.php:30 views/dashboard.php:32
 #: views/edit-album.php:326 views/settings.php:83
 msgid "Global Settings"
 msgstr "Configurações Globais"
 
-#: lib/gallery-bank-class.php:23 views/documentation.php:4
+#: lib/gallery-bank-class.php:35 views/documentation.php:4
 msgid "Documentation"
 msgstr "Documentação"
 
-#: lib/gallery-bank-class.php:24
-msgid "Get More Features"
-msgstr "Conseguir mais Funcionalidades"
+#: lib/gallery-bank-class.php:36
+msgid "Purchase Pro Version"
+msgstr "Compre versão Pro"
 
-#: lib/gallery-bank-class.php:321
+#: lib/gallery-bank-class.php:333
 msgid "Select Gallery:"
 msgstr "Selecione Galeria de :"
 
-#: lib/gallery-bank-class.php:323 views/images_sorting_ddl.php:18
+#: lib/gallery-bank-class.php:335 views/images_sorting_ddl.php:18
 #: views/images_sorting_ddl.php:20
 msgid "Select Album"
 msgstr "Selecione álbum"
 
-#: views/add-new-album.php:88 views/album_preview.php:99
+#: views/add-new-album.php:88 views/album_preview.php:112
 #: views/edit-album.php:10 views/images_sorting.php:89
 #: views/images_sorting_ddl.php:8 views/settings.php:88
 msgid "Back to Album Overview"
@@ -281,7 +281,7 @@ msgstr "Tem certeza de que deseja apagar essa imagem?"
 msgid "Are you sure you want to delete these Images?"
 msgstr "Tem certeza de que deseja excluir essas imagens?"
 
-#: views/album_preview.php:95
+#: views/album_preview.php:108
 msgid "Preview Album "
 msgstr "visualização Album"
 
@@ -346,14 +346,33 @@ msgstr "Álbum atualizados Por favor aguarde o redirecionar"
 msgid "Are you sure you want to delete these Images"
 msgstr "Tem certeza de que deseja excluir estes Images"
 
-#: views/front-view-albums.php:82 views/front-view-all-albums.php:22
+#: views/front-view-albums.php:84 views/front-view-all-albums.php:22
 msgid "Back to Albums"
 msgstr "Voltar aos álbuns"
 
-#: views/front-view-albums.php:111 views/front-view-albums.php:174
-#: views/front-view-all-albums.php:105 views/front-view-all-albums.php:165
+#: views/front-view-albums.php:115 views/front-view-albums.php:178
+#: views/front-view-all-albums.php:110 views/front-view-all-albums.php:170
 msgid "See Album images"
 msgstr "Veja Álbum imagens :"
+
+#: views/header.php:12
+msgid ""
+"You will be only allowed to add 2 galleries and upto 10 images in each "
+"album. Kindly purchase Pro Version for full access."
+msgstr ""
+"Você só será permitido adicionar duas galerias e até 10 imagens em cada "
+"álbum. Por favor, compre Pro Versão para acesso completo."
+
+#: views/header.php:23
+msgid ""
+"Error : Thumbnails could not be displayed as permissions are missing.Kindly "
+"contact Gallery Bank or your Host to prove Read/Write/Execute permissions to "
+"cache folder inside the lib folder of Gallery Bank Plugin."
+msgstr ""
+"Erro: Miniaturas não pode ser exibida como permissões estão faltando. Por "
+"favor, entre em contato Gallery-Bank para provar leitura / gravação / "
+"permissões de execução para a pasta de cache dentro da pasta lib de plugin "
+"do gallery-Bank."
 
 #: views/more_feature.php:6
 msgid "Get more features"
@@ -382,3 +401,6 @@ msgstr "Configurações Miniatura"
 #: views/settings.php:733
 msgid "Are you sure you want to restore settings ?"
 msgstr "Tem certeza de que deseja restaurar as configurações?"
+
+#~ msgid "Get More Features"
+#~ msgstr "Conseguir mais Funcionalidades"

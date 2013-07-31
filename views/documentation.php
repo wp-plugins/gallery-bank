@@ -776,7 +776,7 @@
 								<li>You can make changes in the Translation section as per your requirements as shown in figure:-</li>
 								<img src="http://gallery-bank.com/wp-content/uploads/2013/07/thirtynine-faq.png" alt="" style="height:490px;" />
 								<li>Click on the Save button to save your changes.</li>
-								<img src="http://gallery-bank.com/wp-content/uploads/2013/07/forty-faq.jpg" alt="" style="height:490px;" />
+								<img src="http://gallery-bank.com/wp-content/uploads/2013/07/forty-faq.png" alt="" style="height:490px;" />
 								<li>Upload the translated .po & .mo files to reflect changes on your Plugin.</li>
 							</ul>
 						</div>

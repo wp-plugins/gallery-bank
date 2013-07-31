@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-07-26 15:50+0530\n"
-"PO-Revision-Date: 2013-07-26 15:51+0530\n"
+"POT-Creation-Date: 2013-07-31 17:05+0530\n"
+"PO-Revision-Date: 2013-07-31 18:36+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -10,50 +10,50 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: C:\\wamp\\www\\gallery-bank\\wp-content\\plugins\\gallery-"
-"bank-standard-version-3.0.0\\\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\wordpress\\wp-content\\plugins\\gallery-"
+"bank\\\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: lib/gallery-bank-class.php:8
+#: lib/gallery-bank-class.php:19
 msgid "Gallery Bank"
 msgstr ""
 
-#: lib/gallery-bank-class.php:9 views/dashboard.php:4
+#: lib/gallery-bank-class.php:20 views/dashboard.php:4
 msgid "Dashboard"
 msgstr "계기판"
 
-#: lib/gallery-bank-class.php:19 views/add-new-album.php:83
+#: lib/gallery-bank-class.php:30 views/add-new-album.php:83
 #: views/dashboard.php:21 views/dashboard.php:23
 msgid "Add New Album"
 msgstr "새 앨범 추가"
 
-#: lib/gallery-bank-class.php:21
+#: lib/gallery-bank-class.php:33
 msgid "Sorting"
 msgstr "정렬"
 
-#: lib/gallery-bank-class.php:22 views/dashboard.php:30 views/dashboard.php:32
+#: lib/gallery-bank-class.php:34 views/dashboard.php:30 views/dashboard.php:32
 #: views/edit-album.php:326 views/settings.php:83
 msgid "Global Settings"
 msgstr "전역 설정"
 
-#: lib/gallery-bank-class.php:23 views/documentation.php:4
+#: lib/gallery-bank-class.php:35 views/documentation.php:4
 msgid "Documentation"
 msgstr "문서화"
 
-#: lib/gallery-bank-class.php:24
-msgid "Get More Features"
-msgstr "더 많은 기능을 얻을"
+#: lib/gallery-bank-class.php:36
+msgid "Purchase Pro Version"
+msgstr "수매직업적인버전"
 
-#: lib/gallery-bank-class.php:321
+#: lib/gallery-bank-class.php:333
 msgid "Select Gallery:"
 msgstr "선택하 갤러리"
 
-#: lib/gallery-bank-class.php:323 views/images_sorting_ddl.php:18
+#: lib/gallery-bank-class.php:335 views/images_sorting_ddl.php:18
 #: views/images_sorting_ddl.php:20
 msgid "Select Album"
 msgstr "앨범을 선택"
 
-#: views/add-new-album.php:88 views/album_preview.php:99
+#: views/add-new-album.php:88 views/album_preview.php:112
 #: views/edit-album.php:10 views/images_sorting.php:89
 #: views/images_sorting_ddl.php:8 views/settings.php:88
 msgid "Back to Album Overview"
@@ -281,7 +281,7 @@ msgstr "이이 이미지를 삭제 하시겠습니까?"
 msgid "Are you sure you want to delete these Images?"
 msgstr "이러한 이미지를 삭제 하시겠습니까?"
 
-#: views/album_preview.php:95
+#: views/album_preview.php:108
 msgid "Preview Album "
 msgstr "미리 앨범"
 
@@ -346,14 +346,32 @@ msgstr "앨범 업데이트되었습니다.리디렉션에 대한 친절 기다�
 msgid "Are you sure you want to delete these Images"
 msgstr "이러한 이미지를 삭제 하시겠습니까"
 
-#: views/front-view-albums.php:82 views/front-view-all-albums.php:22
+#: views/front-view-albums.php:84 views/front-view-all-albums.php:22
 msgid "Back to Albums"
 msgstr "앨범에 다시"
 
-#: views/front-view-albums.php:111 views/front-view-albums.php:174
-#: views/front-view-all-albums.php:105 views/front-view-all-albums.php:165
+#: views/front-view-albums.php:115 views/front-view-albums.php:178
+#: views/front-view-all-albums.php:110 views/front-view-all-albums.php:170
 msgid "See Album images"
 msgstr "참조 앨범 이미지"
+
+#: views/header.php:12
+msgid ""
+"You will be only allowed to add 2 galleries and upto 10 images in each "
+"album. Kindly purchase Pro Version for full access."
+msgstr ""
+"당신은 될 것입니다 만 허용 추가하  2 갤러리를 및 10 하는 이미지  에 각 앨범. "
+"상냥한 수매 직업적인 버전 전체 액세스를위한."
+
+#: views/header.php:23
+msgid ""
+"Error : Thumbnails could not be displayed as permissions are missing.Kindly "
+"contact Gallery Bank or your Host to prove Read/Write/Execute permissions to "
+"cache folder inside the lib folder of Gallery Bank Plugin."
+msgstr ""
+"오류: 썸네일 할 수 있었다 하지 될 이 카달로그   때문 권한을  사용  아르 실"
+"종. 상냥한접촉 갤러리-은행 또는 당신의 호스트,  증명하기   읽기  / 쓰기 / 실"
+"행 사용 권한, 폴더를 캐시에 내부,갤러리 뱅크 플러그인 폴더에 있습니다."
 
 #: views/more_feature.php:6
 msgid "Get more features"
@@ -382,3 +400,6 @@ msgstr "썸네일 설정"
 #: views/settings.php:733
 msgid "Are you sure you want to restore settings ?"
 msgstr "당신은 확실히 당신은 설정을 복원 하시겠습니까?"
+
+#~ msgid "Get More Features"
+#~ msgstr "더 많은 기능을 얻을"
