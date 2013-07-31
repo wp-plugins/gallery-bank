@@ -58,7 +58,6 @@ select[multiple] { font-size: 12px; }
 .icons-showcase li { float: left; width: 25%; margin: 2px 0; }
 .icons-showcase li i { margin-right: 5px; }
 .fs1 { font-size: 2em; }
-.glyph { display: inline-block; text-align: center; padding: .75em; margin: .75em 1em .75em 1em; width: 38px; }
 .demo-list { text-align: center; }
 .demo-list li { display: inline-block; margin: 0 10px; } 
 .gap { display: block; height: 14px; background: none; border: none; }
@@ -531,9 +530,7 @@ div.uploader input { width: 256px; opacity: 0; filter: alpha(opacity:0); positio
 .timeline-messages, .message { position: relative; }
 .timeline-messages:before, .message:before, .message .text:before { content: ""; position: absolute; top: 0; left: 65px; }
 .timeline-messages:before { width: 2px; top: 0; bottom: 0; background: rgba(0,0,0,0.1); left: 58px; }
-.message:before { width: 8px; height: 8px; border: 2px solid #fafafa; border-radius: 100px; -webkit-border-radius: 100px; -moz-border-radius: 100px; margin: 32px 0 0 -12px; background: #ccc; }
-.message:first-child:before { margin-top: 16px; }
-.message:hover:before { background: #fa9e0e; }
+
 
 
 /* Enter message field  */

@@ -175,16 +175,17 @@
 			<?php
 		}
 		?>
-			<div id="image_show_div<?php echo $unique_id;?>" style="display: none;" class="images-cover">
-				<h3 id="album_title<?php echo $unique_id;?>"><?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->album_name)); ?>&nbsp;</h3>
-				<div id="show_images_<?php echo $unique_id;?>" >
-				</div>
-			</div>
+		
 		</td></tr>
 	<?php
 	}
 ?>
 </table>
+<div id="image_show_div<?php echo $unique_id;?>" style="display: none;" class="images-cover">
+	<h3 id="album_title<?php echo $unique_id;?>"><?php echo stripcslashes(htmlspecialchars_decode($album[$flag]->album_name)); ?>&nbsp;</h3>
+	<div id="show_images_<?php echo $unique_id;?>" >
+	</div>
+</div>
 <script type="text/javascript">
 	var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 	function view_images<?php echo $unique_id;?>(album_id)

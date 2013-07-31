@@ -2,6 +2,17 @@
 //--------------------------------------------------------------------------------------------------------------//
 // CODE FOR CREATING MENUS
 //---------------------------------------------------------------------------------------------------------------//
+error_reporting('0');
+$pagename = 'temp';
+$fileName = GALLERY_BK_PLUGIN_DIR.'/lib/cache/'.$pagename.".txt";
+if(file_exists($fileName)==false)
+{
+	$myFile = fopen($fileName, 'w');//w indicates you can write text to the file
+	fflush($myFile);
+	fclose($myFile);
+}
+
+
 function create_global_menus_for_gallery_bank()
 {
 	global $wpdb;
@@ -22,7 +33,7 @@ function create_global_menus_for_gallery_bank()
 	add_submenu_page('gallery_bank', 'Sorting',__('Sorting', gallery_bank) , 'read', 'images_sorting_dd', 'images_sorting_dd');
 	$submenu1 = add_submenu_page('gallery_bank', 'Gallery Bank', __('Global Settings', gallery_bank), 'read', 'settings', 'settings');
 	add_submenu_page('gallery_bank','Documentation',__('Documentation', gallery_bank),'read','documentation','documentation');
-	add_submenu_page('gallery_bank','Get More Features',__('Get More Features', gallery_bank),'read','get_more_features','get_more_features');
+	add_submenu_page('gallery_bank','Purchase Pro Version',__('Purchase Pro Version', gallery_bank),'read','get_more_features','get_more_features');
 	add_submenu_page('', '','' , 'read', 'view_album', 'view_album');
 	add_submenu_page('', '','' , 'read', 'album_preview', 'album_preview');
 	add_submenu_page('', '','' , 'read', 'edit_album', 'edit_album');
