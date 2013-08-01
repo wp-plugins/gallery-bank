@@ -105,7 +105,29 @@
 															<input style="width: 100%" class="span12" type="text" id="ux_edit_title_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)) ;?>" placeholder="<?php _e( "Enter your Image Title", gallery_bank);?>" />
 														</div>
 														<div class="control-group" style="border-bottom: none !important;">
-															<textarea style="width: 100%" class="span12" rows="10" id="ux_edit_desc_<?php echo $pic_detail[$flag]->pic_id ;?>" placeholder="<?php _e( "Enter your Image Description", gallery_bank);?>"><?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)) ;?></textarea>
+															<textarea style="width: 100%" class="span12" rows="5" id="ux_edit_desc_<?php echo $pic_detail[$flag]->pic_id ;?>" placeholder="<?php _e( "Enter your Image Description", gallery_bank);?>"><?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)) ;?></textarea>
+														</div>
+														<div class="control-group">
+														<?php
+														if($pic_detail[$flag]->check_url == 1)
+														{
+															?>
+															<input type="checkbox" checked="checked" name="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" onclick="chk_url_required();" id="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" value="<?php echo $pic_detail[$flag]->check_url; ?>"/> 
+															<label><?php _e(" Url to Redirect on click of an Image", gallery_bank);?></label>
+															<?php
+														}
+														else
+														{
+															?>
+															<input type="checkbox" name="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" onclick="chk_url_required();" id="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" value="<?php echo $pic_detail[$flag]->check_url; ?>"/> 
+															<label><?php _e(" Url to Redirect on click of an Image", gallery_bank); ?></label>
+															<?php
+														}
+														$domain = str_replace('http://http://', 'http://', $pic_detail[$flag]->url);
+														?>
+														</div>
+														<div class="control-group" id="check_url_req_<?php echo $pic_detail[$flag]->pic_id ;?>">
+															<input style="width: 100%" class="span12" type="text" id="ux_edit_url_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo $domain;?>" placeholder="<?php _e( "Enter URL", gallery_bank);?>" />
 														</div>
 														<input type="hidden" id="hidden_pic_id_<?php  echo $pic_detail[$flag]->pic_id; ?>" value="<?php echo $pic_detail[$flag]->pic_id ;?>" />
 													</div>
@@ -742,6 +764,8 @@
 		check_default_settings();
 		check_thumbnail_settings();
 		check_cover_settings();
+		chk_url_required();
+		check_url_req();
 		jQuery('.hovertip').tooltip();
 		oTable = jQuery('#edit-album-data-table').dataTable
 		({
@@ -1068,11 +1092,16 @@
 				{
 					edit_detail = encodeURIComponent(jQuery("#ux_edit_desc_" + picId).val());
 				}
+				var url_path = "";
+				if(encodeURIComponent(jQuery("#ux_edit_url_" + picId).val()) != "undefined")
+				{
+					url_path = encodeURIComponent(jQuery("#ux_edit_url_" + picId).val());
+				}
 				var id = jQuery("#<?php  echo $pic_detail[$flag]->pic_id; ?>").val();
-					
+				var chkbox_url = jQuery("#ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id; ?>").prop("checked");
 				if(typeof id != 'undefined')
 				{
-					jQuery.post(ajaxurl,"albumId="+albumId+"&picId="+picId+"&edit_title="+edit_title+"&edit_detail="+edit_detail+"&param=update_pic&action=album_gallery_library", function(data)
+					jQuery.post(ajaxurl,"albumId="+albumId+"&picId="+picId+"&edit_title="+edit_title+"&edit_detail="+edit_detail+"&checkbox_url="+chkbox_url+"&edit_url_path="+url_path+"&param=update_pic&action=album_gallery_library", function(data)
 					{
 					});
 				}
@@ -1101,17 +1130,20 @@
 						var pic_title = "";
 						if(encodeURIComponent(jQuery("#pic_title_" + ar[pics]).val()) != "undefined")
 						{
-							
 							pic_title = encodeURIComponent(jQuery("#pic_title_" + ar[pics]).val());
 						}
 						var pic_detail = "";
 						if(encodeURIComponent(jQuery("#pic_des_" + ar[pics]).val()) != "undefined")
 						{
-							pic_detail= encodeURIComponent(jQuery("#pic_des_" + ar[pics]).val());
+							pic_detail = encodeURIComponent(jQuery("#pic_des_" + ar[pics]).val());
 						}
-						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
+						if(encodeURIComponent(jQuery("#pic_url_" + ar[pics]).val()) != "undefined")
 						{
-							
+							pic_url = encodeURIComponent(jQuery("#pic_url_" + ar[pics]).val());
+						}
+						var chkbox = jQuery("#chk_url_" +ar[pics]).prop("checked");
+						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&checkbox_url="+chkbox+"&url_path="+pic_url+"&param=add_pic&action=album_gallery_library", function(data)
+						{
 							count++;
 							if(count == array.length)
 							{
@@ -1249,8 +1281,14 @@
 					var block1 = jQuery("<div class=\"block\" style=\"width:66%;float:left\">");
 					var box = jQuery("<div class=\"control-group\"><input type=\"text\" class=\"span12\" id=\"pic_title_"+dynamicId+"\" placeholder=\"<?php _e( "Enter your Image Title", gallery_bank);?>\" /></div>");
 					block1.append(box);
-					var text = jQuery("<div class=\"control-group\"><textarea id=\"pic_des_"+dynamicId+"\" rows=\"10\"  placeholder=\"<?php _e( "Enter your Image Description", gallery_bank);?>\"  class=\"span12\"></textarea></div>"); 
+					var text = jQuery("<div class=\"control-group\"><textarea id=\"pic_des_"+dynamicId+"\" rows=\"5\"  placeholder=\"<?php _e( "Enter your Image Description", gallery_bank);?>\"  class=\"span12\"></textarea></div>"); 
 					block1.append(text);
+					block1.append("</div>");
+					var checkboxes = jQuery("<div class=\"control-group\"><input type=\"checkbox\" value=\"1\" style=\"cursor: pointer; margin-top:0px;\" id=\"chk_url_"+dynamicId+"\" name=\"chk_url_"+dynamicId+"\" onclick=\"check_url_req("+dynamicId+")\">&nbsp;<span><?php _e( "Url to Redirect on click of an Image", gallery_bank );?></span></div>"); 
+					block1.append(checkboxes);
+					block1.append("</div>");
+					var pic_url = jQuery("<div id=\"chk_url_req_"+dynamicId+"\" class=\"control-group\" style=\"display:none;\"><input type=\"text\" name=\"pic_url_"+dynamicId+"\" value=\"http://\" style=\"width=100%\" class=\"span12\" id=\"pic_url_"+dynamicId+"\"  placeholder=\"<?php _e( "Enter URL", gallery_bank);?>\"></div>"); 
+					block1.append(pic_url);
 					block1.append("</div>");
 					main_div.append(chk_block);
 					main_div.append(block);
@@ -1362,5 +1400,36 @@
 				});
 			}
 		});
+	}
+	function chk_url_required()
+	{
+		<?php
+		for ($flag = 0; $flag < count($pic_detail); $flag++)
+		{
+		?>
+			var chk_url = jQuery("#ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>").prop("checked");
+			if(chk_url == true)
+			{
+				jQuery('#check_url_req_<?php echo $pic_detail[$flag]->pic_id ;?>').css('display','block');
+			}
+			else
+			{
+				jQuery('#check_url_req_<?php echo $pic_detail[$flag]->pic_id ;?>').css('display','none');
+			}
+			<?php
+		}
+		?>
+	}
+	function check_url_req(dynamicId)
+	{
+		var check_url = jQuery("#chk_url_" + dynamicId).prop("checked");
+		if(check_url == true)
+		{
+			jQuery('#chk_url_req_' + dynamicId).css('display','block');
+		}
+		else
+		{
+			jQuery('#chk_url_req_' + dynamicId).css('display','none');
+		}
 	}
 </script>

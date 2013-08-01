@@ -727,8 +727,12 @@
 					var block1 = jQuery("<div class=\"block\" style=\"width:66%;float:left\">");
 					var box = jQuery("<div class=\"control-group\"><input type=\"text\" style=\"width=150%\" class=\"span12\" id=\"title_img_"+dynamicId+"\" placeholder=\"<?php _e( "Enter your Image Title", gallery_bank);?>\" /></div>");
 					block1.append(box);
-					var text = jQuery("<div class=\"control-group\"><textarea id=\"des_img_"+dynamicId+"\" rows=\"10\" placeholder=\"<?php _e( "Enter your Image Description", gallery_bank);?>\" style=\"width=150%\" class=\"span12\"></textarea></div>"); 
+					var text = jQuery("<div class=\"control-group\"><textarea id=\"des_img_"+dynamicId+"\" rows=\"5\" placeholder=\"<?php _e( "Enter your Image Description", gallery_bank);?>\" style=\"width=150%\" class=\"span12\"></textarea></div>"); 
 					block1.append(text);
+					var url_check = jQuery("<div class=\"control-group\"><input type=\"checkbox\" id=\"url_check_"+dynamicId+"\" value=\"1\" style=\"cursor: pointer; margin-top:0px;\" onclick=\"chk_url_req("+dynamicId+")\"/>&nbsp;<span><?php _e( "Url to Redirect on click of an Image", gallery_bank );?></span></div>");
+					block1.append(url_check);
+					var url = jQuery("<div class=\"control-group\" id=\"url_div_"+dynamicId+"\" style=\"display:none;\"><input type=\"text\" style=\"width=100%\" class=\"span12\" id=\"url_"+dynamicId+"\" value=\"http://\" /></div>");
+					block1.append(url);
 					block1.append("</div>");
 					main_div.append(div);
 					main_div.append(block);
@@ -764,6 +768,18 @@
 				}
 			}
 		});
+	}
+	function chk_url_req(dynamicId)
+	{
+		var url_checkbox=jQuery("#url_check_"+dynamicId).prop("checked");
+		if(url_checkbox == true)
+		{
+			jQuery("#url_div_"+dynamicId).css('display','block');
+		}
+		else
+		{
+			jQuery("#url_div_"+dynamicId).css('display','none');
+		}
 	}
 	jQuery("#add_new_album").validate
 	({
@@ -819,12 +835,18 @@
 							{
 								title = encodeURIComponent(jQuery("#title_img_" + ar[pic]).val());
 							}
+							var url_path = "";
+							if(encodeURIComponent(jQuery("#url_" + ar[pic]).val()) != "undefined")
+							{
+								url_path = encodeURIComponent(jQuery("#url_" + ar[pic]).val());
+							}
 							var detail="";
 							if(encodeURIComponent(jQuery("#des_img_" + ar[pic]).val()) != "undefined")
 							{
 								detail = encodeURIComponent(jQuery("#des_img_" + ar[pic]).val());
 							}
-							jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&detail="+detail+"&path="+path+"&thumb="+thumb+"&param=add_pic&action=album_gallery_library", function(data)
+							var checkbox_url = jQuery("#url_check_" +ar[pic]).prop("checked");
+							jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&url_path="+url_path+"&detail="+detail+"&path="+path+"&thumb="+thumb+"&checkbox_url="+checkbox_url+"&param=add_pic&action=album_gallery_library", function(data)
 							{
 								jQuery('#message').css('display','block');
 								count++;

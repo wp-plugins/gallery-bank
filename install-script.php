@@ -24,6 +24,8 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_pics() . '"')) == 0
 	thumbnail_url TEXT NOT NULL,
 	sorting_order INTEGER(20),
 	date DATE,
+	url VARCHAR(250) NOT NULL,
+	check_url INTEGER(10) NOT NULL,
 	PRIMARY KEY(pic_id)		 
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';
 	dbDelta($sql);
@@ -354,6 +356,40 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 			$wpdb->prepare
 			(
 				"ALTER TABLE " . gallery_bank_pics() . " ADD sorting_order INTEGER(10) NOT NULL",""
+			)
+		);
+	}
+	$check11 = $wpdb->get_var
+	(
+		$wpdb->prepare
+		(
+			"SHOW COLUMNS FROM " . gallery_bank_pics() . " LIKE 'url'",""
+		)
+	);
+	if($check11 != "url")
+	{
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"ALTER TABLE " . gallery_bank_pics() . " ADD url VARCHAR(250) NOT NULL",""
+			)
+		);
+	}
+	$check12 = $wpdb->get_var
+	(
+		$wpdb->prepare
+		(
+			"SHOW COLUMNS FROM " . gallery_bank_pics() . " LIKE 'check_url'",""
+		)
+	);
+	if($check12 != "check_url")
+	{
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"ALTER TABLE " . gallery_bank_pics() . " ADD check_url INTEGER(10) NOT NULL",""
 			)
 		);
 	}

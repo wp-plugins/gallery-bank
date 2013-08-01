@@ -252,19 +252,31 @@ else
 			$ux_path = esc_attr($_REQUEST["path"]);
 			$ux_albumid = intval($_REQUEST["album_id"]);
 			$ux_title = html_entity_decode($_REQUEST["title"]);
+			$ux_url_path = html_entity_decode($_REQUEST["url_path"]);
 			$ux_detail = html_entity_decode($_REQUEST["detail"]);
 			$thumbnail_url = esc_attr($_REQUEST["thumb"]);
+			$ux_checkbox = esc_attr($_REQUEST["checkbox_url"]);
+			if($ux_checkbox == "true")
+			{
+				$url_checkbox = 1;
+			}
+			else
+			{
+				$url_checkbox = 0;
+			}
 			$wpdb->query
 			(
 				$wpdb->prepare
 				(
-					"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,thumbnail_url,title,description,date)
-					VALUES(%d,%s,%s,%s,%s,CURDATE())",
+					"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,thumbnail_url,title,description,url,check_url,date)
+					VALUES(%d,%s,%s,%s,%s,%s,%d,CURDATE())",
 					$ux_albumid,
 					$ux_path,
 					$thumbnail_url,
 					$ux_title,
-					$ux_detail
+					$ux_detail,
+					$ux_url_path,
+					$url_checkbox
 				)
 			);
 			$pic_id = $wpdb->insert_id;
@@ -285,13 +297,25 @@ else
 			$albumId = intval($_REQUEST['albumId']);
 			$edit_title = html_entity_decode($_REQUEST['edit_title']);
 			$edit_detail = html_entity_decode($_REQUEST['edit_detail']);
+			$chkbox = esc_attr($_REQUEST['checkbox_url']);
+			$ux_edit_url = html_entity_decode($_REQUEST["edit_url_path"]);
+			if($chkbox == "true")
+			{
+				$url_chkbox = 1;
+			}
+			else
+			{
+				$url_chkbox = 0;
+			}
 			$wpdb->query
 			(
 				$wpdb->prepare
 				(
-					"UPDATE " .gallery_bank_pics(). " SET title = %s, description= %s WHERE pic_id = %d",
+					"UPDATE " .gallery_bank_pics(). " SET title = %s, description= %s,url = %s, check_url = %d WHERE pic_id = %d",
 					$edit_title,
 					$edit_detail,
+					$ux_edit_url,
+					$url_chkbox,
 					$pic_id
 				)
 			);
