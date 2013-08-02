@@ -1139,10 +1139,10 @@
 						}
 						if(encodeURIComponent(jQuery("#pic_url_" + ar[pics]).val()) != "undefined")
 						{
-							pic_url = encodeURIComponent(jQuery("#pic_url_" + ar[pics]).val());
+							var pic_url1 = encodeURIComponent(jQuery("#pic_url_" + ar[pics]).val());
 						}
 						var chkbox = jQuery("#chk_url_" +ar[pics]).prop("checked");
-						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&checkbox_url="+chkbox+"&url_path="+pic_url+"&param=add_pic&action=album_gallery_library", function(data)
+						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&checkbox_url="+chkbox+"&url_path="+pic_url1+"&param=add_pic&action=album_gallery_library", function(data)
 						{
 							count++;
 							if(count == array.length)
@@ -1186,7 +1186,6 @@
 				attachment = attachment.toJSON();
 				jQuery("#edit_cover_image").attr('src', attachment.url);
 				jQuery("#edit_cover_image").attr('width','250px');
-				
 				cover_array = attachment.url;
 			});
 		});
