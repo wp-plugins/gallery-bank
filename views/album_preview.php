@@ -188,49 +188,94 @@
 								<?php
 								}
 							}
-							?>
+							
+							if($pic_detail[$flag]->check_url == 1)
+							{
+								if($image_content[1] == 1)
+								{
+									
+									?>
+										<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom"></span>
+											</div>
+										</article>
+								</a>
+										</div>
+									<?php
+									
+								}
+								else 
+								{
+									
+									?>
+										<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">	
+												</span>
+											</div>
+										</article>
+								</a>
+										</div>
+									<?php
+								}
+							}
+							else
+							{
+								?>
 							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
 							<?php
-							if($image_content[1] == 1)
-							{
-								
-								?>
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
-									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
-										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
-											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
-										</p>
-										<div class="forspan">
-											<span class="zoom"></span>
+								if($image_content[1] == 1)
+								{
+									
+									?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom"></span>
+											</div>
+										</article>
+								</a>
 										</div>
-									</article>
-							</a>
-									</div>
-								<?php
-								
-							}
-							else 
-							{
-								
-								?>
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
-									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
-										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
-											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
-										</p>
-										<div class="forspan">
-											<span class="zoom">	
-											</span>
+									<?php
+									
+								}
+								else 
+								{
+									
+									?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">	
+												</span>
+											</div>
+										</article>
+								</a>
 										</div>
-									</article>
-							</a>
-									</div>
-								<?php
+									<?php
+								}
 							}
 						}
 						else 
 						{
-						
+							
 							if($image_content[1] == 1)
 							{
 								if($images_in_row[1] == 1)
@@ -284,46 +329,93 @@
 									}
 								}
 							}
-							?>
-							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
-							<?php
-							if($image_content[1] == 1)
+							
+							if($pic_detail[$flag]->check_url == 1)
 							{
-								
-								?>
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
-									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
-										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
-											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
-										</p>
-										<div class="forspan">
-											<span class="zoom">
-											</span>
+								if($image_content[1] == 1)
+								{
+									
+									?>
+										<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
+										</article>
+								</a>	
 										</div>
-									</article>
-							</a>	
-									</div>
-								<?php
+									<?php
+								}
+								else 
+								{
+									
+									?>
+										<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+													
+												</span>
+											</div>
+										</article>
+								</a>
+										</div>
+									<?php
+									
+								}
 							}
-							else 
+							else
 							{
-								
 								?>
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
-									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
-										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
-											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
-										</p>
-										<div class="forspan">
-											<span class="zoom">
-												
-											</span>
-										</div>
-									</article>
-							</a>
-									</div>
+									<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
 								<?php
-								
+								if($image_content[1] == 1)
+								{
+									
+									?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
+										</article>
+								</a>	
+										</div>
+									<?php
+								}
+								else 
+								{
+									
+									?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+													
+												</span>
+											</div>
+										</article>
+								</a>
+										</div>
+									<?php
+									
+								}
 							}
 						}
 					}
@@ -364,46 +456,93 @@
 								<?php
 								}
 							}
-							?>
-							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
-							<?php
-							if($image_content[1] == 1)
+							
+							if($pic_detail[$flag]->check_url == 1)
 							{
-								
-								?>
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
-									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
-										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
-											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
-										</p>
-										<div class="forspan">
-											<span class="zoom">
-											</span>
-										</div>
-									</article>
-							</a>
-									</div>
-								<?php
-								
-							}
-							else 
-							{
-								
-								?>
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
-									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
-										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
-											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
-										</p>
-										<div class="forspan">
-											<span class="zoom">
-											</span>
-										</div>
+								if($image_content[1] == 1)
+								{
+									
+									?>
+									<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
 										</article>
-							</a>
+								</a>
 										</div>
+									<?php
+									
+								}
+								else 
+								{
+									
+									?>
+									<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
+											</article>
+								</a>
+											</div>
+									<?php
+									
+								}
+							}
+							else
+							{
+								?>
+								<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
 								<?php
-								
+								if($image_content[1] == 1)
+								{
+									
+									?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
+										</article>
+								</a>
+										</div>
+									<?php
+									
+								}
+								else 
+								{
+									
+									?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
+											</article>
+								</a>
+											</div>
+									<?php
+									
+								}
 							}
 						}
 						else
@@ -461,46 +600,92 @@
 									}
 								}
 							}
-							?>
-							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
-							<?php
-							if($image_content[1] == 1)
+							
+							if($pic_detail[$flag]->check_url == 1)
 							{
-								
-								?>
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
-									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
-										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
-											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
-										</p>
-										<div class="forspan">
-											<span class="zoom">
-											</span>
+								if($image_content[1] == 1)
+								{
+									
+									?>
+										<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
+										</article>
+								</a>
 										</div>
-									</article>
-							</a>
-									</div>
-								<?php
-								
+									<?php
+									
+								}
+								else 
+								{
+									?>
+										<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
+									<?php
+									?>
+										<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
+										</article>
+								</a>
+										</div>
+									<?php
+									
+								}
 							}
-							else 
+							else
 							{
-								
-								?>
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
-									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
-										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
-											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
-										</p>
-										<div class="forspan">
-											<span class="zoom">
-											</span>
+								if($image_content[1] == 1)
+								{
+									
+									?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
+										</article>
+								</a>
 										</div>
-									</article>
-							</a>
-									</div>
-								<?php
-								
+									<?php
+									
+								}
+								else 
+								{
+									
+									?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
+											<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
+												<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
+											</p>
+											<div class="forspan">
+												<span class="zoom">
+												</span>
+											</div>
+										</article>
+								</a>
+										</div>
+									<?php
+									
+								}
 							}
 						}
 					}
@@ -552,8 +737,8 @@
 		
 			jQuery(document).ready(function() {
 				jQuery('.titan-lb_<?php echo $unique_id;?>').lightbox({
-					interval : "<?php echo $interval; ?>",
-					autoPlay: "<?php echo $autoplay; ?>",
+					//interval : "<php echo $interval; ?>",
+					//autoPlay: "<php echo $autoplay; ?>",
 					beforeShow: function(){
 						jQuery(".lightbox-skin").css("background","<?php echo $lightbox_inline_bg_color[1]; ?>");
 						jQuery(".lightbox-overlay").css("background","<?php echo $litebox_bg_color_with_opacity; ?>");

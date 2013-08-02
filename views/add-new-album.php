@@ -465,7 +465,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="block well individual-settings">
+					<!-- <div class="block well individual-settings" style="display: none;">
 						<div class="navbar">
 							<div class="navbar-inner">
 								<h5><?php _e( "Slide Show Settings", gallery_bank ); ?></h5>
@@ -511,7 +511,7 @@
 										?>
 									</div>
 								</div>
-								<div class="control-group" id="slideShowInterval">
+								<div class="control-group" id="slideShowInterval" >
 									<label class="control-label"><?php _e( "Interval", gallery_bank ); ?> : </label>
 									<div class="controls">
 										<input type="text" class="span9" id="ux_hdn_slide_interval" name="ux_hdn_slide_interval" onblur="set_text_value('slide')" onkeyup="set_text_value('slide')" onkeypress="return OnlyNumbers(event)" value="<?php echo $slide_interval[1]; ?>"/>
@@ -520,7 +520,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="block well individual-settings">
 						<div class="navbar">
 							<div class="navbar-inner">

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-07-31 16:58+0530\n"
-"PO-Revision-Date: 2013-07-31 18:14+0530\n"
+"POT-Creation-Date: 2013-08-02 15:12+0530\n"
+"PO-Revision-Date: 2013-08-02 16:28+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgid "Sorting"
 msgstr "jaez"
 
 #: lib/gallery-bank-class.php:34 views/dashboard.php:30 views/dashboard.php:32
-#: views/edit-album.php:326 views/settings.php:83
+#: views/edit-album.php:348 views/settings.php:83
 msgid "Global Settings"
 msgstr "de ajustes globales"
 
@@ -87,31 +87,31 @@ msgstr "Subir Imágenes a tu del álbum"
 msgid "Delete "
 msgstr "borrar"
 
-#: views/add-new-album.php:144 views/edit-album.php:250
+#: views/add-new-album.php:144 views/edit-album.php:272
 msgid "Album Cover"
 msgstr "cubierta del álbum"
 
-#: views/add-new-album.php:158 views/edit-album.php:279
+#: views/add-new-album.php:158 views/edit-album.php:301
 msgid "Set Cover Image "
 msgstr "Establezca imagen la cubierta"
 
-#: views/add-new-album.php:166 views/edit-album.php:287
+#: views/add-new-album.php:166 views/edit-album.php:309
 msgid "Short Codes For Page/Post"
 msgstr "Los códigos cortos para la página / enviar"
 
-#: views/add-new-album.php:177 views/edit-album.php:298
+#: views/add-new-album.php:177 views/edit-album.php:320
 msgid "All Albums"
 msgstr "Todos los álbumes"
 
-#: views/add-new-album.php:181 views/edit-album.php:302
+#: views/add-new-album.php:181 views/edit-album.php:324
 msgid "Single Album"
 msgstr "del álbum individual"
 
-#: views/add-new-album.php:185 views/edit-album.php:306
+#: views/add-new-album.php:185 views/edit-album.php:328
 msgid "Album with Cover"
 msgstr "Álbum con tapa"
 
-#: views/add-new-album.php:194 views/edit-album.php:315
+#: views/add-new-album.php:194 views/edit-album.php:337
 msgid "Album Settings"
 msgstr "Ajustes del álbum"
 
@@ -119,165 +119,169 @@ msgstr "Ajustes del álbum"
 msgid "Settings"
 msgstr "Ajustes"
 
-#: views/add-new-album.php:209 views/edit-album.php:334
-#: views/edit-album.php:347
+#: views/add-new-album.php:209 views/edit-album.php:356
+#: views/edit-album.php:369
 msgid "Global"
 msgstr "Globales"
 
-#: views/add-new-album.php:213 views/edit-album.php:338
-#: views/edit-album.php:351
+#: views/add-new-album.php:213 views/edit-album.php:360
+#: views/edit-album.php:373
 msgid "Individual"
 msgstr "individuo"
 
-#: views/add-new-album.php:223 views/edit-album.php:375
+#: views/add-new-album.php:223 views/edit-album.php:397
 msgid "Thumbnails Settings"
 msgstr "Miniaturas Ajustes"
 
-#: views/add-new-album.php:234 views/edit-album.php:386 views/settings.php:123
+#: views/add-new-album.php:234 views/edit-album.php:408 views/settings.php:123
 msgid "Thumbnail Size"
 msgstr "Tamaño de miniatura"
 
 #: views/add-new-album.php:242 views/add-new-album.php:255
 #: views/add-new-album.php:339 views/add-new-album.php:352
-#: views/edit-album.php:394 views/edit-album.php:407 views/edit-album.php:491
-#: views/edit-album.php:504 views/settings.php:130 views/settings.php:137
+#: views/edit-album.php:416 views/edit-album.php:429 views/edit-album.php:513
+#: views/edit-album.php:526 views/settings.php:130 views/settings.php:137
 #: views/settings.php:217 views/settings.php:224
 msgid "Original"
 msgstr "originario"
 
 #: views/add-new-album.php:246 views/add-new-album.php:259
 #: views/add-new-album.php:343 views/add-new-album.php:356
-#: views/edit-album.php:398 views/edit-album.php:411 views/edit-album.php:495
-#: views/edit-album.php:508 views/settings.php:131 views/settings.php:138
+#: views/edit-album.php:420 views/edit-album.php:433 views/edit-album.php:517
+#: views/edit-album.php:530 views/settings.php:131 views/settings.php:138
 #: views/settings.php:218 views/settings.php:225
 msgid "Custom"
 msgstr "costumbre"
 
 #: views/add-new-album.php:267 views/add-new-album.php:364
-#: views/edit-album.php:419 views/edit-album.php:516 views/settings.php:146
+#: views/edit-album.php:441 views/edit-album.php:538 views/settings.php:146
 #: views/settings.php:233
 msgid "Width"
 msgstr "ancho"
 
 #: views/add-new-album.php:274 views/add-new-album.php:371
-#: views/edit-album.php:426 views/edit-album.php:523 views/settings.php:153
+#: views/edit-album.php:448 views/edit-album.php:545 views/settings.php:153
 #: views/settings.php:240
 msgid "Height"
 msgstr "altura"
 
-#: views/add-new-album.php:281 views/edit-album.php:433 views/settings.php:160
+#: views/add-new-album.php:281 views/edit-album.php:455 views/settings.php:160
 msgid "Images in Row"
 msgstr "Imágenes en la Fila"
 
 #: views/add-new-album.php:288 views/add-new-album.php:378
-#: views/add-new-album.php:421 views/edit-album.php:440
-#: views/edit-album.php:530 views/edit-album.php:573 views/settings.php:167
+#: views/add-new-album.php:421 views/edit-album.php:462
+#: views/edit-album.php:552 views/edit-album.php:595 views/settings.php:167
 #: views/settings.php:247 views/settings.php:290
 msgid "Opacity"
 msgstr "opacidad"
 
 #: views/add-new-album.php:295 views/add-new-album.php:385
-#: views/add-new-album.php:428 views/edit-album.php:447
-#: views/edit-album.php:537 views/edit-album.php:580 views/settings.php:174
+#: views/add-new-album.php:428 views/edit-album.php:469
+#: views/edit-album.php:559 views/edit-album.php:602 views/settings.php:174
 #: views/settings.php:254 views/settings.php:297
 msgid "Border Size"
 msgstr "Tamaño del borde"
 
 #: views/add-new-album.php:302 views/add-new-album.php:392
-#: views/add-new-album.php:435 views/edit-album.php:454
-#: views/edit-album.php:544 views/edit-album.php:587 views/settings.php:181
+#: views/add-new-album.php:435 views/edit-album.php:476
+#: views/edit-album.php:566 views/edit-album.php:609 views/settings.php:181
 #: views/settings.php:261 views/settings.php:304
 msgid "Border Radius"
 msgstr "Un radio Frontera"
 
 #: views/add-new-album.php:309 views/add-new-album.php:399
-#: views/add-new-album.php:448 views/edit-album.php:461
-#: views/edit-album.php:551 views/edit-album.php:600 views/settings.php:188
+#: views/add-new-album.php:448 views/edit-album.php:483
+#: views/edit-album.php:573 views/edit-album.php:622 views/settings.php:188
 #: views/settings.php:268 views/settings.php:317
 msgid "Border Color"
 msgstr "color del borde"
 
-#: views/add-new-album.php:320 views/edit-album.php:472 views/settings.php:199
+#: views/add-new-album.php:320 views/edit-album.php:494 views/settings.php:199
 msgid "Album Cover Settings"
 msgstr "Ajustes Portada del álbum"
 
-#: views/add-new-album.php:331 views/edit-album.php:483 views/settings.php:210
+#: views/add-new-album.php:331 views/edit-album.php:505 views/settings.php:210
 msgid "Cover Size"
 msgstr "Cubra Tamaño"
 
-#: views/add-new-album.php:410 views/edit-album.php:562 views/settings.php:279
+#: views/add-new-album.php:410 views/edit-album.php:584 views/settings.php:279
 msgid "Lightbox Settings"
 msgstr "la mesa de luz de Ajustes"
 
-#: views/add-new-album.php:442 views/edit-album.php:594 views/settings.php:311
+#: views/add-new-album.php:442 views/edit-album.php:616 views/settings.php:311
 msgid "Text Color"
 msgstr "color del texto"
 
-#: views/add-new-album.php:454 views/edit-album.php:606 views/settings.php:323
+#: views/add-new-album.php:454 views/edit-album.php:628 views/settings.php:323
 msgid "Inline Background"
 msgstr "Antecedentes interno"
 
-#: views/add-new-album.php:460 views/edit-album.php:612 views/settings.php:329
+#: views/add-new-album.php:460 views/edit-album.php:634 views/settings.php:329
 msgid "Overlay Background"
 msgstr "Antecedentes Superponer"
 
-#: views/add-new-album.php:471 views/edit-album.php:623 views/settings.php:340
+#: views/add-new-album.php:471 views/edit-album.php:645 views/settings.php:340
 msgid "Slide Show Settings"
 msgstr "Deslice Mostrar Ajustes"
 
-#: views/add-new-album.php:482 views/edit-album.php:634 views/settings.php:351
+#: views/add-new-album.php:482 views/edit-album.php:656 views/settings.php:351
 msgid "Auto Play"
 msgstr "reproducción automática"
 
 #: views/add-new-album.php:490 views/add-new-album.php:503
 #: views/add-new-album.php:546 views/add-new-album.php:560
-#: views/edit-album.php:642 views/edit-album.php:655 views/edit-album.php:698
-#: views/edit-album.php:711 views/settings.php:358 views/settings.php:365
+#: views/edit-album.php:664 views/edit-album.php:677 views/edit-album.php:720
+#: views/edit-album.php:733 views/settings.php:358 views/settings.php:365
 #: views/settings.php:404 views/settings.php:411
 msgid "Enable"
 msgstr "habilitar"
 
 #: views/add-new-album.php:494 views/add-new-album.php:507
 #: views/add-new-album.php:550 views/add-new-album.php:564
-#: views/edit-album.php:646 views/edit-album.php:659 views/edit-album.php:702
-#: views/edit-album.php:715 views/settings.php:359 views/settings.php:366
+#: views/edit-album.php:668 views/edit-album.php:681 views/edit-album.php:724
+#: views/edit-album.php:737 views/settings.php:359 views/settings.php:366
 #: views/settings.php:405 views/settings.php:412
 msgid "Disable"
 msgstr "inhabilitar"
 
-#: views/add-new-album.php:515 views/edit-album.php:667 views/settings.php:374
+#: views/add-new-album.php:515 views/edit-album.php:689 views/settings.php:374
 msgid "Interval"
 msgstr "intervalo"
 
-#: views/add-new-album.php:527 views/edit-album.php:679 views/settings.php:386
+#: views/add-new-album.php:527 views/edit-album.php:701 views/settings.php:386
 msgid "Pagination Settings"
 msgstr "Ajustes paginación se"
 
-#: views/add-new-album.php:538 views/edit-album.php:690 views/settings.php:397
+#: views/add-new-album.php:538 views/edit-album.php:712 views/settings.php:397
 msgid "Paging"
 msgstr "de paginación"
 
 #: views/add-new-album.php:723 views/edit-album.php:100
-#: views/edit-album.php:1245
+#: views/edit-album.php:1277
 msgid "Remove Image"
 msgstr "Retire Imagen"
 
 #: views/add-new-album.php:728 views/edit-album.php:105
-#: views/edit-album.php:1250
+#: views/edit-album.php:1282
 msgid "Enter your Image Title"
 msgstr "Ingrese su Título de imagen"
 
 #: views/add-new-album.php:730 views/edit-album.php:108
-#: views/edit-album.php:1252
+#: views/edit-album.php:1284
 msgid "Enter your Image Description"
 msgstr "Ingrese su Descripción de la imagen"
 
-#: views/add-new-album.php:750 views/edit-album.php:1273
-#: views/edit-album.php:1296
+#: views/add-new-album.php:732 views/edit-album.php:1287
+msgid "Url to Redirect on click of an Image"
+msgstr "URL para redirigir  al hacer clic con,de imagen"
+
+#: views/add-new-album.php:754 views/edit-album.php:1311
+#: views/edit-album.php:1334
 msgid "Are you sure you want to delete this Image?"
 msgstr "¿Está seguro de que desea eliminar esta imagen?"
 
-#: views/add-new-album.php:876
+#: views/add-new-album.php:898
 msgid "Are you sure you want to delete these Images?"
 msgstr "¿Está seguro de que desea eliminar estas imágenes?"
 
@@ -326,7 +330,7 @@ msgstr "Vista previa del álbum"
 msgid "Delete Album"
 msgstr "Eliminar álbum"
 
-#: views/dashboard.php:138 views/edit-album.php:1316
+#: views/dashboard.php:138 views/edit-album.php:1354
 msgid "Are you sure you want to delete this Album?"
 msgstr "¿Está seguro que desea eliminar este álbum?"
 
@@ -342,7 +346,15 @@ msgstr "Actualización de-album"
 msgid "Album updated. Kindly wait for the redirect."
 msgstr "del álbum actualizado. amablemente espere a que la redirigir."
 
-#: views/edit-album.php:1332
+#: views/edit-album.php:116 views/edit-album.php:123
+msgid " Url to Redirect on click of an Image"
+msgstr "URL para redirigir  al hacer clic con,de imagen"
+
+#: views/edit-album.php:130 views/edit-album.php:1290
+msgid "Enter URL"
+msgstr "Introducir URL"
+
+#: views/edit-album.php:1370
 msgid "Are you sure you want to delete these Images"
 msgstr "¿Está seguro de que desea eliminar estas Imágenes"
 
@@ -365,9 +377,10 @@ msgstr ""
 
 #: views/header.php:23
 msgid ""
-"Error : Thumbnails could not be displayed as permissions are missing.Kindly "
-"contact Gallery Bank or your Host to prove Read/Write/Execute permissions to "
-"cache folder inside the lib folder of Gallery Bank Plugin."
+"<p>Error : Thumbnails could not be displayed as permissions are missing.</"
+"p><p style='margin-top:10px'>Kindly contact Gallery Bank or your Host to "
+"prove Read/Write/Execute permissions to cache folder inside the lib folder "
+"of Gallery Bank Plugin.</p>"
 msgstr ""
 "de error: Miniaturas no se pudo mostrar, como  permisos están desaparecidos. "
 "amablemente  contacto Galería bank, o su  anfitrión para demostrar lectura / "
@@ -401,6 +414,3 @@ msgstr "Ajustes Miniatura"
 #: views/settings.php:733
 msgid "Are you sure you want to restore settings ?"
 msgstr "¿Está seguro que desea restaurar la configuración?"
-
-#~ msgid "Get More Features"
-#~ msgstr "Obtenga más características"

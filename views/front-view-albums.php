@@ -90,7 +90,7 @@ if(($setting_cover->album_cover == "undefined") || ($setting_cover->album_cover 
 {
 	$url = GALLERY_BK_PLUGIN_URL."/album-cover.png";
 	?>
-	<div id="main_div<?php echo $unique_id;?>" style="display: block;">
+	<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
 		<?php
 			$album_custom_cover_css = "Height:150px;Width:150px;". "border:"  . $cover_border_value . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
 		?>

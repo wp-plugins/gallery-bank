@@ -334,7 +334,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="block well">
+					<!-- <div class="block well">
 						<div class="navbar">
 							<div class="navbar-inner">
 								<h5><?php _e( "Slide Show Settings", gallery_bank ); ?></h5>
@@ -379,7 +379,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="block well">
 						<div class="navbar">
 							<div class="navbar-inner">

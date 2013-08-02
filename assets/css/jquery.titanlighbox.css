@@ -175,13 +175,13 @@
     overflow: hidden;
     display: none;
     z-index: 8010;
+    background: url(../images/lightbox_overlay.png);
 }
 
 .lightbox-overlay-fixed {
     position: fixed;
     bottom: 0;
     right: 0;
-    z-index: 99999 !important;
 }
 
 .lightbox-lock .lightbox-overlay { }
@@ -195,7 +195,6 @@
     position: relative;
     text-shadow: none;
     z-index: 8050;
-    word-wrap:break-word;
 }
 
 .lightbox-opened .lightbox-title { visibility: visible }
@@ -275,8 +274,9 @@
 /* Style Alt
 ----------------------------------------------------------------------------------------------------*/
 
+.alt { border-radius: 8px }
 
-
+.alt .lightbox-skin { border-radius: 5px }
 
 .alt .lightbox-close {
     background: url(../images/skin-alt/lightbox_close.png) no-repeat right top transparent;
@@ -366,3 +366,4 @@
         border: 0 !important;
     }
 }
+

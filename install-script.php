@@ -132,6 +132,7 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 				$check[$flag]->album_id
 			)
 		);
+		
 		if($check_album_id == 0)
 		{
 			
@@ -156,6 +157,7 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 					$check_pics
 				)
 			);
+			
 		}
 	}
 }
@@ -370,9 +372,18 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 	{
 		$wpdb->query
 		(
+		
 			$wpdb->prepare
 			(
 				"ALTER TABLE " . gallery_bank_pics() . " ADD url VARCHAR(250) NOT NULL",""
+			)
+		);
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"UPDATE ".gallery_bank_pics()." set url = %s",
+				"http://"
 			)
 		);
 	}

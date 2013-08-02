@@ -195,7 +195,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row-fluid">
+		<!-- <div class="row-fluid">
 			<div class="span12">
 				<div class="block well">
 					<div class="navbar">
@@ -221,7 +221,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="block well">
@@ -366,7 +366,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="row-fluid">
+		<!-- <div class="row-fluid">
 			<div class="span12">
 				<div class="block well">
 					<div class="navbar">
@@ -392,7 +392,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class="row-fluid">
 			<div class="span12">
 				<div class="block well">
@@ -440,7 +440,7 @@
 					</div>
 					<div class="collapse" id="fifteen_faq">
 						<div class="body">
-							<ul style="list-style-type:upper-roman;margin-left:40px;line-height:1.8em;">>
+							<ul style="list-style-type:upper-roman;margin-left:40px;line-height:1.8em;">
 								<img src="http://gallery-bank.com/wp-content/uploads/2013/07/twentythree-faq.png" alt=""/>
 								<li>When you click on Delete All Albums button, a dialog box would open. <br/>You have an option to click on OK in order to delete all the albums that you have saved or click CANCEL to ignore. </li>
 								<img src="http://gallery-bank.com/wp-content/uploads/2013/07/twentyfour-faq.png" alt=""/>

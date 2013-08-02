@@ -676,8 +676,8 @@
 				jQuery(document).ready(function(){
 					jQuery("div.da-thumbs").hoverdir();
 					jQuery(".titan-lb_<?php echo $unique_id;?>").lightbox({
-						interval : "<?php echo $interval; ?>",
-						autoPlay:  "<?php echo $autoplay; ?>",
+						//interval : "<php echo $interval; ?>",
+						//autoPlay:  "<php echo $autoplay; ?>",
 						beforeShow: function(){
 							jQuery(".lightbox-skin").css("background","<?php echo $lightbox_inline_bg_color[1]; ?>");
 							jQuery(".lightbox-overlay").css("background","<?php echo $litebox_bg_color_with_opacity; ?>");

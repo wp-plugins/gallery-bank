@@ -469,14 +469,14 @@
 									<label class="control-label"><?php _e( "Border Size", gallery_bank ); ?> : </label>
 									<div class="controls">
 										<input type="text" id="ux_image_border_val" name="ux_image_border_val" onblur="set_text_value('thumb_border_size')" onkeyup="set_text_value('thumb_border_size')" onkeypress="return OnlyNumbers(event)" class="span9" value="<?php echo $image_border_size_value; ?>" />
-										<span style="padding-top:3px;float:left;margin-left:3%">(1-20)</span>
+										<span style="padding-top:3px;float:left;margin-left:3%">(0-20)</span>
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label"><?php _e( "Border Radius", gallery_bank ); ?> : </label>
 									<div class="controls">
 										<input type="text" id="ux_image_radius_val" name="ux_image_radius_val" onblur="set_text_value('thumb_border_radius')" onkeyup="set_text_value('thumb_border_radius')" onkeypress="return OnlyNumbers(event)" class="span9" value="<?php echo $image_border_radius_value; ?>" />
-										<span style="padding-top:3px;float:left;margin-left:3%">(1-20)</span>
+										<span style="padding-top:3px;float:left;margin-left:3%">(0-20)</span>
 									</div>
 								</div>
 								<div class="control-group">
@@ -559,14 +559,14 @@
 									<label class="control-label"><?php _e( "Border Size", gallery_bank ); ?> : </label>
 									<div class="controls">
 										<input type="text" id="ux_cover_border_val" name="ux_cover_border_val" class="span9" onblur="set_text_value('cover_border_size')" onkeyup="set_text_value('cover_border_size')" onkeypress="return OnlyNumbers(event)" value="<?php echo $cov_border_size;?>" />
-										<span style="padding-top:3px;float:left;margin-left:3%">(1-20)</span>
+										<span style="padding-top:3px;float:left;margin-left:3%">(0-20)</span>
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label"><?php _e( "Border Radius", gallery_bank ); ?> : </label>
 									<div class="controls">
 										<input type="text" id="ux_cover_radius_val" name="ux_cover_radius_val" class="span9" onblur="set_text_value('cover_border_radius')" onkeyup="set_text_value('cover_border_radius')" onkeypress="return OnlyNumbers(event)" value="<?php echo $cov_border_radius;?>" />
-										<span style="padding-top:3px;float:left;margin-left:3%">(1-20)</span>
+										<span style="padding-top:3px;float:left;margin-left:3%">(0-20)</span>
 									</div>
 								</div>
 								<div class="control-group">
@@ -602,14 +602,14 @@
 									<label class="control-label"><?php _e( "Border Size", gallery_bank ); ?> : </label>
 									<div class="controls">
 										<input type="text" id="ux_lightbox_border_val" name="ux_lightbox_border_val" onblur="set_text_value('lightbox_border')" onkeyup="set_text_value('lightbox_border')" onkeypress="return OnlyNumbers(event)" class="span9" value="<?php echo $overlay_border_size_value;?>" />
-										<span style="padding-top:3px;float:left;margin-left:3%">(1-20)</span>
+										<span style="padding-top:3px;float:left;margin-left:3%">(0-20)</span>
 									</div>
 								</div>
 								<div class="control-group">
 									<label class="control-label"><?php _e( "Border Radius", gallery_bank ); ?> : </label>
 									<div class="controls">
 										<input type="text" id="ux_lightbox_radius_val" name="ux_lightbox_radius_val" onblur="set_text_value('lightbox_radius')" onkeyup="set_text_value('lightbox_radius')"  onkeypress="return OnlyNumbers(event)" class="span9" value="<?php echo $overlay_border_radius_value; ?>"/>
-										<span style="padding-top:3px;float:left;margin-left:3%">(1-20)</span>
+										<span style="padding-top:3px;float:left;margin-left:3%">(0-20)</span>
 									</div>
 								</div>
 								<div class="control-group">
@@ -639,7 +639,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="block well" id="edit_slideshow_settings">
+					<!-- <div class="block well" id="edit_slideshow_settings">
 						<div class="navbar">
 							<div class="navbar-inner">
 								<h5><?php _e( "Slide Show Settings", gallery_bank ); ?></h5>
@@ -694,7 +694,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="block well" id="edit_pagination_settings">
 						<div class="navbar">
 							<div class="navbar-inner">

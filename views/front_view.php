@@ -142,14 +142,15 @@
 							if($images_in_row[1] == 1)
 							{
 								?>
-								<div class="view da-thumbs" style="height:<?php echo $default_height; ?>;width:<?php echo $default_width; ?>;">
+									<div class="view da-thumbs" style="height:<?php echo $default_height; ?>;width:<?php echo $default_width; ?>;">
 								<?php
 								
 							}
-							else {
+							else 
+							{
 								?>
-								<div class="view da-thumbs" style="float:left;height:<?php echo $default_height; ?>;width:<?php echo $default_width; ?>;">
-							<?php
+									<div class="view da-thumbs" style="float:left;height:<?php echo $default_height; ?>;width:<?php echo $default_width; ?>;">
+								<?php
 							}
 						}
 						else 
@@ -690,8 +691,8 @@
 		
 			jQuery(document).ready(function() {
 				jQuery('.titan-lb_<?php echo $unique_id;?>').lightbox({
-					interval : "<?php echo $interval; ?>",
-					autoPlay: "<?php echo $autoplay; ?>",
+					//interval : "<php echo $interval; ?>",
+					//autoPlay: "<php echo $autoplay; ?>",
 					beforeShow: function(){
 						jQuery(".lightbox-skin").css("background","<?php echo $lightbox_inline_bg_color[1]; ?>");
 						jQuery(".lightbox-overlay").css("background","<?php echo $litebox_bg_color_with_opacity; ?>");

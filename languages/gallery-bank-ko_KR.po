@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-07-31 17:05+0530\n"
-"PO-Revision-Date: 2013-07-31 18:36+0530\n"
+"POT-Creation-Date: 2013-08-02 16:08+0530\n"
+"PO-Revision-Date: 2013-08-02 16:46+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: C:\\wamp\\www\\wordpress\\wp-content\\plugins\\gallery-"
-"bank\\\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\plugins\\wp-content\\plugins\\gallery-bank"
+"\\\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: lib/gallery-bank-class.php:19
@@ -32,7 +32,7 @@ msgid "Sorting"
 msgstr "정렬"
 
 #: lib/gallery-bank-class.php:34 views/dashboard.php:30 views/dashboard.php:32
-#: views/edit-album.php:326 views/settings.php:83
+#: views/edit-album.php:348 views/settings.php:83
 msgid "Global Settings"
 msgstr "전역 설정"
 
@@ -87,31 +87,31 @@ msgstr "귀하의 앨범에 심상을 올려"
 msgid "Delete "
 msgstr "삭제하다"
 
-#: views/add-new-album.php:144 views/edit-album.php:250
+#: views/add-new-album.php:144 views/edit-album.php:272
 msgid "Album Cover"
 msgstr "앨범 커버"
 
-#: views/add-new-album.php:158 views/edit-album.php:279
+#: views/add-new-album.php:158 views/edit-album.php:301
 msgid "Set Cover Image "
 msgstr "커버 이미지를 설정"
 
-#: views/add-new-album.php:166 views/edit-album.php:287
+#: views/add-new-album.php:166 views/edit-album.php:309
 msgid "Short Codes For Page/Post"
 msgstr "짧은용 코드페이지/게시"
 
-#: views/add-new-album.php:177 views/edit-album.php:298
+#: views/add-new-album.php:177 views/edit-album.php:320
 msgid "All Albums"
 msgstr "모든 앨범"
 
-#: views/add-new-album.php:181 views/edit-album.php:302
+#: views/add-new-album.php:181 views/edit-album.php:324
 msgid "Single Album"
 msgstr "싱글 앨범"
 
-#: views/add-new-album.php:185 views/edit-album.php:306
+#: views/add-new-album.php:185 views/edit-album.php:328
 msgid "Album with Cover"
 msgstr "덮개를 가진 앨범"
 
-#: views/add-new-album.php:194 views/edit-album.php:315
+#: views/add-new-album.php:194 views/edit-album.php:337
 msgid "Album Settings"
 msgstr "앨범 설정"
 
@@ -119,165 +119,169 @@ msgstr "앨범 설정"
 msgid "Settings"
 msgstr "설정 값"
 
-#: views/add-new-album.php:209 views/edit-album.php:334
-#: views/edit-album.php:347
+#: views/add-new-album.php:209 views/edit-album.php:356
+#: views/edit-album.php:369
 msgid "Global"
 msgstr "글로벌"
 
-#: views/add-new-album.php:213 views/edit-album.php:338
-#: views/edit-album.php:351
+#: views/add-new-album.php:213 views/edit-album.php:360
+#: views/edit-album.php:373
 msgid "Individual"
 msgstr "개인"
 
-#: views/add-new-album.php:223 views/edit-album.php:375
+#: views/add-new-album.php:223 views/edit-album.php:397
 msgid "Thumbnails Settings"
 msgstr "썸네일 설정"
 
-#: views/add-new-album.php:234 views/edit-album.php:386 views/settings.php:123
+#: views/add-new-album.php:234 views/edit-album.php:408 views/settings.php:123
 msgid "Thumbnail Size"
 msgstr "썸네일 크기"
 
 #: views/add-new-album.php:242 views/add-new-album.php:255
 #: views/add-new-album.php:339 views/add-new-album.php:352
-#: views/edit-album.php:394 views/edit-album.php:407 views/edit-album.php:491
-#: views/edit-album.php:504 views/settings.php:130 views/settings.php:137
+#: views/edit-album.php:416 views/edit-album.php:429 views/edit-album.php:513
+#: views/edit-album.php:526 views/settings.php:130 views/settings.php:137
 #: views/settings.php:217 views/settings.php:224
 msgid "Original"
 msgstr "기발한"
 
 #: views/add-new-album.php:246 views/add-new-album.php:259
 #: views/add-new-album.php:343 views/add-new-album.php:356
-#: views/edit-album.php:398 views/edit-album.php:411 views/edit-album.php:495
-#: views/edit-album.php:508 views/settings.php:131 views/settings.php:138
+#: views/edit-album.php:420 views/edit-album.php:433 views/edit-album.php:517
+#: views/edit-album.php:530 views/settings.php:131 views/settings.php:138
 #: views/settings.php:218 views/settings.php:225
 msgid "Custom"
 msgstr "사용자 정의"
 
 #: views/add-new-album.php:267 views/add-new-album.php:364
-#: views/edit-album.php:419 views/edit-album.php:516 views/settings.php:146
+#: views/edit-album.php:441 views/edit-album.php:538 views/settings.php:146
 #: views/settings.php:233
 msgid "Width"
 msgstr "폭"
 
 #: views/add-new-album.php:274 views/add-new-album.php:371
-#: views/edit-album.php:426 views/edit-album.php:523 views/settings.php:153
+#: views/edit-album.php:448 views/edit-album.php:545 views/settings.php:153
 #: views/settings.php:240
 msgid "Height"
 msgstr "신장"
 
-#: views/add-new-album.php:281 views/edit-album.php:433 views/settings.php:160
+#: views/add-new-album.php:281 views/edit-album.php:455 views/settings.php:160
 msgid "Images in Row"
 msgstr "행에서 이미지"
 
 #: views/add-new-album.php:288 views/add-new-album.php:378
-#: views/add-new-album.php:421 views/edit-album.php:440
-#: views/edit-album.php:530 views/edit-album.php:573 views/settings.php:167
+#: views/add-new-album.php:421 views/edit-album.php:462
+#: views/edit-album.php:552 views/edit-album.php:595 views/settings.php:167
 #: views/settings.php:247 views/settings.php:290
 msgid "Opacity"
 msgstr "불투명"
 
 #: views/add-new-album.php:295 views/add-new-album.php:385
-#: views/add-new-album.php:428 views/edit-album.php:447
-#: views/edit-album.php:537 views/edit-album.php:580 views/settings.php:174
+#: views/add-new-album.php:428 views/edit-album.php:469
+#: views/edit-album.php:559 views/edit-album.php:602 views/settings.php:174
 #: views/settings.php:254 views/settings.php:297
 msgid "Border Size"
 msgstr "테두리 크기"
 
 #: views/add-new-album.php:302 views/add-new-album.php:392
-#: views/add-new-album.php:435 views/edit-album.php:454
-#: views/edit-album.php:544 views/edit-album.php:587 views/settings.php:181
+#: views/add-new-album.php:435 views/edit-album.php:476
+#: views/edit-album.php:566 views/edit-album.php:609 views/settings.php:181
 #: views/settings.php:261 views/settings.php:304
 msgid "Border Radius"
 msgstr "테두리 반경"
 
 #: views/add-new-album.php:309 views/add-new-album.php:399
-#: views/add-new-album.php:448 views/edit-album.php:461
-#: views/edit-album.php:551 views/edit-album.php:600 views/settings.php:188
+#: views/add-new-album.php:448 views/edit-album.php:483
+#: views/edit-album.php:573 views/edit-album.php:622 views/settings.php:188
 #: views/settings.php:268 views/settings.php:317
 msgid "Border Color"
 msgstr "테두리 색상"
 
-#: views/add-new-album.php:320 views/edit-album.php:472 views/settings.php:199
+#: views/add-new-album.php:320 views/edit-album.php:494 views/settings.php:199
 msgid "Album Cover Settings"
 msgstr "앨범 커버 설정"
 
-#: views/add-new-album.php:331 views/edit-album.php:483 views/settings.php:210
+#: views/add-new-album.php:331 views/edit-album.php:505 views/settings.php:210
 msgid "Cover Size"
 msgstr "표지사이즈"
 
-#: views/add-new-album.php:410 views/edit-album.php:562 views/settings.php:279
+#: views/add-new-album.php:410 views/edit-album.php:584 views/settings.php:279
 msgid "Lightbox Settings"
 msgstr "라이트 박스설정"
 
-#: views/add-new-album.php:442 views/edit-album.php:594 views/settings.php:311
+#: views/add-new-album.php:442 views/edit-album.php:616 views/settings.php:311
 msgid "Text Color"
 msgstr "텍스트 색상"
 
-#: views/add-new-album.php:454 views/edit-album.php:606 views/settings.php:323
+#: views/add-new-album.php:454 views/edit-album.php:628 views/settings.php:323
 msgid "Inline Background"
 msgstr " 배경에 인라인으로"
 
-#: views/add-new-album.php:460 views/edit-album.php:612 views/settings.php:329
+#: views/add-new-album.php:460 views/edit-album.php:634 views/settings.php:329
 msgid "Overlay Background"
 msgstr "오버레이 배경"
 
-#: views/add-new-album.php:471 views/edit-album.php:623 views/settings.php:340
+#: views/add-new-album.php:471 views/edit-album.php:645 views/settings.php:340
 msgid "Slide Show Settings"
 msgstr "슬라이드 쇼 설정"
 
-#: views/add-new-album.php:482 views/edit-album.php:634 views/settings.php:351
+#: views/add-new-album.php:482 views/edit-album.php:656 views/settings.php:351
 msgid "Auto Play"
 msgstr "자동 재생"
 
 #: views/add-new-album.php:490 views/add-new-album.php:503
 #: views/add-new-album.php:546 views/add-new-album.php:560
-#: views/edit-album.php:642 views/edit-album.php:655 views/edit-album.php:698
-#: views/edit-album.php:711 views/settings.php:358 views/settings.php:365
+#: views/edit-album.php:664 views/edit-album.php:677 views/edit-album.php:720
+#: views/edit-album.php:733 views/settings.php:358 views/settings.php:365
 #: views/settings.php:404 views/settings.php:411
 msgid "Enable"
 msgstr "활성화합니다"
 
 #: views/add-new-album.php:494 views/add-new-album.php:507
 #: views/add-new-album.php:550 views/add-new-album.php:564
-#: views/edit-album.php:646 views/edit-album.php:659 views/edit-album.php:702
-#: views/edit-album.php:715 views/settings.php:359 views/settings.php:366
+#: views/edit-album.php:668 views/edit-album.php:681 views/edit-album.php:724
+#: views/edit-album.php:737 views/settings.php:359 views/settings.php:366
 #: views/settings.php:405 views/settings.php:412
 msgid "Disable"
 msgstr "사용하지 않도록 설정"
 
-#: views/add-new-album.php:515 views/edit-album.php:667 views/settings.php:374
+#: views/add-new-album.php:515 views/edit-album.php:689 views/settings.php:374
 msgid "Interval"
 msgstr "간격을"
 
-#: views/add-new-album.php:527 views/edit-album.php:679 views/settings.php:386
+#: views/add-new-album.php:527 views/edit-album.php:701 views/settings.php:386
 msgid "Pagination Settings"
 msgstr "페이지 매김 설정"
 
-#: views/add-new-album.php:538 views/edit-album.php:690 views/settings.php:397
+#: views/add-new-album.php:538 views/edit-album.php:712 views/settings.php:397
 msgid "Paging"
 msgstr "페이징"
 
 #: views/add-new-album.php:723 views/edit-album.php:100
-#: views/edit-album.php:1245
+#: views/edit-album.php:1277
 msgid "Remove Image"
 msgstr "이미지를 제거"
 
 #: views/add-new-album.php:728 views/edit-album.php:105
-#: views/edit-album.php:1250
+#: views/edit-album.php:1282
 msgid "Enter your Image Title"
 msgstr "이미지 제목을 입력합니다"
 
 #: views/add-new-album.php:730 views/edit-album.php:108
-#: views/edit-album.php:1252
+#: views/edit-album.php:1284
 msgid "Enter your Image Description"
 msgstr "이미지 설명을 입력하십시오"
 
-#: views/add-new-album.php:750 views/edit-album.php:1273
-#: views/edit-album.php:1296
+#: views/add-new-album.php:732 views/edit-album.php:1287
+msgid "Url to Redirect on click of an Image"
+msgstr "URL, 에 리디렉션,의해 , 이미지클릭"
+
+#: views/add-new-album.php:754 views/edit-album.php:1311
+#: views/edit-album.php:1334
 msgid "Are you sure you want to delete this Image?"
 msgstr "이이 이미지를 삭제 하시겠습니까?"
 
-#: views/add-new-album.php:876
+#: views/add-new-album.php:898
 msgid "Are you sure you want to delete these Images?"
 msgstr "이러한 이미지를 삭제 하시겠습니까?"
 
@@ -326,7 +330,7 @@ msgstr "앨범미리"
 msgid "Delete Album"
 msgstr "앨범 삭제"
 
-#: views/dashboard.php:138 views/edit-album.php:1316
+#: views/dashboard.php:138 views/edit-album.php:1354
 msgid "Are you sure you want to delete this Album?"
 msgstr "아르당신은이 앨범을 삭제 하시겠습니까?"
 
@@ -342,7 +346,15 @@ msgstr "앨범 업데이트"
 msgid "Album updated. Kindly wait for the redirect."
 msgstr "앨범 업데이트되었습니다.리디렉션에 대한 친절 기다립니다."
 
-#: views/edit-album.php:1332
+#: views/edit-album.php:116 views/edit-album.php:123
+msgid " Url to Redirect on click of an Image"
+msgstr "URL, 에 리디렉션,의해 , 이미지클릭"
+
+#: views/edit-album.php:130 views/edit-album.php:1290
+msgid "Enter URL"
+msgstr "입력 해 URL"
+
+#: views/edit-album.php:1370
 msgid "Are you sure you want to delete these Images"
 msgstr "이러한 이미지를 삭제 하시겠습니까"
 
@@ -371,7 +383,8 @@ msgid ""
 msgstr ""
 "오류: 썸네일 할 수 있었다 하지 될 이 카달로그   때문 권한을  사용  아르 실"
 "종. 상냥한접촉 갤러리-은행 또는 당신의 호스트,  증명하기   읽기  / 쓰기 / 실"
-"행 사용 권한, 폴더를 캐시에 내부,갤러리 뱅크 플러그인 폴더에 있습니다."
+"행 사용 권한,   폴더를 캐시에 내부,내부 라이브러리 폴더중 갤러리-은행 플러그"
+"인을."
 
 #: views/more_feature.php:6
 msgid "Get more features"
@@ -400,6 +413,3 @@ msgstr "썸네일 설정"
 #: views/settings.php:733
 msgid "Are you sure you want to restore settings ?"
 msgstr "당신은 확실히 당신은 설정을 복원 하시겠습니까?"
-
-#~ msgid "Get More Features"
-#~ msgstr "더 많은 기능을 얻을"

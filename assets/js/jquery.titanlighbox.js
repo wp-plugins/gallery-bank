@@ -1748,7 +1748,7 @@ var slideval = 0;
 		}
 	};
 	g.addons.buttons = {
-		template : '<div id="lightbox-buttons"><ul><li><a class="btnPrev" title="Previous" href="javascript:;"></a></li><li id="play_btn"><a class="btnPlay" title="Start slideshow" href="javascript:;"></a></li><li><a class="btnNext" title="Next" href="javascript:;"></a></li></ul></div>',
+		template : '<div id="lightbox-buttons"><ul><li><a class="btnPrev" title="Previous" href="javascript:;"></a></li><li><a class="btnNext" title="Next" href="javascript:;"></a></li></ul></div>',
 		list : null,
 		buttons : null,
 		skinOffset : null,
