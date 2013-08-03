@@ -42,14 +42,13 @@ jQuery(document).ready(function($) {
       rHEX3 = /#[a-f0-9]{3}/,
       rHEX6 = /#[a-f0-9]{6}/;
 
-  $.fn.mColorPicker = function(options) {
-
-    var swatches = $.fn.mColorPicker.getCookie('swatches');
+  	$.fn.mColorPicker = function(options) {
+  //  var swatches = false;
 
     $o = $.extend($.fn.mColorPicker.defaults, options);
-    $.fn.mColorPicker.defaults.swatches.concat($o.swatches).slice(-10);
-
-    if ($i.enhancedSwatches && swatches) $o.swatches = swatches.split('||').concat($o.swatches).slice(0, 10) || $o.swatches;
+    // $.fn.mColorPicker.defaults.swatches.concat($o.swatches).slice(-10);
+// 
+    // if ($i.enhancedSwatches && swatches) $o.swatches = swatches.split('||').concat($o.swatches).slice(0, 10) || $o.swatches;
 
     if (!$("div#mColorPicker").length) $.fn.mColorPicker.drawPicker();
     if (!$('#css_disabled_color_picker').length) $('head').prepend('<meta data-remove-me="true"/><style id="css_disabled_color_picker" type="text/css">.mColorPicker[disabled] + span, .mColorPicker[disabled="disabled"] + span, .mColorPicker[disabled="true"] + span {filter:alpha(opacity=50);-moz-opacity:0.5;-webkit-opacity:0.5;-khtml-opacity: 0.5;opacity: 0.5;cursor:default;}</style>');
@@ -64,7 +63,7 @@ jQuery(document).ready(function($) {
   $.fn.mColorPicker.init = {
     replace: '[type=color]',
     index: 0,
-    enhancedSwatches: true,
+    //enhancedSwatches: true,
     allowTransparency: true,
     slogan: 'Meta100 - Designing Fun',
     showLogo: false
@@ -75,7 +74,7 @@ jQuery(document).ready(function($) {
   $.fn.mColorPicker.start = function() {
 
     $('input[data-mcolorpicker!="true"]').filter(function() {
-  
+  	
       return ($i.replace == '[type=color]')? this.getAttribute("type") == 'color': $(this).is($i.replace);
     }).mColorPicker();
   };
@@ -256,13 +255,13 @@ jQuery(document).ready(function($) {
       'background-image': 'url(' + $o.imageFolder + 'picker.png)'
     }).appendTo($w);
 
-    $s.attr({
-      'id': 'mColorPickerSwatches'
-    }).css({
-      'border-right':'1px solid #000',
-	  'display':'table',
-	  'border-collapse':'collapse'
-    }).appendTo($w);
+    // $s.attr({
+      // 'id': 'mColorPickerSwatches'
+    // }).css({
+      // 'border-right':'1px solid #000',
+	  // 'display':'table',
+	  // 'border-collapse':'collapse'
+    // }).appendTo($w);
 
     $(div).addClass(
       'mClear'
@@ -270,21 +269,21 @@ jQuery(document).ready(function($) {
       'clear': 'both'
     }).appendTo($s);
 
-    for (i = 0; i < 10; i++) {
-
-      $(div).attr({
-        'id': 'cell' + i,
-        'class': "mPastColor" + ((i > 0)? ' mNoLeftBorder': '')
-      }).css({
-        'background-color': $o.swatches[i].toLowerCase(),
-        'height':'18px',
-        'width':'18px',
-        'border':'1px solid #000',
-        'display':'table-cell'
-      }).html(
-        '&nbsp;'
-      ).prependTo($s);
-    }
+    // for (i = 0; i < 10; i++) {
+// 
+      // $(div).attr({
+        // 'id': 'cell' + i,
+        // 'class': "mPastColor" + ((i > 0)? ' mNoLeftBorder': '')
+      // }).css({
+        // 'background-color': $o.swatches[i].toLowerCase(),
+        // 'height':'18px',
+        // 'width':'18px',
+        // 'border':'1px solid #000',
+        // 'display':'table-cell'
+      // }).html(
+        // '&nbsp;'
+      // ).prependTo($s);
+    // }
 
     $f.attr({
       'id': 'mColorPickerFooter'
@@ -455,7 +454,7 @@ jQuery(document).ready(function($) {
 
   $.fn.mColorPicker.addToSwatch = function (color) {
   
-    if (!$i.enhancedSwatches) return false;
+   // if (!$i.enhancedSwatches) return false;
 
     var swatch = []
         i = 0;
@@ -475,7 +474,7 @@ jQuery(document).ready(function($) {
       $(this).css('background-color', swatch[i++])
     });
 
-    if ($i.enhancedSwatches) $.fn.mColorPicker.setCookie('swatches', swatch.join('||'), 365);
+    //if ($i.enhancedSwatches) $.fn.mColorPicker.setCookie('swatches', swatch.join('||'), 365);
   };
 
   $.fn.mColorPicker.whichColor = function (x, y, hex) {
@@ -585,25 +584,26 @@ jQuery(document).ready(function($) {
     return $.fn.mColorPicker.colorTest(color);
   };
 
-  $i = $.fn.mColorPicker.init;
+  
 
   $document.ready(function () {
-	if(typeof(theme_admin_assets_uri) !== 'undefined') {
-		$.fn.mColorPicker.defaults.imageFolder = theme_admin_assets_uri + "/images/mColorPicker/";
-	}
+	 if(typeof(theme_admin_assets_uri) !== 'undefined') {
+		
+		 $.fn.mColorPicker.defaults.imageFolder = theme_admin_assets_uri + "/images/mColorPicker/";
+	 }
+	 $i = $.fn.mColorPicker.init;
+     $b = $('body');
+// 
+     $.fn.mColorPicker.events();
+ 	
+      if ($i.replace) {
 
-    $b = $('body');
-
-    $.fn.mColorPicker.events();
-
-    if ($i.replace) {
-
-      $.fn.mColorPicker.start();
-
-      if (typeof $.fn.livequery == "function") $($i.replace).livequery($.fn.mColorPicker.start);
-      else $(document).delegate(document, 'ajaxSuccess.mColorPicker', $.fn.mColorPicker.start);
-    }
-  });
+        $.fn.mColorPicker.start();
+ 
+        if (typeof $.fn.livequery == "function") $($i.replace).livequery($.fn.mColorPicker.start);
+        else $(document).delegate(document, 'ajaxSuccess.mColorPicker', $.fn.mColorPicker.start);
+      }
+   });
 }) (jQuery);
 
 });

@@ -608,19 +608,8 @@
 			currentColor: false,
 			changeColor: false,
 			color: false,
-			imageFolder: '<?php echo GALLERY_BK_PLUGIN_URL; ?>/assets/js/colorpicker/images/',
-			swatches: [
-				"#ffffff",
-				"#ffff00",
-				"#00ff00",
-				"#00ffff",
-				"#0000ff",
-				"#ff00ff",
-				"#ff0000",
-				"#4c2b11",
-				"#3b3b3b",
-				"#000000"
-			]
+			imageFolder: '<?php echo GALLERY_BK_PLUGIN_URL; ?>/assets/js/colorpicker/images/'
+			
 		};
 		
 	});
