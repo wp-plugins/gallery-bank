@@ -73,12 +73,13 @@ global $wpdb;
 	$pagination_settings = explode(";", $content[4]);
 	$pagination = explode(":", $pagination_settings[0]);
 	
-	$default_height = 151 + ($cover_border_value * 2) . "px;" . "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
-	$default_width = 155 + ($cover_border_value * 2) . "px;" ."-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
-	$custom_height = $cover_height[1] + 1 + ($cover_border_value * 2) . "px;" . "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
-	$custom_width = $cover_width[1] + 5 + ($cover_border_value * 2) . "px;" . "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
+	$default_height = 151 + "px;" . "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
+	$default_width = 155 +  "px;" ."-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
+	$custom_height = $cover_height[1]  + 1 +"px;" . "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
+	$custom_width = $cover_width[1]  + 5 +"px;" . "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
 	$radius_for_shutter = "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
-	
+	$pagename = 'temp';
+	$fileName = GALLERY_BK_PLUGIN_DIR.'/lib/cache/'.$pagename.".txt";
 	?>
 	<button id="back_button<?php echo $unique_id;?>" style="margin-top:10px; display: none;" onclick="view_albums<?php echo $unique_id;?>();">
 		<span style="color: #000;"> &laquo <?php _e('Back to Albums', gallery_bank); ?></span>
@@ -96,7 +97,7 @@ if(($setting_cover->album_cover == "undefined") || ($setting_cover->album_cover 
 		?>
 		<div class="view da-thumbs" style="height:<?php echo $default_height; ?>;width:<?php echo $default_width; ?>;float:left;">
 				<a onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor: pointer" >
-					<img class="imgHolder" src="<?php echo stripcslashes($url); ?>" style="cursor:pointer;margin-left:5px;;margin-top:3p;<?php echo $album_custom_cover_css; ?>" />	
+					<img class="imgHolder" src="<?php echo stripcslashes($url); ?>" style="cursor:pointer;margin-left:5px;;margin-top:3px;<?php echo $album_custom_cover_css; ?>" />	
 					<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 						<p <?php if ( $album->album_name == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 							<?php echo stripcslashes(htmlspecialchars_decode($album->album_name)); ?>
@@ -131,7 +132,21 @@ else
 			?>
 			<div class="view da-thumbs" style="height:<?php echo $default_height; ?>;width:<?php echo $default_width; ?>;float:left;">
 				<a onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor: pointer" >
-					<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h=150&w=150&zc=1&q=100';?>" style="cursor:pointer;margin-left:5px;;margin-top:3p;<?php echo $album_custom_cover_css; ?>" />	
+					<?php
+							if(file_exists($fileName)!=false)
+							{
+								?>
+								<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h=150&w=150&zc=1&q=100';?>" style="cursor:pointer;margin-left:5px;margin-top:3p;<?php echo $album_custom_cover_css; ?>" />
+								<?php
+							}
+							else 
+							{
+								?>
+								<img class="imgHolder" src="<?php echo stripcslashes($setting_cover->album_cover);?>" style="cursor:pointer;margin-left:5px;width:150px;height:155px;margin-top:3px;<?php echo $album_custom_cover_css; ?>" />
+								<?php
+							}
+							?>
+						
 					<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 						<p <?php if ( $album->album_name == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 							<?php echo stripcslashes(htmlspecialchars_decode($album->album_name)); ?>
@@ -154,7 +169,22 @@ else
 			
 			<div class="view da-thumbs" style="height:<?php echo $custom_height; ?>;width:<?php echo $custom_width; ?>;float:left;">
 				<a onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor: pointer" >
-					<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h='.$cover_height[1].'&w='.$cover_width[1].'&zc=1&q=100';?>" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="margin-left:5px;;margin-top:3p;cursor:pointer;<?php echo $album_cover_css; ?>" />	
+					<?php
+							if(file_exists($fileName)!=false)
+							{
+								?>
+								<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.stripcslashes($setting_cover->album_cover).'&h='.$cover_height[1].'&w='.$cover_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;margin-top:3px;cursor:pointer;<?php echo $album_cover_css; ?>"/>
+								<?php
+							}
+							else 
+							{
+								?>
+								<img class="imgHolder"  src="<?php echo stripcslashes($setting_cover->album_cover);?>";" style="margin-left:5px;margin-top:3px;cursor:pointer;width:<?php echo $cover_width[1];?>;height:<?php echo $cover_height[1];?>;<?php echo $album_cover_css;?>" />
+								
+								<?php
+							}
+							?>
+						
 					<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 						<p <?php if ( $album->album_name == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 							<?php echo stripcslashes(htmlspecialchars_decode($album->album_name)); ?>

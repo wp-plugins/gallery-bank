@@ -82,6 +82,8 @@
 			$slide_interval = explode(":", $slideshow_settings[1]);
 			
 			$pagination = explode(":", $content[4]);
+			$pagename = 'temp';
+			$fileName = GALLERY_BK_PLUGIN_DIR.'/lib/cache/'.$pagename.".txt";
 			if($auto_play[1] == "1")
 			{
 				$autoplay = true;
@@ -101,19 +103,28 @@
 				<?php
 			}
 			$count = 1;
-			$default_height = 151 + ($image_border_size_value[1] * 2) . "px;" . "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
-			$default_width = 155 + ($image_border_size_value[1] * 2) . "px;" ."border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
-			$custom_height = $image_height[1] + 1 + ($image_border_size_value[1] * 2) . "px;" . "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
-			$custom_width = $image_width[1] + 5 + ($image_border_size_value[1] * 2) . "px;" . "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
-			$radius_for_shutter =  "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
-			
+			if(file_exists($fileName)!=false)
+			{
+				$default_height = 151 + ($image_border_size_value[1] * 2) . "px;" . "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+				$default_width = 155 + ($image_border_size_value[1] * 2) . "px;" ."border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+				$custom_height = $image_height[1] + 1 + ($image_border_size_value[1] * 2) . "px;" . "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+				$custom_width = $image_width[1] + 5 + ($image_border_size_value[1] * 2) . "px;" . "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+				$radius_for_shutter =  "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+			}
+			else
+			{
+				$default_height = 151 + (0) . "px;" . "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+				$default_width = 155 + (0) . "px;" ."border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+				$custom_height = $image_height[1] + 1 + (0) . "px;" . "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+				$custom_width = $image_width[1] + 5 + (0) . "px;" . "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+				$radius_for_shutter =  "border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1] . ";";
+			}
 			for ($flag = 0; $flag <count($pic_detail); $flag++)
 			{
 				if($pagination[1] == 1)
 				{	
 					if($count == 1)
 					{
-					
 					?>
 						<tr><td>
 					<?php
@@ -146,13 +157,13 @@
 						{
 							if($images_in_row[1] == 1)
 							{
-								?>
+							?>
 								<div class="view da-thumbs" style="height:<?php echo $custom_height; ?>;width:<?php echo $custom_width; ?>;">
-								<?php
-								
+							<?php
 							}
-							else {
-								?>
+							else 
+							{
+							?>
 								<div class="view da-thumbs" style="float:left;height:<?php echo $custom_height; ?>;width:<?php echo $custom_width; ?>;">
 							<?php
 							}
@@ -163,7 +174,21 @@
 							{
 								?>
 								<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+									<?php
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:155px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+									
 									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -181,7 +206,21 @@
 							{
 							?>
 								<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+									<?php
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+									
 									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -204,8 +243,21 @@
 							if($image_content[1] == 1)
 							{
 								
-								?>
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+								
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:155px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+									
 									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -221,8 +273,20 @@
 						else 
 						{
 							
-							?>
+							if(file_exists($fileName)!=false)
+							{
+								?>
 								<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+								<?php
+							}
+							else 
+							{
+								?>
+								<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+								<?php
+							}
+							?>
+								
 								<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 									<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -300,7 +364,21 @@
 							{
 								?>
 								<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+									<?php
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:155px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+									
 									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -318,7 +396,21 @@
 							{
 							?>
 								<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+									<?php
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+									
 									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -341,8 +433,20 @@
 						if($image_content[1] == 1)
 						{
 							
-							?>
-								<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+							if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:155px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+								
 								<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 									<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -359,8 +463,20 @@
 						else 
 						{
 							
-							?>
-								<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+							if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+								
 								<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 									<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -422,7 +538,21 @@
 							{
 								?>
 								<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+									<?php
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:155px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+									
 									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -440,7 +570,21 @@
 							{
 							?>
 								<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+									<?php
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+									
 									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -462,8 +606,20 @@
 						if($image_content[1] == 1)
 						{
 							
-							?>
-								<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+							if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:155px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+								
 								<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 									<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -481,8 +637,20 @@
 						else 
 						{
 							
-							?>
-								<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+							if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+								
 								<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 									<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -560,7 +728,21 @@
 							{
 								?>
 								<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+									<?php
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:155px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+									
 									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 											<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -578,7 +760,21 @@
 							{
 							?>
 								<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-									<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+									<?php
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+									
 									<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 										<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -599,8 +795,21 @@
 						<?php
 						if($image_content[1] == 1)
 						{
-							?>
-								<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+							
+									if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:155px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+								
 								<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 									<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>
@@ -617,8 +826,20 @@
 						else 
 						{
 							
-							?>
-								<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+							if(file_exists($fileName)!=false)
+									{
+										?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									else 
+									{
+										?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+									}
+									?>
+								
 								<article class="da-animate da-slideFromRight" style="<?php echo $radius_for_shutter; ?>">
 									<p <?php if ( $pic_detail[$flag]->title == '' ) { echo 'style="display:none !important;"'; } ?> class="emgfittext">
 										<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>

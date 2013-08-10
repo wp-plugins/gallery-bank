@@ -141,7 +141,7 @@
 					<div class="block well">
 						<div class="navbar">
 							<div class="navbar-inner">
-								<h5><?php _e( "Album Cover", gallery_bank ); ?></h5>
+								<h5><?php _e("Album Cover", gallery_bank); ?></h5>
 								<div class="nav pull-right">
 									<a class="just-icon" data-toggle="collapse" data-target="#album_cover">
 										<i class="font-resize-vertical"></i>

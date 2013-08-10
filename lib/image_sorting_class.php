@@ -26,8 +26,8 @@ if(isset($_REQUEST['param']))
 		(
 			$wpdb->prepare
 			(
-			"SELECT album_settings FROM ". gallery_bank_settings(). " WHERE album_id = %d ",
-			$album_id
+				"SELECT album_settings FROM ". gallery_bank_settings(). " WHERE album_id = %d",
+				$album_id
 			)
 		);
 		if($get_settings == 1)
@@ -36,9 +36,9 @@ if(isset($_REQUEST['param']))
 			(
 				$wpdb->prepare
 				(
-				"SELECT * FROM ". gallery_bank_settings(). " WHERE album_settings = %d and album_id = %d",
-				$get_settings,
-				0
+					"SELECT * FROM ". gallery_bank_settings(). " WHERE album_settings = %d and album_id = %d",
+					$get_settings,
+					0
 				)
 			);
 		}
@@ -48,9 +48,9 @@ if(isset($_REQUEST['param']))
 			(
 				$wpdb->prepare
 				(
-				"SELECT * FROM ". gallery_bank_settings(). " WHERE album_settings = %d and album_id =%d",
-				$get_settings,
-				$album_id
+					"SELECT * FROM ". gallery_bank_settings(). " WHERE album_settings = %d and album_id =%d",
+					$get_settings,
+					$album_id
 				)
 			);
 		}
@@ -64,7 +64,6 @@ if(isset($_REQUEST['param']))
 		$image_border_size_value = explode(":", $image_settings[5]);
 		$image_radius_value = explode(":", $image_settings[6]);
 		$border_color = explode(":", $image_settings[7]);
-		
 		$lightbox_settings = explode(";", $content[2]);
 		$overlay_opacity = explode(":", $lightbox_settings[0]);
 		$overlay_border_size_value = explode(":", $lightbox_settings[1]);
@@ -80,6 +79,8 @@ if(isset($_REQUEST['param']))
 		$pagination_value = str_replace(";","",$pagination[1]);
 		$count = 1;
 		$row_id_images = "";
+		$pagename = 'temp';
+		$fileName = GALLERY_BK_PLUGIN_DIR.'/lib/cache/'.$pagename.".txt";
 		if($album_id != 0)
 		{
 		?>
@@ -123,17 +124,35 @@ if(isset($_REQUEST['param']))
 											<?php
 											if($image_content[1] == 1)
 											{
+												if(file_exists($fileName)!=false)
+												{
+													?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+												}
+												else 
+												{
+													?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+												}
 												
-												?>
-												<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
-												<?php
 											}
 											else
 											{
-												
-												?>
+												if(file_exists($fileName)!=false)
+												{
+													?>
 												<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
+												}
+												else 
+												{
+													?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+												}
+												
 											}
 											$row_id_images .= "/" . $pic_detail[$flag]->pic_id;
 											
@@ -143,17 +162,35 @@ if(isset($_REQUEST['param']))
 										
 											if($image_content[1] == 1)
 											{
-												
-												?>
+												if(file_exists($fileName)!=false)
+												{
+													?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
+												}
+												else 
+												{
+													?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+												}
+												
 											}
 											else 
 											{
-												
-												?>
+												if(file_exists($fileName)!=false)
+												{
+													?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
+												}
+												else 
+												{
+													?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+												}
+												
 											}
 											$row_id_images .=  "-". $pic_detail[$flag]->pic_id;
 											
@@ -168,17 +205,35 @@ if(isset($_REQUEST['param']))
 											<?php
 											if($image_content[1] == 1)
 											{
-												
-												?>
+												if(file_exists($fileName)!=false)
+												{
+													?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
+												}
+												else 
+												{
+													?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+												}
+												
 											}
 											else 
 											{
-												
+												if(file_exists($fileName)!=false)
+												{
 												?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
+												}
+												else 
+												{
+													?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+												}
+												
 											}
 											$row_id_images .= "/" . $pic_detail[$flag]->pic_id;
 											
@@ -190,17 +245,35 @@ if(isset($_REQUEST['param']))
 											<?php
 											if($image_content[1] == 1)
 											{
-												
+												if(file_exists($fileName)!=false)
+												{
 												?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
+												}
+												else 
+												{
+													?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+												}
+												
 											}
 											else 
 											{
-												
+												if(file_exists($fileName)!=false)
+												{
 												?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
 												<?php
+												}
+												else 
+												{
+													?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+												}
+												
 											}
 											$row_id_images .=  "-". $pic_detail[$flag]->pic_id;
 											
