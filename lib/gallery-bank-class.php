@@ -16,8 +16,8 @@ if(file_exists($fileName)==false)
 function create_global_menus_for_gallery_bank()
 {
 	global $wpdb;
-	$menu = add_menu_page('Gallery Bank', __('Gallery Bank', gallery_bank), 'read', 'gallery_bank','',GALLERY_BK_PLUGIN_URL . '/icon.png');
-	add_submenu_page('', 'Dashboard', __('Dashboard', gallery_bank), 'read', 'gallery_bank', 'gallery_bank');
+	$menu = add_menu_page('Gallery Bank', __('Gallery Bank', gallery_bank), 'administrator', 'gallery_bank','',GALLERY_BK_PLUGIN_URL . '/icon.png');
+	add_submenu_page('', 'Dashboard', __('Dashboard', gallery_bank), 'administrator', 'gallery_bank', 'gallery_bank');
 	$album_count = $wpdb->get_var
 	(
 		$wpdb->prepare
@@ -27,18 +27,18 @@ function create_global_menus_for_gallery_bank()
 	);
 	if($album_count < 2)
 	{
-		add_submenu_page('gallery_bank', 'Add New Album',__('Add New Album', gallery_bank) , 'read', 'add_album', 'add_album');
+		add_submenu_page('gallery_bank', 'Add New Album',__('Add New Album', gallery_bank) , 'administrator', 'add_album', 'add_album');
 	}
 	
-	add_submenu_page('gallery_bank', 'Sorting',__('Sorting', gallery_bank) , 'read', 'images_sorting_dd', 'images_sorting_dd');
-	$submenu1 = add_submenu_page('gallery_bank', 'Gallery Bank', __('Global Settings', gallery_bank), 'read', 'settings', 'settings');
-	add_submenu_page('gallery_bank','Documentation',__('Documentation', gallery_bank),'read','documentation','documentation');
-	add_submenu_page('gallery_bank','Purchase Pro Version',__('Purchase Pro Version', gallery_bank),'read','get_more_features','get_more_features');
-	add_submenu_page('', '','' , 'read', 'view_album', 'view_album');
-	add_submenu_page('', '','' , 'read', 'album_preview', 'album_preview');
-	add_submenu_page('', '','' , 'read', 'edit_album', 'edit_album');
-	add_submenu_page('', '','' , 'read', 'images_sorting', 'images_sorting');
-	add_submenu_page('', '','' , 'read', 'pro_version', 'pro_version');
+	add_submenu_page('gallery_bank', 'Sorting',__('Sorting', gallery_bank) , 'administrator', 'images_sorting_dd', 'images_sorting_dd');
+	$submenu1 = add_submenu_page('gallery_bank', 'Gallery Bank', __('Global Settings', gallery_bank), 'administrator', 'settings', 'settings');
+	add_submenu_page('gallery_bank','Documentation',__('Documentation', gallery_bank),'administrator','documentation','documentation');
+	add_submenu_page('gallery_bank','Purchase Pro Version',__('Purchase Pro Version', gallery_bank),'administrator','get_more_features','get_more_features');
+	add_submenu_page('', '','' , 'administrator', 'view_album', 'view_album');
+	add_submenu_page('', '','' , 'administrator', 'album_preview', 'album_preview');
+	add_submenu_page('', '','' , 'administrator', 'edit_album', 'edit_album');
+	add_submenu_page('', '','' , 'administrator', 'images_sorting', 'images_sorting');
+	add_submenu_page('', '','' , 'administrator', 'pro_version', 'pro_version');
 	
 }
 //--------------------------------------------------------------------------------------------------------------//
