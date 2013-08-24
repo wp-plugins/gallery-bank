@@ -1,3 +1,7 @@
+
+<link rel="stylesheet" href="http://gallery-bank.com/wp-content/themes/infographer/css/stylesheet.min.css"/>
+<link rel="stylesheet" href="http://gallery-bank.com/wp-content/themes/infographer/css/responsive.min.css"/>
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|PT+Sans:400,400italic,700,700italic|Oswald:400,300,700&subset=latin,latin-ext"/>
 	<div class="row-fluid">
 		<div class="span10">
 <div class="block well" style="min-height:800px;">
