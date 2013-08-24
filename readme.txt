@@ -4,7 +4,7 @@ Tags: gallery, gallery images, album, foto, fotoalbum, website gallery, multiple
 
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 2.0.10
+Stable tag: 2.0.11
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

@@ -176,7 +176,9 @@ function frontend_plugin_js_scripts_gallery_bank()
 function backend_css_calls()
 {
 	wp_enqueue_style('main', GALLERY_BK_PLUGIN_URL . '/assets/css/main.css');
-	wp_enqueue_style('compare', GALLERY_BK_PLUGIN_URL . '/assets/css/compare.css');
+	wp_enqueue_style('compare', 'http://gallery-bank.com/wp-content/themes/infographer/css/stylesheet.min.css');
+	wp_enqueue_style('responsive', 'http://gallery-bank.com/wp-content/themes/infographer/css/responsive.min.css');
+	wp_enqueue_style('font', 'http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|PT+Sans:400,400italic,700,700italic|Oswald:400,300,700&subset=latin,latin-ext');
 	wp_enqueue_style('system-message', GALLERY_BK_PLUGIN_URL . '/assets/css/system-message.css');
 	wp_enqueue_style('jquery.titanlighbox.css', GALLERY_BK_PLUGIN_URL .'/assets/css/jquery.titanlighbox.css');
 	wp_enqueue_style('frontend.css', GALLERY_BK_PLUGIN_URL .'/assets/css/frontend.css');
