@@ -180,7 +180,6 @@ function backend_css_calls()
 	wp_enqueue_style('jquery.titanlighbox.css', GALLERY_BK_PLUGIN_URL .'/assets/css/jquery.titanlighbox.css');
 	wp_enqueue_style('frontend.css', GALLERY_BK_PLUGIN_URL .'/assets/css/frontend.css');
 }
-
 function frontend_plugin_css_scripts_gallery_bank()
 {
 	wp_enqueue_style('jquery.titanlighbox.css', GALLERY_BK_PLUGIN_URL .'/assets/css/jquery.titanlighbox.css');
