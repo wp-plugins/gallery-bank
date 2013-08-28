@@ -716,7 +716,7 @@
 					var block1 = jQuery("<div class=\"block\" style=\"width:66%;float:left\">");
 					var box = jQuery("<div class=\"control-group\"><input type=\"text\" style=\"width=150%\" class=\"span12\" id=\"title_img_"+dynamicId+"\" placeholder=\"<?php _e( "Enter your Image Title", gallery_bank);?>\" /></div>");
 					block1.append(box);
-					var text = jQuery("<div class=\"control-group\"><textarea id=\"des_img_"+dynamicId+"\" rows=\"5\" placeholder=\"<?php _e( "Enter your Image Description", gallery_bank);?>\" style=\"width=150%\" class=\"span12\"></textarea></div>"); 
+					var text = jQuery("<div class=\"control-group\"><textarea id=\"des_img_"+dynamicId+"\" rows=\"5\"  style=\"width=150%\" class=\"span12\"></textarea></div>"); 
 					block1.append(text);
 					var url_check = jQuery("<div class=\"control-group\"><input type=\"checkbox\" id=\"url_check_"+dynamicId+"\" value=\"1\" style=\"cursor: pointer; margin-top:0px;\" onclick=\"chk_url_req("+dynamicId+")\"/>&nbsp;<span><?php _e( "Url to Redirect on click of an Image", gallery_bank );?></span></div>");
 					block1.append(url_check);
@@ -731,6 +731,7 @@
 					tr.append(td);
 					oTable = jQuery('#add-album-data-table').dataTable();
 					oTable.fnAddData([tr.html()]);
+					jQuery('#des_img_'+dynamicId).attr("placeholder", "<?php _e( "Enter your Image Description", gallery_bank);?>");
 					count_images++;
 				}
 				

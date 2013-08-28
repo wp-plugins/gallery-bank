@@ -1269,7 +1269,7 @@
 					var block1 = jQuery("<div class=\"block\" style=\"width:66%;float:left\">");
 					var box = jQuery("<div class=\"control-group\"><input type=\"text\" class=\"span12\" id=\"pic_title_"+dynamicId+"\" placeholder=\"<?php _e( "Enter your Image Title", gallery_bank);?>\" /></div>");
 					block1.append(box);
-					var text = jQuery("<div class=\"control-group\"><textarea id=\"pic_des_"+dynamicId+"\" rows=\"5\"  placeholder=\"<?php _e( "Enter your Image Description", gallery_bank);?>\"  class=\"span12\"></textarea></div>"); 
+					var text = jQuery("<div class=\"control-group\"><textarea id=\"pic_des_"+dynamicId+"\" rows=\"5\" class=\"span12\"></textarea></div>"); 
 					block1.append(text);
 					block1.append("</div>");
 					var checkboxes = jQuery("<div class=\"control-group\"><input type=\"checkbox\" value=\"1\" style=\"cursor: pointer; margin-top:0px;\" id=\"chk_url_"+dynamicId+"\" name=\"chk_url_"+dynamicId+"\" onclick=\"check_url_req("+dynamicId+")\">&nbsp;<span><?php _e( "Url to Redirect on click of an Image", gallery_bank );?></span></div>"); 
@@ -1287,6 +1287,7 @@
 					oTable = jQuery('#edit-album-data-table').dataTable();
 					oTable.fnAddData([tr.html()]);
 					array_new.push(dynamicId);
+					jQuery('#pic_des_'+dynamicId).attr("placeholder", "<?php _e( "Enter your Image Description", gallery_bank);?>");
 					images_count++;
 				}
 			});
