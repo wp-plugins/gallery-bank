@@ -4,7 +4,7 @@ Tags: gallery, gallery images, album, foto, fotoalbum, website gallery, multiple
 
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 2.0.12
+Stable tag: 2.0.13
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -135,7 +135,11 @@ With this bulk deletion feature, you can now delete the pictures you want in bul
 
 == Changelog ==
 
-= 2.0.9 =
+= 2.0.12 =
+
+* Few Bugs Fixed
+
+= 2.0.11 =
 
 * Fixed Bug Related to Description of Images in Internet Explorer
 

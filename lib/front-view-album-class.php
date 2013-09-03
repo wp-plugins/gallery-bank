@@ -599,10 +599,21 @@
 								<?php
 							}
 						}
-						else {
-						?>
-						<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
-						<?php
+						else 
+						{
+							if($pic_detail[$flag]->description == "")
+							{
+								?>
+									<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
+								<?php
+							}
+							else 
+							{
+								?>
+									<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
+								<?php
+							}
+						
 						if($image_content[1] == 1)
 						{
 							
@@ -789,10 +800,21 @@
 								<?php
 							}
 						}
-						else {
-					?>
-						<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
-						<?php
+						else 
+						{
+							if($pic_detail[$flag]->description == "")
+							{
+								?>
+									<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
+								<?php
+							}
+							else 
+							{
+								?>
+									<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
+								<?php
+							}
+						
 						if($image_content[1] == 1)
 						{
 							
