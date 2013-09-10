@@ -65,6 +65,7 @@
 						<div class="body">
 							<div class="control-group">
 								<a class="btn btn-info" id="upload_img_button" href=""><?php _e( "Upload Images to your Album ", gallery_bank ); ?></a>
+								<a class="btn btn-info inline" href="#uxDivEditVideo" ><?php _e( "Add Videos to your Album ", gallery_bank ); ?></a>
 							</div>
 							<div class="control-group">
 								<input type="checkbox" id="delete_selected" name="delete_selected" style=" cursor: pointer;"/>
@@ -88,51 +89,99 @@
 									{
 										?>
 										<tr>
-											<td>
-												<div class="block" id="<?php echo $pic_detail[$flag]->pic_id; ?>">
-													<div class="block" style="padding:0px 6px 0px 0px; float: left; width: 2%;">
-														<input type="checkbox" id="delete_image" name="delete_image" value="<?php echo $pic_detail[$flag]->pic_id; ?>" style="cursor: pointer;"/>
-													</div>
-													<div class="block" style="width:30%; float:left" >
-														<img class="imgHolder" src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url); ?>" style="border:3px solid #e5e5e5; cursor: pointer;" width="150px"/></br>
-														<a class="imgHolder orange" style="margin-left:20px;" id="del_img" onclick="edit_delete_pic(<?php echo $pic_detail[$flag]->pic_id; ?>);">
-															<img style="vertical-align:middle; cursor:pointer" src="<?php echo GALLERY_BK_PLUGIN_URL.'/assets/images/icons/color-16/cross.png'?>" alt="">&nbsp; 
-															<span style="vertical-align:middle; cursor:pointer"><?php _e( "Remove Image", gallery_bank);?></span>
-														</a>
-													</div>
-													<div class="block" style="width:66%; float:left;">
-														<div class="control-group">
-															<input style="width: 100%" class="span12" type="text" id="ux_edit_title_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)) ;?>" placeholder="<?php _e( "Enter your Image Title", gallery_bank);?>" />
+											<?php
+											if($pic_detail[$flag]->video == 1)
+											{
+												?>
+												<td>
+													<div class="block" id="<?php echo $pic_detail[$flag]->pic_id; ?>">
+														<div class="block" style="padding:0px 6px 0px 0px; float: left; width: 2%;">
+															<input type="checkbox" id="delete_image" name="delete_image" value="<?php echo $pic_detail[$flag]->pic_id; ?>" style="cursor: pointer;"/>
 														</div>
-														<div class="control-group" style="border-bottom: none !important;">
-															<textarea style="width: 100%" class="span12" rows="5" id="ux_edit_desc_<?php echo $pic_detail[$flag]->pic_id ;?>" placeholder="<?php _e( "Enter your Image Description", gallery_bank);?>"><?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)) ;?></textarea>
+														<div class="block" style="width:30%; float:left" >
+															<img class="imgHolder" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg'); ?>" style="border:3px solid #e5e5e5; cursor: pointer;" width="150px"/></br>
+															<a class="imgHolder orange" style="margin-left:20px;" id="del_img" onclick="edit_delete_video(<?php echo $pic_detail[$flag]->pic_id; ?>);">
+																<img style="vertical-align:middle; cursor:pointer" src="<?php echo GALLERY_BK_PLUGIN_URL.'/assets/images/icons/color-16/cross.png'?>" alt="">&nbsp; 
+																<span style="vertical-align:middle; cursor:pointer"><?php _e( "Remove Video", gallery_bank);?></span>
+															</a>
 														</div>
-														<div class="control-group">
-														<?php
-														if($pic_detail[$flag]->check_url == 1)
-														{
-															?>
-															<input type="checkbox" checked="checked" name="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" onclick="chk_url_required();" id="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" value="<?php echo $pic_detail[$flag]->check_url; ?>"/> 
-															<label><?php _e(" Url to Redirect on click of an Image", gallery_bank);?></label>
+														<div class="block" style="width:66%; float:left;">
+															<div class="control-group">
+																<select name="ux_edit_video_type_<?php echo $pic_detail[$flag]->pic_id ;?>" id="ux_edit_video_type_<?php echo $pic_detail[$flag]->pic_id ;?>" class="span12">
+																	<option value="Youtube"><?php _e( "Youtube", gallery_bank ); ?></option>
+																	<option value="Vimeo"><?php _e( "Vimeo", gallery_bank ); ?></option>
+																	<option value="DailyMotion"><?php _e( "DailyMotion", gallery_bank ); ?></option>
+																	<option value="MetaCafe"><?php _e( "MetaCafe", gallery_bank ); ?></option>
+																	<option value="Veoh"><?php _e( "Veoh", gallery_bank ); ?></option>
+																	<option value="Flickr video"><?php _e( "Flickr video", gallery_bank ); ?></option>
+																	<option value="Google_video"><?php _e( "Google video", gallery_bank ); ?></option>
+																	<option value="Quite_youtube"><?php _e( "Quietube + Youtube", gallery_bank ); ?></option>
+																	<option value="Quite_vimeo"><?php _e( "Quietube + Vimeo", gallery_bank ); ?></option>
+																	<option value="Tudou"><?php _e( "Tudou", gallery_bank ); ?></option>
+																	<option value="YouKu"><?php _e( "YouKu", gallery_bank ); ?></option>
+																</select>
+																<script> jQuery("#ux_edit_video_type_<?php echo $pic_detail[$flag]->pic_id ;?>").val("<?php echo $pic_detail[$flag]->title; ?>");</script>
+															</div>
+															<div class="control-group" style="border-bottom: none !important;">
+																<input type="text"  id="ux_edit_video_url_<?php echo $pic_detail[$flag]->pic_id ;?>" class="span12" name="ux_edit_video_url_<?php echo $pic_detail[$flag]->pic_id ;?>" value="<?php echo $pic_detail[$flag]->pic_path; ?>" />
+															</div>
+															<input type="hidden" id="hidden_pic_id_<?php  echo $pic_detail[$flag]->pic_id; ?>" value="<?php echo $pic_detail[$flag]->pic_id ;?>" />
+														</div>
+													</div>
+												</td>
+												<?php
+											}
+											else 
+											{
+												?>
+												<td>
+													<div class="block" id="<?php echo $pic_detail[$flag]->pic_id; ?>">
+														<div class="block" style="padding:0px 6px 0px 0px; float: left; width: 2%;">
+															<input type="checkbox" id="delete_image" name="delete_image" value="<?php echo $pic_detail[$flag]->pic_id; ?>" style="cursor: pointer;"/>
+														</div>
+														<div class="block" style="width:30%; float:left" >
+															<img class="imgHolder" src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url); ?>" style="border:3px solid #e5e5e5; cursor: pointer;" width="150px"/></br>
+															<a class="imgHolder orange" style="margin-left:20px;" id="del_img" onclick="edit_delete_pic(<?php echo $pic_detail[$flag]->pic_id; ?>);">
+																<img style="vertical-align:middle; cursor:pointer" src="<?php echo GALLERY_BK_PLUGIN_URL.'/assets/images/icons/color-16/cross.png'?>" alt="">&nbsp; 
+																<span style="vertical-align:middle; cursor:pointer"><?php _e( "Remove Image", gallery_bank);?></span>
+															</a>
+														</div>
+														<div class="block" style="width:66%; float:left;">
+															<div class="control-group">
+																<input style="width: 100%" class="span12" type="text" id="ux_edit_title_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)) ;?>" placeholder="<?php _e( "Enter your Image Title", gallery_bank);?>" />
+															</div>
+															<div class="control-group" style="border-bottom: none !important;">
+																<textarea style="width: 100%" class="span12" rows="5" id="ux_edit_desc_<?php echo $pic_detail[$flag]->pic_id ;?>" placeholder="<?php _e( "Enter your Image Description", gallery_bank);?>"><?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)) ;?></textarea>
+															</div>
+															<div class="control-group">
 															<?php
-														}
-														else
-														{
+															if($pic_detail[$flag]->check_url == 1)
+															{
+																?>
+																<input type="checkbox" checked="checked" name="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" onclick="chk_url_required();" id="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" value="<?php echo $pic_detail[$flag]->check_url; ?>"/> 
+																<label><?php _e(" Url to Redirect on click of an Image", gallery_bank);?></label>
+																<?php
+															}
+															else
+															{
+																?>
+																<input type="checkbox" name="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" onclick="chk_url_required();" id="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" value="<?php echo $pic_detail[$flag]->check_url; ?>"/> 
+																<label><?php _e(" Url to Redirect on click of an Image", gallery_bank); ?></label>
+																<?php
+															}
+															$domain = str_replace('http://http://', 'http://', $pic_detail[$flag]->url);
 															?>
-															<input type="checkbox" name="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" onclick="chk_url_required();" id="ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id ;?>" value="<?php echo $pic_detail[$flag]->check_url; ?>"/> 
-															<label><?php _e(" Url to Redirect on click of an Image", gallery_bank); ?></label>
-															<?php
-														}
-														$domain = str_replace('http://http://', 'http://', $pic_detail[$flag]->url);
-														?>
+															</div>
+															<div class="control-group" id="check_url_req_<?php echo $pic_detail[$flag]->pic_id ;?>">
+																<input style="width: 100%" class="span12" type="text" id="ux_edit_url_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo $domain;?>" placeholder="<?php _e( "Enter URL", gallery_bank);?>" />
+															</div>
+															<input type="hidden" id="hidden_pic_id_<?php  echo $pic_detail[$flag]->pic_id; ?>" value="<?php echo $pic_detail[$flag]->pic_id ;?>" />
 														</div>
-														<div class="control-group" id="check_url_req_<?php echo $pic_detail[$flag]->pic_id ;?>">
-															<input style="width: 100%" class="span12" type="text" id="ux_edit_url_<?php echo $pic_detail[$flag]->pic_id ;?>" value= "<?php echo $domain;?>" placeholder="<?php _e( "Enter URL", gallery_bank);?>" />
-														</div>
-														<input type="hidden" id="hidden_pic_id_<?php  echo $pic_detail[$flag]->pic_id; ?>" value="<?php echo $pic_detail[$flag]->pic_id ;?>" />
 													</div>
-												</div>
-											</td>
+												</td>
+												<?php
+											}
+											?>
 										</tr>
 										<?php
 									}
@@ -749,7 +798,64 @@
 		</form>
 	</div>
 </div>
+<div style="display: none" >
+	<div id="uxDivEditVideo" class="block well">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<h5><?php _e( "Add Video", gallery_bank ); ?></h5>
+			</div>
+		</div>
+		<div class="body" style="margin:10px;">
+			<form id="ux_edit_video" class="form-horizontal">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="block well">
+							<div class="body">
+								<div class="control-group">
+									<label class="control-label"><?php _e( "Video Format ", gallery_bank ); ?>:</label>
+									<div class = "controls">
+										<select name="ux_video_type" id="ux_video_type" class="span12">
+											<option value="Youtube"><?php _e( "Youtube", gallery_bank ); ?></option>
+											<option value="Vimeo"><?php _e( "Vimeo", gallery_bank ); ?></option>
+											<option value="DailyMotion"><?php _e( "DailyMotion", gallery_bank ); ?></option>
+											<option value="MetaCafe"><?php _e( "MetaCafe", gallery_bank ); ?></option>
+											<option value="Veoh"><?php _e( "Veoh", gallery_bank ); ?></option>
+											<option value="Flickr_video"><?php _e( "Flickr video", gallery_bank ); ?></option>
+											<option value="Google_video"><?php _e( "Google video", gallery_bank ); ?></option>
+											<option value="Quite_youtube"><?php _e( "Quietube + Youtube", gallery_bank ); ?></option>
+											<option value="Quite_vimeo"><?php _e( "Quietube + Vimeo", gallery_bank ); ?></option>
+											<option value="Tudou"><?php _e( "Tudou", gallery_bank ); ?></option>
+											<option value="YouKu"><?php _e( "YouKu", gallery_bank ); ?></option>
+										</select>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label"><?php _e( "Video URL ", gallery_bank ); ?>:</label>
+									<div class = "controls">
+										<input type="text"  id="ux_video_url" class="span12" name="ux_video_url" />
+									</div>
+								</div>
+								<div class="control-group" style="border-bottom:none !important">
+									<label></label>
+									<div class="controls" id="ux_div_submit">
+										<!-- <input type="button" class="btn btn-primary" onclick="Upload_video_gallery();"  value="<?php _e( "Upload Video", gallery_bank); ?>"/> -->
+										<button type="submit" class="btn btn-primary">
+											<span>
+												<?php _e( "Add Video", gallery_bank); ?>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 <script type="text/javascript">
+	jQuery(".inline").colorbox({inline:true, width:"700px"});
 	var arr = [];
 	var ar = [];
 	var array = [];
@@ -759,6 +865,10 @@
 	var array_existing = [];
 	var array_new = [];
 	var exist_array = [];
+	var array_video = [];
+	var array_video_dynamicId = [];
+	var array_new_video = []; 
+	var arr_del_video = [];
 	jQuery(document).ready(function()
 	{
 		check_default_settings();
@@ -1063,38 +1173,44 @@
 				var uxeditdescription = encodeURIComponent(jQuery('#ux_edit_description').val());
 			}
 			var count_pic = arr.length;
+			var count_video = arr_del_video.length;
 			jQuery.post(ajaxurl, "id="+arr+"&count_pic="+count_pic+"&param=delete_pic&action=album_gallery_library", function(data)
+			{	
+			});
+			jQuery.post(ajaxurl, "id_video="+arr_del_video+"&count_video="+count_video+"&param=delete_videos&action=album_gallery_library", function(data)
 			{	
 			});
 			<?php
 			for ($flag = 0; $flag < count($pic_detail); $flag++)
 			{
-			?>
-				var picId = <?php  echo $pic_detail[$flag]->pic_id; ?>;
-				var edit_title = "";
-				if(encodeURIComponent(jQuery("#ux_edit_title_" + picId).val()) != "undefined")
+				if($pic_detail[$flag]->video == 1)
 				{
-					edit_title = encodeURIComponent(jQuery("#ux_edit_title_" + picId).val());
-				}
-				var edit_detail = "";
-				if(encodeURIComponent(jQuery("#ux_edit_desc_" + picId).val()) != "undefined")
-				{
-					edit_detail = encodeURIComponent(jQuery("#ux_edit_desc_" + picId).val());
-				}
-				var url_path = "";
-				if(encodeURIComponent(jQuery("#ux_edit_url_" + picId).val()) != "undefined")
-				{
-					url_path = encodeURIComponent(jQuery("#ux_edit_url_" + picId).val());
-				}
-				var id = jQuery("#<?php  echo $pic_detail[$flag]->pic_id; ?>").val();
-				var chkbox_url = jQuery("#ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id; ?>").prop("checked");
-				if(typeof id != 'undefined')
-				{
-					jQuery.post(ajaxurl,"albumId="+albumId+"&picId="+picId+"&edit_title="+edit_title+"&edit_detail="+edit_detail+"&checkbox_url="+chkbox_url+"&edit_url_path="+url_path+"&param=update_pic&action=album_gallery_library", function(data)
+					?>
+					var picId = <?php  echo $pic_detail[$flag]->pic_id; ?>;
+					var ux_edit_video_type = jQuery("#ux_edit_video_type_" + picId).val();
+					var ux_edit_video_url = jQuery("#ux_edit_video_url_" + picId).val();
+					jQuery.post(ajaxurl,"albumId="+albumId+"&picId="+picId+"&ux_edit_video_type="+ux_edit_video_type+"&ux_edit_video_url="+ux_edit_video_url+"&param=update_video&action=album_gallery_library", function(data)
 					{
 					});
+					<?php
 				}
-			<?php
+				else 
+				{
+					?>
+					var picId = <?php  echo $pic_detail[$flag]->pic_id; ?>;
+					var	edit_title = encodeURIComponent(jQuery("#ux_edit_title_" + picId).val());
+					var edit_detail = encodeURIComponent(jQuery("#ux_edit_desc_" + picId).val());
+					var url_path = encodeURIComponent(jQuery("#ux_edit_url_" + picId).val());
+					var id = jQuery("#<?php  echo $pic_detail[$flag]->pic_id; ?>").val();
+					var chkbox_url = jQuery("#ux_edit_url_chk_<?php echo $pic_detail[$flag]->pic_id; ?>").prop("checked");
+					if(typeof id != 'undefined')
+					{
+						jQuery.post(ajaxurl,"albumId="+albumId+"&picId="+picId+"&edit_title="+edit_title+"&edit_detail="+edit_detail+"&checkbox_url="+chkbox_url+"&edit_url_path="+url_path+"&param=update_pic&action=album_gallery_library", function(data)
+						{
+						});
+					}
+					<?php
+				}
 			}
 			?>
 			var cover_image = "";
@@ -1116,25 +1232,15 @@
 					{
 						var pic_path = array[pics];
 						var thumb = thumb_array[pics];
-						var pic_title = "";
-						if(encodeURIComponent(jQuery("#pic_title_" + ar[pics]).val()) != "undefined")
-						{
-							pic_title = encodeURIComponent(jQuery("#pic_title_" + ar[pics]).val());
-						}
-						var pic_detail = "";
-						if(encodeURIComponent(jQuery("#pic_des_" + ar[pics]).val()) != "undefined")
-						{
-							pic_detail = encodeURIComponent(jQuery("#pic_des_" + ar[pics]).val());
-						}
-						if(encodeURIComponent(jQuery("#pic_url_" + ar[pics]).val()) != "undefined")
-						{
-							var pic_url1 = encodeURIComponent(jQuery("#pic_url_" + ar[pics]).val());
-						}
+						var pic_title = encodeURIComponent(jQuery("#pic_title_" + ar[pics]).val());
+						var pic_detail = encodeURIComponent(jQuery("#pic_des_" + ar[pics]).val());
+						var pic_url1 = encodeURIComponent(jQuery("#pic_url_" + ar[pics]).val());
 						var chkbox = jQuery("#chk_url_" +ar[pics]).prop("checked");
 						jQuery.post(ajaxurl, "album_id="+albumId+"&title="+pic_title+"&detail="+pic_detail+"&path="+pic_path+"&thumb="+thumb+"&checkbox_url="+chkbox+"&url_path="+pic_url1+"&param=add_pic&action=album_gallery_library", function(data)
 						{
 							count++;
-							if(count == array.length)
+							jQuery('#edit_message').css('display','block');
+							if(count == parseInt(array_video.length)+parseInt(array.length))
 							{
 								setTimeout(function() 
 								{
@@ -1143,6 +1249,27 @@
 								}, 2000);
 							}
 							
+						});
+					}
+				}
+				if(array_video.length > 0)
+				{
+					for(video = 0; video < array_video.length; video++)
+					{
+						var select_video_format = jQuery("#video_format_type_" + array_video_dynamicId[video]).val(); 
+						var video_url = array_video[video]; 
+						jQuery.post(ajaxurl, "album_id="+albumId+"&select_video_format="+select_video_format+"&video_url="+video_url+"&param=add_video&action=album_gallery_library", function(data)
+						{
+							count++;
+							jQuery('#message').css('display','block');
+							if(count == parseInt(array_video.length) + parseInt(array.length))
+							{
+								setTimeout(function()
+								{
+									jQuery('#message').css('display','none');
+									window.location.href = "admin.php?page=gallery_bank";
+								}, 2000);
+							}
 						});
 					}
 				}
@@ -1155,7 +1282,6 @@
 						window.location.href = "admin.php?page=gallery_bank";
 					}, 3000);
 				}
-					
 			});
 		}
 	});
@@ -1229,7 +1355,7 @@
 		}
 	}
 	var file_frame;
-	var images_count = jQuery("#pics_count").val();
+	
 	jQuery('#upload_img_button').live('click', function( event ){
 		event.preventDefault();
 		file_frame = wp.media.frames.file_frame = wp.media({
@@ -1242,8 +1368,7 @@
 		file_frame.on( 'select', function() {
 				var selection = file_frame.state().get('selection');
 				selection.map( function( attachment ) {
-				if(images_count < 10)
-				{
+				
 					attachment = attachment.toJSON();
 					var dynamicId = Math.floor((Math.random() * 1000)+1);
 					thumb_array.push(attachment.url);
@@ -1288,11 +1413,100 @@
 					oTable.fnAddData([tr.html()]);
 					array_new.push(dynamicId);
 					jQuery('#pic_des_'+dynamicId).attr("placeholder", "<?php _e( "Enter your Image Description", gallery_bank);?>");
-					images_count++;
-				}
+				
+				
 			});
 		});
 		file_frame.open();
+	});
+	jQuery("#ux_edit_video").validate
+	({
+		rules: 
+		{
+			ux_video_type: "required",
+			ux_video_url: 
+			{
+				required: true
+				
+			},
+			
+		},
+		highlight: function(label) 
+		{
+			if(jQuery(label).closest('.control-group').hasClass('success'))
+			{
+				jQuery.colorbox.resize();
+				jQuery(label).closest('.control-group').removeClass('success');
+			}
+			jQuery(label).closest('.control-group').addClass('errors');
+			jQuery.colorbox.resize();
+		},
+		submitHandler: function(form)
+		{
+			var ux_video_format = jQuery("#ux_video_type").val();
+			var ux_video_url = jQuery("#ux_video_url").val();
+			var ux_video_static_img = "<?php echo GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg'; ?>";
+			var option_string = 
+			{
+			    'Youtube': 'Youtube',
+			    'Vimeo': 'Vimeo',
+			    'DailyMotion': 'DailyMotion',
+			    'MetaCafe': 'MetaCafe',
+			    'Veoh': 'Veoh',
+			    'Flickr_video': 'Flickr video',
+			    'Google_video': 'Google video',
+			    'Quite_youtube': 'Quietube + Youtube',
+			    'Quite_vimeo': 'Quietube + Vimeo',
+			    'Tudou':'Tudou',
+			    'YouKu':'YouKu'
+		   }
+		 	var dynamicId = Math.floor((Math.random() * 1000)+1);
+			array_video.push(ux_video_url);
+			array_video_dynamicId.push(dynamicId);   
+			var tr = jQuery("<tr></tr>");
+			var td = jQuery("<td></td>");
+			var main_div = jQuery("<div class=\"block\" id=\""+dynamicId+"\" >");
+			var div = jQuery("<div class=\"block\" style=\"padding:6px 6px 0 0; width:2%; float:left\">");
+			var checkbox = jQuery("<input type=\"checkbox\" value=\""+dynamicId+"\" style=\"cursor: pointer;\"/>");
+			div.append(checkbox);
+			div.append("</div>");
+			td.append(div);
+			var block = jQuery("<div class=\"block\" style=\"width:30%;float:left\">");
+			var img = jQuery("<img class=\"imgHolder\" style=\"border:2px solid #e5e5e5;margin-top:10px;cursor: pointer;\" id=\"up_img\"/>");
+			img.attr('src',ux_video_static_img);
+			img.attr('width', '150px');
+			block.append(img);
+			var del = jQuery("<br/><a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_video("+dynamicId+")\"><img style=\"cursor: pointer;vertical-align:middle;\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/assets/images/icons/color-16/cross.png'?>\">&nbsp; <span  style=\"cursor: pointer;vertical-align:middle;\"><?php _e("Remove Video",gallery_bank);?></span></a>");
+			block.append(del);
+			block.append("</div>");
+			td.append(block);
+			var block1 = jQuery("<div class=\"block\" style=\"width:66%;float:left\">");
+			var box = jQuery("<div class=\"control-group\">");
+			var drop_down_list = jQuery("<select class=\"span12\" name=\"video_format_type_"+dynamicId+"\" id=\"video_format_type_"+dynamicId+"\" ></select>");
+			for(var val in option_string) 
+			{
+				jQuery('<option />', {value: val, text: option_string[val]}).appendTo(drop_down_list);
+			}
+			box.append(drop_down_list);
+			box.append("</div>");
+			block1.append(box);
+			var text = jQuery("<div class=\"control-group\"><textarea id=\"video_url_link_"+dynamicId+"\" rows=\"5\"  style=\"width=150%\" class=\"span12\">"+ux_video_url+"</textarea></div>"); 
+			block1.append(text);
+			block1.append("</div>");
+			main_div.append(div);
+			main_div.append(block);
+			main_div.append(block1);
+			main_div.append("</div>");
+			td.append(main_div);
+			tr.append(td);
+			oTable = jQuery('#edit-album-data-table').dataTable();
+			oTable.fnAddData([tr.html()]);
+			array_new_video.push(dynamicId);
+			jQuery("#video_format_type_"+dynamicId).val(ux_video_format);
+			jQuery.colorbox.close();
+			jQuery("#ux_video_type").val("");
+			jQuery("#ux_video_url").val("");
+		}
 	});
 	function delete_pic(dynamicId)
 	{
@@ -1310,10 +1524,26 @@
 					ar.splice(jQuery.inArray(dynamicId, array_new), 1);
 					thumb_array.splice(jQuery.inArray(dynamicId, array_new), 1);
 					array_new.splice(jQuery.inArray(dynamicId, array_new), 1);
-					images_count--;
-					jQuery("#pics_count").val(images_count);
+				}
+			}
+		});
+	}
+	function delete_video(dynamicId)
+	{
+		
+		bootbox.confirm("<?php _e( "Are you sure you want to delete this Video?", gallery_bank ); ?>", function(confirmed)
+		{
+			console.log("Confirmed: "+confirmed);
+			if(confirmed == true)
+			{
+				if(jQuery.inArray(dynamicId, array_new_video) > -1) 
+				{
+					var index = parseInt(jQuery.inArray(dynamicId, array_new_video)) + parseInt(array_existing.length);
 					
-					
+					oTable = jQuery('#edit-album-data-table').dataTable();
+					oTable.fnDeleteRow(index);
+					array_video_dynamicId.splice(jQuery.inArray(dynamicId, array_new_video), 1);
+					array_new_video.splice(jQuery.inArray(dynamicId, array_new_video), 1);
 				}
 			}
 		});
@@ -1332,8 +1562,27 @@
 					oTable.fnDeleteRow(index);
 					array_existing.splice(index, 1);
 					arr.push(pic_id);
-					images_count--;
-					jQuery("#pics_count").val(images_count);
+					
+				}
+			}
+		});
+	}
+	function edit_delete_video(pic_id)
+	{
+		bootbox.confirm("<?php _e("Are you sure you want to delete this Video?", gallery_bank); ?>", function(confirmed)
+		{
+			console.log("Confirmed: "+confirmed);
+			if(confirmed == true)
+			{
+				if(jQuery.inArray(pic_id.toString(), array_existing) > -1)
+				{
+					var index = jQuery.inArray(pic_id.toString(), array_existing);
+					
+					oTable = jQuery('#edit-album-data-table').dataTable();
+					oTable.fnDeleteRow(index);
+					array_existing.splice(index, 1);
+					arr_del_video.push(pic_id);
+					
 				}
 			}
 		});
@@ -1356,7 +1605,7 @@
 	
 	function delete_selected_images()
 	{
-		bootbox.confirm("<?php _e( "Are you sure you want to delete these Images", gallery_bank ); ?>", function(confirmed)
+		bootbox.confirm("<?php _e( "Are you sure you want to delete all Images and Videos", gallery_bank ); ?>", function(confirmed)
 		{
 			console.log("Confirmed: "+confirmed);
 			if(confirmed == true)
@@ -1371,10 +1620,10 @@
 						oTable.fnDeleteRow(index);
 						array.splice(jQuery.inArray(dynamicId, array_new), 1);
 						ar.splice(jQuery.inArray(dynamicId, array_new), 1);
+						array_video_dynamicId.splice(jQuery.inArray(dynamicId, array_new), 1);
 						thumb_array.splice(jQuery.inArray(dynamicId, array_new), 1);
 						array_new.splice(jQuery.inArray(dynamicId, array_new), 1);
-						images_count--;
-						jQuery("#pics_count").val(images_count);
+						
 					}
 					if(jQuery.inArray(dynamicId.toString(), array_existing) > -1)
 					{
@@ -1382,8 +1631,7 @@
 						oTable.fnDeleteRow(index);
 						array_existing.splice(index, 1);
 						arr.push(dynamicId);
-						images_count--;
-						jQuery("#pics_count").val(images_count);
+						arr_del_video.push(dynamicId);
 					}
 					jQuery('#delete_selected').removeAttr('checked');
 				});

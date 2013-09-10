@@ -125,6 +125,7 @@
 						<div class="body">
 							<div class="control-group">
 								<a class="btn btn-info" id="upload_image_button" href=""><?php _e( "Upload Images to your Album ", gallery_bank ); ?></a>
+								<a class="btn btn-info inline" href="#uxDivAddVideo" ><?php _e( "Add Videos to your Album ", gallery_bank ); ?></a>
 							</div>
 							<div class="control-group">
 								<input type="checkbox" id="delete_selected" name="delete_selected" style="cursor: pointer;"/>
@@ -576,10 +577,69 @@
 		</form>
 	</div>
 </div>
+<div style="display: none" >
+	<div id="uxDivAddVideo" class="block well">
+		<div class="navbar">
+			<div class="navbar-inner">
+				<h5><?php _e( "Add Video", gallery_bank ); ?></h5>
+			</div>
+		</div>
+		<div class="body" style="margin:10px;">
+			<form id="ux_add_video" class="form-horizontal">
+				<div class="row-fluid">
+					<div class="span12">
+						<div class="block well">
+							<div class="body">
+								<div class="control-group">
+									<label class="control-label"><?php _e( "Video Format ", gallery_bank ); ?>:</label>
+									<div class = "controls">
+										<select name="ux_video_type" id="ux_video_type" class="span12">
+											<option value="Youtube"><?php _e( "Youtube", gallery_bank ); ?></option>
+											<option value="Vimeo"><?php _e( "Vimeo", gallery_bank ); ?></option>
+											<option value="DailyMotion"><?php _e( "DailyMotion", gallery_bank ); ?></option>
+											<option value="MetaCafe"><?php _e( "MetaCafe", gallery_bank ); ?></option>
+											<option value="Veoh"><?php _e( "Veoh", gallery_bank ); ?></option>
+											<option value="Flickr_video"><?php _e( "Flickr video", gallery_bank ); ?></option>
+											<option value="Google_video"><?php _e( "Google video", gallery_bank ); ?></option>
+											<option value="Quite_youtube"><?php _e( "Quietube + Youtube", gallery_bank ); ?></option>
+											<option value="Quite_vimeo"><?php _e( "Quietube + Vimeo", gallery_bank ); ?></option>
+											<option value="Tudou"><?php _e( "Tudou", gallery_bank ); ?></option>
+											<option value="YouKu"><?php _e( "YouKu", gallery_bank ); ?></option>
+										</select>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label"><?php _e( "Video URL ", gallery_bank ); ?>:</label>
+									<div class = "controls">
+										<input type="text"  id="ux_video_url" class="span12" name="ux_video_url" />
+									</div>
+								</div>
+								<div class="control-group" style="border-bottom:none !important">
+									<label></label>
+									<div class="controls" id="ux_div_submit">
+										<!-- <input type="button" class="btn btn-primary" onclick="Upload_video_gallery();"  value="<?php _e( "Upload Video", gallery_bank); ?>"/> -->
+										<button type="submit" class="btn btn-primary">
+											<span>
+												<?php _e( "Add Video", gallery_bank); ?>
+											</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
 <script type="text/javascript">
+jQuery(".inline").colorbox({inline:true, width:"700px"});
 	var arr =[];
 	var ar = [];
 	var thumb_array = [];
+	var array_video = [];
+	var array_video_dynamicId = [];
 	var cover_array;
 	jQuery(document).ready(function() 
 	{
@@ -675,7 +735,7 @@
 		});
 		cover_file_frame.open();
 	});
-	var count_images = 0;
+	
 	var file_frame;
 	jQuery('#upload_image_button').live('click', function( event ){
 		event.preventDefault();
@@ -689,13 +749,13 @@
 		file_frame.on( 'select', function() {
 			var selection = file_frame.state().get('selection');
 			selection.map( function( attachment ) {
-				if(count_images < 10)
-				{
+				
 					attachment = attachment.toJSON();
 					var dynamicId = Math.floor((Math.random() * 1000)+1);
 					thumb_array.push(attachment.url);
 					arr.push(attachment.url);
 					ar.push(dynamicId);
+					
 					var tr = jQuery("<tr></tr>");
 					var td = jQuery("<td></td>");
 					var main_div = jQuery("<div class=\"block\" id=\""+dynamicId+"\" >");
@@ -732,12 +792,98 @@
 					oTable = jQuery('#add-album-data-table').dataTable();
 					oTable.fnAddData([tr.html()]);
 					jQuery('#des_img_'+dynamicId).attr("placeholder", "<?php _e( "Enter your Image Description", gallery_bank);?>");
-					count_images++;
-				}
-				
 			});
 		});
 		file_frame.open();
+	});
+	
+	jQuery("#ux_add_video").validate
+	({
+		rules: 
+		{
+			ux_video_type: "required",
+			ux_video_url: 
+			{
+				required: true
+				
+			},
+			
+		},
+		highlight: function(label) 
+		{
+			if(jQuery(label).closest('.control-group').hasClass('success'))
+			{
+				jQuery.colorbox.resize();
+				jQuery(label).closest('.control-group').removeClass('success');
+			}
+			jQuery(label).closest('.control-group').addClass('errors');
+			jQuery.colorbox.resize();
+		},
+		submitHandler: function(form)
+		{
+			var ux_video_format = jQuery("#ux_video_type").val();
+			var ux_video_url = jQuery("#ux_video_url").val();
+			var ux_video_static_img = "<?php echo GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg'; ?>";
+			var option_string = {
+		    'Youtube': 'Youtube',
+		    'Vimeo': 'Vimeo',
+		    'DailyMotion': 'DailyMotion',
+		    'MetaCafe': 'MetaCafe',
+		    'Veoh': 'Veoh',
+		    'Flickr_video': 'Flickr video',
+		    'Google_video': 'Google video',
+		    'Quite_youtube': 'Quietube + Youtube',
+		    'Quite_vimeo': 'Quietube + Vimeo',
+		    'Tudou':'Tudou',
+		    'YouKu':'YouKu'
+		   }
+		 
+				var dynamicId = Math.floor((Math.random() * 1000)+1);
+				array_video.push(ux_video_url);
+				array_video_dynamicId.push(dynamicId);   
+				var tr = jQuery("<tr></tr>");
+				var td = jQuery("<td></td>");
+				var main_div = jQuery("<div class=\"block\" id=\""+dynamicId+"\" >");
+				var div = jQuery("<div class=\"block\" style=\"padding:6px 6px 0 0; width:2%; float:left\">");
+				var checkbox = jQuery("<input type=\"checkbox\" value=\""+dynamicId+"\" style=\"cursor: pointer;\"/>");
+				div.append(checkbox);
+				div.append("</div>");
+				td.append(div);
+				var block = jQuery("<div class=\"block\" style=\"width:30%;float:left\">");
+				var img = jQuery("<img class=\"imgHolder\" style=\"border:2px solid #e5e5e5;margin-top:10px;cursor: pointer;\" id=\"up_img\"/>");
+				img.attr('src',ux_video_static_img);
+				img.attr('width', '150px');
+				block.append(img);
+				var del = jQuery("<br/><a class=\"imgHolder orange\" style=\"margin-left: 20px;cursor: pointer;\" id=\"del_img\" onclick=\"delete_video("+dynamicId+")\"><img style=\"cursor: pointer;vertical-align:middle;\" src=\"<?php echo GALLERY_BK_PLUGIN_URL.'/assets/images/icons/color-16/cross.png'?>\">&nbsp; <span  style=\"cursor: pointer;vertical-align:middle;\"><?php _e("Remove Video",gallery_bank);?></span></a>");
+				block.append(del);
+				block.append("</div>");
+				td.append(block);
+				var block1 = jQuery("<div class=\"block\" style=\"width:66%;float:left\">");
+				var box = jQuery("<div class=\"control-group\">");
+				var drop_down_list = jQuery("<select class=\"span12\" name=\"video_format_"+dynamicId+"\" id=\"video_format_"+dynamicId+"\" ></select>");
+				for(var val in option_string) 
+				{
+					jQuery('<option />', {value: val, text: option_string[val]}).appendTo(drop_down_list);
+				}
+				box.append(drop_down_list);
+				box.append("</div>");
+				block1.append(box);
+				var text = jQuery("<div class=\"control-group\"><textarea id=\"video_url_"+dynamicId+"\" rows=\"5\"  style=\"width=150%\" class=\"span12\">"+ux_video_url+"</textarea></div>"); 
+				block1.append(text);
+				block1.append("</div>");
+				main_div.append(div);
+				main_div.append(block);
+				main_div.append(block1);
+				main_div.append("</div>");
+				td.append(main_div);
+				tr.append(td);
+				oTable = jQuery('#add-album-data-table').dataTable();
+				oTable.fnAddData([tr.html()]);
+				jQuery("#video_format_"+dynamicId).val(ux_video_format);
+				jQuery.colorbox.close();
+				jQuery("#ux_video_type").val("");
+				jQuery("#ux_video_url").val("");
+					}
 	});
 	function delete_pic(dynamicId)
 	{
@@ -754,7 +900,26 @@
 					thumb_array.splice(index, 1);
 					oTable = jQuery('#add-album-data-table').dataTable();
 					oTable.fnDeleteRow(index);
-					count_images--;
+					
+				}
+			}
+		});
+	}
+	function delete_video(dynamicId)
+	{
+		bootbox.confirm("<?php _e( "Are you sure you want to delete this Video?", gallery_bank ); ?>", function(confirmed)
+		{
+			console.log("Confirmed: "+confirmed);
+			if(confirmed == true)
+			{
+				jQuery("#" + dynamicId).remove();
+				if(array_video_dynamicId.indexOf(dynamicId) > -1) {
+					var index = array_video_dynamicId.indexOf(dynamicId);
+					array_video.splice(index, 1);
+					array_video_dynamicId.splice(index, 1);
+					oTable = jQuery('#add-album-data-table').dataTable();
+					oTable.fnDeleteRow(index);
+					
 				}
 			}
 		});
@@ -815,63 +980,62 @@
 				var count = 0;
 				if(arr.length > 0)
 				{
-					
-						for(pic = 0; pic < arr.length; pic++ )
-						{
-							var path = arr[pic];
-							var thumb = thumb_array[pic];
-							var title = "";
-							if(encodeURIComponent(jQuery("#title_img_" + ar[pic]).val()) != "undefined")
-							{
-								title = encodeURIComponent(jQuery("#title_img_" + ar[pic]).val());
-							}
-							var url_path = "";
-							if(encodeURIComponent(jQuery("#url_" + ar[pic]).val()) != "undefined")
-							{
-								url_path = encodeURIComponent(jQuery("#url_" + ar[pic]).val());
-							}
-							var detail="";
-							if(encodeURIComponent(jQuery("#des_img_" + ar[pic]).val()) != "undefined")
-							{
-								detail = encodeURIComponent(jQuery("#des_img_" + ar[pic]).val());
-							}
-							var checkbox_url = jQuery("#url_check_" +ar[pic]).prop("checked");
-							jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&url_path="+url_path+"&detail="+detail+"&path="+path+"&thumb="+thumb+"&checkbox_url="+checkbox_url+"&param=add_pic&action=album_gallery_library", function(data)
-							{
-								jQuery('#message').css('display','block');
-								count++;
-								if(count == arr.length)
-								{
-									setTimeout(function()
-									{
-										jQuery('#message').css('display','none');
-										window.location.href = "admin.php?page=gallery_bank";
-									}, 2000);
-								}
-								
-							});
-							
-						}
-					
-				}
-				else
-				{
-					jQuery('#message').css('display','block');
-					setTimeout(function()
+					for(pic = 0; pic < arr.length; pic++ )
 					{
-						jQuery('#message').css('display','none');
-						window.location.href = "admin.php?page=gallery_bank";
-					}, 2000);
+						var path = arr[pic];
+						var thumb = thumb_array[pic];
+						var title = encodeURIComponent(jQuery("#title_img_" + ar[pic]).val());
+						var url_path = encodeURIComponent(jQuery("#url_" + ar[pic]).val());
+						var detail = encodeURIComponent(jQuery("#des_img_" + ar[pic]).val());
+						var checkbox_url = jQuery("#url_check_" +ar[pic]).prop("checked");
+						jQuery.post(ajaxurl, "album_id="+album_id+"&title="+title+"&url_path="+url_path+"&detail="+detail+"&path="+path+"&thumb="+thumb+"&checkbox_url="+checkbox_url+"&param=add_pic&action=album_gallery_library", function(data)
+						{
+							count++;
+							jQuery('#message').css('display','block');
+							if(count == parseInt(array_video.length)+parseInt(arr.length))
+							{
+								setTimeout(function()
+								{
+									jQuery('#message').css('display','none');
+									window.location.href = "admin.php?page=gallery_bank";
+								}, 2000);
+							}
+						});
+					}
+				}
+				if(array_video.length > 0)
+				{
+					for(video = 0; video < array_video.length; video++)
+					{
+						var select_video_format = jQuery("#video_format_" + array_video_dynamicId[video]).val(); 
+						var video_url = array_video[video]; 
+						
+						jQuery.post(ajaxurl, "album_id="+album_id+"&select_video_format="+select_video_format+"&video_url="+video_url+"&param=add_video&action=album_gallery_library", function(data)
+						{
+							count++;
+							jQuery('#message').css('display','block');
+							if(count == parseInt(array_video.length)+parseInt(arr.length))
+							{
+								setTimeout(function()
+								{
+									jQuery('#message').css('display','none');
+									window.location.href = "admin.php?page=gallery_bank";
+								}, 2000);
+							}
+						});
+					}
 				}
 			});
 		}
 	});
 	jQuery(function()
 	{
-		jQuery('#delete_selected').click(function(){
+		jQuery('#delete_selected').click(function()
+		{
 			var oTable = jQuery("#add-album-data-table").dataTable();
 			var  checkProp = jQuery("#delete_selected").prop("checked");
-			jQuery("input:checkbox", oTable.fnGetNodes()).each(function(){
+			jQuery("input:checkbox", oTable.fnGetNodes()).each(function()
+			{
 				if(checkProp)
 				{
 					jQuery(this).attr('checked', 'checked');	
@@ -885,7 +1049,7 @@
 	});
 	function delete_selected_images()
 	{
-		bootbox.confirm("<?php _e( "Are you sure you want to delete these Images?", gallery_bank ); ?>", function(confirmed)
+		bootbox.confirm("<?php _e( "Are you sure you want to delete all Images and Videos?", gallery_bank ); ?>", function(confirmed)
 		{
 			console.log("Confirmed: "+confirmed);
 			if(confirmed == true)
@@ -901,7 +1065,15 @@
 						thumb_array.splice(index, 1);
 						oTable.fnDeleteRow(index);
 						jQuery('#delete_selected').removeAttr('checked');
-						count_images--;
+						
+					}
+					if(array_video_dynamicId.indexOf(dynamicId) > -1){
+						var index = array_video_dynamicId.indexOf(dynamicId);
+						array_video.splice(index, 1);
+						array_video_dynamicId.splice(index, 1);
+						oTable.fnDeleteRow(index);
+						jQuery('#delete_selected').removeAttr('checked');
+						
 					}
 				});
 			}

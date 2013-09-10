@@ -4,7 +4,7 @@ Tags: gallery, gallery images, album, foto, fotoalbum, website gallery, multiple
 
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 2.0.13
+Stable tag: 2.0.14
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -24,6 +24,7 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 = Key Features in Standard Version =
 
+* Now Supports Videos
 * Creates upto 2 Albums in your Gallery Bank
 * 10 Images could be uploaded to each Album.
 * Feature to set the cover for the album.
@@ -134,6 +135,16 @@ With this bulk deletion feature, you can now delete the pictures you want in bul
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 2.0.14 =
+
+* Introducing Videos in Gallery Bank
+* Fixed Bugs with Thumbnails
+* Fixed Bugs related to Timbthumb
+
+= 2.0.13 =
+
+* Few Bugs Fixed
 
 = 2.0.12 =
 

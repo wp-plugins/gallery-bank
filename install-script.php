@@ -26,6 +26,7 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_pics() . '"')) == 0
 	date DATE,
 	url VARCHAR(250) NOT NULL,
 	check_url INTEGER(10) NOT NULL,
+	video INTEGER(10) NOT NULL,
 	PRIMARY KEY(pic_id)		 
 	) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci';
 	dbDelta($sql);
@@ -401,6 +402,32 @@ if (count($wpdb->get_var('SHOW TABLES LIKE "' . gallery_bank_albums() . '"')) !=
 			$wpdb->prepare
 			(
 				"ALTER TABLE " . gallery_bank_pics() . " ADD check_url INTEGER(10) NOT NULL",""
+			)
+		);
+	}
+	$check13 = $wpdb->get_var
+	(
+		$wpdb->prepare
+		(
+			"SHOW COLUMNS FROM " . gallery_bank_pics() . " LIKE 'video'",""
+		)
+	);
+	if($check13 != "video")
+	{
+		$wpdb->query
+		(
+		
+			$wpdb->prepare
+			(
+				"ALTER TABLE " . gallery_bank_pics() . " ADD video INTEGER(10) NOT NULL",""
+			)
+		);
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"UPDATE ".gallery_bank_pics()." set video = %d",
+				"0"
 			)
 		);
 	}

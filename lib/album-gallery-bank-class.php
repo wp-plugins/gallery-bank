@@ -251,11 +251,43 @@ else
 		{
 			$ux_path = esc_attr($_REQUEST["path"]);
 			$ux_albumid = intval($_REQUEST["album_id"]);
-			$ux_title = html_entity_decode($_REQUEST["title"]);
-			$ux_url_path = html_entity_decode($_REQUEST["url_path"]);
-			$ux_detail = html_entity_decode($_REQUEST["detail"]);
+			$ux_title1 = html_entity_decode($_REQUEST["title"]);
+			if($ux_title1 == "undefined")
+			{
+				$ux_title = "";	
+			}
+			else
+			{
+				$ux_title = $ux_title1;
+			}
+			$ux_url_path1 = html_entity_decode($_REQUEST["url_path"]);
+			if($ux_url_path1 == "undefined")
+			{
+				$ux_url_path = "";	
+			}
+			else
+			{
+				$ux_url_path = $ux_url_path1;
+			}
+			$ux_detail1 = html_entity_decode($_REQUEST["detail"]);
+			if($ux_detail1 == "undefined")
+			{
+				$ux_detail = "";	
+			}
+			else
+			{
+				$ux_detail = $ux_detail1;
+			}
 			$thumbnail_url = esc_attr($_REQUEST["thumb"]);
-			$ux_checkbox = esc_attr($_REQUEST["checkbox_url"]);
+			$ux_checkbox1 = esc_attr($_REQUEST["checkbox_url"]);
+			if($ux_checkbox1 == "undefined")
+			{
+				$ux_checkbox = "";	
+			}
+			else
+			{
+				$ux_checkbox = $ux_checkbox1;
+			}
 			if($ux_checkbox == "true")
 			{
 				$url_checkbox = 1;
@@ -264,19 +296,66 @@ else
 			{
 				$url_checkbox = 0;
 			}
+			
+				$wpdb->query
+				(
+					$wpdb->prepare
+					(
+						"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,thumbnail_url,title,description,url,check_url,video,date)
+						VALUES(%d,%s,%s,%s,%s,%s,%d,%d,CURDATE())",
+						$ux_albumid,
+						$ux_path,
+						$thumbnail_url,
+						$ux_title,
+						$ux_detail,
+						$ux_url_path,
+						$url_checkbox,
+						0
+					)
+				);
+				$pic_id = $wpdb->insert_id;
+				$wpdb->query
+				(
+					$wpdb->prepare
+					(
+						"UPDATE " .gallery_bank_pics(). " SET sorting_order = %d WHERE pic_id = %d",
+						$pic_id,
+						$pic_id
+					)
+				);
+			
+			die();
+		}
+		else if($_REQUEST["param"] == "add_video")
+		{
+			$ux_albumid = intval($_REQUEST["album_id"]);
+			$select_video_type1 = esc_attr($_REQUEST["select_video_format"]);
+			if($select_video_type1 == "undefined"){
+				$select_video_type = "";	
+			}else{
+				$select_video_type = $select_video_type1;
+			}
+			$video_url1 = esc_attr($_REQUEST["video_url"]);
+			if($video_url1 == "undefined"){
+				$video_url = "";	
+			}else{
+				$video_url = $video_url1;
+			}
 			$wpdb->query
 			(
 				$wpdb->prepare
 				(
-					"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,thumbnail_url,title,description,url,check_url,date)
-					VALUES(%d,%s,%s,%s,%s,%s,%d,CURDATE())",
+					"INSERT INTO ".gallery_bank_pics()."(album_id,pic_path,thumbnail_url,title,description,url,check_url,video,date)
+					VALUES(%d,%s,%s,%s,%s,%s,%d,%d,CURDATE())",
 					$ux_albumid,
-					$ux_path,
-					$thumbnail_url,
-					$ux_title,
-					$ux_detail,
-					$ux_url_path,
-					$url_checkbox
+					$video_url,
+					"",
+					$select_video_type,
+					"",
+					"",
+					"",
+					1
+					
 				)
 			);
 			$pic_id = $wpdb->insert_id;
@@ -295,10 +374,30 @@ else
 		{
 			$pic_id = intval($_REQUEST['picId']);
 			$albumId = intval($_REQUEST['albumId']);
-			$edit_title = html_entity_decode($_REQUEST['edit_title']);
-			$edit_detail = html_entity_decode($_REQUEST['edit_detail']);
-			$chkbox = esc_attr($_REQUEST['checkbox_url']);
-			$ux_edit_url = html_entity_decode($_REQUEST["edit_url_path"]);
+			$edit_title1 = html_entity_decode($_REQUEST['edit_title']);
+			if($edit_title1 == "undefined"){
+				$edit_title = "";	
+			}else{
+				$edit_title = $edit_title1;
+			}
+			$edit_detail1 = html_entity_decode($_REQUEST['edit_detail']);
+			if($edit_detail1 == "undefined"){
+				$edit_detail = "";	
+			}else{
+				$edit_detail = $edit_detail1;
+			}
+			$chkbox1 = esc_attr($_REQUEST['checkbox_url']);
+			if($chkbox1 == "undefined"){
+				$chkbox = "";	
+			}else{
+				$chkbox = $chkbox1;
+			}
+			$ux_edit_url1 = html_entity_decode($_REQUEST["edit_url_path"]);
+			if($ux_edit_url1 == "undefined"){
+				$ux_edit_url = "";	
+			}else{
+				$ux_edit_url = $ux_edit_url1;
+			}
 			if($chkbox == "true")
 			{
 				$url_chkbox = 1;
@@ -311,21 +410,71 @@ else
 			(
 				$wpdb->prepare
 				(
-					"UPDATE " .gallery_bank_pics(). " SET title = %s, description= %s,url = %s, check_url = %d WHERE pic_id = %d",
+					"UPDATE " .gallery_bank_pics(). " SET title = %s, description= %s,url = %s, check_url = %d,video = %d WHERE pic_id = %d",
 					$edit_title,
 					$edit_detail,
 					$ux_edit_url,
 					$url_chkbox,
+					0,
 					$pic_id
 				)
 			);
-			
+			die();
+		}
+		else if($_REQUEST["param"] == "update_video")
+		{
+			$pic_id = intval($_REQUEST['picId']);
+			$albumId = intval($_REQUEST['albumId']);
+			$ux_edit_video_type1 = esc_attr($_REQUEST['ux_edit_video_type']);
+			if($ux_edit_video_type1 == "undefined"){
+				$ux_edit_video_type = "";	
+			}else{
+				$ux_edit_video_type = $ux_edit_video_type1;
+			}
+			$ux_edit_video_url1 = esc_attr($_REQUEST['ux_edit_video_url']);
+			if($ux_edit_video_url1 == "undefined"){
+				$ux_edit_video_url = "";	
+			}else{
+				$ux_edit_video_url = $ux_edit_video_url1;
+			}
+			$wpdb->query
+			(
+				$wpdb->prepare
+				(
+					"UPDATE " .gallery_bank_pics(). " SET title = %s, description= %s,url = %s, check_url = %d,pic_path = %s,video = %d  WHERE pic_id = %d",
+					$ux_edit_video_type,
+					"",
+					"",
+					"",
+					$ux_edit_video_url,
+					1,
+					$pic_id
+				)
+			);
 			die();
 		}
 		else if($_REQUEST['param'] == "delete_pic")
 		{
 			$picture_id = $_REQUEST['id'];
 			$count_pic = intval($_REQUEST['count_pic']);
+			$pic_id =  (explode(",",$picture_id));
+			for($flag = 0; $flag < $count_pic; $flag++ )
+			{
+				$wpdb->query
+				(
+					$wpdb->prepare
+					(
+						"DELETE FROM ".gallery_bank_pics()." WHERE pic_id = %d",
+						$pic_id[$flag]
+					)
+				);
+			}
+			die();
+		}
+		else if($_REQUEST['param'] == "delete_videos")
+		{
+			$picture_id = $_REQUEST['id_video'];
+			$count_pic = intval($_REQUEST['count_video']);
 			$pic_id =  (explode(",",$picture_id));
 			for($flag = 0; $flag < $count_pic; $flag++ )
 			{

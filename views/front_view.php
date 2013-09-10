@@ -145,8 +145,10 @@
 				$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1].";filter:alpha(opacity=".$image_opacity[1] * 100 . ");-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=".$image_opacity[1] * 100 . ")';-moz-opacity:" . $image_opacity[1] . ";-khtml-opacity:".$image_opacity[1]. ";";
 				if($pic_detail[$flag]->description == "")
 				{
+						
 					if(($flag % $images_in_row[1] == 0) && $flag != 0)
 					{
+						
 						?>
 						</br>
 						<?php
@@ -197,7 +199,7 @@
 										else 
 										{
 											?>
-											<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+											<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
 											<?php
 										}
 										?>
@@ -229,7 +231,7 @@
 										else 
 										{
 											?>
-											<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+											<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 											<?php
 										}
 										?>
@@ -254,17 +256,38 @@
 							<?php
 							if($image_content[1] == 1)
 							{
+								
 									if(file_exists($fileName)!=false)
 									{
-										?>
-										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
-										<?php
+										if($pic_detail[$flag]->video == 1)
+										{
+											?>
+											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+											<?php
+										}
+										else 
+										{
+											?>
+											<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+											<?php
+										}
+										
 									}
 									else 
 									{
-										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										if($pic_detail[$flag]->video == 1)
+										{
+											?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
 										<?php
+										}
+										else 
+										{
+											?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+										}
+										
 									}
 									?>
 									
@@ -286,15 +309,35 @@
 								
 									if(file_exists($fileName)!=false)
 									{
-										?>
+										if($pic_detail[$flag]->video == 1)
+										{
+											?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+										}
+										else 
+										{
+											?>
 										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
 										<?php
+										}
+										
 									}
 									else 
 									{
-										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										if($pic_detail[$flag]->video == 1)
+										{
+											?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 										<?php
+										}
+										else 
+										{
+											?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+										}
+										
 									}
 									?>
 									
@@ -385,7 +428,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>
@@ -417,7 +460,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>
@@ -447,15 +490,35 @@
 							
 									if(file_exists($fileName)!=false)
 									{
-										?>
+										if($pic_detail[$flag]->video == 1)
+										{
+											?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+										}
+										else 
+										{
+											?>
 										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
 										<?php
+										}
+										
 									}
 									else 
 									{
-										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										if($pic_detail[$flag]->video == 1)
+										{
+											?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
 										<?php
+										}
+										else
+										{
+											?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+										}
+										
 									}
 									?>
 								
@@ -475,17 +538,37 @@
 						else 
 						{
 							
-							if(file_exists($fileName)!=false)
+									if(file_exists($fileName)!=false)
 									{
-										?>
+										if($pic_detail[$flag]->video == 1)
+										{
+											?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+										}
+										else 
+										{
+											?>
 										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin-left:5px;<?php echo $css_image_thumbnail; ?>" />
 										<?php
+										}
+										
 									}
 									else 
 									{
-										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										if($pic_detail[$flag]->video == 1)
+										{
+											?>
+										<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 										<?php
+										}
+										else
+										{
+											?>
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<?php
+										}
+										
 									}
 									?>
 								
@@ -509,6 +592,7 @@
 				}
 				else 
 				{
+				
 					if(($flag % $images_in_row[1] == 0) && $flag != 0)
 					{
 						?>
@@ -560,7 +644,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>
@@ -592,7 +676,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>
@@ -639,7 +723,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>
@@ -670,7 +754,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>
@@ -762,7 +846,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>
@@ -794,7 +878,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>
@@ -840,7 +924,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:150;height:155px;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>
@@ -871,7 +955,7 @@
 									else 
 									{
 										?>
-										<img src="<?php echo stripcslashes($pic_detail[$flag]->thumbnail_url);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+										<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 										<?php
 									}
 									?>

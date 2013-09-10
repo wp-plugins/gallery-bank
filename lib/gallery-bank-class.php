@@ -158,7 +158,7 @@ function backend_scripts_calls()
 	wp_enqueue_script('mColorPicker_small.js', GALLERY_BK_PLUGIN_URL .'/assets/js/colorpicker/js/mColorPicker_small.js');
 	wp_enqueue_script('jquery.validate.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/plugins/forms/jquery.validate.min.js');
 	wp_enqueue_script('jquery.titanlighbox.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.titanlighbox.js');
-	//wp_enqueue_script('jquery.masonry.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.masonry.min.js');
+	wp_enqueue_script('jquery.colorbox-min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.colorbox-min.js');
 	wp_enqueue_script('compare.js', GALLERY_BK_PLUGIN_URL .'/assets/js/compare.js');
 	wp_enqueue_script('frontend.js', GALLERY_BK_PLUGIN_URL .'/assets/js/frontend.js');
 }
@@ -179,6 +179,7 @@ function backend_css_calls()
 	wp_enqueue_style('system-message', GALLERY_BK_PLUGIN_URL . '/assets/css/system-message.css');
 	wp_enqueue_style('jquery.titanlighbox.css', GALLERY_BK_PLUGIN_URL .'/assets/css/jquery.titanlighbox.css');
 	wp_enqueue_style('frontend.css', GALLERY_BK_PLUGIN_URL .'/assets/css/frontend.css');
+	wp_enqueue_style('colorbox.css', GALLERY_BK_PLUGIN_URL .'/assets/css/colorbox.css');
 }
 function frontend_plugin_css_scripts_gallery_bank()
 {
