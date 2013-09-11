@@ -126,15 +126,36 @@ if(isset($_REQUEST['param']))
 											{
 												if(file_exists($fileName)!=false)
 												{
-													?>
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else
+													{
+														?>
 														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
 													<?php
+													}
+													
 												}
 												else 
 												{
-													?>
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else 
+													{
+														?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
 													<?php
+													
+													}
+													
 												}
 												
 											}
@@ -142,15 +163,35 @@ if(isset($_REQUEST['param']))
 											{
 												if(file_exists($fileName)!=false)
 												{
-													?>
-												<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-												<?php
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
+														<?php
+													}
+													else 
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
+														<?php
+													}
+													
 												}
 												else 
 												{
-													?>
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else
+													{
+														?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 													<?php
+													}
+													
 												}
 												
 											}
@@ -164,15 +205,36 @@ if(isset($_REQUEST['param']))
 											{
 												if(file_exists($fileName)!=false)
 												{
-													?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-												<?php
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													
 												}
 												else 
 												{
-													?>
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else 
+													{
+														?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
 													<?php
+													
+													}
+													
 												}
 												
 											}
@@ -180,15 +242,35 @@ if(isset($_REQUEST['param']))
 											{
 												if(file_exists($fileName)!=false)
 												{
-													?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-												<?php
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
+														<?php
+													}
+													else 
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
+														<?php
+													}
+													
 												}
 												else 
 												{
-													?>
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else
+													{
+														?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 													<?php
+													}
+													
 												}
 												
 											}
@@ -207,15 +289,36 @@ if(isset($_REQUEST['param']))
 											{
 												if(file_exists($fileName)!=false)
 												{
-													?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-												<?php
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													
 												}
 												else 
 												{
-													?>
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else 
+													{
+														?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
 													<?php
+													
+													}
+													
 												}
 												
 											}
@@ -223,15 +326,35 @@ if(isset($_REQUEST['param']))
 											{
 												if(file_exists($fileName)!=false)
 												{
-												?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-												<?php
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
+														<?php
+													}
+													else 
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
+														<?php
+													}
+													
 												}
 												else 
 												{
-													?>
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else
+													{
+														?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 													<?php
+													}
+													
 												}
 												
 											}
@@ -247,15 +370,36 @@ if(isset($_REQUEST['param']))
 											{
 												if(file_exists($fileName)!=false)
 												{
-												?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-												<?php
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													
 												}
 												else 
 												{
-													?>
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else 
+													{
+														?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:150px;height:155px;<?php echo $css_image_thumbnail; ?>" />
 													<?php
+													
+													}
+													
 												}
 												
 											}
@@ -263,15 +407,35 @@ if(isset($_REQUEST['param']))
 											{
 												if(file_exists($fileName)!=false)
 												{
-												?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-												<?php
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
+														<?php
+													}
+													else 
+													{
+														?>
+														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
+														<?php
+													}
+													
 												}
 												else 
 												{
-													?>
+													if($pic_detail[$flag]->video == 1)
+													{
+														?>
+													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
+													<?php
+													}
+													else
+													{
+														?>
 													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
 													<?php
+													}
+													
 												}
 												
 											}
