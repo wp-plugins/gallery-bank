@@ -29,6 +29,7 @@ $url = plugins_url('', __FILE__);
 			{
 			
 			}
+			include_once GALLERY_BK_PLUGIN_DIR .'/install-script.php';
 			?>
 			
 			

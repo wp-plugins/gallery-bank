@@ -1,10 +1,10 @@
 === Gallery Bank ===
 Contributors: Gallery-Bank
-Tags: gallery, gallery images, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery, photo gallery, lightbox, media,photo albums, picture, pictures, thumbnails, slideshow, admin, best gallery plugin, filterable gallery, filterable portfolio, gallery, gallery wordpress plugin, grid gallery, image album, images, page, photo albums, plugin, portfolio, portfolio wordpress plugin, Post, posts, widget, wordpress gallery plugin, wordpress portfolio plugin
+Tags: gallery, gallery images, album, foto, fotoalbum, website gallery, multiple pictures, pictures, photo, photoalbum, photogallery, photo gallery, lightbox, media,photo albums, picture, pictures, thumbnails, slideshow, admin, best gallery plugin, filterable gallery, filterable portfolio, gallery, gallery wordpress plugin, grid gallery, image album, images, page, photo albums, plugin, portfolio, portfolio wordpress plugin, Post, posts, widget, wordpress gallery plugin, wordpress portfolio plugin, videos
 
 Requires at least: 3.0
 Tested up to: 3.6
-Stable tag: 2.0.14
+Stable tag: 2.0.15
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -135,6 +135,10 @@ With this bulk deletion feature, you can now delete the pictures you want in bul
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 2.0.15 =
+
+* Fixed Bugs with Saving Albums
 
 = 2.0.14 =
 
