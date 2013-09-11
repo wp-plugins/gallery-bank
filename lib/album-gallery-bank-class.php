@@ -425,6 +425,14 @@ else
 		{
 			$pic_id = intval($_REQUEST['picId']);
 			$albumId = intval($_REQUEST['albumId']);
+			$video_pic_path = $wpdb->get_var
+			(
+				$wpdb->prepare
+				(
+					"SELECT pic_path FROM ". gallery_bank_pics(). " WHERE pic_id = %d",
+					$pic_id
+				)
+			);
 			$ux_edit_video_type1 = esc_attr($_REQUEST['ux_edit_video_type']);
 			if($ux_edit_video_type1 == "undefined"){
 				$ux_edit_video_type = "";	
@@ -433,7 +441,7 @@ else
 			}
 			$ux_edit_video_url1 = esc_attr($_REQUEST['ux_edit_video_url']);
 			if($ux_edit_video_url1 == "undefined"){
-				$ux_edit_video_url = "";	
+				$ux_edit_video_url = $video_pic_path;	
 			}else{
 				$ux_edit_video_url = $ux_edit_video_url1;
 			}
