@@ -209,7 +209,7 @@ class timthumb {
 		$this->myHost = preg_replace('/^www\./i', '', $_SERVER['HTTP_HOST']);
 		$this->src = $this->param('src');
 		$this->url = parse_url($this->src);
-		//$this->src = preg_replace('/https?:\/\/(?:www\.)?' . $this->myHost . '/i', '', $this->src);
+		$this->src = preg_replace('/https?:\/\/(?:www\.)?' . $this->myHost . '/i', '', $this->src);
 		
 		if(strlen($this->src) <= 3){
 			$this->error("No image specified");
