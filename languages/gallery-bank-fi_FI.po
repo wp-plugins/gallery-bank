@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2013-08-02 15:17+0530\n"
-"PO-Revision-Date: 2013-08-02 16:29+0530\n"
+"POT-Creation-Date: 2013-09-12 13:02+0530\n"
+"PO-Revision-Date: 2013-09-12 18:42+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
-"X-Poedit-Basepath: C:\\wamp\\www\\gallery-bank\\wp-content\\plugins\\gallery-"
-"bank\\\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\wordpress3.6.1\\wp-content\\plugins"
+"\\gallery-bank\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: lib/gallery-bank-class.php:19
@@ -32,7 +32,7 @@ msgid "Sorting"
 msgstr "lajittelun"
 
 #: lib/gallery-bank-class.php:34 views/dashboard.php:30 views/dashboard.php:32
-#: views/edit-album.php:348 views/settings.php:83
+#: views/edit-album.php:397 views/settings.php:83
 msgid "Global Settings"
 msgstr "maailmanlaajuinen asetukset"
 
@@ -44,17 +44,17 @@ msgstr "asiakirjat"
 msgid "Purchase Pro Version"
 msgstr "Osto Pron versio"
 
-#: lib/gallery-bank-class.php:333
+#: lib/gallery-bank-class.php:334
 msgid "Select Gallery:"
 msgstr "Valitse Galleria:"
 
-#: lib/gallery-bank-class.php:335 views/images_sorting_ddl.php:18
+#: lib/gallery-bank-class.php:336 views/images_sorting_ddl.php:18
 #: views/images_sorting_ddl.php:20
 msgid "Select Album"
 msgstr "Valitse albumi"
 
-#: views/add-new-album.php:88 views/album_preview.php:112
-#: views/edit-album.php:10 views/images_sorting.php:89
+#: views/add-new-album.php:88 views/album_preview.php:115
+#: views/edit-album.php:10 views/images_sorting.php:90
 #: views/images_sorting_ddl.php:8 views/settings.php:88
 msgid "Back to Album Overview"
 msgstr "Takaisin albumiin yleiskatsaus"
@@ -83,209 +83,295 @@ msgstr "ladata kuvia"
 msgid "Upload Images to your Album "
 msgstr "selailla kuva omaan albumi"
 
-#: views/add-new-album.php:132 views/edit-album.php:72
+#: views/add-new-album.php:128 views/edit-album.php:68
+msgid "Add Videos to your Album "
+msgstr "Lisää videoita omaan albumi"
+
+#: views/add-new-album.php:133 views/edit-album.php:73
 msgid "Delete "
 msgstr "poistaa"
 
-#: views/add-new-album.php:144 views/edit-album.php:272
+#: views/add-new-album.php:145 views/edit-album.php:321
 msgid "Album Cover"
 msgstr "albumi kattaa"
 
-#: views/add-new-album.php:158 views/edit-album.php:301
+#: views/add-new-album.php:159 views/edit-album.php:350
 msgid "Set Cover Image "
 msgstr "asettaa kansikuva kuva"
 
-#: views/add-new-album.php:166 views/edit-album.php:309
+#: views/add-new-album.php:167 views/edit-album.php:358
 msgid "Short Codes For Page/Post"
-msgstr "Lyhyt koodit varten Sivu / Post"
+msgstr "Lyhyt koodit varten Sivu/postittaa"
 
-#: views/add-new-album.php:177 views/edit-album.php:320
+#: views/add-new-album.php:178 views/edit-album.php:369
 msgid "All Albums"
 msgstr "kaikki albumit"
 
-#: views/add-new-album.php:181 views/edit-album.php:324
+#: views/add-new-album.php:182 views/edit-album.php:373
 msgid "Single Album"
 msgstr "sinkku albumi"
 
-#: views/add-new-album.php:185 views/edit-album.php:328
+#: views/add-new-album.php:186 views/edit-album.php:377
 msgid "Album with Cover"
 msgstr "Albumi joissa peittää."
 
-#: views/add-new-album.php:194 views/edit-album.php:337
+#: views/add-new-album.php:195 views/edit-album.php:386
 msgid "Album Settings"
 msgstr "albumin asetukset"
 
-#: views/add-new-album.php:205
+#: views/add-new-album.php:206
 msgid "Settings"
 msgstr "asetuksia"
 
-#: views/add-new-album.php:209 views/edit-album.php:356
-#: views/edit-album.php:369
+#: views/add-new-album.php:210 views/edit-album.php:405
+#: views/edit-album.php:418
 msgid "Global"
 msgstr "maailmanlaajuinen"
 
-#: views/add-new-album.php:213 views/edit-album.php:360
-#: views/edit-album.php:373
+#: views/add-new-album.php:214 views/edit-album.php:409
+#: views/edit-album.php:422
 msgid "Individual"
 msgstr "yksilöllinen"
 
-#: views/add-new-album.php:223 views/edit-album.php:397
+#: views/add-new-album.php:224 views/edit-album.php:446
 msgid "Thumbnails Settings"
 msgstr "thumbnail asetukset"
 
-#: views/add-new-album.php:234 views/edit-album.php:408 views/settings.php:123
+#: views/add-new-album.php:235 views/edit-album.php:457 views/settings.php:123
 msgid "Thumbnail Size"
 msgstr "Pienoiskuva Koko:"
 
-#: views/add-new-album.php:242 views/add-new-album.php:255
-#: views/add-new-album.php:339 views/add-new-album.php:352
-#: views/edit-album.php:416 views/edit-album.php:429 views/edit-album.php:513
-#: views/edit-album.php:526 views/settings.php:130 views/settings.php:137
+#: views/add-new-album.php:243 views/add-new-album.php:256
+#: views/add-new-album.php:340 views/add-new-album.php:353
+#: views/edit-album.php:465 views/edit-album.php:478 views/edit-album.php:562
+#: views/edit-album.php:575 views/settings.php:130 views/settings.php:137
 #: views/settings.php:217 views/settings.php:224
 msgid "Original"
 msgstr "alkuperäinen"
 
-#: views/add-new-album.php:246 views/add-new-album.php:259
-#: views/add-new-album.php:343 views/add-new-album.php:356
-#: views/edit-album.php:420 views/edit-album.php:433 views/edit-album.php:517
-#: views/edit-album.php:530 views/settings.php:131 views/settings.php:138
+#: views/add-new-album.php:247 views/add-new-album.php:260
+#: views/add-new-album.php:344 views/add-new-album.php:357
+#: views/edit-album.php:469 views/edit-album.php:482 views/edit-album.php:566
+#: views/edit-album.php:579 views/settings.php:131 views/settings.php:138
 #: views/settings.php:218 views/settings.php:225
 msgid "Custom"
 msgstr "Mukautettu"
 
-#: views/add-new-album.php:267 views/add-new-album.php:364
-#: views/edit-album.php:441 views/edit-album.php:538 views/settings.php:146
+#: views/add-new-album.php:268 views/add-new-album.php:365
+#: views/edit-album.php:490 views/edit-album.php:587 views/settings.php:146
 #: views/settings.php:233
 msgid "Width"
 msgstr "leveys"
 
-#: views/add-new-album.php:274 views/add-new-album.php:371
-#: views/edit-album.php:448 views/edit-album.php:545 views/settings.php:153
+#: views/add-new-album.php:275 views/add-new-album.php:372
+#: views/edit-album.php:497 views/edit-album.php:594 views/settings.php:153
 #: views/settings.php:240
 msgid "Height"
 msgstr "korkeus"
 
-#: views/add-new-album.php:281 views/edit-album.php:455 views/settings.php:160
+#: views/add-new-album.php:282 views/edit-album.php:504 views/settings.php:160
 msgid "Images in Row"
 msgstr "Kuvien sisään rivi"
 
-#: views/add-new-album.php:288 views/add-new-album.php:378
-#: views/add-new-album.php:421 views/edit-album.php:462
-#: views/edit-album.php:552 views/edit-album.php:595 views/settings.php:167
+#: views/add-new-album.php:289 views/add-new-album.php:379
+#: views/add-new-album.php:422 views/edit-album.php:511
+#: views/edit-album.php:601 views/edit-album.php:644 views/settings.php:167
 #: views/settings.php:247 views/settings.php:290
 msgid "Opacity"
 msgstr "sameus"
 
-#: views/add-new-album.php:295 views/add-new-album.php:385
-#: views/add-new-album.php:428 views/edit-album.php:469
-#: views/edit-album.php:559 views/edit-album.php:602 views/settings.php:174
+#: views/add-new-album.php:296 views/add-new-album.php:386
+#: views/add-new-album.php:429 views/edit-album.php:518
+#: views/edit-album.php:608 views/edit-album.php:651 views/settings.php:174
 #: views/settings.php:254 views/settings.php:297
 msgid "Border Size"
 msgstr "border Koko"
 
-#: views/add-new-album.php:302 views/add-new-album.php:392
-#: views/add-new-album.php:435 views/edit-album.php:476
-#: views/edit-album.php:566 views/edit-album.php:609 views/settings.php:181
+#: views/add-new-album.php:303 views/add-new-album.php:393
+#: views/add-new-album.php:436 views/edit-album.php:525
+#: views/edit-album.php:615 views/edit-album.php:658 views/settings.php:181
 #: views/settings.php:261 views/settings.php:304
 msgid "Border Radius"
 msgstr "raja Säde"
 
-#: views/add-new-album.php:309 views/add-new-album.php:399
-#: views/add-new-album.php:448 views/edit-album.php:483
-#: views/edit-album.php:573 views/edit-album.php:622 views/settings.php:188
+#: views/add-new-album.php:310 views/add-new-album.php:400
+#: views/add-new-album.php:449 views/edit-album.php:532
+#: views/edit-album.php:622 views/edit-album.php:671 views/settings.php:188
 #: views/settings.php:268 views/settings.php:317
 msgid "Border Color"
 msgstr "Reunan väri"
 
-#: views/add-new-album.php:320 views/edit-album.php:494 views/settings.php:199
+#: views/add-new-album.php:321 views/edit-album.php:543 views/settings.php:199
 msgid "Album Cover Settings"
 msgstr "albumi kattaa asetus"
 
-#: views/add-new-album.php:331 views/edit-album.php:505 views/settings.php:210
+#: views/add-new-album.php:332 views/edit-album.php:554 views/settings.php:210
 msgid "Cover Size"
 msgstr "kattaa size"
 
-#: views/add-new-album.php:410 views/edit-album.php:584 views/settings.php:279
+#: views/add-new-album.php:411 views/edit-album.php:633 views/settings.php:279
 msgid "Lightbox Settings"
 msgstr "valopöy asetukset"
 
-#: views/add-new-album.php:442 views/edit-album.php:616 views/settings.php:311
+#: views/add-new-album.php:443 views/edit-album.php:665 views/settings.php:311
 msgid "Text Color"
 msgstr "tekstin väri:"
 
-#: views/add-new-album.php:454 views/edit-album.php:628 views/settings.php:323
+#: views/add-new-album.php:455 views/edit-album.php:677 views/settings.php:323
 msgid "Inline Background"
 msgstr "sisäänlinjaTaustaa"
 
-#: views/add-new-album.php:460 views/edit-album.php:634 views/settings.php:329
+#: views/add-new-album.php:461 views/edit-album.php:683 views/settings.php:329
 msgid "Overlay Background"
 msgstr "Overlay Taustaa"
 
-#: views/add-new-album.php:471 views/edit-album.php:645 views/settings.php:340
+#: views/add-new-album.php:472 views/edit-album.php:694 views/settings.php:340
 msgid "Slide Show Settings"
 msgstr "Kuvaesitysasetuksia"
 
-#: views/add-new-album.php:482 views/edit-album.php:656 views/settings.php:351
+#: views/add-new-album.php:483 views/edit-album.php:705 views/settings.php:351
 msgid "Auto Play"
 msgstr "Automaattinen toisto"
 
-#: views/add-new-album.php:490 views/add-new-album.php:503
-#: views/add-new-album.php:546 views/add-new-album.php:560
-#: views/edit-album.php:664 views/edit-album.php:677 views/edit-album.php:720
-#: views/edit-album.php:733 views/settings.php:358 views/settings.php:365
+#: views/add-new-album.php:491 views/add-new-album.php:504
+#: views/add-new-album.php:547 views/add-new-album.php:561
+#: views/edit-album.php:713 views/edit-album.php:726 views/edit-album.php:769
+#: views/edit-album.php:782 views/settings.php:358 views/settings.php:365
 #: views/settings.php:404 views/settings.php:411
 msgid "Enable"
 msgstr "Ota käyttöön"
 
-#: views/add-new-album.php:494 views/add-new-album.php:507
-#: views/add-new-album.php:550 views/add-new-album.php:564
-#: views/edit-album.php:668 views/edit-album.php:681 views/edit-album.php:724
-#: views/edit-album.php:737 views/settings.php:359 views/settings.php:366
+#: views/add-new-album.php:495 views/add-new-album.php:508
+#: views/add-new-album.php:551 views/add-new-album.php:565
+#: views/edit-album.php:717 views/edit-album.php:730 views/edit-album.php:773
+#: views/edit-album.php:786 views/settings.php:359 views/settings.php:366
 #: views/settings.php:405 views/settings.php:412
 msgid "Disable"
 msgstr "Poista käytöstä"
 
-#: views/add-new-album.php:515 views/edit-album.php:689 views/settings.php:374
+#: views/add-new-album.php:516 views/edit-album.php:738 views/settings.php:374
 msgid "Interval"
 msgstr "aikaväli"
 
-#: views/add-new-album.php:527 views/edit-album.php:701 views/settings.php:386
+#: views/add-new-album.php:528 views/edit-album.php:750 views/settings.php:386
 msgid "Pagination Settings"
 msgstr "Sivutuksen asetuksia"
 
-#: views/add-new-album.php:538 views/edit-album.php:712 views/settings.php:397
+#: views/add-new-album.php:539 views/edit-album.php:761 views/settings.php:397
 msgid "Paging"
 msgstr "Kaukohakulaitteille:"
 
-#: views/add-new-album.php:723 views/edit-album.php:100
-#: views/edit-album.php:1277
+#: views/add-new-album.php:584 views/add-new-album.php:623
+#: views/edit-album.php:805 views/edit-album.php:844
+msgid "Add Video"
+msgstr "Lisää videot"
+
+#: views/add-new-album.php:594 views/edit-album.php:815
+msgid "Video Format "
+msgstr "videot formaatti"
+
+#: views/add-new-album.php:597 views/edit-album.php:111
+#: views/edit-album.php:818
+msgid "Youtube"
+msgstr ""
+
+#: views/add-new-album.php:598 views/edit-album.php:112
+#: views/edit-album.php:819
+msgid "Vimeo"
+msgstr ""
+
+#: views/add-new-album.php:599 views/edit-album.php:113
+#: views/edit-album.php:820
+msgid "DailyMotion"
+msgstr ""
+
+#: views/add-new-album.php:600 views/edit-album.php:114
+#: views/edit-album.php:821
+msgid "MetaCafe"
+msgstr ""
+
+#: views/add-new-album.php:601 views/edit-album.php:115
+#: views/edit-album.php:822
+msgid "Veoh"
+msgstr ""
+
+#: views/add-new-album.php:602 views/edit-album.php:116
+#: views/edit-album.php:823
+msgid "Flickr video"
+msgstr ""
+
+#: views/add-new-album.php:603 views/edit-album.php:117
+#: views/edit-album.php:824
+msgid "Google video"
+msgstr ""
+
+#: views/add-new-album.php:604 views/edit-album.php:118
+#: views/edit-album.php:825
+msgid "Quietube + Youtube"
+msgstr ""
+
+#: views/add-new-album.php:605 views/edit-album.php:119
+#: views/edit-album.php:826
+msgid "Quietube + Vimeo"
+msgstr ""
+
+#: views/add-new-album.php:606 views/edit-album.php:120
+#: views/edit-album.php:827
+msgid "Tudou"
+msgstr ""
+
+#: views/add-new-album.php:607 views/edit-album.php:121
+#: views/edit-album.php:828
+msgid "YouKu"
+msgstr ""
+
+#: views/add-new-album.php:612 views/edit-album.php:833
+msgid "Video URL "
+msgstr "videot linkki"
+
+#: views/add-new-album.php:620 views/edit-album.php:841
+msgid "Upload Video"
+msgstr "up-kuorma videot"
+
+#: views/add-new-album.php:772 views/edit-album.php:146
+#: views/edit-album.php:1390
 msgid "Remove Image"
 msgstr "Poista kuva"
 
-#: views/add-new-album.php:728 views/edit-album.php:105
-#: views/edit-album.php:1282
+#: views/add-new-album.php:777 views/edit-album.php:151
+#: views/edit-album.php:1395
 msgid "Enter your Image Title"
 msgstr "Anna Kuvan nimi"
 
-#: views/add-new-album.php:730 views/edit-album.php:108
-#: views/edit-album.php:1284
-msgid "Enter your Image Description"
-msgstr "Anna Image Kuvaus"
-
-#: views/add-new-album.php:732 views/edit-album.php:1287
+#: views/add-new-album.php:781 views/edit-album.php:1400
 msgid "Url to Redirect on click of an Image"
 msgstr "Url kohteeseen Uudelleenohjaa päälle napsauttaa, annettu kuva"
 
-#: views/add-new-album.php:754 views/edit-album.php:1311
-#: views/edit-album.php:1334
+#: views/add-new-album.php:794 views/edit-album.php:154
+#: views/edit-album.php:1415
+msgid "Enter your Image Description"
+msgstr "Anna Image Kuvaus"
+
+#: views/add-new-album.php:857 views/edit-album.php:105
+#: views/edit-album.php:1479
+msgid "Remove Video"
+msgstr "Poista videot"
+
+#: views/add-new-album.php:890 views/edit-album.php:1514
+#: views/edit-album.php:1553
 msgid "Are you sure you want to delete this Image?"
 msgstr "Oletko varma, että haluat poistaa tämän kuvan?"
 
-#: views/add-new-album.php:898
-msgid "Are you sure you want to delete these Images?"
-msgstr "Oletko varma, että haluat poistaa nämä kuvat?"
+#: views/add-new-album.php:910 views/edit-album.php:1534
+#: views/edit-album.php:1572
+msgid "Are you sure you want to delete this Video?"
+msgstr "Oletko varma, että haluat poistaa tämän videot?"
 
-#: views/album_preview.php:108
+#: views/add-new-album.php:1052 views/edit-album.php:1608
+msgid "Are you sure you want to delete all Images and Videos?"
+msgstr "Oletko varma, että haluat poistaa kaikki kuvia ja videot?"
+
+#: views/album_preview.php:111
 msgid "Preview Album "
 msgstr "Esikatselu Albumi"
 
@@ -317,7 +403,7 @@ msgstr "Luontiajankohtia"
 msgid "Edit Album"
 msgstr "Muokkaa Albumi?"
 
-#: views/dashboard.php:95 views/images_sorting.php:84
+#: views/dashboard.php:95 views/images_sorting.php:85
 #: views/images_sorting_ddl.php:4
 msgid "Re-order Images"
 msgstr "Re kertaluvun kuvat"
@@ -330,7 +416,7 @@ msgstr "esikatselu albumi"
 msgid "Delete Album"
 msgstr "poistaa albumi"
 
-#: views/dashboard.php:138 views/edit-album.php:1354
+#: views/dashboard.php:138 views/edit-album.php:1592
 msgid "Are you sure you want to delete this Album?"
 msgstr "Oletko varma, että haluat poistaa tämän Albumi?"
 
@@ -346,24 +432,20 @@ msgstr "Päivitä albumi"
 msgid "Album updated. Kindly wait for the redirect."
 msgstr "Albumin on päivitetty. Ystävällisesti odottamaan ohjata muualle."
 
-#: views/edit-album.php:116 views/edit-album.php:123
+#: views/edit-album.php:162 views/edit-album.php:169
 msgid " Url to Redirect on click of an Image"
 msgstr "Url kohteeseen Uudelleenohjaa päälle napsauttaa, annettu kuva"
 
-#: views/edit-album.php:130 views/edit-album.php:1290
+#: views/edit-album.php:176 views/edit-album.php:1403
 msgid "Enter URL"
 msgstr "astua URL"
 
-#: views/edit-album.php:1370
-msgid "Are you sure you want to delete these Images"
-msgstr "Oletko varma, että haluat poistaa nämä kuvat"
-
-#: views/front-view-albums.php:84 views/front-view-all-albums.php:22
+#: views/front-view-albums.php:85 views/front-view-all-albums.php:22
 msgid "Back to Albums"
 msgstr "Takaisin kansioihin"
 
-#: views/front-view-albums.php:115 views/front-view-albums.php:178
-#: views/front-view-all-albums.php:110 views/front-view-all-albums.php:170
+#: views/front-view-albums.php:116 views/front-view-albums.php:208
+#: views/front-view-all-albums.php:112 views/front-view-all-albums.php:200
 msgid "See Album images"
 msgstr "Katso Albumin kuvia"
 
@@ -387,7 +469,7 @@ msgstr ""
 "kirjoitus / suoritus oikeudet välimuistin kansion sisällä lib kansioon "
 "Gallery-Bank-Plugin."
 
-#: views/more_feature.php:6
+#: views/more_feature.php:10
 msgid "Get more features"
 msgstr "Hanki lisää ominaisuuksia"
 
@@ -411,6 +493,6 @@ msgstr "Menestys! Asetuksia olla ollut palautettu."
 msgid "Thumbnail Settings"
 msgstr "thumbnail asetukset"
 
-#: views/settings.php:733
+#: views/settings.php:720
 msgid "Are you sure you want to restore settings ?"
 msgstr "Oletko varma, että haluat palauttamiseksi asetuksia?"
