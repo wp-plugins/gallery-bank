@@ -1,11 +1,3 @@
-/*global jQuery */
-/*!
- * Responsive-Portfolio-Gallery
- *
- * Copyright 2011, http://www.freshdesignweb.com/
- * Released under the WTFPL license
- *
- */
 
 (function($, undefined) {
 	$.HoverDir = function(e, t) {

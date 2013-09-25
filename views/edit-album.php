@@ -381,7 +381,10 @@
 						</div>
 					</div>
 					<div class="block well">
-						<div class="navbar">
+						<div class="body">
+							<a href="http://gallery-bank.com/" target="_blank"><img style="float:right;cursor: pointer;width: 100%" src="<?php echo GALLERY_BK_PLUGIN_URL.'/assets/images/setting_sidebar.png' ?>"/></a>
+						</div>
+						<div class="navbar" style="display: none">
 							<div class="navbar-inner">
 								<h5><?php _e( "Album Settings", gallery_bank );?></h5>
 								<div class="nav pull-right">
@@ -391,7 +394,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="collapse in" id="edit_album_settings">
+						<div class="collapse in" id="edit_album_settings" style="display: none">
 							<div class="body">
 								<div class="control-group">
 									<label class="control-label"><?php _e( "Global Settings", gallery_bank ); ?> : </label>
@@ -440,7 +443,7 @@
 						$class= "collapse in";
 					}
 					?>
-					<div class="block well" id="edit_thumbnail_settings">
+					<div class="block well" id="edit_thumbnail_settings" style="display: none">
 						<div class="navbar">
 							<div class="navbar-inner">
 								<h5><?php _e( "Thumbnails Settings", gallery_bank ); ?></h5>
@@ -537,7 +540,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="block well" id="edit_cover_settings">
+					<div class="block well" id="edit_cover_settings" style="display: none">
 						<div class="navbar">
 							<div class="navbar-inner">
 								<h5><?php _e( "Album Cover Settings", gallery_bank ); ?></h5>
@@ -627,7 +630,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="block well" id="edit_lightbox_settings">
+					<div class="block well" id="edit_lightbox_settings" style="display: none">
 						<div class="navbar">
 							<div class="navbar-inner">
 								<h5><?php _e( "Lightbox Settings", gallery_bank ); ?></h5>
@@ -744,7 +747,7 @@
 							</div>
 						</div>
 					</div> -->
-					<div class="block well" id="edit_pagination_settings">
+					<div class="block well" id="edit_pagination_settings" style="display: none">
 						<div class="navbar">
 							<div class="navbar-inner">
 								<h5><?php _e( "Pagination Settings", gallery_bank ); ?></h5>
