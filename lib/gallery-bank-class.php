@@ -2,17 +2,6 @@
 //--------------------------------------------------------------------------------------------------------------//
 // CODE FOR CREATING MENUS
 //---------------------------------------------------------------------------------------------------------------//
-error_reporting('0');
-$pagename = 'temp';
-$fileName = GALLERY_BK_PLUGIN_DIR.'/lib/cache/'.$pagename.".txt";
-if(file_exists($fileName)==false)
-{
-	$myFile = fopen($fileName, 'w');//w indicates you can write text to the file
-	fflush($myFile);
-	fclose($myFile);
-}
-
-
 function create_global_menus_for_gallery_bank()
 {
 	global $wpdb;
@@ -167,6 +156,7 @@ function frontend_plugin_js_scripts_gallery_bank()
 	wp_enqueue_script('jquery');
 	wp_enqueue_script('jquery.titanlighbox.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.titanlighbox.js');
 	wp_enqueue_script('frontend.js', GALLERY_BK_PLUGIN_URL .'/assets/js/frontend.js');
+	wp_enqueue_script('jquery.masonry.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.masonry.min.js');
 }
 
 //--------------------------------------------------------------------------------------------------------------//

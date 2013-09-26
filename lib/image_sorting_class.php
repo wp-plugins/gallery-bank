@@ -79,8 +79,7 @@ if(isset($_REQUEST['param']))
 		$pagination_value = str_replace(";","",$pagination[1]);
 		$count = 1;
 		$row_id_images = "";
-		$pagename = 'temp';
-		$fileName = GALLERY_BK_PLUGIN_DIR.'/lib/cache/'.$pagename.".txt";
+		
 		if($album_id != 0)
 		{
 		?>
@@ -96,52 +95,20 @@ if(isset($_REQUEST['param']))
 						<input type="hidden" id="pagination_val" name="pagination_val" value="<?php echo $pagination_value; ?>" />
 						<div id="view_bank_album">
 						<?php
-						if($pagination_value == 1)
-						{	
-						?>
-						<table class='table table-striped' id='images_view_data_table'>
-						<tbody>
-						<?php
-						}
+						
 							for ($flag = 0; $flag <count($pic_detail); $flag++)
 							{
 								$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1].";filter:alpha(opacity=".$image_opacity[1] * 100 . ");-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=".$image_opacity[1] * 100 . ")';-moz-opacity:" . $image_opacity[1] . ";-khtml-opacity:".$image_opacity[1]. ";";
-								if($pagination_value == 1)
-								{	
-									if($count == 1)
-									{
-									?>
-										<tr id="row_<?php echo $pic_detail[$flag]->pic_id; ?>"><td><div class="sort_table">
-									<?php
-									}
-								}
+								
 								if($pic_detail[$flag]->description == "")
 								{
 									if(($flag % $images_in_row[1] == 0) && $flag != 0)
 									{
-										?>
-										</br>
-											<?php
+										
 											if($image_content[1] == 1)
 											{
-												if(file_exists($fileName)!=false)
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													else
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													
-												}
-												else 
-												{
+												
+												
 													if($pic_detail[$flag]->video == 1)
 													{
 														?>
@@ -156,45 +123,10 @@ if(isset($_REQUEST['param']))
 													
 													}
 													
-												}
+												
 												
 											}
-											else
-											{
-												if(file_exists($fileName)!=false)
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-														<?php
-													}
-													else 
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-														<?php
-													}
-													
-												}
-												else 
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													else
-													{
-														?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													
-												}
-												
-											}
+											
 											$row_id_images .= "/" . $pic_detail[$flag]->pic_id;
 											
 									}
@@ -203,24 +135,7 @@ if(isset($_REQUEST['param']))
 										
 											if($image_content[1] == 1)
 											{
-												if(file_exists($fileName)!=false)
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													else
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													
-												}
-												else 
-												{
+												
 													if($pic_detail[$flag]->video == 1)
 													{
 														?>
@@ -235,45 +150,10 @@ if(isset($_REQUEST['param']))
 													
 													}
 													
-												}
+												
 												
 											}
-											else 
-											{
-												if(file_exists($fileName)!=false)
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-														<?php
-													}
-													else 
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-														<?php
-													}
-													
-												}
-												else 
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													else
-													{
-														?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													
-												}
-												
-											}
+											
 											$row_id_images .=  "-". $pic_detail[$flag]->pic_id;
 											
 									}
@@ -282,29 +162,11 @@ if(isset($_REQUEST['param']))
 								{
 									if(($flag % $images_in_row[1] == 0) && $flag != 0)
 									{
-										?>
-										</br>
-											<?php
+										
 											if($image_content[1] == 1)
 											{
-												if(file_exists($fileName)!=false)
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													else
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													
-												}
-												else 
-												{
+												
+												
 													if($pic_detail[$flag]->video == 1)
 													{
 														?>
@@ -319,73 +181,19 @@ if(isset($_REQUEST['param']))
 													
 													}
 													
-												}
+												
 												
 											}
-											else 
-											{
-												if(file_exists($fileName)!=false)
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-														<?php
-													}
-													else 
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-														<?php
-													}
-													
-												}
-												else 
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													else
-													{
-														?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													
-												}
-												
-											}
+											
 											$row_id_images .= "/" . $pic_detail[$flag]->pic_id;
 											
 									}
 									else
 									{
-										?>
-										
-											<?php
 											if($image_content[1] == 1)
 											{
-												if(file_exists($fileName)!=false)
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													else
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h=150&w=150&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													
-												}
-												else 
-												{
+												
+												
 													if($pic_detail[$flag]->video == 1)
 													{
 														?>
@@ -400,74 +208,18 @@ if(isset($_REQUEST['param']))
 													
 													}
 													
-												}
+												
 												
 											}
-											else 
-											{
-												if(file_exists($fileName)!=false)
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg')).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-														<?php
-													}
-													else 
-													{
-														?>
-														<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL).'/lib/timthumb.php?src='.trim(stripcslashes($pic_detail[$flag]->pic_path)).'&h='.$image_height[1].'&w='.$image_width[1].'&zc=1&q=100';?>" style="margin:5px;<?php echo $css_image_thumbnail; ?>"  />
-														<?php
-													}
-													
-												}
-												else 
-												{
-													if($pic_detail[$flag]->video == 1)
-													{
-														?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													else
-													{
-														?>
-													<img id="recordsArray_<?php echo $pic_detail[$flag]->pic_id; ?>" src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin:5px;width:<?php echo $image_width[1];?>;height:<?php echo $image_height[1];?>;<?php echo $css_image_thumbnail; ?>" />
-													<?php
-													}
-													
-												}
-												
-											}
+											
 											$row_id_images .=  "-". $pic_detail[$flag]->pic_id;
 											
 									}
 								}
-								if($pagination_value == 1)
-								{
-									if($count == $images_in_row[1])
-									{
-										?></div>
-										</td>
-										</tr>
-										<?php
-										$count = 1;
-									}
-									else 
-									{
-										$count++;	
-									}
-								}
+								
 								
 							}
-							if($pagination_value == 1)
-							{	
 							
-							?>
-							</tbody>
-								</table>
-							<?php
-							}
 							?>
 						</div>
 						<input type="hidden" id="uxHdn_ids" name="uxHdn_ids" value="" />
@@ -545,20 +297,7 @@ if(isset($_REQUEST['param']))
 					}
 				});
 			}
-			oTable = jQuery('#images_view_data_table').dataTable
-			({
-				"bJQueryUI": false,
-				"bAutoWidth": true,
-				"sPaginationType": "full_numbers",
-				"sDom": '<"datatable-header"fl>t<"datatable-footer"ip>',
-				"oLanguage": 
-				{
-					"sLengthMenu": "_MENU_"
-				},
-				"aaSorting": [[ 0, "desc" ]],
-				"aoColumnDefs": [{ "bSortable": false, "aTargets": [0] },{ "bSortable": false, "aTargets": [0] }],
-				"bSort": false
-			});
+			
 		
 		</script>
 		<?php
