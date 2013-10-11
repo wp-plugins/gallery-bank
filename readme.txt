@@ -23,7 +23,7 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 = Key Features in Standard Version =
 
-* Now Supports Videos
+* Gallery Bank Now Supports Videos
 * Creates upto 2 Albums in your Gallery Bank
 * 10 Images could be uploaded to each Album.
 * Feature to set the cover for the album.
