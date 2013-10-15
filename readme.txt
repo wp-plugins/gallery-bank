@@ -26,6 +26,10 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 <a href="https://www.facebook.com/GalleryBank/" target="_blank">Like & Support us on Facebook</a>
 
+**Highly Recommended Captcha Plugin Captcha Bank**
+
+**It can be downloaded [here](http://wordpress.org/plugins/captcha-bank/) from the WordPress Repository**
+
 = Key Features in Standard Version =
 
 * Gallery Bank Now Supports Videos
