@@ -1,0 +1,498 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2013-09-12 15:55+0530\n"
+"PO-Revision-Date: 2013-09-12 15:56+0530\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\wordpress3.6.1\\wp-content\\plugins"
+"\\gallery-bank\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: lib/gallery-bank-class.php:19
+msgid "Gallery Bank"
+msgstr ""
+
+#: lib/gallery-bank-class.php:20 views/dashboard.php:4
+msgid "Dashboard"
+msgstr "painel de instrumentos"
+
+#: lib/gallery-bank-class.php:30 views/add-new-album.php:83
+#: views/dashboard.php:21 views/dashboard.php:23
+msgid "Add New Album"
+msgstr "Adicionar Novo Álbum"
+
+#: lib/gallery-bank-class.php:33
+msgid "Sorting"
+msgstr "Classificando"
+
+#: lib/gallery-bank-class.php:34 views/dashboard.php:30 views/dashboard.php:32
+#: views/edit-album.php:397 views/settings.php:83
+msgid "Global Settings"
+msgstr "Configurações Globais"
+
+#: lib/gallery-bank-class.php:35 views/documentation.php:4
+msgid "Documentation"
+msgstr "Documentação"
+
+#: lib/gallery-bank-class.php:36
+msgid "Purchase Pro Version"
+msgstr "Compre versão Pro"
+
+#: lib/gallery-bank-class.php:334
+msgid "Select Gallery:"
+msgstr "Selecione Galeria de :"
+
+#: lib/gallery-bank-class.php:336 views/images_sorting_ddl.php:18
+#: views/images_sorting_ddl.php:20
+msgid "Select Album"
+msgstr "Selecione álbum"
+
+#: views/add-new-album.php:88 views/album_preview.php:115
+#: views/edit-album.php:10 views/images_sorting.php:90
+#: views/images_sorting_ddl.php:8 views/settings.php:88
+msgid "Back to Album Overview"
+msgstr "Voltar à vista geral Album"
+
+#: views/add-new-album.php:90
+msgid "Publish Album"
+msgstr "publicar Album"
+
+#: views/add-new-album.php:95
+msgid "Album published.Kindly wait for the redirect."
+msgstr "Album publicado favor aguarde o redirecionamento"
+
+#: views/add-new-album.php:103 views/edit-album.php:30
+msgid "Album Details"
+msgstr "Detalhes do álbum"
+
+#: views/add-new-album.php:109 views/edit-album.php:47
+msgid "Enter your Album title here"
+msgstr "Digite o seu álbum título aqui"
+
+#: views/add-new-album.php:122 views/edit-album.php:62
+msgid "Upload Images"
+msgstr "fazer upload de imagens"
+
+#: views/add-new-album.php:127 views/edit-album.php:67
+msgid "Upload Images to your Album "
+msgstr "fazer upload de imagens para o seu Album"
+
+#: views/add-new-album.php:128 views/edit-album.php:68
+msgid "Add Videos to your Album "
+msgstr "Adicionar vídeos para o seu Album"
+
+#: views/add-new-album.php:133 views/edit-album.php:73
+msgid "Delete "
+msgstr "deletar"
+
+#: views/add-new-album.php:145 views/edit-album.php:321
+msgid "Album Cover"
+msgstr "tampa do álbum"
+
+#: views/add-new-album.php:159 views/edit-album.php:350
+msgid "Set Cover Image "
+msgstr "Conjunto de capa Imagem"
+
+#: views/add-new-album.php:167 views/edit-album.php:358
+msgid "Short Codes For Page/Post"
+msgstr "códigos curtos para a página de / Post"
+
+#: views/add-new-album.php:178 views/edit-album.php:369
+msgid "All Albums"
+msgstr "Todos os álbuns"
+
+#: views/add-new-album.php:182 views/edit-album.php:373
+msgid "Single Album"
+msgstr "Um único Album "
+
+#: views/add-new-album.php:186 views/edit-album.php:377
+msgid "Album with Cover"
+msgstr "Álbum com o capa"
+
+#: views/add-new-album.php:195 views/edit-album.php:386
+msgid "Album Settings"
+msgstr "Configurações álbum"
+
+#: views/add-new-album.php:206
+msgid "Settings"
+msgstr "configurações"
+
+#: views/add-new-album.php:210 views/edit-album.php:405
+#: views/edit-album.php:418
+msgid "Global"
+msgstr "globais"
+
+#: views/add-new-album.php:214 views/edit-album.php:409
+#: views/edit-album.php:422
+msgid "Individual"
+msgstr "indivíduo"
+
+#: views/add-new-album.php:224 views/edit-album.php:446
+msgid "Thumbnails Settings"
+msgstr "Configurações Miniaturas"
+
+#: views/add-new-album.php:235 views/edit-album.php:457 views/settings.php:123
+msgid "Thumbnail Size"
+msgstr "Tamanho da Miniatura"
+
+#: views/add-new-album.php:243 views/add-new-album.php:256
+#: views/add-new-album.php:340 views/add-new-album.php:353
+#: views/edit-album.php:465 views/edit-album.php:478 views/edit-album.php:562
+#: views/edit-album.php:575 views/settings.php:130 views/settings.php:137
+#: views/settings.php:217 views/settings.php:224
+msgid "Original"
+msgstr "originais"
+
+#: views/add-new-album.php:247 views/add-new-album.php:260
+#: views/add-new-album.php:344 views/add-new-album.php:357
+#: views/edit-album.php:469 views/edit-album.php:482 views/edit-album.php:566
+#: views/edit-album.php:579 views/settings.php:131 views/settings.php:138
+#: views/settings.php:218 views/settings.php:225
+msgid "Custom"
+msgstr "personalizado"
+
+#: views/add-new-album.php:268 views/add-new-album.php:365
+#: views/edit-album.php:490 views/edit-album.php:587 views/settings.php:146
+#: views/settings.php:233
+msgid "Width"
+msgstr "largura"
+
+#: views/add-new-album.php:275 views/add-new-album.php:372
+#: views/edit-album.php:497 views/edit-album.php:594 views/settings.php:153
+#: views/settings.php:240
+msgid "Height"
+msgstr "altura"
+
+#: views/add-new-album.php:282 views/edit-album.php:504 views/settings.php:160
+msgid "Images in Row"
+msgstr "Imagens no Fileira"
+
+#: views/add-new-album.php:289 views/add-new-album.php:379
+#: views/add-new-album.php:422 views/edit-album.php:511
+#: views/edit-album.php:601 views/edit-album.php:644 views/settings.php:167
+#: views/settings.php:247 views/settings.php:290
+msgid "Opacity"
+msgstr "a opacidade"
+
+#: views/add-new-album.php:296 views/add-new-album.php:386
+#: views/add-new-album.php:429 views/edit-album.php:518
+#: views/edit-album.php:608 views/edit-album.php:651 views/settings.php:174
+#: views/settings.php:254 views/settings.php:297
+msgid "Border Size"
+msgstr "Border Tamanho do"
+
+#: views/add-new-album.php:303 views/add-new-album.php:393
+#: views/add-new-album.php:436 views/edit-album.php:525
+#: views/edit-album.php:615 views/edit-album.php:658 views/settings.php:181
+#: views/settings.php:261 views/settings.php:304
+msgid "Border Radius"
+msgstr "Radius fronteira"
+
+#: views/add-new-album.php:310 views/add-new-album.php:400
+#: views/add-new-album.php:449 views/edit-album.php:532
+#: views/edit-album.php:622 views/edit-album.php:671 views/settings.php:188
+#: views/settings.php:268 views/settings.php:317
+msgid "Border Color"
+msgstr "Cor da margem"
+
+#: views/add-new-album.php:321 views/edit-album.php:543 views/settings.php:199
+msgid "Album Cover Settings"
+msgstr " tampa do álbum Configurações"
+
+#: views/add-new-album.php:332 views/edit-album.php:554 views/settings.php:210
+msgid "Cover Size"
+msgstr "cubra Tamanho do"
+
+#: views/add-new-album.php:411 views/edit-album.php:633 views/settings.php:279
+msgid "Lightbox Settings"
+msgstr "Configurações Mesa de Luz"
+
+#: views/add-new-album.php:443 views/edit-album.php:665 views/settings.php:311
+msgid "Text Color"
+msgstr "Cor do Texto"
+
+#: views/add-new-album.php:455 views/edit-album.php:677 views/settings.php:323
+msgid "Inline Background"
+msgstr "Fundo inline"
+
+#: views/add-new-album.php:461 views/edit-album.php:683 views/settings.php:329
+msgid "Overlay Background"
+msgstr "Overlay fundo"
+
+#: views/add-new-album.php:472 views/edit-album.php:694 views/settings.php:340
+msgid "Slide Show Settings"
+msgstr "Apresentação de slides Configurações"
+
+#: views/add-new-album.php:483 views/edit-album.php:705 views/settings.php:351
+msgid "Auto Play"
+msgstr "Reproduzir automaticamente"
+
+#: views/add-new-album.php:491 views/add-new-album.php:504
+#: views/add-new-album.php:547 views/add-new-album.php:561
+#: views/edit-album.php:713 views/edit-album.php:726 views/edit-album.php:769
+#: views/edit-album.php:782 views/settings.php:358 views/settings.php:365
+#: views/settings.php:404 views/settings.php:411
+msgid "Enable"
+msgstr "possibilitar"
+
+#: views/add-new-album.php:495 views/add-new-album.php:508
+#: views/add-new-album.php:551 views/add-new-album.php:565
+#: views/edit-album.php:717 views/edit-album.php:730 views/edit-album.php:773
+#: views/edit-album.php:786 views/settings.php:359 views/settings.php:366
+#: views/settings.php:405 views/settings.php:412
+msgid "Disable"
+msgstr "Desative"
+
+#: views/add-new-album.php:516 views/edit-album.php:738 views/settings.php:374
+msgid "Interval"
+msgstr "intervalo"
+
+#: views/add-new-album.php:528 views/edit-album.php:750 views/settings.php:386
+msgid "Pagination Settings"
+msgstr "Configurações paginação"
+
+#: views/add-new-album.php:539 views/edit-album.php:761 views/settings.php:397
+msgid "Paging"
+msgstr "paginação"
+
+#: views/add-new-album.php:584 views/add-new-album.php:623
+#: views/edit-album.php:805 views/edit-album.php:844
+msgid "Add Video"
+msgstr "Adicionar Vídeo"
+
+#: views/add-new-album.php:594 views/edit-album.php:815
+msgid "Video Format "
+msgstr "Formato de vídeo"
+
+#: views/add-new-album.php:597 views/edit-album.php:111
+#: views/edit-album.php:818
+msgid "Youtube"
+msgstr ""
+
+#: views/add-new-album.php:598 views/edit-album.php:112
+#: views/edit-album.php:819
+msgid "Vimeo"
+msgstr ""
+
+#: views/add-new-album.php:599 views/edit-album.php:113
+#: views/edit-album.php:820
+msgid "DailyMotion"
+msgstr ""
+
+#: views/add-new-album.php:600 views/edit-album.php:114
+#: views/edit-album.php:821
+msgid "MetaCafe"
+msgstr ""
+
+#: views/add-new-album.php:601 views/edit-album.php:115
+#: views/edit-album.php:822
+msgid "Veoh"
+msgstr ""
+
+#: views/add-new-album.php:602 views/edit-album.php:116
+#: views/edit-album.php:823
+msgid "Flickr video"
+msgstr ""
+
+#: views/add-new-album.php:603 views/edit-album.php:117
+#: views/edit-album.php:824
+msgid "Google video"
+msgstr ""
+
+#: views/add-new-album.php:604 views/edit-album.php:118
+#: views/edit-album.php:825
+msgid "Quietube + Youtube"
+msgstr ""
+
+#: views/add-new-album.php:605 views/edit-album.php:119
+#: views/edit-album.php:826
+msgid "Quietube + Vimeo"
+msgstr ""
+
+#: views/add-new-album.php:606 views/edit-album.php:120
+#: views/edit-album.php:827
+msgid "Tudou"
+msgstr ""
+
+#: views/add-new-album.php:607 views/edit-album.php:121
+#: views/edit-album.php:828
+msgid "YouKu"
+msgstr ""
+
+#: views/add-new-album.php:612 views/edit-album.php:833
+msgid "Video URL "
+msgstr "vídeo ligação"
+
+#: views/add-new-album.php:620 views/edit-album.php:841
+msgid "Upload Video"
+msgstr "fazer upload vídeos"
+
+#: views/add-new-album.php:772 views/edit-album.php:146
+#: views/edit-album.php:1390
+msgid "Remove Image"
+msgstr "Remover Imagem"
+
+#: views/add-new-album.php:777 views/edit-album.php:151
+#: views/edit-album.php:1395
+msgid "Enter your Image Title"
+msgstr "Digite o seu Título de Imagem"
+
+#: views/add-new-album.php:781 views/edit-album.php:1400
+msgid "Url to Redirect on click of an Image"
+msgstr "URL para redirecionar on clique de imagem."
+
+#: views/add-new-album.php:794 views/edit-album.php:154
+#: views/edit-album.php:1415
+msgid "Enter your Image Description"
+msgstr "Digite sua Imagem Description"
+
+#: views/add-new-album.php:857 views/edit-album.php:105
+#: views/edit-album.php:1479
+msgid "Remove Video"
+msgstr "Remover vídeos"
+
+#: views/add-new-album.php:890 views/edit-album.php:1514
+#: views/edit-album.php:1553
+msgid "Are you sure you want to delete this Image?"
+msgstr "Tem certeza de que deseja apagar essa imagem?"
+
+#: views/add-new-album.php:910 views/edit-album.php:1534
+#: views/edit-album.php:1572
+msgid "Are you sure you want to delete this Video?"
+msgstr "Você tem certeza que deseja deletar esse vídeo?"
+
+#: views/add-new-album.php:1052 views/edit-album.php:1608
+msgid "Are you sure you want to delete all Images and Videos?"
+msgstr "Tem certeza de que deseja apagar todas as imagens e vídeos?"
+
+#: views/album_preview.php:111
+msgid "Preview Album "
+msgstr "visualização Album"
+
+#: views/dashboard.php:36 views/dashboard.php:38
+msgid "Delete All Albums"
+msgstr "deletar Todos os álbuns"
+
+#: views/dashboard.php:47
+msgid "Existing Albums Overview"
+msgstr "Visão geral álbuns existente"
+
+#: views/dashboard.php:55
+msgid "Album Title"
+msgstr "Título do álbum"
+
+#: views/dashboard.php:56
+msgid "Images in Album"
+msgstr "Imagens no Album"
+
+#: views/dashboard.php:57
+msgid "Published By"
+msgstr "publicou por"
+
+#: views/dashboard.php:58
+msgid "Date of Creation"
+msgstr "Da data da Criação"
+
+#: views/dashboard.php:90 views/edit-album.php:4
+msgid "Edit Album"
+msgstr "Editar álbum?"
+
+#: views/dashboard.php:95 views/images_sorting.php:85
+#: views/images_sorting_ddl.php:4
+msgid "Re-order Images"
+msgstr "reordenar Imagens de"
+
+#: views/dashboard.php:100
+msgid "Preview Album"
+msgstr "Ver álbum"
+
+#: views/dashboard.php:105 views/edit-album.php:13
+msgid "Delete Album"
+msgstr "deletar álbum"
+
+#: views/dashboard.php:138 views/edit-album.php:1592
+msgid "Are you sure you want to delete this Album?"
+msgstr "Tem certeza de que deseja excluir este álbum?"
+
+#: views/dashboard.php:155
+msgid "Are you sure you want to delete all Albums ?"
+msgstr "Tem certeza de que deseja excluir todos os álbuns?"
+
+#: views/edit-album.php:16
+msgid "Update Album"
+msgstr "atualizar álbum"
+
+#: views/edit-album.php:21
+msgid "Album updated. Kindly wait for the redirect."
+msgstr "Álbum atualizados Por favor aguarde o redirecionar"
+
+#: views/edit-album.php:162 views/edit-album.php:169
+msgid " Url to Redirect on click of an Image"
+msgstr "URL para redirecionar on clique de imagem."
+
+#: views/edit-album.php:176 views/edit-album.php:1403
+msgid "Enter URL"
+msgstr "Digite o a URL"
+
+#: views/front-view-albums.php:85 views/front-view-all-albums.php:22
+msgid "Back to Albums"
+msgstr "Voltar aos álbuns"
+
+#: views/front-view-albums.php:116 views/front-view-albums.php:208
+#: views/front-view-all-albums.php:112 views/front-view-all-albums.php:200
+msgid "See Album images"
+msgstr "Veja Álbum imagens :"
+
+#: views/header.php:12
+msgid ""
+"You will be only allowed to add 2 galleries and upto 10 images in each "
+"album. Kindly purchase Pro Version for full access."
+msgstr ""
+"Você só será permitido adicionar duas galerias e até 10 imagens em cada "
+"álbum. Por favor, compre Pro Versão para acesso completo."
+
+#: views/header.php:23
+msgid ""
+"<p>Error : Thumbnails could not be displayed as permissions are missing.</"
+"p><p style='margin-top:10px'>Kindly contact Gallery Bank or your Host to "
+"prove Read/Write/Execute permissions to cache folder inside the lib folder "
+"of Gallery Bank Plugin.</p>"
+msgstr ""
+"Erro: Miniaturas não pode ser exibida como permissões estão faltando. Por "
+"favor, entre em contato Gallery-Bank para provar leitura / gravação / "
+"permissões de execução para a pasta de cache dentro da pasta lib de plugin "
+"do gallery-Bank."
+
+#: views/more_feature.php:10
+msgid "Get more features"
+msgstr "Conseguir mais Funcionalidades"
+
+#: views/settings.php:89
+msgid "Restore Settings"
+msgstr "restaurar configurações"
+
+#: views/settings.php:91
+msgid "Save and Submit Changes"
+msgstr "Salvar e Submeter alterações"
+
+#: views/settings.php:96
+msgid "Success! Settings have been saved."
+msgstr "Sucesso! As configurações foram salvas."
+
+#: views/settings.php:101
+msgid "Success! Settings have been restored."
+msgstr "Sucesso! As configurações foram restauradas."
+
+#: views/settings.php:112
+msgid "Thumbnail Settings"
+msgstr "Configurações Miniatura"
+
+#: views/settings.php:720
+msgid "Are you sure you want to restore settings ?"
+msgstr "Tem certeza de que deseja restaurar as configurações?"
