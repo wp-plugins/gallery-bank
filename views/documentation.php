@@ -1,3 +1,15 @@
+<?php
+global $wpdb;
+global $current_user;
+$current_user = wp_get_current_user();
+if (!current_user_can("edit_posts") && ! current_user_can("edit_pages"))
+{
+	return;
+}
+else
+{
+
+?>
 <div class="block well" >
 	<div class="navbar">
 		<div class="navbar-inner">
@@ -786,3 +798,6 @@
 		</div>
 	</div>
 </div>
+<?php
+}
+?>

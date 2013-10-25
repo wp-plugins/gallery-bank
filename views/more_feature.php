@@ -1,4 +1,14 @@
-
+<?php
+global $wpdb;
+global $current_user;
+$current_user = wp_get_current_user();
+if (!current_user_can("edit_posts") && ! current_user_can("edit_pages"))
+{
+	return;
+}
+else
+{
+?>
 <link rel="stylesheet" href="http://gallery-bank.com/wp-content/themes/infographer/css/stylesheet.min.css"/>
 <link rel="stylesheet" href="http://gallery-bank.com/wp-content/themes/infographer/css/responsive.min.css"/>
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800|PT+Sans:400,400italic,700,700italic|Oswald:400,300,700&subset=latin,latin-ext"/>
@@ -91,3 +101,6 @@
 
 <!-- DC Pricing Tables:3 End -->
 <div class="tsc_clear"></div>
+<?php
+}
+?>

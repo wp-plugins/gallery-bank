@@ -1,5 +1,14 @@
 <?php
-	$album_id = $_REQUEST["album_id"];
+global $wpdb;
+global $current_user;
+$current_user = wp_get_current_user();
+if (!current_user_can("edit_posts") && ! current_user_can("edit_pages"))
+{
+	return;
+}
+else
+{
+	$album_id = intval($_REQUEST["album_id"]);
 	$pic_detail = $wpdb->get_results
 	( 
 		$wpdb->prepare
@@ -294,6 +303,7 @@
 				cursor: 'move',
 				update: function()
 				{
+					
 					jQuery.post(ajaxurl, jQuery(this).sortable("serialize")+"&param=reorderControls&action=album_gallery_library", function(data)
 					{
 					});
@@ -303,3 +313,6 @@
 		
 	});
 </script>
+<?php
+}
+?>

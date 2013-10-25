@@ -1,6 +1,15 @@
 <?php
 global $wpdb;
+global $current_user;
+$current_user = wp_get_current_user();
 $url = plugins_url('', __FILE__);
+if (!current_user_can("edit_posts") && ! current_user_can("edit_pages"))
+{
+	return;
+}
+else
+{
+
 ?>
 <div class="wrapper">
 	<div class="content">
@@ -14,6 +23,7 @@ $url = plugins_url('', __FILE__);
 			</div>
 			<?php
 				include_once GALLERY_BK_PLUGIN_DIR .'/install-script.php';
+}
 			?>
 			
 			

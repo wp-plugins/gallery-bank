@@ -1,4 +1,13 @@
 <?php
+global $wpdb;
+global $current_user;
+$current_user = wp_get_current_user();
+if (!current_user_can("edit_posts") && ! current_user_can("edit_pages"))
+{
+	return;
+}
+else
+{
 	$album_css = $wpdb -> get_row
 	(
 		$wpdb -> prepare
@@ -1285,3 +1294,5 @@ jQuery(".inline").colorbox({inline:true, width:"700px"});
 		}
 	}
 </script>
+<?php
+}?>

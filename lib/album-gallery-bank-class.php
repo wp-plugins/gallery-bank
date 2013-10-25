@@ -530,7 +530,7 @@ else
 		else if($_REQUEST["param"] == "reorderControls")
 		{
 			
-			$updateRecordsArray = $_POST['recordsArray'];
+			$updateRecordsArray = $_REQUEST['recordsArray'];
 			$listingCounter = 1;
 			foreach ($updateRecordsArray as $recordIDValue)
 			{
@@ -551,7 +551,7 @@ else
 		{
 			$images_in_row = intval($_REQUEST['images_in_row']);
 			$row_images_id = explode("/",esc_attr($_REQUEST['row_id_images']));
-			$updateRecordsArray = $_POST['row'];
+			$updateRecordsArray = $_REQUEST['row'];
 			$listingCounter = 1;
 			$string_ids = "";
 			foreach ($updateRecordsArray as $recordIDValue)
@@ -617,7 +617,7 @@ else
 		}
 		else if($_REQUEST['param'] == "reorder_td_controls")
 		{
-			$updateRecordsArray = $_POST['recordsArray'];
+			$updateRecordsArray = $_REQUEST['recordsArray'];
 			$arr_sorting_orders = array();
 			$row_images_id = explode("/",esc_attr($_REQUEST['row_id_images']));
 			$record_val = "";
