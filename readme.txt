@@ -26,11 +26,6 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 <a href="https://www.facebook.com/GalleryBank/" target="_blank">Like & Support us on Facebook</a>
 
-**The following are other recommended plugins by the author of Gallery Bank.**
-
-* [Captcha Bank](http://wordpress.org/extend/plugins/captcha-bank/) - An easy to use powerful wordpress Captcha Plugin to prevent spam on your site.
-* [Contact Bank](http://wordpress.org/plugins/contact-bank/) - Contact Bank allows you to add a contact form easilly and simply to a post or a page.
-
 = Key Features in Standard Version =
 
 * Gallery Bank now Supports Videos
