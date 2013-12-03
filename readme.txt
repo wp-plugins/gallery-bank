@@ -3,7 +3,7 @@ Contributors: Gallery-Bank
 Tags: gallery, images, album, pictures, photos, photo album, photo gallery, media, photo albums, picture, pictures, thumbnails, slideshow, admin, best gallery plugin, filterable gallery, filterable portfolio, gallery, gallery wordpress plugin, grid gallery, image album, images, page, photo albums, plugin, portfolio, portfolio wordpress plugin, Post, Posts, widget, wordpress gallery plugin, wordpress portfolio plugin, videos, comments, widget, gallery bank
 Requires at least: 3.3
 Tested up to: 3.7.1
-Stable tag: 2.0.20
+Stable tag: 2.0.21
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,6 +25,12 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 <a href="http://gallery-bank.com/" target="_blank">Upgrade to Pro Version</a>
 
 <a href="https://www.facebook.com/GalleryBank/" target="_blank">Like & Support us on Facebook</a>
+
+
+**The following are other recommended plugins by the author of Captcha Bank.**
+
+* [Captcha Bank](http://wordpress.org/extend/plugins/captcha-bank/) - An easy to use powerful wordpress Captcha Plugin to prevent spam on your site.lbums.
+* [Contact Bank](http://wordpress.org/extend/plugins/contact-bank/) - Contact Bank allows you to add a contact form easilly and simply to a post or a page.
 
 = Key Features in Standard Version =
 
@@ -139,6 +145,11 @@ With this bulk deletion feature, you can now delete the pictures you want in bul
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+
+= 2.0.21 =
+
+* Few Bugs Fixed
 
 = 2.0.20 =
 
