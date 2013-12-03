@@ -1,3 +1,15 @@
+<?php
+global $wpdb;
+global $current_user;
+$current_user = wp_get_current_user();
+if (!current_user_can("edit_posts") && ! current_user_can("edit_pages"))
+{
+	return;
+}
+else
+{
+
+?>
 <div class="block well" style="min-height:400px;">
 	<div class="navbar">
 		<div class="navbar-inner">
@@ -33,15 +45,18 @@
 						<div class="body">
 							<div class="control-group">
 								<?php
-							$album_id = $_GET["album_id"];
-							$album = $wpdb->get_row
-							(
-								$wpdb->prepare
-								(
-								"SELECT * FROM ".gallery_bank_albums()." where album_id = %d",
-								$album_id
-								)
-							);
+								if(isset($_REQUEST["album_id"]))
+								{
+									$album_id = intval($_REQUEST["album_id"]);
+									$album = $wpdb->get_row
+									(
+										$wpdb->prepare
+										(
+										"SELECT * FROM ".gallery_bank_albums()." where album_id = %d",
+										$album_id
+										)
+									);
+								}
 							?>
 							<div class="cntrl">
 								<input type="text" name="title" class="span12" value="<?php echo stripcslashes(htmlspecialchars_decode($album->album_name)) ;?>" id="title" placeholder="<?php _e( "Enter your Album title here", gallery_bank);?>" />
@@ -1673,3 +1688,6 @@
 		}
 	}
 </script>
+<?php
+	}
+?>

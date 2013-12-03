@@ -1,9 +1,9 @@
 === Gallery Bank ===
 Contributors: Gallery-Bank
-Tags: gallery, images, album, pictures, photos, photo album, photo gallery, media, photo albums, picture, pictures, thumbnails, slideshow, admin, best gallery plugin, filterable gallery, filterable portfolio, gallery, gallery wordpress plugin, grid gallery, image album, images, page, photo albums, plugin, portfolio, portfolio wordpress plugin, Post, Posts, widget, wordpress gallery plugin, wordpress portfolio plugin, videos, comments, best gallery plugin, easy gallery, widget, gallery bank
+Tags: gallery, images, album, pictures, photos, photo album, photo gallery, media, photo albums, picture, pictures, thumbnails, slideshow, admin, best gallery plugin, filterable gallery, filterable portfolio, gallery, gallery wordpress plugin, grid gallery, image album, images, page, photo albums, plugin, portfolio, portfolio wordpress plugin, Post, Posts, widget, wordpress gallery plugin, wordpress portfolio plugin, videos, comments, widget, gallery bank
 Requires at least: 3.3
-Tested up to: 3.6
-Stable tag: 2.0.19
+Tested up to: 3.7.1
+Stable tag: 2.0.20
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,7 +18,7 @@ It has the ability to upload images, with options like adding, editing, re-order
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-**October 24, 2013: We're happy to announce that Gallery Bank reached 45,600+ plugin downloads in only 5 months. We frequently receive positive feedback from people using our gallery bank plugin for WordPress. Thanks so much for your support!**
+**December 3, 2013: We're happy to announce that Gallery Bank reached 57,600+ plugin downloads in only 6 months. We frequently receive positive feedback from people using our gallery bank plugin for WordPress. Thanks so much for your support!**
 
 <a href="http://gallery-bank.com/forum/support-forum/" target="_blank">Support Desk - feel free to ask your queries</a>
 
@@ -26,9 +26,11 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 <a href="https://www.facebook.com/GalleryBank/" target="_blank">Like & Support us on Facebook</a>
 
-**Highly Recommended Captcha Plugin Captcha Bank**
 
-**It can be downloaded [here](http://wordpress.org/plugins/captcha-bank/) from the WordPress Repository**
+**The following are other recommended plugins by the author of Captcha Bank.**
+
+* [Captcha Bank](http://wordpress.org/extend/plugins/captcha-bank/) - An easy to use powerful wordpress Captcha Plugin to prevent spam on your site.lbums.
+* [Contact Bank](http://wordpress.org/extend/plugins/contact-bank/) - Contact Bank allows you to add a contact form easilly and simply to a post or a page.
 
 = Key Features in Standard Version =
 
@@ -143,6 +145,13 @@ With this bulk deletion feature, you can now delete the pictures you want in bul
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 2.0.20 =
+
+* Few Bugs Fixed
+* Fixed Security Issues
+* Fixed Cross Scripting Issues
+* Compatibility with 3.7
 
 = 2.0.19 =
 

@@ -1,3 +1,14 @@
+<?php
+global $wpdb;
+global $current_user;
+$current_user = wp_get_current_user();
+if (!current_user_can("edit_posts") && ! current_user_can("edit_pages"))
+{
+	return;
+}
+else
+{
+?>	
 <div class="block well" style="min-height:400px;">
 	<div class="navbar">
 		<div class="navbar-inner">
@@ -143,7 +154,7 @@
 					jQuery.post(ajaxurl, "album_id="+album_id+"&param=Delete_album&action=album_gallery_library", function(data)
 					{
 						
-							var check_page = "<?php echo $_REQUEST['page']; ?>";
+							var check_page = "<?php echo intval($_REQUEST['page']); ?>";
 							window.location.href = "admin.php?page="+check_page;
 						
 					});
@@ -159,7 +170,7 @@
 				{
 					jQuery.post(ajaxurl, "&param=delete_all_albums&action=album_gallery_library", function(data)
 					{
-						var check_page = "<?php echo $_REQUEST['page']; ?>";
+						var check_page = "<?php echo intval($_REQUEST['page']); ?>";
 						window.location.href = "admin.php?page="+check_page;
 					});
 					
@@ -167,3 +178,6 @@
 			});
 		}
 </script>
+<?php
+}
+?>

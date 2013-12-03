@@ -325,7 +325,7 @@
 		}
 		elseif($_REQUEST["param"] == "get_album_name")
 		{
-			$album_id = $_REQUEST['album_id'];
+			$album_id = intval($_REQUEST['album_id']);
 			$album_name = $wpdb->get_var
 			(
 				$wpdb->prepare
