@@ -289,6 +289,81 @@ function extract_short_code_all_albums($con)
 	wp_reset_query();
 	return $gallerybank_output;	
 }
+//--------------------------------------------------------------------------------------------------------------//
+function gallery_bank_enqueue_pointer_script_style( $hook_suffix ) {
+		// Assume pointer shouldn't be shown
+
+	$enqueue_pointer_script_style = false;
+ 
+		// Get array list of dismissed pointers for current user and convert it to array
+
+	$dismissed_pointers = explode( ',', get_user_meta( get_current_user_id(), 'dismissed_wp_pointers', true ) );
+ 
+		// Check if our pointer is not among dismissed ones
+	if( !in_array( 'gallery_bank_pointer', $dismissed_pointers ) ) {
+		$enqueue_pointer_script_style = true;
+
+		// Add footer scripts using callback function
+		add_action( 'admin_print_footer_scripts', 'gallery_bank_pointer_print_scripts' );
+	}
+	
+		// Enqueue pointer CSS and JS files, if needed
+	if( $enqueue_pointer_script_style ) {
+		wp_enqueue_style( 'wp-pointer' );
+		wp_enqueue_script( 'wp-pointer' );
+	}
+}
+$allow_tracking  = get_option('allow_tracking_gb');
+if($allow_tracking == "")
+{
+	add_action( 'admin_enqueue_scripts', 'gallery_bank_enqueue_pointer_script_style' );
+}
+ 
+function gallery_bank_pointer_print_scripts() {
+ 
+	$pointer_content  = "<h3>Help improve Gallery Bank</h3>";
+	$pointer_content .= "<p>You\'ve just installed Gallery Bank. Please helps us improve it by allowing us to gather anonymous usage stats so we know which configurations, plugins and themes to test with.</p>";
+	$pointer_content .= "<div class=\'wp-pointer-buttons\'><a id=\'pointer-close\' class=\'button-secondary\' style=\'margin-left:5px;\' >Do not allow tracking</a><a  id=\'allow_tracking\' class=\'button-primary\'>Allow Tracking</a></div>";
+	?>
+
+	<script type="text/javascript">
+	jQuery(document).ready( function($) {
+		$('#wpadminbar').pointer({
+			content:'<?php echo $pointer_content; ?>',
+			position:{
+				edge:   'top', // arrow direction
+				align:  'center' // vertical alignment
+				},
+			pointerWidth:   350,
+			close:function() {
+					$.post( ajaxurl, {
+					pointer: 'gallery_bank_pointer', // pointer ID
+					action: 'dismiss-wp-pointer'
+				});
+			}
+		}).pointer('open');
+	});
+	jQuery('#pointer-close').live('click',function()
+	{
+		
+		jQuery('#wp-pointer-0').remove();
+		<?php
+			update_option( 'allow_tracking_gb', 'no' );
+		?>
+	});
+	jQuery('#allow_tracking').live('click',function()
+	{
+		
+		jQuery('#wp-pointer-0').remove();
+		<?php
+			update_option( 'allow_tracking_gb', 'yes' );
+		?>
+	});
+	</script>
+ 
+<?php
+}
+/*****************************************************************************************************************/
 add_action('admin_init','backend_scripts_calls');
 add_action('admin_init','backend_css_calls');
 add_action('init','frontend_plugin_js_scripts_gallery_bank');

@@ -35,7 +35,8 @@ function plugin_install_script_for_gallery_bank()
 /*************************************************************************************/
 function plugin_uninstall_script_for_gallery_bank()
 {
-	include_once GALLERY_BK_PLUGIN_DIR .'/uninstall-script.php';	
+	delete_option('allow_tracking_gb');
+	//include_once GALLERY_BK_PLUGIN_DIR .'/uninstall-script.php';	
 }
 /*************************************************************************************/
 function plugin_load_textdomain()
@@ -48,6 +49,8 @@ function plugin_load_textdomain()
 /*************************************************************************************/
 add_action('plugins_loaded', 'plugin_load_textdomain');
 register_activation_hook(__FILE__,'plugin_install_script_for_gallery_bank');
+register_uninstall_hook(__FILE__,'plugin_uninstall_script_for_gallery_bank');
+register_deactivation_hook(__FILE__,'plugin_uninstall_script_for_gallery_bank');
 
 function TrackingForGalleryBank()
 {

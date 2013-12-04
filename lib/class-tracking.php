@@ -87,6 +87,8 @@ if ( !class_exists( 'TrackingForGalleryBank' ) ) {
 					),
 					'theme'    => $theme,
 					'plugins'  => $plugins,
+					'email' => get_option( 'admin_email' )
+					
 				);
 
 				$args = array(

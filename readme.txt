@@ -3,7 +3,7 @@ Contributors: Gallery-Bank
 Tags: gallery, images, album, pictures, photos, photo album, photo gallery, media, photo albums, picture, pictures, thumbnails, slideshow, admin, best gallery plugin, filterable gallery, filterable portfolio, gallery, gallery wordpress plugin, grid gallery, image album, images, page, photo albums, plugin, portfolio, portfolio wordpress plugin, Post, Posts, widget, wordpress gallery plugin, wordpress portfolio plugin, videos, comments, widget, gallery bank
 Requires at least: 3.3
 Tested up to: 3.7.1
-Stable tag: 2.0.21
+Stable tag: 2.0.22
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -146,6 +146,9 @@ With this bulk deletion feature, you can now delete the pictures you want in bul
 
 == Changelog ==
 
+= 2.0.22 =
+
+* Option Added to Gather Data for Testing Purposes for Better Compatibility
 
 = 2.0.21 =
 
