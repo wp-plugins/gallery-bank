@@ -70,6 +70,8 @@
 	$image_border_size_value = explode(":", $image_settings[5]);
 	$image_radius_value = explode(":", $image_settings[6]);
 	$border_color = explode(":", $image_settings[7]);
+	$img_border_value = $image_border_size_value[1]. " solid " . $border_color[1];
+	$filter_opacity = $image_opacity[1] * 100;
 	
 	$lightbox_settings = explode(";", $content[2]);
 	$overlay_opacity = explode(":", $lightbox_settings[0]);
@@ -84,198 +86,124 @@
 	$lightbox_bg_color_value= $overlay_border_size_value[1] . " solid " . $overlay_border_color[1];
 	
 ?>
+<style>
+	.dynamic_css
+	{
+		border:<?php echo $img_border_value; ?>;
+		border-radius:<?php echo $image_radius_value[1]; ?>;
+		-moz-border-radius:<?php echo $image_radius_value[1]; ?>;
+		-webkit-border-radius:<?php echo $image_radius_value[1];?>;
+		-khtml-border-radius:<?php echo $image_radius_value[1];?>;
+		-o-border-radius:<?php echo $image_radius_value[1];?>;
+		opacity:<?php echo $image_opacity[1];?>;
+		filter:alpha(opacity=<?php echo $filter_opacity;?>);
+		-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=<?php echo $filter_opacity;?>)';
+		-moz-opacity:<?php echo $image_opacity[1]; ?>;
+		-khtml-opacity:<?php echo $image_opacity[1]; ?>;
+	}
+</style>
 	<h3><?php echo stripcslashes(htmlspecialchars_decode($album->album_name));?></h3>
 	<div id="view_bank_album_<?php echo $unique_id;?>">
-	
 	<?php
 		for ($flag = 0; $flag <count($pic_detail); $flag++)
 		{
-			$css_image_thumbnail = "border:" . $image_border_size_value[1]. " solid " . $border_color[1] . ";border-radius:" . $image_radius_value[1]. ";-moz-border-radius:" . $image_radius_value[1]. ";-webkit-border-radius:" . $image_radius_value[1]. ";-khtml-border-radius:" . $image_radius_value[1]. ";-o-border-radius:" . $image_radius_value[1].";opacity:".$image_opacity[1].";filter:alpha(opacity=".$image_opacity[1] * 100 . ");-ms-filter:'progid:DXImageTransform.Microsoft.Alpha(Opacity=".$image_opacity[1] * 100 . ")';-moz-opacity:" . $image_opacity[1] . ";-khtml-opacity:".$image_opacity[1]. ";";
-			if($pic_detail[$flag]->description == "")
+			if(($flag % $images_in_row[1] == 0) && $flag != 0)
 			{
-				if(($flag % $images_in_row[1] == 0) && $flag != 0)
+				if($pic_detail[$flag]->check_url == 1)
 				{
-					?>
-					
-					<?php
-					if($pic_detail[$flag]->check_url == 1)
+						?>
+						<div class="imgContainerSingle">
+						<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+							<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" class="dynamic_css" style="margin-left:5px;width:146px !important;" />
+						</a>
+						</div>
+						<?php
+				}
+				else 
+				{
+					if($pic_detail[$flag]->description == "")
 					{
-						if($image_content[1] == 1)
+						?>
+						<div class="imgContainerSingle">
+							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
+						<?php
+					}
+					else 
+					{
+						?>
+						<div class="imgContainerSingle">
+							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
+						<?php
+					}
+						if($pic_detail[$flag]->video == 1)
 						{
 							?>
-							<div class="imgContainerSingle">
-							<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-								<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-							</a>
-							</div>
+							<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" class="dynamic_css" style="margin-left:5px;width:146px !important;" />
 							<?php
 						}
-					}
-					else
+						else 
+						{
+							?>
+							<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" class="dynamic_css" style="margin-left:5px;width:146px !important;" />
+							<?php
+						}
+						?>
+						</a>
+					</div>
+					<?php
+				}
+			}
+			else
+			{
+				
+				if($pic_detail[$flag]->check_url == 1)
+				{
+					?>
+						<div class="imgContainerSingle">
+						<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
+							<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" class="dynamic_css" style="margin-left:5px;width:146px !important;" />
+						</a>
+						</div>
+					<?php
+				}
+				else
+				{
+					if($pic_detail[$flag]->description == "")
 					{
 						?>
 						<div class="imgContainerSingle">
 						<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
 						<?php
-						if($image_content[1] == 1)
-						{
-							if($pic_detail[$flag]->video == 1)
-							{
-								?>
-								<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-								<?php
-							}
-							else 
-							{
-								?>
-								<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-								<?php
-							}
-							?>
-						</a>
-						</div>
-						<?php
-						}
-					}
-				}
-				else 
-				{
-					
-					if($pic_detail[$flag]->check_url == 1)
-					{
-						if($image_content[1] == 1)
-						{
-							?>
-							<div class="imgContainerSingle">
-							<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-								<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-							</a>
-							</div>
-							<?php
-						}
-					}
-					else
-					{
-					?>
-					<div class="imgContainerSingle">
-						<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo $pic_detail[$flag]->pic_path; ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
-						<?php
-						if($image_content[1] == 1)
-						{
-							if($pic_detail[$flag]->video == 1)
-							{
-								?>
-								<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-								<?php
-							}
-							else
-							{
-								?>
-								<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-								<?php
-							}
-							?>
-						</a>	
-						</div>
-						<?php
-						}
-					}
-				}
-			}
-			else 
-			{
-				if(($flag % $images_in_row[1] == 0) && $flag != 0)
-				{
-					?>
-				
-					<?php
-					
-					if($pic_detail[$flag]->check_url == 1)
-					{
-						if($image_content[1] == 1)
-						{
-							?>
-							<div class="imgContainerSingle">
-							<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-								<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-							</a>
-							</div>
-							<?php
-						}
 					}
 					else 
 					{
-						if($pic_detail[$flag]->description == "")
+						?>
+						<div class="imgContainerSingle">
+						<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
+						<?php
+					}
+						if($pic_detail[$flag]->video == 1)
 						{
 							?>
-							<div class="imgContainerSingle">
-								<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
+							<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg');?>" class="dynamic_css" style="margin-left:5px;width:146px !important;" />
 							<?php
 						}
 						else 
 						{
 							?>
-							<div class="imgContainerSingle">
-								<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
+							<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" class="dynamic_css" style="margin-left:5px;width:146px !important;" />
 							<?php
 						}
-						if($image_content[1] == 1)
-						{
-							?>
-								<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-								</a>
-						</div>
-							<?php
-						}
-					}
-				}
-				else
-				{
-					
-					if($pic_detail[$flag]->check_url == 1)
-					{
-						if($image_content[1] == 1)
-						{
-							?>
-							<div class="imgContainerSingle">
-							<a href="<?php echo $pic_detail[$flag]->url;?>" target="_blank">
-								<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-							</a>
-							</div>
-							<?php
-						}
-					}
-					else
-					{
-						if($pic_detail[$flag]->description == "")
-						{
-							?>
-							<div class="imgContainerSingle">
-							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?>">
-							<?php
-						}
-						else 
-						{
-							?>
-							<div class="imgContainerSingle">
-							<a class="titan-lb_<?php echo $unique_id;?>" data-titan-lightbox="on" data-titan-group="gallery" href="<?php echo stripcslashes($pic_detail[$flag]->pic_path); ?>" title="<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->title)); ?> (<?php echo stripcslashes(htmlspecialchars($pic_detail[$flag]->description)); ?>)">
-							<?php
-						}
-						if($image_content[1] == 1)
-						{
-							?>
-							<img src="<?php echo stripcslashes($pic_detail[$flag]->pic_path);?>" style="margin-left:5px;width:146px;<?php echo $css_image_thumbnail; ?>" />
-							</a>
-							</div>
-							<?php
-						}
-					}
+						?>
+						
+						</a>
+					</div>
+					<?php
 				}
 			}
 		}
 		?>
 	</div>
-
 <script type="text/javascript">
 	jQuery(document).ready(function() {
 			jQuery('.titan-lb_<?php echo $unique_id;?>').lightbox({
@@ -296,19 +224,18 @@
 			});
 		});
 		var $container_<?php echo $unique_id;?> = jQuery('#view_bank_album_<?php echo $unique_id;?>');
-				$container_<?php echo $unique_id;?>.imagesLoaded( function(){
-					$container_<?php echo $unique_id;?>.masonry({
-					
-					itemSelector : '.imgContainerSingle',
-					isAnimated: true,
-					animationOptions: {
-						duration: 750,
-						easing: 'linear',
-						queue: false
-						}
-					});
-				});
+			$container_<?php echo $unique_id;?>.imagesLoaded( function(){
+				$container_<?php echo $unique_id;?>.masonry({
 				
+				itemSelector : '.imgContainerSingle',
+				isAnimated: true,
+				animationOptions: {
+					duration: 750,
+					easing: 'linear',
+					queue: false
+					}
+				});
+			});
 </script>
 <?php
 }

@@ -70,103 +70,74 @@ global $wpdb;
 	$cover_border_radius = explode(":", $cover_settings[5]);
 	$cover_border_color = explode(":", $cover_settings[6]);
 	$cover_border_value = $cover_border_size[1] ." solid " . $cover_border_color[1];
+	$filter_cover_opacity = $cover_opacity[1]* 100;
 	$pagination_settings = explode(";", $content[4]);
 	$pagination = explode(":", $pagination_settings[0]);
 	
-	$default_height = 151 + "px;" . "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
-	$default_width = 155 +  "px;" ."-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
-	$custom_height = $cover_height[1]  + 1 +"px;" . "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
-	$custom_width = $cover_width[1]  + 5 +"px;" . "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
-	$radius_for_shutter = "-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1];
-	
 	?>
+	<style>
+		.dynamic_cover_css
+		{
+			border:<?php echo $cover_border_value;?>;
+			-moz-border-radius:<?php echo $cover_border_radius[1]; ?>;
+			-webkit-border-radius:<?php echo $cover_border_radius[1]; ?>;
+			-khtml-border-radius:<?php echo $cover_border_radius[1]; ?>;
+			-o-border-radius:<?php echo $cover_border_radius[1]; ?>;
+			border-radius:<?php echo $cover_border_radius[1];?>;
+			-moz-opacity:<?php echo $cover_opacity[1];?>;
+			-khtml-opacity:<?php echo $cover_opacity[1];?>;
+			-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=<?php echo $filter_cover_opacity; ?>)';
+			filter:alpha(opacity=<?php echo $filter_cover_opacity; ?>);
+			opacity:<?php echo $cover_opacity[1]; ?>;
+			cursor:pointer;
+			margin-left:5px;
+			margin-top:3px;
+			width:150px;
+		}
+		.cover_div_css
+		{
+			text-align: justify;
+			display:inline-block;
+			vertical-align:top;
+			margin-left:20px;
+		}
+	</style>
 	<button id="back_button<?php echo $unique_id;?>" style="margin-top:10px; display: none;" onclick="view_albums<?php echo $unique_id;?>();">
 		<span style="color: #000;"> &laquo <?php _e('Back to Albums', gallery_bank); ?></span>
 	</button>
-	<table style="width: 100%;margin:0px;border:0px;" class="album-cover" id="tbl_<?php echo $unique_id;?>"><tr><td style="border:0px">
-	<?php
-	
-if(($setting_cover->album_cover == "undefined") || ($setting_cover->album_cover == "") )
-{
-	$url = GALLERY_BK_PLUGIN_URL."/album-cover.png";
-	?>
-	<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
-		<?php
-			$album_custom_cover_css = "Height:150px;Width:150px;". "border:"  . $cover_border_value . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
-		?>
-		
-				<a onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor: pointer" >
-					<img class="imgHolder" src="<?php echo stripcslashes($url); ?>" style="cursor:pointer;margin-left:5px;;margin-top:3px;<?php echo $album_custom_cover_css; ?>" />	
-				
-				</a>
-		
-		<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
-			<h3><?php echo stripcslashes(htmlspecialchars_decode($album->album_name)); ?>&nbsp;</h3>
-			<span><?php echo stripcslashes(htmlspecialchars_decode($album->description));?>&nbsp;</span><br/>
-			<a style="cursor: pointer;" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>)">
-				<?php _e("See Album images", gallery_bank); ?> &raquo
-			</a>
+	<table style="width: 100%;margin:0px;border:0px;" class="album-cover" id="tbl_<?php echo $unique_id;?>">
+		<tr>
+			<td style="border:0px">
+				<?php
+				if(($setting_cover->album_cover == "undefined") || ($setting_cover->album_cover == "") )
+				{
+					$url = GALLERY_BK_PLUGIN_URL."/album-cover.png";
+				}
+				else
+				{
+					$url = $setting_cover->album_cover;
+				}
+				?>
+				<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
+					<a onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor: pointer" >
+						<img class="imgHolder dynamic_cover_css" src="<?php echo stripcslashes($url); ?>" />
+					</a>
+					<div class="cover_div_css">
+						<h3><?php echo stripcslashes(htmlspecialchars_decode($album->album_name)); ?>&nbsp;</h3>
+						<span><?php echo stripcslashes(htmlspecialchars_decode($album->description));?>&nbsp;</span><br/>
+						<a style="cursor: pointer;" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>)">
+							<?php _e("See Album images", gallery_bank); ?> &raquo
+						</a>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div id="image_show_div<?php echo $unique_id;?>" style="display: none;" class="images-cover">
+		<h3 id="album_title<?php echo $unique_id;?>"></h3>
+		<div id="show_images_<?php echo $unique_id;?>" >
 		</div>
 	</div>
-	<?php
-}
-else 
-{
-	$domain = strstr($setting_cover->album_cover, '/wp-content');
-	?>
-	<div id="main_div<?php echo $unique_id;?>" style="display: block;" class="album-cover">
-		<?php
-		if($cover_content[1] == 1)
-		{
-
-			$album_custom_cover_css = "border:" .$cover_border_value.";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] .";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
-			?>
-			
-				<a onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor: pointer" >
-					
-								<img class="imgHolder" src="<?php echo stripcslashes($setting_cover->album_cover);?>" style="cursor:pointer;margin-left:5px;width:150px;height:155px;margin-top:3px;<?php echo $album_custom_cover_css; ?>" />
-							
-				</a>
-			
-			
-			<?php
-			
-		}
-		else 
-		{
-			$album_cover_css = "border:" . $cover_border_value . ";-moz-border-radius:". $cover_border_radius[1] ."; -webkit-border-radius:". $cover_border_radius[1] . ";-khtml-border-radius:". $cover_border_radius[1] . ";-o-border-radius:" . $cover_border_radius[1] . ";border-radius:" . $cover_border_radius[1].";-moz-opacity:".$cover_opacity[1]. ";-khtml-opacity:".$cover_opacity[1]. ";-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=".($cover_opacity[1]* 100).")'". ";filter:alpha(opacity=".$cover_opacity[1] * 100 . ");opacity:". $cover_opacity[1]. ";";
-			?>
-			
-			
-				<a onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>);" style="cursor: pointer" >
-					
-								<img class="imgHolder"  src="<?php echo stripcslashes($setting_cover->album_cover);?>";" style="margin-left:5px;margin-top:3px;cursor:pointer;width:<?php echo $cover_width[1];?>;height:<?php echo $cover_height[1];?>;<?php echo $album_cover_css;?>" />
-							
-				</a>
-			
-			
-			<?php
-			
-		}
-		?>
-		<div style="text-align: justify;display:inline-block;vertical-align:top;margin-left:20px;">
-			<h3><?php echo stripcslashes(htmlspecialchars_decode($album->album_name)); ?>&nbsp;</h3>
-			<span><?php echo stripcslashes(htmlspecialchars_decode($album->description));?>&nbsp;</span><br/>
-			<a style="cursor: pointer;" onclick="view_images_<?php echo $unique_id;?>(<?php echo $album_id;?>)">
-				<?php _e("See Album images", gallery_bank ); ?> &raquo
-			</a>
-		</div>
-	</div>
-	<?php
-}
-?>
-</td></tr></table>
-<div id="image_show_div<?php echo $unique_id;?>" style="display: none;" class="images-cover">
-	<h3 id="album_title<?php echo $unique_id;?>"></h3>
-	<div id="show_images_<?php echo $unique_id;?>" >
-	</div>
-</div>
-
 <script type="text/javascript">
 	var ajaxurl = "<?php echo admin_url('admin-ajax.php'); ?>";
 	function view_images_<?php echo $unique_id;?>(album_id)

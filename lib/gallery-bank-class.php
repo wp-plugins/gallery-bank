@@ -157,6 +157,7 @@ function frontend_plugin_js_scripts_gallery_bank()
 	wp_enqueue_script('jquery.titanlighbox.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.titanlighbox.js');
 	wp_enqueue_script('frontend.js', GALLERY_BK_PLUGIN_URL .'/assets/js/frontend.js');
 	wp_enqueue_script('jquery.masonry.min.js', GALLERY_BK_PLUGIN_URL .'/assets/js/jquery.masonry.min.js');
+	//wp_enqueue_script('imagesloaded.js', GALLERY_BK_PLUGIN_URL .'/assets/js/imagesloaded.js');
 }
 
 //--------------------------------------------------------------------------------------------------------------//
