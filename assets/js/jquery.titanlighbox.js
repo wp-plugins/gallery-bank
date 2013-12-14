@@ -1,3 +1,10 @@
+// jQuery WipeTouch 1.2.0
+// ------------------------------------------------------------------------
+//
+// Developed and maintained by Igor Ramadas
+// http://aboutigor.com
+// http://devv.com
+
 ;(function($) {
 	$.fn.wipetouch = function(settings) {
 		var config = {
@@ -20,7 +27,7 @@
 			wipeTopRight : false,
 			wipeBottomRight : false
 		};
-		if(settings) {
+		if (settings) {
 			$.extend(config, settings)
 		}
 		this.each(function() {
@@ -35,25 +42,25 @@
 			var clickEvent = false;
 			function onTouchStart(e) {
 				var start = useMouseEvents || (e.originalEvent.touches && e.originalEvent.touches.length > 0);
-				if(!isMoving && start) {
-					if(config.preventDefault) {
+				if (!isMoving && start) {
+					if (config.preventDefault) {
 						e.preventDefault()
 					}
-					if(config.allowDiagonal) {
-						if(!config.wipeDownLeft) {
+					if (config.allowDiagonal) {
+						if (!config.wipeDownLeft) {
 							config.wipeDownLeft = config.wipeBottomLeft
 						}
-						if(!config.wipeDownRight) {
+						if (!config.wipeDownRight) {
 							config.wipeDownRight = config.wipeBottomRight
 						}
-						if(!config.wipeUpLeft) {
+						if (!config.wipeUpLeft) {
 							config.wipeUpLeft = config.wipeTopLeft
 						}
-						if(!config.wipeUpRight) {
+						if (!config.wipeUpRight) {
 							config.wipeUpRight = config.wipeTopRight
 						}
 					}
-					if(useMouseEvents) {
+					if (useMouseEvents) {
 						startX = e.pageX;
 						startY = e.pageY;
 						$(this).bind("mousemove", onTouchMove);
@@ -72,15 +79,15 @@
 			}
 
 			function onTouchEnd(e) {
-				if(config.preventDefault) {
+				if (config.preventDefault) {
 					e.preventDefault()
 				}
-				if(useMouseEvents) {
+				if (useMouseEvents) {
 					$(this).unbind("mousemove", onTouchMove)
 				} else {
 					$(this).unbind("touchmove", onTouchMove)
 				}
-				if(isMoving) {
+				if (isMoving) {
 					touchCalculate(e)
 				} else {
 					resetTouch()
@@ -88,21 +95,21 @@
 			}
 
 			function onTouchMove(e) {
-				if(config.preventDefault) {
+				if (config.preventDefault) {
 					e.preventDefault()
 				}
-				if(useMouseEvents && !isMoving) {
+				if (useMouseEvents && !isMoving) {
 					onTouchStart(e)
 				}
-				if(isMoving) {
-					if(useMouseEvents) {
+				if (isMoving) {
+					if (useMouseEvents) {
 						curX = e.pageX;
 						curY = e.pageY
 					} else {
 						curX = e.originalEvent.touches[0].pageX;
 						curY = e.originalEvent.touches[0].pageY
 					}
-					if(config.wipeMove) {
+					if (config.wipeMove) {
 						triggerEvent(config.wipeMove, {
 							curX : curX,
 							curY : curY
@@ -120,18 +127,18 @@
 				var dy = y - startY;
 				var ax = Math.abs(dx);
 				var ay = Math.abs(dy);
-				if(ax < 15 && ay < 15 && ms < 100) {
+				if (ax < 15 && ay < 15 && ms < 100) {
 					clickEvent = false;
-					if(config.preventDefault) {
+					if (config.preventDefault) {
 						resetTouch();
 						touchedElement.trigger("click");
 						return
 					}
-				} else if(useMouseEvents) {
+				} else if (useMouseEvents) {
 					var evts = touchedElement.data("events");
-					if(evts) {
+					if (evts) {
 						var clicks = evts.click;
-						if(clicks && clicks.length > 0) {
+						if (clicks && clicks.length > 0) {
 							$.each(clicks, function(i, f) {
 								clickEvent = f;
 								return
@@ -143,9 +150,9 @@
 				var toright = dx > 0;
 				var tobottom = dy > 0;
 				var s = ((ax + ay) * 60) / ((ms) / 6 * (ms));
-				if(s < 1)
+				if (s < 1)
 					s = 1;
-				if(s > 5)
+				if (s > 5)
 					s = 5;
 				var result = {
 					speed : parseInt(s),
@@ -153,26 +160,26 @@
 					y : ay,
 					source : touchedElement
 				};
-				if(ax >= config.moveX) {
-					if(config.allowDiagonal && ay >= config.moveY) {
-						if(toright && tobottom) {
+				if (ax >= config.moveX) {
+					if (config.allowDiagonal && ay >= config.moveY) {
+						if (toright && tobottom) {
 							triggerEvent(config.wipeDownRight, result)
-						} else if(toright && !tobottom) {
+						} else if (toright && !tobottom) {
 							triggerEvent(config.wipeUpRight, result)
-						} else if(!toright && tobottom) {
+						} else if (!toright && tobottom) {
 							triggerEvent(config.wipeDownLeft, result)
 						} else {
 							triggerEvent(config.wipeUpLeft, result)
 						}
-					} else if(ax >= ay) {
-						if(toright) {
+					} else if (ax >= ay) {
+						if (toright) {
 							triggerEvent(config.wipeRight, result)
 						} else {
 							triggerEvent(config.wipeLeft, result)
 						}
 					}
-				} else if(ay >= config.moveY && ay > ax) {
-					if(tobottom) {
+				} else if (ay >= config.moveY && ay > ax) {
+					if (tobottom) {
 						triggerEvent(config.wipeDown, result)
 					} else {
 						triggerEvent(config.wipeUp, result)
@@ -186,7 +193,7 @@
 				startY = false;
 				startDate = false;
 				isMoving = false;
-				if(clickEvent) {
+				if (clickEvent) {
 					window.setTimeout(function() {
 						touchedElement.bind("click", clickEvent);
 						clickEvent = false
@@ -195,12 +202,12 @@
 			}
 
 			function triggerEvent(wipeEvent, result) {
-				if(wipeEvent) {
+				if (wipeEvent) {
 					wipeEvent(result)
 				}
 			}
 
-			if("ontouchstart" in document.documentElement) {
+			if ("ontouchstart" in document.documentElement) {
 				$(this).bind("touchstart", onTouchStart);
 				$(this).bind("touchend", onTouchEnd)
 			} else {
@@ -213,226 +220,261 @@
 	}
 })(jQuery);
 
-(function ($) {
-    var types = ['DOMMouseScroll', 'mousewheel'];
-    if ($.event.fixHooks) {
-        for (var i = types.length; i;) {
-            $.event.fixHooks[types[--i]] = $.event.mouseHooks
-        }
-    }
-    $.event.special.mousewheel = {
-        setup: function () {
-            if (this.addEventListener) {
-                for (var i = types.length; i;) {
-                    this.addEventListener(types[--i], handler, false)
-                }
-            } else {
-                this.onmousewheel = handler
-            }
-        },
-        teardown: function () {
-            if (this.removeEventListener) {
-                for (var i = types.length; i;) {
-                    this.removeEventListener(types[--i], handler, false)
-                }
-            } else {
-                this.onmousewheel = null
-            }
-        }
-    };
-    $.fn.extend({
-        mousewheel: function (fn) {
-            return fn ? this.bind("mousewheel", fn) : this.trigger("mousewheel")
-        },
-        unmousewheel: function (fn) {
-            return this.unbind("mousewheel", fn)
-        }
-    });
+/*! Copyright (c) 2011 Brandon Aaron (http://brandonaaron.net)
+ * Licensed under the MIT License (LICENSE.txt).
+ * Version: 3.0.6
+ * Requires: 1.2.2+
+ */
+;(function($) {
+	var types = ['DOMMouseScroll', 'mousewheel'];
+	if ($.event.fixHooks) {
+		for (var i = types.length; i; ) {
+			$.event.fixHooks[types[--i]] = $.event.mouseHooks
+		}
+	}
+	$.event.special.mousewheel = {
+		setup : function() {
+			if (this.addEventListener) {
+				for (var i = types.length; i; ) {
+					this.addEventListener(types[--i], handler, false)
+				}
+			} else {
+				this.onmousewheel = handler
+			}
+		},
+		teardown : function() {
+			if (this.removeEventListener) {
+				for (var i = types.length; i; ) {
+					this.removeEventListener(types[--i], handler, false)
+				}
+			} else {
+				this.onmousewheel = null
+			}
+		}
+	};
+	$.fn.extend({
+		mousewheel : function(fn) {
+			return fn ? this.bind("mousewheel", fn) : this.trigger("mousewheel")
+		},
+		unmousewheel : function(fn) {
+			return this.unbind("mousewheel", fn)
+		}
+	});
+	function handler(event) {
+		var orgEvent = event || window.event, args = [].slice.call(arguments, 1), delta = 0, returnValue = true, deltaX = 0, deltaY = 0;
+		event = $.event.fix(orgEvent);
+		event.type = "mousewheel";
+		if (orgEvent.wheelDelta) {
+			delta = orgEvent.wheelDelta / 120
+		}
+		if (orgEvent.detail) {
+			delta = -orgEvent.detail / 3
+		}
+		deltaY = delta;
+		if (orgEvent.axis !== undefined && orgEvent.axis === orgEvent.HORIZONTAL_AXIS) {
+			deltaY = 0;
+			deltaX = -1 * delta
+		}
+		if (orgEvent.wheelDeltaY !== undefined) {
+			deltaY = orgEvent.wheelDeltaY / 120
+		}
+		if (orgEvent.wheelDeltaX !== undefined) {
+			deltaX = -1 * orgEvent.wheelDeltaX / 120
+		}
+		args.unshift(event, delta, deltaX, deltaY);
+		return ($.event.dispatch || $.event.handle).apply(this, args)
+	}
 
-    function handler(event) {
-        var orgEvent = event || window.event,
-            args = [].slice.call(arguments, 1),
-            delta = 0,
-            returnValue = true,
-            deltaX = 0,
-            deltaY = 0;
-        event = $.event.fix(orgEvent);
-        event.type = "mousewheel";
-        if (orgEvent.wheelDelta) {
-            delta = orgEvent.wheelDelta / 120
-        }
-        if (orgEvent.detail) {
-            delta = -orgEvent.detail / 3
-        }
-        deltaY = delta;
-        if (orgEvent.axis !== undefined && orgEvent.axis === orgEvent.HORIZONTAL_AXIS) {
-            deltaY = 0;
-            deltaX = -1 * delta
-        }
-        if (orgEvent.wheelDeltaY !== undefined) {
-            deltaY = orgEvent.wheelDeltaY / 120
-        }
-        if (orgEvent.wheelDeltaX !== undefined) {
-            deltaX = -1 * orgEvent.wheelDeltaX / 120
-        }
-        args.unshift(event, delta, deltaX, deltaY);
-        return ($.event.dispatch || $.event.handle).apply(this, args)
-    }
 })(jQuery);
+
 /*
  * jQuery Easing v1.3 - http://gsgd.co.uk/sandbox/jquery/easing/
  *
  */
 jQuery.easing["jswing"] = jQuery.easing["swing"];
 jQuery.extend(jQuery.easing, {
-    def: "easeOutQuad",
-    swing: function (a, b, c, d, e) {
-        return jQuery.easing[jQuery.easing.def](a, b, c, d, e)
-    },
-    easeInQuad: function (a, b, c, d, e) {
-        return d * (b /= e) * b + c
-    },
-    easeOutQuad: function (a, b, c, d, e) {
-        return -d * (b /= e) * (b - 2) + c
-    },
-    easeInOutQuad: function (a, b, c, d, e) {
-        if ((b /= e / 2) < 1) return d / 2 * b * b + c;
-        return -d / 2 * (--b * (b - 2) - 1) + c
-    },
-    easeInCubic: function (a, b, c, d, e) {
-        return d * (b /= e) * b * b + c
-    },
-    easeOutCubic: function (a, b, c, d, e) {
-        return d * ((b = b / e - 1) * b * b + 1) + c
-    },
-    easeInOutCubic: function (a, b, c, d, e) {
-        if ((b /= e / 2) < 1) return d / 2 * b * b * b + c;
-        return d / 2 * ((b -= 2) * b * b + 2) + c
-    },
-    easeInQuart: function (a, b, c, d, e) {
-        return d * (b /= e) * b * b * b + c
-    },
-    easeOutQuart: function (a, b, c, d, e) {
-        return -d * ((b = b / e - 1) * b * b * b - 1) + c
-    },
-    easeInOutQuart: function (a, b, c, d, e) {
-        if ((b /= e / 2) < 1) return d / 2 * b * b * b * b + c;
-        return -d / 2 * ((b -= 2) * b * b * b - 2) + c
-    },
-    easeInQuint: function (a, b, c, d, e) {
-        return d * (b /= e) * b * b * b * b + c
-    },
-    easeOutQuint: function (a, b, c, d, e) {
-        return d * ((b = b / e - 1) * b * b * b * b + 1) + c
-    },
-    easeInOutQuint: function (a, b, c, d, e) {
-        if ((b /= e / 2) < 1) return d / 2 * b * b * b * b * b + c;
-        return d / 2 * ((b -= 2) * b * b * b * b + 2) + c
-    },
-    easeInSine: function (a, b, c, d, e) {
-        return -d * Math.cos(b / e * (Math.PI / 2)) + d + c
-    },
-    easeOutSine: function (a, b, c, d, e) {
-        return d * Math.sin(b / e * (Math.PI / 2)) + c
-    },
-    easeInOutSine: function (a, b, c, d, e) {
-        return -d / 2 * (Math.cos(Math.PI * b / e) - 1) + c
-    },
-    easeInExpo: function (a, b, c, d, e) {
-        return b == 0 ? c : d * Math.pow(2, 10 * (b / e - 1)) + c
-    },
-    easeOutExpo: function (a, b, c, d, e) {
-        return b == e ? c + d : d * (-Math.pow(2, - 10 * b / e) + 1) + c
-    },
-    easeInOutExpo: function (a, b, c, d, e) {
-        if (b == 0) return c;
-        if (b == e) return c + d;
-        if ((b /= e / 2) < 1) return d / 2 * Math.pow(2, 10 * (b - 1)) + c;
-        return d / 2 * (-Math.pow(2, - 10 * --b) + 2) + c
-    },
-    easeInCirc: function (a, b, c, d, e) {
-        return -d * (Math.sqrt(1 - (b /= e) * b) - 1) + c
-    },
-    easeOutCirc: function (a, b, c, d, e) {
-        return d * Math.sqrt(1 - (b = b / e - 1) * b) + c
-    },
-    easeInOutCirc: function (a, b, c, d, e) {
-        if ((b /= e / 2) < 1) return -d / 2 * (Math.sqrt(1 - b * b) - 1) + c;
-        return d / 2 * (Math.sqrt(1 - (b -= 2) * b) + 1) + c
-    },
-    easeInElastic: function (a, b, c, d, e) {
-        var f = 1.70158;
-        var g = 0;
-        var h = d;
-        if (b == 0) return c;
-        if ((b /= e) == 1) return c + d;
-        if (!g) g = e * .3;
-        if (h < Math.abs(d)) {
-            h = d;
-            var f = g / 4
-        } else var f = g / (2 * Math.PI) * Math.asin(d / h);
-        return -(h * Math.pow(2, 10 * (b -= 1)) * Math.sin((b * e - f) * 2 * Math.PI / g)) + c
-    },
-    easeOutElastic: function (a, b, c, d, e) {
-        var f = 1.70158;
-        var g = 0;
-        var h = d;
-        if (b == 0) return c;
-        if ((b /= e) == 1) return c + d;
-        if (!g) g = e * .3;
-        if (h < Math.abs(d)) {
-            h = d;
-            var f = g / 4
-        } else var f = g / (2 * Math.PI) * Math.asin(d / h);
-        return h * Math.pow(2, - 10 * b) * Math.sin((b * e - f) * 2 * Math.PI / g) + d + c
-    },
-    easeInOutElastic: function (a, b, c, d, e) {
-        var f = 1.70158;
-        var g = 0;
-        var h = d;
-        if (b == 0) return c;
-        if ((b /= e / 2) == 2) return c + d;
-        if (!g) g = e * .3 * 1.5;
-        if (h < Math.abs(d)) {
-            h = d;
-            var f = g / 4
-        } else var f = g / (2 * Math.PI) * Math.asin(d / h);
-        if (b < 1) return -.5 * h * Math.pow(2, 10 * (b -= 1)) * Math.sin((b * e - f) * 2 * Math.PI / g) + c;
-        return h * Math.pow(2, - 10 * (b -= 1)) * Math.sin((b * e - f) * 2 * Math.PI / g) * .5 + d + c
-    },
-    easeInBack: function (a, b, c, d, e, f) {
-        if (f == undefined) f = 1.70158;
-        return d * (b /= e) * b * ((f + 1) * b - f) + c
-    },
-    easeOutBack: function (a, b, c, d, e, f) {
-        if (f == undefined) f = 1.70158;
-        return d * ((b = b / e - 1) * b * ((f + 1) * b + f) + 1) + c
-    },
-    easeInOutBack: function (a, b, c, d, e, f) {
-        if (f == undefined) f = 1.70158;
-        if ((b /= e / 2) < 1) return d / 2 * b * b * (((f *= 1.525) + 1) * b - f) + c;
-        return d / 2 * ((b -= 2) * b * (((f *= 1.525) + 1) * b + f) + 2) + c
-    },
-    easeInBounce: function (a, b, c, d, e) {
-        return d - jQuery.easing.easeOutBounce(a, e - b, 0, d, e) + c
-    },
-    easeOutBounce: function (a, b, c, d, e) {
-        if ((b /= e) < 1 / 2.75) {
-            return d * 7.5625 * b * b + c
-        } else if (b < 2 / 2.75) {
-            return d * (7.5625 * (b -= 1.5 / 2.75) * b + .75) + c
-        } else if (b < 2.5 / 2.75) {
-            return d * (7.5625 * (b -= 2.25 / 2.75) * b + .9375) + c
-        } else {
-            return d * (7.5625 * (b -= 2.625 / 2.75) * b + .984375) + c
-        }
-    },
-    easeInOutBounce: function (a, b, c, d, e) {
-        if (b < e / 2) return jQuery.easing.easeInBounce(a, b * 2, 0, d, e) * .5 + c;
-        return jQuery.easing.easeOutBounce(a, b * 2 - e, 0, d, e) * .5 + d * .5 + c
-    }
+	def : "easeOutQuad",
+	swing : function(a, b, c, d, e) {
+		return jQuery.easing[jQuery.easing.def](a, b, c, d, e)
+	},
+	easeInQuad : function(a, b, c, d, e) {
+		return d * (b /= e) * b + c
+	},
+	easeOutQuad : function(a, b, c, d, e) {
+		return -d * (b /= e) * (b - 2) + c
+	},
+	easeInOutQuad : function(a, b, c, d, e) {
+		if ((b /= e / 2) < 1)
+			return d / 2 * b * b + c;
+		return -d / 2 * (--b * (b - 2) - 1) + c
+	},
+	easeInCubic : function(a, b, c, d, e) {
+		return d * (b /= e) * b * b + c
+	},
+	easeOutCubic : function(a, b, c, d, e) {
+		return d * (( b = b / e - 1) * b * b + 1) + c
+	},
+	easeInOutCubic : function(a, b, c, d, e) {
+		if ((b /= e / 2) < 1)
+			return d / 2 * b * b * b + c;
+		return d / 2 * ((b -= 2) * b * b + 2) + c
+	},
+	easeInQuart : function(a, b, c, d, e) {
+		return d * (b /= e) * b * b * b + c
+	},
+	easeOutQuart : function(a, b, c, d, e) {
+		return -d * (( b = b / e - 1) * b * b * b - 1) + c
+	},
+	easeInOutQuart : function(a, b, c, d, e) {
+		if ((b /= e / 2) < 1)
+			return d / 2 * b * b * b * b + c;
+		return -d / 2 * ((b -= 2) * b * b * b - 2) + c
+	},
+	easeInQuint : function(a, b, c, d, e) {
+		return d * (b /= e) * b * b * b * b + c
+	},
+	easeOutQuint : function(a, b, c, d, e) {
+		return d * (( b = b / e - 1) * b * b * b * b + 1) + c
+	},
+	easeInOutQuint : function(a, b, c, d, e) {
+		if ((b /= e / 2) < 1)
+			return d / 2 * b * b * b * b * b + c;
+		return d / 2 * ((b -= 2) * b * b * b * b + 2) + c
+	},
+	easeInSine : function(a, b, c, d, e) {
+		return -d * Math.cos(b / e * (Math.PI / 2)) + d + c
+	},
+	easeOutSine : function(a, b, c, d, e) {
+		return d * Math.sin(b / e * (Math.PI / 2)) + c
+	},
+	easeInOutSine : function(a, b, c, d, e) {
+		return -d / 2 * (Math.cos(Math.PI * b / e) - 1) + c
+	},
+	easeInExpo : function(a, b, c, d, e) {
+		return b == 0 ? c : d * Math.pow(2, 10 * (b / e - 1)) + c
+	},
+	easeOutExpo : function(a, b, c, d, e) {
+		return b == e ? c + d : d * (-Math.pow(2, -10 * b / e) + 1) + c
+	},
+	easeInOutExpo : function(a, b, c, d, e) {
+		if (b == 0)
+			return c;
+		if (b == e)
+			return c + d;
+		if ((b /= e / 2) < 1)
+			return d / 2 * Math.pow(2, 10 * (b - 1)) + c;
+		return d / 2 * (-Math.pow(2, -10 * --b) + 2) + c
+	},
+	easeInCirc : function(a, b, c, d, e) {
+		return -d * (Math.sqrt(1 - (b /= e) * b) - 1) + c
+	},
+	easeOutCirc : function(a, b, c, d, e) {
+		return d * Math.sqrt(1 - ( b = b / e - 1) * b) + c
+	},
+	easeInOutCirc : function(a, b, c, d, e) {
+		if ((b /= e / 2) < 1)
+			return -d / 2 * (Math.sqrt(1 - b * b) - 1) + c;
+		return d / 2 * (Math.sqrt(1 - (b -= 2) * b) + 1) + c
+	},
+	easeInElastic : function(a, b, c, d, e) {
+		var f = 1.70158;
+		var g = 0;
+		var h = d;
+		if (b == 0)
+			return c;
+		if ((b /= e) == 1)
+			return c + d;
+		if (!g)
+			g = e * .3;
+		if (h < Math.abs(d)) {
+			h = d;
+			var f = g / 4
+		} else
+			var f = g / (2 * Math.PI) * Math.asin(d / h);
+		return -(h * Math.pow(2, 10 * (b -= 1)) * Math.sin((b * e - f) * 2 * Math.PI / g)) + c
+	},
+	easeOutElastic : function(a, b, c, d, e) {
+		var f = 1.70158;
+		var g = 0;
+		var h = d;
+		if (b == 0)
+			return c;
+		if ((b /= e) == 1)
+			return c + d;
+		if (!g)
+			g = e * .3;
+		if (h < Math.abs(d)) {
+			h = d;
+			var f = g / 4
+		} else
+			var f = g / (2 * Math.PI) * Math.asin(d / h);
+		return h * Math.pow(2, -10 * b) * Math.sin((b * e - f) * 2 * Math.PI / g) + d + c
+	},
+	easeInOutElastic : function(a, b, c, d, e) {
+		var f = 1.70158;
+		var g = 0;
+		var h = d;
+		if (b == 0)
+			return c;
+		if ((b /= e / 2) == 2)
+			return c + d;
+		if (!g)
+			g = e * .3 * 1.5;
+		if (h < Math.abs(d)) {
+			h = d;
+			var f = g / 4
+		} else
+			var f = g / (2 * Math.PI) * Math.asin(d / h);
+		if (b < 1)
+			return -.5 * h * Math.pow(2, 10 * (b -= 1)) * Math.sin((b * e - f) * 2 * Math.PI / g) + c;
+		return h * Math.pow(2, -10 * (b -= 1)) * Math.sin((b * e - f) * 2 * Math.PI / g) * .5 + d + c
+	},
+	easeInBack : function(a, b, c, d, e, f) {
+		if (f == undefined)
+			f = 1.70158;
+		return d * (b /= e) * b * ((f + 1) * b - f) + c
+	},
+	easeOutBack : function(a, b, c, d, e, f) {
+		if (f == undefined)
+			f = 1.70158;
+		return d * (( b = b / e - 1) * b * ((f + 1) * b + f) + 1) + c
+	},
+	easeInOutBack : function(a, b, c, d, e, f) {
+		if (f == undefined)
+			f = 1.70158;
+		if ((b /= e / 2) < 1)
+			return d / 2 * b * b * (((f *= 1.525) + 1) * b - f) + c;
+		return d / 2 * ((b -= 2) * b * (((f *= 1.525) + 1) * b + f) + 2) + c
+	},
+	easeInBounce : function(a, b, c, d, e) {
+		return d - jQuery.easing.easeOutBounce(a, e - b, 0, d, e) + c
+	},
+	easeOutBounce : function(a, b, c, d, e) {
+		if ((b /= e) < 1 / 2.75) {
+			return d * 7.5625 * b * b + c
+		} else if (b < 2 / 2.75) {
+			return d * (7.5625 * (b -= 1.5 / 2.75) * b + .75) + c
+		} else if (b < 2.5 / 2.75) {
+			return d * (7.5625 * (b -= 2.25 / 2.75) * b + .9375) + c
+		} else {
+			return d * (7.5625 * (b -= 2.625 / 2.75) * b + .984375) + c
+		}
+	},
+	easeInOutBounce : function(a, b, c, d, e) {
+		if (b < e / 2)
+			return jQuery.easing.easeInBounce(a, b * 2, 0, d, e) * .5 + c;
+		return jQuery.easing.easeOutBounce(a, b * 2 - e, 0, d, e) * .5 + d * .5 + c
+	}
 });
+
+/*
+ * Titan Lightbox v 1.1
+ * Usage : jQuery('[data-titan-lightbox]').lightbox(options);
+ * Built and modified upon FancyBox 1.3.4 (http://fancybox.net, Janis Skarnelis, MIT License)
+ */
+var slideval = 0;
 ;(function(a, b, c, d) {
+
 	var e = c(a), f = c(b), g = c.lightbox = function() {
 		g.open.apply(this, arguments)
 	}, h = c.support.opacity, i = b.createTouch !== d, j = null, k = function(a) {
@@ -495,7 +537,7 @@ jQuery.extend(jQuery.easing, {
 			nextClick : false,
 			mouseWheel : false,
 			autoPlay : false,
-			interval : 3e3,
+			interval : 3000,
 			preload : 3,
 			modal : false,
 			cyclic : true,
@@ -538,7 +580,7 @@ jQuery.extend(jQuery.easing, {
 			content : null,
 			title : null,
 			template : {
-				wrap : '<div class="lightbox-wrap" tabIndex="-1"><div class="lightbox-skin"><div class="lightbox-outer"><div class="lightbox-inner"></div></div><div class="lightbox-utility"><div></div></div><div class="clear"></div></div></div>',
+				wrap : '<div class="lightbox-wrap" tabIndex="-1"><div id="lbox_skin" class="lightbox-skin"><div class="lightbox-outer"><div class="lightbox-inner"></div></div><div class="lightbox-utility"><div></div></div><div class="clear"></div></div></div>',
 				image : '<img class="lightbox-image" src="{href}" alt="" />',
 				iframe : '<iframe id="lightbox-frame{rnd}" name="lightbox-frame{rnd}" class="lightbox-iframe" frameborder="0" vspace="0" hspace="0"' + (c.browser.msie ? ' allowtransparency="true"' : "") + "></iframe>",
 				error : '<p class="lightbox-error">The requested content cannot be loaded.<br/>Please try again later.</p>',
@@ -547,21 +589,21 @@ jQuery.extend(jQuery.easing, {
 				prev : '<a title="Previous" class="lightbox-nav lightbox-prev" href="javascript:;"><span></span></a>'
 			},
 			transitionIn : "elastic",
-			transitionInSpeed : 250,
+			transitionInSpeed : 0,
 			transitionInEasing : "swing",
 			transitionInOpacity : true,
 			transitionInEffect : "zoomIn",
 			transitionOut : "elastic",
-			transitionOutSpeed : 250,
+			transitionOutSpeed : 0,
 			transitionOutEasing : "swing",
 			transitionOutOpacity : true,
 			transitionOutEffect : "zoomOut",
 			transitionNext : "shuffle",
-			transitionNextSpeed : 500,
+			transitionNextSpeed : 0,
 			transitionNextEasing : "easeInBack",
 			transitionNextEffect : "changeIn",
 			transitionPrev : "shuffle",
-			transitionPrevSpeed : 500,
+			transitionPrevSpeed : 0,
 			transitionPrevEasing : "easeOutBack",
 			transitionPrevEffect : "changeOut",
 			theme : "alt",
@@ -767,12 +809,14 @@ jQuery.extend(jQuery.easing, {
 			}
 		},
 		play : function(a) {
+
 			var b = function() {
-				clearTimeout(g.player.timer)
+				clearTimeout(g.player.timer);
 			}, d = function() {
 				b();
 				if (g.current && g.player.isActive) {
-					g.player.timer = setTimeout(g.next, g.current.interval)
+					g.player.timer = setTimeout(g.next, g.current.interval);
+
 				}
 			}, e = function() {
 				b();
@@ -1456,6 +1500,7 @@ jQuery.extend(jQuery.easing, {
 					c(a.template.next).appendTo(g.outer).bind("click.lb", g.next)
 				}
 			}
+
 			g.trigger("afterShow");
 			if (!a.cyclic && a.index === a.group.length - 1) {
 				g.play(false)
@@ -1722,11 +1767,13 @@ jQuery.extend(jQuery.easing, {
 		},
 		onPlayStart : function() {
 			if (this.buttons) {
+				slideval = 1;
 				this.buttons.play.attr("title", "Pause slideshow").addClass("btnPlayOn")
 			}
 		},
 		onPlayEnd : function() {
 			if (this.buttons) {
+				slideval = 0;
 				this.buttons.play.attr("title", "Start slideshow").removeClass("btnPlayOn")
 			}
 		},
@@ -1850,13 +1897,13 @@ jQuery.extend(jQuery.easing, {
 			if (!l(b) || c.trim(b) === "") {
 				return
 			}
-			e = c('<div class="lightbox-title lightbox-title-' + d + '-wrap">' + b + "</div>");
+			e = c('<div id="div_text_color" class="lightbox-title lightbox-title-' + d + '-wrap">' + b + "</div>");
 			switch(d) {
 				case"inside":
 					f = g.utility.find("> div");
 					break;
 				default:
-					break
+					break;
 			}
 			e.appendTo(f)
 		}
@@ -1911,5 +1958,7 @@ jQuery.extend(jQuery.easing, {
 			fixed : c.support.fixedPosition,
 			parent : c("body")
 		})
-	})
-})(window, document, jQuery); 
+	});
+
+})(window, document, jQuery);
+
