@@ -2,8 +2,8 @@
 Contributors: Gallery-Bank
 Tags: gallery, images, album, pictures, photos, photo album, photo gallery, media, photo albums, picture, pictures, thumbnails, slideshow, admin, best gallery plugin, filterable gallery, filterable portfolio, gallery, gallery wordpress plugin, grid gallery, image album, images, page, photo albums, plugin, portfolio, portfolio wordpress plugin, Post, Posts, widget, wordpress gallery plugin, wordpress portfolio plugin, videos, comments, widget, gallery bank
 Requires at least: 3.3
-Tested up to: 3.8
-Stable tag: 2.0.24
+Tested up to: 3.8.1
+Stable tag: 2.0.25
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,7 +19,7 @@ It has the ability to upload images, with options like adding, editing, re-order
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***January 26, 2014: We're happy to announce that Gallery Bank reached 73,650+ plugin downloads in only 9 months. We frequently receive positive feedback from people using our gallery bank plugin for WordPress. Thanks so much for your support!***
+***January 28, 2014: We're happy to announce that Gallery Bank reached 73,900+ plugin downloads in only 9 months. We frequently receive positive feedback from people using our gallery bank plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://gallery-bank.com/forum/support-forum/" target="_blank">Support Desk - feel free to ask your queries</a>
 
@@ -146,6 +146,10 @@ With this bulk deletion feature, you can now delete the pictures you want in bul
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 2.0.25 =
+
+* Fixed few issues with Wordpress 3.8.1 compatibility
 
 = 2.0.24 =
 
