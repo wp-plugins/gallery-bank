@@ -12,6 +12,9 @@ Gallery Bank is an easy to use Responsive WordPress Premium Gallery Plugin for g
 
 == Description ==
 
+### [Best Gallery Plugin - Photo Albums - Gallery Albums](http://gallery-bank.com/) 
+
+
 ***Wishing you all, a very Happy New Year! Welcome 2014! from Gallery Bank***
 
 Gallery Bank is the best WordPress plugin that allows you to create photo galleries with an ease in your WordPress websites.
