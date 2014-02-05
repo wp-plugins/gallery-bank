@@ -1,6 +1,7 @@
 === Gallery Bank ===
 Contributors: Gallery-Bank
-Tags: gallery, images, album, pictures, photos, photo album, photo gallery, media, photo albums, picture, pictures, thumbnails, slideshow, admin, best gallery plugin, filterable gallery, filterable portfolio, gallery, gallery wordpress plugin, grid gallery, image album, images, page, photo albums, plugin, portfolio, portfolio wordpress plugin, Post, Posts, widget, wordpress gallery plugin, wordpress portfolio plugin, videos, comments, widget, gallery bank
+Tags:  admin, album, best gallery plugin, best portfolio plugin, filterable gallery, filterable portfolio, gallery, gallery wordpress plugin, google, grid gallery, html5 mp3 player, html5 mp4 player, image, images, image album, image slider, images, links, media, page, pictures, photos, photo album, photo albums, photo gallery, photo slider, plugin, portfolio, portfolio wordpress plugin, post, posts, responsive gallery, seo image, slideshow, twitter, thumbnails, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery plugin, videos, gallery bank
+
 Requires at least: 3.3
 Tested up to: 3.8.1
 Stable tag: 2.0.25
@@ -19,7 +20,7 @@ It has the ability to upload images, with options like adding, editing, re-order
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***February 4,2014: We're happy to announce that Gallery Bank reached 76,800+ plugin downloads in only 9 months. We frequently receive positive feedback from people using our gallery bank plugin for WordPress. Thanks so much for your support!***
+***February 5,2014: We're happy to announce that Gallery Bank reached 76,800+ plugin downloads in only 9 months. We frequently receive positive feedback from people using our gallery bank plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://gallery-bank.com/forum/support-forum/" target="_blank">Support Desk - feel free to ask your queries</a>
 
