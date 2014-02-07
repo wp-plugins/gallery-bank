@@ -1,6 +1,9 @@
 === Gallery Bank ===
 Contributors: Gallery-Bank
-Tags:  admin, album, best gallery plugin, best portfolio plugin, comments, filterable gallery, filterable portfolio, gallery, gallery album, gallery bank, gallery wordpress plugin, google, grid gallery, html5 mp3 player, html5 mp4 player, image, image album, image slider, images, links, media, page, pagination gallery, pagination portfolio, photo album, photo albums, photo gallery, Photo Slider, photos, pictures, plugin, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, slideshow, thumbnails, twitter, videos, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
+Tags:  admin, album, best gallery plugin, best portfolio plugin, comments, filterable gallery, filterable portfolio, foto, fotoalbum, gallery, gallery album, gallery bank, gallery wordpress plugin, google, grid gallery, html5 mp3 player, html5 mp4 player, image, image album, image slider, images, links, media, page, pagination gallery, pagination portfolio, photo album, photo albums, photo gallery, Photo Slider, photos, pictures, plugin, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, slideshow, thumbnails, twitter, videos, widget, wordpress gallery plugin, website gallery, wordpress portfolio plugin, wp gallery, wp gallery plugin, multiple pictures, photo, photoalbum, photogallery
+
+
+
 Requires at least: 3.3
 Tested up to: 3.8.1
 Stable tag: 2.0.25
