@@ -7,7 +7,7 @@ Stable tag: 2.0.25
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Gallery Bank is an easy to use Responsive WordPress Premium Gallery Plugin for galleries, videos and albums.
+Innovative Idea Award Winner for Wordpress Plugins - 2012
 
 == Description ==
 
