@@ -7,7 +7,7 @@ Stable tag: 2.0.25
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Innovative Idea Award Winner for Wordpress Plugins - 2012
+Innovative Idea Award Winner for Wordpress Plugins
 
 == Description ==
 
