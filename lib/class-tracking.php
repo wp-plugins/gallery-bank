@@ -7,10 +7,7 @@ if ( !class_exists( 'TrackingForGalleryBank' ) ) {
 		 * Class constructor
 		 */
 		function __construct() {
-			
-			if ( !wp_next_scheduled( 'TrackingForGalleryBank' ) ) {
-				wp_schedule_event( time(), 'daily', 'TrackingForGalleryBank' );
-			}
+
 
 			add_action( 'TrackingForGalleryBank', array( $this, 'tracking_code' ) );
 		}
