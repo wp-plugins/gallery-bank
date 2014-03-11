@@ -103,7 +103,11 @@ function add_gallery_bank_icon($meta = TRUE)
         "title" => __("Purchase Pro Version", gallery_bank))
     );
 }
-
+$version = get_option("gallery-bank-pro-edition");
+if($version != "3.0")
+{
+	add_action('admin_init', 'plugin_install_script_for_gallery_bank');
+} 
 add_action("admin_bar_menu", "add_gallery_bank_icon", 100);
 add_action("plugins_loaded", "gallery_bank_plugin_load_text_domain");
 register_activation_hook(__FILE__, "plugin_install_script_for_gallery_bank");
