@@ -17,6 +17,7 @@ Gallery Bank has become the **Best Plugin** in the world for WordPress sites to 
 
 > #### **Live Demos**
 
+> * [Gallery Bank](http://tech-banker.com/gallery-bank/)
 > * [Gallery Bank Demos](http://tech-banker.com/gallery-bank/demo/)
 > * [Demo Using Masonry Layout in Grid Format](http://tech-banker.com/gallery-bank/demo/albums-in-grid-format-with-title-and-description-masonry-layout/)
 > * [Demo Using Masonry Layout in List Format](http://tech-banker.com/gallery-bank/demo/albums-in-list-format-with-title-and-description-masonry-layout/)
