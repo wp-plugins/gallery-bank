@@ -7,16 +7,6 @@ if ( !class_exists( 'TrackingForGalleryBank' ) ) {
 		 * Class constructor
 		 */
 		function __construct() {
-
-
-			add_action( 'TrackingForGalleryBank', array( $this, 'tracking_code' ) );
-		}
-
-		/**
-		 * Main tracking function.
-		 */
-		function tracking_code() {
-			// Start of Metrics
 			global $blog_id, $wpdb;
 
 				$pts = array();
@@ -37,17 +27,7 @@ if ( !class_exists( 'TrackingForGalleryBank' ) ) {
 						'author'     => $theme_data->display( 'Author', false, false ),
 						'author_uri' => $theme_data->display( 'AuthorURI', false, false ),
 					);
-					if ( isset( $theme_data->template ) && !empty( $theme_data->template ) && $theme_data->parent() ) {
-						$theme['template'] = array(
-							'version'    => $theme_data->parent()->display( 'Version', false, false ),
-							'name'       => $theme_data->parent()->display( 'Name', false, false ),
-							'theme_uri'  => $theme_data->parent()->display( 'ThemeURI', false, false ),
-							'author'     => $theme_data->parent()->display( 'Author', false, false ),
-							'author_uri' => $theme_data->parent()->display( 'AuthorURI', false, false ),
-						);
-					} else {
-						$theme['template'] = '';
-					}
+					
 				} else {
 					$theme_data = (object) get_theme_data( get_stylesheet_directory() . '/style.css' );
 					$theme      = array(
@@ -84,15 +64,29 @@ if ( !class_exists( 'TrackingForGalleryBank' ) ) {
 					),
 					'theme'    => $theme,
 					'plugins'  => $plugins,
-					'email' => get_option( 'admin_email' )
-					
+					'email' => get_option( 'admin_email' ),
+					'param'=>'class_tracking',
+					'action'=>'license_validator'
 				);
-
-				$args = array(
-					'body' => $data
+					$url = get_option("gallery-bank-updation-check-url");
+					$response = wp_remote_post( $url, array(
+					'method' => 'POST',
+					'timeout' => 45,
+					'redirection' => 5,
+					'httpversion' => '1.0',
+					'blocking' => true,
+					'headers' => array(),
+					'body' => $data 
+				    )
 				);
-				wp_remote_post( 'http://gallery-bank.com/track.php', $args );
+		}
 
+		/**
+		 * Main tracking function.
+		 */
+		function tracking_code() {
+			// Start of Metrics
+			
 		}
 	}
 
