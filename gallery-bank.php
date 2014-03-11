@@ -37,7 +37,11 @@ function plugin_install_script_for_gallery_bank()
 {
     include_once GALLERY_BK_PLUGIN_DIR . "/lib/install-script.php";
 }
-
+/*************************************************************************************/
+function plugin_uninstall_script_for_gallery_bank()
+{
+    include_once GALLERY_BK_PLUGIN_DIR . "/lib/uninstall-script.php";
+}
 /*************************************************************************************/
 function gallery_bank_plugin_load_text_domain()
 {
@@ -110,5 +114,6 @@ if($version != "3.0")
 add_action("admin_bar_menu", "add_gallery_bank_icon", 100);
 add_action("plugins_loaded", "gallery_bank_plugin_load_text_domain");
 register_activation_hook(__FILE__, "plugin_install_script_for_gallery_bank");
+register_uninstall_hook(__FILE__, "plugin_uninstall_script_for_gallery_bank");
 /*************************************************************************************/
 ?>
