@@ -1,4 +1,5 @@
 <?php
+
 global $wpdb;
 require_once(ABSPATH . "wp-admin/includes/upgrade.php");
 include_once (GALLERY_BK_PLUGIN_DIR . "/lib/class-tracking.php");
@@ -90,7 +91,7 @@ if($version != "3.0")
                                 $album_pics[$flag]->date,
                                 $album_pics[$flag]->url,
                                 $album_pics[$flag]->video,
-                                $album_pics[$flag]->tags,
+                                isset($album_pics[$flag]->tags) ? $album_pics[$flag]->tags : "" ,
                                isset($album_pics[$flag]->pic_path) ?  $album_pics[$flag]->pic_path : "",
                                0
                             )
@@ -133,7 +134,7 @@ if($version != "3.0")
                                 $album_pics[$flag]->date,
                                 $album_pics[$flag]->url,
                                 $album_pics[$flag]->video,
-                                $album_pics[$flag]->tags,
+                                isset($album_pics[$flag]->tags) ? $album_pics[$flag]->tags : "" ,
                                 $file_path[count($file_path) - 1],
                                 $album_id == $album_pics[$flag]->album_id ? 0 : 1
                             )
