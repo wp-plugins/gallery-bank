@@ -5,7 +5,8 @@ require_once(ABSPATH . "wp-admin/includes/upgrade.php");
 include_once (GALLERY_BK_PLUGIN_DIR . "/lib/class-tracking.php");
 update_option("gallery-bank-updation-check-url","http://tech-banker.com/wp-admin/admin-ajax.php");
 $version = get_option("gallery-bank-pro-edition");
-
+if($version != "3.0")
+{
     if (count($wpdb->get_var("SHOW TABLES LIKE '" . gallery_bank_albums() . "'")) == 0)
     {
         create_table_albums();
@@ -207,7 +208,7 @@ $version = get_option("gallery-bank-pro-edition");
 
         create_table_album_settings();
     }
-
+}
 
 /******************************************Code for Thumbnails Creation**********************/
 	function process_image_upload($image, $width, $height)
