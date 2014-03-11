@@ -35,7 +35,6 @@ if (file_exists(GALLERY_BK_PLUGIN_DIR . "/lib/gallery-bank-class.php")) {
 /*************************************************************************************/
 function plugin_install_script_for_gallery_bank()
 {
-	update_option("gb-test","test");
     include_once GALLERY_BK_PLUGIN_DIR . "/lib/install-script.php";
 }
 
