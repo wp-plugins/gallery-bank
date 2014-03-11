@@ -1,12 +1,11 @@
 <?php
-
 global $wpdb;
 require_once(ABSPATH . "wp-admin/includes/upgrade.php");
 update_option("gallery-bank-updation-check-url","http://tech-banker.com/wp-admin/admin-ajax.php");
 $version = get_option("gallery-bank-pro-edition");
 if($version != "3.0")
 {
-	include_once (GALLERY_BK_PLUGIN_DIR . "/lib/class-tracking.php");
+    include_once (GALLERY_BK_PLUGIN_DIR . "/lib/class-tracking.php");
     if (count($wpdb->get_var("SHOW TABLES LIKE '" . gallery_bank_albums() . "'")) == 0)
     {
         create_table_albums();
