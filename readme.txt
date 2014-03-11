@@ -49,7 +49,7 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
-<a href="http://tech-bank.com/gallery-bank/" target="_blank">Upgrade to Pro Version</a>
+<a href="http://tech-banker.com/gallery-bank/" target="_blank">Upgrade to Pro Version</a>
 
 <a href="https://www.facebook.com/TechBanker/" target="_blank">Like & Support us on Facebook</a>
 
