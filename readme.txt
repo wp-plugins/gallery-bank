@@ -164,7 +164,7 @@ There is a Shortcode Editor availble in your Page/Post where you want to impleme
 With Global Settings, you can define different settings for Thumbnails, Albums, Lightboxes, Filters, Pagination and Slideshows.
 
 
-= Gallery Bank is available in the following Languages = 
+= Gallery Bank is now available in the following Languages = 
 
 * Albanian (sq_AL)
 * Arabic (ar)
