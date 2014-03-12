@@ -46,7 +46,7 @@ It provides a powerful engine for uploading and managing galleries of images & v
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***March 12, 2014: We're happy to announce that Gallery Bank reached 88,300+ plugin downloads in only 10 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***March 12, 2014: We're happy to announce that Gallery Bank reached 88,350+ plugin downloads in only 10 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
@@ -235,12 +235,11 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 * New Feature : Thumbs are now created by the system itself rather than any 3rd Party script like Timbthumb etc.
 * New Feature : Improved Performance
 * New Feature : Improved Database to manage Gallery Bank
-* New Feature : Indexing on Tables to grad results quickly
+* New Feature : Indexing on Tables to grab results quickly
 * New Feature : Highly Optimized Code
 * New Feature : Responsive Layout
 * New Feature : Easily adaptable environment for any device.
 * New Feature : Bulk Upload of Images
-* New Feature : New Short-code Wizard
 * New Feature : New Short-code Wizard
 * New Feature : Url Redirect to redirect on click of an image.
 * New Feature : Compact Albums
