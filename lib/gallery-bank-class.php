@@ -19,6 +19,7 @@ function create_global_menus_for_gallery_bank()
 	{
 		add_submenu_page("gallery_bank", "Add New Album", __("Add New Album", gallery_bank), "read", "add_album", "add_album");
 	}
+	add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
     add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
     add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
     add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
@@ -84,7 +85,11 @@ function add_album()
 		<?php
 	}
 }
-
+function gallery_bank_shortcode()
+{
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/shortcode.php";
+}
 function edit_album()
 {
     include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";

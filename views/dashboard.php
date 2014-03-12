@@ -1,6 +1,5 @@
 <?php
-    global $wpdb;
-	
+	global $wpdb;
 	$album = $wpdb->get_results
 	(
 		$wpdb->prepare
@@ -40,6 +39,7 @@
 		$index = array_search("cover_thumbnail_border_color", $setting_keys);
 		$cover_thumbnail_border_color = $album_css[$index]->setting_value;
 	}
+	
 ?>
 <!--suppress ALL -->
         <style type="text/css">
@@ -55,10 +55,41 @@
 		-khtml-opacity:<?php echo $cover_thumbnail_opacity;?>;
 	}
 	.imgLiquidFill
-		{
-			width:<?php echo $cover_thumbnail_width;?>px;
-			height:<?php echo $cover_thumbnail_height;?>px;
-		}
+	{
+		width:<?php echo $cover_thumbnail_width;?>px;
+		height:<?php echo $cover_thumbnail_height;?>px;
+	}
+	div.pp_default .pp_top .pp_middle {
+    background-color: #ffffff;
+    }
+	.pp_pic_holder.pp_default {
+	    background-color: #ffffff;
+    }
+    div.pp_default .pp_content_container .pp_left {
+        background-color: #ffffff;
+        padding-left: 16px;
+    }
+
+    div.pp_default .pp_content_container .pp_right {
+        background-color: #ffffff;
+        padding-right: 13px;
+    }
+
+    div.pp_default .pp_bottom .pp_middle {
+        background-color: #ffffff;
+    }
+
+    div.pp_default .pp_content, div.light_rounded .pp_content {
+        background-color: #ffffff;
+    }
+
+    .pp_details {
+        background-color: #ffffff;
+    }
+
+    .ppt {
+        display: none !important;
+    }
 </style>
 <div class="fluid-layout">
 	<div class="layout-span12">
@@ -86,8 +117,9 @@
 				<a class="btn btn-danger" href="#" onclick="purge_all_images();"><?php _e("Purge Images & Albums", gallery_bank);?></a>
 				<a class="btn btn-danger" href="#" onclick="restore_factory_settings();"><?php _e("Restore Factory Settings", gallery_bank);?></a>
 				<div class="separator-doubled"></div>
+				<a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">How to setup Short-Codes for Gallery Bank into your WordPress Page/Post?</a>
 				<div class="fluid-layout">
-					<div class="layout-span12">
+					<div class="layout-span9">
 						<div class="widget-layout">
 							<div class="widget-layout-title">
 								<h4><?php _e( "Existing Albums Overview", gallery_bank ); ?></h4>
@@ -97,10 +129,11 @@
 									<thead>
 										<tr>
 											<th style="width:24%"><?php _e( "Thumbnail", gallery_bank ); ?></th>
-											<th style="width:16%"><?php _e( "Album Title", gallery_bank ); ?></th>
-											<th style="width:15%"><?php _e( "Total Images", gallery_bank ); ?></th>
-											<th style="width:18%"><?php _e( "Date of Creation", gallery_bank ); ?></th>
-											<th style="width:27%"></th>
+											<th style="width:13%"><?php _e( "Title", gallery_bank ); ?></th>
+											<th style="width:16%"><?php _e( "Total Images", gallery_bank ); ?></th>
+											<th style="width:15%"><?php _e( "Date", gallery_bank ); ?></th>
+											<th style="width:16%"><?php _e( "Short-Code", gallery_bank ); ?></th>
+											<th style="width:15%"></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -158,6 +191,9 @@
 													<td><?php echo $count_pic;?></td>
 													<td><?php echo date("d-M-Y", strtotime($album[$flag] -> album_date));?></td>
 													<td>
+														<a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">Short Codes</a>
+													</td>
+													<td>
 														<ul class="layout-table-controls">
 															<li>
 																<a href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Edit Album", gallery_bank ); ?>">
@@ -190,11 +226,35 @@
 							</div>
 						</div>
 					</div>
+					<div class="layout-span3">
+						<div class="widget-layout">
+							<div class="widget-layout-body" style="text-align: center">
+								<a target="_blank"  href="http://tech-banker.com/gallery-bank/">
+									<img width="200px" src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/gallery-bank-eco-edition.png";?>"/>
+								</a>
+							</div>
+						</div>
+						<div class="widget-layout">
+							<div class="widget-layout-body" style="text-align: center">
+								<a target="_blank" href="http://tech-banker.com/gallery-bank/">
+									<img width="200px" src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/gallery-bank-pro-edition.png";?>"/>
+								</a>
+							</div>
+						</div>	
+						<div class="widget-layout">
+							<div class="widget-layout-body" style="text-align: center">
+								<a  target="_blank" href="http://tech-banker.com/gallery-bank/">
+									<img width="200px" src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/gallery-bank-developer-edition.png";?>"/>
+								</a>
+							</div>
+						</div>		
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
 <script type="text/javascript">
 jQuery(".hovertip").tooltip();
 jQuery(document).ready(function() 
@@ -211,10 +271,18 @@ jQuery(document).ready(function()
 			"sLengthMenu": "<span>Show entries:</span> _MENU_"
 		},
 		"aaSorting": [[ 0, "asc" ]],
-		"aoColumnDefs": [{ "bSortable": false, "aTargets": [4] }]
+		"aoColumnDefs": [{ "bSortable": false, "aTargets": [5] }]
+	});
+	jQuery("a[rel^=\"prettyPhoto\"]").prettyPhoto
+	({
+		animation_speed: 1000, 
+		slideshow: 4000, 
+		autoplay_slideshow: false,
+		opacity: 0.80, 
+		show_title: false,
+		allow_resize: true
 	});
 });
-	
 	function delete_album(album_id) 
 	{
 		var r = confirm("<?php _e( "Are you sure you want to delete this Album?", gallery_bank ); ?>");

@@ -54,7 +54,37 @@
 	            -moz-opacity: <?php echo $thumbnails_opacity; ?>;
 	            -khtml-opacity: <?php echo $thumbnails_opacity; ?>;
 	        }
-	
+			div.pp_default .pp_top .pp_middle {
+		    background-color: #ffffff;
+		    }
+			.pp_pic_holder.pp_default {
+			    background-color: #ffffff;
+		    }
+		    div.pp_default .pp_content_container .pp_left {
+		        background-color: #ffffff;
+		        padding-left: 16px;
+		    }
+		
+		    div.pp_default .pp_content_container .pp_right {
+		        background-color: #ffffff;
+		        padding-right: 13px;
+		    }
+		
+		    div.pp_default .pp_bottom .pp_middle {
+		        background-color: #ffffff;
+		    }
+		
+		    div.pp_default .pp_content, div.light_rounded .pp_content {
+		        background-color: #ffffff;
+		    }
+		
+		    .pp_details {
+		        background-color: #ffffff;
+		    }
+		
+		    .ppt {
+		        display: none !important;
+		    }
 	    </style>
 	<?php
 	}
@@ -92,6 +122,7 @@
                             </strong>
 						</span>
                     </div>
+                    <a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">How to setup Short-Codes for Gallery Bank into your WordPress Page/Post?</a>
                     <div class="fluid-layout">
                         <div class="layout-span6">
                             <div class="widget-layout">
@@ -221,7 +252,15 @@ var image_width = <?php echo $thumbnails_width; ?>;
 var image_height = <?php echo $thumbnails_height; ?>;
 var cover_width = <?php echo $cover_thumbnail_width; ?>;
 var cover_height = <?php echo $cover_thumbnail_height; ?>;
-
+jQuery("a[rel^=\"prettyPhoto\"]").prettyPhoto
+({
+	animation_speed: 1000, 
+	slideshow: 4000, 
+	autoplay_slideshow: false,
+	opacity: 0.80, 
+	show_title: false,
+	allow_resize: true
+});
 oTable = jQuery("#data-table-album").dataTable
 ({
     "bJQueryUI": false,
