@@ -288,11 +288,11 @@ if($version != "3.0")
     {
         $sql = "CREATE TABLE " . gallery_bank_albums() . "(
             album_id INTEGER(10) UNSIGNED NOT NULL AUTO_INCREMENT,
-            album_name VARCHAR(100) NOT NULL,
-            author VARCHAR(100) NOT NULL,
+            album_name VARCHAR(100),
+            author VARCHAR(100),
             album_date DATE,
-            description TEXT NOT NULL,
-            album_order INTEGER(10) NOT NULL,
+            description TEXT,
+            album_order INTEGER(10),
             PRIMARY KEY (album_id)
             ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci";
         dbDelta($sql);
@@ -302,14 +302,14 @@ if($version != "3.0")
         $sql = "CREATE TABLE " . gallery_bank_pics() . "(
             pic_id INTEGER(10) UNSIGNED NOT NULL AUTO_INCREMENT,
             album_id INTEGER(10) UNSIGNED NOT NULL,
-            title TEXT NOT NULL,
-            description TEXT NOT NULL,
+            title TEXT,
+            description TEXT,
             thumbnail_url TEXT NOT NULL,
             sorting_order INTEGER(20),
             date DATE,
-            url VARCHAR(250) NOT NULL,
+            url VARCHAR(250),
             video INTEGER(10) NOT NULL,
-            tags TEXT NOT NULL,
+            tags TEXT,
             pic_name TEXT NOT NULL,
             album_cover INTEGER(1) NOT NULL,
             PRIMARY KEY(pic_id)
