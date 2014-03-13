@@ -3,7 +3,7 @@ Contributors: Gallery-Bank,contact-banker
 Tags: admin, album, best gallery plugin, best portfolio plugin, comments, easy media gallery, filterable gallery, filterable portfolio, gallery, gallery album, gallery bank, gallery wordpress plugin, google, grid gallery, html5 mp3 player, html5, mp4 player, image, image album, image slider, images, links, media, nextgen, page, pagination gallery, pagination portfolio, photo album, photo albums, photo gallery, photo slider, photos, pictures, plugin, portfolio, portfolio gallery, portfolio wordpress plugin, post, posts, responsive gallery, seo image,sidebar, slideshow, thumbnails, twitter, videos, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
 Tested up to: 3.8.1
-Stable tag: 3.0.2
+Stable tag: 3.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -220,6 +220,13 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 7. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 3.0.3 =
+
+* Updated Spanish Languages
+* Fixed Few Bugs Related to Thumbnails generation
+* Removed unwanted stuff
+
 = 3.0.2 =
 
 * Updated all Languages

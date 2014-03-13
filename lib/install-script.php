@@ -5,7 +5,6 @@ update_option("gallery-bank-updation-check-url","http://tech-banker.com/wp-admin
 $version = get_option("gallery-bank-pro-edition");
 if($version != "3.0")
 {
-    include_once (GALLERY_BK_PLUGIN_DIR . "/lib/class-tracking.php");
     if (count($wpdb->get_var("SHOW TABLES LIKE '" . gallery_bank_albums() . "'")) == 0)
     {
         create_table_albums();
@@ -218,30 +217,11 @@ if($version != "3.0")
 	    if ($temp_image_type === NULL) {
 	        return false;
 	    }
-	    switch ($temp_image_type) {
-	        case IMAGETYPE_GIF:
-	            $uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
-	            move_uploaded_file($temp_image_path, $uploaded_image_path);
-	            $thumbnail_image_path = THUMBNAIL_IMAGE_DESTINATION . preg_replace('{\\.[^\\.]+$}', '.gif', $temp_image_name);
-	            break;
-	        case IMAGETYPE_JPEG:
-	            $uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
-	            move_uploaded_file($temp_image_path, $uploaded_image_path);
-	            $type = explode(".", $image);
-	            if ($type[1] == "jpg" || $type[1] == "JPG") {
-	                $thumbnail_image_path = THUMBNAIL_IMAGE_DESTINATION . preg_replace('{\\.[^\\.]+$}', '.jpg', $temp_image_name);
-	            } else {
-	                $thumbnail_image_path = THUMBNAIL_IMAGE_DESTINATION . preg_replace('{\\.[^\\.]+$}', '.jpeg', $temp_image_name);
-	            }
-	            break;
-	        case IMAGETYPE_PNG:
-	            $uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
-	            move_uploaded_file($temp_image_path, $uploaded_image_path);
-	            $thumbnail_image_path = THUMBNAIL_IMAGE_DESTINATION . preg_replace('{\\.[^\\.]+$}', '.png', $temp_image_name);
-	            break;
-	        default:
-	            return false;
-	    }
+		$uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
+	    move_uploaded_file($temp_image_path, $uploaded_image_path);
+	    $type = explode(".", $image);
+		$thumbnail_image_path = THUMBNAIL_IMAGE_DESTINATION . preg_replace('{\\.[^\\.]+$}', '.'.$type[1], $temp_image_name);
+	
 	    $result = generate_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
 	    return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
     }
@@ -253,30 +233,11 @@ if($version != "3.0")
         if ($temp_image_type === NULL) {
             return false;
         }
-        switch ($temp_image_type) {
-            case IMAGETYPE_GIF:
-                $uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
-                move_uploaded_file($temp_image_path, $uploaded_image_path);
-                $thumbnail_image_path = THUMBNAIL_ALBUM_DESTINATION . preg_replace("{\\.[^\\.]+$}", ".gif", $temp_image_name);
-                break;
-            case IMAGETYPE_JPEG:
-                $uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
-                move_uploaded_file($temp_image_path, $uploaded_image_path);
-                $type = explode(".", $album_image);
-                if ($type[1] == "jpg" || $type[1] == "JPG") {
-                    $thumbnail_image_path = THUMBNAIL_ALBUM_DESTINATION . preg_replace("{\\.[^\\.]+$}", ".jpg", $temp_image_name);
-                } else {
-                    $thumbnail_image_path = THUMBNAIL_ALBUM_DESTINATION . preg_replace("{\\.[^\\.]+$}", ".jpeg", $temp_image_name);
-                }
-                break;
-            case IMAGETYPE_PNG:
-                $uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
-                move_uploaded_file($temp_image_path, $uploaded_image_path);
-                $thumbnail_image_path = THUMBNAIL_ALBUM_DESTINATION . preg_replace("{\\.[^\\.]+$}", ".png", $temp_image_name);
-                break;
-            default:
-                return false;
-        }
+		$uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
+        move_uploaded_file($temp_image_path, $uploaded_image_path);
+		$type = explode(".", $album_image);
+		$thumbnail_image_path = THUMBNAIL_ALBUM_DESTINATION . preg_replace("{\\.[^\\.]+$}", ".".$type[1], $temp_image_name);
+        
         $result = generate_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
         return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
     }
