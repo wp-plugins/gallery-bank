@@ -213,11 +213,10 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 
 1. Gallery Bank Dashboard Page
 2. Add New Album
-3. Locating Shortcode Editor
-4. How to create Shortcode using Shortcode Editor.
-5. Displaying Images using Masonry Layout
-6. Displaying Images using Thumbnails Layout
-7. Opening Image of the Album in Lightbox.
+3. How to create Shortcode using Shortcode Editor.
+4. Displaying Images using Masonry Layout
+5. Displaying Images using Thumbnails Layout
+6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
 
