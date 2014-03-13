@@ -132,7 +132,7 @@
 											<th style="width:13%"><?php _e( "Title", gallery_bank ); ?></th>
 											<th style="width:16%"><?php _e( "Total Images", gallery_bank ); ?></th>
 											<th style="width:15%"><?php _e( "Date", gallery_bank ); ?></th>
-											<th style="width:16%"><?php _e( "Short-Code", gallery_bank ); ?></th>
+											<th style="width:16%"><?php _e( "Short-Codes", gallery_bank ); ?></th>
 											<th style="width:15%"></th>
 										</tr>
 									</thead>

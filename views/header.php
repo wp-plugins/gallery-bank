@@ -30,3 +30,8 @@ if(in_array($language, $gb_lang))
 		<strong>You will be only allowed to add 2 galleries. Kindly purchase Premium Version for full access.</strong>
 	</span>
 </div>
+<div class="message red" style="display: block;margin-top:15px">
+	<span>
+		<strong>If you are getting problems with thumbnails, then you need to set 777(write) permissions to Gallery Bank folder in order to save the images/thumbnails. </strong>
+	</span>
+</div>

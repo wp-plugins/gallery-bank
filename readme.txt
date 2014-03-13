@@ -19,6 +19,10 @@ Gallery Bank has become the **Best Plugin** in the world for WordPress sites to 
 
 > * [Gallery Bank](http://tech-banker.com/gallery-bank/)
 > * [Gallery Bank Demos](http://tech-banker.com/gallery-bank/demo/)
+> * [Demo Using Thumbnails Layout in Grid Format](http://tech-banker.com/gallery-bank/demo/abums-in-grid-format-with-title-and-description-thumbnails-layout/)
+> * [Demo Using Thumbnails Layout in List Format](http://tech-banker.com/gallery-bank/demo/albums-in-list-format-with-title-and-description-thumbnails-layout/)
+> * [Demo Using Thumbnails Layout in Individual Album](http://tech-banker.com/gallery-bank/demo/individual-album-with-title-and-description-thumbnails-layout/)
+> * [Demo Using Thumbnails Layout in Individual Images](http://tech-banker.com/gallery-bank/demo/individual-images-with-title-and-description-thumbnails-layout/)
 > * [Demo Using Masonry Layout in Grid Format](http://tech-banker.com/gallery-bank/demo/albums-in-grid-format-with-title-and-description-masonry-layout/)
 > * [Demo Using Masonry Layout in List Format](http://tech-banker.com/gallery-bank/demo/albums-in-list-format-with-title-and-description-masonry-layout/)
 > * [Demo Using Masonry Layout in Individual Album](http://tech-banker.com/gallery-bank/demo/individual-album-with-title-and-description-masonry-layout/)
@@ -27,18 +31,13 @@ Gallery Bank has become the **Best Plugin** in the world for WordPress sites to 
 > * [Demo Using Filmstrip Layout in List Format](http://tech-banker.com/gallery-bank/demo/albums-in-list-format-with-title-and-description-filmstrip-layout/)
 > * [Demo Using Filmstrip Layout in Individual Album](http://tech-banker.com/gallery-bank/demo/individual-album-with-title-and-description-filmstrip-layout/)
 > * [Demo Using Filmstrip Layout in Individual Images](http://tech-banker.com/gallery-bank/demo/individual-images-with-title-and-description-filmstrip-layout/)
-> * [Demo Using Thumbnails Layout in Grid Format](http://tech-banker.com/gallery-bank/demo/abums-in-grid-format-with-title-and-description-thumbnails-layout/)
-> * [Demo Using Thumbnails Layout in List Format](http://tech-banker.com/gallery-bank/demo/albums-in-list-format-with-title-and-description-thumbnails-layout/)
-> * [Demo Using Thumbnails Layout in Individual Album](http://tech-banker.com/gallery-bank/demo/individual-album-with-title-and-description-thumbnails-layout/)
-> * [Demo Using Thumbnails Layout in Individual Images](http://tech-banker.com/gallery-bank/demo/individual-images-with-title-and-description-thumbnails-layout/)
+> * [Demo Using Slideshow Layout in Grid Format](http://tech-banker.com/gallery-bank/demo/albums-in-grid-format-with-title-and-description-slideshow-layout/)
+> * [Demo Using Slideshow Layout in List Format](http://tech-banker.com/gallery-bank/demo/albums-in-list-format-with-title-and-description-slideshow-layout/)
+> * [Demo Using Slideshow Layout in Individual Album](http://tech-banker.com/gallery-bank/demo/individual-album-with-title-and-description-slideshow-layout/)
 > * [Demo Using Blog Style Layout in Grid Format](http://tech-banker.com/gallery-bank/demo/albums-in-grid-format-with-title-and-description-blog-style-layout/)
 > * [Demo Using Blog Style Layout in List Format](http://tech-banker.com/gallery-bank/demo/albums-in-list-format-with-title-and-description-blog-style-layout/)
 > * [Demo Using Blog Style Layout in Individual Album](http://tech-banker.com/gallery-bank/demo/individual-album-with-title-and-description-blog-style-layout/)
 > * [Demo Using Blog Style Layout in Individual Images](http://tech-banker.com/gallery-bank/demo/individual-images-with-title-and-description-blog-style-layout/)
-> * [Demo Using Slideshow Layout in Grid Format](http://tech-banker.com/gallery-bank/demo/albums-in-grid-format-with-title-and-description-slideshow-layout/)
-> * [Demo Using Slideshow Layout in List Format](http://tech-banker.com/gallery-bank/demo/albums-in-list-format-with-title-and-description-slideshow-layout/)
-> * [Demo Using Slideshow Layout in Individual Album](http://tech-banker.com/gallery-bank/demo/individual-album-with-title-and-description-slideshow-layout/)
-
 
 It provides a powerful engine for uploading and managing galleries of images & videos, with the ability to batch upload, add/delete/rearrange/sort images, edit thumbnails, 100+ settings, and even much more. It also provides different front-end display styles (filmstrips, slideshows, masonry, blog styles and thumbnail galleries), all of them comes with a wide array of options for controlling size, style, timing, transitions, controls, lightbox effects, and more.
 
@@ -46,7 +45,7 @@ It provides a powerful engine for uploading and managing galleries of images & v
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***March 12, 2014: We're happy to announce that Gallery Bank reached 88,750+ plugin downloads in only 10 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***March 12, 2014: We're happy to announce that Gallery Bank reached 88,800+ plugin downloads in only 10 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
@@ -221,6 +220,11 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 7. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+= 3.0.2 =
+
+* Updated all Languages
+* Fixed Few Bugs Related to Thumbnails
+* Added Warning Permissions Message for Thumbnails
 
 = 3.0.1 =
 
