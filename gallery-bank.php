@@ -4,7 +4,7 @@
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.3
+ Version: 3.0.4
  Author URI: http://tech-banker.com
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -13,6 +13,10 @@
 if (!defined("GALLERY_DEBUG_MODE")) define("GALLERY_DEBUG_MODE", false);
 if (!defined("GALLERY_BK_FILE")) define("GALLERY_BK_FILE", __FILE__);
 if (!defined("GALLERY_CONTENT_DIR")) define("GALLERY_CONTENT_DIR", ABSPATH . "wp-content");
+if (!defined("GALLERY_MAIN_DIR")) define("GALLERY_MAIN_DIR", ABSPATH . "wp-content/gallery-bank");
+if (!defined("GALLERY_MAIN_UPLOAD_DIR")) define("GALLERY_MAIN_UPLOAD_DIR", ABSPATH . "wp-content/gallery-bank/gallery-uploads/");
+if (!defined("GALLERY_MAIN_THUMB_DIR")) define("GALLERY_MAIN_THUMB_DIR", ABSPATH . "wp-content/gallery-bank/thumbs/");
+if (!defined("GALLERY_MAIN_ALB_THUMB_DIR")) define("GALLERY_MAIN_ALB_THUMB_DIR", ABSPATH . "wp-content/gallery-bank/album-thumbs/");
 if (!defined("GALLERY_CONTENT_URL")) define("GALLERY_CONTENT_URL", site_url() . "/wp-content");
 if (!defined("GALLERY_PLUGIN_DIR")) define("GALLERY_PLUGIN_DIR", GALLERY_CONTENT_DIR . "/plugins");
 if (!defined("GALLERY_PLUGIN_URL")) define("GALLERY_PLUGIN_URL", GALLERY_CONTENT_URL . "/plugins");
@@ -20,14 +24,28 @@ if (!defined("GALLERY_BK_PLUGIN_FILENAME")) define("GALLERY_BK_PLUGIN_FILENAME",
 if (!defined("GALLERY_BK_PLUGIN_DIRNAME")) define("GALLERY_BK_PLUGIN_DIRNAME", plugin_basename(dirname(__FILE__)));
 if (!defined("GALLERY_BK_PLUGIN_DIR")) define("GALLERY_BK_PLUGIN_DIR", GALLERY_PLUGIN_DIR . "/" . GALLERY_BK_PLUGIN_DIRNAME);
 if (!defined("GALLERY_BK_PLUGIN_URL")) define("GALLERY_BK_PLUGIN_URL", site_url() . "/wp-content/plugins/" . GALLERY_BK_PLUGIN_DIRNAME);
-if (!defined("UPLOADED_IMAGE_DESTINATION")) define("UPLOADED_IMAGE_DESTINATION", GALLERY_BK_PLUGIN_DIR . "/gallery-uploads/");
-if (!defined("THUMBNAIL_IMAGE_DESTINATION")) define("THUMBNAIL_IMAGE_DESTINATION", GALLERY_BK_PLUGIN_DIR . "/thumbs/");
-if (!defined("THUMBNAIL_ALBUM_DESTINATION")) define("THUMBNAIL_ALBUM_DESTINATION", GALLERY_BK_PLUGIN_DIR . "/album-thumbs/");
-if (!defined("GALLERY_BK_THUMB_URL")) define("GALLERY_BK_THUMB_URL", site_url() . "/wp-content/plugins/" . GALLERY_BK_PLUGIN_DIRNAME . "/gallery-uploads/");
-if (!defined("GALLERY_BK_THUMB_SMALL_URL")) define("GALLERY_BK_THUMB_SMALL_URL", site_url() . "/wp-content/plugins/" . GALLERY_BK_PLUGIN_DIRNAME . "/thumbs/");
-if (!defined("GALLERY_BK_ALBUM_THUMB_URL")) define("GALLERY_BK_ALBUM_THUMB_URL", site_url() . "/wp-content/plugins/" . GALLERY_BK_PLUGIN_DIRNAME . "/album-thumbs/");
+
+if (!defined("GALLERY_BK_THUMB_URL")) define("GALLERY_BK_THUMB_URL", site_url() . "/wp-content/gallery-bank/gallery-uploads/");
+if (!defined("GALLERY_BK_THUMB_SMALL_URL")) define("GALLERY_BK_THUMB_SMALL_URL", site_url() . "/wp-content/gallery-bank/thumbs/");
+if (!defined("GALLERY_BK_ALBUM_THUMB_URL")) define("GALLERY_BK_ALBUM_THUMB_URL", site_url() . "/wp-content/gallery-bank/album-thumbs/");
 if (!defined("gallery_bank")) define("gallery_bank", "gallery-bank");
 
+if (!is_dir(GALLERY_MAIN_DIR))
+{
+	wp_mkdir_p(GALLERY_MAIN_DIR);
+}
+if (!is_dir(GALLERY_MAIN_UPLOAD_DIR))
+{
+	wp_mkdir_p(GALLERY_MAIN_UPLOAD_DIR);
+}
+if (!is_dir(GALLERY_MAIN_THUMB_DIR))
+{
+	wp_mkdir_p(GALLERY_MAIN_THUMB_DIR);
+}
+if (!is_dir(GALLERY_MAIN_ALB_THUMB_DIR))
+{
+	wp_mkdir_p(GALLERY_MAIN_ALB_THUMB_DIR);
+}
 /*************************************************************************************/
 if (file_exists(GALLERY_BK_PLUGIN_DIR . "/lib/gallery-bank-class.php")) {
     require_once(GALLERY_BK_PLUGIN_DIR . "/lib/gallery-bank-class.php");
@@ -40,7 +58,6 @@ function plugin_install_script_for_gallery_bank()
 /*************************************************************************************/
 function plugin_uninstall_script_for_gallery_bank()
 {
-    include_once GALLERY_BK_PLUGIN_DIR . "/lib/uninstall-script.php";
 }
 /*************************************************************************************/
 function gallery_bank_plugin_load_text_domain()
@@ -107,7 +124,7 @@ function add_gallery_bank_icon($meta = TRUE)
     );
 }
 $version = get_option("gallery-bank-pro-edition");
-if($version != "3.0")
+if($version == "" || $version == "3.0")
 {
 	add_action('admin_init', 'plugin_install_script_for_gallery_bank');
 } 

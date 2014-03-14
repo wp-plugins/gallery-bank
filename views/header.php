@@ -32,6 +32,6 @@ if(in_array($language, $gb_lang))
 </div>
 <div class="message red" style="display: block;margin-top:15px">
 	<span>
-		<strong>If you are getting problems with thumbnails, then you need to set 777(write) permissions to Gallery Bank folder in order to save the images/thumbnails. </strong>
+		<strong>If you are getting problems with thumbnails, then you need to set 777(write) permissions to <?php echo GALLERY_MAIN_DIR ?> (recursive files & directories) in order to save the images/thumbnails. </strong>
 	</span>
 </div>

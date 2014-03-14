@@ -3,7 +3,7 @@ global $wpdb;
 require_once(ABSPATH . "wp-admin/includes/upgrade.php");
 update_option("gallery-bank-updation-check-url","http://tech-banker.com/wp-admin/admin-ajax.php");
 $version = get_option("gallery-bank-pro-edition");
-if($version != "3.0")
+if($version == "")
 {
     if (count($wpdb->get_var("SHOW TABLES LIKE '" . gallery_bank_albums() . "'")) == 0)
     {
@@ -69,126 +69,79 @@ if($version != "3.0")
             $album_id = 0;
             for($flag = 0; $flag < count($album_pics); $flag++)
             {
-                if(isset($album_pics[$flag]->video))
+				if($album_pics[$flag]->video == 1)
                 {
-                    if($album_pics[$flag]->video == 1)
-                    {
-                        $wpdb->query
+                    $wpdb->query
+                    (
+                        $wpdb->prepare
                         (
-                            $wpdb->prepare
-                            (
-                                "INSERT INTO " . gallery_bank_pics() . "(pic_id, album_id, title, description, thumbnail_url,
-                                sorting_order, date, url, video, tags, pic_name, album_cover) VALUES(%d, %d, %s, %s, %s, %d, %s,
-                                %s, %d, %s, %s, %d)",
-                                $album_pics[$flag]->pic_id,
-                                $album_pics[$flag]->album_id,
-                                $album_pics[$flag]->title,
-                                $album_pics[$flag]->description,
-                                $album_pics[$flag]->thumbnail_url,
-                                $album_pics[$flag]->sorting_order,
-                                $album_pics[$flag]->date,
-                                $album_pics[$flag]->url,
-                                $album_pics[$flag]->video,
-                                isset($album_pics[$flag]->tags) ? $album_pics[$flag]->tags : "" ,
-                               isset($album_pics[$flag]->pic_path) ?  $album_pics[$flag]->pic_path : "",
-                               0
-                            )
-                        );
-                    }
-                    else
-                    {
-                        $file_path = explode("/", $album_pics[$flag]->pic_path);
-                        $destination = UPLOADED_IMAGE_DESTINATION . $file_path[count($file_path) - 1];
-
-                        if (PHP_VERSION > 5)
-                        {
-                            copy($album_pics[$flag]->pic_path, $destination);
-                        }
-                        else
-                        {
-                            $content = file_get_contents($album_pics[$flag]->pic_path);
-                            $fp = fopen($destination, "w");
-                            fwrite($fp, $content);
-                            fclose($fp);
-                        }
-                        if(file_exists($destination))
-                        {
-                            process_image_upload($file_path[count($file_path) - 1], 160, 120);
-                        }
-
-                        $wpdb->query
-                        (
-                            $wpdb->prepare
-                            (
-                                "INSERT INTO " . gallery_bank_pics() . "(pic_id, album_id, title, description, thumbnail_url,
-                        sorting_order, date, url, video, tags, pic_name, album_cover) VALUES(%d, %d, %s, %s, %s, %d, %s,
-                        %s, %d, %s, %s, %d)",
-                                $album_pics[$flag]->pic_id,
-                                $album_pics[$flag]->album_id,
-                                $album_pics[$flag]->title,
-                                $album_pics[$flag]->description,
-                                $file_path[count($file_path) - 1],
-                                $album_pics[$flag]->sorting_order,
-                                $album_pics[$flag]->date,
-                                $album_pics[$flag]->url,
-                                $album_pics[$flag]->video,
-                                isset($album_pics[$flag]->tags) ? $album_pics[$flag]->tags : "" ,
-                                $file_path[count($file_path) - 1],
-                                $album_id == $album_pics[$flag]->album_id ? 0 : 1
-                            )
-                        );
-                        if($album_id != $album_pics[$flag]->album_id)
-                        {
-                            process_album_upload($file_path[count($file_path) - 1], 160, 120);
-                        }
-                        $album_id = $album_pics[$flag]->album_id;
-                    }
+                            "INSERT INTO " . gallery_bank_pics() . "(pic_id, album_id, title, description, thumbnail_url,
+                            sorting_order, date, url, video, tags, pic_name, album_cover) VALUES(%d, %d, %s, %s, %s, %d, %s,
+                            %s, %d, %s, %s, %d)",
+                            $album_pics[$flag]->pic_id,
+                            $album_pics[$flag]->album_id,
+                            $album_pics[$flag]->title,
+                            $album_pics[$flag]->description,
+                            $album_pics[$flag]->thumbnail_url,
+                            $album_pics[$flag]->sorting_order,
+                            $album_pics[$flag]->date,
+                            $album_pics[$flag]->url,
+                            isset($album_pics[$flag]->video) ? $album_pics[$flag]->video : 0,
+                            isset($album_pics[$flag]->tags) ? $album_pics[$flag]->tags : "" ,
+                            isset($album_pics[$flag]->pic_path) ?  $album_pics[$flag]->pic_path : "",
+                           0
+                        )
+                    );
                 }
                 else
                 {
-                    $file_path = explode("/", $album_pics[$flag]->pic_path);
-                    $destination = UPLOADED_IMAGE_DESTINATION . $file_path[count($file_path) - 1];
+                    $file_path = $album_pics[$flag]->pic_path;
+					
+					$file_name_exct = explode("/", $album_pics[$flag]->pic_path);
+                    $file_name = $file_name_exct[count($file_name_exct) - 1];
+					$src = str_replace(site_url("/"), "", $file_path);
+                    $destination = GALLERY_MAIN_UPLOAD_DIR.$file_name;
 
                     if (PHP_VERSION > 5)
                     {
-                        copy($album_pics[$flag]->pic_path, $destination);
+                        copy(ABSPATH.$src, $destination);
                     }
                     else
                     {
-                        $content = file_get_contents($album_pics[$flag]->pic_path);
+                        $content = file_get_contents(ABSPATH.$src);
                         $fp = fopen($destination, "w");
                         fwrite($fp, $content);
                         fclose($fp);
                     }
                     if(file_exists($destination))
                     {
-                        process_image_upload($file_path[count($file_path) - 1], 160, 120);
+                        process_image_upload($file_name, 160, 120);
                     }
 
                     $wpdb->query
+                    (
+                        $wpdb->prepare
                         (
-                            $wpdb->prepare
-                                (
-                                    "INSERT INTO " . gallery_bank_pics() . "(pic_id, album_id, title, description, thumbnail_url,
-                            sorting_order, date, url, video, tags, pic_name, album_cover) VALUES(%d, %d, %s, %s, %s, %d, %s,
-                            %s, %d, %s, %s, %d)",
-                                    $album_pics[$flag]->pic_id,
-                                    $album_pics[$flag]->album_id,
-                                    $album_pics[$flag]->title,
-                                    $album_pics[$flag]->description,
-                                    $file_path[count($file_path) - 1],
-                                    $album_pics[$flag]->sorting_order,
-                                    $album_pics[$flag]->date,
-                                    $album_pics[$flag]->url,
-                                    0,
-                                    $album_pics[$flag]->tags,
-                                    $file_path[count($file_path) - 1],
-                                    $album_id == $album_pics[$flag]->album_id ? 0 : 1
-                                )
-                        );
+                            "INSERT INTO " . gallery_bank_pics() . "(pic_id, album_id, title, description, thumbnail_url,
+                    sorting_order, date, url, video, tags, pic_name, album_cover) VALUES(%d, %d, %s, %s, %s, %d, %s,
+                    %s, %d, %s, %s, %d)",
+                            $album_pics[$flag]->pic_id,
+                            $album_pics[$flag]->album_id,
+                            $album_pics[$flag]->title,
+                            $album_pics[$flag]->description,
+                            $file_name,
+                            $album_pics[$flag]->sorting_order,
+                            $album_pics[$flag]->date,
+                            $album_pics[$flag]->url,
+                            $album_pics[$flag]->video,
+                            isset($album_pics[$flag]->tags) ? $album_pics[$flag]->tags : "" ,
+                            $file_name,
+                            $album_id == $album_pics[$flag]->album_id ? 0 : 1
+                        )
+                    );
                     if($album_id != $album_pics[$flag]->album_id)
                     {
-                        process_album_upload($file_path[count($file_path) - 1], 160, 120);
+                        process_album_upload($file_name, 160, 120);
                     }
                     $album_id = $album_pics[$flag]->album_id;
                 }
@@ -206,37 +159,42 @@ if($version != "3.0")
 
         create_table_album_settings();
     }
+	 update_option("gallery-bank-pro-edition", "3.1");
 }
-
+else if($version == "3.0")
+{
+	update_option("gallery-bank-pro-edition", "3.1");
+}
 /******************************************Code for Thumbnails Creation**********************/
+
 	function process_image_upload($image, $width, $height)
 	{
-	    $temp_image_path = UPLOADED_IMAGE_DESTINATION . $image;
+	    $temp_image_path = GALLERY_MAIN_UPLOAD_DIR . $image;
 	    $temp_image_name = $image;
 	    list(, , $temp_image_type) = getimagesize($temp_image_path);
 	    if ($temp_image_type === NULL) {
 	        return false;
 	    }
-		$uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
+		$uploaded_image_path = GALLERY_MAIN_UPLOAD_DIR . $temp_image_name;
 	    move_uploaded_file($temp_image_path, $uploaded_image_path);
 	    $type = explode(".", $image);
-		$thumbnail_image_path = THUMBNAIL_IMAGE_DESTINATION . preg_replace('{\\.[^\\.]+$}', '.'.$type[1], $temp_image_name);
+		$thumbnail_image_path = GALLERY_MAIN_THUMB_DIR . preg_replace('{\\.[^\\.]+$}', '.'.$type[1], $temp_image_name);
 	
 	    $result = generate_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
 	    return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
     }
     function process_album_upload($album_image, $width, $height)
     {
-        $temp_image_path = UPLOADED_IMAGE_DESTINATION . $album_image;
+        $temp_image_path = GALLERY_MAIN_UPLOAD_DIR . $album_image;
         $temp_image_name = $album_image;
         list(, , $temp_image_type) = getimagesize($temp_image_path);
         if ($temp_image_type === NULL) {
             return false;
         }
-		$uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
+		$uploaded_image_path = GALLERY_MAIN_UPLOAD_DIR . $temp_image_name;
         move_uploaded_file($temp_image_path, $uploaded_image_path);
 		$type = explode(".", $album_image);
-		$thumbnail_image_path = THUMBNAIL_ALBUM_DESTINATION . preg_replace("{\\.[^\\.]+$}", ".".$type[1], $temp_image_name);
+		$thumbnail_image_path = GALLERY_MAIN_ALB_THUMB_DIR . preg_replace("{\\.[^\\.]+$}", ".".$type[1], $temp_image_name);
         
         $result = generate_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
         return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
@@ -291,7 +249,7 @@ if($version != "3.0")
             album_name VARCHAR(100),
             author VARCHAR(100),
             album_date DATE,
-            description TEXT,
+            description TEXT ,
             album_order INTEGER(10),
             PRIMARY KEY (album_id)
             ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE utf8_general_ci";
@@ -330,5 +288,5 @@ if($version != "3.0")
         include_once (GALLERY_BK_PLUGIN_DIR . "/lib/include_settings.php");
 
     }
-    update_option("gallery-bank-pro-edition", "3.0");
+   
 ?>

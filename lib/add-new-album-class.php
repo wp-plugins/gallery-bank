@@ -302,16 +302,16 @@ else
 }
 function process_image_upload($image, $width, $height)
 {
-    $temp_image_path = UPLOADED_IMAGE_DESTINATION . $image;
+    $temp_image_path = GALLERY_MAIN_UPLOAD_DIR . $image;
     $temp_image_name = $image;
     list(, , $temp_image_type) = getimagesize($temp_image_path);
     if ($temp_image_type === NULL) {
         return false;
     }
-    $uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
+    $uploaded_image_path = GALLERY_MAIN_UPLOAD_DIR . $temp_image_name;
     move_uploaded_file($temp_image_path, $uploaded_image_path);
     $type = explode(".", $image);
-    $thumbnail_image_path = THUMBNAIL_IMAGE_DESTINATION . preg_replace("{\\.[^\\.]+$}", ".".$type[1], $temp_image_name);
+    $thumbnail_image_path = GALLERY_MAIN_THUMB_DIR . preg_replace("{\\.[^\\.]+$}", ".".$type[1], $temp_image_name);
    
     $result = generate_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
     return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
@@ -320,16 +320,16 @@ function process_image_upload($image, $width, $height)
 /******************************************Code for Album cover thumbs Creation**********************/
 function process_album_upload($album_image, $width, $height)
 {
-    $temp_image_path = UPLOADED_IMAGE_DESTINATION . $album_image;
+    $temp_image_path = GALLERY_MAIN_UPLOAD_DIR . $album_image;
     $temp_image_name = $album_image;
     list(, , $temp_image_type) = getimagesize($temp_image_path);
     if ($temp_image_type === NULL) {
         return false;
     }
-	$uploaded_image_path = UPLOADED_IMAGE_DESTINATION . $temp_image_name;
+	$uploaded_image_path = GALLERY_MAIN_UPLOAD_DIR . $temp_image_name;
     move_uploaded_file($temp_image_path, $uploaded_image_path);
 	$type = explode(".", $album_image);
-	$thumbnail_image_path = THUMBNAIL_ALBUM_DESTINATION . preg_replace("{\\.[^\\.]+$}", ".".$type[1], $temp_image_name);
+	$thumbnail_image_path = GALLERY_MAIN_ALB_THUMB_DIR . preg_replace("{\\.[^\\.]+$}", ".".$type[1], $temp_image_name);
     
     $result = generate_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
     return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;

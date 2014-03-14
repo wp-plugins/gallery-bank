@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 // usleep(5000);
 
 // Settings
-$targetDir = dirname(__FILE__) . "/gallery-uploads";
+$targetDir = (dirname(dirname(dirname(__FILE__)))) . "/gallery-bank/gallery-uploads/";
 $cleanupTargetDir = true; // Remove old files
 $maxFileAge = 5 * 3600; // Temp file age in seconds
 
