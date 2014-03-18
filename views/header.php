@@ -1,6 +1,6 @@
 <?php
 $gb_lang = array();
-array_push($gb_lang, "ar", "bg_BG", "da_DK", "de_DE", "es_ES", "fi_FI", "fr_FR", "he_IL", "hu_HU", "id_ID",
+array_push($gb_lang, "ar", "bg_BG", "da_DK", "de_DE", "fi_FI", "fr_FR", "he_IL", "hu_HU", "id_ID",
  "it_IT", "ja", "ko_KR", "ms_MY", "nl_NL", "pl_PL", "pt_BR", "pt_PT", "ro_RO", "ru_RU", "sk_SK", "sl_SI", "sq_AL",
  "sr_RS", "sv_SE", "th", "tr", "zh_CN");
 $language = get_locale();
@@ -30,8 +30,29 @@ if(in_array($language, $gb_lang))
 		<strong>You will be only allowed to add 2 galleries. Kindly purchase Premium Version for full access.</strong>
 	</span>
 </div>
-<div class="message red" style="display: block;margin-top:15px">
-	<span>
-		<strong>If you are getting problems with thumbnails, then you need to set 777(write) permissions to <?php echo GALLERY_MAIN_DIR ?> (recursive files & directories) in order to save the images/thumbnails. </strong>
-	</span>
-</div>
+<?php
+if (is_dir(GALLERY_MAIN_THUMB_DIR))
+{
+	if(is_dir_empty(GALLERY_MAIN_THUMB_DIR))
+	{
+		?>
+		<div class="message red" style="display: block;margin-top:15px">
+			<span>
+				<strong>If you are getting problems with thumbnails, then you need to set 777(write) permissions to <?php echo GALLERY_MAIN_DIR ?> (recursive files & directories) in order to save the images/thumbnails. </strong>
+			</span>
+		</div>
+		<?php
+	}
+}
+function is_dir_empty($dir)
+{
+	if (!is_readable($dir)) return NULL; 
+	$handle = opendir($dir);
+	while (false !== ($entry = readdir($handle))) {
+		if ($entry != "." && $entry != "..") {
+			return FALSE;
+		}
+	}
+	return TRUE;
+}
+?>

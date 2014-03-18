@@ -87,7 +87,7 @@ $settings["subscriber_read_control"] = "1";
 $settings["subscriber_write_control"] = "0";
 
 $settings["language_direction"] = "inherit";
-$settings["video_thumb_url"] = GALLERY_BK_THUMB_URL . "video.jpg";
+$settings["video_thumb_url"] = "video.jpg";
 foreach ($settings as $val => $innerKey)
 {
     $wpdb->query

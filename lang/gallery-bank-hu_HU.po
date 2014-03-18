@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Gallery-Bank\n"
-"POT-Creation-Date: 2014-03-12 11:25+0530\n"
-"PO-Revision-Date: 2014-03-12 11:57+0530\n"
+"POT-Creation-Date: 2014-03-18 10:23+0530\n"
+"PO-Revision-Date: 2014-03-18 11:05+0530\n"
 "Last-Translator: \n"
 "Language-Team: Tech-Banker <support@tech-banker.com>\n"
 "Language: hu_HU\n"
@@ -10,8 +10,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.4\n"
-"X-Poedit-Basepath: C:\\wamp\\www\\testing-gallery-bank\\wp-content\\plugins"
-"\\gallery-bank\\\n"
+"X-Poedit-Basepath: I:\\Kiran-work-Backup\\2014\\march\\Gallery-Bank-Latest"
+"\\standard\\gallery-bank\\\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -121,40 +121,40 @@ msgstr "Kérem Válasszon A Galéria- Képek Formátum"
 msgid "Please select a Text Format for the Gallery"
 msgstr "Kérjük, Válassza ki a szöveg Formátum  mert  Galéria"
 
-#: gallery-bank.php:62
+#: gallery-bank.php:79
 msgid "<img src=\""
 msgstr ""
 
-#: gallery-bank.php:64
+#: gallery-bank.php:81
 msgid "/wp-admin/admin.php?page=gallery_bank"
 msgstr ""
 
-#: gallery-bank.php:71 lib/gallery-bank-class.php:10
+#: gallery-bank.php:88 lib/gallery-bank-class.php:10
 msgid "Dashboard"
 msgstr "irányítópult"
 
-#: gallery-bank.php:78 lib/gallery-bank-class.php:20
-#: views/add-new-album.php:70 views/add-new-album.php:77
-#: views/dashboard.php:80
+#: gallery-bank.php:95 lib/gallery-bank-class.php:20
+#: views/add-new-album.php:100 views/add-new-album.php:107
+#: views/dashboard.php:112
 msgid "Add New Album"
 msgstr "Tól hozzáadják Új albumot"
 
-#: gallery-bank.php:85 lib/gallery-bank-class.php:22
+#: gallery-bank.php:102 lib/gallery-bank-class.php:23
 msgid "Album Sorting"
 msgstr "képalbum szortírozás"
 
-#: gallery-bank.php:92 lib/gallery-bank-class.php:23 views/settings.php:265
-#: views/settings.php:272
+#: gallery-bank.php:109 lib/gallery-bank-class.php:24 views/settings.php:266
+#: views/settings.php:273
 msgid "Global Settings"
 msgstr "Globális -beállítások"
 
-#: gallery-bank.php:99 lib/gallery-bank-class.php:24
+#: gallery-bank.php:116 lib/gallery-bank-class.php:25
 #: views/gallery-bank-system-report.php:12
 #: views/gallery-bank-system-report.php:17
 msgid "System Status"
 msgstr "rendszer- állapota"
 
-#: gallery-bank.php:106 lib/gallery-bank-class.php:25
+#: gallery-bank.php:123 lib/gallery-bank-class.php:26
 msgid "Purchase Pro Version"
 msgstr "Adásvétel Pro verzió"
 
@@ -182,109 +182,118 @@ msgstr "Írja be Ön Tagek"
 msgid "Delete Image"
 msgstr "Kép törlése"
 
-#: lib/gallery-bank-class.php:9 views/add-new-album.php:68
+#: lib/gallery-bank-class.php:9 views/add-new-album.php:98
 #: views/album-preview.php:12 views/album-sorting.php:156
 #: views/edit-album.php:84 views/gallery-bank-system-report.php:10
 #: views/images-sorting.php:180 views/purchase_pro_version.php:7
-#: views/settings.php:263
+#: views/settings.php:264 views/shortcode.php:7
 msgid "Gallery Bank"
 msgstr "Gallery Bank"
 
-#: lib/gallery-bank-class.php:261
+#: lib/gallery-bank-class.php:22 views/dashboard.php:135
+#, fuzzy
+msgid "Short-Codes"
+msgstr "rövid kódok"
+
+#: lib/gallery-bank-class.php:266
 msgid "Add Gallery using Gallery Bank"
 msgstr "Betenni Galériába Segítségével Gallery - Bank "
 
-#: views/add-new-album.php:82 views/add-new-album.php:211
+#: views/add-new-album.php:112 views/add-new-album.php:242
 #: views/album-preview.php:25 views/album-sorting.php:170
 #: views/edit-album.php:97 views/edit-album.php:344
-#: views/images-sorting.php:194 views/settings.php:277
+#: views/images-sorting.php:194 views/settings.php:278 views/shortcode.php:21
 msgid "Back to Albums"
 msgstr "Vissza az Albumok"
 
-#: views/add-new-album.php:85 views/add-new-album.php:209
+#: views/add-new-album.php:115 views/add-new-album.php:240
 msgid "Save and Submit Changes"
 msgstr "Mentse és a  benyújtása- változása"
 
-#: views/add-new-album.php:91
+#: views/add-new-album.php:121
 msgid "Album Published. Kindly wait for the redirect to happen."
 msgstr "Az albumot Publikálva. Kérjük várjon az átirányítás felé történik."
 
-#: views/add-new-album.php:99 views/edit-album.php:109
+#: views/add-new-album.php:130 views/edit-album.php:109
 msgid "Album Details"
 msgstr "Az albumot Részletek"
 
-#: views/add-new-album.php:104 views/dashboard.php:99 views/edit-album.php:113
+#: views/add-new-album.php:135 views/edit-album.php:113
 msgid "Album Title"
 msgstr "Az albumot címének"
 
-#: views/add-new-album.php:110 views/edit-album.php:118
+#: views/add-new-album.php:141 views/edit-album.php:118
 msgid "Enter your Album Title"
 msgstr "Írja be Ön Album Címének"
 
-#: views/add-new-album.php:116 views/edit-album.php:125
+#: views/add-new-album.php:147 views/edit-album.php:125
 msgid "Description"
 msgstr "leírása"
 
-#: views/add-new-album.php:130 views/edit-album.php:139
+#: views/add-new-album.php:161 views/edit-album.php:139
 msgid "Upload Images"
 msgstr "Képek feltöltése"
 
-#: views/add-new-album.php:133 views/edit-album.php:142
+#: views/add-new-album.php:164 views/edit-album.php:142
 msgid "Your browser doesn\"t have Flash, Silverlight or HTML5 support."
 msgstr "Az Ön böngészője nem van Flash, Silverlight vagy a HTML5 támogatás."
 
-#: views/add-new-album.php:140 views/edit-album.php:149
+#: views/add-new-album.php:171 views/edit-album.php:149
 msgid "Upload Videos"
 msgstr "feltöltése Videók"
 
-#: views/add-new-album.php:141 views/add-new-album.php:192
-#: views/edit-album.php:150 views/edit-album.php:195
+#: views/add-new-album.php:172 views/add-new-album.php:223
+#: views/edit-album.php:150 views/edit-album.php:195 views/settings.php:287
+#: views/settings.php:503 views/settings.php:733 views/settings.php:844
+#: views/settings.php:943 views/settings.php:1265 views/settings.php:1381
+#: views/settings.php:1432 views/settings.php:1484 views/settings.php:1512
 msgid " (Available in Premium Versions)"
 msgstr "(Elérhető prémium verziók)"
 
-#: views/add-new-album.php:147 views/edit-album.php:155
+#: views/add-new-album.php:178 views/edit-album.php:155
 msgid "Video Url"
 msgstr "videót URL"
 
-#: views/add-new-album.php:153 views/edit-album.php:159
+#: views/add-new-album.php:184 views/edit-album.php:159
 msgid "Enter your Video Url"
 msgstr "Adja meg -Ön videót Url"
 
-#: views/add-new-album.php:160 views/edit-album.php:165
+#: views/add-new-album.php:191 views/edit-album.php:165
 msgid "Upload Video"
 msgstr "Videó feltöltése"
 
-#: views/add-new-album.php:171 views/edit-album.php:176
+#: views/add-new-album.php:202 views/edit-album.php:176
 msgid "Your Gallery Bank Album"
 msgstr "Az Ön -Gallery - Bank Az albumot"
 
-#: views/add-new-album.php:182 views/edit-album.php:185
+#: views/add-new-album.php:213 views/edit-album.php:185
 msgid "Delete"
 msgstr "törléséhez"
 
-#: views/add-new-album.php:185 views/dashboard.php:98 views/edit-album.php:188
+#: views/add-new-album.php:216 views/dashboard.php:131
+#: views/edit-album.php:188
 msgid "Thumbnail"
 msgstr "Bélyegkép"
 
-#: views/add-new-album.php:188 views/edit-album.php:191
+#: views/add-new-album.php:219 views/edit-album.php:191
 msgid "Title & Description"
 msgstr "címének és leírás"
 
-#: views/add-new-album.php:191 views/edit-album.php:194
+#: views/add-new-album.php:222 views/edit-album.php:194
 msgid "Tags (comma separated list)"
 msgstr "Címkék (vesszővel elválasztott lista)"
 
-#: views/add-new-album.php:195 views/edit-album.php:198
+#: views/add-new-album.php:226 views/edit-album.php:198
 msgid "Url to Redirect on click of an Image"
 msgstr "URL- Átirányítási be kattintásra közül Kép"
 
-#: views/add-new-album.php:343 views/edit-album.php:513
+#: views/add-new-album.php:382 views/edit-album.php:513
 msgid "Are you sure you want to delete this Image?"
 msgstr "Biztos benne, hogy törli ezt a fényképek?"
 
-#: views/add-new-album.php:353 views/add-new-album.php:367
-#: views/album-sorting.php:282 views/dashboard.php:233 views/dashboard.php:237
-#: views/dashboard.php:241 views/edit-album.php:529 views/edit-album.php:545
+#: views/add-new-album.php:392 views/add-new-album.php:406
+#: views/album-sorting.php:282 views/dashboard.php:301 views/dashboard.php:305
+#: views/dashboard.php:309 views/edit-album.php:529 views/edit-album.php:545
 #: views/images-sorting.php:294
 msgid "This feature is only available in Paid Premium Version!"
 msgstr "ezt vonás az csak rendelkezésre álló -ben fizetett prémium Verzió!"
@@ -310,56 +319,56 @@ msgstr "frissítés- Rendelés"
 msgid "Sorting Order has been updated."
 msgstr "Rendezési sorrendet rendelkezik frissült."
 
-#: views/dashboard.php:66
+#: views/dashboard.php:98
 msgid "Dashboard - Gallery Bank"
 msgstr "irányítópult - Gallery Bank"
 
-#: views/dashboard.php:84
+#: views/dashboard.php:116
 msgid "Delete All Albums"
 msgstr "Törölni Az összes album"
 
-#: views/dashboard.php:85
+#: views/dashboard.php:117
 msgid "Purge Images & Albums"
 msgstr "Tisztogatás Képek és Albumok"
 
-#: views/dashboard.php:86
+#: views/dashboard.php:118
 msgid "Restore Factory Settings"
 msgstr "Gyári beállítások visszaállítása"
 
-#: views/dashboard.php:92
+#: views/dashboard.php:125
 msgid "Existing Albums Overview"
 msgstr "Létező Albumok - áttekintése"
 
-#: views/dashboard.php:100
+#: views/dashboard.php:132
+msgid "Title"
+msgstr "címének"
+
+#: views/dashboard.php:133
 msgid "Total Images"
 msgstr "Totális Képek"
 
-#: views/dashboard.php:101
-msgid "Date of Creation"
-msgstr "Létrehozás dátuma"
+#: views/dashboard.php:134
+msgid "Date"
+msgstr "dátum"
 
-#: views/dashboard.php:102
-msgid "Short Codes"
-msgstr "rövid kódok"
-
-#: views/dashboard.php:163 views/edit-album.php:86 views/edit-album.php:93
+#: views/dashboard.php:199 views/edit-album.php:86 views/edit-album.php:93
 msgid "Edit Album"
 msgstr "Szerkesztés albumot"
 
-#: views/dashboard.php:168 views/images-sorting.php:182
+#: views/dashboard.php:204 views/images-sorting.php:182
 #: views/images-sorting.php:189
 msgid "Re-Order Images"
 msgstr "Újbóli-Rendelje Képek"
 
-#: views/dashboard.php:173
+#: views/dashboard.php:209
 msgid "Preview Album"
 msgstr "Előnézet - albumot"
 
-#: views/dashboard.php:178
+#: views/dashboard.php:214
 msgid "Delete Album"
 msgstr "Törölni Az albumot"
 
-#: views/dashboard.php:220
+#: views/dashboard.php:288
 msgid "Are you sure you want to delete this Album?"
 msgstr "Biztos benne, hogy törölni kívánja ezt az albumot?"
 
@@ -391,297 +400,308 @@ msgstr "Alapértelmezés"
 msgid "Gallery Bank Pricing"
 msgstr "Gallery - Bank árazás"
 
-#: views/settings.php:273
-msgid " (Premium Feature avialable in Paid Version)"
+#: views/settings.php:274
+#, fuzzy
+msgid " (Premium Feature available in Paid Version)"
 msgstr "(prémium jellemzők elérhető fizetett változat)"
 
-#: views/settings.php:278
+#: views/settings.php:279
 msgid "Update Settings"
 msgstr "frissítési -Beállítások"
 
-#: views/settings.php:285
+#: views/settings.php:286
 msgid "Thumbnail Settings"
 msgstr "Bélyegkép beállításait"
 
-#: views/settings.php:286 views/settings.php:502 views/settings.php:732
-#: views/settings.php:843 views/settings.php:942 views/settings.php:1264
-#: views/settings.php:1380 views/settings.php:1431 views/settings.php:1483
-#: views/settings.php:1515
-msgid " (Avialable in Premium Versions)"
-msgstr "(Elérhető prémium verziók)"
-
-#: views/settings.php:297
+#: views/settings.php:298
 msgid "Thumbnail Size"
 msgstr "Bélyegkép méret"
 
-#: views/settings.php:304 views/settings.php:312 views/settings.php:520
-#: views/settings.php:528
+#: views/settings.php:305 views/settings.php:313 views/settings.php:521
+#: views/settings.php:529
 msgid "Original"
 msgstr "eredeti"
 
-#: views/settings.php:307 views/settings.php:315 views/settings.php:523
-#: views/settings.php:531
+#: views/settings.php:308 views/settings.php:316 views/settings.php:524
+#: views/settings.php:532
 msgid "Custom"
 msgstr "szokás"
 
-#: views/settings.php:324 views/settings.php:540
+#: views/settings.php:325 views/settings.php:541
 msgid "Width"
 msgstr "mm Szélesség"
 
-#: views/settings.php:334 views/settings.php:550
+#: views/settings.php:335 views/settings.php:551
 msgid "Height"
 msgstr "magasságát"
 
-#: views/settings.php:346 views/settings.php:561 views/settings.php:983
+#: views/settings.php:347 views/settings.php:562 views/settings.php:984
 msgid "Opacity"
 msgstr "Opacitás"
 
-#: views/settings.php:358 views/settings.php:573 views/settings.php:994
+#: views/settings.php:359 views/settings.php:574 views/settings.php:995
 msgid "Border Size"
 msgstr "Szegély méret"
 
-#: views/settings.php:369 views/settings.php:585 views/settings.php:1005
+#: views/settings.php:370 views/settings.php:586 views/settings.php:1006
 msgid "Border Radius"
 msgstr "Szegély Sugara"
 
-#: views/settings.php:380 views/settings.php:597 views/settings.php:1030
+#: views/settings.php:381 views/settings.php:598 views/settings.php:1031
 msgid "Border Color"
 msgstr "Szegély Szín"
 
-#: views/settings.php:394
+#: views/settings.php:395
 msgid "Margin Between Images"
 msgstr "Margó a képek között"
 
-#: views/settings.php:404 views/settings.php:631 views/settings.php:1016
+#: views/settings.php:405 views/settings.php:632 views/settings.php:1017
 msgid "Text Color"
 msgstr "szöveg Színe"
 
-#: views/settings.php:418 views/settings.php:648 views/settings.php:1090
+#: views/settings.php:419 views/settings.php:649 views/settings.php:1091
 msgid "Text-Align"
 msgstr "Szöveges- beigazítás"
 
-#: views/settings.php:432 views/settings.php:662 views/settings.php:799
-#: views/settings.php:1104 views/settings.php:1312
+#: views/settings.php:433 views/settings.php:663 views/settings.php:800
+#: views/settings.php:1105 views/settings.php:1313
 msgid "Font-Family"
 msgstr "Betűkészlet Családi"
 
-#: views/settings.php:455 views/settings.php:685 views/settings.php:1127
+#: views/settings.php:456 views/settings.php:686 views/settings.php:1128
 msgid "Heading Font-Size"
 msgstr "Címsor betűméret"
 
-#: views/settings.php:472 views/settings.php:702 views/settings.php:1144
+#: views/settings.php:473 views/settings.php:703 views/settings.php:1145
 msgid "Text Font-Size"
 msgstr "Szöveges- Betűméret"
 
-#: views/settings.php:489 views/settings.php:719
+#: views/settings.php:490 views/settings.php:720
 msgid "Description Length"
 msgstr "Megnevezés Hossz"
 
-#: views/settings.php:501
+#: views/settings.php:502
 msgid "Album Cover Settings"
 msgstr "Albumborító beállításait"
 
-#: views/settings.php:513
+#: views/settings.php:514
 msgid "Cover Size"
 msgstr "Borító- méret"
 
-#: views/settings.php:611
+#: views/settings.php:612
 msgid "Margin Between Albums"
 msgstr "Margó Között Albumok"
 
-#: views/settings.php:621
+#: views/settings.php:622
 msgid "Text for Album Click"
 msgstr "Szöveg minta Az albumot Kettyenés"
 
-#: views/settings.php:731
+#: views/settings.php:732
 msgid "Filter Settings"
 msgstr "Szűrési beállításokat"
 
-#: views/settings.php:743
+#: views/settings.php:744
 msgid "Filters"
 msgstr "Szűrők"
 
-#: views/settings.php:750 views/settings.php:758 views/settings.php:1168
-#: views/settings.php:1176 views/settings.php:1194 views/settings.php:1201
-#: views/settings.php:1219 views/settings.php:1226 views/settings.php:1243
-#: views/settings.php:1250 views/settings.php:1358 views/settings.php:1365
-#: views/settings.php:1398 views/settings.php:1406 views/settings.php:1449
-#: views/settings.php:1457
+#: views/settings.php:751 views/settings.php:759 views/settings.php:1169
+#: views/settings.php:1177 views/settings.php:1195 views/settings.php:1202
+#: views/settings.php:1220 views/settings.php:1227 views/settings.php:1244
+#: views/settings.php:1251 views/settings.php:1359 views/settings.php:1366
+#: views/settings.php:1399 views/settings.php:1407 views/settings.php:1450
+#: views/settings.php:1458
 msgid "Enable"
 msgstr "engedélyezése"
 
-#: views/settings.php:753 views/settings.php:761 views/settings.php:1171
-#: views/settings.php:1179 views/settings.php:1196 views/settings.php:1204
-#: views/settings.php:1221 views/settings.php:1228 views/settings.php:1245
-#: views/settings.php:1252 views/settings.php:1360 views/settings.php:1368
-#: views/settings.php:1401 views/settings.php:1409 views/settings.php:1452
-#: views/settings.php:1460
+#: views/settings.php:754 views/settings.php:762 views/settings.php:1172
+#: views/settings.php:1180 views/settings.php:1197 views/settings.php:1205
+#: views/settings.php:1222 views/settings.php:1229 views/settings.php:1246
+#: views/settings.php:1253 views/settings.php:1361 views/settings.php:1369
+#: views/settings.php:1402 views/settings.php:1410 views/settings.php:1453
+#: views/settings.php:1461
 msgid "Disable"
 msgstr "tiltása"
 
-#: views/settings.php:771
+#: views/settings.php:772
 msgid "Filter Color"
 msgstr "Szűrő - Színe"
 
-#: views/settings.php:785
+#: views/settings.php:786
 msgid "Filter Text Color"
 msgstr "Szűrő - Szöveg Színe"
 
-#: views/settings.php:822 views/settings.php:1335
+#: views/settings.php:823 views/settings.php:1336
 msgid "Font-Size"
 msgstr "Betűkészlet - méretű"
 
-#: views/settings.php:842
+#: views/settings.php:843
 msgid "Roles & Capabilities"
 msgstr "Szerepek és képességek"
 
-#: views/settings.php:854
+#: views/settings.php:855
 msgid "Privileges for Admin"
 msgstr "Kiváltságairól for Admin programot"
 
-#: views/settings.php:858 views/settings.php:874 views/settings.php:890
-#: views/settings.php:907 views/settings.php:925
+#: views/settings.php:859 views/settings.php:875 views/settings.php:891
+#: views/settings.php:908 views/settings.php:926
 msgid "Full Control"
 msgstr "a Teljes hozzáférés beállítást"
 
-#: views/settings.php:861 views/settings.php:877 views/settings.php:893
-#: views/settings.php:910 views/settings.php:928
+#: views/settings.php:862 views/settings.php:878 views/settings.php:894
+#: views/settings.php:911 views/settings.php:929
 msgid "Read"
 msgstr "Olvassa"
 
-#: views/settings.php:864 views/settings.php:880 views/settings.php:896
-#: views/settings.php:913 views/settings.php:931
+#: views/settings.php:865 views/settings.php:881 views/settings.php:897
+#: views/settings.php:914 views/settings.php:932
 msgid "Write"
 msgstr "Írja"
 
-#: views/settings.php:870
+#: views/settings.php:871
 msgid "Privileges for Editor"
 msgstr "Kiváltságairól  szerkesztőben Számára "
 
-#: views/settings.php:886
+#: views/settings.php:887
 msgid "Privileges for Author"
 msgstr "Kiváltságairól számára Feltöltõ"
 
-#: views/settings.php:902
+#: views/settings.php:903
 msgid "Privileges for Contributor"
 msgstr "Kiváltságairól Számára- Közreműködő"
 
-#: views/settings.php:919
+#: views/settings.php:920
 msgid "Privileges for Subscriber"
 msgstr "Kiváltságairól számára Előfizető"
 
-#: views/settings.php:941
+#: views/settings.php:942
 msgid "Lightbox Settings"
 msgstr "Fény-doboz beállításokat"
 
-#: views/settings.php:953
+#: views/settings.php:954
 msgid "Lightbox Type"
 msgstr "Fénydoboz típus"
 
-#: views/settings.php:1044
+#: views/settings.php:1045
 msgid "Inline Background"
 msgstr "Szövegközi Háttér"
 
-#: views/settings.php:1058
+#: views/settings.php:1059
 msgid "Overlay Background"
 msgstr "lefedési Háttér"
 
-#: views/settings.php:1072
+#: views/settings.php:1073
 msgid "Fade In Time"
 msgstr "Fakulnak in időpont"
 
-#: views/settings.php:1081
+#: views/settings.php:1082
 msgid "Fade Out Time"
 msgstr "Fakulnak- Kifogyott Idő"
 
-#: views/settings.php:1161
+#: views/settings.php:1162
 msgid "Facebook Comments"
 msgstr "Facebook Hozzászólások"
 
-#: views/settings.php:1188
+#: views/settings.php:1189
 msgid "Social Sharing"
 msgstr "Szociális- megosztását"
 
-#: views/settings.php:1213
+#: views/settings.php:1214
 msgid "Image Title"
 msgstr "Képre - címének"
 
-#: views/settings.php:1237
+#: views/settings.php:1238
 msgid "Image Description"
 msgstr "Leírása képre "
 
-#: views/settings.php:1263
+#: views/settings.php:1264
 msgid "Front - End Layout Settings"
 msgstr "Elöl - Végére az Elrendezés beállításokat"
 
-#: views/settings.php:1275
+#: views/settings.php:1276
 msgid "Text for Back Button"
 msgstr "Szöveg minta Vissza gomb"
 
-#: views/settings.php:1285
+#: views/settings.php:1286
 msgid "Button Color"
 msgstr "Gomb- Színe"
 
-#: views/settings.php:1298
+#: views/settings.php:1299
 msgid "Button Text Color"
 msgstr "Gomb Szöveg színe"
 
-#: views/settings.php:1352
+#: views/settings.php:1353
 msgid "Album Seperator"
 msgstr "Az albumot lista Divider"
 
-#: views/settings.php:1379
+#: views/settings.php:1380
 msgid "Pagination Settings for Images"
 msgstr "Oldalszámozás beállításai számára  Képek"
 
-#: views/settings.php:1391
+#: views/settings.php:1392
 msgid "Paging"
 msgstr "személyhívó"
 
-#: views/settings.php:1418
+#: views/settings.php:1419
 msgid "No. of Images Per Page "
 msgstr "Képek száma oldalanként"
 
-#: views/settings.php:1430
+#: views/settings.php:1431
 msgid "Slide Show Settings"
 msgstr "Diavetítés beállításokat"
 
-#: views/settings.php:1442
+#: views/settings.php:1443
 msgid "Auto Play"
 msgstr "Automatikus lejátszás"
 
-#: views/settings.php:1469
+#: views/settings.php:1470
 msgid "Interval"
 msgstr "Intervallum"
 
-#: views/settings.php:1482
+#: views/settings.php:1483
 msgid "Language Direction Settings"
 msgstr "Nyelve tájolása beállítások"
 
-#: views/settings.php:1494
+#: views/settings.php:1495
 msgid "Language Direction"
 msgstr "Nyelve Iránya"
 
-#: views/settings.php:1514
+#: views/settings.php:1511
 msgid "Video Thumbnails"
 msgstr "Videót- Miniatűrök"
 
-#: views/settings.php:1529
+#: views/settings.php:1526
 msgid "Video Thumbnail Path"
 msgstr "videót Bélyegkép elérési út"
 
-#: views/settings.php:1535
+#: views/settings.php:1532
 msgid "Enter your Video Thumbnail Url"
 msgstr "Írja be Ön Videó indexképe - Url"
 
-#: views/settings.php:1541
+#: views/settings.php:1538
 msgid "Upload Video Thumbnail "
 msgstr "Videó feltöltése Bélyegkép"
 
-#: views/settings.php:1707
+#: views/settings.php:1694
 msgid "This Feature is only available in Paid Premium Version!"
 msgstr ""
 "ezt  vonás  az  csak  rendelkezésre álló  -ben fizetett prémium Verzió!"
+
+#: views/shortcode.php:9
+msgid "Gallery Bank Short-Codes"
+msgstr "Gallery-Bank Rövid kód"
+
+#: views/shortcode.php:16
+msgid ""
+"How to setup Short-Codes for Gallery Bank into your WordPress Page/Post?"
+msgstr ""
+"Hogyan állítsuk be a rövid kódok számára Gallery Bank az Ön WordPress "
+"oldal / posta?"
+
+#~ msgid "Date of Creation"
+#~ msgstr "Létrehozás dátuma"
+
+#~ msgid " (Avialable in Premium Versions)"
+#~ msgstr "(Elérhető prémium verziók)"
 
 #~ msgid "VIEW ALL"
 #~ msgstr "MEGNÉZEM ÖSSZES"
@@ -694,9 +714,6 @@ msgstr ""
 
 #~ msgid "Licensing"
 #~ msgstr "licencelési"
-
-#~ msgid "Title"
-#~ msgstr "címének"
 
 #~ msgid "Select Gallery"
 #~ msgstr "Válassza Galériában"

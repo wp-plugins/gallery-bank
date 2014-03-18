@@ -251,7 +251,8 @@ if (count($album_css) != 0) {
     $lang_dir_setting = $album_css[$index]->setting_value;
 
     $index = array_search("video_thumb_url", $setting_keys);
-    $video_thumb_url = $album_css[$index]->setting_value;
+    $video_thumb_name = $album_css[$index]->setting_value;
+	$video_thumb_url = $video_thumb_name == "video.jpg" ? GALLERY_BK_PLUGIN_URL . "/assets/images/video.jpg" : GALLERY_BK_THUMB_URL.$video_thumb_name ;
     ?>
     <!--suppress ALL -->
 	<form id="global_settings" class="layout-form" method="post">
@@ -1503,10 +1504,6 @@ if (count($album_css) != 0) {
 	    					</div>
 	    				</div>
 	    			</div>
-                    <?php
-                    if($wp_version >= 3.5)
-                    {
-                    ?>
 	    			<div class="fluid-layout">
 	    				<div class="layout-span12">
 	            			<div class="widget-layout">
@@ -1537,8 +1534,8 @@ if (count($album_css) != 0) {
 				                                    </div>
 				                                    <div class="layout-control-group">
 				                                        <div class="layout-controls">
-				                                            <a class="btn btn-info" id="upload_thumb_button" style="float:right;"
-				                                               href=""><?php _e("Upload Video Thumbnail ", gallery_bank); ?></a>
+				                                            <a class="btn btn-info" id="upload_thumb_button"  style="float:right;"
+				                                             onclick="show_premium_message();"  href="#"><?php _e("Upload Video Thumbnail ", gallery_bank); ?></a>
 				                                        </div>
 				                                    </div>
 				                                </div>
@@ -1554,9 +1551,6 @@ if (count($album_css) != 0) {
 	            			</div>
 						</div>
 	    			</div>
-                    <?php
-                    }
-                    ?>
     			</div>
     		</div>
     	</div>
@@ -1564,13 +1558,6 @@ if (count($album_css) != 0) {
     <script type="text/javascript">
     var settings_array = [];
     jQuery(document).ready(function () {
-        <?php
-
-        if($wp_version >= 3.5)
-        {
-            wp_enqueue_media();
-        }
-        ?>
         check_thumbnail_settings();
         check_cover_settings();
         show_slide_interval();
@@ -2045,32 +2032,6 @@ if (count($album_css) != 0) {
         }
     }
 
-    <?php
-       if($wp_version >= 3.5)
-       {
-       ?>
-        var vid_thumb_file_frame;
-        jQuery("#upload_thumb_button").live("click", function (event) {
-            event.preventDefault();
-            vid_thumb_file_frame = wp.media.frames.vid_thumb_file_frame = wp.media({
-                button: {
-                    text: jQuery(this).data("uploader_button_text")
-                },
-                multiple: false
-            });
-            vid_thumb_file_frame.on("select", function () {
-                var selection = vid_thumb_file_frame.state().get("selection");
-                selection.map(function (attachment) {
-                    attachment = attachment.toJSON();
-                    jQuery("#video_thumb_image").attr("src", attachment.url);
-                    jQuery("#ux_video_thumb_url").val(attachment.url);
-                });
-            });
-            vid_thumb_file_frame.open();
-        });
-    <?php
-        }
-    ?>
     function ux_clr_inline_overlay_color() {
         jQuery("#clr_inline_overlay_color").farbtastic("#ux_inline_overlay_color");
         jQuery("#clr_inline_overlay_color").slideDown();

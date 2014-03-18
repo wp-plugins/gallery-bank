@@ -56,8 +56,8 @@ if (count($album_css) != 0) {
     $index = array_search("cover_thumbnail_height", $setting_keys);
     $cover_thumbnail_height = $album_css[$index]->setting_value;
 
-    $index = array_search("video_thumb_url", $setting_keys);
-    $video_url = $album_css[$index]->setting_value;
+    $video_thumb_name = $album_css[$index]->setting_value;
+	$video_url = $video_thumb_name == "video.jpg" ? GALLERY_BK_PLUGIN_URL . '/assets/images/video.jpg' : GALLERY_BK_THUMB_URL.$video_thumb_name ;
 
     ?>
     <!--suppress ALL -->
