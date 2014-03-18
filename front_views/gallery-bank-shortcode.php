@@ -33,7 +33,7 @@
 		            (
 		                $wpdb->prepare
 	                    (
-	                        "SELECT * FROM " . gallery_bank_albums(), ""
+	                        "SELECT * FROM ".gallery_bank_albums()." order by album_order asc ",""
 	                    )
 		            );
 			        for ($flag = 0; $flag < count($albums); $flag++) {
