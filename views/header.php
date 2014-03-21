@@ -1,8 +1,10 @@
 <?php
 $gb_lang = array();
+$gb_translated_lang = array();
 array_push($gb_lang, "ar", "bg_BG", "da_DK", "de_DE", "fi_FI", "fr_FR", "he_IL", "hu_HU", "id_ID",
  "it_IT", "ja", "ko_KR", "ms_MY", "nl_NL", "pl_PL", "pt_BR", "pt_PT", "ro_RO", "ru_RU", "sk_SK", "sl_SI", "sq_AL",
  "sr_RS", "sv_SE", "th", "tr", "zh_CN");
+array_push($gb_translated_lang, "en_GB", "en_US", "es_ES");
 $language = get_locale();
 ?>
 
@@ -18,6 +20,18 @@ if(in_array($language, $gb_lang))
 		<span style="padding: 4px 0;">
 			<strong><p style="font:12px/1.0em Arial !important;">This plugin language is translated with the help of Google Translator.</p>
 				<p style="font:12px/1.0em Arial !important;">If you would like to translate & help us, we will reward you with a free Pro Version License of Gallery Bank worth 16£.</p>
+				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
+			</strong>
+		</span>
+	</div>
+	<?php
+}
+elseif(!(in_array($language, $gb_translated_lang)) && !(in_array($language, $gb_lang)) && $language != "")
+{
+	?>
+	<div class="message red" style="display: block;margin-top:30px">
+		<span style="padding: 4px 0;">
+			<strong><p style="font:12px/1.0em Arial !important;">If you would like to translate Gallery Bank in your native language, we will reward you with a free Pro Version License of Gallery Bank worth 16£.</p>
 				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
 			</strong>
 		</span>
