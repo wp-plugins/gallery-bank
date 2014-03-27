@@ -128,8 +128,7 @@ if (count($album_css) != 0) {
     $index = array_search("language_direction", $setting_keys);
     $lang_dir_setting = $album_css[$index]->setting_value;
 
-    $index = array_search("video_thumb_url", $setting_keys);
-    $video_thumb_url = $album_css[$index]->setting_value;
+    $video_thumb_url = GALLERY_BK_PLUGIN_URL . "/assets/images/video.jpg";
 }
 ?>
     <!-- Global Styling  -->

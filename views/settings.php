@@ -250,9 +250,6 @@ if (count($album_css) != 0) {
     $index = array_search("language_direction", $setting_keys);
     $lang_dir_setting = $album_css[$index]->setting_value;
 
-    $index = array_search("video_thumb_url", $setting_keys);
-    $video_thumb_name = $album_css[$index]->setting_value;
-	$video_thumb_url = $video_thumb_name == "video.jpg" ? GALLERY_BK_PLUGIN_URL . "/assets/images/video.jpg" : GALLERY_BK_THUMB_URL.$video_thumb_name ;
     ?>
     <!--suppress ALL -->
 	<form id="global_settings" class="layout-form" method="post">
@@ -1503,53 +1500,6 @@ if (count($album_css) != 0) {
 						        </div>
 	    					</div>
 	    				</div>
-	    			</div>
-	    			<div class="fluid-layout">
-	    				<div class="layout-span12">
-	            			<div class="widget-layout">
-				                <div class="widget-layout-title">
-				                    <h4><?php _e("Video Thumbnails", gallery_bank); ?>
-				                    	<i class="widget_premium_feature"><?php _e(" (Available in Premium Versions)", gallery_bank); ?></i>
-				                    </h4>
-									<span class="tools">
-										<a data-target="#video_thumb_settings" data-toggle="collapse">
-		                                    <i class="icon-chevron-down"></i>
-		                                </a>
-									</span>
-				                </div>
-				                <div id="video_thumb_settings" class="collapse">
-				                    <div class="widget-layout-body">
-				                        <div class="fluid-layout">
-				                            <div class="layout-span12">
-				                                <div class="layout-span9">
-				                                    <div class="layout-control-group">
-				                                        <label class="layout-control-label"><?php _e("Video Thumbnail Path", gallery_bank); ?>
-				                                            :</label>
-				                                        <div class="layout-controls">
-				                                            <input type="text" name="ux_video_thumb_url" class="layout-span12"
-			                                                   value="<?php echo $video_thumb_url; ?>" class="layout-span5" value=""
-			                                                   id="ux_video_thumb_url"
-			                                                   placeholder="<?php _e("Enter your Video Thumbnail Url", gallery_bank); ?>"/>
-				                                        </div>
-				                                    </div>
-				                                    <div class="layout-control-group">
-				                                        <div class="layout-controls">
-				                                            <a class="btn btn-info" id="upload_thumb_button"  style="float:right;"
-				                                             onclick="show_premium_message();"  href="#"><?php _e("Upload Video Thumbnail ", gallery_bank); ?></a>
-				                                        </div>
-				                                    </div>
-				                                </div>
-				                                <div class="layout-span3">
-				                                    <img id="video_thumb_image"
-			                                         style="border: 2px solid #000000;width: <?php echo $thumbnails_width; ?>px;"
-			                                         src="<?php echo $video_thumb_url; ?>"/>
-				                                </div>
-				                            </div>
-				                        </div>
-				                    </div>
-				                </div>
-	            			</div>
-						</div>
 	    			</div>
     			</div>
     		</div>

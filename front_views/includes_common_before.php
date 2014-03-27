@@ -204,9 +204,10 @@ switch ($album_type) {
 
         $index = array_search("language_direction", $setting_keys);
         $lang_dir_setting = $album_css[$index]->setting_value;
+		
+        $video_thumb_url = GALLERY_BK_PLUGIN_URL . "/assets/images/video.jpg";
+        
 
-        $index = array_search("video_thumb_url", $setting_keys);
-        $video_thumb_url = $album_css[$index]->setting_value;
 	break;
     case "grid" || "list" || "individual":
         $index = array_search("cover_thumbnail_width", $setting_keys);
