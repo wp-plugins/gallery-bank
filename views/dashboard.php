@@ -119,7 +119,7 @@
 				<div class="separator-doubled"></div>
 				<a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">How to setup Short-Codes for Gallery Bank into your WordPress Page/Post?</a>
 				<div class="fluid-layout">
-					<div class="layout-span9">
+					<div class="layout-span12">
 						<div class="widget-layout">
 							<div class="widget-layout-title">
 								<h4><?php _e( "Existing Albums Overview", gallery_bank ); ?></h4>
@@ -132,8 +132,8 @@
 											<th style="width:13%"><?php _e( "Title", gallery_bank ); ?></th>
 											<th style="width:16%"><?php _e( "Total Images", gallery_bank ); ?></th>
 											<th style="width:15%"><?php _e( "Date", gallery_bank ); ?></th>
-											<th style="width:16%"><?php _e( "Short-Codes", gallery_bank ); ?></th>
-											<th style="width:15%"></th>
+											<th style="width:14%"><?php _e( "Short-Codes", gallery_bank ); ?></th>
+											<th style="width:17%"></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -225,29 +225,6 @@
 								</table>
 							</div>
 						</div>
-					</div>
-					<div class="layout-span3">
-						<div class="widget-layout">
-							<div class="widget-layout-body" style="text-align: center">
-								<a target="_blank"  href="http://tech-banker.com/gallery-bank/">
-									<img width="200px" src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/gallery-bank-eco-edition.png";?>"/>
-								</a>
-							</div>
-						</div>
-						<div class="widget-layout">
-							<div class="widget-layout-body" style="text-align: center">
-								<a target="_blank" href="http://tech-banker.com/gallery-bank/">
-									<img width="200px" src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/gallery-bank-pro-edition.png";?>"/>
-								</a>
-							</div>
-						</div>	
-						<div class="widget-layout">
-							<div class="widget-layout-body" style="text-align: center">
-								<a  target="_blank" href="http://tech-banker.com/gallery-bank/">
-									<img width="200px" src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/gallery-bank-developer-edition.png";?>"/>
-								</a>
-							</div>
-						</div>		
 					</div>
 				</div>
 			</div>
