@@ -3,7 +3,7 @@ Contributors: Gallery-Bank,contact-banker
 Tags: admin, album, best gallery plugin, best portfolio plugin, comments, easy media gallery, filterable gallery, filterable portfolio, gallery, gallery album, gallery bank, gallery wordpress plugin, google, grid gallery, html5 mp3 player, html5, mp4 player, image, image album, image slider, images, links, media, nextgen, page, pagination gallery, pagination portfolio, photo album, photo albums, photo gallery, photo slider, photos, pictures, plugin, portfolio, portfolio gallery, portfolio wordpress plugin, post, posts, responsive gallery, seo image,sidebar, slideshow, thumbnails, twitter, videos, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
 Tested up to: 3.8.1
-Stable tag: 3.0.9
+Stable tag: 3.0.10
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -63,7 +63,7 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 = Key Features =
 
-* Multi-Lingual. Available now in 30 Languages.
+* Multi-Lingual. Available now in 31 Languages.
 * Responsive Gallery
 * Shortcode Wizard in your Page/Post.
 * Unlimited Albums Creation(**Premium Versions**). With Free Standard Version, you can only create upto 2 albums.
@@ -197,6 +197,7 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 * Swedish (sv_SE)
 * Turkish (tr)
 * Thai (th)
+* Ukrainian (uk)
 
 = Technical support =
 
@@ -220,6 +221,11 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 6. Opening Image of the Album in Lightbox.
 
 == Changelog ==
+
+= 3.0.9 =
+
+* Few Bugs Fixed
+* New Language Added - Ukrainian
 
 = 3.0.9 =
 

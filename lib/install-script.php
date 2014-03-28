@@ -202,6 +202,7 @@ else if($version == "3.0")
 /****************************** COMMON FUNCTION TO GENERATE THUMBNAILS********************************/
 	function generate_thumbnail($source_image_path, $thumbnail_image_path, $imageWidth, $imageHeight)
 	{
+		ini_set("memory_limit", "256M");
 	    list($source_image_width, $source_image_height, $source_image_type) = getimagesize($source_image_path);
 	    $source_gd_image = false;
 	    switch ($source_image_type) {
