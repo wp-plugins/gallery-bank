@@ -1,10 +1,11 @@
 <?php
 $gb_lang = array();
 $gb_translated_lang = array();
-array_push($gb_lang, "ar", "bg_BG", "da_DK", "de_DE", "fi_FI", "he_IL", "hu_HU", "id_ID", 
+array_push($gb_lang, "ar", "bg_BG", "da_DK", "fi_FI", "he_IL", "hu_HU", "id_ID", 
 "ja", "ko_KR", "ms_MY", "pl_PL", "ro_RO", "ru_RU", "sk_SK", "sl_SI", "sq_AL",
  "sr_RS", "th", "tr", "zh_CN");
-array_push($gb_translated_lang, "en_GB", "en_US", "es_ES", "nl_NL", "uk", "sv_SE", "fr_FR", "pt_PT", "pt_BR", "et", "it_IT");
+array_push($gb_translated_lang, "en_GB", "en_US", "es_ES", "nl_NL", "uk", "sv_SE", "fr_FR", "pt_PT", "pt_BR", "et", "it_IT",
+ "de_DE");
 $language = get_locale();
 ?>
 
