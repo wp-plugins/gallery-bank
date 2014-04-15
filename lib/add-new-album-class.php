@@ -298,6 +298,11 @@ else
 	        );
 	        die();
 	    }
+		else if ($_REQUEST["param"] == "update_option")
+		{
+			update_option("gallery-bank-info-popup", "no");
+			die();
+		}
 	}
 }
 function process_image_upload($image, $width, $height)

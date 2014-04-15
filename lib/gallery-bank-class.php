@@ -140,6 +140,7 @@ function backend_scripts_calls()
     wp_enqueue_script("jquery");
     wp_enqueue_script("jquery-ui-draggable");
     wp_enqueue_script("jquery-ui-sortable");
+    wp_enqueue_script("jquery-ui-dialog");
     wp_enqueue_script("farbtastic");
     wp_enqueue_script("imgLiquid.js", GALLERY_BK_PLUGIN_URL . "/assets/js/imgLiquid.js");
     wp_enqueue_script("jquery.dataTables.min.js", GALLERY_BK_PLUGIN_URL . "/assets/js/jquery.dataTables.min.js");
@@ -165,6 +166,7 @@ function frontend_plugin_js_scripts_gallery_bank()
 function backend_css_calls()
 {
     wp_enqueue_style("farbtastic");
+	wp_enqueue_style("wp-jquery-ui-dialog");
     wp_enqueue_style("jquery.plupload.queue.css", GALLERY_BK_PLUGIN_URL . "/assets/css/jquery.plupload.queue.css");
     wp_enqueue_style("stylesheet.css", GALLERY_BK_PLUGIN_URL . "/assets/css/stylesheet.css");
     wp_enqueue_style("font-awesome.css", GALLERY_BK_PLUGIN_URL . "/assets/css/font-awesome/css/font-awesome.css");

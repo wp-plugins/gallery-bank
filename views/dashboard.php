@@ -1,5 +1,44 @@
 <?php
 	global $wpdb;
+	$popup = get_option("gallery-bank-info-popup");
+	if($popup == "")
+	{
+		?>
+		<ol id="gallery_bank_popup" title="Important First Steps" style="display:none;">
+			<li class="add_new_album" id="add_new_album">
+				<h4>Add New Album</h4>
+				<p>
+					Gallery Bank provides you a feature to add elegant and beautiful gallery albums with images and videos.
+				</p>
+				<a href="http://tech-banker.com/gallery-bank/documentation/" target="_blank" class="button gb_buttons">Read More</a>
+			</li>
+			<li class="shortcode" id="shortcode">
+				<h4>Implement Shortcode</h4>
+				<p>
+					Gallery Bank have 117 ways to display your galleries.</br> Just try out different
+					shortcode on your Wordpress Page or Post.
+				</p>
+				<a href="http://tech-banker.com/gallery-bank/documentation/frequently-asked-questions-shortcodes-gallery-bank/" target="_blank" class="button gb_buttons">Read More</a>
+			</li>
+			<li class="Upgrade" id="Upgrade">
+				<h4>Upgrade to Pro Version</h4>
+				<p>
+					Gallery Bank is an one time Investment. To enjoy full features of Gallery Bank,
+					 Upgrade to Premium Version Now! Starting at 10£/- only.
+				</p>
+				<a href="http://tech-banker.com/gallery-bank" target="_blank" class="button gb_buttons">Upgrade Now</a>
+			</li>
+			<li class="help" id="help">
+				<h4>Help to Improve</h4>
+				<p>
+					Gallery Bank would like to collect anonymous data about features you use to help improve this plugin.
+				</p>
+				<a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank" class="button gb_buttons">Read More</a>
+			</li>
+				<a href="javascript:void(0);" onclick="close_popup()" class="gb_close_popup">Dismiss</a>
+		</ol>
+		<?php
+	}
 	$album = $wpdb->get_results
 	(
 		$wpdb->prepare
@@ -236,6 +275,34 @@
 jQuery(".hovertip").tooltip();
 jQuery(document).ready(function() 
 {
+	<?php
+	if($popup == "")
+	{
+	?>
+		jQuery("#gallery_bank_popup").dialog(
+		{
+			dialogClass: "wp-dialog gallery_bank_popup_box",
+			modal: true,
+			closeOnEscape: true,
+			title: gallery_bank_popup.title,
+			width: "auto",
+			resizable: true,
+			draggable: false,
+			create: function ( event, ui ) {
+				jQuery( this ).css( "maxWidth", "600px" );
+			},
+			close: function(event)
+			{
+				jQuery( "#gallery_bank_popup" ).dialog( "close" );
+				jQuery.post(ajaxurl, "param=update_option&action=add_new_album_library", function(data)
+				{
+				});
+			}
+			
+		});
+	<?php
+	}
+	?>
 	jQuery(".imgLiquidFill").imgLiquid({fill:true});
 	var oTable = jQuery("#data-table-album").dataTable
 	({
@@ -260,6 +327,14 @@ jQuery(document).ready(function()
 		allow_resize: true
 	});
 });
+function close_popup()
+{
+	jQuery( "#gallery_bank_popup" ).dialog( "close" );
+	jQuery.post(ajaxurl, "param=update_option&action=add_new_album_library", function()
+	{
+	});
+	
+}
 	function delete_album(album_id) 
 	{
 		var r = confirm("<?php _e( "Are you sure you want to delete this Album?", gallery_bank ); ?>");
