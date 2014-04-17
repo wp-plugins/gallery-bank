@@ -269,11 +269,7 @@ else
 	
 	        $wpdb->query
 	        (
-	            $wpdb->prepare
-	                (
-	                    "DELETE FROM " . gallery_bank_pics() . " WHERE pic_id in ($delete_array)",
-	                    ""
-	                )
+				"DELETE FROM " . gallery_bank_pics() . " WHERE pic_id in ($delete_array)"
 	        );
 	        die();
 	    }

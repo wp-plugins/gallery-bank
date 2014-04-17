@@ -88,24 +88,22 @@ if (isset($_REQUEST["order_id"])) {
 }
 
 $album = $wpdb->get_row
-    (
-        $wpdb->prepare
-            (
-                "SELECT * FROM " . gallery_bank_albums() . " where album_id = %d",
-                $album_id
-            )
-    );
+(
+    $wpdb->prepare
+        (
+            "SELECT * FROM " . gallery_bank_albums() . " where album_id = %d",
+            $album_id
+        )
+);
 $album_css = $wpdb->get_results
-    (
-        $wpdb->prepare
-            (
-                "SELECT * FROM " . gallery_bank_settings(), ""
-
-            )
-    );
-if (count($album_css) != 0) {
+(
+	"SELECT * FROM " . gallery_bank_settings()
+);
+if (count($album_css) != 0) 
+{
     $setting_keys = array();
-    for ($flag = 0; $flag < count($album_css); $flag++) {
+    for ($flag = 0; $flag < count($album_css); $flag++) 
+    {
         array_push($setting_keys, $album_css[$flag]->setting_key);
     }
     $index = array_search("thumbnails_width", $setting_keys);

@@ -21,14 +21,13 @@ $pics = $wpdb->get_results
 
 $album_css = $wpdb->get_results
 (
-    $wpdb->prepare
-    (
-        "SELECT * FROM " . gallery_bank_settings(), ""
-    )
+	"SELECT * FROM " . gallery_bank_settings()
 );
-if (count($album_css) != 0) {
+if (count($album_css) != 0) 
+{
     $setting_keys = array();
-    for ($flag = 0; $flag < count($album_css); $flag++) {
+    for ($flag = 0; $flag < count($album_css); $flag++) 
+    {
         array_push($setting_keys, $album_css[$flag]->setting_key);
     }
 

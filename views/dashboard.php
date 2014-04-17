@@ -41,17 +41,11 @@
 	}
 	$album = $wpdb->get_results
 	(
-		$wpdb->prepare
-		(
-			"SELECT * FROM ".gallery_bank_albums()." order by album_order asc ",""
-		)
+		"SELECT * FROM ".gallery_bank_albums()." order by album_order asc "
 	);
 	$album_css = $wpdb->get_results
 	(
-		$wpdb->prepare
-		(
-			"SELECT * FROM ".gallery_bank_settings(),""
-		)
+		"SELECT * FROM ".gallery_bank_settings()
 	);
 	if(count($album_css) != 0)
 	{
@@ -140,10 +134,7 @@
 				<?php
 				$album_count = $wpdb->get_var
 				(
-					$wpdb->prepare
-					(
-						"SELECT count(album_id) FROM ".gallery_bank_albums(),""
-					)
+					"SELECT count(album_id) FROM ".gallery_bank_albums()
 				);
 				if($album_count < 2)
 				{

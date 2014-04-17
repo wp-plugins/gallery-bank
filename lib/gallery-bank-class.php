@@ -10,10 +10,7 @@ function create_global_menus_for_gallery_bank()
     add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
     $album_count = $wpdb->get_var
 	(
-		$wpdb->prepare
-		(
-			"SELECT count(album_id) FROM ".gallery_bank_albums(),""
-		)
+			"SELECT count(album_id) FROM ".gallery_bank_albums()
 	);
 	if($album_count < 2)
 	{
@@ -65,10 +62,7 @@ function add_album()
 	global $wpdb;
 	$album_count = $wpdb->get_var
 	(
-		$wpdb->prepare
-		(
-			"SELECT count(album_id) FROM ".gallery_bank_albums(),""
-		)
+		"SELECT count(album_id) FROM ".gallery_bank_albums()
 	);
 	if($album_count < 2)
 	{

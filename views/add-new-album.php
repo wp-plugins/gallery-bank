@@ -2,11 +2,7 @@
 	global $wpdb;
 	$album_css = $wpdb->get_results
 	(
-	    $wpdb->prepare
-	    (
-	        "SELECT * FROM " . gallery_bank_settings(), ""
-	
-	    )
+		"SELECT * FROM " . gallery_bank_settings()
 	);
 	if (count($album_css) != 0) {
 		$setting_keys = array();

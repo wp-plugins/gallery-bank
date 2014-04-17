@@ -13,10 +13,7 @@ if($version == "")
     {
         $albums = $wpdb->get_results
         (
-            $wpdb->prepare
-            (
-                "Select * FROM " . gallery_bank_albums(), ""
-            )
+			"Select * FROM " . gallery_bank_albums()
         );
 
         $sql = "DROP TABLE " . gallery_bank_albums();
@@ -53,10 +50,7 @@ if($version == "")
     {
         $album_pics = $wpdb->get_results
         (
-            $wpdb->prepare
-            (
-                "Select * FROM " . gallery_bank_pics(), ""
-            )
+			"Select * FROM " . gallery_bank_pics()
         );
 
         $sql = "DROP TABLE " . gallery_bank_pics();

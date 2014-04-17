@@ -11,80 +11,57 @@ if (isset($_REQUEST["order_id"])) {
     switch ($_REQUEST["order_id"]) {
         case "unsort":
             $album = $wpdb->get_results
-                (
-                    $wpdb->prepare
-                        (
-                            "SELECT * FROM " . gallery_bank_albums(), ""
-                        )
-                );
+            (
+				"SELECT * FROM " . gallery_bank_albums()
+            );
             break;
         case "albumId":
             $album = $wpdb->get_results
-                (
-                    $wpdb->prepare
-                        (
-                            "SELECT * FROM " . gallery_bank_albums() . " order by album_id asc", ""
-                        )
-                );
+			(
+				"SELECT * FROM " . gallery_bank_albums() . " order by album_id asc"
+			);
             break;
         case "name":
             $album = $wpdb->get_results
-                (
-                    $wpdb->prepare
-                        (
-                            "SELECT * FROM " . gallery_bank_albums() . " order by album_name asc", ""
-                        )
-                );
+			(
+				"SELECT * FROM " . gallery_bank_albums() . " order by album_name asc"
+			);
             break;
         case "date":
             $album = $wpdb->get_results
-                (
-                    $wpdb->prepare
-                        (
-                            "SELECT * FROM " . gallery_bank_albums() . " order by album_date asc", ""
-                        )
-                );
+			(
+				"SELECT * FROM " . gallery_bank_albums() . " order by album_date asc"
+			);
             break;
         case "asc":
             $album = $wpdb->get_results
-                (
-                    $wpdb->prepare
-                        (
-                            "SELECT * FROM " . gallery_bank_albums() . " order by album_id asc", ""
-                        )
-                );
+			(
+				"SELECT * FROM " . gallery_bank_albums() . " order by album_id asc"
+			);
             break;
         case "desc":
             $album = $wpdb->get_results
-                (
-                    $wpdb->prepare
-                        (
-                            "SELECT * FROM " . gallery_bank_albums() . " order by album_id desc", ""
-                        )
-                );
+			(
+				"SELECT * FROM " . gallery_bank_albums() . " order by album_id desc"
+			);
             break;
     }
 } else {
     $album = $wpdb->get_results
-        (
-            $wpdb->prepare
-                (
-                    "SELECT * FROM " . gallery_bank_albums() . " order by album_order asc ", ""
-                )
-        );
+	(
+		"SELECT * FROM " . gallery_bank_albums() . " order by album_order asc "
+	);
 }
 
 $album_css = $wpdb->get_results
-    (
-        $wpdb->prepare
-            (
-                "SELECT * FROM " . gallery_bank_settings(), ""
-
-            )
-    );
-if (count($album_css) != 0) {
+(
+	"SELECT * FROM " . gallery_bank_settings()
+);
+if (count($album_css) != 0) 
+{
     $setting_keys = array();
-    for ($flag = 0; $flag < count($album_css); $flag++) {
+    for ($flag = 0; $flag < count($album_css); $flag++) 
+    {
         array_push($setting_keys, $album_css[$flag]->setting_key);
     }
     $index = array_search("cover_thumbnail_width", $setting_keys);

@@ -20,10 +20,7 @@ $album = $wpdb->get_var
 );
 $album_css = $wpdb->get_results
 (
-    $wpdb->prepare
-    (
-        "SELECT * FROM " . gallery_bank_settings(), ""
-    )
+	"SELECT * FROM " . gallery_bank_settings()
 );
 /***** Global Queries ******/
 
@@ -146,6 +143,46 @@ if (count($album_css) != 0) {
         margin-right: <?php echo $margin_btw_thumbnails;?>px !important;
         margin-bottom: <?php echo $margin_btw_thumbnails;?>px !important;
     }
+     <?php
+    if($responsive != "true")
+	{
+	?>
+    	.images-in-row_<?php echo $unique_id;?>
+	    {
+	        <?php
+
+	        if($gallery_type != "masonry")
+	        {
+	            if($pagination_setting == 1)
+	            {
+	                ?>
+	            	height: <?php echo ($thumbnails_height + $margin_btw_thumbnails) * ceil($images_per_page / $img_in_row) + 20 ;?>px !important;
+	                <?php
+	            }
+	            else
+	            {
+	                ?>
+	                height: <?php echo ($thumbnails_height + $margin_btw_thumbnails) * ceil(count($pics) / $img_in_row) + 20 ;?>px !important;
+	                <?php
+	            }
+                    ?> width: <?php echo ($thumbnails_width + ($margin_btw_thumbnails * 2)) * $img_in_row ;?>px !important;
+                    <?php
+            }
+            else if($gallery_type == "masonry")
+            {
+            
+                ?> width: <?php echo ($thumbnails_width + ($margin_btw_thumbnails * 2) + ($thumbnails_border_size * 2)) * $img_in_row ;?>px !important;
+                <?php
+            }
+		?> clear: both;
+	    }
+		<?php
+	}
+	?>
+	.images-in-row_<?php echo $unique_id;?> a
+    {
+        text-decoration:none !important;
+    }
     .imgLiquidFill {
         width: <?php echo $thumbnails_width;?>px !important;
         height: <?php echo $thumbnails_height;?>px !important;
@@ -159,7 +196,7 @@ if (count($album_css) != 0) {
 	.pp_pic_holder.pp_default {
 	    background-color: #ffffff;
     }
-
+    
     div.pp_overlay {
         background-color: <?php echo $lightbox_overlay_bg_color;?> !important;
         opacity: <?php echo $lightbox_overlay_opacity;?> !important;
