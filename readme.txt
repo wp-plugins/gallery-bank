@@ -40,8 +40,6 @@ Gallery Bank has become the **Best Plugin** in the world for WordPress sites to 
 > * [Demo Using Blog Style Layout in Grid Format](http://tech-banker.com/gallery-bank/demo/albums-in-grid-format-with-title-and-description-blog-style-layout/)
 > * [Demo Using Blog Style Layout in List Format](http://tech-banker.com/gallery-bank/demo/albums-in-list-format-with-title-and-description-blog-style-layout/)
 
-> #### ** Gallery Bank Standard Edition Video **
-
 [vimeo https://vimeo.com/92378296]
 
 It provides a powerful engine for uploading and managing galleries of images & videos, with the ability to batch upload, add/delete/rearrange/sort images, edit thumbnails, 100+ settings, and even much more. It also provides different front-end display styles (filmstrips, slideshows, masonry, blog styles and thumbnail galleries), all of them comes with a wide array of options for controlling size, style, timing, transitions, controls, lightbox effects, and more.
