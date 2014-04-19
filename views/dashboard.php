@@ -75,6 +75,7 @@
 	
 ?>
 <!--suppress ALL -->
+
         <style type="text/css">
 	.dynamic_cover_css{
 		border:<?php echo $cover_thumbnail_border_size;?>px solid <?php echo $cover_thumbnail_border_color;?> ;
@@ -124,136 +125,198 @@
         display: none !important;
     }
 </style>
-<div class="fluid-layout">
-	<div class="layout-span12">
-		<div class="widget-layout">
-			<div class="widget-layout-title">
-				<h4><?php _e( "Dashboard - Gallery Bank", gallery_bank ); ?></h4>
+<div id="poststuff" style="width: 99% !important;">
+	<div id="post-body" class="metabox-holder columns-2">
+		<div id="postbox-container-2" class="postbox-container">
+			<div id="gallery_bank_dashboard" class="meta-box-sortables">
+				<div id="gallery_bank_get_started" class="postbox" >
+					<div class="handlediv" data-target="#uxgetting_started" title="Click to toggle" data-toggle="collapse"><br></div>
+					<h3 class="hndle"><span><?php _e("Getting Started", gallery_bank); ?></span></h3>
+					<div class="inside">
+						<div id="uxgetting_started" class="gallery_bank_getting_started">
+							<div class="column">
+								<h2><?php _e("Watch the Walk-Through Video", gallery_bank); ?></h2>
+								<a class="gallery-bank-video-link" href="#" data-video-id="gallery_bank_video"><img src="http://i.vimeocdn.com/video/472092768_200x150.jpg" style="border:2px solid #ebebeb;"/></a>
+								<p class="gallery-bank-video-description">
+									In this short video, we walk through, how to add images to your gallery using Gallery Bank Standard Edition.</p>
+								<p class="gallery_bank_video">
+									<iframe src="//player.vimeo.com/video/92378296?title=0&amp;byline=0&amp;portrait=0" width="853" height="480" frameborder="0" ></iframe>
+								</p>
+							</div>
+							<div class="column two">
+								<h2 style="line-height: 29px;"><?php _e("Gallery Bank, a Superlative High quality WordPress Plugin!", gallery_bank); ?></h2>
+								<p>
+									Gallery Bank is the only available WordPress Plugin with extra-ordinary features.It creates stunning Photo Galleries on any WordPress site.
+								</p>
+								<p>
+									Upgrade to Pro Version to take your Gallery Bank to the next level.</p>
+								<p>
+									<a class="button-primary" href="http://tech-banker.com/gallery-bank/" target="_blank"><?php _e("Get Gallery Bank Pro Features", gallery_bank); ?></a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="widget-layout-body">
-				<?php
-				$album_count = $wpdb->get_var
-				(
-					"SELECT count(album_id) FROM ".gallery_bank_albums()
-				);
-				if($album_count < 2)
-				{
-					?>
-					<a class="btn btn-info" href="admin.php?page=add_album"><?php _e("Add New Album", gallery_bank);?></a>
-					<?php
-				}
-				?>
-				<a class="btn btn-danger" href="#" onclick="delete_all_albums();"><?php _e("Delete All Albums", gallery_bank);?></a>
-				<a class="btn btn-danger" href="#" onclick="purge_all_images();"><?php _e("Purge Images & Albums", gallery_bank);?></a>
-				<a class="btn btn-danger" href="#" onclick="restore_factory_settings();"><?php _e("Restore Factory Settings", gallery_bank);?></a>
-				<div class="separator-doubled"></div>
-				<a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">How to setup Short-Codes for Gallery Bank into your WordPress Page/Post?</a>
-				<div class="fluid-layout">
-					<div class="layout-span12">
-						<div class="widget-layout">
-							<div class="widget-layout-title">
-								<h4><?php _e( "Existing Albums Overview", gallery_bank ); ?></h4>
+			<div id="advanced" class="meta-box-sortables">
+				<div id="gallery_bank_get_started" class="postbox" >
+					<div class="handlediv" data-target="#ux_dashboard" title="Click to toggle" data-toggle="collapse"><br></div>
+					<h3 class="hndle"><span><?php _e("Dashboard", gallery_bank); ?></span></h3>
+					<div class="inside">
+						<div id="ux_dashboard" class="gallery_bank_layout">
+							<?php
+							$album_count = $wpdb->get_var
+							(
+								"SELECT count(album_id) FROM ".gallery_bank_albums()
+							);
+							if($album_count < 2)
+							{
+								?>
+								<a class="btn btn-info" href="admin.php?page=add_album"><?php _e("Add New Album", gallery_bank);?></a>
+								<?php
+							}
+							?>
+							<a class="btn btn-danger" href="#" onclick="delete_all_albums();"><?php _e("Delete All Albums", gallery_bank);?></a>
+							<a class="btn btn-danger" href="#" onclick="purge_all_images();"><?php _e("Purge Images & Albums", gallery_bank);?></a>
+							<a class="btn btn-danger" href="#" onclick="restore_factory_settings();"><?php _e("Restore Factory Settings", gallery_bank);?></a>
+							<div class="separator-doubled"></div>
+							<a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">How to setup Short-Codes for Gallery Bank into your WordPress Page/Post?</a>
+							<div class="fluid-layout">
+								<div class="layout-span12">
+									<div class="widget-layout">
+										<div class="widget-layout-title">
+											<h4><?php _e( "Existing Albums Overview", gallery_bank ); ?></h4>
+										</div>
+										<div class="widget-layout-body">
+											<table class="table table-striped " id="data-table-album">
+												<thead>
+													<tr>
+														<th style="width:24%"><?php _e( "Thumbnail", gallery_bank ); ?></th>
+														<th style="width:13%"><?php _e( "Title", gallery_bank ); ?></th>
+														<th style="width:16%"><?php _e( "Total Images", gallery_bank ); ?></th>
+														<th style="width:15%"><?php _e( "Date", gallery_bank ); ?></th>
+														<th style="width:14%"><?php _e( "Short-Codes", gallery_bank ); ?></th>
+														<th style="width:17%"></th>
+													</tr>
+												</thead>
+												<tbody>
+													<?php
+													for($flag=0; $flag <count($album); $flag++)
+													{
+														$count_pic = $wpdb->get_var
+														(
+															$wpdb->prepare
+															(
+																"SELECT count(".gallery_bank_albums().".album_id) FROM ".gallery_bank_albums()." join ".gallery_bank_pics()." on ".gallery_bank_albums().".album_id =  ".gallery_bank_pics().".album_id where ".gallery_bank_albums().".album_id = %d ",
+																$album[$flag]->album_id
+															)
+														);
+														$albumCover = $wpdb->get_row
+														(
+															$wpdb->prepare
+															(
+																"SELECT album_cover,thumbnail_url,video FROM ".gallery_bank_pics()." WHERE album_cover=1 and album_id = %d",
+																$album[$flag]->album_id
+															)
+														);
+														?>
+															<tr>
+																<td>
+																	<a href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>" title="<?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?>" >
+																		<div class="imgLiquidFill dynamic_cover_css">
+																			<?php
+																			if(count($albumCover) != 0)
+																			{
+																				if($albumCover->album_cover == 0)
+																				{
+																					?>
+																					<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"  />
+																					<?php
+																				}
+																				else
+																				{
+																					?> 
+																					<img src="<?php echo stripcslashes(GALLERY_BK_ALBUM_THUMB_URL.$albumCover->thumbnail_url); ?>"   />
+																					<?php
+																				}
+																			}
+																			else 
+																			{
+																				?> 
+																				<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"   />	
+																				<?php
+																			}
+																			?>
+																		</div>
+																	</a>
+																</td>
+																<td><?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?></td>
+																<td><?php echo $count_pic;?></td>
+																<td><?php echo date("d-M-Y", strtotime($album[$flag] -> album_date));?></td>
+																<td>
+																	<a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">Short Codes</a>
+																</td>
+																<td>
+																	<ul class="layout-table-controls">
+																		<li>
+																			<a href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Edit Album", gallery_bank ); ?>">
+																				<i class="icon-pencil" ></i>
+																			</a>
+																		</li>	
+																		<li>
+																			<a href="admin.php?page=images_sorting&album_id=<?php echo $album[$flag]->album_id;?>&row=3" class="btn hovertip" data-original-title="<?php _e( "Re-Order Images", gallery_bank ); ?>">
+																				<i class="icon-th"></i>
+																			</a>
+																		</li>
+																		<li>
+																			<a href="admin.php?page=album_preview&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Preview Album", gallery_bank ); ?>">
+																				<i class="icon-eye-open"></i>
+																			</a>
+																		</li>
+																		<li>
+																			<a class="btn hovertip "  style="cursor: pointer;" data-original-title="<?php _e( "Delete Album", gallery_bank)?>" onclick="delete_album(<?php echo $album[$flag]->album_id;?>);" >
+																				<i class="icon-trash"></i>
+																			</a>
+																		</li>
+																	</ul>
+																</td>
+															</tr>
+														<?php
+													}
+													?>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
 							</div>
-							<div class="widget-layout-body">
-								<table class="table table-striped " id="data-table-album">
-									<thead>
-										<tr>
-											<th style="width:24%"><?php _e( "Thumbnail", gallery_bank ); ?></th>
-											<th style="width:13%"><?php _e( "Title", gallery_bank ); ?></th>
-											<th style="width:16%"><?php _e( "Total Images", gallery_bank ); ?></th>
-											<th style="width:15%"><?php _e( "Date", gallery_bank ); ?></th>
-											<th style="width:14%"><?php _e( "Short-Codes", gallery_bank ); ?></th>
-											<th style="width:17%"></th>
-										</tr>
-									</thead>
-									<tbody>
-										<?php
-										for($flag=0; $flag <count($album); $flag++)
-										{
-											$count_pic = $wpdb->get_var
-											(
-												$wpdb->prepare
-												(
-													"SELECT count(".gallery_bank_albums().".album_id) FROM ".gallery_bank_albums()." join ".gallery_bank_pics()." on ".gallery_bank_albums().".album_id =  ".gallery_bank_pics().".album_id where ".gallery_bank_albums().".album_id = %d ",
-													$album[$flag]->album_id
-												)
-											);
-											$albumCover = $wpdb->get_row
-											(
-												$wpdb->prepare
-												(
-													"SELECT album_cover,thumbnail_url,video FROM ".gallery_bank_pics()." WHERE album_cover=1 and album_id = %d",
-													$album[$flag]->album_id
-												)
-											);
-											?>
-												<tr>
-													<td>
-														<a href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>" title="<?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?>" >
-															<div class="imgLiquidFill dynamic_cover_css">
-																<?php
-																if(count($albumCover) != 0)
-																{
-																	if($albumCover->album_cover == 0)
-																	{
-																		?>
-																		<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"  />
-																		<?php
-																	}
-																	else
-																	{
-																		?> 
-																		<img src="<?php echo stripcslashes(GALLERY_BK_ALBUM_THUMB_URL.$albumCover->thumbnail_url); ?>"   />
-																		<?php
-																	}
-																}
-																else 
-																{
-																	?> 
-																	<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"   />	
-																	<?php
-																}
-																?>
-															</div>
-														</a>
-													</td>
-													<td><?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?></td>
-													<td><?php echo $count_pic;?></td>
-													<td><?php echo date("d-M-Y", strtotime($album[$flag] -> album_date));?></td>
-													<td>
-														<a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">Short Codes</a>
-													</td>
-													<td>
-														<ul class="layout-table-controls">
-															<li>
-																<a href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Edit Album", gallery_bank ); ?>">
-																	<i class="icon-pencil" ></i>
-																</a>
-															</li>	
-															<li>
-																<a href="admin.php?page=images_sorting&album_id=<?php echo $album[$flag]->album_id;?>&row=3" class="btn hovertip" data-original-title="<?php _e( "Re-Order Images", gallery_bank ); ?>">
-																	<i class="icon-th"></i>
-																</a>
-															</li>
-															<li>
-																<a href="admin.php?page=album_preview&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Preview Album", gallery_bank ); ?>">
-																	<i class="icon-eye-open"></i>
-																</a>
-															</li>
-															<li>
-																<a class="btn hovertip "  style="cursor: pointer;" data-original-title="<?php _e( "Delete Album", gallery_bank)?>" onclick="delete_album(<?php echo $album[$flag]->album_id;?>);" >
-																	<i class="icon-trash"></i>
-																</a>
-															</li>
-														</ul>
-													</td>
-												</tr>
-											<?php
-										}
-										?>
-									</tbody>
-								</table>
-							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="postbox-container-1" class="postbox-container">
+			<div id="priority_side" class="meta-box-sortables">
+				<div id="gallery_bank_get_started" class="postbox" >
+					<div class="handlediv" data-target="#uxdownload" title="Click to toggle" data-toggle="collapse"><br></div>
+					<h3 class="hndle"><span><?php _e("Need Support Help?", gallery_bank); ?></span></h3>
+					<div class="inside">
+						<div id="uxdownload" class="gallery_bank_getting_started">
+							<p>
+								We’re interested in hearing from you.</p>
+
+								<p>We will help you through the process and try to provide the answers.</p>
+								
+								<p>If you need to know more about our services or have something to share, please feel free to contact us.
+							</p>
+							<p>We commit to responses within 24 hours on weekdays – generally within hours during week day work hours.</p>
+							<p>
+								<a class="btn btn-danger" href="http://tech-banker.com/get-in-touch/" target="_blank" style="text-decoration: none;"><?php _e("Let’s get in touch!", gallery_bank); ?></a>
+							</p>
+							<img src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/img.png";?>" style="max-width:100%;cursor: pointer;" />
+							<p>
+								<a class="btn btn-danger" href="http://tech-banker.com/gallery-bank/" target="_blank" style="text-decoration: none;"><?php _e("Order Now!", gallery_bank); ?></a>
+							</p>
 						</div>
 					</div>
 				</div>
@@ -261,11 +324,37 @@
 		</div>
 	</div>
 </div>
-
 <script type="text/javascript">
 jQuery(".hovertip").tooltip();
 jQuery(document).ready(function() 
 {
+	jQuery( ".gallery-bank-video-link").click( function( event ) {
+	
+		event.preventDefault();
+		
+		var target = jQuery( this ).data( "video-id" );
+		
+		jQuery( "." + target ).dialog(
+			{
+				dialogClass: "wp-dialog gallery-bank-video-popup",
+				modal: true,
+				closeOnEscape: true,
+				width: "auto",
+				resizable: false,
+				draggable: false,
+				create: function( event, ui ) {
+					jQuery(this).css("maxWidth", "853px");
+				},
+				open: function(event, ui) { 
+					jQuery(".ui-widget-overlay").bind("click", function () { 
+						jQuery(this).siblings(".ui-dialog").find(".ui-dialog-content").dialog("close"); 
+					}); 
+				}
+			}
+		);
+		jQuery(".ui-dialog :button").blur();
+		
+	});
 	<?php
 	if($popup == "")
 	{
@@ -294,6 +383,7 @@ jQuery(document).ready(function()
 	<?php
 	}
 	?>
+	
 	jQuery(".imgLiquidFill").imgLiquid({fill:true});
 	var oTable = jQuery("#data-table-album").dataTable
 	({

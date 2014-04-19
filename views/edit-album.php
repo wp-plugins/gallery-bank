@@ -72,279 +72,272 @@ if (count($album_css) != 0)
             -khtml-opacity: <?php echo $thumbnails_opacity; ?>;
         }
     </style>
-
-    <form id="edit_album" class="layout-form">
-		<div class="fluid-layout">
-			<div class="layout-span12">
-				<ul class="breadcrumb">
-					<li>
-						<i class="icon-home"></i>
-						<a href="admin.php?page=gallery_bank"><?php _e("Gallery Bank", gallery_bank); ?></a>
-						<span class="divider">/</span>
-						<a href="#"><?php _e("Edit Album", gallery_bank); ?></a>
-					</li>
-				</ul>
-				<div class="widget-layout">
-					<div class="widget-layout-title">
-						<h4>
-							<i class="icon-plus"></i>
-							<?php _e("Edit Album", gallery_bank); ?>
-						</h4>
+<form id="edit_album" class="layout-form">
+	<div id="poststuff" style="width: 99% !important;">
+		<div id="post-body" class="metabox-holder">
+			<div id="postbox-container-2" class="postbox-container">
+				<div id="advanced" class="meta-box-sortables">
+					<div id="gallery_bank_get_started" class="postbox" >
+						<div class="handlediv" data-target="#ux_edit_album" title="Click to toggle" data-toggle="collapse"><br></div>
+						<h3 class="hndle"><span><?php _e("Edit Album", gallery_bank); ?></span></h3>
+						<div class="inside">
+							<div id="ux_edit_album" class="gallery_bank_layout">
+								<a class="btn btn-inverse" href="admin.php?page=gallery_bank"><?php _e("Back to Albums", gallery_bank); ?></a>
+								<button type="submit" class="btn btn-info" style="float:right"><?php _e("Update Album", gallery_bank); ?></button>
+								<div class="separator-doubled"></div>
+								<div id="update_album_success_message" class="message green" style="display: none;">
+									<span>
+										<strong><?php _e("Album Updated. Kindly wait for the redirect to happen.", gallery_bank); ?></strong>
+									</span>
+								</div>
+								<div class="fluid-layout">
+									<div class="layout-span6">
+										<div class="widget-layout">
+											<div class="widget-layout-title">
+												<h4><?php _e("Album Details", gallery_bank); ?></h4>
+											</div>
+							                <div class="widget-layout-body">
+							                    <div class="layout-control-group">
+							                        <label class="layout-control-label"><?php _e("Album Title", gallery_bank); ?> :</label>
+							                        <div class="layout-controls">
+							                            <input type="text" name="ux_edit_title" class="layout-span12"
+						                                   value="<?php echo stripcslashes(htmlspecialchars_decode($album->album_name)); ?>"
+						                                   id="ux_edit_title"
+						                                   placeholder="<?php _e("Enter your Album Title", gallery_bank); ?>"/>
+							                        </div>
+							                    </div>
+							                    <input type="hidden" id="ux_hidden_album_id" value="<?php echo $album_id; ?>"/>
+							                </div>
+							                <div class="widget-layout-body">
+							                    <div class="layout-control-group">
+							                        <label class="layout-control-label"><?php _e("Description", gallery_bank); ?> :</label>
+							                    </div>
+							                    <div class="layout-control-group">
+							                        <?php
+							                        $ux_content = stripslashes(htmlspecialchars_decode($album->description));
+							                        wp_editor($ux_content, $id = "ux_edit_description", $media_buttons = true, $tab_index = 1);
+							                        ?>
+							                    </div>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="layout-span6">
+							            <div class="widget-layout">
+							                <div class="widget-layout-title">
+							                    <h4><?php _e("Upload Images", gallery_bank); ?></h4>
+							                </div>
+							                <div class="widget-layout-body" id="edit_image_uploader">
+							                    <p><?php _e("Your browser doesn\"t have Flash, Silverlight or HTML5 support.", gallery_bank) ?></p>
+							                </div>
+							            </div>
+							        </div>
+							        <div class="layout-span6">
+							            <div class="widget-layout">
+							                <div class="widget-layout-title">
+							                    <h4><?php _e("Upload Videos", gallery_bank); ?>
+							                    	<i class="widget_premium_feature"><?php _e(" (Available in Premium Versions)", gallery_bank); ?></i>
+							                    </h4>
+							                </div>
+							                <div class="widget-layout-body" id="edit_video_uploader">
+							                    <div class="layout-control-group">
+							                        <label class="layout-control-label"><?php _e("Video Url", gallery_bank); ?> :</label>
+							                        <div class="layout-controls">
+							                            <input type="text" name="ux_edit_txt_video_url" class="layout-span12" value=""
+						                                   id="ux_edit_txt_video_url"
+						                                   placeholder="<?php _e("Enter your Video Url", gallery_bank); ?>"/>
+							                        </div>
+							                    </div>
+							                    <div class="layout-control-group">
+							                        <div class="layout-controls">
+							                            <button type="button" onclick="insertVideoToDataTable();" style="float:right"
+							                                    class="btn btn-info"><?php _e("Upload Video", gallery_bank); ?></button>
+							                        </div>
+							                    </div>
+							                </div>
+							            </div>
+							        </div>
+								</div>
+								<div class="fluid-layout">
+									<div class="layout-span12">
+										<div class="widget-layout">
+											<div class="widget-layout-title">
+												<h4><?php _e("Your Gallery Bank Album", gallery_bank); ?></h4>
+											</div>
+											<div class="widget-layout-body">
+												<table class="table table-striped " id="data-table-edit-album">
+													<thead>
+														<tr>
+								                            <th style="width:11%">
+								                                <input type="checkbox" id="grp_select_items" name="grp_select_items" style="vertical-align:middle;"/>
+								                                <button type="button" onclick="deleteSelectedImages();" style="vertical-align:middle;"
+								                                        class="btn btn-inverse"><?php _e("Delete", gallery_bank); ?></button>
+								                            </th>
+								                            <th style="width:15%">
+								                                <?php _e("Thumbnail", gallery_bank); ?>
+								                            </th>
+								                            <th style="width:25%">
+								                                <?php _e("Title & Description", gallery_bank); ?>
+								                            </th>
+								                            <th style="width:20%">
+								                                <?php _e("Tags (comma separated list)", gallery_bank); ?>
+								                                <i class="widget_premium_feature"><?php _e(" (Available in Premium Versions)", gallery_bank); ?></i>
+								                            </th>
+								                            <th style="width:25%">
+								                                <?php _e("Url to Redirect on click of an Image", gallery_bank); ?>
+								                            </th>
+								                            <th style="width:5%"></th>
+								                        </tr>
+													</thead>
+		                        					<tbody>
+														<?php
+														for ($flag = 0; $flag < count($pics); $flag++) {
+															?>
+															<tr>
+																<?php
+																if ($pics[$flag]->video == 1) {
+																?>
+																	<td>
+																		<input type="checkbox" id="ux_grp_select_items" name="ux_grp_select_items"
+																		value="<?php echo $pics[$flag]->pic_id; ?>" control="edit"/>
+																	</td>
+																	<td>
+																		<a href="javascript:void(0);" title="<?php echo $pics[$flag]->pic_name; ?>">
+																			<img imageid="<?php echo $pics[$flag]->pic_id; ?>" type="video"
+																			imgpath="<?php echo $pics[$flag]->pic_name; ?>"
+																			src="<?php echo stripcslashes($video_url); ?>" id="ux_gb_img"
+																			name="ux_gb_img" width="<?php echo $thumbnails_width; ?>px;"
+																			class="edit dynamic_css" picId="<?php echo $pics[$flag]->pic_id; ?>"/>
+																		</a><br/>
+																		<?php $dateFormat = date("F j, Y", strtotime($pics[$flag]->date)); ?>
+																		<label><strong>Video</strong></label><br/><label><?php echo $dateFormat; ?></label>
+																	</td>
+																	<td>
+																		<input placeholder="<?php _e("Enter your Title", gallery_bank) ?>"
+																			class="layout-span12 " type="text"
+																			name="ux_edit_video_title_<?php echo $pics[$flag]->pic_id; ?>"
+																			id="ux_edit_video_title_<?php echo $pics[$flag]->pic_id; ?>"
+																			value="<?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title))); ?>"/>
+																		<textarea placeholder=" <?php _e("Enter your Description ", gallery_bank) ?>"
+																			style="margin-top:20px" rows="5" class="layout-span12"
+																			name="ux_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"
+																			id="ux_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"><?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description))); ?></textarea>
+																	</td>
+																	<td>
+																		<input placeholder="<?php _e("Enter your Tags", gallery_bank) ?>"
+																		class="layout-span12"  type="text" readonly="readonly"
+																		name="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>"
+																		id="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>" onkeypress="return preventDot(event);"
+																		value="" />
+																	</td>
+																	<td>
+																	</td>
+																	<td>
+																		<a class="btn hovertip " id="ux_btn_delete" style="cursor: pointer;"
+																		data-original-title="<?php _e("Delete Video", gallery_bank) ?>"
+																		onclick="deleteImage(this);" type="edit"
+																		controlId="<?php echo $pics[$flag]->pic_id; ?>">
+																			<i class="icon-trash"></i>
+																		</a>
+																	</td>
+																<?php
+																} else {
+																?>
+																	<td>
+																		<input type="checkbox" id="ux_grp_select_items" name="ux_grp_select_items"
+																		value="<?php echo $pics[$flag]->pic_id; ?>" control="edit"/>
+																	</td>
+																	<td>
+																		<a href="javascript:void(0);" title="<?php echo $pics[$flag]->pic_name; ?>">
+																			<img type="image" imgpath="<?php echo $pics[$flag]->thumbnail_url; ?>"
+																				src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL . $pics[$flag]->thumbnail_url); ?>"
+																				id="ux_gb_img" imageid="<?php echo $pics[$flag]->pic_id; ?>"
+																				name="ux_gb_img" class="edit dynamic_css"
+																				width="<?php echo $thumbnails_width ?>"/>
+																		</a>
+																		<br/>
+								                                        <?php $dateFormat = date("F j, Y", strtotime($pics[$flag]->date)); ?>
+								                                        <label><strong><?php echo $pics[$flag]->pic_name; ?></strong></label><br/><label><?php echo $dateFormat; ?></label><br/>
+								                                        <?php
+								                                        if ($pics[$flag]->album_cover == 1) {
+								                                            ?>
+								                                            <input type="radio" style="cursor: pointer;" checked="checked"
+							                                                   id="ux_edit_rdl_cover_<?php echo $pics[$flag]->pic_id; ?>"
+							                                                   name="ux_album_cover"/>
+								                                            <label><?php _e(" Set as Album Cover", gallery_bank) ?></label>
+								                                        <?php
+								                                        } else {
+								                                            ?>
+								                                            <input type="radio" style="cursor: pointer;"
+							                                                   id="ux_edit_rdl_cover_<?php echo $pics[$flag]->pic_id; ?>"
+							                                                   name="ux_album_cover"/>
+								                                            <label><?php _e(" Set as Album Cover", gallery_bank) ?></label>
+								                                        <?php
+								                                        }
+								                                        ?>
+								                                    </td>
+								                                    <td>
+								                                        <input placeholder="<?php _e("Enter your Title", gallery_bank) ?>"
+							                                               class="layout-span12 edit" type="text"
+							                                               name="ux_edit_img_title_<?php echo $pics[$flag]->pic_id; ?>"
+							                                               id="ux_edit_img_title_<?php echo $pics[$flag]->pic_id; ?>"
+							                                               value="<?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title))); ?>"/>
+								                                        <textarea placeholder="<?php _e("Enter your Description ", gallery_bank) ?>"
+						                                                   style="margin-top:20px" rows="5" class="layout-span12 edit"
+						                                                   name="ux_edit_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"
+						                                                   id="ux_edit_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"><?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description))); ?></textarea>
+								                                    </td>
+								                                    <td>
+								                                        <input placeholder="<?php _e("Enter your Tags", gallery_bank) ?>"
+							                                               class="layout-span12 edit" type="text" onkeypress="return preventDot(event);"
+							                                               name="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>"
+							                                               id="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>" readonly="readonly"
+							                                               value=""/>
+								                                    </td>
+								                                    <td>
+								                                        <?php
+								                                        if ($pics[$flag]->url == "" || $pics[$flag]->url == "undefined") {
+								                                            $domain = "http://";
+								                                        } else {
+								                                            $domain = str_replace("http://http://", "http://", $pics[$flag]->url);
+								                                        }
+								                                        ?>
+								                                        <input value="<?php echo $domain; ?>" type="text"
+							                                               id="ux_edit_txt_url_<?php echo $pics[$flag]->pic_id; ?>"
+							                                               name="ux_edit_txt_url_<?php echo $pics[$flag]->pic_id; ?>"
+							                                               class="layout-span12 edit"/>
+								                                    </td>
+								                                    <td>
+								                                        <a class="btn hovertip" id="ux_btn_delete" style="cursor: pointer;"
+								                                           data-original-title="<?php _e("Delete Image", gallery_bank) ?>"
+								                                           onclick="deleteImage(this);" type="edit"
+								                                           controlId="<?php echo $pics[$flag]->pic_id; ?>">
+								                                            <i class="icon-trash"></i>
+								                                        </a>
+								                                    </td>
+									                            <?php
+									                            }
+									                            ?>
+									                        </tr>
+								                        <?php
+								                        }
+		                       						 ?>
+						                        	</tbody>
+							                    </table>
+							                </div>
+							            </div>
+							        </div>
+								</div>
+		    					<div class="separator-doubled"></div>
+								<button type="submit" class="btn btn-info" style="float:right; margin-top: 20px;"><?php _e("Update Album", gallery_bank); ?></button>
+								<a class="btn btn-inverse" href="admin.php?page=gallery_bank" style="margin-top: 20px;"><?php _e("Back to Albums", gallery_bank); ?></a>
+							</div>
+						</div>
 					</div>
-					<div class="widget-layout-body">
-						<a class="btn btn-inverse" href="admin.php?page=gallery_bank"><?php _e("Back to Albums", gallery_bank); ?></a>
-						<button type="submit" class="btn btn-info" style="float:right"><?php _e("Update Album", gallery_bank); ?></button>
-						<div class="separator-doubled"></div>
-						<div id="update_album_success_message" class="message green" style="display: none;">
-							<span>
-								<strong><?php _e("Album Updated. Kindly wait for the redirect to happen.", gallery_bank); ?></strong>
-							</span>
-						</div>
-						<div class="fluid-layout">
-							<div class="layout-span6">
-								<div class="widget-layout">
-									<div class="widget-layout-title">
-										<h4><?php _e("Album Details", gallery_bank); ?></h4>
-									</div>
-					                <div class="widget-layout-body">
-					                    <div class="layout-control-group">
-					                        <label class="layout-control-label"><?php _e("Album Title", gallery_bank); ?> :</label>
-					                        <div class="layout-controls">
-					                            <input type="text" name="ux_edit_title" class="layout-span12"
-				                                   value="<?php echo stripcslashes(htmlspecialchars_decode($album->album_name)); ?>"
-				                                   id="ux_edit_title"
-				                                   placeholder="<?php _e("Enter your Album Title", gallery_bank); ?>"/>
-					                        </div>
-					                    </div>
-					                    <input type="hidden" id="ux_hidden_album_id" value="<?php echo $album_id; ?>"/>
-					                </div>
-					                <div class="widget-layout-body">
-					                    <div class="layout-control-group">
-					                        <label class="layout-control-label"><?php _e("Description", gallery_bank); ?> :</label>
-					                    </div>
-					                    <div class="layout-control-group">
-					                        <?php
-					                        $ux_content = stripslashes(htmlspecialchars_decode($album->description));
-					                        wp_editor($ux_content, $id = "ux_edit_description", $media_buttons = true, $tab_index = 1);
-					                        ?>
-					                    </div>
-					                </div>
-					            </div>
-					        </div>
-					        <div class="layout-span6">
-					            <div class="widget-layout">
-					                <div class="widget-layout-title">
-					                    <h4><?php _e("Upload Images", gallery_bank); ?></h4>
-					                </div>
-					                <div class="widget-layout-body" id="edit_image_uploader">
-					                    <p><?php _e("Your browser doesn\"t have Flash, Silverlight or HTML5 support.", gallery_bank) ?></p>
-					                </div>
-					            </div>
-					        </div>
-					        <div class="layout-span6">
-					            <div class="widget-layout">
-					                <div class="widget-layout-title">
-					                    <h4><?php _e("Upload Videos", gallery_bank); ?>
-					                    	<i class="widget_premium_feature"><?php _e(" (Available in Premium Versions)", gallery_bank); ?></i>
-					                    </h4>
-					                </div>
-					                <div class="widget-layout-body" id="edit_video_uploader">
-					                    <div class="layout-control-group">
-					                        <label class="layout-control-label"><?php _e("Video Url", gallery_bank); ?> :</label>
-					                        <div class="layout-controls">
-					                            <input type="text" name="ux_edit_txt_video_url" class="layout-span12" value=""
-				                                   id="ux_edit_txt_video_url"
-				                                   placeholder="<?php _e("Enter your Video Url", gallery_bank); ?>"/>
-					                        </div>
-					                    </div>
-					                    <div class="layout-control-group">
-					                        <div class="layout-controls">
-					                            <button type="button" onclick="insertVideoToDataTable();" style="float:right"
-					                                    class="btn btn-info"><?php _e("Upload Video", gallery_bank); ?></button>
-					                        </div>
-					                    </div>
-					                </div>
-					            </div>
-					        </div>
-						</div>
-						<div class="fluid-layout">
-							<div class="layout-span12">
-								<div class="widget-layout">
-									<div class="widget-layout-title">
-										<h4><?php _e("Your Gallery Bank Album", gallery_bank); ?></h4>
-									</div>
-									<div class="widget-layout-body">
-										<table class="table table-striped " id="data-table-edit-album">
-											<thead>
-												<tr>
-						                            <th style="width:11%">
-						                                <input type="checkbox" id="grp_select_items" name="grp_select_items" style="vertical-align:middle;"/>
-						                                <button type="button" onclick="deleteSelectedImages();" style="vertical-align:middle;"
-						                                        class="btn btn-inverse"><?php _e("Delete", gallery_bank); ?></button>
-						                            </th>
-						                            <th style="width:15%">
-						                                <?php _e("Thumbnail", gallery_bank); ?>
-						                            </th>
-						                            <th style="width:25%">
-						                                <?php _e("Title & Description", gallery_bank); ?>
-						                            </th>
-						                            <th style="width:20%">
-						                                <?php _e("Tags (comma separated list)", gallery_bank); ?>
-						                                <i class="widget_premium_feature"><?php _e(" (Available in Premium Versions)", gallery_bank); ?></i>
-						                            </th>
-						                            <th style="width:25%">
-						                                <?php _e("Url to Redirect on click of an Image", gallery_bank); ?>
-						                            </th>
-						                            <th style="width:5%"></th>
-						                        </tr>
-											</thead>
-                        					<tbody>
-												<?php
-												for ($flag = 0; $flag < count($pics); $flag++) {
-													?>
-													<tr>
-														<?php
-														if ($pics[$flag]->video == 1) {
-														?>
-															<td>
-																<input type="checkbox" id="ux_grp_select_items" name="ux_grp_select_items"
-																value="<?php echo $pics[$flag]->pic_id; ?>" control="edit"/>
-															</td>
-															<td>
-																<a href="javascript:void(0);" title="<?php echo $pics[$flag]->pic_name; ?>">
-																	<img imageid="<?php echo $pics[$flag]->pic_id; ?>" type="video"
-																	imgpath="<?php echo $pics[$flag]->pic_name; ?>"
-																	src="<?php echo stripcslashes($video_url); ?>" id="ux_gb_img"
-																	name="ux_gb_img" width="<?php echo $thumbnails_width; ?>px;"
-																	class="edit dynamic_css" picId="<?php echo $pics[$flag]->pic_id; ?>"/>
-																</a><br/>
-																<?php $dateFormat = date("F j, Y", strtotime($pics[$flag]->date)); ?>
-																<label><strong>Video</strong></label><br/><label><?php echo $dateFormat; ?></label>
-															</td>
-															<td>
-																<input placeholder="<?php _e("Enter your Title", gallery_bank) ?>"
-																	class="layout-span12 " type="text"
-																	name="ux_edit_video_title_<?php echo $pics[$flag]->pic_id; ?>"
-																	id="ux_edit_video_title_<?php echo $pics[$flag]->pic_id; ?>"
-																	value="<?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title))); ?>"/>
-																<textarea placeholder=" <?php _e("Enter your Description ", gallery_bank) ?>"
-																	style="margin-top:20px" rows="5" class="layout-span12"
-																	name="ux_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"
-																	id="ux_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"><?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description))); ?></textarea>
-															</td>
-															<td>
-																<input placeholder="<?php _e("Enter your Tags", gallery_bank) ?>"
-																class="layout-span12"  type="text" readonly="readonly"
-																name="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>"
-																id="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>" onkeypress="return preventDot(event);"
-																value="" />
-															</td>
-															<td>
-															</td>
-															<td>
-																<a class="btn hovertip " id="ux_btn_delete" style="cursor: pointer;"
-																data-original-title="<?php _e("Delete Video", gallery_bank) ?>"
-																onclick="deleteImage(this);" type="edit"
-																controlId="<?php echo $pics[$flag]->pic_id; ?>">
-																	<i class="icon-trash"></i>
-																</a>
-															</td>
-														<?php
-														} else {
-														?>
-															<td>
-																<input type="checkbox" id="ux_grp_select_items" name="ux_grp_select_items"
-																value="<?php echo $pics[$flag]->pic_id; ?>" control="edit"/>
-															</td>
-															<td>
-																<a href="javascript:void(0);" title="<?php echo $pics[$flag]->pic_name; ?>">
-																	<img type="image" imgpath="<?php echo $pics[$flag]->thumbnail_url; ?>"
-																		src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL . $pics[$flag]->thumbnail_url); ?>"
-																		id="ux_gb_img" imageid="<?php echo $pics[$flag]->pic_id; ?>"
-																		name="ux_gb_img" class="edit dynamic_css"
-																		width="<?php echo $thumbnails_width ?>"/>
-																</a>
-																<br/>
-						                                        <?php $dateFormat = date("F j, Y", strtotime($pics[$flag]->date)); ?>
-						                                        <label><strong><?php echo $pics[$flag]->pic_name; ?></strong></label><br/><label><?php echo $dateFormat; ?></label><br/>
-						                                        <?php
-						                                        if ($pics[$flag]->album_cover == 1) {
-						                                            ?>
-						                                            <input type="radio" style="cursor: pointer;" checked="checked"
-					                                                   id="ux_edit_rdl_cover_<?php echo $pics[$flag]->pic_id; ?>"
-					                                                   name="ux_album_cover"/>
-						                                            <label><?php _e(" Set as Album Cover", gallery_bank) ?></label>
-						                                        <?php
-						                                        } else {
-						                                            ?>
-						                                            <input type="radio" style="cursor: pointer;"
-					                                                   id="ux_edit_rdl_cover_<?php echo $pics[$flag]->pic_id; ?>"
-					                                                   name="ux_album_cover"/>
-						                                            <label><?php _e(" Set as Album Cover", gallery_bank) ?></label>
-						                                        <?php
-						                                        }
-						                                        ?>
-						                                    </td>
-						                                    <td>
-						                                        <input placeholder="<?php _e("Enter your Title", gallery_bank) ?>"
-					                                               class="layout-span12 edit" type="text"
-					                                               name="ux_edit_img_title_<?php echo $pics[$flag]->pic_id; ?>"
-					                                               id="ux_edit_img_title_<?php echo $pics[$flag]->pic_id; ?>"
-					                                               value="<?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title))); ?>"/>
-						                                        <textarea placeholder="<?php _e("Enter your Description ", gallery_bank) ?>"
-				                                                   style="margin-top:20px" rows="5" class="layout-span12 edit"
-				                                                   name="ux_edit_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"
-				                                                   id="ux_edit_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"><?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description))); ?></textarea>
-						                                    </td>
-						                                    <td>
-						                                        <input placeholder="<?php _e("Enter your Tags", gallery_bank) ?>"
-					                                               class="layout-span12 edit" type="text" onkeypress="return preventDot(event);"
-					                                               name="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>"
-					                                               id="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>" readonly="readonly"
-					                                               value=""/>
-						                                    </td>
-						                                    <td>
-						                                        <?php
-						                                        if ($pics[$flag]->url == "" || $pics[$flag]->url == "undefined") {
-						                                            $domain = "http://";
-						                                        } else {
-						                                            $domain = str_replace("http://http://", "http://", $pics[$flag]->url);
-						                                        }
-						                                        ?>
-						                                        <input value="<?php echo $domain; ?>" type="text"
-					                                               id="ux_edit_txt_url_<?php echo $pics[$flag]->pic_id; ?>"
-					                                               name="ux_edit_txt_url_<?php echo $pics[$flag]->pic_id; ?>"
-					                                               class="layout-span12 edit"/>
-						                                    </td>
-						                                    <td>
-						                                        <a class="btn hovertip" id="ux_btn_delete" style="cursor: pointer;"
-						                                           data-original-title="<?php _e("Delete Image", gallery_bank) ?>"
-						                                           onclick="deleteImage(this);" type="edit"
-						                                           controlId="<?php echo $pics[$flag]->pic_id; ?>">
-						                                            <i class="icon-trash"></i>
-						                                        </a>
-						                                    </td>
-							                            <?php
-							                            }
-							                            ?>
-							                        </tr>
-						                        <?php
-						                        }
-                       						 ?>
-				                        	</tbody>
-					                    </table>
-					                </div>
-					            </div>
-					        </div>
-						</div>
-    					<div class="separator-doubled"></div>
-						<button type="submit" class="btn btn-info" style="float:right; margin-top: 20px;"><?php _e("Update Album", gallery_bank); ?></button>
-						<a class="btn btn-inverse" href="admin.php?page=gallery_bank" style="margin-top: 20px;"><?php _e("Back to Albums", gallery_bank); ?></a>
-    				</div>
-    			</div>
+				</div>
 			</div>
 		</div>
-    </form>
+	</div>
+</form>
     <script type="text/javascript">
 
     jQuery(".hovertip").tooltip();
