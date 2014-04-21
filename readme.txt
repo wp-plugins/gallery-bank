@@ -48,7 +48,7 @@ It provides a powerful engine for uploading and managing galleries of images & v
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***April 21 2014: We're happy to announce that Gallery Bank reached 110,750+ plugin downloads in only 11 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***April 21 2014: We're happy to announce that Gallery Bank reached 110,800+ plugin downloads in only 11 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 `
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
@@ -273,11 +273,11 @@ side of each album.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/delete11-1024x409.png)
 
 Once you click on the button, a confirmation message will appear stating
-“Are you sure you want to delete this Album?”
+"Are you sure you want to delete this Album?"
 
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/delete2-1024x406.png)
 
-Click on “OK” to proceed and your Album would be deleted.
+Click on "OK" to proceed and your Album would be deleted.
 
 
 = How to set Short code for Masonry Gallery? =
