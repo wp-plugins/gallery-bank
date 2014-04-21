@@ -48,7 +48,7 @@ It provides a powerful engine for uploading and managing galleries of images & v
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***April 21 2014: We're happy to announce that Gallery Bank reached 110,650+ plugin downloads in only 11 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***April 21 2014: We're happy to announce that Gallery Bank reached 110,750+ plugin downloads in only 11 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 `
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
@@ -209,19 +209,276 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 
 == Installation ==
 
-1. Upload the `gallery-bank` folder to the directory `/wp-content/plugins/`.
-2. Activate the plugin using the 'Plugins' menu in WordPress.
+1. Login to your website and go to the Plugins section of your admin panel.
+2. Click the Add New button.
+3. Under Install Plugins, click the Upload link.
+4. Select the plugin zip file (gallery-bank.zip) from your computer then click the Install Now button.
+5. You should see a message stating that the plugin was installed successfully.
+6. Click the Activate Plugin link.
 
 == Frequently Asked Questions ==
+
+= How to add New Album in Gallery Bank? =
+
+In order to Add New Album in your Gallery Bank, locate Gallery Bank Menu on the left side of
+WordPress Dashboard Menus and then click on Add New Album link.
+
+Alternatively, you can also Add New Album from your Gallery Bank Dashboard Page.
+
+There is a button at the top of the Gallery Bank Dashboard Page which says Add New Album.
+
+First Method:
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/gallery-bank-left-menu.png)
+
+Alternate Method:
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/gallery-bank-left-menu2.png)
+
+Once you click on the button from any of the above mentioned methods, this page would open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add-new-album-explanation.png)
+
+
+= How to Edit an Album? =
+
+In order to Edit an Album, you need to go to your Gallery Bank Dashboard Page and then
+click on Edit Album Button located at the right side of each album which you wish to edit.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/Edit.png)
+
+Once you Click on the button, this page will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/Edit_img-938x1024.png)
+
+
+= How to Preview an Album? =
+
+In order to Preview your Album, you need to go to your Gallery Bank Dashboard Page
+and then click on Preview Album button at the right side of each album.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/preview11-1024x408.png)
+
+Once you click on the button, this page will open
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/preview21-1024x487.png)
+
+
+= How to Delete an Album? =
+
+You can Delete an Album if you wish to. In order to perform this action, you need to go to
+your Gallery Bank Dashboard Page and then click on Delete Album button at the right
+side of each album.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/delete11-1024x409.png)
+
+Once you click on the button, a confirmation message will appear stating
+“Are you sure you want to delete this Album?”
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/delete2-1024x406.png)
+
+Click on “OK” to proceed and your Album would be deleted.
+
+
+= How to set Short code for Masonry Gallery? =
+
+In order to set Shortcode for Masonry Gallery, you need to follow these steps :
+1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
+
+Once you click on the  Pages, there will be two options. Click on Add New button to add a new page.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add_new_page.png)
+
+2) When you click on Add New button, this page will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry2-1024x511.png)
+
+3) After clicking on Gallery Bank button, this Popup will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry3-1024x451.png)
+
+NOTE: You can set Images in Row for Masonry Gallery only if Show Responsive Gallery
+option is False in shortcode.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry4-1024x657.png)
+
+
+= How to set Short code for Thumbnail Gallery? =
+
+In order to set Shortcode for Thumbnail Gallery, you need to follow these steps :
+1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
+
+Once you click on the Pages, there will be two options. Click on Add New button to add a new page.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add_new_page.png)
+
+2)  When you click on Add New button, this page will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry2-1024x511.png)
+
+3) After clicking on Gallery Bank button, this Popup will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/thumbnail1-1024x493.png)
+
+NOTE: You can set Images in Row for Thumbnail Gallery only if Show Responsive Gallery option
+is False in shortcode.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/thmbnail2-1024x450.png)
+
+
+= How to set Short code for Grid Album using Masonry Gallery? =
+
+In order to set Shortcode for Grid Album with Masonry Gallery, you need to follow these steps :
+1) Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
+
+Once you click on the Pages, there will be two options. Click on Add New button to add a new page.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add_new_page.png)
+
+2)  When you click on Add New button, this page will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry2-1024x511.png)
+
+3) After clicking on Gallery Bank button, this Popup will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/grid_masonry1-1024x541.png)
+
+Note: You can set Images in Row for Masonry Gallery only if Show Responsive Gallery option
+is False in shortcode.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/grid_masonry2-1024x573.png)
+
+
+= How to set Short code for Grid Album using Thumbnail Gallery? =
+
+In order to set Shortcode for Grid Album with Thumbnail Gallery, you need to follow these steps :
+1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
+
+Once you click on the Pages, this page would open. Click on Add New button to add a new page.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add_new_page.png)
+
+2)  When you click on Add New button, this page will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry2-1024x511.png)
+
+3) When you click on Gallery Bank button, this Popup will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/grid_thumbnail2-1024x574.png)
+
+NOTE: You can set Images in Row for Thumbnail Gallery only if Show Responsive Gallery
+option is False in shortcode.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/grid_thumbnail2-1024x574.png)
+
+
+= How to set Short code for List Album using Masonry Gallery? =
+
+In order to set Shortcode for List Album with Masonry Gallery, you need to follow these steps :
+1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
+
+Once you click on the Pages, there will be two options. Click on Add New button to add a new page.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add_new_page.png)
+
+2)  When you click on Add New button, this page will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry2-1024x511.png)
+
+3) After clicking on Gallery Bank button, this Popup will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry_list_1.png)
+
+
+= How to set Short code for List Album using Thumbnail Gallery? =
+
+In order to set Shortcode for List Album with Thumbnail Gallery, you need to follow these steps :
+1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
+
+Once you click on the Pages, there will be two options. Click on Add New button to add a new page.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add_new_page.png)
+
+2)  When you click on Add New button, this page will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry2-1024x511.png)
+
+3) After clicking on Gallery Bank button, this Popup will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/thumbnail_list_1-1024x467.png)
+
+NOTE: You can set Images in Row for Thumbnail Gallery only if Show Responsive Gallery option
+is False in shortcode.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/thumbnail_list_2-1024x462.png)
+
+
+= How to set Short code for Individual Album using Masonry Gallery? =
+
+In order to set Shortcode for Individual Album with Masonry Gallery, you need to follow these steps :
+1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
+
+Once you click on the Pages, there will be two options. Click on Add New button to add a new page.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add_new_page.png)
+
+2)  When you click on Add New button, this page will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry2-1024x511.png)
+
+3) After clicking on Gallery Bank button, this Popup will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/individual_masonry1-1024x495.png)
+
+NOTE: You can set Images in Row for Masonry Gallery only if Show Responsive Gallery option
+is False in shortcode.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/individual_masonry_2-1024x559.png)
+
+
+= How to set Short code for Individual Album using Thumbnail Gallery? =
+
+In order to set Shortcode for Individual Album with Thumbnail Gallery, you need to follow these steps :
+1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
+
+Once you click on the Pages, there will be two options. Click on Add New button to add a new page.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/422x105xadd_new_page1.png.pagespeed.ic.0XLpT7oDfn.png)
+
+2)  When you click on Add New button, this page will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/800xNxmasonry2-1024x511.png.pagespeed.ic.cYyWvoC3qL.jpg)
+
+3) After clicking on Gallery Bank button, this Popup will open.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/individual-_thumbnail1-1024x512.png)
+
+NOTE: You can set Images in Row for Thumbnail Gallery only if Show Responsive Gallery option
+is False in shortcode.
+
+[Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/individual-_thumbnail2-1024x574.png)
+
 
 == Screenshots ==
 
 1. Gallery Bank Dashboard Page
 2. Add New Album
 3. How to create Shortcode using Shortcode Editor.
-4. Displaying Images using Masonry Layout
-5. Displaying Images using Thumbnails Layout
-6. Opening Image of the Album in Lightbox.
+4. ShortCode Implementation for Images using Masonry Layout.
+5. ShortCode Implementation for Images using Thumbnails Layout.
+6. ShortCode Implementation for Grid Albums using Masonry Layout.
+7. ShortCode Implementation for Grid Albums using Thumbnail Layout.
+8. ShortCode Implementation for List Albums using Masonry Layout.
+9. ShortCode Implementation for List Albums using Thumbnail Layout.
+10. ShortCode Implementation for Individual Albums using Masonry Layout.
+11. ShortCode Implementation for Individual Albums using Thumbnail Layout.
+12. System Status
+13. Displaying Images using Masonry Layout.
+14. Displaying Images using Thumbnail Layout.
+15. Displaying Grid Album with Images. 
+16. Displaying List Album with Images.
+17. Displaying Individual Album with Images.
+
 
 == Changelog ==
 
