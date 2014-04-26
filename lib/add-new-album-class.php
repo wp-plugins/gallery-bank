@@ -65,7 +65,13 @@ else
 	        $ux_album_name1 = htmlspecialchars(esc_attr($_REQUEST["album_name"]));
 	        $ux_album_name = ($ux_album_name1 == "") ? "Untitled Album" : $ux_album_name1;
 	        $ux_description = html_entity_decode(esc_attr($_REQUEST["uxDescription"]));
-	        $wpdb->query
+			$album_count = $wpdb->get_var
+			(
+				"SELECT count(album_id) FROM ".gallery_bank_albums()
+			);
+			if($album_count < 2)
+			{
+				$wpdb->query
 	            (
 	                $wpdb->prepare
 	                    (
@@ -76,8 +82,8 @@ else
 	                        $current_user->display_name
 	                    )
 	            );
-	        echo $EventLastId = $wpdb->insert_id;
-	        $wpdb->query
+		        echo $EventLastId = $wpdb->insert_id;
+		        $wpdb->query
 	            (
 	                $wpdb->prepare
 	                    (
@@ -86,6 +92,7 @@ else
 	                        $EventLastId
 	                    )
 	            );
+			}
 	        die();
 	    }
 	    else if ($_REQUEST["param"] == "add_pic") {
@@ -369,15 +376,36 @@ function generate_thumbnail($source_image_path, $thumbnail_image_path, $imageWid
         $real_width = $imageWidth > $imageHeight ? $imageWidth : $imageHeight;
     }
 
-
     $thumbnail_gd_image = imagecreatetruecolor($real_width, $real_height);
-    $bg_color = imagecolorallocate($thumbnail_gd_image, 255, 255, 255);
-    imagefilledrectangle($thumbnail_gd_image, 0, 0, $real_width, $real_height, $bg_color);
-    imagecopyresampled($thumbnail_gd_image, $source_gd_image, 0, 0, 0, 0, $real_width, $real_height, $source_image_width, $source_image_height);
-    imagejpeg($thumbnail_gd_image, $thumbnail_image_path, 100);
-    imagedestroy($source_gd_image);
-    imagedestroy($thumbnail_gd_image);
-    return true;
+    
+	if(($source_image_type == 1) || ($source_image_type==3)){
+		imagealphablending($thumbnail_gd_image, false);
+		imagesavealpha($thumbnail_gd_image, true);
+		$transparent = imagecolorallocatealpha($thumbnail_gd_image, 255, 255, 255, 127);
+		imagecolortransparent($thumbnail_gd_image, $transparent);
+		imagefilledrectangle($thumbnail_gd_image, 0, 0, $real_width, $real_height, $transparent);
+ 	}
+	else
+	{
+		$bg_color = imagecolorallocate($thumbnail_gd_image, 255, 255, 255);
+		imagefilledrectangle($thumbnail_gd_image, 0, 0, $real_width, $real_height, $bg_color);
+	}
+	imagecopyresampled($thumbnail_gd_image, $source_gd_image, 0, 0, 0, 0, $real_width, $real_height, $source_image_width, $source_image_height);
+	switch ($source_image_type)
+	{
+		case IMAGETYPE_GIF:
+			imagepng($thumbnail_gd_image, $thumbnail_image_path, 9 );
+		break;
+		case IMAGETYPE_JPEG:
+			imagejpeg($thumbnail_gd_image, $thumbnail_image_path, 100);
+		break;
+		case IMAGETYPE_PNG:
+			imagepng($thumbnail_gd_image, $thumbnail_image_path, 9 );
+		break;
+	}
+	imagedestroy($source_gd_image);
+	imagedestroy($thumbnail_gd_image);
+	return true;
 }
 
 ?>

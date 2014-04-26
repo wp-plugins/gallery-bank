@@ -1,11 +1,12 @@
 <?php
+global $wpdb;
 $gb_lang = array();
 $gb_translated_lang = array();
-array_push($gb_lang, "ar", "bg_BG", "da_DK", "he_IL", "hu_HU", "id_ID", 
+array_push($gb_lang, "ar", "bg_BG", "da_DK", "hu_HU", "id_ID", 
 "ja", "ko_KR", "ms_MY", "pl_PL", "ro_RO", "ru_RU", "sk_SK", "sl_SI", "sq_AL",
  "sr_RS", "th", "tr", "zh_CN");
 array_push($gb_translated_lang, "en_GB", "en_US", "es_ES", "nl_NL", "uk", "sv_SE", "fr_FR", "pt_PT", "pt_BR", "et", "it_IT",
- "de_DE", "fi");
+ "de_DE", "fi", "he_IL");
 $language = get_locale();
 ?>
 <img src="<?php echo GALLERY_BK_PLUGIN_URL . '/assets/images/gallery-bank-logo.png'; ?>" style="margin-top:20px"/>
@@ -60,7 +61,18 @@ switch($_REQUEST["page"])
 </ul>
 <h2 class="nav-tab-wrapper">
 	<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
-	<a class="nav-tab " id="add_album" href="admin.php?page=add_album">Add New Album</a>
+	<?php
+	$album_count = $wpdb->get_var
+	(
+		"SELECT count(album_id) FROM ".gallery_bank_albums()
+	);
+	if($album_count < 2)
+	{
+		?>
+		<a class="nav-tab " id="add_album" href="admin.php?page=add_album">Add New Album</a>
+		<?php
+	}
+	?>
 	<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode">Short-Codes</a>
 	<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting">Album Sorting</a>
 	<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings">Global Settings</a>

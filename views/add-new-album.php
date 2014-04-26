@@ -270,50 +270,59 @@ jQuery("#add_new_album").validate
             : encodeURIComponent(jQuery("#ux_description").val());
         var album_name = encodeURIComponent(jQuery("#ux_title").val());
         jQuery.post(ajaxurl, "album_name=" + album_name + "&uxDescription=" + uxDescription +
-            "&param=add_new_album&action=add_new_album_library", function (data) {
-            jQuery("#album_success_message").css("display", "block");
-            jQuery("body,html").animate({
-                scrollTop: jQuery("body,html").position().top}, "slow");
-            var album_id = jQuery.trim(data);
-            var count = 0;
-            if (oTable.fnGetNodes().length > 0) {
-                jQuery.each(oTable.fnGetNodes(), function (index, value) {
-                    var controlType = jQuery(value.cells[1]).find("img").attr("type");
-                    var image_name = encodeURIComponent(jQuery(value.cells[1]).find("a").attr("title"));
-                    var img_gb_path = jQuery(value.cells[1]).find("img").attr("imgpath");
-                    var isAlbumCoverSet = jQuery(value.cells[1]).find("input:radio").attr("checked");
-                    var title = jQuery(value.cells[2]).find("input:text").eq(0).val();
-                    var description = jQuery(value.cells[2]).find("textarea").eq(0).val();
-                    var tags = jQuery(value.cells[3]).find("input:text").eq(0).val();
-                    var urlRedirect = "";
-                    if (controlType == "image") {
-                        urlRedirect = jQuery(value.cells[4]).find("input:text").eq(0).val();
-                    }
-                    else {
-                        urlRedirect = "http://";
-                    }
-                    jQuery.post(ajaxurl, "album_id=" + album_id + "&controlType=" + controlType + "&imagename=" + image_name +
-                        "&img_gb_path=" + img_gb_path + "&isAlbumCoverSet=" + isAlbumCoverSet + "&title=" + encodeURIComponent(title) +
-                        "&description=" + encodeURIComponent(description) + "&tags=" + encodeURIComponent(tags) + "&urlRedirect=" + urlRedirect +
-                        "&cover_height=" + cover_height + "&cover_width=" + cover_width +
-                        "&param=add_pic&action=add_new_album_library", function () {
-                        count++;
-                        if (count == parseInt(oTable.fnGetNodes().length)) {
-                            setTimeout(function () {
-                                jQuery("#album_success_message").css("display", "none");
-                                window.location.href = "admin.php?page=gallery_bank";
-                            }, 2000);
-                        }
-                    });
-                });
-            }
-            else {
-                setTimeout(function () {
-                    jQuery("#album_success_message").css("display", "none");
-                    window.location.href = "admin.php?page=gallery_bank";
-                }, 2000);
-            }
-        });
+            "&param=add_new_album&action=add_new_album_library", function (data)
+            {
+            	if(data == "")
+            	{
+            		alert("<?php _e( "You will be only allowed to add 2 galleries. Kindly purchase Premium Version for full access!", gallery_bank ); ?>");
+            	}
+            	else
+            	{
+            		
+		            jQuery("#album_success_message").css("display", "block");
+		            jQuery("body,html").animate({
+		                scrollTop: jQuery("body,html").position().top}, "slow");
+		            var album_id = jQuery.trim(data);
+		            var count = 0;
+		            if (oTable.fnGetNodes().length > 0) {
+		                jQuery.each(oTable.fnGetNodes(), function (index, value) {
+		                    var controlType = jQuery(value.cells[1]).find("img").attr("type");
+		                    var image_name = encodeURIComponent(jQuery(value.cells[1]).find("a").attr("title"));
+		                    var img_gb_path = jQuery(value.cells[1]).find("img").attr("imgpath");
+		                    var isAlbumCoverSet = jQuery(value.cells[1]).find("input:radio").attr("checked");
+		                    var title = jQuery(value.cells[2]).find("input:text").eq(0).val();
+		                    var description = jQuery(value.cells[2]).find("textarea").eq(0).val();
+		                    var tags = jQuery(value.cells[3]).find("input:text").eq(0).val();
+		                    var urlRedirect = "";
+		                    if (controlType == "image") {
+		                        urlRedirect = jQuery(value.cells[4]).find("input:text").eq(0).val();
+		                    }
+		                    else {
+		                        urlRedirect = "http://";
+		                    }
+		                    jQuery.post(ajaxurl, "album_id=" + album_id + "&controlType=" + controlType + "&imagename=" + image_name +
+		                        "&img_gb_path=" + img_gb_path + "&isAlbumCoverSet=" + isAlbumCoverSet + "&title=" + encodeURIComponent(title) +
+		                        "&description=" + encodeURIComponent(description) + "&tags=" + encodeURIComponent(tags) + "&urlRedirect=" + urlRedirect +
+		                        "&cover_height=" + cover_height + "&cover_width=" + cover_width +
+		                        "&param=add_pic&action=add_new_album_library", function () {
+		                        count++;
+		                        if (count == parseInt(oTable.fnGetNodes().length)) {
+		                            setTimeout(function () {
+		                                jQuery("#album_success_message").css("display", "none");
+		                                window.location.href = "admin.php?page=gallery_bank";
+		                            }, 2000);
+		                        }
+		                    });
+		                });
+		            }
+		            else {
+		                setTimeout(function () {
+		                    jQuery("#album_success_message").css("display", "none");
+		                    window.location.href = "admin.php?page=gallery_bank";
+		                }, 2000);
+		            }
+		        }
+        	});
     }
 });
 jQuery("#image_uploader").pluploadQueue

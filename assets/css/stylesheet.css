@@ -2497,7 +2497,7 @@ Popover
 }
 /*************************** Gallery Bank Information Popup********************************/
 .gallery_bank_popup_box .ui-dialog-titlebar {
-	background  : #AE3A3A;
+	background  : #E33A0C;
 	color       : #fff;
 	font-size   : 1.5em;
 	font-weight : normal;
@@ -2539,7 +2539,7 @@ Popover
 }
 
 #gallery_bank_popup li {
-	border-bottom       : 1px solid #AE3A3A;
+	border-bottom       : 1px solid #e5e5e5;
 	padding             : 1em 2em;
 	overflow            : hidden;
 	list-style          : decimal;
