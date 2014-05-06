@@ -1,0 +1,993 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Contact Bank\n"
+"POT-Creation-Date: 2014-05-06 09:37+0530\n"
+"PO-Revision-Date: 2014-05-06 09:55+0530\n"
+"Last-Translator: \n"
+"Language-Team: Tech Banker <contact.bank@tech-banker.com>\n"
+"Language: ar_AR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\contact_bank_standard3.9\\wp-content"
+"\\plugins\\contact-bank\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: contact-bank.php:54
+msgid "Contact Bank"
+msgstr "Contact Bank"
+
+#: contact-bank.php:55 contact-bank.php:328 views/dashboard.php:84
+msgid "Dashboard"
+msgstr "لوحة أجهزة القياس"
+
+#: contact-bank.php:57 contact-bank.php:334
+msgid "Short-Codes"
+msgstr "رموز قصيرة"
+
+#: contact-bank.php:58 contact-bank.php:340 views/contact_frontend_data.php:8
+#: views/dashboard.php:174
+msgid "Form Entries"
+msgstr "شكل إدخالات"
+
+#: contact-bank.php:59 contact-bank.php:346 views/contact_email_settings.php:8
+#: views/dashboard.php:169
+msgid "Email Settings"
+msgstr "إعدادات البريد الإلكتروني"
+
+#: contact-bank.php:60 contact-bank.php:352
+#: views/contact_bank_layout_settings.php:8 views/dashboard.php:164
+msgid "Global Settings"
+msgstr "إعدادات العالمية"
+
+#: contact-bank.php:61 contact-bank.php:360
+#: views/contact-bank-system-report.php:11
+msgid "System Status"
+msgstr "الحالة نظام"
+
+#: contact-bank.php:63 contact-bank.php:372
+msgid "Purchase PRO Edition"
+msgstr "بشرائه للمحترفين  الطبعة"
+
+#: contact-bank.php:379
+msgid "Add Contact Bank Form"
+msgstr " اضافة  Contact Bank  شكل"
+
+#: contact-bank.php:391
+msgid "Insert Contact Bank Form"
+msgstr " أدخل  Contact Bank شكل"
+
+#: contact-bank.php:393
+msgid "Select a form below to add it to your post or page."
+msgstr "حدد النموذج أدناه لإضافته إلى ما بعد أو الصفحة."
+
+#: contact-bank.php:398
+msgid "Form Name"
+msgstr " شكل- اسم"
+
+#: contact-bank.php:400
+msgid "Select a Form"
+msgstr "حدد  استمارة"
+
+#: contact-bank.php:417
+msgid "Show Form Title"
+msgstr "إظهار الشكل الصيدلاني العنوان"
+
+#: contact-bank.php:422
+msgid "Insert Form"
+msgstr "ادخال- الشكل الصيدلاني"
+
+#: contact-bank.php:425
+msgid "Cancel"
+msgstr "الغاء"
+
+#: contact-bank.php:437
+msgid "Please choose a Form to insert into Shortcode"
+msgstr "الرجاء اختيار الشكل الصيدلاني لتضاف الى رمز قصير"
+
+#: frontend_views/contact_bank_forms.php:369
+#: views/contact_bank_form_preview.php:377 views/contact_controls_files.php:56
+msgid "Select Option"
+msgstr "حدد -الخيار"
+
+#: includes/cb_checkbox.php:36
+msgid "Check Boxes"
+msgstr "تحقق مربعات"
+
+#: includes/cb_checkbox.php:40 includes/cb_dropdown.php:40
+#: includes/cb_email.php:40 includes/cb_multiple.php:40
+#: includes/cb_text.php:40 includes/cb_textarea.php:40
+msgid "Label"
+msgstr "التسمية"
+
+#: includes/cb_checkbox.php:42 includes/cb_checkbox.php:144
+#: includes/cb_dropdown.php:42 includes/cb_dropdown.php:144
+#: includes/cb_email.php:43 includes/cb_email.php:133
+#: includes/cb_multiple.php:44 includes/cb_multiple.php:164
+#: includes/cb_text.php:43 includes/cb_text.php:132
+#: includes/cb_textarea.php:42 includes/cb_textarea.php:130
+#: views/contact_controls_files.php:3 views/contact_controls_files.php:19
+#: views/contact_controls_files.php:52 views/contact_controls_files.php:68
+#: views/contact_controls_files.php:85
+msgid "Untitled"
+msgstr "بدون اسم"
+
+#: includes/cb_checkbox.php:46 includes/cb_checkbox.php:56
+#: includes/cb_checkbox.php:69 includes/cb_checkbox.php:83
+#: includes/cb_dropdown.php:46 includes/cb_dropdown.php:56
+#: includes/cb_dropdown.php:69 includes/cb_dropdown.php:83
+#: includes/cb_email.php:57 includes/cb_email.php:68 includes/cb_email.php:83
+#: includes/cb_email.php:99 includes/cb_multiple.php:49
+#: includes/cb_multiple.php:60 includes/cb_multiple.php:75
+#: includes/cb_multiple.php:91 includes/cb_text.php:56 includes/cb_text.php:67
+#: includes/cb_text.php:82 includes/cb_text.php:98 includes/cb_textarea.php:56
+#: includes/cb_textarea.php:67 includes/cb_textarea.php:82
+#: includes/cb_textarea.php:98
+msgid "Required"
+msgstr "مطلوب"
+
+#: includes/cb_checkbox.php:60 includes/cb_checkbox.php:73
+#: includes/cb_checkbox.php:87 includes/cb_dropdown.php:60
+#: includes/cb_dropdown.php:73 includes/cb_dropdown.php:87
+#: includes/cb_email.php:73 includes/cb_email.php:88 includes/cb_email.php:104
+#: includes/cb_multiple.php:65 includes/cb_multiple.php:80
+#: includes/cb_multiple.php:96 includes/cb_text.php:72 includes/cb_text.php:87
+#: includes/cb_text.php:103 includes/cb_textarea.php:72
+#: includes/cb_textarea.php:87 includes/cb_textarea.php:103
+msgid "Not Required"
+msgstr "غير مطلوب"
+
+#: includes/cb_checkbox.php:95 includes/cb_dropdown.php:95
+#: includes/cb_email.php:112 includes/cb_multiple.php:104
+#: includes/cb_text.php:111
+msgid "Tooltip Text"
+msgstr "تلميح الأدوات النص"
+
+#: includes/cb_checkbox.php:97 includes/cb_dropdown.php:97
+#: includes/cb_email.php:115 includes/cb_multiple.php:108
+#: includes/cb_text.php:114 includes/cb_textarea.php:113
+#: views/contact_bank_layout_settings.php:925
+#: views/contact_frontend_data.php:148 views/dashboard.php:338
+#: views/includes_common_after.php:348 views/includes_common_after.php:351
+#: views/includes_common_after.php:354 views/includes_common_after.php:357
+#: views/includes_common_after.php:360 views/includes_common_after.php:363
+#: views/includes_common_after.php:366 views/includes_common_after.php:369
+#: views/includes_common_after.php:372
+msgid "This Feature is only available in Paid Premium Edition!"
+msgstr "هذه الميزة لا تتوفر إلا في المدفوع بريميوم الطبعة!"
+
+#: includes/cb_checkbox.php:101 includes/cb_dropdown.php:101
+#: includes/cb_multiple.php:113
+msgid "Options"
+msgstr "خيارات"
+
+#: includes/cb_checkbox.php:103
+msgid "Enter Options"
+msgstr "أدخل خيارات"
+
+#: includes/cb_checkbox.php:104 includes/cb_dropdown.php:104
+#: includes/cb_multiple.php:119
+msgid "Add"
+msgstr "اضافة"
+
+#: includes/cb_checkbox.php:135 includes/cb_dropdown.php:135
+#: includes/cb_multiple.php:153
+msgid "Delete"
+msgstr "حذف"
+
+#: includes/cb_checkbox.php:142 includes/cb_dropdown.php:142
+#: includes/cb_email.php:130 includes/cb_multiple.php:160
+#: includes/cb_text.php:129 includes/cb_textarea.php:128
+msgid "Admin Label"
+msgstr "تسمية الادارية"
+
+#: includes/cb_checkbox.php:144 includes/cb_dropdown.php:144
+#: includes/cb_email.php:134 includes/cb_multiple.php:163
+#: includes/cb_text.php:131 includes/cb_textarea.php:131
+msgid "Enter Admin Label"
+msgstr "أدخل التسمية الادارية"
+
+#: includes/cb_checkbox.php:148 includes/cb_dropdown.php:148
+#: includes/cb_email.php:139 includes/cb_multiple.php:168
+#: includes/cb_text.php:137 includes/cb_textarea.php:135
+msgid "Do not show in the email"
+msgstr "عدم إظهار- ففي البريد الالكتروني"
+
+#: includes/cb_checkbox.php:179 includes/cb_dropdown.php:179
+#: includes/cb_email.php:173 includes/cb_multiple.php:202
+#: includes/cb_text.php:200 includes/cb_textarea.php:196
+msgid "Save Settings"
+msgstr "حفظ الإعدادات"
+
+#: includes/cb_checkbox.php:228 includes/cb_dropdown.php:219
+#: includes/cb_multiple.php:252
+msgid "Please Fill an Option."
+msgstr "يرجى شغل ل خيارا."
+
+#: includes/cb_dropdown.php:36 views/contact_view.php:441
+msgid "Select Box"
+msgstr "حدد مربع"
+
+#: includes/cb_dropdown.php:42 includes/cb_email.php:44
+#: includes/cb_multiple.php:45 includes/cb_text.php:44
+msgid "Enter Label"
+msgstr "أدخل التسمية"
+
+#: includes/cb_dropdown.php:103 includes/cb_multiple.php:116
+msgid "Enter Option"
+msgstr "أدخل الخيار"
+
+#: includes/cb_email.php:36 views/contact_view.php:438
+msgid "Email Address"
+msgstr "عنوان البريد الإلكتروني"
+
+#: includes/cb_email.php:49 includes/cb_text.php:48
+#: includes/cb_textarea.php:48
+msgid "Description"
+msgstr "وصف"
+
+#: includes/cb_email.php:52 includes/cb_text.php:51
+msgid "Enter Description"
+msgstr "أدخل الوصف"
+
+#: includes/cb_email.php:121 includes/cb_text.php:120
+#: includes/cb_textarea.php:120
+msgid "Place Holder"
+msgstr "مكان حائز"
+
+#: includes/cb_email.php:124 includes/cb_text.php:123
+#: includes/cb_textarea.php:122
+msgid "Enter Place Holder"
+msgstr "أدخل مكان حائز"
+
+#: includes/cb_multiple.php:36 views/contact_view.php:449
+msgid "Radio Buttons"
+msgstr "أزرار الراديو"
+
+#: includes/cb_text.php:36 views/contact_view.php:430
+msgid "Single Line Text"
+msgstr "الخط الواحد نص "
+
+#: includes/cb_text.php:168 includes/cb_textarea.php:166
+msgid "Add a filter"
+msgstr "إضافة محددات تصفية"
+
+#: includes/cb_text.php:173 includes/cb_textarea.php:170
+msgid "Alpha"
+msgstr "ألفا"
+
+#: includes/cb_text.php:177 includes/cb_textarea.php:174
+msgid "Alpha Numeric"
+msgstr "ألفا رقمى"
+
+#: includes/cb_text.php:181 includes/cb_textarea.php:178
+msgid "Digits"
+msgstr "سيارة رباعي"
+
+#: includes/cb_text.php:185 includes/cb_textarea.php:182
+msgid "Strip Tags"
+msgstr " افسخ الدليلية"
+
+#: includes/cb_text.php:189 includes/cb_textarea.php:186
+msgid "Trim"
+msgstr "تقليم"
+
+#: includes/cb_text.php:191 includes/cb_textarea.php:188
+#: views/contact_bank_layout_settings.php:62
+#: views/contact_bank_layout_settings.php:250
+#: views/contact_bank_layout_settings.php:460
+#: views/contact_bank_layout_settings.php:653
+#: views/contact_bank_layout_settings.php:781 views/contact_view.php:459
+msgid " (Available in Premium Edition)"
+msgstr "(متوفر في قسط الطبعة)"
+
+#: includes/cb_textarea.php:36 views/contact_view.php:433
+msgid "Paragraph Text"
+msgstr " الفقرة نصية"
+
+#: includes/cb_textarea.php:43
+msgid "Enter label"
+msgstr "أدخل التسمية"
+
+#: includes/cb_textarea.php:50
+msgid "Enter  Description"
+msgstr "أدخل الوصف"
+
+#: includes/cb_textarea.php:111
+msgid "Tooltip text"
+msgstr "توولتيب النص"
+
+#: lib/contact_bank_email-class.php:52
+msgid "Edit Email Settings"
+msgstr "تحرير إعدادات البريد الإلكتروني "
+
+#: lib/contact_bank_email-class.php:55
+msgid "Delete Email Settings"
+msgstr "حذف إعدادات البريد الإلكتروني"
+
+#: lib/contact_frontend_data_class.php:94
+msgid "Delete Form Entry"
+msgstr "حذف استمارة-دخول"
+
+#: views/add_contact_email.php:31 views/contact_email_settings.php:66
+msgid "Email Confirmation"
+msgstr " البريد الإلكتروني تأكيد"
+
+#: views/add_contact_email.php:34
+msgid "Back to Email Settings"
+msgstr "العودة إلى إعدادات البريد الإلكتروني"
+
+#: views/add_contact_email.php:35 views/add_contact_email.php:215
+#: views/contact_bank_layout_settings.php:14
+#: views/contact_bank_layout_settings.php:499
+#: views/contact_bank_layout_settings.php:911
+msgid "Save"
+msgstr "انقاذ"
+
+#: views/add_contact_email.php:39
+msgid "Email Settings Saved. Kindly wait for the redirect."
+msgstr "إعدادات البريد الإلكتروني المحفوظة. يرجى الانتظار لإعادة توجيه."
+
+#: views/add_contact_email.php:46 views/add_contact_email.php:103
+#: views/contact_controls_files.php:35
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: views/add_contact_email.php:50 views/contact_view.php:466
+msgid "Name"
+msgstr "اسم"
+
+#: views/add_contact_email.php:54
+msgid "Enter Name"
+msgstr "إدخال الاسم"
+
+#: views/add_contact_email.php:60
+msgid "Send To"
+msgstr "أرسل إلى"
+
+#: views/add_contact_email.php:69 views/add_contact_email.php:80
+#: views/add_contact_email.php:92 views/add_contact_email.php:152
+msgid "Enter Email"
+msgstr "يدخل البريد الإلكتروني"
+
+#: views/add_contact_email.php:71 views/add_contact_email.php:82
+#: views/add_contact_email.php:94
+msgid "Select a Field"
+msgstr "قم بتحديد حقل"
+
+#: views/add_contact_email.php:107
+msgid "Enter Email "
+msgstr "أدخل البريد الإلكتروني"
+
+#: views/add_contact_email.php:111
+msgid "Send To Field"
+msgstr "إرسال إلى الحقل"
+
+#: views/add_contact_email.php:115
+msgid "Enter Field "
+msgstr "أدخل الميدان"
+
+#: views/add_contact_email.php:117 views/add_contact_email.php:130
+#: views/add_contact_email.php:143 views/add_contact_email.php:154
+#: views/add_contact_email.php:165 views/add_contact_email.php:176
+#: views/add_contact_email.php:189
+msgid "Select a field"
+msgstr "حدد حقل"
+
+#: views/add_contact_email.php:124
+msgid "From Name"
+msgstr "حلال من اسم"
+
+#: views/add_contact_email.php:128
+msgid "Enter from name "
+msgstr "يدخل  حلال من اسم"
+
+#: views/add_contact_email.php:137
+msgid "From Email"
+msgstr "أدخل حلال من البريد الإلكتروني"
+
+#: views/add_contact_email.php:141
+msgid "Enter from email"
+msgstr "أدخل حلال من- البريد الإلكتروني  "
+
+#: views/add_contact_email.php:150
+msgid "Reply To"
+msgstr "رد على"
+
+#: views/add_contact_email.php:161
+msgid "CC"
+msgstr "سي سي"
+
+#: views/add_contact_email.php:163
+msgid "Enter CC Email "
+msgstr "أدخل  سي سي البريد الإلكتروني"
+
+#: views/add_contact_email.php:172
+msgid "BCC"
+msgstr "نسخة خفية"
+
+#: views/add_contact_email.php:174
+msgid "Enter Bcc Email"
+msgstr "أدخل  نسخة مخفية البريد الإلكتروني"
+
+#: views/add_contact_email.php:183
+msgid "Subject"
+msgstr "تخضع"
+
+#: views/add_contact_email.php:187
+msgid "Enter Subject"
+msgstr "أدخل تخضع"
+
+#: views/add_contact_email.php:196
+msgid "Message"
+msgstr "رسالة"
+
+#: views/add_contact_email.php:206
+msgid "Insert a Field into Your Form Message"
+msgstr "إدراج حقل في الشكل الصيدلاني الرسالة"
+
+#: views/contact-bank-system-report.php:14
+msgid "Get System Report"
+msgstr "الحصول-  نظام تقرير"
+
+#: views/contact-bank-system-report.php:18
+msgid "Close System Report"
+msgstr "قريبة  نظام-تقرير"
+
+#: views/contact-bank-system-report.php:100
+msgid "Default"
+msgstr "الافتراضي"
+
+#: views/contact_bank_form_preview.php:276 views/dashboard.php:179
+msgid "Form Preview"
+msgstr "شكل معاينة"
+
+#: views/contact_bank_form_preview.php:279
+#: views/contact_bank_layout_settings.php:11
+#: views/contact_email_settings.php:11 views/contact_frontend_data.php:11
+#: views/contact_view.php:242
+msgid "Back to Dashboard"
+msgstr "العودة الى وحة المعلومات"
+
+#: views/contact_bank_layout_settings.php:8
+msgid " (Premium Features available in Paid Edition)"
+msgstr "(ميزات قسط المتاحة في الطبعة المدفوعة)"
+
+#: views/contact_bank_layout_settings.php:12
+msgid "Restore Global Settings"
+msgstr "استعادة إعدادات عمومية"
+
+#: views/contact_bank_layout_settings.php:18
+msgid "Form Settings Saved. Kindly wait for the redirect."
+msgstr "استمارة إعدادات المحفوظة. يرجى الانتظار لإعادة التوجيه."
+
+#: views/contact_bank_layout_settings.php:24
+#: views/contact_bank_layout_settings.php:34
+#: views/contact_email_settings.php:15 views/contact_email_settings.php:31
+#: views/contact_frontend_data.php:23 views/contact_frontend_data.php:33
+msgid "Select Form"
+msgstr "اختر الشكل الصيدلاني"
+
+#: views/contact_bank_layout_settings.php:61
+msgid "Label Settings"
+msgstr "التسمية إعدادات"
+
+#: views/contact_bank_layout_settings.php:73
+#: views/contact_bank_layout_settings.php:260
+#: views/contact_bank_layout_settings.php:470
+#: views/contact_bank_layout_settings.php:663
+#: views/contact_bank_layout_settings.php:791
+msgid "Font Family :"
+msgstr "عائلة الخط:"
+
+#: views/contact_bank_layout_settings.php:98
+msgid "Font Color :"
+msgstr "لون الخط:"
+
+#: views/contact_bank_layout_settings.php:109
+#: views/contact_bank_layout_settings.php:296
+msgid "Font Style :"
+msgstr "الخط نمط:"
+
+#: views/contact_bank_layout_settings.php:123
+#: views/contact_bank_layout_settings.php:310
+#: views/contact_bank_layout_settings.php:519
+#: views/contact_bank_layout_settings.php:688
+#: views/contact_bank_layout_settings.php:816
+msgid "Font Size (px) :"
+msgstr "حجم الخط (بكسل):"
+
+#: views/contact_bank_layout_settings.php:154
+#: views/contact_bank_layout_settings.php:411
+#: views/contact_bank_layout_settings.php:624
+#: views/contact_bank_layout_settings.php:752
+#: views/contact_bank_layout_settings.php:880
+msgid "Text Align :"
+msgstr " نصية محاذاة إلى:"
+
+#: views/contact_bank_layout_settings.php:167
+msgid "Label Position :"
+msgstr "ملصق موقف:"
+
+#: views/contact_bank_layout_settings.php:181
+msgid "Field Desc Font Size :"
+msgstr "حقل ريال ر حجم الخط:"
+
+#: views/contact_bank_layout_settings.php:212
+msgid "Field Description Align :"
+msgstr "الحقل الوصف قم بمحاذاة:"
+
+#: views/contact_bank_layout_settings.php:226
+msgid "Hide Labels :"
+msgstr "تخفي التسميات:"
+
+#: views/contact_bank_layout_settings.php:234
+#: views/contact_bank_layout_settings.php:424
+#: views/contact_bank_layout_settings.php:637
+#: views/contact_bank_layout_settings.php:765
+#: views/contact_bank_layout_settings.php:893
+msgid "Text Direction :"
+msgstr " النص-اتجاه:"
+
+#: views/contact_bank_layout_settings.php:250
+msgid "Input Field Settings"
+msgstr "إعدادات الحقل الإدخال"
+
+#: views/contact_bank_layout_settings.php:285
+#: views/contact_bank_layout_settings.php:582
+#: views/contact_bank_layout_settings.php:741
+#: views/contact_bank_layout_settings.php:869
+msgid "Text Color :"
+msgstr "نص لون:"
+
+#: views/contact_bank_layout_settings.php:341
+#: views/contact_bank_layout_settings.php:614
+msgid "Border Radius (px) :"
+msgstr "الحدود الشعاع  (بكسل):"
+
+#: views/contact_bank_layout_settings.php:351
+#: views/contact_bank_layout_settings.php:593
+#: views/contact_bank_layout_settings.php:730
+#: views/contact_bank_layout_settings.php:858
+msgid "Border Color :"
+msgstr "لون الجوانب:"
+
+#: views/contact_bank_layout_settings.php:362
+#: views/contact_bank_layout_settings.php:604
+msgid "Border Size (px) :"
+msgstr "الحدودية الحجم  (بكسل):"
+
+#: views/contact_bank_layout_settings.php:372
+msgid "Border Style :"
+msgstr "الحدود ستايل:"
+
+#: views/contact_bank_layout_settings.php:387
+#: views/contact_bank_layout_settings.php:560
+#: views/contact_bank_layout_settings.php:719
+#: views/contact_bank_layout_settings.php:847
+msgid "Background Color :"
+msgstr "لون الخلفية:"
+
+#: views/contact_bank_layout_settings.php:398
+msgid "Radio Buttons :"
+msgstr "أزرار الراديو:"
+
+#: views/contact_bank_layout_settings.php:403
+msgid "Multiple Rows"
+msgstr "صفوف متعددة"
+
+#: views/contact_bank_layout_settings.php:405
+msgid "Single Row"
+msgstr "صف حيد"
+
+#: views/contact_bank_layout_settings.php:438
+msgid "Input Size :"
+msgstr "مدخلات الحجم:"
+
+#: views/contact_bank_layout_settings.php:460
+msgid "Submit Button Settings"
+msgstr "تقديم  زر إعدادات"
+
+#: views/contact_bank_layout_settings.php:495
+msgid "Text:"
+msgstr "النص:"
+
+#: views/contact_bank_layout_settings.php:505
+msgid "Style :"
+msgstr "نمط:"
+
+#: views/contact_bank_layout_settings.php:550
+msgid "Button Width (px) :"
+msgstr "إنش الطول زر (بكسل):"
+
+#: views/contact_bank_layout_settings.php:571
+msgid "Hover Background Color:"
+msgstr "تحوم لون الخلفية:"
+
+#: views/contact_bank_layout_settings.php:653
+msgid "Success Message Settings"
+msgstr "النجاح رسالة إعدادات"
+
+#: views/contact_bank_layout_settings.php:781
+msgid "Error Message Settings"
+msgstr "خطأ رسالة إعدادات"
+
+#: views/contact_bank_pro_version.php:25
+msgid "Contact Bank Pricing"
+msgstr "التسعير الاتصال البنك"
+
+#: views/contact_bank_pro_version.php:355 views/dashboard.php:208
+msgid "Need Support Help?"
+msgstr "حاجة دعم تساعد؟"
+
+#: views/contact_bank_pro_version.php:367
+msgid "Lets get in touch!"
+msgstr "دعونا حصول على اتصال!"
+
+#: views/contact_bank_pro_version.php:371 views/dashboard.php:224
+msgid "Order Now!"
+msgstr "تأمر الآن!"
+
+#: views/contact_controls_files.php:8 views/contact_controls_files.php:24
+#: views/contact_controls_files.php:41 views/contact_controls_files.php:59
+#: views/contact_controls_files.php:75 views/contact_controls_files.php:92
+msgid "Settings"
+msgstr "إعدادات"
+
+#: views/contact_documentation.php:5
+msgid "Documentation - Contact Bank"
+msgstr "التوثيق - Contact Bank"
+
+#: views/contact_email_settings.php:56
+msgid "Add New"
+msgstr "إضافة جديد"
+
+#: views/contact_email_settings.php:137
+msgid "Are you sure, you want to delete this Email Setting?"
+msgstr "هل أنت متأكد، أنك تريد حذف هذا الإعداد البريد الالكتروني؟"
+
+#: views/contact_email_settings.php:155 views/contact_frontend_data.php:115
+msgid "Please select the Form first."
+msgstr "الرجاء اختيار استمارة الأول."
+
+#: views/contact_frontend_data.php:12
+msgid "Export to Excel"
+msgstr "التصدير إلى التفوق"
+
+#: views/contact_frontend_data.php:18 views/dashboard.php:114
+#: views/dashboard.php:121
+msgid "Form"
+msgstr "شكل"
+
+#: views/contact_view.php:239 views/dashboard.php:96
+msgid "Add New Form"
+msgstr "إضافة نموذج جديد"
+
+#: views/contact_view.php:245 views/contact_view.php:509
+msgid "Save Form"
+msgstr "انقاذ شكل"
+
+#: views/contact_view.php:250
+msgid "Form Submitted. Kindly wait for the redirect."
+msgstr "ارسل -النموذج. يرجى الانتظار لإعادة التوجيه."
+
+#: views/contact_view.php:259
+msgid "Form Settings"
+msgstr "استمارة إعدادات"
+
+#: views/contact_view.php:263
+msgid "Form Name :"
+msgstr "استمارة-اسم:"
+
+#: views/contact_view.php:269
+msgid "Enter Form Name"
+msgstr "أدخل استمارة-اسم:"
+
+#: views/contact_view.php:273
+msgid "Form Description :"
+msgstr "الشكل الصيدلاني الوصف:"
+
+#: views/contact_view.php:275
+msgid "Enter Form Description"
+msgstr "إدخال الشكل الصيدلاني الوصف"
+
+#: views/contact_view.php:279
+msgid "Blank Field Message:"
+msgstr "خالية ابحث حقل الرسالة:"
+
+#: views/contact_view.php:285
+msgid "Required field must not be blank"
+msgstr " الحقل المطلوب  يجب ألا يكون خالية ابحث"
+
+#: views/contact_view.php:287
+msgid "Enter Blank Field Message"
+msgstr "أدخل فارغة رسالة الميدان"
+
+#: views/contact_view.php:291
+msgid "Incorrect Email Message:"
+msgstr "غير صحيحة البريد الالكتروني  رسالة:"
+
+#: views/contact_view.php:297
+msgid "Please enter a valid email address"
+msgstr "يرجى إدخال عنوان بريد إلكتروني صالح"
+
+#: views/contact_view.php:299
+msgid "Enter Incorrect Email Message"
+msgstr "أدخل غير صحيحة البريد الإلكتروني رسالة "
+
+#: views/contact_view.php:303
+msgid "Success Message :"
+msgstr "النجاح الرسالة:"
+
+#: views/contact_view.php:307
+msgid "Enter Success Message"
+msgstr "أدخل النجاح الرسالة"
+
+#: views/contact_view.php:311
+msgid "Redirect :"
+msgstr "إعادة توجيه:"
+
+#: views/contact_view.php:323 views/contact_view.php:334
+#: views/contact_view.php:346
+msgid "Page"
+msgstr "صفحة"
+
+#: views/contact_view.php:326 views/contact_view.php:337
+#: views/contact_view.php:349
+msgid "URL"
+msgstr "URL"
+
+#: views/contact_view.php:356
+msgid "Page :"
+msgstr "الصفحة:"
+
+#: views/contact_view.php:399
+msgid "URL :"
+msgstr "URL :"
+
+#: views/contact_view.php:406
+msgid "Enter Redirect URL"
+msgstr "أدخل إعادة توجيه URL"
+
+#: views/contact_view.php:413
+msgid "Form Layout Preview"
+msgstr "استمارة معاينة التخطيط"
+
+#: views/contact_view.php:424
+msgid "Standard Fields"
+msgstr "الحقول القياسية"
+
+#: views/contact_view.php:427 views/contact_view.php:463
+msgid "Click on a field to use into your form."
+msgstr "انقر على حقل لاستخدامه في إلى النموذج الخاص بك."
+
+#: views/contact_view.php:446
+msgid "Checkboxes"
+msgstr "خانات الاختيار"
+
+#: views/contact_view.php:458
+msgid "Advanced Fields"
+msgstr " المتقدمة الحقول"
+
+#: views/contact_view.php:469
+msgid "Website / URL"
+msgstr "الويب سايت/ رابط"
+
+#: views/contact_view.php:474
+msgid "Phone"
+msgstr "هاتف"
+
+#: views/contact_view.php:477
+msgid "Address"
+msgstr "عنوان"
+
+#: views/contact_view.php:482
+msgid "Number"
+msgstr "عدد"
+
+#: views/contact_view.php:485
+msgid "File Upload"
+msgstr "إيداع الملف"
+
+#: views/contact_view.php:490
+msgid "Date"
+msgstr "تاريخ"
+
+#: views/contact_view.php:493
+msgid "Time"
+msgstr "وقت"
+
+#: views/contact_view.php:498
+msgid "Password"
+msgstr "كلمة السر"
+
+#: views/dashboard.php:54
+msgid "Getting Started"
+msgstr "الشروع في العمل"
+
+#: views/dashboard.php:58
+msgid "Watch the Walk-Through Video"
+msgstr "مشاهدة الفيديو من خلال المشي"
+
+#: views/dashboard.php:67
+msgid "Contact Bank, a Superlative High quality WordPress Plugin!"
+msgstr "البنك الاتصال، وهو أعلى الدرجات عالية الجودة وورد البرنامج المساعد!"
+
+#: views/dashboard.php:74
+msgid "Get Contact Bank Pro Features"
+msgstr "الحصول على الاتصال البنك برو الميزات"
+
+#: views/dashboard.php:102
+msgid "Delete All Forms"
+msgstr "حذف جميع أشكال"
+
+#: views/dashboard.php:105
+msgid "Restore Factory Settings"
+msgstr "استعادة إعدادات المصنع"
+
+#: views/dashboard.php:122
+msgid "Shortcode"
+msgstr "رمز قصير"
+
+#: views/dashboard.php:123
+msgid "Total Controls"
+msgstr "مجموع الضوابط"
+
+#: views/dashboard.php:159
+msgid "Edit Form"
+msgstr "تحرير شكل"
+
+#: views/dashboard.php:185
+msgid "Delete Form"
+msgstr "حذف استمارة"
+
+#: views/dashboard.php:220
+msgid "Let's get in touch!"
+msgstr "دعونا حصول على اتصال!"
+
+#: views/dashboard.php:319
+msgid "Are you sure, you want to delete this Form?"
+msgstr "هل أنت متأكد، أنك تريد حذف هذه الاستمارة؟"
+
+#: views/dashboard.php:329
+msgid "Are you sure, you want to delete all Forms?"
+msgstr "هل أنت متأكد، كنت ترغب في حذف كافة أشكال؟"
+
+#: views/shortcode.php:8
+msgid ""
+"How to setup Short-Codes for Contact Bank into your WordPress Page/Post?"
+msgstr "كيفية إعداد رموز قصيرة للمصرف في إتصل الخاصة بك وردبرس الصفحة / آخر؟"
+
+#~ msgid "Purchase PRO Edition - Contact Bank"
+#~ msgstr "بشرائه للمحترفين  الطبعة - Contact Bank"
+
+#~ msgid "Dashboard - Contact Bank"
+#~ msgstr "لوحة أجهزة القياس-الاتصال البنك"
+
+#~ msgid "Documentation"
+#~ msgstr "توثيق"
+
+#~ msgid "Roles & Capabilites"
+#~ msgstr "الأدوار والقدرات"
+
+#~ msgid "Licensing"
+#~ msgstr "الرخص"
+
+#~ msgid "Roles & Capabilities"
+#~ msgstr "الأدوار والقدرات"
+
+#~ msgid "Select Form :"
+#~ msgstr "حدد استمارة:"
+
+#~ msgid "Day"
+#~ msgstr "يوم"
+
+#~ msgid "Select Month"
+#~ msgstr "اختر الشهر"
+
+#~ msgid "Year"
+#~ msgstr "سنة"
+
+#~ msgid "Hour"
+#~ msgstr "ساعة"
+
+#~ msgid "Minute"
+#~ msgstr "الدقيقة"
+
+#~ msgid "Enter Tooltip Text"
+#~ msgstr "أدخل توولتيب-النص"
+
+#~ msgid "Enter Tooltip"
+#~ msgstr "أدخل توولتيب"
+
+#~ msgid "Start Year"
+#~ msgstr "ابدأ السنة"
+
+#~ msgid "Enter Start Year"
+#~ msgstr "أدخل بدء-العام"
+
+#~ msgid "End Year"
+#~ msgstr " نهاية -السنة"
+
+#~ msgid "Enter End Year "
+#~ msgstr "أدخل نهاية-العام"
+
+#~ msgid "Default Value"
+#~ msgstr "قيمة افتراضية"
+
+#~ msgid "Month"
+#~ msgstr "شهر"
+
+#~ msgid "Date Format"
+#~ msgstr "تنسيق تاريخ"
+
+#~ msgid "Allow Multiple Uploads"
+#~ msgstr "تسمح الإضافات متعددة"
+
+#~ msgid "Allowed File Extensions"
+#~ msgstr "امتدادات الملفات المسموحة"
+
+#~ msgid "Enter File Extensions"
+#~ msgstr "أدخل امتدادات الملفات"
+
+#~ msgid "The file extensions must be separated with semicolons(',')"
+#~ msgstr "يجب فصل ملحقات الملفات مع الفاصلة المنقوطة ('،')"
+
+#~ msgid "Allowed File Size"
+#~ msgstr "حجم الملفات المسموح بها"
+
+#~ msgid "File Size must be in Mb"
+#~ msgstr "حجم ملف يجب أن تكون  في ميغابايت"
+
+#~ msgid "Hour Format"
+#~ msgstr "شكل ساعة"
+
+#~ msgid "Minute Format"
+#~ msgstr "الشكل دقائق"
+
+#~ msgid "Roles and Capabilities Saved. Kindly wait for the redirect."
+#~ msgstr "أدوار وقدرات المحفوظة. يرجى الانتظار لإعادة التوجيه."
+
+#~ msgid "Privileges for Admin"
+#~ msgstr "امتيازات للالادارة"
+
+#~ msgid "Full Control"
+#~ msgstr "التحكم الكامل"
+
+#~ msgid "Read"
+#~ msgstr "قرأ"
+
+#~ msgid "Write"
+#~ msgstr "إرسال بريد"
+
+#~ msgid "Privileges for Editor"
+#~ msgstr "الامتيازات للمحرر"
+
+#~ msgid "Privileges for Author"
+#~ msgstr "الامتيازات عن مؤلف"
+
+#~ msgid "Privileges for Contributor"
+#~ msgstr "الامتيازات للمساهم"
+
+#~ msgid "Privileges for Subscriber"
+#~ msgstr "الامتيازات للالمشتركين"
+
+#~ msgid "Are you sure, you want to Restore Global Settings?"
+#~ msgstr "هل أنت متأكد، وتريد استعادة الإعدادات العالمية؟"
+
+#~ msgid "Are you sure, you want to delete this From Entry?"
+#~ msgstr "هل أنت متأكد، أنك تريد حذف هذا من الدخول؟"
+
+#~ msgid "Are you sure you want to Restore Factory Settings?"
+#~ msgstr "هل أنت متأكد أنك تريد استعادة إعدادات المصنع؟"
+
+#~ msgid "Only One File Uploader can be used on a Form."
+#~ msgstr "فقط واحد رافع الملف يمكن استخدامها على نموذج."
+
+#~ msgid "Success! Settings have been updated."
+#~ msgstr "النجاح! تم تحديث الإعدادات."
+
+#~ msgid "Update"
+#~ msgstr "التحديث"

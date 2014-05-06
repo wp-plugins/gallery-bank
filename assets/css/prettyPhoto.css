@@ -906,3 +906,34 @@ div.dark_rounded #pp_full_res .pp_inline, div.dark_square #pp_full_res .pp_inlin
 .pp_fade, .pp_gallery li.default a img {
     display: none
 }
+div.pp_default .pp_top .pp_middle {
+    background-color: #ffffff;
+    }
+ .pp_pic_holder.pp_default {
+     background-color: #ffffff;
+    }
+    div.pp_default .pp_content_container .pp_left {
+        background-color: #ffffff;
+        padding-left: 16px;
+    }
+
+    div.pp_default .pp_content_container .pp_right {
+        background-color: #ffffff;
+        padding-right: 13px;
+    }
+
+    div.pp_default .pp_bottom .pp_middle {
+        background-color: #ffffff;
+    }
+
+    div.pp_default .pp_content, div.light_rounded .pp_content {
+        background-color: #ffffff;
+    }
+
+    .pp_details {
+        background-color: #ffffff;
+    }
+
+    .ppt {
+        display: none !important;
+    }
