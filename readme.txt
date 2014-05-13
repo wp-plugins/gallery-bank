@@ -1,6 +1,6 @@
 === Gallery Bank ===
 Contributors: Gallery-Bank,contact-banker
-Tags: admin, ajax, albums, flash, gallery, image, images, lightbox, media, modal, photo, photo albums, photos, picture, pictures, slideshow, thumbnails,album, foto, fotoalbum, gallery, gallery image, image, multiple pictures, photo, photoalbum, photogallery, pictures, website gallery
+Tags: admin, ajax, album, albums, flash, foto, fotoalbum, gallery, gallery image, image, images, lightbox, media, modal, multiple pictures, photo, photo albums, photoalbum, photogallery, photos, picture, pictures, slideshow, thumbnails, website gallery
 Requires at least: 3.3
 Tested up to: 3.9.1
 Stable tag: 3.0.26
