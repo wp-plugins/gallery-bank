@@ -12,7 +12,7 @@ function create_global_menus_for_gallery_bank()
 	(
 			"SELECT count(album_id) FROM ".gallery_bank_albums()
 	);
-	if($album_count < 2)
+	if($album_count < 3)
 	{
 		add_submenu_page("gallery_bank", "Add New Album", __("Add New Album", gallery_bank), "read", "add_album", "add_album");
 	}
@@ -64,7 +64,7 @@ function add_album()
 	(
 		"SELECT count(album_id) FROM ".gallery_bank_albums()
 	);
-	if($album_count < 2)
+	if($album_count < 3)
 	{
 		global $wpdb;
 		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";

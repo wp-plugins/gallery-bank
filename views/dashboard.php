@@ -169,7 +169,7 @@
 							(
 								"SELECT count(album_id) FROM ".gallery_bank_albums()
 							);
-							if($album_count < 2)
+							if($album_count < 3)
 							{
 								?>
 								<a class="btn btn-info" href="admin.php?page=add_album"><?php _e("Add New Album", gallery_bank);?></a>

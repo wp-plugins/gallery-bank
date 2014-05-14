@@ -51,7 +51,7 @@ switch($_REQUEST["page"])
 	break;
 }
 ?>
-<ul class="breadcrumb">
+<ul class="breadcrumb" style="margin-top: 10px;">
 	<li>
 		<i class="icon-home"></i>
 		<a href="admin.php?page=gallery_bank"><?php _e("Gallery Bank", gallery_bank); ?></a>
@@ -66,7 +66,7 @@ switch($_REQUEST["page"])
 	(
 		"SELECT count(album_id) FROM ".gallery_bank_albums()
 	);
-	if($album_count < 2)
+	if($album_count < 3)
 	{
 		?>
 		<a class="nav-tab " id="add_album" href="admin.php?page=add_album">Add New Album</a>
@@ -105,16 +105,9 @@ elseif(!(in_array($language, $gb_translated_lang)) && !(in_array($language, $gb_
 	</div>
 	<?php
 }
-?>
-<div class="message red" style="display: block;margin-top:30px">
-	<span>
-		<strong>You will be only allowed to add 2 galleries. Kindly purchase Premium Version for full access.</strong>
-	</span>
-</div>
-<?php
-if (is_dir(GALLERY_MAIN_THUMB_DIR))
+if (!(is_dir(GALLERY_MAIN_THUMB_DIR)))
 {
-	if(is_dir_empty(GALLERY_MAIN_THUMB_DIR))
+	if(!(is_dir_empty(GALLERY_MAIN_THUMB_DIR)))
 	{
 		?>
 		<div class="message red" style="display: block;margin-top:15px">

@@ -69,7 +69,7 @@ else
 			(
 				"SELECT count(album_id) FROM ".gallery_bank_albums()
 			);
-			if($album_count < 2)
+			if($album_count < 3)
 			{
 				$wpdb->query
 	            (

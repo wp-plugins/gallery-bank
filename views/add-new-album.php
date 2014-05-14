@@ -85,6 +85,11 @@
 	<?php
 	}
 ?>
+<div class="message red" style="display: block;margin-top:30px">
+	<span>
+		<strong>You will be only allowed to add 3 galleries. Kindly purchase Premium Version for full access.</strong>
+	</span>
+</div>
 <form id="add_new_album" class="layout-form">
 	<div id="poststuff" style="width: 99% !important;">
 		<div id="post-body" class="metabox-holder">
@@ -274,7 +279,7 @@ jQuery("#add_new_album").validate
             {
             	if(data == "")
             	{
-            		alert("<?php _e( "You will be only allowed to add 2 galleries. Kindly purchase Premium Version for full access!", gallery_bank ); ?>");
+            		alert("<?php _e( "You will be only allowed to add 3 galleries. Kindly purchase Premium Version for full access!", gallery_bank ); ?>");
             	}
             	else
             	{
