@@ -86,7 +86,7 @@ if(in_array($language, $gb_lang))
 	<div class="message red" style="display: block;margin-top:30px">
 		<span style="padding: 4px 0;">
 			<strong><p style="font:12px/1.0em Arial !important;">This plugin language is translated with the help of Google Translator.</p>
-				<p style="font:12px/1.0em Arial !important;">If you would like to translate & help us, we will reward you with a free Pro Version License of Gallery Bank worth 16£.</p>
+				<p style="font:12px/1.0em Arial !important;">If you would like to translate & help us, we will reward you with a free Pro Version License of Gallery Bank worth 18£.</p>
 				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
 			</strong>
 		</span>
@@ -98,7 +98,7 @@ elseif(!(in_array($language, $gb_translated_lang)) && !(in_array($language, $gb_
 	?>
 	<div class="message red" style="display: block;margin-top:30px">
 		<span style="padding: 4px 0;">
-			<strong><p style="font:12px/1.0em Arial !important;">If you would like to translate Gallery Bank in your native language, we will reward you with a free Pro Version License of Gallery Bank worth 16£.</p>
+			<strong><p style="font:12px/1.0em Arial !important;">If you would like to translate Gallery Bank in your native language, we will reward you with a free Pro Version License of Gallery Bank worth 18£.</p>
 				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
 			</strong>
 		</span>
