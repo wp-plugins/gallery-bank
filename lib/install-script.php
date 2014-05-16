@@ -163,21 +163,21 @@ else if($version == "3.0")
 
 	function process_image_upload($image, $width, $height)
 	{
-	    $temp_image_path = GALLERY_MAIN_UPLOAD_DIR . $image;
-	    $temp_image_name = $image;
-	    list(, , $temp_image_type) = getimagesize($temp_image_path);
-	    if ($temp_image_type === NULL) {
-	        return false;
-	    }
+		$temp_image_path = GALLERY_MAIN_UPLOAD_DIR . $image;
+		$temp_image_name = $image;
+		list(, , $temp_image_type) = getimagesize($temp_image_path);
+		if ($temp_image_type === NULL) {
+			return false;
+		}
 		$uploaded_image_path = GALLERY_MAIN_UPLOAD_DIR . $temp_image_name;
-	    move_uploaded_file($temp_image_path, $uploaded_image_path);
-	    $type = explode(".", $image);
+		move_uploaded_file($temp_image_path, $uploaded_image_path);
+		$type = explode(".", $image);
 		$thumbnail_image_path = GALLERY_MAIN_THUMB_DIR . preg_replace('{\\.[^\\.]+$}', '.'.$type[1], $temp_image_name);
 	
-	    $result = generate_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
-	    return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
-    }
-    function process_album_upload($album_image, $width, $height)
+		$result = generate_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
+		return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
+	}
+	function process_album_upload($album_image, $width, $height)
     {
         $temp_image_path = GALLERY_MAIN_UPLOAD_DIR . $album_image;
         $temp_image_name = $album_image;
@@ -196,7 +196,6 @@ else if($version == "3.0")
 /****************************** COMMON FUNCTION TO GENERATE THUMBNAILS********************************/
 	function generate_thumbnail($source_image_path, $thumbnail_image_path, $imageWidth, $imageHeight)
 	{
-		ini_set("memory_limit", "256M");
 	    list($source_image_width, $source_image_height, $source_image_type) = getimagesize($source_image_path);
 	    $source_gd_image = false;
 	    switch ($source_image_type) {

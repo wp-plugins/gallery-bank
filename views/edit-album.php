@@ -374,11 +374,22 @@ if (count($album_css) != 0)
 
             var uxEditDescription = "";
 
-            if (!jQuery("#wp-ux_edit_description-wrap").hasClass("tmce-active")) {
-                uxEditDescription = encodeURIComponent(jQuery("#ux_edit_description").val());
-            } else {
-                uxEditDescription = encodeURIComponent(tinyMCE.get("ux_edit_description").getContent());
-            }
+            <?php
+	    	if(class_exists("ckeditor_wordpress"))
+			{
+				?>
+				var uxEditDescription = encodeURIComponent(CKEDITOR.instances.ux_edit_description.getData());
+				<?php
+			}
+			else
+			{
+				?>
+				var uxEditDescription = jQuery("#wp-ux_edit_description-wrap").hasClass("tmce-active") ?
+					encodeURIComponent(tinyMCE.get("ux_edit_description").getContent())
+					: encodeURIComponent(jQuery("#ux_edit_description").val());
+				<?php
+			}
+			?>
 
             var edit_album_name = encodeURIComponent(jQuery("#ux_edit_title").val());
             jQuery.post(ajaxurl, "albumid=" + albumid + "&edit_album_name=" + edit_album_name + "&uxEditDescription=" + uxEditDescription + "&param=update_album&action=add_new_album_library", function () {

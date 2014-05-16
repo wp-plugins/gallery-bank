@@ -270,9 +270,22 @@ oTable = jQuery("#data-table-album").dataTable
 jQuery("#add_new_album").validate
 ({
     submitHandler: function () {
-        var uxDescription = jQuery("#wp-ux_description-wrap").hasClass("tmce-active") ?
-            encodeURIComponent(tinyMCE.get("ux_description").getContent())
-            : encodeURIComponent(jQuery("#ux_description").val());
+        <?php 
+		if(class_exists("ckeditor_wordpress"))
+		{
+			?>
+			var uxDescription = encodeURIComponent(CKEDITOR.instances.ux_description.getData());
+			<?php
+		}
+		else
+		{
+			?>
+			var uxDescription = jQuery("#wp-ux_description-wrap").hasClass("tmce-active") ?
+				encodeURIComponent(tinyMCE.get("ux_description").getContent())
+				: encodeURIComponent(jQuery("#ux_description").val());
+			<?php
+		}
+    	?>
         var album_name = encodeURIComponent(jQuery("#ux_title").val());
         jQuery.post(ajaxurl, "album_name=" + album_name + "&uxDescription=" + uxDescription +
             "&param=add_new_album&action=add_new_album_library", function (data)
