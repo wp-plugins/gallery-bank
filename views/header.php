@@ -22,9 +22,6 @@ switch($_REQUEST["page"])
 	case "gallery_bank":
 		$page = "Dashboard";
 	break;
-	case "add_album":
-		$page = "Add New Album";
-	break;
 	case "gallery_bank_shortcode":
 		$page = "Short-Codes";
 	break;
@@ -40,8 +37,8 @@ switch($_REQUEST["page"])
 	case "gallery_bank_purchase":
 		$page = "Purchase Pro Version";
 	break;
-	case "edit_album":
-		$page = "Edit Album";
+	case "save_album":
+		$page = "Album";
 	break;
 	case "images_sorting":
 		$page = "Re-order Images";
@@ -61,23 +58,11 @@ switch($_REQUEST["page"])
 </ul>
 <h2 class="nav-tab-wrapper">
 	<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
-	<?php
-	$album_count = $wpdb->get_var
-	(
-		"SELECT count(album_id) FROM ".gallery_bank_albums()
-	);
-	if($album_count < 3)
-	{
-		?>
-		<a class="nav-tab " id="add_album" href="admin.php?page=add_album">Add New Album</a>
-		<?php
-	}
-	?>
-	<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode">Short-Codes</a>
-	<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting">Album Sorting</a>
-	<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings">Global Settings</a>
-	<a class="nav-tab " id="gallery_bank_system_status" href="admin.php?page=gallery_bank_system_status">System Status</a>
-	<a class="nav-tab " id="gallery_bank_purchase" href="admin.php?page=gallery_bank_purchase">Purchase Pro Version</a>
+	<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
+	<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
+	<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>
+	<a class="nav-tab " id="gallery_bank_system_status" href="admin.php?page=gallery_bank_system_status"><?php _e("System Status", gallery_bank);?></a>
+	<a class="nav-tab " id="gallery_bank_purchase" href="admin.php?page=gallery_bank_purchase"><?php _e("Purchase Pro Version", gallery_bank);?></a>
 </h2>
 <?php
 if(in_array($language, $gb_lang))

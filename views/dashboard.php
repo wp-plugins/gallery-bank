@@ -1,5 +1,10 @@
 <?php
 	global $wpdb;
+	$last_album_id = $wpdb->get_var
+	(
+		"SELECT album_id FROM " .gallery_bank_albums(). " order by album_id desc limit 1"
+	);
+	
 	$popup = get_option("gallery-bank-info-popup");
 	if($popup == "")
 	{
@@ -172,7 +177,7 @@
 							if($album_count < 3)
 							{
 								?>
-								<a class="btn btn-info" href="admin.php?page=add_album"><?php _e("Add New Album", gallery_bank);?></a>
+								<a class="btn btn-info" href="admin.php?page=save_album&album_id=<?php echo count($last_album_id) == 0 ? 1 : $last_album_id + 1; ?>"><?php _e("Add New Album", gallery_bank);?></a>
 								<?php
 							}
 							?>
@@ -222,7 +227,7 @@
 														?>
 															<tr>
 																<td>
-																	<a href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>" title="<?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?>" >
+																	<a href="admin.php?page=save_album&album_id=<?php echo $album[$flag]->album_id;?>" title="<?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?>" >
 																		<div class="imgLiquidFill dynamic_cover_css">
 																			<?php
 																			if(count($albumCover) != 0)
@@ -259,7 +264,7 @@
 																<td>
 																	<ul class="layout-table-controls">
 																		<li>
-																			<a href="admin.php?page=edit_album&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Edit Album", gallery_bank ); ?>">
+																			<a href="admin.php?page=save_album&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Edit Album", gallery_bank ); ?>">
 																				<i class="icon-pencil" ></i>
 																			</a>
 																		</li>	
@@ -416,6 +421,7 @@ function close_popup()
 	});
 	
 }
+
 	function delete_album(album_id) 
 	{
 		var r = confirm("<?php _e( "Are you sure you want to delete this Album?", gallery_bank ); ?>");

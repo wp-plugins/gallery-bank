@@ -8,14 +8,6 @@ function create_global_menus_for_gallery_bank()
 	global $wpdb;
     add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png");
     add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
-    $album_count = $wpdb->get_var
-	(
-			"SELECT count(album_id) FROM ".gallery_bank_albums()
-	);
-	if($album_count < 3)
-	{
-		add_submenu_page("gallery_bank", "Add New Album", __("Add New Album", gallery_bank), "read", "add_album", "add_album");
-	}
 	add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
     add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
     add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
@@ -23,7 +15,7 @@ function create_global_menus_for_gallery_bank()
 	add_submenu_page("gallery_bank", "Purchase Pro Version", __("Purchase Pro Version", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
     add_submenu_page("", "", "", "read", "view_album", "view_album");
     add_submenu_page("", "", "", "read", "album_preview", "album_preview");
-    add_submenu_page("", "", "", "read", "edit_album", "edit_album");
+    add_submenu_page("", "", "", "read", "save_album", "save_album");
     add_submenu_page("", "", "", "read", "images_sorting", "images_sorting");
 }
 //--------------------------------------------------------------------------------------------------------------//
@@ -57,7 +49,13 @@ function gallery_bank()
     include_once GALLERY_BK_PLUGIN_DIR . "/views/dashboard.php";
 }
 
-function add_album()
+
+function gallery_bank_shortcode()
+{
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/shortcode.php";
+}
+function save_album()
 {
 	global $wpdb;
 	$album_count = $wpdb->get_var
@@ -68,7 +66,7 @@ function add_album()
 	{
 		global $wpdb;
 		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-		include_once GALLERY_BK_PLUGIN_DIR . "/views/add-new-album.php";
+		include_once GALLERY_BK_PLUGIN_DIR . "/views/edit-album.php";
 	}
 	else 
 	{
@@ -78,16 +76,6 @@ function add_album()
 		</script>
 		<?php
 	}
-}
-function gallery_bank_shortcode()
-{
-	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-	include_once GALLERY_BK_PLUGIN_DIR . "/views/shortcode.php";
-}
-function edit_album()
-{
-    include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
-    include_once GALLERY_BK_PLUGIN_DIR . "/views/edit-album.php";
 }
 
 function global_settings()

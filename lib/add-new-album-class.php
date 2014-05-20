@@ -36,63 +36,30 @@ else
 	        $img_name = esc_attr($_REQUEST["img_name"]);
 	        $img_width = intval($_REQUEST["image_width"]);
 	        $img_height = intval($_REQUEST["image_height"]);
+			$picid = intval($_REQUEST["picid"]);
 	
 	
 	        process_image_upload($img_path, $img_width, $img_height);
 	
-	        $column1 = "<input type=\"checkbox\" id=\"ux_grp_select_items_" . $dynamicId . "\" name=\"ux_grp_select_items_" . $dynamicId . "\" value=\"" . $dynamicId . "\" />";
+	        $column1 = "<input type=\"checkbox\" id=\"ux_grp_select_items_" . $picid . "\" name=\"ux_grp_select_items_" . $picid . "\" value=\"" . $picid . "\" />";
 	        array_push($dynamicArray, $column1);
 	
 	        $column2 = "<a  href=\"javascript:void(0);\" title=\"" . $img_name . "\" >
-					<img type=\"image\" imgPath=\"" . $img_path . "\"  src=\"" . GALLERY_BK_THUMB_SMALL_URL . $img_path . "\" id=\"ux_gb_img\" name=\"ux_gb_img\" class=\"img dynamic_css\" imageid=\"" . $dynamicId . "\" width=\"" . $img_width . "\"/></a><br/>
+					<img type=\"image\" imgPath=\"" . $img_path . "\"  src=\"" . GALLERY_BK_THUMB_SMALL_URL . $img_path . "\" id=\"ux_gb_img\" name=\"ux_gb_img\" class=\"img dynamic_css\" imageid=\"" . $picid . "\" width=\"" . $img_width . "\"/></a><br/>
 					<label><strong>" . $img_name . "</strong></label><br/><label>" . date("F j, Y") . "</label><br/>
 					<input type=\"radio\" style=\"cursor: pointer;\" id=\"ux_rdl_cover\" name=\"ux_album_cover\" /><label>" . __(" Set as Album Cover", gallery_bank) . "</label>";
 	        array_push($dynamicArray, $column2);
 	
-	        $column3 = "<input placeholder=\"" . __("Enter your Title", gallery_bank) . "\" class=\"layout-span12\" type=\"text\" name=\"ux_img_title_" . $dynamicId . "\" id=\"ux_img_title_" . $dynamicId . "\" />
-					<textarea placeholder=\"" . __("Enter your Description ", gallery_bank) . "\" style=\"margin-top:20px\" rows=\"5\" class=\"layout-span12\" name=\"ux_txt_desc_" . $dynamicId . "\"  id=\"ux_txt_desc_" . $dynamicId . "\"></textarea>";
+	        $column3 = "<input placeholder=\"" . __("Enter your Title", gallery_bank) . "\" class=\"layout-span12\" type=\"text\" name=\"ux_img_title_" . $picid . "\" id=\"ux_img_title_" . $picid . "\" />
+					<textarea placeholder=\"" . __("Enter your Description ", gallery_bank) . "\" style=\"margin-top:20px\" rows=\"5\" class=\"layout-span12\" name=\"ux_txt_desc_" . $picid . "\"  id=\"ux_txt_desc_" . $picid . "\"></textarea>";
 	        array_push($dynamicArray, $column3);
-	        $column4 = "<input placeholder=\"" . __("Enter your Tags", gallery_bank) . "\" class=\"layout-span12\" readonly=\"readonly\" type=\"text\" onkeypress=\"return preventDot(event);\" name=\"ux_txt_tags_" . $dynamicId . "\" id=\"ux_txt_tags_" . $dynamicId . "\" />";
+	        $column4 = "<input placeholder=\"" . __("Enter your Tags", gallery_bank) . "\" class=\"layout-span12\" readonly=\"readonly\" type=\"text\" onkeypress=\"return preventDot(event);\" name=\"ux_txt_tags_" . $picid . "\" id=\"ux_txt_tags_" . $picid . "\" />";
 	        array_push($dynamicArray, $column4);
-	        $column5 = "<input value=\"http://\" type=\"text\" id=\"ux_txt_url_" . $dynamicId . "\" name=\"ux_txt_url_" . $dynamicId . "\" class=\"layout-span12\" />";
+	        $column5 = "<input value=\"http://\" type=\"text\" id=\"ux_txt_url_" . $picid . "\" name=\"ux_txt_url_" . $picid . "\" class=\"layout-span12\" />";
 	        array_push($dynamicArray, $column5);
 	        $column6 = "<a class=\"btn hovertip\" id=\"ux_btn_delete\" style=\"cursor: pointer;\" data-original-title=\"" . __("Delete Image", gallery_bank) . "\" onclick=\"deleteImage(this);\"><i class=\"icon-trash\"></i></a>";
 	        array_push($dynamicArray, $column6);
 	        echo json_encode($dynamicArray);
-	        die();
-	    } 
-	    else if ($_REQUEST["param"] == "add_new_album") {
-	        $ux_album_name1 = htmlspecialchars(esc_attr($_REQUEST["album_name"]));
-	        $ux_album_name = ($ux_album_name1 == "") ? "Untitled Album" : $ux_album_name1;
-	        $ux_description = html_entity_decode(esc_attr($_REQUEST["uxDescription"]));
-			$album_count = $wpdb->get_var
-			(
-				"SELECT count(album_id) FROM ".gallery_bank_albums()
-			);
-			if($album_count < 3)
-			{
-				$wpdb->query
-	            (
-	                $wpdb->prepare
-	                    (
-	                        "INSERT INTO " . gallery_bank_albums() . "(album_name, description, album_date, author)
-							VALUES(%s, %s, CURDATE(), %s)",
-	                        $ux_album_name,
-	                        $ux_description,
-	                        $current_user->display_name
-	                    )
-	            );
-		        echo $EventLastId = $wpdb->insert_id;
-		        $wpdb->query
-	            (
-	                $wpdb->prepare
-	                    (
-	                        "UPDATE " . gallery_bank_albums() . " SET album_order = %d WHERE album_id = %d",
-	                        $EventLastId,
-	                        $EventLastId
-	                    )
-	            );
-			}
 	        die();
 	    }
 	    else if ($_REQUEST["param"] == "add_pic") {
@@ -150,7 +117,7 @@ else
 	                            )
 	                    );
 	            }
-	            $pic_id = $wpdb->insert_id;
+	            echo $pic_id = $wpdb->insert_id;
 	            $wpdb->query
 	                (
 	                    $wpdb->prepare
@@ -179,7 +146,7 @@ else
 	                            $ux_img_name
 	                        )
 	                );
-	            $pic_id = $wpdb->insert_id;
+	            echo $pic_id = $wpdb->insert_id;
 	            $wpdb->query
 	                (
 	                    $wpdb->prepare
@@ -217,7 +184,7 @@ else
 	        $ux_albumCover = $_REQUEST["isAlbumCoverSet"];
 	        $ux_title = html_entity_decode(esc_attr($_REQUEST["title"]));
 	        $ux_description = html_entity_decode(esc_attr($_REQUEST["description"]));
-	        $ux_tags = html_entity_decode(esc_attr($_REQUEST["tags"]));
+	       	$ux_tags = html_entity_decode(esc_attr($_REQUEST["tags"]));
 	        $ux_urlRedirect = esc_attr($_REQUEST["urlRedirect"]);
 	        $img_gb_path = esc_attr($_REQUEST["img_gb_path"]);
 	        $cover_width = intval($_REQUEST["cover_width"]);

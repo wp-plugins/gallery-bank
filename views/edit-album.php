@@ -1,15 +1,57 @@
 <?php
-global $wpdb;
+global $wpdb,$current_user;
 
 $album_id = intval($_REQUEST["album_id"]);
-$album = $wpdb->get_row
+$last_albums_id = $wpdb->get_var
 (
-    $wpdb->prepare
-    (
-        "SELECT * FROM " . gallery_bank_albums() . " where album_id = %d",
-        $album_id
-    )
+	$wpdb->prepare
+	(
+		"SELECT album_id FROM " .gallery_bank_albums(). " where album_id= %d",
+		$album_id
+	)
 );
+$album_count = $wpdb->get_var
+(
+	"SELECT count(album_id) FROM ".gallery_bank_albums()
+);
+if($album_count < 3)
+{
+	if($last_albums_id == 0)
+	{
+		$wpdb->query
+		(
+			$wpdb->prepare
+			(
+				"INSERT INTO " . gallery_bank_albums() . "(album_id,album_name, description, album_date, author, album_order)
+				VALUES(%d, %s, %s, CURDATE(), %s, %d)",
+				$album_id,
+				"Untitled Album",
+				"",
+				$current_user->display_name,
+				$album_id
+			)
+		);
+		$album = $wpdb->get_row
+		(
+			$wpdb->prepare
+			(
+				"SELECT * FROM " . gallery_bank_albums() . " where album_id = %d",
+				$album_id
+			)
+		);
+	}
+	else
+	{
+		$album = $wpdb->get_row
+		(
+			$wpdb->prepare
+			(
+				"SELECT * FROM " . gallery_bank_albums() . " where album_id = %d",
+				$album_id
+			)
+		);
+	}
+}
 $pics = $wpdb->get_results
 (
     $wpdb->prepare
@@ -72,6 +114,11 @@ if (count($album_css) != 0)
             -khtml-opacity: <?php echo $thumbnails_opacity; ?>;
         }
     </style>
+<div class="message red" style="display: block;margin-top:30px">
+	<span>
+		<strong>You will be only allowed to add 3 galleries. Kindly purchase Premium Version for full access.</strong>
+	</span>
+</div>
 <form id="edit_album" class="layout-form">
 	<div id="poststuff" style="width: 99% !important;">
 		<div id="post-body" class="metabox-holder">
@@ -79,15 +126,15 @@ if (count($album_css) != 0)
 				<div id="advanced" class="meta-box-sortables">
 					<div id="gallery_bank_get_started" class="postbox" >
 						<div class="handlediv" data-target="#ux_edit_album" title="Click to toggle" data-toggle="collapse"><br></div>
-						<h3 class="hndle"><span><?php _e("Edit Album", gallery_bank); ?></span></h3>
+						<h3 class="hndle"><span><?php _e("Album", gallery_bank); ?></span></h3>
 						<div class="inside">
 							<div id="ux_edit_album" class="gallery_bank_layout">
 								<a class="btn btn-inverse" href="admin.php?page=gallery_bank"><?php _e("Back to Albums", gallery_bank); ?></a>
-								<button type="submit" class="btn btn-info" style="float:right"><?php _e("Update Album", gallery_bank); ?></button>
+								<button type="submit" class="btn btn-info" style="float:right"><?php _e("Save Album", gallery_bank); ?></button>
 								<div class="separator-doubled"></div>
 								<div id="update_album_success_message" class="message green" style="display: none;">
 									<span>
-										<strong><?php _e("Album Updated. Kindly wait for the redirect to happen.", gallery_bank); ?></strong>
+										<strong><?php _e("Album Saved. Kindly wait for the redirect to happen.", gallery_bank); ?></strong>
 									</span>
 								</div>
 								<div class="fluid-layout">
@@ -167,6 +214,7 @@ if (count($album_css) != 0)
 												<table class="table table-striped " id="data-table-edit-album">
 													<thead>
 														<tr>
+															
 								                            <th style="width:11%">
 								                                <input type="checkbox" id="grp_select_items" name="grp_select_items" style="vertical-align:middle;"/>
 								                                <button type="button" onclick="deleteSelectedImages();" style="vertical-align:middle;"
@@ -186,6 +234,7 @@ if (count($album_css) != 0)
 								                                <?php _e("Url to Redirect on click of an Image", gallery_bank); ?>
 								                            </th>
 								                            <th style="width:5%"></th>
+								                            <th style="visibility: hidden"></th>
 								                        </tr>
 													</thead>
 		                        					<tbody>
@@ -196,9 +245,10 @@ if (count($album_css) != 0)
 																<?php
 																if ($pics[$flag]->video == 1) {
 																?>
+										
 																	<td>
 																		<input type="checkbox" id="ux_grp_select_items" name="ux_grp_select_items"
-																		value="<?php echo $pics[$flag]->pic_id; ?>" control="edit"/>
+																		value="<?php echo $pics[$flag]->pic_id; ?>" />
 																	</td>
 																	<td>
 																		<a href="javascript:void(0);" title="<?php echo $pics[$flag]->pic_name; ?>">
@@ -206,7 +256,7 @@ if (count($album_css) != 0)
 																			imgpath="<?php echo $pics[$flag]->pic_name; ?>"
 																			src="<?php echo stripcslashes($video_url); ?>" id="ux_gb_img"
 																			name="ux_gb_img" width="<?php echo $thumbnails_width; ?>px;"
-																			class="edit dynamic_css" picId="<?php echo $pics[$flag]->pic_id; ?>"/>
+																			class="dynamic_css" picId="<?php echo $pics[$flag]->pic_id; ?>"/>
 																		</a><br/>
 																		<?php $dateFormat = date("F j, Y", strtotime($pics[$flag]->date)); ?>
 																		<label><strong>Video</strong></label><br/><label><?php echo $dateFormat; ?></label>
@@ -234,24 +284,25 @@ if (count($album_css) != 0)
 																	<td>
 																		<a class="btn hovertip " id="ux_btn_delete" style="cursor: pointer;"
 																		data-original-title="<?php _e("Delete Video", gallery_bank) ?>"
-																		onclick="deleteImage(this);" type="edit"
+																		onclick="deleteImage(this);"
 																		controlId="<?php echo $pics[$flag]->pic_id; ?>">
 																			<i class="icon-trash"></i>
 																		</a>
 																	</td>
+																	
 																<?php
 																} else {
 																?>
 																	<td>
 																		<input type="checkbox" id="ux_grp_select_items" name="ux_grp_select_items"
-																		value="<?php echo $pics[$flag]->pic_id; ?>" control="edit"/>
+																		value="<?php echo $pics[$flag]->pic_id; ?>" />
 																	</td>
 																	<td>
 																		<a href="javascript:void(0);" title="<?php echo $pics[$flag]->pic_name; ?>">
 																			<img type="image" imgpath="<?php echo $pics[$flag]->thumbnail_url; ?>"
 																				src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL . $pics[$flag]->thumbnail_url); ?>"
 																				id="ux_gb_img" imageid="<?php echo $pics[$flag]->pic_id; ?>"
-																				name="ux_gb_img" class="edit dynamic_css"
+																				name="ux_gb_img" class=" dynamic_css"
 																				width="<?php echo $thumbnails_width ?>"/>
 																		</a>
 																		<br/>
@@ -277,18 +328,18 @@ if (count($album_css) != 0)
 								                                    </td>
 								                                    <td>
 								                                        <input placeholder="<?php _e("Enter your Title", gallery_bank) ?>"
-							                                               class="layout-span12 edit" type="text"
+							                                               class="layout-span12 " type="text"
 							                                               name="ux_edit_img_title_<?php echo $pics[$flag]->pic_id; ?>"
 							                                               id="ux_edit_img_title_<?php echo $pics[$flag]->pic_id; ?>"
 							                                               value="<?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title))); ?>"/>
 								                                        <textarea placeholder="<?php _e("Enter your Description ", gallery_bank) ?>"
-						                                                   style="margin-top:20px" rows="5" class="layout-span12 edit"
+						                                                   style="margin-top:20px" rows="5" class="layout-span12 "
 						                                                   name="ux_edit_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"
 						                                                   id="ux_edit_txt_desc_<?php echo $pics[$flag]->pic_id; ?>"><?php echo html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description))); ?></textarea>
 								                                    </td>
 								                                    <td>
 								                                        <input placeholder="<?php _e("Enter your Tags", gallery_bank) ?>"
-							                                               class="layout-span12 edit" type="text" onkeypress="return preventDot(event);"
+							                                               class="layout-span12 " type="text" onkeypress="return preventDot(event);"
 							                                               name="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>"
 							                                               id="ux_edit_txt_tags_<?php echo $pics[$flag]->pic_id; ?>" readonly="readonly"
 							                                               value=""/>
@@ -304,16 +355,19 @@ if (count($album_css) != 0)
 								                                        <input value="<?php echo $domain; ?>" type="text"
 							                                               id="ux_edit_txt_url_<?php echo $pics[$flag]->pic_id; ?>"
 							                                               name="ux_edit_txt_url_<?php echo $pics[$flag]->pic_id; ?>"
-							                                               class="layout-span12 edit"/>
+							                                               class="layout-span12 "/>
 								                                    </td>
 								                                    <td>
 								                                        <a class="btn hovertip" id="ux_btn_delete" style="cursor: pointer;"
 								                                           data-original-title="<?php _e("Delete Image", gallery_bank) ?>"
-								                                           onclick="deleteImage(this);" type="edit"
+								                                           onclick="deleteImage(this);"
 								                                           controlId="<?php echo $pics[$flag]->pic_id; ?>">
 								                                            <i class="icon-trash"></i>
 								                                        </a>
 								                                    </td>
+								                                    <td style="visibility: hidden">
+																		<?php echo $pics[$flag]->pic_id; ?>
+																	</td>
 									                            <?php
 									                            }
 									                            ?>
@@ -328,7 +382,7 @@ if (count($album_css) != 0)
 							        </div>
 								</div>
 		    					<div class="separator-doubled"></div>
-								<button type="submit" class="btn btn-info" style="float:right; margin-top: 20px;"><?php _e("Update Album", gallery_bank); ?></button>
+								<button type="submit" class="btn btn-info" style="float:right; margin-top: 20px;"><?php _e("Save Album", gallery_bank); ?></button>
 								<a class="btn btn-inverse" href="admin.php?page=gallery_bank" style="margin-top: 20px;"><?php _e("Back to Albums", gallery_bank); ?></a>
 							</div>
 						</div>
@@ -356,7 +410,10 @@ if (count($album_css) != 0)
         "sDom": '<"datatable-header"fl>t<"datatable-footer"ip>',
         "oLanguage": {
             "sLengthMenu": "<span>Show entries:</span> _MENU_"
-        }
+        },
+		"aaSorting": [[ 6, "asc" ]],
+		"aoColumnDefs": [{ "bSortable": false, "aTargets": [0] },{ "bSortable": false, "aTargets": [0] }]
+		
     });
     jQuery("#edit_album").validate
     ({
@@ -405,7 +462,6 @@ if (count($album_css) != 0)
                     var urlRedirect = "";
                     var picId = "";
 
-                    if (controlClass == "edit dynamic_css") {
                         controlType = jQuery(value.cells[1]).find("img").attr("type");
                         picId = jQuery(value.cells[1]).find("img").attr("imageId");
                         img_gb_path = jQuery(value.cells[1]).find("img").attr("imgpath");
@@ -425,29 +481,6 @@ if (count($album_css) != 0)
                                     window.location.href = "admin.php?page=gallery_bank";
                                 }, 3000);
                         });
-                    }
-                    else {
-                        controlType = jQuery(value.cells[1]).find("img").attr("type");
-                        var image_name = encodeURIComponent(jQuery(value.cells[1]).find("a").attr("title"));
-                        img_gb_path = jQuery(value.cells[1]).find("img").attr("imgpath");
-                        isAlbumCoverSet = jQuery(value.cells[1]).find("input:radio").attr("checked");
-                        title = jQuery(value.cells[2]).find("input:text").eq(0).val();
-                        description = jQuery(value.cells[2]).find("textarea").eq(0).val();
-                        tags = jQuery(value.cells[3]).find("input:text").eq(0).val();
-                        urlRedirect = jQuery(value.cells[4]).find("input:text").eq(0).val();
-                        jQuery.post(ajaxurl, "album_id=" + albumid + "&controlType=" + controlType + "&imagename=" + image_name +
-                            "&img_gb_path=" + img_gb_path + "&isAlbumCoverSet=" + isAlbumCoverSet + "&title=" + encodeURIComponent(title) +
-                            "&description=" + encodeURIComponent(description) + "&tags=" + encodeURIComponent(tags) + "&urlRedirect=" + urlRedirect +
-                            "&cover_height=" + cover_height + "&cover_width=" + cover_width +
-                            "&param=add_pic&action=add_new_album_library", function () {
-                            count++;
-                            if (count == parseInt(oTable.fnGetNodes().length))
-                                setTimeout(function () {
-                                    jQuery("#update_album_success_message").css("display", "none");
-                                    window.location.href = "admin.php?page=gallery_bank";
-                                }, 3000);
-                        });
-                    }
                 });
                 if (count == parseInt(oTable.fnGetNodes().length)) {
                     setTimeout(function () {
@@ -483,27 +516,46 @@ if (count($album_css) != 0)
         silverlight_xap_url: url + "/assets/Moxie.xap",
         init: {
             FileUploaded: function (up, file) {
+                
                 var oTable = jQuery("#data-table-edit-album").dataTable();
-
-                jQuery.post(ajaxurl, "img_path=" + file.target_name + "&img_name=" + file.name + "&image_width=" + image_width +
-                    "&image_height=" + image_height +
-                    "&param=add_new_dynamic_row_for_image&action=add_new_album_library", function (data) {
-                    var col1 = jQuery("<td></td>");
-                    col1.append(jQuery.parseJSON(data)[0]);
-                    var col2 = jQuery("<td></td>");
-                    col2.append(jQuery.parseJSON(data)[1]);
-                    var col3 = jQuery("<td></td>");
-                    col3.append(jQuery.parseJSON(data)[2]);
-                    var col4 = jQuery("<td></td>");
-                    col4.append(jQuery.parseJSON(data)[3]);
-                    var col5 = jQuery("<td></td>");
-                    col5.append(jQuery.parseJSON(data)[4]);
-                    var col6 = jQuery("<td></td>");
-                    col6.append(jQuery.parseJSON(data)[5]);
-                    oTable.fnAddData([col1.html(), col2.html(), col3.html(), col4.html(), col5.html(), col6.html()]);
-                    select_radio();
-                    jQuery(".hovertip").tooltip();
+				var albumid = jQuery("#ux_hidden_album_id").val();
+                var controlType = "image";
+                var image_name = file.name;
+                var img_gb_path = file.target_name;
+                var isAlbumCoverSet = "";
+                var title = "";
+                var description = "";
+                var tags = "";
+                var urlRedirect = "http://";
+                jQuery.post(ajaxurl, "album_id=" + albumid + "&controlType=" + controlType + "&imagename=" + image_name +
+                    "&img_gb_path=" + img_gb_path + "&isAlbumCoverSet=" + isAlbumCoverSet + "&title=" + encodeURIComponent(title) +
+                    "&description=" + encodeURIComponent(description) + "&tags=" + encodeURIComponent(tags) + "&urlRedirect=" + urlRedirect +
+                    "&cover_height=" + cover_height + "&cover_width=" + cover_width +
+                    "&param=add_pic&action=add_new_album_library", function (data) {
+                    	
+                    	jQuery.post(ajaxurl, "img_path=" + file.target_name + "&img_name=" + file.name + "&image_width=" + image_width +
+		                "&image_height=" + image_height + "&picid=" + data +
+		                "&param=add_new_dynamic_row_for_image&action=add_new_album_library", function (data) {
+		                var col1 = jQuery("<td></td>");
+		                col1.append(jQuery.parseJSON(data)[0]);
+		                var col2 = jQuery("<td></td>");
+		                col2.append(jQuery.parseJSON(data)[1]);
+		                var col3 = jQuery("<td></td>");
+		                col3.append(jQuery.parseJSON(data)[2]);
+		                var col4 = jQuery("<td></td>");
+		                col4.append(jQuery.parseJSON(data)[3]);
+		                var col5 = jQuery("<td></td>");
+		                col5.append(jQuery.parseJSON(data)[4]);
+		                var col6 = jQuery("<td></td>");
+		                col6.append(jQuery.parseJSON(data)[5]);
+		                var col7 = jQuery("<td style=\"visibility:hidden;\"></td>");
+		                oTable.fnAddData([col1.html(), col2.html(), col3.html(), col4.html(), col5.html(), col6.html(), col7.html()]);
+		                
+		                select_radio();
+		                jQuery(".hovertip").tooltip();
+		            });
                 });
+                
             },
             UploadComplete: function () {
                 jQuery(".plupload_buttons").css("display", "block");
@@ -515,13 +567,10 @@ if (count($album_css) != 0)
         var r = confirm("<?php _e("Are you sure you want to delete this Image?", gallery_bank)?>");
         if (r == true) {
             var row = jQuery(control).closest("tr");
-            var type = jQuery(control).attr("type");
             var oTable = jQuery("#data-table-edit-album").dataTable();
-            if (type == "edit")
-            {
                 var controlId = jQuery(control).attr("controlid");
                 delete_array.push(controlId);
-            }
+            
             oTable.fnDeleteRow(row[0]);
             select_radio();
         }
