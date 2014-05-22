@@ -57,7 +57,7 @@ else
 	        array_push($dynamicArray, $column4);
 	        $column5 = "<input value=\"http://\" type=\"text\" id=\"ux_txt_url_" . $picid . "\" name=\"ux_txt_url_" . $picid . "\" class=\"layout-span12\" />";
 	        array_push($dynamicArray, $column5);
-	        $column6 = "<a class=\"btn hovertip\" id=\"ux_btn_delete\" style=\"cursor: pointer;\" data-original-title=\"" . __("Delete Image", gallery_bank) . "\" onclick=\"deleteImage(this);\"><i class=\"icon-trash\"></i></a>";
+	        $column6 = "<a class=\"btn hovertip\" id=\"ux_btn_delete\" style=\"cursor: pointer;\" data-original-title=\"" . __("Delete Image", gallery_bank) . "\" onclick=\"deleteImage(this);\" controlId =\"" . $picid . "\" ><i class=\"icon-trash\"></i></a>";
 	        array_push($dynamicArray, $column6);
 	        echo json_encode($dynamicArray);
 	        die();

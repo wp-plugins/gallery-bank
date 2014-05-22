@@ -1,69 +1,68 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Gallery-Bank\n"
-"POT-Creation-Date: 2014-05-06 15:04+0530\n"
-"PO-Revision-Date: 2014-05-06 16:40+0530\n"
+"Project-Id-Version: Gallery Bank\n"
+"POT-Creation-Date: 2014-05-22 09:26+0530\n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: Tech-Banker <support@tech-banker.com>\n"
-"Language: tr_TR\n"
+"Language-Team: \n"
+"Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.6.4\n"
-"X-Poedit-Basepath: I:\\Kiran-work-Backup\\2014\\Gallery-Bank-Latest"
-"\\3.8.2\\Standard\\gallery-bank\\\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: C:\\wamp\\www\\wordpress\\wp-content\\plugins\\gallery-"
+"bank\\\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: front_views/gallery-bank-shortcode.php:4
 msgid "Insert Gallery Bank Shortcode"
-msgstr "Girmek - Gallery Bank Kısa kod"
+msgstr "Kısa kod ile Galeri Bank Ekle"
 
 #: front_views/gallery-bank-shortcode.php:6
 msgid "Select an album below to add it to your post or page."
-msgstr "Seçiniz bir albüm aşağıda eklemek onu sizin mesaja veya sayfa. "
+msgstr "Bir albüm seçin ve yazıya ekleyin"
 
 #: front_views/gallery-bank-shortcode.php:11
 msgid "Gallery Type"
-msgstr "Galeri Tipi"
+msgstr "Galeri çeşidi"
 
 #: front_views/gallery-bank-shortcode.php:13
 msgid "Albums with Images"
-msgstr "Görüntüler ile Albümler"
+msgstr "Resimli Albümler"
 
 #: front_views/gallery-bank-shortcode.php:15
 msgid "Only Images"
-msgstr "Sadece -Görüntüler"
+msgstr "Sadece Resimler"
 
 #: front_views/gallery-bank-shortcode.php:18
 msgid "Album Format"
-msgstr "Albüm etiket- Biçim"
+msgstr "Albüm Biçimi"
 
 #: front_views/gallery-bank-shortcode.php:20
 msgid "Select Album Format"
-msgstr "Seçin-Albümü Biçimi "
+msgstr "Bir Albüm Biçimi Seçiniz"
 
 #: front_views/gallery-bank-shortcode.php:27
 msgid "Select Album"
-msgstr "albüm etiket Seçiniz"
+msgstr "Albüm Seçiniz"
 
 #: front_views/gallery-bank-shortcode.php:29
 msgid "Select an Album"
-msgstr "Bir albüm seçin"
+msgstr "Bir Albüm Seçiniz"
 
 #: front_views/gallery-bank-shortcode.php:45
 msgid "Gallery Format"
-msgstr "Galeri Biçim"
+msgstr "Galery Biçimi"
 
 #: front_views/gallery-bank-shortcode.php:47
 msgid "Select Gallery Format "
-msgstr "Seçiniz -Galeri -Biçim"
+msgstr "Galeri Biçimi Seçiniz"
 
 #: front_views/gallery-bank-shortcode.php:56 views/album-preview.php:29
 #: views/images-sorting.php:220
 msgid "Images in Row"
-msgstr "Row içinde Görüntüler"
+msgstr "Satırdaki Resimler"
 
 #: front_views/gallery-bank-shortcode.php:61
 msgid "Image Width"
@@ -71,459 +70,440 @@ msgstr "Resim Genişliği"
 
 #: front_views/gallery-bank-shortcode.php:68 views/album-sorting.php:170
 msgid "Albums in Row"
-msgstr "Row içinde Albümler"
+msgstr "Satırdaki Albümler"
 
 #: front_views/gallery-bank-shortcode.php:73
 msgid "Text Format"
-msgstr "metin Biçimi"
+msgstr "Yazı Biçimi"
 
 #: front_views/gallery-bank-shortcode.php:75
 msgid "Select Format "
-msgstr "Seçiniz Biçim"
+msgstr "Biçim Seçiniz"
 
 #: front_views/gallery-bank-shortcode.php:82
 msgid "Special Effects"
-msgstr "özel Efektler"
+msgstr "Özel Efektler"
 
 #: front_views/gallery-bank-shortcode.php:104
 msgid "Animation Effects"
-msgstr "Canlandırma Efektler"
+msgstr "Animasyon Efektleri"
 
 #: front_views/gallery-bank-shortcode.php:157
 msgid "Show Responsive Gallery"
-msgstr " Göster- Tepkimeli Galeri"
+msgstr "Responsive Galeri Göster"
 
 #: front_views/gallery-bank-shortcode.php:161
 msgid "Show Album Title"
-msgstr "göster Albüm başlık"
+msgstr "Albüm Başlığını Göster"
 
 #: front_views/gallery-bank-shortcode.php:166
 msgid "Insert Album"
-msgstr "Albüm etiket Yerleştirin"
+msgstr "Albüm Ekle"
 
 #: front_views/gallery-bank-shortcode.php:169
 msgid "Cancel"
-msgstr "İptal et"
+msgstr "İptal Et"
 
 #: front_views/gallery-bank-shortcode.php:481
 msgid "Please select an Album"
-msgstr "lütfen Bir albüm seçiniz"
+msgstr "Lütfen Bir Albüm Seçiniz"
 
 #: front_views/gallery-bank-shortcode.php:485
 msgid "Please select an Album Format"
-msgstr "lütfen Bir albüm seçiniz Biçim"
+msgstr "Lütfen Albüm Biçimi Seçiniz"
 
 #: front_views/gallery-bank-shortcode.php:489
 msgid "Please select a Gallery Images Format"
-msgstr "lütfen  Bir Galeri Görüntüler- Biçim seçiniz"
+msgstr "Resim Galerisi İçin Bir Biçim Seçiniz"
 
 #: front_views/gallery-bank-shortcode.php:493
 msgid "Please select a Text Format for the Gallery"
-msgstr "lütfen  Galeri için bir metin biçimi seçiniz"
+msgstr "Galeri İçin Bir yazı formatı seçiniz!"
 
-#: gallery-bank.php:80
+#: gallery-bank.php:81
 msgid "<img src=\""
 msgstr ""
 
-#: gallery-bank.php:82
+#: gallery-bank.php:83
 msgid "/wp-admin/admin.php?page=gallery_bank"
 msgstr ""
 
-#: gallery-bank.php:89 lib/gallery-bank-class.php:10 views/dashboard.php:164
+#: gallery-bank.php:90 lib/gallery-bank-class.php:10 views/dashboard.php:169
 msgid "Dashboard"
-msgstr "gösterge paneli"
+msgstr "Yönetim Paneli"
 
-#: gallery-bank.php:96 lib/gallery-bank-class.php:17
-#: views/add-new-album.php:95 views/dashboard.php:175
+#: gallery-bank.php:97 views/dashboard.php:180
 msgid "Add New Album"
-msgstr "Yeni albüm etiket Ekle"
+msgstr "Yeni Albüm Ekle"
 
-#: gallery-bank.php:103 lib/gallery-bank-class.php:20
+#: gallery-bank.php:104 lib/gallery-bank-class.php:12 views/header.php:62
 msgid "Album Sorting"
-msgstr "Albümü - Sıralam"
+msgstr "Albümü Sırala"
 
-#: gallery-bank.php:110 lib/gallery-bank-class.php:21 views/settings.php:259
+#: gallery-bank.php:111 lib/gallery-bank-class.php:13 views/header.php:63
+#: views/settings.php:259
 msgid "Global Settings"
-msgstr "Küresel Ayarları"
+msgstr "Genel Ayarlar"
 
-#: gallery-bank.php:117 lib/gallery-bank-class.php:22
-#: views/gallery-bank-system-report.php:11
+#: gallery-bank.php:118 lib/gallery-bank-class.php:14
+#: views/gallery-bank-system-report.php:11 views/header.php:64
 msgid "System Status"
-msgstr "sistem Durumu"
+msgstr "Sistem Durumu"
 
-#: gallery-bank.php:124 lib/gallery-bank-class.php:23
+#: gallery-bank.php:125 lib/gallery-bank-class.php:15 views/header.php:65
 msgid "Purchase Pro Version"
 msgstr "Pro sürümü satın almak"
 
-#: lib/add-new-album-class.php:49 views/edit-album.php:266
-#: views/edit-album.php:273
+#: lib/add-new-album-class.php:50 views/edit-album.php:317
+#: views/edit-album.php:324
 msgid " Set as Album Cover"
-msgstr "olarak olarak ayarla Albüm Kapağı "
+msgstr "Albüm Kapağı Olarak Ayarla"
 
-#: lib/add-new-album-class.php:52 views/edit-album.php:215
-#: views/edit-album.php:279
+#: lib/add-new-album-class.php:53 views/edit-album.php:265
+#: views/edit-album.php:330
 msgid "Enter your Title"
-msgstr "giriniz sizin Başlığı"
+msgstr "Başlığı Gir"
 
-#: lib/add-new-album-class.php:53 views/edit-album.php:220
-#: views/edit-album.php:284
+#: lib/add-new-album-class.php:54 views/edit-album.php:270
+#: views/edit-album.php:335
 msgid "Enter your Description "
-msgstr "sizin Açıklama girin"
+msgstr "Açıklamayı Gir"
 
-#: lib/add-new-album-class.php:55 views/edit-album.php:226
-#: views/edit-album.php:290
+#: lib/add-new-album-class.php:56 views/edit-album.php:276
+#: views/edit-album.php:341
 msgid "Enter your Tags"
-msgstr "sizin Etiketler giriniz"
+msgstr "Etiketleri Gir"
 
-#: lib/add-new-album-class.php:59 views/edit-album.php:311
+#: lib/add-new-album-class.php:60 views/edit-album.php:362
 msgid "Delete Image"
-msgstr "Sil - Görüntüsü"
+msgstr "Resmi Sil"
 
-#: lib/gallery-bank-class.php:9 views/header.php:57
+#: lib/gallery-bank-class.php:9 views/header.php:54
 msgid "Gallery Bank"
-msgstr "Gallery Bank"
+msgstr "Galery Bank"
 
-#: lib/gallery-bank-class.php:19 views/dashboard.php:198
+#: lib/gallery-bank-class.php:11 views/dashboard.php:203 views/header.php:61
 msgid "Short-Codes"
 msgstr "Kısa Kodlar"
 
-#: lib/gallery-bank-class.php:262
+#: lib/gallery-bank-class.php:250
 msgid "Add Gallery using Gallery Bank"
-msgstr "ekle - Galeri - kullanarak - Gallery Bank "
-
-#: views/add-new-album.php:99 views/add-new-album.php:229
-#: views/album-preview.php:16 views/album-sorting.php:138
-#: views/edit-album.php:85 views/edit-album.php:332
-#: views/images-sorting.php:182 views/settings.php:262 views/shortcode.php:12
-msgid "Back to Albums"
-msgstr " Geri Dön Albümler"
-
-#: views/add-new-album.php:102 views/add-new-album.php:227
-msgid "Save and Submit Changes"
-msgstr "Kaydet ve ibraz - Değişiklikleri"
-
-#: views/add-new-album.php:108
-msgid "Album Published. Kindly wait for the redirect to happen."
-msgstr ""
-"Albüm Yayınlandı Yeniden yönlendirme gerçekleşmesi için lütfen bekleyin."
-
-#: views/add-new-album.php:117 views/edit-album.php:97
-msgid "Album Details"
-msgstr "Albüm etiket -Detayları"
-
-#: views/add-new-album.php:122 views/edit-album.php:101
-msgid "Album Title"
-msgstr "Albüm etiket -Başlığı"
-
-#: views/add-new-album.php:128 views/edit-album.php:106
-msgid "Enter your Album Title"
-msgstr "Albümünü Başlık girin"
-
-#: views/add-new-album.php:134 views/edit-album.php:113
-msgid "Description"
-msgstr "Açıklaması"
-
-#: views/add-new-album.php:148 views/edit-album.php:127
-msgid "Upload Images"
-msgstr "Görüntüleri Karşıya"
-
-#: views/add-new-album.php:151 views/edit-album.php:130
-msgid "Your browser doesn\"t have Flash, Silverlight or HTML5 support."
-msgstr ""
-"Tarayıcınız  değil   bulunmamaktadır Flash, Silverlight veya HTML5 desteğine"
-
-#: views/add-new-album.php:158 views/edit-album.php:137
-msgid "Upload Videos"
-msgstr "video yükle"
-
-#: views/add-new-album.php:159 views/add-new-album.php:210
-#: views/edit-album.php:138 views/edit-album.php:183 views/settings.php:271
-#: views/settings.php:487 views/settings.php:717 views/settings.php:828
-#: views/settings.php:927 views/settings.php:1249 views/settings.php:1365
-#: views/settings.php:1416 views/settings.php:1468
-msgid " (Available in Premium Versions)"
-msgstr "(Prim sürümleri içinde mevcuttur)"
-
-#: views/add-new-album.php:165 views/edit-album.php:143
-msgid "Video Url"
-msgstr "Ekle Video URL'si"
-
-#: views/add-new-album.php:171 views/edit-album.php:147
-msgid "Enter your Video Url"
-msgstr "giriniz sizin Ekle Video URL'si"
-
-#: views/add-new-album.php:178 views/edit-album.php:153
-msgid "Upload Video"
-msgstr "Video Gönder"
-
-#: views/add-new-album.php:189 views/edit-album.php:164
-msgid "Your Gallery Bank Album"
-msgstr "Sizin Gallery -Bank Albüm"
-
-#: views/add-new-album.php:200 views/edit-album.php:173
-msgid "Delete"
-msgstr "Sil'i"
-
-#: views/add-new-album.php:203 views/dashboard.php:194
-#: views/edit-album.php:176
-msgid "Thumbnail"
-msgstr "küçültülmüş hali"
-
-#: views/add-new-album.php:206 views/edit-album.php:179
-msgid "Title & Description"
-msgstr "Başlığı ve Açıklaması"
-
-#: views/add-new-album.php:209 views/edit-album.php:182
-msgid "Tags (comma separated list)"
-msgstr "Etiketler (virgülle ayrılmış listesi)"
-
-#: views/add-new-album.php:213 views/edit-album.php:186
-msgid "Url to Redirect on click of an Image"
-msgstr " URL - ye -  Yeniden yönlendir"
-
-#: views/add-new-album.php:277
-msgid ""
-"You will be only allowed to add 2 galleries. Kindly purchase Premium Version "
-"for full access!"
-msgstr ""
-"Sen sadece 2 galerileri eklemek için izin verilecektir. Lütfen tam erişim "
-"için Premium versiyonunu satın almak!"
-
-#: views/add-new-album.php:381 views/edit-album.php:504
-msgid "Are you sure you want to delete this Image?"
-msgstr "mısınız eğer bu silmek istediğinizden emin görüntü ?"
-
-#: views/add-new-album.php:391 views/add-new-album.php:405
-#: views/album-sorting.php:252 views/dashboard.php:434 views/dashboard.php:438
-#: views/dashboard.php:442 views/edit-album.php:520 views/edit-album.php:536
-#: views/images-sorting.php:285
-msgid "This feature is only available in Paid Premium Version!"
-msgstr "Bu özellik Ücretli Prim sürümü yalnızca kullanılabilir!"
+msgstr "Galery Bank Kullanarak Galeri Ekle"
 
 #: views/album-preview.php:13
 msgid "Album Preview"
-msgstr "Albüm etiket- Önizleme"
+msgstr "Albüm Önizleme"
+
+#: views/album-preview.php:16 views/album-sorting.php:138
+#: views/edit-album.php:132 views/edit-album.php:386
+#: views/images-sorting.php:182 views/settings.php:262 views/shortcode.php:12
+msgid "Back to Albums"
+msgstr "Albümlere Dön"
 
 #: views/album-preview.php:34 views/album-sorting.php:175
 #: views/images-sorting.php:224
 msgid "Please Choose"
-msgstr "Lütfen Seçiniz"
+msgstr "Lütfen Seçim Yapınız"
 
 #: views/album-sorting.php:134
 msgid "Re-Order Albums"
-msgstr "Albümleri  yeniden sıralayın"
+msgstr "Albümleri Yeniden Sırala"
 
 #: views/album-sorting.php:140 views/images-sorting.php:184
 msgid "Update Order"
-msgstr "Güncelleme -Sipariş"
+msgstr "Sıralamayı Güncelle"
 
 #: views/album-sorting.php:143 views/images-sorting.php:187
 msgid "Sorting Order has been updated."
-msgstr "Genel Sıralama Sipariş güncellendi sahip olmuştur."
+msgstr "Sıralama ayarlandı."
 
-#: views/dashboard.php:134
+#: views/album-sorting.php:252 views/dashboard.php:440 views/dashboard.php:444
+#: views/dashboard.php:448 views/edit-album.php:580 views/edit-album.php:596
+#: views/images-sorting.php:285
+msgid "This feature is only available in Paid Premium Version!"
+msgstr "Bu özellik içinde Ücretli Prim Sürüm yalnızca kullanılabilir!"
+
+#: views/dashboard.php:139
 msgid "Getting Started"
-msgstr ""
+msgstr "Başlarken"
 
-#: views/dashboard.php:138
+#: views/dashboard.php:143
 msgid "Watch the Walk-Through Video"
 msgstr ""
 
-#: views/dashboard.php:147
+#: views/dashboard.php:152
 msgid "Gallery Bank, a Superlative High quality WordPress Plugin!"
 msgstr ""
 
-#: views/dashboard.php:154
+#: views/dashboard.php:159
 msgid "Get Gallery Bank Pro Features"
 msgstr ""
 
-#: views/dashboard.php:179
+#: views/dashboard.php:184
 msgid "Delete All Albums"
-msgstr "Tüm Albümleri Sil'i"
+msgstr "Tüm albümleri sil"
 
-#: views/dashboard.php:180
+#: views/dashboard.php:185
 msgid "Purge Images & Albums"
-msgstr "Purge Görüntüler ve Albümler"
+msgstr "Albümleri ve Resimleri Temizle"
 
-#: views/dashboard.php:181
+#: views/dashboard.php:186
 msgid "Restore Factory Settings"
-msgstr "Fabrika Ayarlarını Geri Yükleme"
+msgstr "Fabrika ayarlarına geri dön"
 
-#: views/dashboard.php:188
+#: views/dashboard.php:193
 msgid "Existing Albums Overview"
-msgstr "Varolan - Albümleri Bakış"
+msgstr "İçinde resim olan Albümleri Önizle"
 
-#: views/dashboard.php:195
+#: views/dashboard.php:199 views/edit-album.php:224
+msgid "Thumbnail"
+msgstr "Küçük Resim(Thumbnail)"
+
+#: views/dashboard.php:200
 msgid "Title"
-msgstr "Başlığı"
+msgstr "Başlık"
 
-#: views/dashboard.php:196
+#: views/dashboard.php:201
 msgid "Total Images"
-msgstr "Toplam Görüntüler"
+msgstr "Tüm Resimler"
 
-#: views/dashboard.php:197
+#: views/dashboard.php:202
 msgid "Date"
 msgstr "tarih"
 
-#: views/dashboard.php:262 views/edit-album.php:82
+#: views/dashboard.php:267
 msgid "Edit Album"
-msgstr "Albüm Düzenle"
+msgstr "Albümü Düzenle"
 
-#: views/dashboard.php:267 views/images-sorting.php:178
+#: views/dashboard.php:272 views/images-sorting.php:178
 msgid "Re-Order Images"
-msgstr "yeniden sıralayın -Görüntüler "
-
-#: views/dashboard.php:272
-msgid "Preview Album"
-msgstr "Önizleme -  Albüm"
+msgstr "Resimleri Yeniden Sırala"
 
 #: views/dashboard.php:277
-msgid "Delete Album"
-msgstr "Albüm etiket Sil'i"
+msgid "Preview Album"
+msgstr "Albüm Önizle"
 
-#: views/dashboard.php:302 views/purchase_pro_version.php:635
+#: views/dashboard.php:282
+msgid "Delete Album"
+msgstr "Albümü Sil"
+
+#: views/dashboard.php:307 views/purchase_pro_version.php:710
 msgid "Need Support Help?"
 msgstr ""
 
-#: views/dashboard.php:314 views/purchase_pro_version.php:647
+#: views/dashboard.php:319 views/purchase_pro_version.php:722
 msgid "Lets get in touch!"
 msgstr ""
 
-#: views/dashboard.php:318 views/purchase_pro_version.php:651
+#: views/dashboard.php:323 views/purchase_pro_version.php:726
 msgid "Order Now!"
 msgstr ""
 
-#: views/dashboard.php:421
+#: views/dashboard.php:427
 msgid "Are you sure you want to delete this Album?"
-msgstr "Eğer Bu Albümü silmek istediğinizden emin mısınız?"
+msgstr "Albümü silmek istediğinizden emin misiniz?"
 
-#: views/edit-album.php:86 views/edit-album.php:331
-msgid "Update Album"
-msgstr "Güncelleme- Albüm "
+#: views/edit-album.php:129
+msgid "Album"
+msgstr "albüm"
 
-#: views/edit-album.php:90
-msgid "Album Updated. Kindly wait for the redirect to happen."
-msgstr ""
-"Albüm - Güncellendi .Yeniden yönlendirme gerçekleşmesi için lütfen bekleyin."
+#: views/edit-album.php:133 views/edit-album.php:385
+msgid "Save Album"
+msgstr "kurtarışla albümü"
 
-#: views/edit-album.php:236
+#: views/edit-album.php:137
+msgid "Album Saved. Kindly wait for the redirect to happen."
+msgstr "Albüm Kaydedildi. Sabırlı olun yönlendiriliyorsunuz..."
+
+#: views/edit-album.php:144
+msgid "Album Details"
+msgstr "Albüm Ayrıntıları"
+
+#: views/edit-album.php:148
+msgid "Album Title"
+msgstr "Albüm başlığı"
+
+#: views/edit-album.php:153
+msgid "Enter your Album Title"
+msgstr "Albüm Başlığını Gir"
+
+#: views/edit-album.php:160
+msgid "Description"
+msgstr "Açıklama"
+
+#: views/edit-album.php:174
+msgid "Upload Images"
+msgstr "Resim Yükle"
+
+#: views/edit-album.php:177
+msgid "Your browser doesn\"t have Flash, Silverlight or HTML5 support."
+msgstr "Tarayınınızın Flash, Silverlight veya HTML5 desteği yok!"
+
+#: views/edit-album.php:184
+msgid "Upload Videos"
+msgstr "Video(lar) Yükle"
+
+#: views/edit-album.php:185 views/edit-album.php:231 views/settings.php:271
+#: views/settings.php:487 views/settings.php:717 views/settings.php:828
+#: views/settings.php:927 views/settings.php:1249 views/settings.php:1365
+#: views/settings.php:1416 views/settings.php:1468
+msgid " (Available in Premium Versions)"
+msgstr "(Mevcuttur içinde Prim sürümleri)"
+
+#: views/edit-album.php:190
+msgid "Video Url"
+msgstr "Video URL'si"
+
+#: views/edit-album.php:194
+msgid "Enter your Video Url"
+msgstr "Video Adresini Giriniz"
+
+#: views/edit-album.php:200
+msgid "Upload Video"
+msgstr "Video Yükle"
+
+#: views/edit-album.php:211
+msgid "Your Gallery Bank Album"
+msgstr "Galery Bank Albümünüz"
+
+#: views/edit-album.php:221
+msgid "Delete"
+msgstr "Sil"
+
+#: views/edit-album.php:227
+msgid "Title & Description"
+msgstr "Başlık&Açıklama"
+
+#: views/edit-album.php:230
+msgid "Tags (comma separated list)"
+msgstr "Etiketler(iki etiket arasına virgül)"
+
+#: views/edit-album.php:234
+msgid "Url to Redirect on click of an Image"
+msgstr "Resme Tıklayınca Gidecek URL"
+
+#: views/edit-album.php:286
 msgid "Delete Video"
-msgstr "Sil - Video"
+msgstr "Videoyu Sil"
+
+#: views/edit-album.php:567
+msgid "Are you sure you want to delete this Image?"
+msgstr "Resmi silmek İstediğiniziden Emin misiniz?"
 
 #: views/gallery-bank-system-report.php:14
 msgid "Get System Report"
-msgstr "Sistem raporu alın"
+msgstr "Sistem Raporu Al"
 
 #: views/gallery-bank-system-report.php:18
 msgid "Close System Report"
-msgstr "Kapat Sistemi Raporu"
+msgstr "Sistem Raporunu sil"
 
 #: views/gallery-bank-system-report.php:109
 msgid "Default"
-msgstr "öntanımlı"
+msgstr "Varsayılan"
 
 #: views/purchase_pro_version.php:25
 msgid "Gallery Bank Pricing"
-msgstr "Galeri Banka Fiyatlandırma"
+msgstr "Galery Bank Fiyatlandırma"
 
 #: views/settings.php:263
 msgid "Update Settings"
-msgstr "güncelleme Ayarları"
+msgstr "Ayarları Güncelle"
 
 #: views/settings.php:270
 msgid "Thumbnail Settings"
-msgstr "küçültülmüş hali Ayarları"
+msgstr "Küçük Resim(Thumbnail) Ayarları"
 
 #: views/settings.php:282
 msgid "Thumbnail Size"
-msgstr "küçültülmüş hali Boyutu"
+msgstr "Küçük Resim(Thumbnail) Boutu"
 
 #: views/settings.php:289 views/settings.php:297 views/settings.php:505
 #: views/settings.php:513
 msgid "Original"
-msgstr "Orjinal"
+msgstr "Orijinal"
 
 #: views/settings.php:292 views/settings.php:300 views/settings.php:508
 #: views/settings.php:516
 msgid "Custom"
-msgstr "görenek"
+msgstr "Uyarlama"
 
 #: views/settings.php:309 views/settings.php:525
 msgid "Width"
-msgstr "Genişliği"
+msgstr "Genişlik"
 
 #: views/settings.php:319 views/settings.php:535
 msgid "Height"
-msgstr "Yüksekliği"
+msgstr "Yükseklik"
 
 #: views/settings.php:331 views/settings.php:546 views/settings.php:968
 msgid "Opacity"
-msgstr "Opasite"
+msgstr "Saydamlık"
 
 #: views/settings.php:343 views/settings.php:558 views/settings.php:979
 msgid "Border Size"
-msgstr "Kenarlık Boyutu"
+msgstr "Border Boyutu"
 
 #: views/settings.php:354 views/settings.php:570 views/settings.php:990
 msgid "Border Radius"
-msgstr "Kenarlık- Yarıçap"
+msgstr "Border Yarıçapı"
 
 #: views/settings.php:365 views/settings.php:582 views/settings.php:1015
 msgid "Border Color"
-msgstr "Kenarlık Rengi"
+msgstr "Border Rengi"
 
 #: views/settings.php:379
 msgid "Margin Between Images"
-msgstr "Görüntüler Arası Marjı"
+msgstr "Resimler arası Boşluk"
 
 #: views/settings.php:389 views/settings.php:616 views/settings.php:1001
 msgid "Text Color"
-msgstr "Metin Rengi"
+msgstr "Yazı Rengi"
 
 #: views/settings.php:403 views/settings.php:633 views/settings.php:1075
 msgid "Text-Align"
-msgstr "Metin hizalayın"
+msgstr "Yazı-Hizalama"
 
 #: views/settings.php:417 views/settings.php:647 views/settings.php:784
 #: views/settings.php:1089 views/settings.php:1297
 msgid "Font-Family"
-msgstr "Yazı tipi Aile"
+msgstr "Font Familyası"
 
 #: views/settings.php:440 views/settings.php:670 views/settings.php:1112
 msgid "Heading Font-Size"
-msgstr "baş kısım Yazı tipi boyut"
+msgstr "Başlık Font Boyutu"
 
 #: views/settings.php:457 views/settings.php:687 views/settings.php:1129
 msgid "Text Font-Size"
-msgstr "Metin Yazı tipi -Boyut"
+msgstr "Yazı Fontu Büyüklüğü"
 
 #: views/settings.php:474 views/settings.php:704
 msgid "Description Length"
-msgstr "Tanım Uzunluk"
+msgstr "Açıklama Uzunluğu"
 
 #: views/settings.php:486
 msgid "Album Cover Settings"
-msgstr "Albüm Kapak Ayarları"
+msgstr "Albüm Kapağı Açıklaması"
 
 #: views/settings.php:498
 msgid "Cover Size"
-msgstr "Kapak- Boyut"
+msgstr "Kapak Büyüklüğü"
 
 #: views/settings.php:596
 msgid "Margin Between Albums"
-msgstr "marj Albümleri Arasındaki "
+msgstr "Albümler arası Boşluk"
 
 #: views/settings.php:606
 msgid "Text for Album Click"
-msgstr "Metni görüntüle için - Albüm - tık"
+msgstr "Albüm Tıklama Yazısı"
 
 #: views/settings.php:716
 msgid "Filter Settings"
-msgstr "filtre Ayarları"
+msgstr "Filtreleme Ayarları"
 
 #: views/settings.php:728
 msgid "Filters"
-msgstr "Süzgeçler"
+msgstr "Filtreler"
 
 #: views/settings.php:735 views/settings.php:743 views/settings.php:1153
 #: views/settings.php:1161 views/settings.php:1179 views/settings.php:1186
@@ -532,7 +512,7 @@ msgstr "Süzgeçler"
 #: views/settings.php:1383 views/settings.php:1391 views/settings.php:1434
 #: views/settings.php:1442
 msgid "Enable"
-msgstr "Etkinleştirin"
+msgstr "Aktif"
 
 #: views/settings.php:738 views/settings.php:746 views/settings.php:1156
 #: views/settings.php:1164 views/settings.php:1181 views/settings.php:1189
@@ -541,155 +521,287 @@ msgstr "Etkinleştirin"
 #: views/settings.php:1386 views/settings.php:1394 views/settings.php:1437
 #: views/settings.php:1445
 msgid "Disable"
-msgstr "sakatlar"
+msgstr "Pasif"
 
 #: views/settings.php:756
 msgid "Filter Color"
-msgstr "Filtre -Renk"
+msgstr "Renk Filtresi"
 
 #: views/settings.php:770
 msgid "Filter Text Color"
-msgstr "Filtre Metin Renk"
+msgstr "Yazı Rengi Filtresi"
 
 #: views/settings.php:807 views/settings.php:1320
 msgid "Font-Size"
-msgstr "Yazı tipi Boyut"
+msgstr "Yazı - Büyüklüğü"
 
 #: views/settings.php:827
 msgid "Roles & Capabilities"
-msgstr "Rolleri ve Yetenekler"
+msgstr "Roller ve Yetenekler"
 
 #: views/settings.php:839
 msgid "Privileges for Admin"
-msgstr " için Ayrıcalıklar - Yönetic"
+msgstr "Yönetici(Admin) Ayrıcalıkları"
 
 #: views/settings.php:843 views/settings.php:859 views/settings.php:875
 #: views/settings.php:892 views/settings.php:910
 msgid "Full Control"
-msgstr "Tam- Kontrol"
+msgstr "Tam Denetim"
 
 #: views/settings.php:846 views/settings.php:862 views/settings.php:878
 #: views/settings.php:895 views/settings.php:913
 msgid "Read"
-msgstr "okuyun"
+msgstr "Oku"
 
 #: views/settings.php:849 views/settings.php:865 views/settings.php:881
 #: views/settings.php:898 views/settings.php:916
 msgid "Write"
-msgstr "Yazmak"
+msgstr "Yaz"
 
 #: views/settings.php:855
 msgid "Privileges for Editor"
-msgstr "için Ayrıcalıklar- Edit"
+msgstr "Editör için ayrıcalıklar"
 
 #: views/settings.php:871
 msgid "Privileges for Author"
-msgstr "Eser sahibi için Ayrıcalıklar"
+msgstr "Yazar için ayrıcalıklar"
 
 #: views/settings.php:887
 msgid "Privileges for Contributor"
-msgstr "Düzey Katılımcı için Ayrıcalıklar"
+msgstr "Destekleyiciler için Ayrıcalıklar(Kayıtlı)"
 
 #: views/settings.php:904
 msgid "Privileges for Subscriber"
-msgstr "abones için Ayrıcalıklar "
+msgstr "Takipçiler için ayrıcalıklar"
 
 #: views/settings.php:926
 msgid "Lightbox Settings"
-msgstr "Lightbox'a Ayarlar"
+msgstr "Lightbox Ayarları"
 
 #: views/settings.php:938
 msgid "Lightbox Type"
-msgstr "Lightbox'a -Türü"
+msgstr "Lightbox Ayarları"
 
 #: views/settings.php:1029
 msgid "Inline Background"
-msgstr "Satır içi -Arkaplan"
+msgstr "Arka Plan Hizası"
 
 #: views/settings.php:1043
 msgid "Overlay Background"
-msgstr "Yer paylaşımlı - Arkaplan "
+msgstr "Fare üstünde iken arkaplan"
 
 #: views/settings.php:1057
 msgid "Fade In Time"
-msgstr "Solmaya  Içinde Zaman"
+msgstr "Soldurmaya başlama zamanı"
 
 #: views/settings.php:1066
 msgid "Fade Out Time"
-msgstr "Solmaya Dışarı -Zaman"
+msgstr "Soldurmayı bitirme zamanı"
 
 #: views/settings.php:1146
 msgid "Facebook Comments"
-msgstr "Facebook'a Yorumlar"
+msgstr "Facebook Yorumları"
 
 #: views/settings.php:1173
 msgid "Social Sharing"
-msgstr "sosyal Paylaşım"
+msgstr "Sosyal Ağlarda Paylaşım"
 
 #: views/settings.php:1198
 msgid "Image Title"
-msgstr "Görüntü -Başlık"
+msgstr "Resim Başlığı"
 
 #: views/settings.php:1222
 msgid "Image Description"
-msgstr "Görüntüsü Açıklaması"
+msgstr "Resim açıklaması"
 
 #: views/settings.php:1248
 msgid "Front - End Layout Settings"
-msgstr "Ön - sonu Mizanpaj Ayarları"
+msgstr "Son Yüz Düzen Ayarları"
 
 #: views/settings.php:1260
 msgid "Text for Back Button"
-msgstr "Geri Düğmesi için Metin"
+msgstr "Geri butonu açıklaması"
 
 #: views/settings.php:1270
 msgid "Button Color"
-msgstr "Düğme- Renk"
+msgstr "Buton rengi"
 
 #: views/settings.php:1283
 msgid "Button Text Color"
-msgstr "Düğme Metin Rengi"
+msgstr "Buton Yazısı Rengi"
 
 #: views/settings.php:1337
 msgid "Album Seperator"
-msgstr "Albüm Seperatörü"
+msgstr "Albüm Karıştırıcı"
 
 #: views/settings.php:1364
 msgid "Pagination Settings for Images"
-msgstr "Görüntüler için Sayfalandırma Ayarları"
+msgstr "Resimler için sayfalama ayarları"
 
 #: views/settings.php:1376
 msgid "Paging"
-msgstr "Sayfala"
+msgstr "Sayfalama"
 
 #: views/settings.php:1403
 msgid "No. of Images Per Page "
-msgstr "Sayfa Başına Görüntüler Sayısı"
+msgstr "Sayfa Başında resim Sayısı"
 
 #: views/settings.php:1415
 msgid "Slide Show Settings"
-msgstr "Slayt Gösterisi Ayarları"
+msgstr "Slide Show ayarları"
 
 #: views/settings.php:1427
 msgid "Auto Play"
-msgstr "Otomatik Oynat"
+msgstr "Otomatik Başlatma"
 
 #: views/settings.php:1454
 msgid "Interval"
-msgstr "aralık"
+msgstr "Sıklık"
 
 #: views/settings.php:1467
 msgid "Language Direction Settings"
-msgstr "Dil Yönü - Ayarlarını"
+msgstr "Dil ve Yönlendirme Ayarları"
 
 #: views/settings.php:1479
 msgid "Language Direction"
-msgstr "Dil Yönü "
+msgstr "Dil Ayarlaması"
 
 #: views/settings.php:1636
 msgid "This Feature is only available in Paid Premium Version!"
-msgstr "Bu özellik Ücretli Prim sürümü yalnızca kullanılabilir!"
+msgstr "Bu Özellik Ücretli Prim Sürüm yalnızca kullanılabilir!"
 
 #: views/shortcode.php:8
 msgid "Gallery Bank Short-Codes"
-msgstr "Galeri Bankası Kısa Kodları"
+msgstr "Gallery Bank Kısa Kodlar"
+
+#~ msgid "VIEW ALL"
+#~ msgstr "HEPSİNİ GÖR"
+
+#~ msgid "Licensing"
+#~ msgstr "Lisans"
+
+#~ msgid "Select Gallery"
+#~ msgstr "Galeri Seç"
+
+#~ msgid "Select Gallery Format"
+#~ msgstr "Galeri Biçimi Seç"
+
+#~ msgid "Images In Row"
+#~ msgstr "Satırdaki Resimler"
+
+#~ msgid "Select Text Format"
+#~ msgstr "Yazı Formatını Seç"
+
+#~ msgid "Special Effect"
+#~ msgstr "Özel Efekt"
+
+#~ msgid "Select Special Effect"
+#~ msgstr "Özel Efekt Seç"
+
+#~ msgid "Animation Effect"
+#~ msgstr "Animasyon Efekti"
+
+#~ msgid "Responsive Gallery"
+#~ msgstr "Esnek Galeri"
+
+#~ msgid "Save and Submit Changes"
+#~ msgstr "Değişiklikleri Onayla ve Kaydet"
+
+#~ msgid "Album Published. Kindly wait for the redirect to happen."
+#~ msgstr "Albüm Yayınlandı. Yönlendiriliyorsunuz, Bekleyiniz..."
+
+#~ msgid "Are you sure you want to delete these Images?"
+#~ msgstr "Bu Resimleri Silmek istediğinizden Emin misiniz?"
+
+#~ msgid "Attention! A new vesion of Gallery Bank is available for download."
+#~ msgstr "Dikkat! Gallery Bank'in yeni sürümü indirilmeye hazır"
+
+#~ msgid "Click"
+#~ msgstr "Tıkla"
+
+#~ msgid "here"
+#~ msgstr "Buraya"
+
+#~ msgid "to upgrade your version of Gallery Bank."
+#~ msgstr "Gallery Bank eklentisinin yeni versiyonunu yüklemek için"
+
+#~ msgid "Dashboard - Gallery Bank"
+#~ msgstr "Yönetim Paneli- Galery Bank"
+
+#~ msgid "Date of Creation"
+#~ msgstr "Üretilme Tarihi"
+
+#~ msgid "Are you sure you want to delete all Albums?"
+#~ msgstr "Tüm Albümleri silmek istediğinizden emin misiniz?"
+
+#~ msgid "Are you sure you want to Restore Factory Settings?"
+#~ msgstr "Fabrika ayarlarına dönmek istediğinizden emin misiniz?"
+
+#~ msgid "Are you sure you want to Purge all Images & Albums?"
+#~ msgstr "Tüm Albüm ve Resimleri temizlemek istediğinizden emin misiniz?"
+
+#~ msgid "Gallery Bank Documentation"
+#~ msgstr "Galery Bank Dökümanları"
+
+#~ msgid "Gallery Bank Licensing Module"
+#~ msgstr "Galery Bank Lisans Modülü"
+
+#~ msgid "Success! Settings have been updated."
+#~ msgstr "Başarılı! Ayarlar Güncellendi"
+
+#~ msgid "Update"
+#~ msgstr "Güncelle"
+
+#~ msgid "Restore Settings"
+#~ msgstr "Ayarları Sıfırla"
+
+#~ msgid "Settings has been updated."
+#~ msgstr "Ayarlar güncellendir"
+
+#~ msgid "Success! Settings have been restored."
+#~ msgstr "Başarılı! Fabrika ayarlarına döndünüz."
+
+#~ msgid "Are you sure you want to restore settings?"
+#~ msgstr "Ayarları sıfırlamak istediğinizden emin misiniz?"
+
+#~ msgid " Rotate Image"
+#~ msgstr "Resmi Döndür"
+
+#~ msgid "Upload Images "
+#~ msgstr "Resim(ler) yükle"
+
+#~ msgid "Your Wordpress Version doesn\"t support Wp-media."
+#~ msgstr "Wordpress Sürümünüz WP-Media'yı desteklemiyor."
+
+#~ msgid "Upload Thumbnails "
+#~ msgstr "Thumbnail(Küçük Resim) Yükle"
+
+#~ msgid "Show Albums"
+#~ msgstr "Albümleri Göster"
+
+#~ msgid "Responsive"
+#~ msgstr "Esnek"
+
+#~ msgid "With Albums in Row"
+#~ msgstr "Albümlerin satırdaki ile"
+
+#~ msgid "Image Uploader Settings"
+#~ msgstr "Resim Yükleyici Ayarları"
+
+#~ msgid "Uploader for Images"
+#~ msgstr "Resim Yükleyici"
+
+#~ msgid "WP Media"
+#~ msgstr "WP- Ortam İçeriği"
+
+#~ msgid "Change Uploading Image Name"
+#~ msgstr "Yüklenen Resmin İsmin Değiştir"
+
+#~ msgid "Image url location"
+#~ msgstr "Resim URL lokasyonu"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Yeni Pencerede Aç"
+
+#~ msgid "Same Window"
+#~ msgstr "Aynı Pencere"
