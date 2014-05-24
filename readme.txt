@@ -3,7 +3,7 @@ Contributors: Gallery-Bank,contact-banker
 Tags: admin, AJAX, album, albums, best gallery plugin, best portfolio plugin, comments, easy media gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, gallery, gallery album, gallery bank, gallery image, gallery wordpress plugin, grid gallery, image, image album, image slider, images, lightbox, links, media, modal, multiple pictures, nextgen, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, sidebar, slideshow, thumbnails, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
 Tested up to: 3.9.1
-Stable tag: 3.0.31
+Stable tag: 3.0.32
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -482,6 +482,10 @@ is False in shortcode.
 
 
 == Changelog ==
+
+= 3.0.32 =
+
+* Major Bug fixed with saving of Data
 
 = 3.0.31 =
 

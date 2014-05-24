@@ -401,6 +401,7 @@ if (count($album_css) != 0)
     var cover_width = <?php echo $cover_thumbnail_width; ?>;
     var cover_height = <?php echo $cover_thumbnail_height; ?>;
     var delete_array = [];
+    var array_album_data = [];
 
     oTable = jQuery("#data-table-edit-album").dataTable
     ({
@@ -461,6 +462,7 @@ if (count($album_css) != 0)
                     var tags = "";
                     var urlRedirect = "";
                     var picId = "";
+                    var row_data = "";
 
                         controlType = jQuery(value.cells[1]).find("img").attr("type");
                         picId = jQuery(value.cells[1]).find("img").attr("imageId");
@@ -470,24 +472,19 @@ if (count($album_css) != 0)
                         description = jQuery(value.cells[2]).find("textarea").eq(0).val();
                         tags = jQuery(value.cells[3]).find("input:text").eq(0).val();
                         urlRedirect = jQuery(value.cells[4]).find("input:text").eq(0).val();
-                        jQuery.post(ajaxurl, "picId=" + picId + "&controlType=" + controlType + "&title=" + encodeURIComponent(title) +
-                            "&isAlbumCoverSet=" + isAlbumCoverSet + "&img_gb_path=" + img_gb_path + "&description=" + encodeURIComponent(description) +
-                            "&tags=" + encodeURIComponent(tags) + "&urlRedirect=" + urlRedirect + "&cover_width=" + cover_width +
-                            "&cover_height=" + cover_height + "&param=update_pic&action=add_new_album_library", function () {
-                            count++;
-                            if (count == parseInt(oTable.fnGetNodes().length))
-                                setTimeout(function () {
-                                    jQuery("#update_album_success_message").css("display", "none");
-                                    window.location.href = "admin.php?page=gallery_bank";
-                                }, 3000);
-                        });
+                        
+                        row_data = controlType +"|"+picId+"|"+img_gb_path+"|"+isAlbumCoverSet+"|"+title+"|"+description+
+                        "|"+tags+"|"+urlRedirect+"|"+cover_width+"|"+cover_height;
+
+                        array_album_data.push(row_data);
                 });
-                if (count == parseInt(oTable.fnGetNodes().length)) {
-                    setTimeout(function () {
-                        jQuery("#update_album_success_message").css("display", "none");
-                        window.location.href = "admin.php?page=gallery_bank";
-                    }, 3000);
-                }
+                jQuery.post(ajaxurl, "album_data="+JSON.stringify(array_album_data)+ "&param=update_pic&action=add_new_album_library", function () {
+                        setTimeout(function () {
+                            jQuery("#update_album_success_message").css("display", "none");
+                            window.location.href = "admin.php?page=gallery_bank";
+                        }, 10000);
+                });
+                
             });
         }
     });
@@ -522,15 +519,8 @@ if (count($album_css) != 0)
                 var controlType = "image";
                 var image_name = file.name;
                 var img_gb_path = file.target_name;
-                var isAlbumCoverSet = "";
-                var title = "";
-                var description = "";
-                var tags = "";
-                var urlRedirect = "http://";
                 jQuery.post(ajaxurl, "album_id=" + albumid + "&controlType=" + controlType + "&imagename=" + image_name +
-                    "&img_gb_path=" + img_gb_path + "&isAlbumCoverSet=" + isAlbumCoverSet + "&title=" + encodeURIComponent(title) +
-                    "&description=" + encodeURIComponent(description) + "&tags=" + encodeURIComponent(tags) + "&urlRedirect=" + urlRedirect +
-                    "&cover_height=" + cover_height + "&cover_width=" + cover_width +
+                    "&img_gb_path=" + img_gb_path + "&cover_height=" + cover_height + "&cover_width=" + cover_width +
                     "&param=add_pic&action=add_new_album_library", function (data) {
                     	
                     	jQuery.post(ajaxurl, "img_path=" + file.target_name + "&img_name=" + file.name + "&image_width=" + image_width +
