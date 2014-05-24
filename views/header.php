@@ -8,6 +8,22 @@ array_push($gb_lang, "ar", "bg_BG", "da_DK", "hu_HU", "id_ID",
 array_push($gb_translated_lang, "en_GB", "en_US", "es_ES", "nl_NL", "uk", "sv_SE", "fr_FR", "pt_PT", "pt_BR", "et", "it_IT",
  "de_DE", "fi", "he_IL", "ru_RU", "be_BY", "tr");
 $language = get_locale();
+$show_banner = get_option("gallery-bank-banner");
+if($show_banner == "")
+{
+	echo'<div id="ux_buy_pro" class="updated">
+	 		<div class="gb_buy_pro">
+		 		<div class="gb_text_control">
+			 		It\'s time to upgrade your <strong>Gallery Bank Standard Edition</strong> to <strong>Premium</strong> Edition!<br />
+			 		<span>Extend standard plugin functionality with 200+ awesome features! <br/>Go for Premium Version Now! Starting at <strong>11£/- only</strong></span>
+		 		</div>
+		 		<a class="button gb_message_buttons" href="admin.php?page=gallery_bank_purchase&msg=no">CLOSE</a>
+		 		<a class="button gb_message_buttons" target="_blank" href="http://wordpress.org/support/view/plugin-reviews/gallery-bank?filter=5">RATE US 5 ★</a>
+		 		<a class="button gb_message_buttons" target="_blank" href="http://tech-banker.com/gallery-bank/demo/">LIVE DEMO</a>
+		 		<a class="button gb_message_buttons" target="_blank" href="http://tech-banker.com/gallery-bank/">UPGRADE NOW</a>
+	 		</div>
+	 	</div>';
+}
 ?>
 <img src="<?php echo GALLERY_BK_PLUGIN_URL . '/assets/images/gallery-bank-logo.png'; ?>" style="margin-top:20px"/>
 <script>

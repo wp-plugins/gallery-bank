@@ -4,7 +4,7 @@
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.30
+ Version: 3.0.31
  Author URI: http://tech-banker.com
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -126,31 +126,11 @@ function add_gallery_bank_icon($meta = TRUE)
     );
 }
 
-function gallery_bank_banner()
-{
-		 echo'<div id="ux_buy_pro" class="updated">
-		 		<div class="gb_buy_pro">
-			 		<div class="gb_text_control">
-				 		It\'s time to upgrade your <strong>Gallery Bank Standard Edition</strong> to <strong>Premium</strong> Edition!<br />
-				 		<span>Extend standard plugin functionality with 200+ awesome features! <br/>Go for Premium Version Now! Starting at <strong>11£/- only</strong></span>
-			 		</div>
-			 		<a class="button gb_message_buttons" href="admin.php?page=gallery_bank_purchase&msg=no">CLOSE</a>
-			 		<a class="button gb_message_buttons" target="_blank" href="http://wordpress.org/support/view/plugin-reviews/gallery-bank?filter=5">RATE US 5 ★</a>
-			 		<a class="button gb_message_buttons" target="_blank" href="http://tech-banker.com/gallery-bank/demo/">LIVE DEMO</a>
-			 		<a class="button gb_message_buttons" target="_blank" href="http://tech-banker.com/gallery-bank/">UPGRADE NOW</a>
-		 		</div>
-		 	</div>';
-}
 
 $version = get_option("gallery-bank-pro-edition");
 if($version == "" || $version == "3.0")
 {
 	add_action("admin_init", "plugin_install_script_for_gallery_bank");
-}
-$show_banner = get_option("gallery-bank-banner");
-if($show_banner == "")
-{
-	add_action("admin_notices", "gallery_bank_banner",1);
 }
 
 add_action("admin_bar_menu", "add_gallery_bank_icon", 100);
