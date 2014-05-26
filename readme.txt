@@ -3,7 +3,7 @@ Contributors: Gallery-Bank,contact-banker
 Tags: admin, AJAX, album, albums, best gallery plugin, best portfolio plugin, comments, easy media gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, gallery, gallery album, gallery bank, gallery image, gallery wordpress plugin, grid gallery, image, image album, image slider, images, lightbox, links, media, modal, multiple pictures, nextgen, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, sidebar, slideshow, thumbnails, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
 Tested up to: 3.9.1
-Stable tag: 3.0.32
+Stable tag: 3.0.33
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -65,10 +65,10 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 = Key Features =
 
-* Multi-Lingual. Available now in 31 Languages.
+* Multi-Lingual. Available now in 33 Languages.
 * Responsive Gallery
 * Shortcode Wizard in your Page/Post.
-* Unlimited Albums Creation(**Premium Versions**). With Free Standard Version, you can only create upto 2 albums.
+* Unlimited Albums Creation(**Premium Versions**). With Free Standard Version, you can only create upto 3 albums.
 * Unlimited Images in each Album.
 * Edit Albums and add/edite/delete images.
 * Bulk Upload of Images
@@ -141,7 +141,7 @@ Visit [here](http://tech-banker.com/gallery-bank) to upgrade to Pro Version now.
 
 = Add New Albums =
 
-You can add upto 2 albums with unlimited images in your Gallery Bank. After that you need to upgrade to one of the premium versions for unlimited access with different features available according to different packages of Gallery Bank.
+You can add upto 3 albums with unlimited images in your Gallery Bank. After that you need to upgrade to one of the premium versions for unlimited access with different features available according to different packages of Gallery Bank.
 
 = Editing Albums = 
 In albums, editing can be done easily. You can edit or add more images/ pictures in your albums. You can change title/description of an album as well as title/description of each image uploaded in a particular album.
@@ -482,6 +482,11 @@ is False in shortcode.
 
 
 == Changelog ==
+
+= 3.0.31 =
+
+* Few Bugs Fixed
+* Broken Add New Album Link Fixed
 
 = 3.0.32 =
 
