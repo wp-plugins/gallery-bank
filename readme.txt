@@ -483,7 +483,7 @@ is False in shortcode.
 
 == Changelog ==
 
-= 3.0.31 =
+= 3.0.33 =
 
 * Few Bugs Fixed
 * Broken Add New Album Link Fixed
