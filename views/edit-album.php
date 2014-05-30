@@ -311,14 +311,14 @@ if (count($album_css) != 0)
 								                                        <?php
 								                                        if ($pics[$flag]->album_cover == 1) {
 								                                            ?>
-								                                            <input type="radio" style="cursor: pointer;" checked="checked"
+								                                            <input type="radio" style="cursor: pointer;" onclick="select_one_radio(this);" checked="checked"
 							                                                   id="ux_edit_rdl_cover_<?php echo $pics[$flag]->pic_id; ?>"
 							                                                   name="ux_album_cover"/>
 								                                            <label><?php _e(" Set as Album Cover", gallery_bank) ?></label>
 								                                        <?php
 								                                        } else {
 								                                            ?>
-								                                            <input type="radio" style="cursor: pointer;"
+								                                            <input type="radio" onclick="select_one_radio(this);" style="cursor: pointer;"
 							                                                   id="ux_edit_rdl_cover_<?php echo $pics[$flag]->pic_id; ?>"
 							                                                   name="ux_album_cover"/>
 								                                            <label><?php _e(" Set as Album Cover", gallery_bank) ?></label>
@@ -585,19 +585,22 @@ if (count($album_css) != 0)
     {
         alert("<?php _e("This feature is only available in Paid Premium Version!", gallery_bank)?>");
     }
+
+    function select_one_radio(control)
+    {
+    	var oTable = jQuery("#data-table-edit-album").dataTable();
+    	jQuery("input[type=radio][name=ux_album_cover]:checked", oTable.fnGetNodes()).each(function ()
+    	{
+    		jQuery(this).removeAttr("checked");
+    	});
+    	jQuery(control).attr("checked","checked");
+    }
+    
     //This function is to select radio button of first image
     function select_radio() {
-        if (!(jQuery("input[type=radio][name=ux_album_cover]:checked").size() > 0)) {
-            jQuery(jQuery.unique(
-                jQuery("INPUT:radio")
-                    .map(function (i, e) {
-                        return jQuery(e).attr("name")
-                    }
-                ).get()
-            )).each(function (i, e) {
-                    jQuery("INPUT:radio[name=\"" + e + "\"]:visible:first")
-                        .attr("checked", "checked");
-                });
+    	var oTable = jQuery("#data-table-edit-album").dataTable();
+        if ((jQuery("input[type=radio][name=ux_album_cover]:checked", oTable.fnGetNodes()).length) < 1){
+        	jQuery("input[type=radio][name=ux_album_cover]:first").attr("checked","checked");
         }
     }
     function preventDot(e)
