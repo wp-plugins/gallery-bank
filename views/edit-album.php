@@ -491,7 +491,7 @@ if (count($album_css) != 0)
     jQuery("#edit_image_uploader").pluploadQueue
     ({
         runtimes: "html5,flash,silverlight,html4",
-        url: url + "/upload.php",
+        url: ajaxurl + "?param=upload_pic&action=upload_library",
         chunk_size: "1mb",
         filters: {
             max_file_size: "100mb",

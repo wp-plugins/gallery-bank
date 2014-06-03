@@ -184,6 +184,13 @@ if (isset($_REQUEST["action"])) {
                 include_once GALLERY_BK_PLUGIN_DIR . "/lib/front-view-all-albums-class.php";
             }
             break;
+		case "upload_library":
+            add_action("admin_init", "upload_library");
+            function upload_library()
+            {
+                include_once GALLERY_BK_PLUGIN_DIR . "/lib/upload.php";
+            }
+            break;
     }
 }
 /*****************************************************************************************************************/
