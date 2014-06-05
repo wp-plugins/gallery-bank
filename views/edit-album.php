@@ -466,10 +466,10 @@ if (count($album_css) != 0)
 
                         controlType = jQuery(value.cells[1]).find("img").attr("type");
                         picId = jQuery(value.cells[1]).find("img").attr("imageId");
-                        img_gb_path = jQuery(value.cells[1]).find("img").attr("imgpath");
+                        img_gb_path = encodeURIComponent(jQuery(value.cells[1]).find("img").attr("imgpath"));
                         isAlbumCoverSet = jQuery(value.cells[1]).find("input:radio").attr("checked");
-                        title = jQuery(value.cells[2]).find("input:text").eq(0).val();
-                        description = jQuery(value.cells[2]).find("textarea").eq(0).val();
+                        title = encodeURIComponent(jQuery(value.cells[2]).find("input:text").eq(0).val());
+                        description = encodeURIComponent(jQuery(value.cells[2]).find("textarea").eq(0).val());
                         tags = jQuery(value.cells[3]).find("input:text").eq(0).val();
                         urlRedirect = jQuery(value.cells[4]).find("input:text").eq(0).val();
                         

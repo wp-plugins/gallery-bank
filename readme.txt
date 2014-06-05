@@ -3,7 +3,7 @@ Contributors: contact-banker,Gallery-Bank
 Tags: admin, AJAX, album, albums, best gallery plugin, best portfolio plugin, comments, easy media gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, gallery, gallery album, gallery bank, gallery image, gallery wordpress plugin, grid gallery, image, image album, image slider, images, lightbox, links, media, modal, multiple pictures, nextgen, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, sidebar, slideshow, thumbnails, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
 Tested up to: 3.9.1
-Stable tag: 3.0.35
+Stable tag: 3.0.36
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -48,7 +48,7 @@ It provides a powerful engine for uploading and managing galleries of images & v
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***June 5, 2014: We're happy to announce that Gallery Bank reached 134,400+ plugin downloads in only 12 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***June 5, 2014: We're happy to announce that Gallery Bank reached 134,500+ plugin downloads in only 12 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
@@ -480,8 +480,11 @@ is False in shortcode.
 16. Displaying List Album with Images.
 17. Displaying Individual Album with Images.
 
-
 == Changelog ==
+
+= 3.0.35 =
+
+* Bug Fixed related to Saving of Albums
 
 = 3.0.35 =
 
