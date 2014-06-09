@@ -104,7 +104,7 @@ else
 	        $albumId = intval($_REQUEST["albumid"]);
 	        $ux_edit_album_name1 = htmlspecialchars(esc_attr($_REQUEST["edit_album_name"]));
 	        $ux_edit_album_name = ($ux_edit_album_name1 == "") ? "Untitled Album" : $ux_edit_album_name1;
-	        $ux_edit_description = html_entity_decode(esc_attr($_REQUEST["uxEditDescription"]));
+	        $ux_edit_description = htmlspecialchars($_REQUEST["uxEditDescription"]);
 	        $wpdb->query
 	            (
 	                $wpdb->prepare
@@ -119,59 +119,64 @@ else
 	    }
 	    else if ($_REQUEST["param"] == "update_pic")
 	    {
-			$album_data = json_decode(stripcslashes($_REQUEST["album_data"]),true);
-			foreach($album_data as $element)
-			{
-				$field = explode("|", $element);
-				if ($field[0] == "image") {
-		            if ($field[3] == "checked") {
-		                $wpdb->query
-		                    (
-		                        $wpdb->prepare
-		                            (
-		                                "UPDATE " . gallery_bank_pics() . " SET title = %s, description = %s, url = %s, date = CURDATE(), tags = %s, album_cover = %d WHERE pic_id = %d",
-		                                $field[4],
-		                                $field[5],
-		                                $field[7],
-		                                $field[6],
-		                                1,
-		                                $field[1]
-		                            )
-		                    );
-		                process_album_upload($field[2], $field[8], $field[9]);
-		            } else {
-		                $wpdb->query
-		                    (
-		                        $wpdb->prepare
-		                            (
-		                                "UPDATE " . gallery_bank_pics() . " SET title = %s, description = %s, url = %s, date = CURDATE(), tags = %s, album_cover = %d WHERE pic_id = %d",
-		                                $field[4],
-		                                $field[5],
-		                                $field[7],
-		                                $field[6],
-		                                0,
-		                                $field[1]
-		                            )
-		                    );
-		            }
-		        } else {
-		            $wpdb->query
-		                (
-		                    $wpdb->prepare
-		                        (
-		                            "UPDATE " . gallery_bank_pics() . " SET title = %s, description = %s, date = CURDATE(), tags = %s, album_cover = %d WHERE pic_id = %d",
-		                            $field[4],
-		                            $field[5],
-		                            $field[6],
-		                            0,
-		                            $field[1]
-		                        )
-		                );
-		        }
-				
-			}
-	        die();
-	    }
+            $album_data = json_decode(stripcslashes($_REQUEST["album_data"]),true);
+            foreach($album_data as $field)
+            {
+                echo $field[0];
+                if ($field[0] == "image")
+                {
+                    if ($field[3] == "checked")
+                    {
+                        $wpdb->query
+                            (
+                                $wpdb->prepare
+                                    (
+                                        "UPDATE " . gallery_bank_pics() . " SET title = %s, description = %s, url = %s, date = CURDATE(), tags = %s, album_cover = %d WHERE pic_id = %d",
+                                        htmlspecialchars($field[4]),
+                                        htmlspecialchars($field[5]),
+                                        $field[7],
+                                        htmlspecialchars($field[6]),
+                                        1,
+                                        $field[1]
+                                    )
+                            );
+                        process_album_upload($field[2], $field[8], $field[9]);
+                    }
+                    else
+                    {
+                        $wpdb->query
+                            (
+                                $wpdb->prepare
+                                    (
+                                        "UPDATE " . gallery_bank_pics() . " SET title = %s, description = %s, url = %s, date = CURDATE(), tags = %s, album_cover = %d WHERE pic_id = %d",
+                                        htmlspecialchars($field[4]),
+                                        htmlspecialchars($field[5]),
+                                        $field[7],
+                                        htmlspecialchars($field[6]),
+                                        0,
+                                        $field[1]
+                                    )
+                            );
+                    }
+                }
+                else
+                {
+                    $wpdb->query
+                        (
+                            $wpdb->prepare
+                                (
+                                    "UPDATE " . gallery_bank_pics() . " SET title = %s, description = %s, date = CURDATE(), tags = %s, album_cover = %d WHERE pic_id = %d",
+                                    htmlspecialchars($field[4]),
+                                    htmlspecialchars($field[5]),
+                                    htmlspecialchars($field[6]),
+                                    0,
+                                    $field[1]
+                                )
+                        );
+                }
+            }
+            die();
+        }
 	    else if ($_REQUEST["param"] == "delete_pic")
 	    {
 	        $delete_array = (html_entity_decode($_REQUEST["delete_array"]));

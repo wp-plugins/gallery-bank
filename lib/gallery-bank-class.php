@@ -62,7 +62,7 @@ function save_album()
 	(
 		"SELECT count(album_id) FROM ".gallery_bank_albums()
 	);
-	if($album_count < 3)
+	if($album_count <= 3)
 	{
 		global $wpdb;
 		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
@@ -70,11 +70,7 @@ function save_album()
 	}
 	else 
 	{
-		?>
-		<script type="text/javascript">
-			window.location.href="admin.php?page=gallery_bank";
-		</script>
-		<?php
+        header("Location:admin.php?page=gallery_bank");
 	}
 }
 

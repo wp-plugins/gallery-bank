@@ -436,18 +436,18 @@ if (count($album_css) != 0)
 	    	if(class_exists("ckeditor_wordpress"))
 			{
 				?>
-				var uxEditDescription = encodeURIComponent(CKEDITOR.instances.ux_edit_description.getData());
-				<?php
-			}
-			else
-			{
-				?>
-				var uxEditDescription = jQuery("#wp-ux_edit_description-wrap").hasClass("tmce-active") ?
-					encodeURIComponent(tinyMCE.get("ux_edit_description").getContent())
-					: encodeURIComponent(jQuery("#ux_edit_description").val());
-				<?php
-			}
-			?>
+            var uxEditDescription = encodeURIComponent(CKEDITOR.instances.ux_edit_description.getData());
+            <?php
+        }
+        else
+        {
+            ?>
+            var uxEditDescription = jQuery("#wp-ux_edit_description-wrap").hasClass("tmce-active") ?
+                encodeURIComponent(tinyMCE.get("ux_edit_description").getContent())
+                : encodeURIComponent(jQuery("#ux_edit_description").val());
+            <?php
+        }
+        ?>
 
             var edit_album_name = encodeURIComponent(jQuery("#ux_edit_title").val());
             jQuery.post(ajaxurl, "albumid=" + albumid + "&edit_album_name=" + edit_album_name + "&uxEditDescription=" + uxEditDescription + "&param=update_album&action=add_new_album_library", function () {
@@ -462,29 +462,36 @@ if (count($album_css) != 0)
                     var tags = "";
                     var urlRedirect = "";
                     var picId = "";
-                    var row_data = "";
+                    var row_data = [];
 
-                        controlType = jQuery(value.cells[1]).find("img").attr("type");
-                        picId = jQuery(value.cells[1]).find("img").attr("imageId");
-                        img_gb_path = encodeURIComponent(jQuery(value.cells[1]).find("img").attr("imgpath"));
-                        isAlbumCoverSet = jQuery(value.cells[1]).find("input:radio").attr("checked");
-                        title = encodeURIComponent(jQuery(value.cells[2]).find("input:text").eq(0).val());
-                        description = encodeURIComponent(jQuery(value.cells[2]).find("textarea").eq(0).val());
-                        tags = jQuery(value.cells[3]).find("input:text").eq(0).val();
-                        urlRedirect = jQuery(value.cells[4]).find("input:text").eq(0).val();
-                        
-                        row_data = controlType +"|"+picId+"|"+img_gb_path+"|"+isAlbumCoverSet+"|"+title+"|"+description+
-                        "|"+tags+"|"+urlRedirect+"|"+cover_width+"|"+cover_height;
+                    controlType = jQuery(value.cells[1]).find("img").attr("type");
+                    picId = jQuery(value.cells[1]).find("img").attr("imageId");
+                    img_gb_path = (jQuery(value.cells[1]).find("img").attr("imgpath"));
+                    isAlbumCoverSet = jQuery(value.cells[1]).find("input:radio").attr("checked");
+                    title = (jQuery(value.cells[2]).find("input:text").eq(0).val());
+                    description =(jQuery(value.cells[2]).find("textarea").eq(0).val());
+                    tags = jQuery(value.cells[3]).find("input:text").eq(0).val();
+                    urlRedirect = jQuery(value.cells[4]).find("input:text").eq(0).val();
+                    row_data.push(controlType);
+                    row_data.push(picId);
+                    row_data.push(img_gb_path);
+                    row_data.push(isAlbumCoverSet);
+                    row_data.push(title);
+                    row_data.push(description);
+                    row_data.push(tags);
+                    row_data.push(urlRedirect);
+                    row_data.push(cover_width);
+                    row_data.push(cover_height);
 
-                        array_album_data.push(row_data);
+                    array_album_data.push(row_data);
                 });
-                jQuery.post(ajaxurl, "album_data="+JSON.stringify(array_album_data)+ "&param=update_pic&action=add_new_album_library", function () {
-                        setTimeout(function () {
-                            jQuery("#update_album_success_message").css("display", "none");
-                            window.location.href = "admin.php?page=gallery_bank";
-                        }, 10000);
+                jQuery.post(ajaxurl, "album_data="+encodeURIComponent(JSON.stringify(array_album_data))+ "&param=update_pic&action=add_new_album_library", function (data) {
+                    setTimeout(function () {
+                        jQuery("#update_album_success_message").css("display", "none");
+                        window.location.href = "admin.php?page=gallery_bank";
+                    }, 10000);
                 });
-                
+
             });
         }
     });
