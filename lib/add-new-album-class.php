@@ -122,7 +122,6 @@ else
             $album_data = json_decode(stripcslashes($_REQUEST["album_data"]),true);
             foreach($album_data as $field)
             {
-                echo $field[0];
                 if ($field[0] == "image")
                 {
                     if ($field[3] == "checked")
