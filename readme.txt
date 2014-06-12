@@ -1,4 +1,4 @@
-=== Gallery Bank ===
+=== Gallery Bank - Best WP Gallery ===
 Contributors: contact-banker,Gallery-Bank
 Tags: admin, AJAX, album, albums, best gallery, best gallery plugin, best portfolio plugin, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, galerie, Galleria, gallery, gallery album, gallery bank, gallery image, Gallery Plugin, gallery wordpress plugin, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image slider, images, lightbox, links, media, modal, multiple pictures, nextgen, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, shortcode, sidebar, slideshow, thumbnail, thumbnails, twitter, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
@@ -48,7 +48,7 @@ It provides a powerful engine for uploading and managing galleries of images & v
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***June 12, 2014: We're happy to announce that Gallery Bank reached 138,400+ plugin downloads in only 12 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***June 12, 2014: We're happy to announce that Gallery Bank reached 138,500+ plugin downloads in only 12 months. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
