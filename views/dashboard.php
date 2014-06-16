@@ -243,33 +243,134 @@
 														?>
 															<tr>
 																<td>
-																	<a href="admin.php?page=save_album&album_id=<?php echo $album[$flag]->album_id;?>" title="<?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?>" >
-																		<div class="imgLiquidFill dynamic_cover_css">
-																			<?php
-																			if(count($albumCover) != 0)
-																			{
-																				if($albumCover->album_cover == 0)
-																				{
-																					?>
-																					<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"  />
-																					<?php
-																				}
-																				else
-																				{
-																					?> 
-																					<img src="<?php echo stripcslashes(GALLERY_BK_ALBUM_THUMB_URL.$albumCover->thumbnail_url); ?>"   />
-																					<?php
-																				}
-																			}
-																			else 
-																			{
-																				?> 
-																				<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"   />	
-																				<?php
-																			}
+																	<?php
+																	switch ($role) {
+																		case "administrator":
 																			?>
-																		</div>
-																	</a>
+																			<a href="admin.php?page=save_album&album_id=<?php echo $album[$flag]->album_id;?>" title="<?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?>" >
+																				<div class="imgLiquidFill dynamic_cover_css">
+																					<?php
+																					if(count($albumCover) != 0)
+																					{
+																						if($albumCover->album_cover == 0)
+																						{
+																							?>
+																							<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"  />
+																							<?php
+																						}
+																						else
+																						{
+																							?> 
+																							<img src="<?php echo stripcslashes(GALLERY_BK_ALBUM_THUMB_URL.$albumCover->thumbnail_url); ?>"   />
+																							<?php
+																						}
+																					}
+																					else 
+																					{
+																						?> 
+																						<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"   />	
+																						<?php
+																					}
+																					?>
+																				</div>
+																			</a>
+																			<?php
+																		break;
+																		case "editor":
+																			?>
+																			<a href="admin.php?page=save_album&album_id=<?php echo $album[$flag]->album_id;?>" title="<?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?>" >
+																				<div class="imgLiquidFill dynamic_cover_css">
+																					<?php
+																					if(count($albumCover) != 0)
+																					{
+																						if($albumCover->album_cover == 0)
+																						{
+																							?>
+																							<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"  />
+																							<?php
+																						}
+																						else
+																						{
+																							?> 
+																							<img src="<?php echo stripcslashes(GALLERY_BK_ALBUM_THUMB_URL.$albumCover->thumbnail_url); ?>"   />
+																							<?php
+																						}
+																					}
+																					else 
+																					{
+																						?> 
+																						<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"   />	
+																						<?php
+																					}
+																					?>
+																				</div>
+																			</a>
+																			<?php
+																		break;
+																		case "author":
+																			?>
+																			<a title="<?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?>" >
+																				<div class="imgLiquidFill dynamic_cover_css">
+																					<?php
+																					if(count($albumCover) != 0)
+																					{
+																						if($albumCover->album_cover == 0)
+																						{
+																							?>
+																							<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"  />
+																							<?php
+																						}
+																						else
+																						{
+																							?> 
+																							<img src="<?php echo stripcslashes(GALLERY_BK_ALBUM_THUMB_URL.$albumCover->thumbnail_url); ?>"   />
+																							<?php
+																						}
+																					}
+																					else 
+																					{
+																						?> 
+																						<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"   />	
+																						<?php
+																					}
+																					?>
+																				</div>
+																			</a>
+																			<?php
+																		break;
+																		case "contributor":
+																			?>
+																			<a title="<?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?>" >
+																				<div class="imgLiquidFill dynamic_cover_css">
+																					<?php
+																					if(count($albumCover) != 0)
+																					{
+																						if($albumCover->album_cover == 0)
+																						{
+																							?>
+																							<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"  />
+																							<?php
+																						}
+																						else
+																						{
+																							?> 
+																							<img src="<?php echo stripcslashes(GALLERY_BK_ALBUM_THUMB_URL.$albumCover->thumbnail_url); ?>"   />
+																							<?php
+																						}
+																					}
+																					else 
+																					{
+																						?> 
+																						<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"   />	
+																						<?php
+																					}
+																					?>
+																				</div>
+																			</a>
+																			<?php
+																		break;
+																	}
+																	?>
 																</td>
 																<td><?php echo stripcslashes(htmlspecialchars_decode($album[$flag] -> album_name));?></td>
 																<td><?php echo $count_pic;?></td>
