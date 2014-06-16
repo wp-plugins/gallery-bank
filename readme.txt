@@ -481,7 +481,8 @@ is False in shortcode.
 17. Displaying Individual Album with Images.
 
 == Changelog ==
-= 3.0.38 =
+
+= 3.0.40 =
 
 * Bug Fixed with Menu Links shown to Subscriber and other roles.
 
