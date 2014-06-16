@@ -52,6 +52,17 @@ if($album_count < 3)
 		);
 	}
 }
+else
+{
+	$album = $wpdb->get_row
+	(
+		$wpdb->prepare
+		(
+			"SELECT * FROM " . gallery_bank_albums() . " where album_id = %d",
+			$album_id
+		)
+	);
+}
 $pics = $wpdb->get_results
 (
     $wpdb->prepare

@@ -1,5 +1,9 @@
 <?php
-global $wpdb;
+global $wpdb,$current_user;
+$role = $wpdb->prefix . "capabilities";
+$current_user->role = array_keys($current_user->$role);
+$role = $current_user->role[0];
+
 $gb_lang = array();
 $gb_translated_lang = array();
 array_push($gb_lang, "ar", "bg_BG", "da_DK", "hu_HU", "id_ID", 
@@ -72,15 +76,58 @@ switch($_REQUEST["page"])
 		<a href="#"><?php _e($page, gallery_bank); ?></a>
 	</li>
 </ul>
-<h2 class="nav-tab-wrapper">
-	<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
-	<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
-	<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
-	<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>
-	<a class="nav-tab " id="gallery_bank_system_status" href="admin.php?page=gallery_bank_system_status"><?php _e("System Status", gallery_bank);?></a>
-	<a class="nav-tab " id="gallery_bank_purchase" href="admin.php?page=gallery_bank_purchase"><?php _e("Purchase Pro Version", gallery_bank);?></a>
-</h2>
+
 <?php
+switch ($role) 
+{
+	case "administrator":
+		?>
+		<h2 class="nav-tab-wrapper">
+			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
+			<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
+			<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_bank_system_status" href="admin.php?page=gallery_bank_system_status"><?php _e("System Status", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_bank_purchase" href="admin.php?page=gallery_bank_purchase"><?php _e("Purchase Pro Version", gallery_bank);?></a>
+		</h2>
+		<?php
+	break;
+	case "editor":
+		?>
+		<h2 class="nav-tab-wrapper">
+			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
+			<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
+			<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_bank_system_status" href="admin.php?page=gallery_bank_system_status"><?php _e("System Status", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_bank_purchase" href="admin.php?page=gallery_bank_purchase"><?php _e("Purchase Pro Version", gallery_bank);?></a>
+		</h2>
+		<?php
+	break;
+	case "author":
+		?>
+		<h2 class="nav-tab-wrapper">
+			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
+			<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
+			<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_bank_purchase" href="admin.php?page=gallery_bank_purchase"><?php _e("Purchase Pro Version", gallery_bank);?></a>
+		</h2>
+		<?php
+	break;
+	case "contributor":
+		?>
+		<h2 class="nav-tab-wrapper">
+			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
+			<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
+			<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>
+			<a class="nav-tab " id="gallery_bank_purchase" href="admin.php?page=gallery_bank_purchase"><?php _e("Purchase Pro Version", gallery_bank);?></a>
+		</h2>
+		<?php
+	break;
+}
+
 if(in_array($language, $gb_lang))
 {
 	?>

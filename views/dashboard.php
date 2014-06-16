@@ -1,5 +1,9 @@
 <?php
-	global $wpdb;
+	global $wpdb,$current_user;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
+	
 	$last_album_id = $wpdb->get_var
 	(
 		"SELECT album_id FROM " .gallery_bank_albums(). " order by album_id desc limit 1"
@@ -174,11 +178,23 @@
 							(
 								"SELECT count(album_id) FROM ".gallery_bank_albums()
 							);
-							if($album_count < 3)
-							{
-								?>
-								<a class="btn btn-info" href="admin.php?page=save_album&album_id=<?php echo count($last_album_id) == 0 ? 1 : $last_album_id + 1; ?>"><?php _e("Add New Album", gallery_bank);?></a>
-								<?php
+							switch ($role) {
+								case "administrator":
+									if($album_count < 3)
+									{
+										?>
+										<a class="btn btn-info" href="admin.php?page=save_album&album_id=<?php echo count($last_album_id) == 0 ? 1 : $last_album_id + 1; ?>"><?php _e("Add New Album", gallery_bank);?></a>
+										<?php
+									}
+								break;
+								case "editor":
+									if($album_count < 3)
+									{
+										?>
+										<a class="btn btn-info" href="admin.php?page=save_album&album_id=<?php echo count($last_album_id) == 0 ? 1 : $last_album_id + 1; ?>"><?php _e("Add New Album", gallery_bank);?></a>
+										<?php
+									}
+								break;
 							}
 							?>
 							<a class="btn btn-danger" href="#" onclick="delete_all_albums();"><?php _e("Delete All Albums", gallery_bank);?></a>
@@ -263,11 +279,28 @@
 																</td>
 																<td>
 																	<ul class="layout-table-controls">
-																		<li>
-																			<a href="admin.php?page=save_album&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Edit Album", gallery_bank ); ?>">
-																				<i class="icon-pencil" ></i>
-																			</a>
-																		</li>	
+																		<?php
+																			switch ($role) {
+																				case "administrator":
+																					?>
+																					<li>
+																						<a href="admin.php?page=save_album&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Edit Album", gallery_bank ); ?>">
+																							<i class="icon-pencil" ></i>
+																						</a>
+																					</li>
+																					<?php
+																				break;
+																				case "editor":
+																					?>
+																					<li>
+																						<a href="admin.php?page=save_album&album_id=<?php echo $album[$flag]->album_id;?>" class="btn hovertip" data-original-title="<?php _e( "Edit Album", gallery_bank ); ?>">
+																							<i class="icon-pencil" ></i>
+																						</a>
+																					</li>
+																					<?php
+																				break;
+																			}
+																		?>
 																		<li>
 																			<a href="admin.php?page=images_sorting&album_id=<?php echo $album[$flag]->album_id;?>&row=3" class="btn hovertip" data-original-title="<?php _e( "Re-Order Images", gallery_bank ); ?>">
 																				<i class="icon-th"></i>
@@ -278,11 +311,28 @@
 																				<i class="icon-eye-open"></i>
 																			</a>
 																		</li>
-																		<li>
-																			<a class="btn hovertip "  style="cursor: pointer;" data-original-title="<?php _e( "Delete Album", gallery_bank)?>" onclick="delete_album(<?php echo $album[$flag]->album_id;?>);" >
-																				<i class="icon-trash"></i>
-																			</a>
-																		</li>
+																		<?php
+																			switch ($role) {
+																				case "administrator":
+																					?>
+																					<li>
+																						<a class="btn hovertip "  style="cursor: pointer;" data-original-title="<?php _e( "Delete Album", gallery_bank)?>" onclick="delete_album(<?php echo $album[$flag]->album_id;?>);" >
+																							<i class="icon-trash"></i>
+																						</a>
+																					</li>
+																					<?php
+																				break;
+																				case "editor":
+																					?>
+																					<li>
+																						<a class="btn hovertip "  style="cursor: pointer;" data-original-title="<?php _e( "Delete Album", gallery_bank)?>" onclick="delete_album(<?php echo $album[$flag]->album_id;?>);" >
+																							<i class="icon-trash"></i>
+																						</a>
+																					</li>
+																					<?php
+																				break;
+																			}
+																		?>
 																	</ul>
 																</td>
 															</tr>
