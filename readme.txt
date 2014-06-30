@@ -3,7 +3,7 @@ Contributors: contact-banker,Gallery-Bank
 Tags: admin, AJAX, album, albums, best gallery, best gallery plugin, best portfolio plugin, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, galerie, Galleria, gallery, gallery album, gallery bank, gallery image, Gallery Plugin, gallery wordpress plugin, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image slider, images, lightbox, links, media, modal, multiple pictures, nextgen, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, shortcode, sidebar, slideshow, thumbnail, thumbnails, twitter, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
 Tested up to: 3.9.1
-Stable tag: 3.0.42
+Stable tag: 3.0.43
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -481,6 +481,11 @@ is False in shortcode.
 17. Displaying Individual Album with Images.
 
 == Changelog ==
+
+= 3.0.43 =
+
+* Few Bugs Fixed
+* Banner Updated
 
 = 3.0.42 =
 

@@ -4,7 +4,7 @@
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.42
+ Version: 3.0.43
  Author URI: http://tech-banker.com
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -77,10 +77,6 @@ function add_gallery_bank_icon($meta = TRUE)
         return;
     }
     
-
-    $role = $wpdb->prefix . "capabilities";
-    $current_user->role = array_keys($current_user->$role);
-    $role = $current_user->role[0];
 	$last_album_id = $wpdb->get_var
 	(
 		"SELECT album_id FROM " .gallery_bank_albums(). " order by album_id desc limit 1"
@@ -90,212 +86,63 @@ function add_gallery_bank_icon($meta = TRUE)
 	(
 		"SELECT count(album_id) FROM ".gallery_bank_albums()
 	);
-	switch ($role) {
-		case "administrator":
-			$wp_admin_bar->add_menu(array(
-		        "id" => "gallery_bank_links",
-		        "title" => __("<img src=\"" . GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png\" width=\"25\"
-		        height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />Gallery Bank"),
-		        "href" => __(site_url() . "/wp-admin/admin.php?page=gallery_bank"),
-		    ));
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "dashboard_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
-		        "title" => __("Dashboard", gallery_bank))
-		    );
-			if($album_count < 3)
-			{
-			    $wp_admin_bar->add_menu(array(
-			        "parent" => "gallery_bank_links",
-			        "id" => "add_new_album_links",
-			        "href" => site_url() . "/wp-admin/admin.php?page=save_album&album_id=".$id,
-			        "title" => __("Add New Album", gallery_bank))
-			    );
-			}
-			
-			$wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "shortcode_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_shortcode",
-		        "title" => __("Short-Codes", gallery_bank))
-		    );
-			
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "sorting_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_album_sorting",
-		        "title" => __("Album Sorting", gallery_bank))
-		    );
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "global_settings_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=global_settings",
-		        "title" => __("Global Settings", gallery_bank))
-		    );
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "system_status_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_system_status",
-		        "title" => __("System Status", gallery_bank))
-		    );
-		
-			$wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "purchase_pro_version_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_purchase",
-		        "title" => __("Purchase Pro Version", gallery_bank))
-		    );
-		break;
-		case "editor":
-			$wp_admin_bar->add_menu(array(
-		        "id" => "gallery_bank_links",
-		        "title" => __("<img src=\"" . GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png\" width=\"25\"
-		        height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />Gallery Bank"),
-		        "href" => __(site_url() . "/wp-admin/admin.php?page=gallery_bank"),
-		    ));
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "dashboard_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
-		        "title" => __("Dashboard", gallery_bank))
-		    );
-			if($album_count < 3)
-			{
-			    $wp_admin_bar->add_menu(array(
-			        "parent" => "gallery_bank_links",
-			        "id" => "add_new_album_links",
-			        "href" => site_url() . "/wp-admin/admin.php?page=save_album&album_id=".$id,
-			        "title" => __("Add New Album", gallery_bank))
-			    );
-			}
-			
-			$wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "shortcode_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_shortcode",
-		        "title" => __("Short-Codes", gallery_bank))
-		    );
-			
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "sorting_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_album_sorting",
-		        "title" => __("Album Sorting", gallery_bank))
-		    );
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "global_settings_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=global_settings",
-		        "title" => __("Global Settings", gallery_bank))
-		    );
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "system_status_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_system_status",
-		        "title" => __("System Status", gallery_bank))
-		    );
-		
-			$wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "purchase_pro_version_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_purchase",
-		        "title" => __("Purchase Pro Version", gallery_bank))
-		    );
-		break;
-		case "author":
-			$wp_admin_bar->add_menu(array(
-		        "id" => "gallery_bank_links",
-		        "title" => __("<img src=\"" . GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png\" width=\"25\"
-		        height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />Gallery Bank"),
-		        "href" => __(site_url() . "/wp-admin/admin.php?page=gallery_bank"),
-		    ));
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "dashboard_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
-		        "title" => __("Dashboard", gallery_bank))
-		    );
-			
-			$wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "shortcode_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_shortcode",
-		        "title" => __("Short-Codes", gallery_bank))
-		    );
-			
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "sorting_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_album_sorting",
-		        "title" => __("Album Sorting", gallery_bank))
-		    );
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "global_settings_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=global_settings",
-		        "title" => __("Global Settings", gallery_bank))
-		    );
-		
-			$wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "purchase_pro_version_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_purchase",
-		        "title" => __("Purchase Pro Version", gallery_bank))
-		    );
-		break;
-		case "contributor":
-			$wp_admin_bar->add_menu(array(
-		        "id" => "gallery_bank_links",
-		        "title" => __("<img src=\"" . GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png\" width=\"25\"
-		        height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />Gallery Bank"),
-		        "href" => __(site_url() . "/wp-admin/admin.php?page=gallery_bank"),
-		    ));
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "dashboard_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
-		        "title" => __("Dashboard", gallery_bank))
-		    );
-			
-			$wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "shortcode_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_shortcode",
-		        "title" => __("Short-Codes", gallery_bank))
-		    );
-			
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "sorting_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_album_sorting",
-		        "title" => __("Album Sorting", gallery_bank))
-		    );
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "global_settings_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=global_settings",
-		        "title" => __("Global Settings", gallery_bank))
-		    );
-		
-		    $wp_admin_bar->add_menu(array(
-		        "parent" => "gallery_bank_links",
-		        "id" => "purchase_pro_version_links",
-		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_purchase",
-		        "title" => __("Purchase Pro Version", gallery_bank))
-		    );
-		break;
+	$wp_admin_bar->add_menu(array(
+        "id" => "gallery_bank_links",
+        "title" => __("<img src=\"" . GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png\" width=\"25\"
+        height=\"25\" style=\"vertical-align:text-top; margin-right:5px;\" />Gallery Bank"),
+        "href" => __(site_url() . "/wp-admin/admin.php?page=gallery_bank"),
+    ));
+
+    $wp_admin_bar->add_menu(array(
+        "parent" => "gallery_bank_links",
+        "id" => "dashboard_links",
+        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
+        "title" => __("Dashboard", gallery_bank))
+    );
+	if($album_count < 3)
+	{
+	    $wp_admin_bar->add_menu(array(
+	        "parent" => "gallery_bank_links",
+	        "id" => "add_new_album_links",
+	        "href" => site_url() . "/wp-admin/admin.php?page=save_album&album_id=".$id,
+	        "title" => __("Add New Album", gallery_bank))
+	    );
 	}
+	
+	$wp_admin_bar->add_menu(array(
+        "parent" => "gallery_bank_links",
+        "id" => "shortcode_links",
+        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_shortcode",
+        "title" => __("Short-Codes", gallery_bank))
+    );
+	
+    $wp_admin_bar->add_menu(array(
+        "parent" => "gallery_bank_links",
+        "id" => "sorting_links",
+        "href" => site_url() . "/wp-admin/admin.php?page=gallery_album_sorting",
+        "title" => __("Album Sorting", gallery_bank))
+    );
+
+    $wp_admin_bar->add_menu(array(
+        "parent" => "gallery_bank_links",
+        "id" => "global_settings_links",
+        "href" => site_url() . "/wp-admin/admin.php?page=global_settings",
+        "title" => __("Global Settings", gallery_bank))
+    );
+
+    $wp_admin_bar->add_menu(array(
+        "parent" => "gallery_bank_links",
+        "id" => "system_status_links",
+        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_system_status",
+        "title" => __("System Status", gallery_bank))
+    );
+
+	$wp_admin_bar->add_menu(array(
+        "parent" => "gallery_bank_links",
+        "id" => "purchase_pro_version_links",
+        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_purchase",
+        "title" => __("Purchase Pro Version", gallery_bank))
+    );
 }
 
 

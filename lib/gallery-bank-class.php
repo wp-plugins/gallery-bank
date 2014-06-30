@@ -5,62 +5,19 @@
 
 function create_global_menus_for_gallery_bank()
 {
-	global $wpdb,$current_user;
-
-    $role = $wpdb->prefix . "capabilities";
-    $current_user->role = array_keys($current_user->$role);
-    $role = $current_user->role[0];
+	global $wpdb;
 	
-	switch ($role) {
-		case "administrator":
-		    add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png");
-		    add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
-			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
-		    add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
-		    add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
-		    add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
-			add_submenu_page("gallery_bank", "Purchase Pro Version", __("Purchase Pro Version", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
-		    add_submenu_page("", "", "", "read", "view_album", "view_album");
-		    add_submenu_page("", "", "", "read", "album_preview", "album_preview");
-		    add_submenu_page("", "", "", "read", "save_album", "save_album");
-		    add_submenu_page("", "", "", "read", "images_sorting", "images_sorting");
-		break;
-		case "editor":
-			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png");
-		    add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
-			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
-		    add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
-		    add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
-		    add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
-			add_submenu_page("gallery_bank", "Purchase Pro Version", __("Purchase Pro Version", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
-		    add_submenu_page("", "", "", "read", "view_album", "view_album");
-		    add_submenu_page("", "", "", "read", "album_preview", "album_preview");
-		    add_submenu_page("", "", "", "read", "save_album", "save_album");
-		    add_submenu_page("", "", "", "read", "images_sorting", "images_sorting");
-		break;
-		case "author":
-			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png");
-		    add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
-			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
-		    add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
-		    add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
-			add_submenu_page("gallery_bank", "Purchase Pro Version", __("Purchase Pro Version", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
-		    add_submenu_page("", "", "", "read", "view_album", "view_album");
-		    add_submenu_page("", "", "", "read", "album_preview", "album_preview");
-		    add_submenu_page("", "", "", "read", "images_sorting", "images_sorting");
-		break;
-		case "contributor":
-			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png");
-		    add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
-			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
-		    add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
-		    add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
-			add_submenu_page("gallery_bank", "Purchase Pro Version", __("Purchase Pro Version", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
-		    add_submenu_page("", "", "", "read", "view_album", "view_album");
-		    add_submenu_page("", "", "", "read", "album_preview", "album_preview");
-		    add_submenu_page("", "", "", "read", "images_sorting", "images_sorting");
-		break;
-    }
+	add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png");
+	add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
+	add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
+	add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
+	add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
+	add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
+	add_submenu_page("gallery_bank", "Purchase Pro Version", __("Purchase Pro Version", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
+	add_submenu_page("", "", "", "read", "view_album", "view_album");
+	add_submenu_page("", "", "", "read", "album_preview", "album_preview");
+	add_submenu_page("", "", "", "read", "save_album", "save_album");
+	add_submenu_page("", "", "", "read", "images_sorting", "images_sorting");
 }
 //--------------------------------------------------------------------------------------------------------------//
 // FUNCTIONS FOR REPLACING TABLE NAMES
