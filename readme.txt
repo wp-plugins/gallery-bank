@@ -1,4 +1,4 @@
-=== Gallery Bank - Best WP Gallery Albums Plugin ===
+=== WP Gallery Bank - Best Gallery Albums Plugin ===
 Contributors: contact-banker,Gallery-Bank
 Tags: admin, AJAX, album, albums, best gallery, best gallery plugin, best portfolio plugin, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, galerie, Galleria, gallery, gallery album, gallery bank, gallery image, Gallery Plugin, gallery wordpress plugin, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image slider, images, lightbox, links, media, modal, multiple pictures, nextgen, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, shortcode, sidebar, slideshow, thumbnail, thumbnails, twitter, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
