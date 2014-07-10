@@ -48,7 +48,7 @@ It provides a powerful engine for uploading and managing galleries of images & v
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***July 10, 2014: We're happy to announce that Gallery Bank reached 152,900+ plugin downloads in only 1 year. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***July 10, 2014: We're happy to announce that Gallery Bank reached 153,900+ plugin downloads in only 1 year. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
