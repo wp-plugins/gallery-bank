@@ -1,7 +1,5 @@
 <?php
 global $wpdb,$current_user,$user_role_permission;
-$dynamicArray = array();
-$dynamicId = mt_rand(10, 10000);
 $role = $wpdb->prefix . "capabilities";
 $current_user->role = array_keys($current_user->$role);
 $role = $current_user->role[0];
