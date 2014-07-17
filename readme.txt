@@ -482,6 +482,10 @@ is False in shortcode.
 
 == Changelog ==
 
+= 3.0.47 =
+
+* Advanced Security for Plugin Implemented
+
 = 3.0.46 = 
 
 * Hungarian Language Updated
