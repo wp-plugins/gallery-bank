@@ -1,15 +1,17 @@
 === WP Gallery Bank - Best Gallery Albums Plugin ===
 Contributors: contact-banker,Gallery-Bank
+Donate link : http://tech-banker.com/gallery-bank/
 Tags: admin, AJAX, album, albums, best gallery, best gallery plugin, best portfolio plugin, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, galerie, Galleria, gallery, gallery album, gallery bank, gallery image, Gallery Plugin, gallery wordpress plugin, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image slider, images, lightbox, links, media, modal, multiple pictures, nextgen, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, shortcode, sidebar, slideshow, thumbnail, thumbnails, twitter, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
 Tested up to: 3.9.1
-Stable tag: 3.0.48
+Stable tag: 3.0.49
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
 
 == Description ==
+### [WordPress Gallery Bank - Best Gallery Albums Plugin](http://tech-banker.com/gallery-bank/)    
 
 Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gallery albums with images, videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts, Special Effects  & Animation Effects. 
 
@@ -42,9 +44,11 @@ Gallery Bank has become the **Best Plugin** in the world for WordPress sites to 
 
 [vimeo https://vimeo.com/92378296]
 
+###IMPORTANT: If you think you found a bug in the Contact Bank or have any problem or question concerning Contact Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).  
+
 It provides a powerful engine for uploading and managing galleries of images & videos, with the ability to batch upload, add/delete/rearrange/sort images, edit thumbnails, 100+ settings, and even much more. It also provides different front-end display styles (filmstrips, slideshows, masonry, blog styles and thumbnail galleries), all of them comes with a wide array of options for controlling size, style, timing, transitions, controls, lightbox effects, and more.
 
-***The Gallery Bank WordPress Gallery Plugin is now proudly maintained by <a href="http://www.tech-banker.com">Tech Banker Pte Ltd.</a> since March 2014.***
+***The Gallery Bank WordPress Gallery Plugin is now proudly maintained by <a href="http://www.tech-banker.com">Tech Banker</a> since March 2014.***
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
@@ -63,7 +67,7 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 * [Captcha Bank](http://wordpress.org/extend/plugins/captcha-bank/) - An easy to use powerful wordpress Captcha Plugin to prevent spam on your site.lbums.
 
 
-= Key Features =
+### Key Features 
 
 * Multi-Lingual. Available now in 33 Languages.
 * Responsive Gallery
@@ -166,7 +170,7 @@ There is a Shortcode Editor availble in your Page/Post where you want to impleme
 With Global Settings, you can define different settings for Thumbnails, Albums, Lightboxes, Filters, Pagination and Slideshows.
 
 
-= Gallery Bank is now available in the following Languages = 
+### Gallery Bank is now available in the following Languages
 
 * Albanian (sq_AL)
 * Arabic (ar)
@@ -210,12 +214,26 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 
 == Installation ==
 
-1. Login to your website and go to the Plugins section of your admin panel.
-2. Click the Add New button.
-3. Under Install Plugins, click the Upload link.
-4. Select the plugin zip file (gallery-bank.zip) from your computer then click the Install Now button.
-5. You should see a message stating that the plugin was installed successfully.
-6. Click the Activate Plugin link.
+### Minimum requirements.  
+*   Wordpress 3.3+  
+*   PHP 5.x  
+*   MySQL 5.x  
+
+### Performing a new installation  
+
+After downloading the ZIP file,  
+
+1. Log in to the administrator panel.  
+2. Go to Plugins Add > New > Upload.  
+3. Click “Choose file” (“Browse”) and select the downloaded zip file.  
+
+*For Mac Users*  
+*Go to your Downloads folder and locate the folder with the plugin. Right-click on the folder and select Compress. Now you have a newly created .zip file which can be installed as described here.*  
+
+1. Click “Install Now” button.  
+2. Click “Activate Plugin” button for activating the plugin.  
+
+If any problem occurs, please contact us at [support@tech-banker.com](mailto:support@tech-banker.com).
 
 == Frequently Asked Questions ==
 
@@ -482,7 +500,11 @@ is False in shortcode.
 
 == Changelog ==
 
-= 3.0.46 = 
+= 3.0.49 = 
+
+* Polish Language Updated
+
+= 3.0.48 = 
 
 * Czech Language Updated
 
