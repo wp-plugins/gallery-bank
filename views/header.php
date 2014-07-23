@@ -1,9 +1,4 @@
 <?php
-global $wpdb,$current_user;
-$role = $wpdb->prefix . "capabilities";
-$current_user->role = array_keys($current_user->$role);
-$role = $current_user->role[0];
-
 $gb_lang = array();
 $gb_translated_lang = array();
 array_push($gb_lang, "bg_BG", "da_DK", "id_ID", 

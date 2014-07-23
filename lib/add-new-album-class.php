@@ -1,10 +1,6 @@
 <?php
-global $wpdb,$current_user,$user_role_permission;
 $dynamicArray = array();
 $dynamicId = mt_rand(10, 10000);
-$role = $wpdb->prefix . "capabilities";
-$current_user->role = array_keys($current_user->$role);
-$role = $current_user->role[0];
 	switch($role)
 	{
 		case "administrator":
@@ -16,12 +12,7 @@ $role = $current_user->role[0];
 		case "author":
 			$user_role_permission = "publish_posts";
 		break;
-		case "contributor":
-			$user_role_permission = "edit_posts";
-		break;
-		case "subscriber":
-			$user_role_permission = "read";
-		break;
+		
 	}
 
 if (!current_user_can($user_role_permission))

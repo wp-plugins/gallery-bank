@@ -1,8 +1,5 @@
 <?php
-global $wp_version,$current_user,$user_role_permission;
-	$role = $wpdb->prefix . "capabilities";
-	$current_user->role = array_keys($current_user->$role);
-	$role = $current_user->role[0];
+
 	switch($role)
 	{
 		case "administrator":
@@ -13,12 +10,6 @@ global $wp_version,$current_user,$user_role_permission;
 			break;
 		case "author":
 			$user_role_permission = "publish_posts";
-			break;
-		case "contributor":
-			$user_role_permission = "edit_posts";
-			break;
-		case "subscriber":
-			$user_role_permission = "read";
 			break;
 	}
 	if (!current_user_can($user_role_permission))
@@ -115,7 +106,12 @@ global $wp_version,$current_user,$user_role_permission;
 														        <label class="layout-label-control-group">MySQL Version :</label>
 														
 														        <div class="layout-controls">
-														            <span><?php if (function_exists("mysql_get_server_info")) echo esc_html(mysql_get_server_info()); ?></span>
+														            <span>
+														            <?php 
+														          	 global $wpdb;
+																	echo $wpdb->db_version();
+																	?>
+																	</span>
 														        </div>
 														    </div>
 														</div>
@@ -475,24 +471,24 @@ global $wp_version,$current_user,$user_role_permission;
 											        </div>
 											        <div id="library_settings" class="collapse in">
 											            <?php
+											            function gd_yesNo($bool)
+											            {
+											            	if ($bool)
+											            		return "Yes";
+											            	else
+											            		return "No";
+											            }
 											            if (function_exists("gd_info")) {
 											                $information = gd_info();
 											                $key = array_keys($information);
 											                for ($i = 0; $i < count($key); $i++) {
 											                    if (is_bool($information[$key[$i]]))
-											                        echo "<div class=\"widget-layout-body\"><div class=\"layout-control-group\"><label class=\"layout-label-control-group\">" . $key[$i] . " : </label><div class=\"layout-controls\"> <span>" . ngg_gd_yesNo($information[$key[$i]]) . " </span></div></div></div>";
+											                        echo "<div class=\"widget-layout-body\"><div class=\"layout-control-group\"><label class=\"layout-label-control-group\">" . $key[$i] . " : </label><div class=\"layout-controls\"> <span>" . gd_yesNo($information[$key[$i]]) . " </span></div></div></div>";
 											                    else
 											                        echo "<div class=\"widget-layout-body\"><div class=\"layout-control-group\"><label class=\"layout-label-control-group\">" . $key[$i] . " : </label><div class=\"layout-controls\"> <span>" . $information[$key[$i]] . "</span></div></div></div>";
 											                }
 											            } else {
 											                echo "<h4>" . "No GD support" . "!</h4>";
-											            }
-											            function ngg_gd_yesNo($bool)
-											            {
-											                if ($bool)
-											                    return "Yes";
-											                else
-											                    return "No";
 											            }
 											            ?>
 													</div>

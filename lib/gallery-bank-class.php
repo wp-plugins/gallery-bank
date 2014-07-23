@@ -83,6 +83,10 @@ function gallery_bank_settings()
 //---------------------------------------------------------------------------------------------------------------//
 function gallery_bank()
 {
+	global $wpdb,$current_user,$user_role_permission;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
     include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
     include_once GALLERY_BK_PLUGIN_DIR . "/views/dashboard.php";
 }
@@ -90,6 +94,10 @@ function gallery_bank()
 
 function gallery_bank_shortcode()
 {
+	global $wpdb, $current_user,$wp_version;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
 	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
 	include_once GALLERY_BK_PLUGIN_DIR . "/views/shortcode.php";
 }
@@ -102,7 +110,10 @@ function save_album()
 	);
 	if($album_count <= 3)
 	{
-		global $wpdb;
+		global $wpdb,$current_user,$user_role_permission;
+		$role = $wpdb->prefix . "capabilities";
+		$current_user->role = array_keys($current_user->$role);
+		$role = $current_user->role[0];
 		include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
 		include_once GALLERY_BK_PLUGIN_DIR . "/views/edit-album.php";
 	}
@@ -114,24 +125,40 @@ function save_album()
 
 function global_settings()
 {
+	global $wpdb, $current_user,$wp_version;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
     include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
     include_once GALLERY_BK_PLUGIN_DIR . "/views/settings.php";
 }
 
 function gallery_album_sorting()
 {
+	global $wpdb,$current_user,$user_role_permission;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
     include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
     include_once GALLERY_BK_PLUGIN_DIR . "/views/album-sorting.php";
 }
 
 function images_sorting()
 {
+	global $wpdb,$current_user,$user_role_permission;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
     include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
     include_once GALLERY_BK_PLUGIN_DIR . "/views/images-sorting.php";
 }
 
 function album_preview()
 {
+	global $wpdb,$current_user,$user_role_permission;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
     include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
     include_once GALLERY_BK_PLUGIN_DIR . "/views/album-preview.php";
 }
@@ -139,12 +166,20 @@ function album_preview()
 
 function gallery_bank_system_status()
 {
+	global $wpdb,$wp_version,$current_user,$user_role_permission;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
     include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
     include_once GALLERY_BK_PLUGIN_DIR . "/views/gallery-bank-system-report.php";
 }
 
 function gallery_bank_purchase()
 {
+	global $wpdb,$current_user,$user_role_permission;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
 	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
     include_once GALLERY_BK_PLUGIN_DIR . "/views/purchase_pro_version.php";
 }
@@ -208,6 +243,10 @@ if (isset($_REQUEST["action"])) {
             add_action("admin_init", "album_gallery_library");
             function album_gallery_library()
             {
+            	global $wpdb,$current_user,$user_role_permission;
+            	$role = $wpdb->prefix . "capabilities";
+            	$current_user->role = array_keys($current_user->$role);
+            	$role = $current_user->role[0];
                 include_once GALLERY_BK_PLUGIN_DIR . "/lib/add-new-album-class.php";
             }
             break;
@@ -222,6 +261,10 @@ if (isset($_REQUEST["action"])) {
             add_action("admin_init", "upload_library");
             function upload_library()
             {
+            	global $wpdb,$current_user,$user_role_permission;
+            	$role = $wpdb->prefix . "capabilities";
+            	$current_user->role = array_keys($current_user->$role);
+            	$role = $current_user->role[0];
                 include_once GALLERY_BK_PLUGIN_DIR . "/lib/upload.php";
             }
             break;

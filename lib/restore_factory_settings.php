@@ -14,12 +14,6 @@ $role = $current_user->role[0];
 		case "author":
 			$user_role_permission = "publish_posts";
 		break;
-		case "contributor":
-			$user_role_permission = "edit_posts";
-		break;
-		case "subscriber":
-			$user_role_permission = "read";
-		break;
 	}
 
 if (!current_user_can($user_role_permission))
