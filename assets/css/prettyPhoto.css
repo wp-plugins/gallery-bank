@@ -659,7 +659,8 @@ div.pp_pic_holder {
     float: left;
     margin-left: 5px;
     width: 55px;
-    overflow: hidden
+    overflow: hidden;
+    display: inline;
 }
 
 .pp_social .twitter {
