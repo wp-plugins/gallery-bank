@@ -15,6 +15,8 @@ Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, v
 
 Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gallery albums with images, videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts, Special Effects  & Animation Effects. 
 
+###IMPORTANT: If you think you found a bug in Gallery Bank or have any problem or question concerning Gallery Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).  
+
 Gallery Bank has become the **Best Plugin** in the world for WordPress sites to display images. It has been designed to provide easiness and simplicity to the end user. It is a very simple but fully loaded with 200+ features(**Premium Version**) Plugin.
 
 > #### **Live Demos**
@@ -44,15 +46,13 @@ Gallery Bank has become the **Best Plugin** in the world for WordPress sites to 
 
 [vimeo https://vimeo.com/92378296]
 
-###IMPORTANT: If you think you found a bug in the Contact Bank or have any problem or question concerning Contact Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).  
-
 It provides a powerful engine for uploading and managing galleries of images & videos, with the ability to batch upload, add/delete/rearrange/sort images, edit thumbnails, 100+ settings, and even much more. It also provides different front-end display styles (filmstrips, slideshows, masonry, blog styles and thumbnail galleries), all of them comes with a wide array of options for controlling size, style, timing, transitions, controls, lightbox effects, and more.
 
 ***The Gallery Bank WordPress Gallery Plugin is now proudly maintained by <a href="http://www.tech-banker.com">Tech Banker</a> since March 2014.***
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***July 26, 2014: We're happy to announce that Gallery Bank reached 161,900+ plugin downloads in only 1 year. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***July 26, 2014: We're happy to announce that Gallery Bank reached 162,000+ plugin downloads in only 1 year. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
