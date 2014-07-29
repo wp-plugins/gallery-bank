@@ -204,7 +204,7 @@
 								<a class="btn btn-danger" href="#" onclick="purge_all_images();"><?php _e("Purge Images & Albums", gallery_bank);?></a>
 								<a class="btn btn-danger" href="#" onclick="restore_factory_settings();"><?php _e("Restore Factory Settings", gallery_bank);?></a>
 								<div class="separator-doubled"></div>
-								<a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">How to setup Short-Codes for Gallery Bank into your WordPress Page/Post?</a>
+								<a rel="prettyPhoto[gallery]" href="<?php echo plugins_url("/assets/images/how-to-setup-short-code.png",dirname(__FILE__));?>">How to setup Short-Codes for Gallery Bank into your WordPress Page/Post?</a>
 								<div class="fluid-layout">
 									<div class="layout-span12">
 										<div class="widget-layout">
@@ -254,7 +254,7 @@
 																					if($albumCover->album_cover == 0)
 																					{
 																						?>
-																						<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"  />
+																						<img src="<?php echo stripcslashes(plugins_url("/assets/images/album-cover.png",dirname(__FILE__))); ?>"  />
 																						<?php
 																					}
 																					else
@@ -267,7 +267,7 @@
 																				else 
 																				{
 																					?> 
-																					<img src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"   />	
+																					<img src="<?php echo stripcslashes(plugins_url("/assets/images/album-cover.png",dirname(__FILE__))); ?>"   />	
 																					<?php
 																				}
 																				?>
@@ -278,7 +278,7 @@
 																	<td><?php echo $count_pic;?></td>
 																	<td><?php echo date("d-M-Y", strtotime($album[$flag] -> album_date));?></td>
 																	<td>
-																		<a rel="prettyPhoto[gallery]" href="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>">Short Codes</a>
+																		<a rel="prettyPhoto[gallery]" href="<?php echo plugins_url("/assets/images/how-to-setup-short-code.png",dirname(__FILE__));?>">Short Codes</a>
 																	</td>
 																	<td>
 																		<ul class="layout-table-controls">
@@ -337,7 +337,7 @@
 								<p>
 									<a class="btn btn-danger" href="http://tech-banker.com /get-in-touch/" target="_blank" style="text-decoration: none;"><?php _e("Let's get in touch!", gallery_bank); ?></a>
 								</p>
-								<img src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/img.png";?>" style="max-width:100%;cursor: pointer;" />
+								<img src="<?php echo  plugins_url("/assets/images/img.png",dirname(__FILE__));?>" style="max-width:100%;cursor: pointer;" />
 								<p>
 									<a class="btn btn-danger" href="http://tech-banker.com/gallery-bank/" target="_blank" style="text-decoration: none;"><?php _e("Order Now!", gallery_bank); ?></a>
 								</p>

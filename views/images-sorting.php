@@ -146,7 +146,7 @@
 		    $index = array_search("margin_btw_thumbnails", $setting_keys);
 		    $margin_btw_thumbnails = $album_css[$index]->setting_value;
 		
-		    $video_thumb_url = GALLERY_BK_PLUGIN_URL . "/assets/images/video.jpg";
+		    $video_thumb_url = plugins_url("/assets/images/video.jpg",dirname(__FILE__));
 		    ?>
 		    <!--suppress ALL -->
 		    <style type="text/css">

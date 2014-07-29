@@ -223,7 +223,7 @@ else
 				                                                    if ($albumCover->album_cover == 0) {
 				                                                        ?>
 				                                                        <img id="albumOrder_<?php echo $album[$flag]->album_id; ?>"
-				                                                             src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"/>
+				                                                             src="<?php echo stripcslashes(plugins_url("/assets/images/album-cover.png",dirname(__FILE__))); ?>"/>
 				                                                    <?php
 				                                                    } else {
 				                                                        ?>
@@ -234,7 +234,7 @@ else
 				                                                } else {
 				                                                    ?>
 				                                                    <img id="sortOrder_<?php echo $album[$flag]->album_id; ?>"
-				                                                         src="<?php echo stripcslashes(GALLERY_BK_PLUGIN_URL . "/assets/images/album-cover.png"); ?>"/>
+				                                                         src="<?php echo stripcslashes(plugins_url("/assets/images/album-cover.png",dirname(__FILE__))); ?>"/>
 				                                                <?php
 				                                                }
 				                                                ?>

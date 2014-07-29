@@ -24,7 +24,7 @@ if($show_banner == "")
 	 	</div>';
 }
 ?>
-<img src="<?php echo GALLERY_BK_PLUGIN_URL . '/assets/images/gallery-bank-logo.png'; ?>" style="margin-top:20px"/>
+<img src="<?php echo plugins_url('/assets/images/gallery-bank-logo.png',dirname(__FILE__)); ?>" style="margin-top:20px"/>
 <script>
 jQuery(document).ready(function()
 {
@@ -78,7 +78,7 @@ switch ($role)
 	case "administrator":
 		?>
 		<h2 class="nav-tab-wrapper">
-			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
+			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank"><?php _e("Dashboard", gallery_bank);?></a>
 			<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
 			<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
 			<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>
@@ -90,7 +90,7 @@ switch ($role)
 	case "editor":
 		?>
 		<h2 class="nav-tab-wrapper">
-			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
+			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank"><?php _e("Dashboard", gallery_bank);?></a>
 			<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
 			<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
 			<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>
@@ -102,7 +102,7 @@ switch ($role)
 	case "author":
 		?>
 		<h2 class="nav-tab-wrapper">
-			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
+			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank"><?php _e("Dashboard", gallery_bank);?></a>
 			<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
 			<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
 			<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>
@@ -113,7 +113,7 @@ switch ($role)
 	case "contributor":
 		?>
 		<h2 class="nav-tab-wrapper">
-			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank">Dashboard</a>
+			<a class="nav-tab " id="gallery_bank" href="admin.php?page=gallery_bank"><?php _e("Dashboard", gallery_bank);?></a>
 			<a class="nav-tab " id="gallery_bank_shortcode" href="admin.php?page=gallery_bank_shortcode"><?php _e("Short-Codes", gallery_bank);?></a>
 			<a class="nav-tab " id="gallery_album_sorting" href="admin.php?page=gallery_album_sorting"><?php _e("Album Sorting", gallery_bank);?></a>
 			<a class="nav-tab " id="global_settings" href="admin.php?page=global_settings"><?php _e("Global Settings", gallery_bank);?></a>

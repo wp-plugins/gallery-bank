@@ -126,7 +126,7 @@
 		    $index = array_search("cover_thumbnail_height", $setting_keys);
 		    $cover_thumbnail_height = $album_css[$index]->setting_value;
 		
-			$video_url = GALLERY_BK_PLUGIN_URL . "/assets/images/video.jpg" ;
+			$video_url = plugins_url("/assets/images/video.jpg",dirname(__FILE__));
 		
 		    ?>
 		    <!--suppress ALL -->
@@ -424,14 +424,14 @@
 		    <script type="text/javascript">
 		
 		    jQuery(".hovertip").tooltip();
-		    var url = "<?php echo GALLERY_BK_PLUGIN_URL  ?>";
+		    var url = "<?php echo plugins_url("/assets/",dirname(__FILE__)) ?>";
 		    var image_width = <?php echo $thumbnails_width; ?>;
 		    var image_height = <?php echo $thumbnails_height; ?>;
 		    var cover_width = <?php echo $cover_thumbnail_width; ?>;
 		    var cover_height = <?php echo $cover_thumbnail_height; ?>;
 		    var delete_array = [];
 		    var array_album_data = [];
-		
+			
 		    oTable = jQuery("#data-table-edit-album").dataTable
 		    ({
 		        "bJQueryUI": false,
@@ -545,8 +545,8 @@
 		            thumbs: true, // Show thumbs
 		            active: "thumbs"
 		        },
-		        flash_swf_url: url + "/assets/Moxie.swf",
-		        silverlight_xap_url: url + "/assets/Moxie.xap",
+		        flash_swf_url: url + "Moxie.swf",
+		        silverlight_xap_url: url + "Moxie.xap",
 		        init: {
 		            FileUploaded: function (up, file) {
 		                
@@ -557,11 +557,12 @@
 		                var img_gb_path = file.target_name;
 		                jQuery.post(ajaxurl, "album_id=" + albumid + "&controlType=" + controlType + "&imagename=" + image_name +
 		                    "&img_gb_path=" + img_gb_path + "&cover_height=" + cover_height + "&cover_width=" + cover_width +
-		                    "&param=add_pic&action=add_new_album_library", function (data) {
+		                    "&param=add_pic&action=add_new_album_library", function (result) {
 		                    	
 		                    	jQuery.post(ajaxurl, "img_path=" + file.target_name + "&img_name=" + file.name + "&image_width=" + image_width +
-				                "&image_height=" + image_height + "&picid=" + data +
+				                "&image_height=" + image_height + "&picid=" + result +
 				                "&param=add_new_dynamic_row_for_image&action=add_new_album_library", function (data) {
+					                
 				                var col1 = jQuery("<td></td>");
 				                col1.append(jQuery.parseJSON(data)[0]);
 				                var col2 = jQuery("<td></td>");

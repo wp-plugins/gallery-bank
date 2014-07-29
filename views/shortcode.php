@@ -36,7 +36,7 @@ else
 										<div class="layout-span12">
 										    <div class="widget-layout">
 										        <div class="widget-layout-body">
-										        	<img src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/how-to-setup-short-code.png";?>" />
+										        	<img src="<?php echo plugins_url("/assets/images/how-to-setup-short-code.png",dirname(__FILE__));?>" />
 										        </div>
 										    </div>
 										</div>

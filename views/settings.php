@@ -386,7 +386,7 @@ else
 																		style="background-color: <?php echo $thumbnails_border_color; ?>;"
 																		value="<?php echo $thumbnails_border_color; ?>"/>
 																		<img onclick="ux_clr_border_color();" style="vertical-align: middle;margin-left: 5px;"
-																		src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+																		src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 																	<div id="clr_border_color"></div>
 																</div>
 															</div>
@@ -410,7 +410,7 @@ else
 																		style="background-color:<?php echo $thumbnail_text_color; ?>; "
 																		value="<?php echo $thumbnail_text_color; ?>"/>
 																		<img onclick="ux_clr_thumb_text_color();" style="vertical-align: middle;margin-left: 5px;"
-																		src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+																		src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 																		<div id="clr_thumb_text_color"></div>
 																</div>
 															</div>
@@ -603,7 +603,7 @@ else
 											                               style="background-color:<?php echo $cover_thumbnail_border_color; ?>; "
 											                               value="<?php echo $cover_thumbnail_border_color; ?>"/><img
 											                            onclick="ux_clr_cover_border_color();" style="vertical-align: middle;margin-left: 5px;"
-											                            src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+											                            src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 											                        <div id="clr_cover_border_color"></div>
 											                    </div>
 											                </div>
@@ -639,7 +639,7 @@ else
 											                               value="<?php echo $album_text_color; ?>"/>
 										                               			<img onclick="ux_clr_album_font_color();"
 							                                                          style="vertical-align: middle;margin-left: 5px;"
-							                                                          src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+							                                                          src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 											
 											                        <div id="clr_album_text_color"></div>
 											                    </div>
@@ -777,7 +777,7 @@ else
 										                                   style="background-color: <?php echo $filters_color; ?>;"
 										                                   value="<?php echo $filters_color; ?>"/>
 										                                   <img onclick="ux_clr_filter_color();" style="vertical-align: middle;margin-left: 5px;"
-										                                    	src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+										                                    	src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 											                            <div id="clr_filter_color"></div>
 											                        </div>
 											                    </div>
@@ -791,7 +791,7 @@ else
 										                                   style="background-color: <?php echo $filters_text_color; ?>;"
 										                                   value="<?php echo $filters_text_color; ?>"/>
 										                                   <img onclick="ux_clr_filter_text_color();" style="vertical-align: middle;margin-left: 5px;"
-																			src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+																			src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 																		<div id="clr_filter_text_color"></div>
 											                        </div>
 											                    </div>
@@ -1022,7 +1022,7 @@ else
 													                   style="background-color: <?php echo $lightbox_text_color; ?>;"
 													                   value="<?php echo $lightbox_text_color; ?>"/>
 													                   <img onclick="ux_clr_lightbox_text_color();" style="vertical-align: middle;margin-left: 5px;"
-													                     src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+													                     src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 													                <div id="clr_lightbox_text_color"></div>
 													            </div>
 													        </div>
@@ -1036,7 +1036,7 @@ else
 													                       style="background-color: <?php echo $lightbox_overlay_border_color; ?>"
 													                       value="<?php echo $lightbox_overlay_border_color; ?>"/><img
 													                    onclick="ux_clr_overlay_border_color();" style="vertical-align: middle;margin-left: 5px;"
-													                    src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+													                    src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 													                <div id="clr_overlay_border_color"></div>
 													            </div>
 													        </div>
@@ -1050,7 +1050,7 @@ else
 												                       style="background-color: <?php echo $lightbox_inline_bg_color; ?>;"
 												                       value="<?php echo $lightbox_inline_bg_color; ?>"/>
 												                       <img onclick="ux_clr_inline_overlay_color();" style="vertical-align: middle;margin-left: 5px;"
-												                         src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+												                         src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 													                <div id="clr_inline_overlay_color"></div>
 													            </div>
 													        </div>
@@ -1064,7 +1064,7 @@ else
 													                   style="background-color: <?php echo $lightbox_overlay_bg_color; ?>;"
 													                   value="<?php echo $lightbox_overlay_bg_color; ?>"/>
 													                   <img onclick="ux_clr_overlay_bg_color();"  style="vertical-align: middle;margin-left: 5px;"
-													                    src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+													                    src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 													            	<div id="clr_overlay_bg_color"></div>
 													            </div>
 													        </div>
@@ -1290,7 +1290,7 @@ else
 										                               onclick="ux_clr_button_color();" style="background-color: <?php echo $button_color; ?>;"
 										                               value="<?php echo $button_color; ?>"/>
 										                               <img onclick="ux_clr_button_color();" style="vertical-align: middle;margin-left: 5px;"
-										                                 src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+										                                 src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 																	<div id="clr_button_color"></div>
 											                    </div>
 											                </div>
@@ -1304,7 +1304,7 @@ else
 										                               style="background-color: <?php echo $button_text_color; ?>;"
 										                               value="<?php echo $button_text_color; ?>"/>
 										                               <img onclick="ux_clr_button_text_color();" style="vertical-align: middle;margin-left: 5px;"
-											                            src="<?php echo GALLERY_BK_PLUGIN_URL . "/assets/images/color.png" ?>"/>
+											                            src="<?php echo plugins_url("/assets/images/color.png",dirname(__FILE__)) ?>"/>
 											                        <div id="clr_button_text_color"></div>
 											                    </div>
 											                </div>

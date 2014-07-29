@@ -12,7 +12,7 @@ function create_global_menus_for_gallery_bank()
 	
 	switch ($role) {
 		case "administrator":
-			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png");
+			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", plugins_url("/assets/images/icon.png" , dirname(__FILE__)));
 			add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
 			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
@@ -25,7 +25,7 @@ function create_global_menus_for_gallery_bank()
 			add_submenu_page("", "", "", "read", "images_sorting", "images_sorting");
 		break;
 		case "editor":
-			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png");
+			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", plugins_url("/assets/images/icon.png" , dirname(__FILE__)));
 			add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
 			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
@@ -38,7 +38,7 @@ function create_global_menus_for_gallery_bank()
 			add_submenu_page("", "", "", "read", "images_sorting", "images_sorting");
 		break;
 		case "author":
-			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", GALLERY_BK_PLUGIN_URL . "/assets/images/icon.png");
+			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", plugins_url("/assets/images/icon.png" , dirname(__FILE__)));
 			add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
 			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
@@ -193,23 +193,23 @@ function backend_scripts_calls()
     wp_enqueue_script("jquery-ui-sortable");
     wp_enqueue_script("jquery-ui-dialog");
     wp_enqueue_script("farbtastic");
-    wp_enqueue_script("imgLiquid.js", GALLERY_BK_PLUGIN_URL . "/assets/js/imgLiquid.js");
-    wp_enqueue_script("jquery.dataTables.min.js", GALLERY_BK_PLUGIN_URL . "/assets/js/jquery.dataTables.min.js");
-    wp_enqueue_script("jquery.validate.min.js", GALLERY_BK_PLUGIN_URL . "/assets/js/jquery.validate.min.js");
-    wp_enqueue_script("plupload.full.min.js", GALLERY_BK_PLUGIN_URL . "/assets/js/plupload.full.min.js");
-    wp_enqueue_script("jquery.plupload.queue.js", GALLERY_BK_PLUGIN_URL . "/assets/js/jquery.plupload.queue.js");
-    wp_enqueue_script("jquery.Tooltip.js", GALLERY_BK_PLUGIN_URL . "/assets/js/jquery.Tooltip.js");
-    wp_enqueue_script("bootstrap.js", GALLERY_BK_PLUGIN_URL . "/assets/js/bootstrap.js");
-	wp_enqueue_script("jquery.prettyPhoto.js", GALLERY_BK_PLUGIN_URL . "/assets/js/jquery.prettyPhoto.js");
+    wp_enqueue_script("imgLiquid.js", plugins_url("/assets/js/imgLiquid.js",dirname(__FILE__)));
+    wp_enqueue_script("jquery.dataTables.min.js", plugins_url("/assets/js/jquery.dataTables.min.js",dirname(__FILE__)));
+    wp_enqueue_script("jquery.validate.min.js", plugins_url("/assets/js/jquery.validate.min.js",dirname(__FILE__)));
+    wp_enqueue_script("plupload.full.min.js", plugins_url("/assets/js/plupload.full.min.js",dirname(__FILE__)));
+    wp_enqueue_script("jquery.plupload.queue.js", plugins_url("/assets/js/jquery.plupload.queue.js",dirname(__FILE__)));
+    wp_enqueue_script("jquery.Tooltip.js", plugins_url("/assets/js/jquery.Tooltip.js",dirname(__FILE__)));
+    wp_enqueue_script("bootstrap.js", plugins_url("/assets/js/bootstrap.js",dirname(__FILE__)));
+	wp_enqueue_script("jquery.prettyPhoto.js", plugins_url("/assets/js/jquery.prettyPhoto.js",dirname(__FILE__)));
 }
 
 function frontend_plugin_js_scripts_gallery_bank()
 {
     wp_enqueue_script("jquery");
-    wp_enqueue_script("jquery.masonry.min.js", GALLERY_BK_PLUGIN_URL . "/assets/js/jquery.masonry.min.js");
-    wp_enqueue_script("isotope.pkgd.js", GALLERY_BK_PLUGIN_URL . "/assets/js/isotope.pkgd.js");
-    wp_enqueue_script("imgLiquid.js", GALLERY_BK_PLUGIN_URL . "/assets/js/imgLiquid.js");
-	wp_enqueue_script("jquery.prettyPhoto.js", GALLERY_BK_PLUGIN_URL . "/assets/js/jquery.prettyPhoto.js");
+    wp_enqueue_script("jquery.masonry.min.js", plugins_url("/assets/js/jquery.masonry.min.js",dirname(__FILE__)));
+    wp_enqueue_script("isotope.pkgd.js", plugins_url("/assets/js/isotope.pkgd.js",dirname(__FILE__)));
+    wp_enqueue_script("imgLiquid.js", plugins_url("/assets/js/imgLiquid.js",dirname(__FILE__)));
+	wp_enqueue_script("jquery.prettyPhoto.js", plugins_url("/assets/js/jquery.prettyPhoto.js",dirname(__FILE__)));
 }
 
 //--------------------------------------------------------------------------------------------------------------//
@@ -218,20 +218,20 @@ function backend_css_calls()
 {
     wp_enqueue_style("farbtastic");
 	wp_enqueue_style("wp-jquery-ui-dialog");
-    wp_enqueue_style("jquery.plupload.queue.css", GALLERY_BK_PLUGIN_URL . "/assets/css/jquery.plupload.queue.css");
-    wp_enqueue_style("stylesheet.css", GALLERY_BK_PLUGIN_URL . "/assets/css/stylesheet.css");
-    wp_enqueue_style("font-awesome.css", GALLERY_BK_PLUGIN_URL . "/assets/css/font-awesome/css/font-awesome.css");
-    wp_enqueue_style("system-message.css", GALLERY_BK_PLUGIN_URL . "/assets/css/system-message.css");
-    wp_enqueue_style("gallery-bank.css", GALLERY_BK_PLUGIN_URL . "/assets/css/gallery-bank.css");
-	wp_enqueue_style("prettyPhoto.css", GALLERY_BK_PLUGIN_URL . "/assets/css/prettyPhoto.css");
-	wp_enqueue_style("css3_grid_style.css", GALLERY_BK_PLUGIN_URL . "/assets/css/css3_grid_style.css");
-	wp_enqueue_style("responsive.css", GALLERY_BK_PLUGIN_URL . "/assets/css/responsive.css");
+    wp_enqueue_style("jquery.plupload.queue.css", plugins_url("/assets/css/jquery.plupload.queue.css",dirname(__FILE__)));
+    wp_enqueue_style("stylesheet.css", plugins_url("/assets/css/stylesheet.css",dirname(__FILE__)));
+    wp_enqueue_style("font-awesome.css", plugins_url("/assets/css/font-awesome/css/font-awesome.css",dirname(__FILE__)));
+    wp_enqueue_style("system-message.css", plugins_url("/assets/css/system-message.css",dirname(__FILE__)));
+    wp_enqueue_style("gallery-bank.css", plugins_url("/assets/css/gallery-bank.css",dirname(__FILE__)));
+	wp_enqueue_style("prettyPhoto.css", plugins_url("/assets/css/prettyPhoto.css",dirname(__FILE__)));
+	wp_enqueue_style("css3_grid_style.css", plugins_url("/assets/css/css3_grid_style.css",dirname(__FILE__)));
+	wp_enqueue_style("responsive.css", plugins_url("/assets/css/responsive.css",dirname(__FILE__)));
 }
 
 function frontend_plugin_css_scripts_gallery_bank()
 {
-    wp_enqueue_style("gallery-bank.css", GALLERY_BK_PLUGIN_URL . "/assets/css/gallery-bank.css");
-	wp_enqueue_style("prettyPhoto.css", GALLERY_BK_PLUGIN_URL . "/assets/css/prettyPhoto.css");
+    wp_enqueue_style("gallery-bank.css", plugins_url("/assets/css/gallery-bank.css",dirname(__FILE__)));
+	wp_enqueue_style("prettyPhoto.css", plugins_url("/assets/css/prettyPhoto.css",dirname(__FILE__)));
 }
 
 //--------------------------------------------------------------------------------------------------------------//
