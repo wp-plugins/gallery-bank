@@ -1,7 +1,7 @@
 === WP Gallery Bank - Best Gallery Albums Plugin ===
 Contributors: contact-banker,Gallery-Bank
 Donate link : http://tech-banker.com/gallery-bank/
-Tags: admin, advanced form, AJAX, best contact form plugin, buddypress, category, comment, comments, contact, contact form, contact form 7, contact form builder, contact form plugin, contact forms, contact me, contact us, contacts, content, easy contact form, easy contact plugin, email, Facebook, feed, feedback, feedback form, form, form builder, forms, gallery, google, image, images, javascript, jquery, link, links, login, media, page, pages, plugin, Post, posts, request, rss, seo, shortcode, sidebar, stats, text, web form, widget, wordpress
+Tags: admin, AJAX, album, albums, best gallery, best gallery plugin, best portfolio plugin, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, galerie, Galleria, gallery, gallery album, gallery bank, gallery image, Gallery Plugin, gallery wordpress plugin, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image slider, images, lightbox, links, media, modal, multiple pictures, nextgen, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, shortcode, sidebar, slideshow, thumbnail, thumbnails, twitter, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
 Tested up to: 3.9.1
 Stable tag: 3.0.55
