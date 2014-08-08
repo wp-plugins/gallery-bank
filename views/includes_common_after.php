@@ -16,7 +16,7 @@
     function onPictureChanged() 
 	{
 
-		jQuery('.pp_social').append('<div style="margin-left:27px; display:inline-block;"><g:plusone data-action="share" href="'+ encodeURIComponent(location.href.replace(location.hash,"")) +'" width="160px" ></g:plusone></div>');
+		jQuery('.pp_social').append('<div style="margin-left:5px; display:inline-block;"><g:plusone data-action="share" href="'+ encodeURIComponent(location.href.replace(location.hash,"")) +'" width="160px" ></g:plusone></div>');
 
 		jQuery('.pp_social').append("<script type='text/javascript'> \
 		(function() { \
