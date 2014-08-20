@@ -2,10 +2,10 @@
 $gb_lang = array();
 $gb_translated_lang = array();
 
-array_push($gb_lang, "bg_BG", "id_ID", "ja", "ko_KR", "ms_MY", "ro_RO", "sl_SI", "sq_AL", "sr_RS", "zh_CN");
+array_push($gb_lang, "bg_BG", "id_ID", "ja", "ko_KR", "ms_MY", "ro_RO", "sl_SI", "sq_AL", "sr_RS");
 
 array_push($gb_translated_lang, "en_GB", "en_US", "es_ES", "nl_NL", "uk", "sv_SE", "fr_FR", "pt_PT", "pt_BR", "et", "it_IT",
- "de_DE", "fi", "he_IL", "ru_RU", "be_BY", "tr", "th", "ar", "hu_HU", "cs_CZ", "pl_PL", "da_DK", "sk_SK");
+ "de_DE", "fi", "he_IL", "ru_RU", "be_BY", "tr", "th", "ar", "hu_HU", "cs_CZ", "pl_PL", "da_DK", "sk_SK", "zh_CN");
 $language = get_locale();
 $show_banner = get_option("gallery-bank-banner");
 if($show_banner == "")

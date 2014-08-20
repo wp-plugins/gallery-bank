@@ -4,7 +4,7 @@ Donate link : http://tech-banker.com/gallery-bank/
 Tags: admin, AJAX, album, albums, best gallery, best gallery plugin, best portfolio plugin, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, gallery, gallery album, gallery bank, gallery image, Gallery Plugin, gallery wordpress plugin, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image slider, images, lightbox, links, media, modal, multiple pictures, nextgen, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, seo image, shortcode, sidebar, slideshow, thumbnail, thumbnails, twitter, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin
 Requires at least: 3.3
 Tested up to: 3.9.2
-Stable tag: 3.0.58
+Stable tag: 3.0.59
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -499,6 +499,10 @@ is False in shortcode.
 17. Displaying Individual Album with Images.
 
 == Changelog ==
+
+= 3.0.59 = 
+
+* Chinese Language Updated
 
 = 3.0.58 =
 
