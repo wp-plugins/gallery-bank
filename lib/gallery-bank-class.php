@@ -265,7 +265,18 @@ if (isset($_REQUEST["action"])) {
             	$role = $wpdb->prefix . "capabilities";
             	$current_user->role = array_keys($current_user->$role);
             	$role = $current_user->role[0];
-                include_once GALLERY_BK_PLUGIN_DIR . "/lib/upload.php";
+            	
+            	$fileName = esc_attr($_REQUEST["name"]);
+            	$extension = explode(".", $fileName);
+		 		if($extension[1] == "jpg" || $extension[1] == "jpeg" || $extension[1] == "gif" || $extension[1] == "png" || $extension[1] == "JPG" || $extension[1] == "JPEG" || $extension[1] == "GIF" || $extension[1] == "PNG")
+		 		{
+            		include_once GALLERY_BK_PLUGIN_DIR . "/lib/upload.php";
+            	}
+                else 
+                {
+                	die();
+                }
+                
             }
             break;
     }

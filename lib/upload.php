@@ -74,7 +74,7 @@ else
 		} else {
 			$fileName = uniqid("file_");
 		}
-
+		
 		$filePath = $targetDir . DIRECTORY_SEPARATOR . $fileName;
 
 		// Chunking might be enabled
@@ -138,9 +138,9 @@ else
 			// Strip the temp .part suffix off
 			rename("{$filePath}.part", $filePath);
 		}
-
-		// Return Success JSON-RPC response
 		die('{"jsonrpc" : "2.0", "result" : null, "id" : "id"}');
+		// Return Success JSON-RPC response
+		
 	}
 }
 ?>
