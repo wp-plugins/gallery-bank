@@ -547,6 +547,11 @@
 		        },
 		        flash_swf_url: url + "Moxie.swf",
 		        silverlight_xap_url: url + "Moxie.xap",
+		        preinit : {
+		            UploadFile: function(up, file) {
+			            up.setOption('url', ajaxurl + "?file_type="+file.type+"&file_name="+file.name+"&param=upload_pic&action=upload_library");
+		            }
+		        },
 		        init: {
 		            FileUploaded: function (up, file) {
 		                
