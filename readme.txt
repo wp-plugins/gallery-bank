@@ -11,7 +11,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
 
 == Description ==
-### Gallery Bank - Best Gallery Albums Plugin](http://tech-banker.com/gallery-bank/)    
+### [Gallery Bank - Best Gallery Albums Plugin](http://tech-banker.com/gallery-bank/)    
 
 Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gallery albums with images, videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts, Special Effects  & Animation Effects. 
 
