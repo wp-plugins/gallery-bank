@@ -11,13 +11,14 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
 
 == Description ==
+
 ### [Gallery Bank - Best Gallery Albums Plugin](http://tech-banker.com/gallery-bank/)    
 
 Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gallery albums with images, videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts, Special Effects  & Animation Effects. 
 
 ###IMPORTANT: If you think you found a bug in Gallery Bank or have any problem or question concerning Gallery Bank, do not hesitate to contact us at [support@tech-banker.com](mailto:support@tech-banker.com).  
 
-Gallery Bank has become the **Best Plugin** in the world for WordPress sites to display images. It has been designed to provide easiness and simplicity to the end user. It is a very simple but fully loaded with 200+ features(**Premium Version**) Plugin.
+**Gallery Bank** has become the **Best Plugin** in the world for WordPress sites to display images. It has been designed to provide easiness and simplicity to the end user. It is a very simple but fully loaded with 200+ features(**Premium Version**) Plugin.
 
 > #### **Live Demos**
 
@@ -52,7 +53,7 @@ It provides a powerful engine for uploading and managing galleries of images & v
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***September 19, 2014: We're happy to announce that Gallery Bank reached 190,000+ plugin downloads in only 1.5 year. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***September 19, 2014: We're happy to announce that Gallery Bank reached 190,100+ plugin downloads in only 1.5 year. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
