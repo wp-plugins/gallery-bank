@@ -70,106 +70,105 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 ### Key Features 
 
-* Multi-Lingual. Available now in 33 Languages.
-* Responsive Gallery
-* Shortcode Wizard in your Page/Post.
-* Unlimited Albums Creation(**Premium Versions**). With Free Standard Version, you can only create upto 3 albums.
-* Unlimited Images in each Album.
-* Edit Albums and add/edite/delete images.
-* Bulk Upload of Images
-* Url Redirect to redirect on click of an image.
-* Upload Videos from Youtube,Vimeo, etc.
-* Set Cover Image
-* Compact Albums
-* Extended Albums
-* Basic Thumbnail Gallery
-* Grid Album Format
-* Masonry Gallery Format
-* List Album Format
-* Filmstrip Gallery Format(**Premium Versions**)
-* Slideshow Gallery(**Premium Versions**)
-* Special Effects on Images & Albums(**Premium Versions**)
-* Animation Effects on Images & Albums(**Premium Versions**)
-* Bulk Deletion of Images(**Premium Versions**)
-* Sorting of Images(**Premium Versions**)
-* Sorting of Albums(**Premium Versions**)
-* Social Sharing(**Premium Versions**)
-* Commenting on Images(**Premium Versions**)
-* Widgets(**Premium Versions**)
-* Tags for each Image to make Filerable Gallery Album(**Premium Versions**)
-* Bulk Deletion of Albums(**Premium Versions**)
-* Purging Albums and Images(**Premium Versions**)
-* Restore Factory Settings(**Premium Versions**)
-* Global Settings(**Premium Versions**)
-* Thumbnail Settings(**Premium Versions**)
-* Album Settings(**Premium Versions**)
-* Lightbox Settings(**Premium Versions**)
-* Different Lightboxes like FooBox,ColorBox,FancyBox2,Lightbox2,Custom GB Lightbox,Pretty Photo(**Premium Versions**)
-* Pagination(**Premium Versions**)
-* Filter Settings(**Premium Versions**)
-* Roles & Capabilities(**Premium Versions**)
-* Front End Layout Settings(**Premium Versions**)
+* <strong>Multi-Lingual. Available now in 33 Languages.</strong>
+* <strong>Responsive Gallery</strong>
+* <strong>Shortcode Wizard in your Page/Post.</strong>
+* <strong>Unlimited Albums Creation(**Premium Versions**). With Free Standard Version, you can only create upto 3 albums.</strong>
+* <strong>Unlimited Images in each Album.</strong>
+* <strong>Edit Albums and add/edite/delete images.</strong>
+* <strong>Bulk Upload of Images</strong>
+* <strong>Url Redirect to redirect on click of an image.</strong>
+* <strong>Upload Videos from Youtube,Vimeo, etc.</strong>
+* <strong>Set Cover Image</strong>
+* <strong>Compact Albums</strong>
+* <strong>Extended Albums</strong>
+* <strong>Basic Thumbnail Gallery</strong>
+* <strong>Grid Album Format</strong>
+* <strong>Masonry Gallery Format</strong>
+* <strong>List Album Format</strong>
+* <strong>Filmstrip Gallery Format(**Premium Versions**)
+* <strong>Slideshow Gallery(**Premium Versions**)</strong>
+* <strong>Special Effects on Images & Albums(**Premium Versions**)</strong>
+* <strong>Animation Effects on Images & Albums(**Premium Versions**)</strong>
+* <strong>Bulk Deletion of Images(**Premium Versions**)
+* <strong>Sorting of Images(**Premium Versions**)</strong>
+* <strong>Sorting of Albums(**Premium Versions**)</strong>
+* <strong>Social Sharing(**Premium Versions**)</strong>
+* <strong>Commenting on Images(**Premium Versions**)</strong>
+* <strong>Widgets(**Premium Versions**)</strong>
+* <strong>Tags for each Image to make Filerable Gallery Album(**Premium Versions**)</strong>
+* <strong>Bulk Deletion of Albums(**Premium Versions**)</strong>
+* <strong>Purging Albums and Images(**Premium Versions**)</strong>
+* <strong>Restore Factory Settings(**Premium Versions**)</strong>
+* <strong>Global Settings(**Premium Versions**)</strong>
+* <strong>Thumbnail Settings(**Premium Versions**)</strong>
+* <strong>Album Settings(**Premium Versions**)</strong>
+* <strong>Lightbox Settings(**Premium Versions**)</strong>
+* <strong>Different Lightboxes like FooBox,ColorBox,FancyBox2,Lightbox2,Custom GB Lightbox,Pretty Photo(**Premium Versions**)</strong>
+* <strong>Pagination(**Premium Versions**)</strong>
+* <strong>Filter Settings(**Premium Versions**)</strong>
+* <strong>Roles & Capabilities(**Premium Versions**)</strong>
+* <strong>Front End Layout Settings(**Premium Versions**)</strong>
 
 > #### **Upgrade to Gallery Bank Premium Versions**
 > Take your media to the next level with [Gallery Bank Premium Versions](http://tech-banker.com/gallery-bank/), which gives you 200+ features such as:
 
-> * Unlimited Albums Creation
-> * Filmstrip Gallery Format
-> * Slideshow Gallery
-> * Special Effects on Images & Albums
-> * Animation Effects on Images & Albums
-> * Bulk Deletion of Images
-> * Fully CSS3 compliant with text shadowing, box shadowing, gradients, etc
-> * Sorting of Images
-> * Sorting of Albums
-> * Social Sharing
-> * Commenting on Images
-> * Widgets
-> * Tags for each Image to make Filerable Gallery Album
-> * Bulk Deletion of Albums
-> * Purging Albums and Images
-> * Restore Factory Settings
-> * Global Settings
-> * Thumbnail Settings
-> * Album Settings
-> * Lightbox Settings
-> * Different Lightboxes like FooBox,ColorBox,FancyBox2,Lightbox2,Custom GB Lightbox,Pretty Photo(**Premium Versions**)
-> * Pagination
-> * Filter Settings
-> * Roles & Capabilities
-> * Front End Layout Settings
-> * See your media on different theme and more.
-> * Powerfull control panel and Shortcode Manager make getting started super easy
-> * 24/7 Technical Support
+> * <strong>Unlimited Albums Creation</strong>
+> * <strong>Filmstrip Gallery Format</strong>
+> * <strong>Slideshow Gallery</strong>
+> * <strong>Special Effects on Images & Albums</strong>
+> * <strong>Animation Effects on Images & Albums</strong>
+> * <strong>Bulk Deletion of Images</strong>
+> * <strong>Fully CSS3 compliant with text shadowing, box shadowing, gradients, etc</strong>
+> * <strong>Sorting of Images</strong>
+> * <strong>Sorting of Albums</strong>
+> * <strong>Social Sharing</strong>
+> * <strong>Commenting on Images</strong>
+> * <strong>Widgets</strong>
+> * <strong>Tags for each Image to make Filerable Gallery Album</strong>
+> * <strong>Bulk Deletion of Albums</strong>
+> * <strong>Purging Albums and Images</strong>
+> * <strong>Restore Factory Settings</strong>
+> * <strong>Global Settings</strong>
+> * <strong>Thumbnail Settings</strong>
+> * <strong>Album Settings</strong>
+> * <strong>Lightbox Settings</strong>
+> * <strong>Different Lightboxes like FooBox,ColorBox,FancyBox2,Lightbox2,Custom GB Lightbox,Pretty Photo(**Premium Versions**)</strong>
+> * <strong>Pagination</strong>
+> * <strong>Filter Settings</strong>
+> * <strong>Roles & Capabilities</strong>
+> * <strong>Front End Layout Settings</strong>
+> * <strong>See your media on different theme and more.</strong>
+> * <strong>Powerfull control panel and Shortcode Manager make getting started super easy</strong>
+> * <strong>24/7 Technical Support</strong>
 
 Visit [here](http://tech-banker.com/gallery-bank) to upgrade to Pro Version now.
 
-= Add New Albums =
+### Add New Albums
 
 You can add upto 3 albums with unlimited images in your Gallery Bank. After that you need to upgrade to one of the premium versions for unlimited access with different features available according to different packages of Gallery Bank.
 
-= Editing Albums = 
+### Editing Albums
 In albums, editing can be done easily. You can edit or add more images/ pictures in your albums. You can change title/description of an album as well as title/description of each image uploaded in a particular album.
 
-= Sorting of Images in an Album = 
+### Sorting of Images in an Album = 
 Sorting of Images can be done in your albums. With this feature, you can change the order of pictures according to your requirement/choice.
 
-= Sorting of Albums = 
+### Sorting of Albums
 Sorting of Albums can be done in your albums. With this feature, you can re-arrange your order of albums to display on your website.
 
-= Album Preview =
+###  Album Preview
 In album preview you can view the pictures/images on your back-end before implementing the shortcodes on your Pages/Posts.
 
-= Cover Image = 
+### Cover Image
 You can easily set the cover image in your album. This cover image would be used to display on your Pages/Post when using the Album shortcodes.
 
-= Short Codes = 
+### Short Codes
 There is a Shortcode Editor availble in your Page/Post where you want to implement the Gallery Bank Shortcode. You just need to go to your Page/Post where you want to implement it and then above your Text Editor/ WP Editor, there would be a button called Gallery Bank. Once you click on it, you can generate your shortcode easily and quickly.
 
-= Global Settings =
+### Global Settings
 
 With Global Settings, you can define different settings for Thumbnails, Albums, Lightboxes, Filters, Pagination and Slideshows.
-
 
 ### Gallery Bank is now available in the following Languages
 
@@ -208,19 +207,19 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 * Thai (th)
 * Ukrainian (uk)
 
-= Technical support =
+### Gallery Bank Technical support
 
 * Please email all your queries/issues at support@tech-banker.com or use
 * [Forum for Gallery Bank](http://tech-banker.com/forum/gallery-bank-support/), feel free to ask  your queries.
 
 == Installation ==
 
-### Minimum requirements.  
+### Minimum requirements for Gallery Bank.  
 *   Wordpress 3.3+  
 *   PHP 5.x  
 *   MySQL 5.x  
 
-### Performing a new installation  
+### Performing a new installation for Gallery Bank.
 
 After downloading the ZIP file,  
 
@@ -238,7 +237,7 @@ If any problem occurs, please contact us at [support@tech-banker.com](mailto:sup
 
 == Frequently Asked Questions ==
 
-= How to add New Album in Gallery Bank? =
+### How to add New Album in Gallery Bank?
 
 In order to Add New Album in your Gallery Bank, locate Gallery Bank Menu on the left side of
 WordPress Dashboard Menus and then click on Add New Album link.
@@ -260,7 +259,7 @@ Once you click on the button from any of the above mentioned methods, this page 
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add-new-album-explanation.png)
 
 
-= How to Edit an Album? =
+### How to Edit an Album?
 
 In order to Edit an Album, you need to go to your Gallery Bank Dashboard Page and then
 click on Edit Album Button located at the right side of each album which you wish to edit.
@@ -272,7 +271,7 @@ Once you Click on the button, this page will open.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/Edit_img-938x1024.png)
 
 
-= How to Preview an Album? =
+### How to Preview an Album?
 
 In order to Preview your Album, you need to go to your Gallery Bank Dashboard Page
 and then click on Preview Album button at the right side of each album.
@@ -284,7 +283,7 @@ Once you click on the button, this page will open
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/preview21-1024x487.png)
 
 
-= How to Delete an Album? =
+### How to Delete an Album?
 
 You can Delete an Album if you wish to. In order to perform this action, you need to go to
 your Gallery Bank Dashboard Page and then click on Delete Album button at the right
@@ -300,7 +299,7 @@ Once you click on the button, a confirmation message will appear stating
 Click on "OK" to proceed and your Album would be deleted.
 
 
-= How to set Short code for Masonry Gallery? =
+### How to set Short code for Masonry Gallery?
 
 In order to set Shortcode for Masonry Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -323,7 +322,7 @@ option is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry4-1024x657.png)
 
 
-= How to set Short code for Thumbnail Gallery? =
+### How to set Short code for Thumbnail Gallery?
 
 In order to set Shortcode for Thumbnail Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -346,7 +345,7 @@ is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/thmbnail2-1024x450.png)
 
 
-= How to set Short code for Grid Album using Masonry Gallery? =
+### How to set Short code for Grid Album using Masonry Gallery?
 
 In order to set Shortcode for Grid Album with Masonry Gallery, you need to follow these steps :
 1) Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -369,7 +368,7 @@ is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/grid_masonry2-1024x573.png)
 
 
-= How to set Short code for Grid Album using Thumbnail Gallery? =
+### How to set Short code for Grid Album using Thumbnail Gallery?
 
 In order to set Shortcode for Grid Album with Thumbnail Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -392,7 +391,7 @@ option is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/grid_thumbnail2-1024x574.png)
 
 
-= How to set Short code for List Album using Masonry Gallery? =
+### How to set Short code for List Album using Masonry Gallery?
 
 In order to set Shortcode for List Album with Masonry Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -410,7 +409,7 @@ Once you click on the Pages, there will be two options. Click on Add New button 
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry_list_1.png)
 
 
-= How to set Short code for List Album using Thumbnail Gallery? =
+### How to set Short code for List Album using Thumbnail Gallery?
 
 In order to set Shortcode for List Album with Thumbnail Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -433,7 +432,7 @@ is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/thumbnail_list_2-1024x462.png)
 
 
-= How to set Short code for Individual Album using Masonry Gallery? =
+### How to set Short code for Individual Album using Masonry Gallery?
 
 In order to set Shortcode for Individual Album with Masonry Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -456,7 +455,7 @@ is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/individual_masonry_2-1024x559.png)
 
 
-= How to set Short code for Individual Album using Thumbnail Gallery? =
+### How to set Short code for Individual Album using Thumbnail Gallery?
 
 In order to set Shortcode for Individual Album with Thumbnail Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -500,6 +499,12 @@ is False in shortcode.
 17. Displaying Individual Album with Images.
 
 == Changelog ==
+
+= 3.0.66 =
+
+* Compatibility Test with 4.0
+* Few Bugs Fixed
+* Banner Updated
 
 = 3.0.65 =
 
