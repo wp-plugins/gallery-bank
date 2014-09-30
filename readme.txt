@@ -4,7 +4,7 @@ Donate link : http://tech-banker.com/gallery-bank/
 Tags: admin, AJAX, album, albums, best gallery, best gallery plugin, best portfolio, best portfolio plugin, bilder, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, flash, foto, fotoalbum, galerie, galerij, Galleria, gallery, gallery album, gallery bank, gallery image, Gallery Plugin, gallery wordpress plugin, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image rotate, image slider, image slideshow, images, jquery, jquery gallery, jquery slider, jquery slideshow, lightbox, links, media, modal, multiple pictures, nextgen, nextgen gallery, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio wordpress plugin, Post, posts, responsive gallery, responsive slider, responsive slideshow, seo, seo image, shortcode, sidebar, slideshow, thumbnail, thumbnails, twitter, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin, wp slider
 Requires at least: 3.3
 Tested up to: 4.0
-Stable tag: 3.0.67
+Stable tag: 3.0.68
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -53,7 +53,7 @@ It provides a powerful engine for uploading and managing galleries of images & v
 
 Gallery Bank is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
 
-***September 29, 2014: We're happy to announce that Gallery Bank reached 194,000+ plugin downloads in only 1.5 year. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
+***September 30, 2014: We're happy to announce that Gallery Bank reached 194,700+ plugin downloads in only 1.5 year. We frequently receive positive feedback from people using our Gallery Bank Plugin for WordPress. Thanks so much for your support!***
 
 <a href="http://tech-banker.com/forum/gallery-bank-support/" target="_blank">Support Desk - feel free to ask your Queries</a>
 
@@ -70,7 +70,7 @@ Gallery Bank is designed to adapt each portfolio to any situation and can be eas
 
 ### Key Features 
 
-* <strong>Multi-Lingual. Available now in 33 Languages.</strong>
+* <strong>Multi-Lingual. Available now in 36 Languages.</strong>
 * <strong>Responsive Gallery</strong>
 * <strong>Shortcode Wizard in your Page/Post.</strong>
 * <strong>Unlimited Albums Creation(**Premium Versions**). With Free Standard Version, you can only create upto 3 albums.</strong>
@@ -178,6 +178,7 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 * Brazilian Portuguese (pt_BR)
 * Bulgarian (bg_BG)
 * Chinese (zh_CN)
+* Croation (hr)
 * Czech (cs_CZ)
 * Danish (da_DK)
 * Dutch (nl_NL)
@@ -189,12 +190,12 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 * Greek (el_GR)
 * Hebrew (he_IL)
 * Hungarian (hu_HU)
-* Korean (ko_KR)
-* Malay Malaysia (ms_MY)
 * Indonesian (id_ID)
 * Italian (it_IT)
 * Japanese (ja)
-* Korean (hu_HU)
+* Korean (ko_KR)
+* Malay Malaysia (ms_MY)
+* Norwegian (nb)
 * Polish (pl_PL)
 * Portuguese (pt_PT)
 * Romanian (ro_RO)
@@ -500,6 +501,12 @@ is False in shortcode.
 17. Displaying Individual Album with Images.
 
 == Changelog ==
+
+= 3.0.68 =
+
+* Added New Language - Croatian
+* Added New Language - Norwegian
+* Banner Updated
 
 = 3.0.67 =
 
