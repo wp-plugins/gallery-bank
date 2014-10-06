@@ -28,11 +28,29 @@
 			    <select id="add_album_id" class="layout-span9">
 			        <option value=""> <?php _e("Select an Album", gallery_bank); ?>  </option>
 			        <?php
-			        global $wpdb;
-			        $albums = $wpdb->get_results
-		            (
-	                    "SELECT * FROM ".gallery_bank_albums()." order by album_order asc "
-		            );
+			       global $wpdb,$current_user;
+			        
+			        $role = $wpdb->prefix . "capabilities";
+			        $current_user->role = array_keys($current_user->$role);
+			        $role = $current_user->role[0];
+			        if($role == "administrator")
+			        {
+			        	$albums = $wpdb->get_results
+			        	(
+			        		"SELECT * FROM ".gallery_bank_albums()." order by album_order asc "
+			        	);
+			        }
+			        else 
+			        {
+			        	$albums = $wpdb->get_results
+			        	(
+		        			$wpdb->prepare
+		        			(
+	        					"SELECT * FROM ".gallery_bank_albums()." where author = %s order by album_order asc ",
+	        					$current_user->display_name
+		        			)
+			        	);
+			        }
 			        for ($flag = 0; $flag < count($albums); $flag++) {
 			            ?>
 			            <option value="<?php echo intval($albums[$flag]->album_id); ?>"><?php echo esc_html($albums[$flag]->album_name) ?></option>
