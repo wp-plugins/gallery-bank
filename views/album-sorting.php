@@ -26,7 +26,7 @@ else
 	}
 	
 	if (isset($_REQUEST["order_id"])) {
-	    switch ($_REQUEST["order_id"]) {
+	    switch (esc_attr($_REQUEST["order_id"])) {
 	        case "unsort":
 	            $album = $wpdb->get_results
 	            (
@@ -75,6 +75,8 @@ else
 	(
 		"SELECT * FROM " . gallery_bank_settings()
 	);
+if(isset($album))
+{
 	if (count($album_css) != 0) 
 	{
 	    $setting_keys = array();
@@ -255,6 +257,9 @@ else
 			</div>
 		</div>
 	</form>
+<?php 
+}
+?>
 	<script type="text/javascript">
 	    jQuery(".imgLiquidFill").imgLiquid({fill: true});
 	    jQuery(document).ready(function () {

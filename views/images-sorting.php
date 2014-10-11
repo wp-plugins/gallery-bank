@@ -22,7 +22,7 @@
 		$album_id = intval($_REQUEST["album_id"]);
 		$img_in_row = intval($_REQUEST["row"]);
 		if (isset($_REQUEST["order_id"])) {
-		    switch ($_REQUEST["order_id"]) {
+		    switch (esc_attr($_REQUEST["order_id"])) {
 		        case "unsort":
 		            $pics_order = $wpdb->get_results
 		                (
@@ -117,6 +117,8 @@
 		(
 			"SELECT * FROM " . gallery_bank_settings()
 		);
+	if(isset($pics_order))
+	{
 		if (count($album_css) != 0) 
 		{
 		    $setting_keys = array();
@@ -288,6 +290,9 @@
 				</div>
 			</div>
 		</form>
+	<?php 
+	}
+	?>
 		<script type="text/javascript">
 		    jQuery(document).ready(function () {
 		        jQuery(".sort").sortable
