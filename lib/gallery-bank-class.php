@@ -18,7 +18,9 @@ function create_global_menus_for_gallery_bank()
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
 			add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
 			add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
-			add_submenu_page("gallery_bank", "Purchase Pro Version", __("Purchase Pro Version", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
+			add_submenu_page("gallery_bank", "Recommendations", __("Recommendations", gallery_bank), "read", "gallery_bank_recommended_plugins", "gallery_bank_recommended_plugins");
+			add_submenu_page("gallery_bank", "Premium Editions", __("Premium Editions", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
+			add_submenu_page("gallery_bank", " Our Other Services ", __("Our Other Services", gallery_bank), "read", "gallery_bank_other_services", "gallery_bank_other_services");
 			add_submenu_page("", "", "", "read", "view_album", "view_album");
 			add_submenu_page("", "", "", "read", "album_preview", "album_preview");
 			add_submenu_page("", "", "", "read", "save_album", "save_album");
@@ -31,7 +33,9 @@ function create_global_menus_for_gallery_bank()
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
 			add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
 			add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
-			add_submenu_page("gallery_bank", "Purchase Pro Version", __("Purchase Pro Version", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
+			add_submenu_page("gallery_bank", "Recommendations", __("Recommendations", gallery_bank), "read", "gallery_bank_recommended_plugins", "gallery_bank_recommended_plugins");
+			add_submenu_page("gallery_bank", "Premium Editions", __("Premium Editions", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
+			add_submenu_page("gallery_bank", " Our Other Services ", __("Our Other Services", gallery_bank), "read", "gallery_bank_other_services", "gallery_bank_other_services");
 			add_submenu_page("", "", "", "read", "view_album", "view_album");
 			add_submenu_page("", "", "", "read", "album_preview", "album_preview");
 			add_submenu_page("", "", "", "read", "save_album", "save_album");
@@ -44,7 +48,9 @@ function create_global_menus_for_gallery_bank()
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
 			add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
 			add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
-			add_submenu_page("gallery_bank", "Purchase Pro Version", __("Purchase Pro Version", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
+			add_submenu_page("gallery_bank", "Recommendations", __("Recommendations", gallery_bank), "read", "gallery_bank_recommended_plugins", "gallery_bank_recommended_plugins");
+			add_submenu_page("gallery_bank", "Premium Editions", __("Premium Editions", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
+			add_submenu_page("gallery_bank", " Our Other Services ", __("Our Other Services", gallery_bank), "read", "gallery_bank_other_services", "gallery_bank_other_services");
 			add_submenu_page("", "", "", "read", "view_album", "view_album");
 			add_submenu_page("", "", "", "read", "album_preview", "album_preview");
 			add_submenu_page("", "", "", "read", "save_album", "save_album");
@@ -183,6 +189,28 @@ function gallery_bank_purchase()
 	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
     include_once GALLERY_BK_PLUGIN_DIR . "/views/purchase_pro_version.php";
 }
+
+function gallery_bank_recommended_plugins()
+{
+	global $wpdb,$current_user,$user_role_permission;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/recommended-plugins.php";
+}
+
+function gallery_bank_other_services()
+{
+	global $wpdb,$current_user,$user_role_permission;
+	$role = $wpdb->prefix . "capabilities";
+	$current_user->role = array_keys($current_user->$role);
+	$role = $current_user->role[0];
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/other-services.php";
+}
+
+
 //--------------------------------------------------------------------------------------------------------------//
 //CODE FOR CALLING JAVASCRIPT FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------//
@@ -201,6 +229,7 @@ function backend_scripts_calls()
     wp_enqueue_script("jquery.Tooltip.js", plugins_url("/assets/js/jquery.Tooltip.js",dirname(__FILE__)));
     wp_enqueue_script("bootstrap.js", plugins_url("/assets/js/bootstrap.js",dirname(__FILE__)));
 	wp_enqueue_script("jquery.prettyPhoto.js", plugins_url("/assets/js/jquery.prettyPhoto.js",dirname(__FILE__)));
+	wp_enqueue_style("google-fonts-roboto", "//fonts.googleapis.com/css?family=Roboto Condensed:300|Roboto Condensed:300|Roboto Condensed:300|Roboto Condensed:regular|Roboto Condensed:300");
 }
 
 function frontend_plugin_js_scripts_gallery_bank()
@@ -224,7 +253,7 @@ function backend_css_calls()
     wp_enqueue_style("system-message.css", plugins_url("/assets/css/system-message.css",dirname(__FILE__)));
     wp_enqueue_style("gallery-bank.css", plugins_url("/assets/css/gallery-bank.css",dirname(__FILE__)));
 	wp_enqueue_style("prettyPhoto.css", plugins_url("/assets/css/prettyPhoto.css",dirname(__FILE__)));
-	wp_enqueue_style("css3_grid_style.css", plugins_url("/assets/css/css3_grid_style.css",dirname(__FILE__)));
+	wp_enqueue_style("premium-edition.css", plugins_url("/assets/css/premium-edition.css",dirname(__FILE__)));
 	wp_enqueue_style("responsive.css", plugins_url("/assets/css/responsive.css",dirname(__FILE__)));
 }
 
@@ -292,60 +321,6 @@ if (isset($_REQUEST["action"])) {
             }
             break;
     }
-}
-/*****************************************************************************************************************/
-function gallery_bank_enqueue_pointer_script_style()
-{
-    $enqueue_pointer_script_style = false;
-
-    // Get array list of dismissed pointers for current user and convert it to array
-
-    $dismissed_pointers = explode(",", get_user_meta(get_current_user_id(), "dismissed_wp_pointers", true));
-
-    // Check if our pointer is not among dismissed ones
-    if (!in_array("gallery_bank_pointer", $dismissed_pointers)) {
-        $enqueue_pointer_script_style = true;
-
-        // Add footer scripts using callback function
-        add_action("admin_print_footer_scripts", "gallery_bank_pointer_print_scripts");
-    }
-
-    // Enqueue pointer CSS and JS files, if needed
-    if ($enqueue_pointer_script_style) {
-        wp_enqueue_style("wp-pointer");
-        wp_enqueue_script("wp-pointer");
-    }
-}
-
-add_action("admin_enqueue_scripts", "gallery_bank_enqueue_pointer_script_style");
-
-function gallery_bank_pointer_print_scripts()
-{
-
-    $pointer_content = "<h3>Gallery Bank</h3>";
-    $pointer_content .= "<p>If you are using Gallery Bank for the first time, you can view this <a href='http://tech-banker.com/gallery-bank/' target='_blank'>link</a> to know about the features.</p>";
-    ?>
-
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $("#toplevel_page_gallery_bank").pointer({
-                content: "<?php echo $pointer_content; ?>",
-                position: {
-                    edge: "left", // arrow direction
-                    align: "center" // vertical alignment
-                },
-                pointerWidth: 350,
-                close: function () {
-                    $.post(ajaxurl, {
-                        pointer: "gallery_bank_pointer", // pointer ID
-                        action: "dismiss-wp-pointer"
-                    });
-                }
-            }).pointer("open");
-        });
-    </script>
-
-<?php
 }
 
 /**************************************************************************************************/

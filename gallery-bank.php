@@ -4,7 +4,7 @@
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.75
+ Version: 3.0.76
  Author URI: http://tech-banker.com
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -135,13 +135,27 @@ function add_gallery_bank_icon($meta = TRUE)
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_system_status",
 		        "title" => __("System Status", gallery_bank))
 		    );
+		    
+		    $wp_admin_bar->add_menu(array(
+		    		"parent" => "gallery_bank_links",
+		    		"id" => "gallery_bank_recommended_plugins_links",
+		    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_recommended_plugins",
+		    		"title" => __("Recommendations", gallery_bank))
+		    );
 		
 			$wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
 		        "id" => "purchase_pro_version_links",
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_purchase",
-		        "title" => __("Purchase Pro Version", gallery_bank))
+		        "title" => __("Premium Editions", gallery_bank))
 		    );
+			
+			$wp_admin_bar->add_menu(array(
+					"parent" => "gallery_bank_links",
+					"id" => "gallery_bank_other_services_links",
+					"href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_other_services",
+					"title" => __("Our Other Services", gallery_bank))
+			);
 		break;
 		case "editor":
 			$wp_admin_bar->add_menu(array(
@@ -196,11 +210,25 @@ function add_gallery_bank_icon($meta = TRUE)
 		    );
 		
 			$wp_admin_bar->add_menu(array(
+		    		"parent" => "gallery_bank_links",
+		    		"id" => "gallery_bank_recommended_plugins_links",
+		    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_recommended_plugins",
+		    		"title" => __("Recommendations", gallery_bank))
+		    );
+		
+			$wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
 		        "id" => "purchase_pro_version_links",
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_purchase",
-		        "title" => __("Purchase Pro Version", gallery_bank))
+		        "title" => __("Premium Editions", gallery_bank))
 		    );
+			
+			$wp_admin_bar->add_menu(array(
+					"parent" => "gallery_bank_links",
+					"id" => "gallery_bank_other_services_links",
+					"href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_other_services",
+					"title" => __("Our Other Services", gallery_bank))
+			);
 		break;
 		case "author":
 			$wp_admin_bar->add_menu(array(
@@ -255,11 +283,25 @@ function add_gallery_bank_icon($meta = TRUE)
 		    );
 		
 			$wp_admin_bar->add_menu(array(
+		    		"parent" => "gallery_bank_links",
+		    		"id" => "gallery_bank_recommended_plugins_links",
+		    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_recommended_plugins",
+		    		"title" => __("Recommendations", gallery_bank))
+		    );
+		
+			$wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
 		        "id" => "purchase_pro_version_links",
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_purchase",
-		        "title" => __("Purchase Pro Version", gallery_bank))
+		        "title" => __("Premium Editions", gallery_bank))
 		    );
+			
+			$wp_admin_bar->add_menu(array(
+					"parent" => "gallery_bank_links",
+					"id" => "gallery_bank_other_services_links",
+					"href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_other_services",
+					"title" => __("Our Other Services", gallery_bank))
+			);
 		break;
 		case "contributor":
 			break;

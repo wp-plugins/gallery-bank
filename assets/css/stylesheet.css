@@ -3670,3 +3670,284 @@ Popover
 @media (min-width: 980px) {
 
 }
+.framework_tabs 
+{
+ width:100%;
+ display:inline-block;
+}
+.framework_tab-links:after 
+{
+ display:inline-block;
+ clear:both;
+ content:'';
+}
+ 
+.framework_tab-links li 
+{
+ margin:0px 5px;
+ float:left;
+ list-style:none;
+ border :1px solid #e5e5e5;
+ border-bottom:none;
+}
+ 
+.framework_tab-links a 
+{
+ padding:9px 15px;
+ display:inline-block;
+ border-radius:3px 3px 0px 0px;
+ background:#EFEFEF;
+ color:#4c4c4c;
+ transition:all linear 0.15s;
+}
+ 
+.framework_tab-links a:hover 
+{
+ background:#ffffff;
+ text-decoration:none;
+}
+ 
+li.active a, li.active a:hover 
+{
+ background:#fff;
+ color:#4c4c4c;
+}
+ 
+.framework_tab-content 
+{
+ border-radius:3px;
+ border:1px solid #e5e5e5;
+ /*box-shadow:-1px 1px 1px rgba(0,0,0,0.15);*/
+ background:#fff;
+ margin-top: 2%;
+ padding: 10px 10px 10px 10px;
+ margin-left: 4px;
+}
+ 
+.framework_tab 
+{
+ display:none;
+}
+ 
+.framework_tab.active 
+{
+ display:block;
+}
+.framework_background
+{
+	background-color: #ffffff;
+	padding-bottom:20px;
+}
+.framework_txt-align
+{
+	vertical-align: middle !important;
+}
+.plugin-div 
+{
+	float: left;
+	margin: 0 8px 16px;
+	width: 48.5%;
+	width: -webkit-calc(50% - 8px);
+	width: calc(50% - 8px);
+	background-color: #fff;
+	border: 1px solid #dedede;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+.plugin-div:nth-child(odd) 
+{
+	clear: both;
+	margin-left: 0
+}
+
+.plugin-div:nth-child(even) 
+{
+	margin-right: 0
+}
+
+@media screen and (max-width:782px) 
+{
+	.plugin-card {
+		margin-left: 0;
+		margin-right: 0;
+		width: 100%
+	}
+}
+
+.plugin-div-top 
+{
+	position: relative;
+	padding: 20px 20px 10px;
+	min-height:200px;
+}
+.plugin-div-inner-content
+{
+	min-height:150px;
+}
+.plugin-action-buttons, div.action-links 
+{
+	margin: 0
+}
+.plugin-div h4 {
+	margin: 0 0 12px;
+	font-size: 16px;
+	line-height: 1.3
+}
+
+.plugin-div .desc, .plugin-div .name
+ {
+	margin-left: 148px;
+	
+}
+
+.plugin-div .action-links 
+{
+
+}
+.plugin-div-button 
+{
+	margin-left: 5px !important;
+}
+.plugin-div-settings 
+{
+	display:inline-block;
+	margin: 0 0px 16px;
+	width: 48.5%;
+    width: -webkit-calc(50% - 8px);
+    width: calc(50% - 8px);
+	background-color: #FAFAFA;
+	border: 1px solid #dedede;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	vertical-align: top;
+	min-height: 330px;
+}
+
+.plugin-div-settings:nth-child(odd)
+{
+	clear: both;
+	margin-left: 0
+}
+
+.plugin-div-settings:nth-child(even) 
+{
+	margin-right: 0;
+	margin-left: 8px;
+	
+}
+
+
+.plugin-div-settings-top 
+{
+	position: relative;
+	padding: 20px 20px 10px;
+	background-color: #fff;
+}
+
+.plugin-action-buttons, div.action-links 
+{
+	margin: 0
+}
+.plugin-div-settings h4 
+{
+	margin: 0 0 12px;
+	font-size: 16px;
+	line-height: 1.3
+}
+
+.plugin-div-settings .desc, .plugin-div-settings .name 
+{
+	margin-left: 148px;
+	
+}
+
+.plugin-div-settings-button 
+{
+	margin-left: 5px !important;
+
+}
+.plugin-card-bottom_settings 
+{
+	clear: both;
+	padding: 8px 20px;
+	background-color: #fafafa;
+	overflow: hidden;
+	text-align:right;
+	border-top: 1px solid #dedede
+}
+.plugin-icon-custom
+{
+	position: absolute;
+    top: 20px;
+    left: 20px;
+    max-width: 128px;
+    margin: 0px 20px 20px 0px;
+    text-decoration: none;
+    text-align:center;
+}
+.plugin-action-buttons-custom
+{
+	clear: right;
+	margin-left: 2em;
+	margin-bottom: 1em;
+	text-align: right;
+}
+.coustom-nav-tab
+{
+    padding: 6px 10px !important;
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    line-height: 24px !important;
+}
+.custom_icon
+{
+	width:128px;
+	height:128px;
+}
+
+
+.service-div-settings 
+{
+    display:inline-block;
+    margin: 0 0px 16px;
+    width: 48.5%;
+    width: -webkit-calc(50% - 8px);
+    width: calc(50% - 8px);
+    background-color: #FAFAFA;
+    border: 1px solid #dedede;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    vertical-align: top;
+    min-height: 300px;
+}
+
+.service-div-settings:nth-child(odd)
+{
+    clear: both;
+    margin-left: 0
+}
+
+.service-div-settings:nth-child(even) 
+{
+    margin-right: 0;
+    margin-left: 8px;
+    
+}
+.service-div-settings .desc, .service-div-settings .name 
+{
+    
+}
+.service-div-settings-top 
+{
+    position: relative;
+    padding: 5px 20px;
+    background-color: #fff;
+}
+.service-div-inner-content
+{
+    min-height:150px;
+}

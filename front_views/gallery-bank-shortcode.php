@@ -64,9 +64,9 @@
 			    <select id="ux_gallery_format" class="layout-span9" onchange="select_images_in_row();">
 			        <option value=""> <?php _e("Select Gallery Format ", gallery_bank); ?>  </option>
 			        <option value="masonry">Masonry Gallery</option>
-			        <option value="filmstrip" style="color: #FF0000;">Filmstrip Gallery (Available only in Premium Versions)</option>
-			        <option value="blog" style="color: #FF0000;">Blog Style Gallery (Available only in Premium Versions)</option>
-			        <option id="slide_show" value="slideshow" style="color: #FF0000;">Slideshow Gallery (Available only in Premium Versions)</option>
+			        <option value="filmstrip" disabled="disabled" style="color: #FF0000;">Filmstrip Gallery (Available only in Premium Versions)</option>
+			        <option value="blog" disabled="disabled" style="color: #FF0000;">Blog Style Gallery (Available only in Premium Versions)</option>
+			        <option id="slide_show" disabled="disabled" value="slideshow" style="color: #FF0000;">Slideshow Gallery (Available only in Premium Versions)</option>
 			        <option value="thumbnail">Thumbnail Gallery</option>
 			    </select>
 			</div>
