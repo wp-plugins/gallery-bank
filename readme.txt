@@ -31,7 +31,6 @@ Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gall
 > * [Demo Using Masonry Layout with Animation Effects](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-pulse-effect-masonry-layout/)
 > * [Demo Using Masonry Layout with Different Lightboxes](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-foo-box-masonry-layout/)
 > * [Demo Using Masonry Layout with Filters](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-filters-masonry-layout/)
-
 > * [Demo Using Thumbnail Layout in Individual Images](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-thumbnail-layout/)
 > * [Demo Using Thumbnail Layout in Individual Videos](http://tech-banker.com/products/wp-gallery-bank/demo/individual-videos-with-title-using-thumbnail-layout/)
 > * [Demo Using Thumbnail Layout in Individual Album](http://tech-banker.com/products/wp-gallery-bank/demo/individual-album-with-title-thumbnails-layout/)
@@ -42,19 +41,16 @@ Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gall
 > * [Demo Using Thumbnail Layout with Filters](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-with-filters-thumbnail-layout/)
 > * [Demo Using Thumbnail Layout with Pagination](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-with-pagination-thumbnail-layout/)
 > * [Demo Using Thumbnail Layout with Special Effects](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-without-title-and-description-using-lomo-effect-thumbnail-layout/)
-
 > * [Demo Using Filmstrip Layout in Individual Images](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-filmstrip-layout/)
 > * [Demo Using Filmstrip Layout in Individual Videos](http://tech-banker.com/products/wp-gallery-bank/demo/individual-videos-with-title-using-filmstrip-layout/)
 > * [Demo Using Filmstrip Layout in Individual Album](http://tech-banker.com/products/wp-gallery-bank/demo/individual-album-with-title-filmstrip-layout/)
 > * [Demo Using Filmstrip Layout with Albums in Grid Format](http://tech-banker.com/products/wp-gallery-bank/demo/albums-in-grid-format-with-title-filmstrip-layout/)
 > * [Demo Using Filmstrip Layout with Albums in List Format](http://tech-banker.com/products/wp-gallery-bank/demo/albums-in-list-format-with-title-filmstrip-layout/)
 > * [Demo Using Filmstrip Layout with Animation Effects](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-slide-in-down-effect-filmstrip-layout/)
-
 > * [Demo Using Slideshow Layout in Individual Videos](http://tech-banker.com/products/wp-gallery-bank/demo/individual-videos-with-title-using-slideshow-layout/)
 > * [Demo Using Slideshow Layout in Individual Album](http://tech-banker.com/products/wp-gallery-bank/demo/individual-album-with-title-slideshow-layout/)
 > * [Demo Using Slideshow Layout with Albums in Grid Format](http://tech-banker.com/products/wp-gallery-bank/demo/albums-in-grid-format-with-title-slideshow-layout/)
 > * [Demo Using Slideshow Layout with Albums in List Format](http://tech-banker.com/products/wp-gallery-bank/demo/albums-in-list-format-with-title-slideshow-layout/)
-
 > * [Demo Using Blog Style Layout in Individual Images](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-blog-style-layout/)
 > * [Demo Using Blog Style Layout in Individual Videos](http://tech-banker.com/products/wp-gallery-bank/demo/individual-videos-with-title-using-blog-layout/)
 > * [Demo Using Blog Style Layout in Individual Album](http://tech-banker.com/products/wp-gallery-bank/demo/individual-album-with-title-blog-style-layout/)
@@ -62,7 +58,7 @@ Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gall
 > * [Demo Using Blog Style Layout with Albums in List Format](http://tech-banker.com/products/wp-gallery-bank/demo/albums-in-list-format-with-title-blog-style-layout/)
 > * [Demo Using Blog Style Layout with Animation Effects](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-slide-in-right-blog-style-layout/)
 > * [Demo Using Blog Style Layout with Different Lightboxes](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-pretty-photo-blog-style-layout/)
-> * [Demo Using Blog Style Layout with Filters](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-with-filters-blog-style-layout/
+> * [Demo Using Blog Style Layout with Filters](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-with-filters-blog-style-layout/)
 > * [Demo Using Blog Style Layout with Pagination](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-pagination-blog-style-layout/)
 > * [Demo Using Blog Style Layout with Special Effects](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-grayscale-effect-blog-style-layout/)
 
@@ -85,55 +81,55 @@ Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gall
 
 ### Key Features 
 
-**Multi-Lingual. Available now in 36 Languages.**
-**Responsive Gallery**
-**Shortcode Wizard in your Page/Post.**
-**Unlimited Albums Creation(Premium Versions). With Free Standard Version, you can only create upto 3 albums.**
-**Unlimited Images in each Album.**
-**Edit Albums and add/edite/delete images.**
-**Bulk Upload of Images**
-**Url Redirect to redirect on click of an image.**
-**Upload Videos from Youtube,Vimeo, etc.**
-**Set Cover Image**
-**Compact Albums**
-**Extended Albums**
-**Basic Thumbnail Gallery**
-**Grid Album Format**
-**Masonry Gallery Format**
-**List Album Format**
+> * Multi-Lingual. Available now in 36 Languages.
+> * Responsive Gallery
+> * Shortcode Wizard in your Page/Post.
+> * Unlimited Albums Creation(Premium Versions). With Free Standard Version, you can only create upto 3 albums.
+> * Unlimited Images in each Album.
+> * Edit Albums and add/edite/delete images.
+> * Bulk Upload of Images
+> * Url Redirect to redirect on click of an image.
+> * Upload Videos from Youtube,Vimeo, etc.
+> * Set Cover Image
+> * Compact Albums
+> * Extended Albums
+> * Basic Thumbnail Gallery
+> * Grid Album Format
+> * Masonry Gallery Format
+> * List Album Format
 
 > #### **Upgrade to Gallery Bank Premium Versions**
 
 > Take your media to the next level with [Gallery Bank Premium Versions](http://tech-banker.com/products/wp-gallery-bank/), which gives you 200+ features such as:
 
-> **Unlimited Albums Creation**
-> **Filmstrip Gallery Format**
-> **Slideshow Gallery**
-> **Special Effects on Images & Albums**
-> **Animation Effects on Images & Albums**
-> **Bulk Deletion of Images**
-> **Fully CSS3 compliant with text shadowing, box shadowing, gradients, etc**
-> **Sorting of Images**
-> **Sorting of Albums**
-> **Social Sharing**
-> **Commenting on Images**
-> **Widgets**
-> **Tags for each Image to make Filerable Gallery Album**
-> **Bulk Deletion of Albums**
-> **Purging Albums and Images**
-> **Restore Factory Settings**
-> **Global Settings**
-> **Thumbnail Settings**
-> **Album Settings**
-> **Lightbox Settings**
-> **Different Lightboxes like FooBox,ColorBox,FancyBox2,Lightbox2,Custom GB Lightbox,Pretty Photo(Premium Versions)**
-> **Pagination**
-> **Filter Settings**
-> **Roles & Capabilities**
-> **Front End Layout Settings**
-> **See your media on different theme and more.**
-> **Powerfull control panel and Shortcode Manager make getting started super easy**
-> **24/7 Technical Support**
+> * Unlimited Albums Creation 
+> * Filmstrip Gallery Format
+> * Slideshow Gallery
+> * Special Effects on Images & Albums
+> * Animation Effects on Images & Albums
+> * Bulk Deletion of Images
+> * Fully CSS3 compliant with text shadowing, box shadowing, gradients, etc
+> * Sorting of Images
+> * Sorting of Albums
+> * Social Sharing
+> * Commenting on Images
+> * Widgets
+> * Tags for each Image to make Filerable Gallery Album
+> * Bulk Deletion of Albums
+> * Purging Albums and Images
+> * Restore Factory Settings
+> * Global Settings
+> * Thumbnail Settings
+> * Album Settings
+> * Lightbox Settings
+> * Different Lightboxes like FooBox,ColorBox,FancyBox2,Lightbox2,Custom GB Lightbox,Pretty Photo(Premium Versions)
+> * Pagination
+> * Filter Settings
+> * Roles & Capabilities
+> * Front End Layout Settings
+> * See your media on different theme and more.
+> * Powerfull control panel and Shortcode Manager make getting started super easy
+> * 24/7 Technical Support
 
 Visit [here](http://tech-banker.com/products/wp-gallery-bank/) to upgrade to Pro Version now.
 
@@ -163,7 +159,7 @@ There is a Shortcode Editor availble in your Page/Post where you want to impleme
 
 With Global Settings, you can define different settings for Thumbnails, Albums, Lightboxes, Filters, Pagination and Slideshows.
 
-** Gallery Bank is now available in the following Languages **
+**Gallery Bank is now available in the following Languages**
 
 * Albanian (sq_AL)
 * Arabic (ar)
