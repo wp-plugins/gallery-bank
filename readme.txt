@@ -138,21 +138,27 @@ Visit [here](http://tech-banker.com/products/wp-gallery-bank/) to upgrade to Pro
 You can add upto 3 albums with unlimited images in your Gallery Bank. After that you need to upgrade to one of the premium versions for unlimited access with different features available according to different packages of Gallery Bank.
 
 *  Editing Albums
+
 In albums, editing can be done easily. You can edit or add more images/ pictures in your albums. You can change title/description of an album as well as title/description of each image uploaded in a particular album.
 
-* Sorting of Images in an Album = 
+* Sorting of Images in an Album =
+ 
 Sorting of Images can be done in your albums. With this feature, you can change the order of pictures according to your requirement/choice.
 
 * Sorting of Albums
+
 Sorting of Albums can be done in your albums. With this feature, you can re-arrange your order of albums to display on your website.
 
 *  Album Preview
+
 In album preview you can view the pictures/images on your back-end before implementing the shortcodes on your Pages/Posts.
 
 * Cover Image
+
 You can easily set the cover image in your album. This cover image would be used to display on your Pages/Post when using the Album shortcodes.
 
 * Short Codes
+
 There is a Shortcode Editor availble in your Page/Post where you want to implement the Gallery Bank Shortcode. You just need to go to your Page/Post where you want to implement it and then above your Text Editor/ WP Editor, there would be a button called Gallery Bank. Once you click on it, you can generate your shortcode easily and quickly.
 
 * Global Settings
