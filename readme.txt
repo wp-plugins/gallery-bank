@@ -122,7 +122,7 @@ Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gall
 > * Thumbnail Settings
 > * Album Settings
 > * Lightbox Settings
-> * Different Lightboxes like FooBox,ColorBox,FancyBox2,Lightbox2,Custom GB Lightbox,Pretty Photo(Premium Versions)
+> * Different Lightboxes like FooBox, ColorBox, FancyBox2, Lightbox2, Custom GB Lightbox, Pretty Photo
 > * Pagination
 > * Filter Settings
 > * Roles & Capabilities
