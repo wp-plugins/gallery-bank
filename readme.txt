@@ -1,21 +1,23 @@
-=== WP Gallery Bank - Best Gallery Plugin ===
-Contributors: contact-banker,Gallery-Bank
-Tags: admin, AJAX, album, albums, best gallery, best gallery plugin, best portfolio, best portfolio plugin, comments, filterable gallery, filterable portfolio, gallery, gallery album, gallery bank, gallery image, Gallery Plugin, gallery wordpress plugin, google, grid gallery, image album, images, lightbox, links, media, nextgen, nextgen gallery, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio wordpress plugin, post, posts, responsive gallery, responsive slider, responsive slideshow, sidebar, slideshow, thumbnail, thumbnails, videos, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wp gallery, wp gallery plugin, wp slider
+=== WP Gallery Bank - Responsive Gallery ===
+Contributors: Gallery-Bank,contact-banker
+Tags: admin, AJAX, add album, add gallery, add picture, add pictures, album, foto, fotoalbum, gallery, galery, galary, gallary, gellery, gellary, gelary, gallerie, gallery decription, gallery image, image, multiple pictures, photo, photoalbum, photogallery, pictures, slide show, slideshow, upload images, upload photos, view images, view pictures, website gallery, wp gallery
 Requires at least: 3.3
 Tested up to: 4.0
-Stable tag: 3.0.76
+Stable tag: 3.0.77
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for Photos, Videos, Galleries and Albums.
+WP Gallery Bank is an enhanced tool to create Responsive and Beautiful Galleries for WordPress Websites.
 
 == Description ==
 
-### [Gallery Bank - Best Gallery Albums Plugin](http://tech-banker.com/products/wp-gallery-bank/)    
+**Gallery Bank** is a WordPress Plugin designed to create Elegant and Beautiful Gallery Albums along with Images and videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts along with Special Effects and Animation Effects.
 
-Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gallery albums with images, videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts along with Special Effects  & Animation Effects. 
+**Gallery Bank** is the only available WordPress Plugin in the market with extra-ordinary features. It is loaded with 200+ features and creates stunning Photo Galleries on any WordPress site.
 
-**Gallery Bank** has become the **Best Plugin** in the world for WordPress sites to display Images. It has been designed to provide easiness and simplicity to the end user. It is a simple yet powerfull application fully loaded with 200+ features(**Premium Version**) Plugin.
+**Gallery Bank** provides a powerful engine for uploading and managing galleries of images & videos, with the ability to batch upload, delete, rearrange, sort images.
+
+Gallery Bank Regular updates and simplicity of usage along with efficient functionality makes it a perfect choice for your wordpress site to have stunning look. There are also Premium Editions of the plugin with more useful features available.
 
 [vimeo https://vimeo.com/92378296]
 
@@ -62,14 +64,6 @@ Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gall
 > * [Demo Using Blog Style Layout with Pagination](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-pagination-blog-style-layout/)
 > * [Demo Using Blog Style Layout with Special Effects](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-grayscale-effect-blog-style-layout/)
 
-**Gallery Bank** provides a powerful engine for uploading and managing galleries of images & videos, with the ability to batch upload, delete, rearrange, sort images.
-
-**Gallery Bank** allows to easily edit thumbnails, provides 200+ settings, and even much more. 
-
-**Gallery Bank** also provides different Front End Display Styles [Filmstrip, SlideShow, Masonry, Blog Style and Thumbnails]. All of them comes with a wide array of options for controlling size, style, timing, transitions, lightbox effects, and much more.
-
-**Gallery Bank** is designed to adapt each portfolio to any situation and can be easily used on mobiles as it is a Responsive Plugin.
-
 **[Support Desk - Feel Free to ask your Queries](http://tech-banker.com/forums/forum/gallery-bank-support/)**
 
 **[Knowledge Base](http://tech-banker.com/products/wp-gallery-bank/knowledge-base/)**
@@ -78,94 +72,93 @@ Gallery Bank is a Wordpress Plugin designed to create elegant and beautiful gall
 
 **[Like & Support Us on Facebook](https://www.facebook.com/TechBanker/)**
 
+= Key Features in Gallery Bank Lite Edition =
+ 
+* Multi-Lingual. Available now in 36 Languages.
+* Responsive Gallery
+* Shortcode Wizard in your Page/Post.
+* Unlimited Albums Creation(Premium Versions). With Free Standard Version, you can only create upto 3 albums.
+* Unlimited Images in each Album.
+* Edit Albums and add/edite/delete images.
+* Bulk Upload of Images
+* Url Redirect to redirect on click of an image.
+* Upload Videos from Youtube,Vimeo, etc.
+* Set Cover Image
+* Compact Albums
+* Extended Albums
+* Basic Thumbnail Gallery
+* Grid Album Format
+* Masonry Gallery Format
+* List Album Format
 
-### Key Features 
+= Key Features in Gallery Bank Premium Editions =
 
-> * Multi-Lingual. Available now in 36 Languages.
-> * Responsive Gallery
-> * Shortcode Wizard in your Page/Post.
-> * Unlimited Albums Creation(Premium Versions). With Free Standard Version, you can only create upto 3 albums.
-> * Unlimited Images in each Album.
-> * Edit Albums and add/edite/delete images.
-> * Bulk Upload of Images
-> * Url Redirect to redirect on click of an image.
-> * Upload Videos from Youtube,Vimeo, etc.
-> * Set Cover Image
-> * Compact Albums
-> * Extended Albums
-> * Basic Thumbnail Gallery
-> * Grid Album Format
-> * Masonry Gallery Format
-> * List Album Format
+ Take your media to the next level with [Gallery Bank Premium Editions](http://tech-banker.com/products/wp-gallery-bank/), which gives you 200+ features such as:
 
-> #### **Upgrade to Gallery Bank Premium Versions**
+* Unlimited Albums Creation 
+* Filmstrip Gallery Format
+* Slideshow Gallery
+* Special Effects on Images & Albums
+* Animation Effects on Images & Albums
+* Bulk Deletion of Images
+* Fully CSS3 compliant with text shadowing, box shadowing, gradients, etc
+* Sorting of Images
+* Sorting of Albums
+* Social Sharing
+* Commenting on Images
+* Widgets
+* Tags for each Image to make Filerable Gallery Album
+* Bulk Deletion of Albums
+* Purging Albums and Images
+* Restore Factory Settings
+* Global Settings
+* Thumbnail Settings
+* Album Settings
+* Lightbox Settings
+* Different Lightboxes like FooBox, ColorBox, FancyBox2, Lightbox2, Custom GB Lightbox, Pretty Photo
+* Pagination
+* Filter Settings
+* Roles & Capabilities
+* Front End Layout Settings
+* See your media on different theme and more.
+* Powerfull control panel and Shortcode Manager make getting started super easy
+* 24/7 Technical Support
 
-> Take your media to the next level with [Gallery Bank Premium Versions](http://tech-banker.com/products/wp-gallery-bank/), which gives you 200+ features such as:
+Visit [here](http://tech-banker.com/products/wp-gallery-bank/) to upgrade to Pro Editions now.
 
-> * Unlimited Albums Creation 
-> * Filmstrip Gallery Format
-> * Slideshow Gallery
-> * Special Effects on Images & Albums
-> * Animation Effects on Images & Albums
-> * Bulk Deletion of Images
-> * Fully CSS3 compliant with text shadowing, box shadowing, gradients, etc
-> * Sorting of Images
-> * Sorting of Albums
-> * Social Sharing
-> * Commenting on Images
-> * Widgets
-> * Tags for each Image to make Filerable Gallery Album
-> * Bulk Deletion of Albums
-> * Purging Albums and Images
-> * Restore Factory Settings
-> * Global Settings
-> * Thumbnail Settings
-> * Album Settings
-> * Lightbox Settings
-> * Different Lightboxes like FooBox, ColorBox, FancyBox2, Lightbox2, Custom GB Lightbox, Pretty Photo
-> * Pagination
-> * Filter Settings
-> * Roles & Capabilities
-> * Front End Layout Settings
-> * See your media on different theme and more.
-> * Powerfull control panel and Shortcode Manager make getting started super easy
-> * 24/7 Technical Support
+= Add New Albums using Gallery Bank =
 
-Visit [here](http://tech-banker.com/products/wp-gallery-bank/) to upgrade to Pro Version now.
+You can add upto 3 albums with unlimited images in your Gallery Bank. After that you need to upgrade to one of the Premium Editions for unlimited access with different features available according to different packages of Gallery Bank.
 
-* Add New Albums
-
-You can add upto 3 albums with unlimited images in your Gallery Bank. After that you need to upgrade to one of the premium versions for unlimited access with different features available according to different packages of Gallery Bank.
-
-*  Editing Albums
+= Editing Albums using Gallery Bank =
 
 In albums, editing can be done easily. You can edit or add more images/ pictures in your albums. You can change title/description of an album as well as title/description of each image uploaded in a particular album.
 
-* Sorting of Images in an Album =
+= Sorting of Images in an Album using Gallery Bank =
  
 Sorting of Images can be done in your albums. With this feature, you can change the order of pictures according to your requirement/choice.
 
-* Sorting of Albums
+= Sorting of Albums using Gallery Bank =
 
 Sorting of Albums can be done in your albums. With this feature, you can re-arrange your order of albums to display on your website.
 
-*  Album Preview
+= Album Preview using Gallery Bank =
 
 In album preview you can view the pictures/images on your back-end before implementing the shortcodes on your Pages/Posts.
 
-* Cover Image
+= Cover Image using Gallery Bank =
 
 You can easily set the cover image in your album. This cover image would be used to display on your Pages/Post when using the Album shortcodes.
 
-* Short Codes
+= Short Codes using Gallery Bank =
 
 There is a Shortcode Editor availble in your Page/Post where you want to implement the Gallery Bank Shortcode. You just need to go to your Page/Post where you want to implement it and then above your Text Editor/ WP Editor, there would be a button called Gallery Bank. Once you click on it, you can generate your shortcode easily and quickly.
 
-* Global Settings
+= Global Settings using Gallery Bank =
 
 With Global Settings, you can define different settings for Thumbnails, Albums, Lightboxes, Filters, Pagination and Slideshows.
 
-**Gallery Bank is now available in the following Languages**
+= Gallery Bank is now available in the following Languages =
 
 * Albanian (sq_AL)
 * Arabic (ar)
@@ -204,13 +197,11 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 * Thai (th)
 * Ukrainian (uk)
 
+= Technical Support =
+
+If any problem occurs, please contact us at [support@tech-banker.com](mailto:support@tech-banker.com).
 
 == Installation ==
-
-### Minimum requirements for Gallery Bank.  
-*   Wordpress 3.3+  
-*   PHP 5.x  
-*   MySQL 5.x  
 
 ### Performing a new installation for Gallery Bank.
 
@@ -227,14 +218,20 @@ After downloading the ZIP file,
 > * Click "Install Now" button.  
 > * Click "Activate Plugin" button for activating the plugin.  
 
+== Other Notes ==
+
+= Minimum requirements for Gallery Bank. =  
+*   Wordpress 3.3+  
+*   PHP 5.x  
+*   MySQL 5.x  
+
 If any problem occurs, please contact us at [support@tech-banker.com](mailto:support@tech-banker.com).
 
 == Frequently Asked Questions ==
 
-### How to add New Album in Gallery Bank?
+= How to add New Album in Gallery Bank? =
 
-In order to Add New Album in your Gallery Bank, locate Gallery Bank Menu on the left side of
-WordPress Dashboard Menus and then click on Add New Album link.
+In order to Add New Album in your Gallery Bank, locate Gallery Bank Menu on the left side of WordPress Dashboard Menus and then click on Add New Album link.
 
 Alternatively, you can also Add New Album from your Gallery Bank Dashboard Page.
 
@@ -253,10 +250,9 @@ Once you click on the button from any of the above mentioned methods, this page 
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/add-new-album-explanation.png)
 
 
-### How to Edit an Album?
+= How to Edit an Album in Gallery Bank? =
 
-In order to Edit an Album, you need to go to your Gallery Bank Dashboard Page and then
-click on Edit Album Button located at the right side of each album which you wish to edit.
+In order to Edit an Album, you need to go to your Gallery Bank Dashboard Page and then click on Edit Album Button located at the right side of each album which you wish to edit.
 
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/Edit.png)
 
@@ -265,7 +261,7 @@ Once you Click on the button, this page will open.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/Edit_img-938x1024.png)
 
 
-### How to Preview an Album?
+= How to Preview an Album in Gallery Bank? =
 
 In order to Preview your Album, you need to go to your Gallery Bank Dashboard Page
 and then click on Preview Album button at the right side of each album.
@@ -277,23 +273,20 @@ Once you click on the button, this page will open
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/preview21-1024x487.png)
 
 
-### How to Delete an Album?
+= How to Delete an Album in Gallery Bank? =
 
-You can Delete an Album if you wish to. In order to perform this action, you need to go to
-your Gallery Bank Dashboard Page and then click on Delete Album button at the right
-side of each album.
+You can Delete an Album if you wish to. In order to perform this action, you need to go to your Gallery Bank Dashboard Page and then click on Delete Album button at the right side of each album.
 
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/delete11-1024x409.png)
 
-Once you click on the button, a confirmation message will appear stating
-"Are you sure you want to delete this Album?"
+Once you click on the button, a confirmation message will appear stating "Are you sure you want to delete this Album?"
 
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/delete2-1024x406.png)
 
 Click on "OK" to proceed and your Album would be deleted.
 
 
-### How to set Short code for Masonry Gallery?
+= How to set Short code for Masonry Gallery? =
 
 In order to set Shortcode for Masonry Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -316,7 +309,7 @@ option is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry4-1024x657.png)
 
 
-### How to set Short code for Thumbnail Gallery?
+= How to set Short code for Thumbnail Gallery? =
 
 In order to set Shortcode for Thumbnail Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -339,7 +332,7 @@ is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/thmbnail2-1024x450.png)
 
 
-### How to set Short code for Grid Album using Masonry Gallery?
+= How to set Short code for Grid Album using Masonry Gallery? =
 
 In order to set Shortcode for Grid Album with Masonry Gallery, you need to follow these steps :
 1) Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -362,7 +355,7 @@ is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/grid_masonry2-1024x573.png)
 
 
-### How to set Short code for Grid Album using Thumbnail Gallery?
+= How to set Short code for Grid Album using Thumbnail Gallery? =
 
 In order to set Shortcode for Grid Album with Thumbnail Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -385,7 +378,7 @@ option is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/grid_thumbnail2-1024x574.png)
 
 
-### How to set Short code for List Album using Masonry Gallery?
+= How to set Short code for List Album using Masonry Gallery? =
 
 In order to set Shortcode for List Album with Masonry Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -403,7 +396,7 @@ Once you click on the Pages, there will be two options. Click on Add New button 
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/masonry_list_1.png)
 
 
-### How to set Short code for List Album using Thumbnail Gallery?
+= How to set Short code for List Album using Thumbnail Gallery? =
 
 In order to set Shortcode for List Album with Thumbnail Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -426,7 +419,7 @@ is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/thumbnail_list_2-1024x462.png)
 
 
-### How to set Short code for Individual Album using Masonry Gallery?
+= How to set Short code for Individual Album using Masonry Gallery? =
 
 In order to set Shortcode for Individual Album with Masonry Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -449,7 +442,7 @@ is False in shortcode.
 [Click here to view the Image](http://tech-banker.com/wp-content/uploads/2013/11/individual_masonry_2-1024x559.png)
 
 
-### How to set Short code for Individual Album using Thumbnail Gallery?
+= How to set Short code for Individual Album using Thumbnail Gallery? =
 
 In order to set Shortcode for Individual Album with Thumbnail Gallery, you need to follow these steps :
 1)  Locate Pages Menu on the left side of WordPress Dashboard Menus and then click on Pages.
@@ -474,25 +467,31 @@ is False in shortcode.
 
 == Screenshots ==
 
-1. ### Gallery Bank Dashboard Page
-2. ### Add New Album
-3. ### How to create Shortcode using Shortcode Editor.
-4. ### ShortCode Implementation for Images using Masonry Layout.
-5. ### ShortCode Implementation for Images using Thumbnails Layout.
-6. ### ShortCode Implementation for Grid Albums using Masonry Layout.
-7. ### ShortCode Implementation for Grid Albums using Thumbnail Layout.
-8. ### ShortCode Implementation for List Albums using Masonry Layout.
-9. ### ShortCode Implementation for List Albums using Thumbnail Layout.
-10. ### ShortCode Implementation for Individual Albums using Masonry Layout.
-11. ### ShortCode Implementation for Individual Albums using Thumbnail Layout.
-12. ### System Status
-13. ### Displaying Images using Masonry Layout.
-14. ### Displaying Images using Thumbnail Layout.
-15. ### Displaying Grid Album with Images. 
-16. ### Displaying List Album with Images.
-17. ### Displaying Individual Album with Images.
+1. Gallery Bank Dashboard Page
+2. Add New Album
+3. How to create Shortcode using Shortcode Editor.
+4. ShortCode Implementation for Images using Masonry Layout.
+5. ShortCode Implementation for Images using Thumbnails Layout.
+6. ShortCode Implementation for Grid Albums using Masonry Layout.
+7. ShortCode Implementation for Grid Albums using Thumbnail Layout.
+8. ShortCode Implementation for List Albums using Masonry Layout.
+9. ShortCode Implementation for List Albums using Thumbnail Layout.
+10.ShortCode Implementation for Individual Albums using Masonry Layout.
+11.ShortCode Implementation for Individual Albums using Thumbnail Layout.
+12.System Status
+13.Displaying Images using Masonry Layout.
+14.Displaying Images using Thumbnail Layout.
+15.Displaying Grid Album with Images. 
+16.Displaying List Album with Images.
+17.Displaying Individual Album with Images.
 
 == Changelog ==
+
+= 3.0.76 =
+
+* CSS Conflictions Fixed after 3.0.75 update
+* Js Conflictions Fixed
+* Readme.txt Updated
 
 = 3.0.75 =
 
@@ -1117,13 +1116,13 @@ is False in shortcode.
 
 = 1.2 =
 
-* Few Bugs Fixed
-* Lightbox logic changes
+* Few Bugs Fixed in Gallery Bank
+* Lightbox logic changed
 * Thumbnails Fixed
 
 = 1.1 =
 
-* Few Bugs Fixed
+* Few Bugs Fixed in Gallery Bank
 
 = 1.0 =
 

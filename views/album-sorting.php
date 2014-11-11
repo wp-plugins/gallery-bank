@@ -158,7 +158,7 @@ if(isset($album))
 				                       href="admin.php?page=gallery_bank"><?php _e("Back to Albums", gallery_bank); ?></a>
 				                    <a href="#" onclick="show_premium_message();" class="btn btn-info"
 				                            style="float:right"><?php _e("Update Order", gallery_bank); ?></a>
-				                    <div id="sort_order_message" class="message green" style="display: none;">
+				                    <div id="sort_order_message" class="custom-message green" style="display: none;">
 										<span>
 											<strong><?php _e("Sorting Order has been updated.", gallery_bank); ?></strong>
 										</span>
