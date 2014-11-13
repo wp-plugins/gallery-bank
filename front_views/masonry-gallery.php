@@ -5,7 +5,8 @@
 	?>
 		.width_thumb
 		{
-			width:<?php echo $thumbnails_width;?>px !important;
+			width:<?php echo $thumbnails_width+1;?>px !important;
+			border-radius:0px !important;
 	        display: block !important;
 	        box-sizing: border-box !important;
             max-width: 100% !important;
@@ -17,7 +18,8 @@
 		?>
 		.widget_width_thumb<?php echo $unique_id;?>
 		{
-			width:<?php echo $thumbnails_width;?>px !important;
+			width:<?php echo $thumbnails_width+1;?>px !important;
+			border-radius:0px !important;
 	        display: block !important;
 	        box-sizing: border-box !important;
             max-width: 100% !important;
@@ -25,10 +27,10 @@
 		<?php
 	}
 	?>
-	.gallery-sizer { width:<?php echo $thumbnails_width;?>px !important; }
+	.gallery-sizer { width:<?php echo $thumbnails_width + 10;?>px !important; }
 
 	@media screen and (min-width: 720px) {
-		.gallery-sizer { width:<?php echo $thumbnails_width;?>px !important; } 
+		.gallery-sizer { width:<?php echo $thumbnails_width + 10;?>px !important; } 
 	}
 </style>
 <div  class="<?php echo $class_images_in_row;?>" id="masonry-gallery-thumbnails_<?php echo $unique_id;?>" >

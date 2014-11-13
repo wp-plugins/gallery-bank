@@ -1,10 +1,10 @@
 <?php
 /*
- Plugin Name: Gallery Bank Standard Edition
+ Plugin Name: Gallery Bank Lite Edition
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.77
+ Version: 3.0.78
  Author URI: http://tech-banker.com
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,7 +20,9 @@ if (!defined("GALLERY_BK_PLUGIN_DIR")) define("GALLERY_BK_PLUGIN_DIR",  plugin_d
 if (!defined("GALLERY_BK_THUMB_URL")) define("GALLERY_BK_THUMB_URL", content_url()."/gallery-bank/gallery-uploads/");
 if (!defined("GALLERY_BK_THUMB_SMALL_URL")) define("GALLERY_BK_THUMB_SMALL_URL", content_url()."/gallery-bank/thumbs/");
 if (!defined("GALLERY_BK_ALBUM_THUMB_URL")) define("GALLERY_BK_ALBUM_THUMB_URL", content_url()."/gallery-bank/album-thumbs/");
+if (!defined("GALLERY_BK_PLUGIN_BASENAME")) define("GALLERY_BK_PLUGIN_BASENAME", plugin_basename(__FILE__));
 if (!defined("gallery_bank")) define("gallery_bank", "gallery-bank");
+if (!defined("tech_bank")) define("tech_bank", "tech-banker");
 
 if (!is_dir(GALLERY_MAIN_DIR))
 {
@@ -59,6 +61,14 @@ function gallery_bank_plugin_load_text_domain()
     if (function_exists("load_plugin_textdomain")) {
         load_plugin_textdomain(gallery_bank, false, GALLERY_BK_PLUGIN_DIRNAME . "/lang");
     }
+}
+
+function plugin_load_textdomain_for_tech_serices()
+{
+	if(function_exists( "load_plugin_textdomain" ))
+	{
+		load_plugin_textdomain(tech_bank, false, GALLERY_BK_PLUGIN_DIRNAME ."/tech-banker-services");
+	}
 }
 
 /*************************************************************************************/
@@ -309,7 +319,18 @@ function add_gallery_bank_icon($meta = TRUE)
 			break;
 	}
 }
-
+function gallery_bank_custom_plugin_row($links,$file)
+{
+	if ($file == GALLERY_BK_PLUGIN_BASENAME)
+	{
+		$gallery_bank_row_meta = array(
+				"docs"  => "<a href='".esc_url( apply_filters("gallery_bank_docs_url","http://tech-banker.com/products/wp-gallery-bank/knowledge-base/"))."' title='".esc_attr(__( "View Gallery Bank Documentation",gallery_bank))."'>".__("Docs",gallery_bank)."</a>",
+				"gopremium" => "<a href='" .esc_url( apply_filters("gallery_bank_premium_editions_url", "http://tech-banker.com/products/wp-gallery-bank/pricing/"))."' title='".esc_attr(__( "View Gallery Bank Premium Editions",gallery_bank))."'>".__("Go for Premium!",gallery_bank)."</a>",
+		);
+		return array_merge($links,$gallery_bank_row_meta);
+	}
+	return (array)$links;
+}
 
 $version = get_option("gallery-bank-pro-edition");
 if($version == "" || $version == "3.0")
@@ -317,6 +338,8 @@ if($version == "" || $version == "3.0")
 	add_action("admin_init", "plugin_install_script_for_gallery_bank");
 }
 
+add_filter("plugin_row_meta","gallery_bank_custom_plugin_row", 10, 2 );
+add_action("plugins_loaded", "plugin_load_textdomain_for_tech_serices");
 add_action("admin_bar_menu", "add_gallery_bank_icon", 100);
 add_action("plugins_loaded", "gallery_bank_plugin_load_text_domain");
 register_activation_hook(__FILE__, "plugin_install_script_for_gallery_bank");

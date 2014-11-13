@@ -920,7 +920,7 @@ else
 														class="css3_grid_row_40 footer_row css3_grid_row_40_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><a
-																href="/shop/wp-gallery-bank/gallery-bank-eco-edition/"
+																href="http://tech-banker.com/shop/wp-gallery-bank/gallery-bank-eco-edition/"
 																class="sign_up sign_up_orange radius3">Order Now!</a></span></span></li>
 												</ul>
 											</div>
@@ -1203,7 +1203,7 @@ else
 														class="css3_grid_row_40 footer_row css3_grid_row_40_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><a
-																href="/shop/wp-gallery-bank/gallery-bank-pro-edition/"
+																href="http://tech-banker.com/shop/wp-gallery-bank/gallery-bank-pro-edition/"
 																class="sign_up sign_up_orange radius3">Order Now!</a></span></span></li>
 												</ul>
 											</div>
@@ -1486,7 +1486,7 @@ else
 														class="css3_grid_row_40 footer_row css3_grid_row_40_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><a
-																href="/shop/wp-gallery-bank/gallery-bank-developer-edition/"
+																href="http://tech-banker.com/shop/wp-gallery-bank/gallery-bank-developer-edition/"
 																class="sign_up sign_up_orange radius3">Order Now!</a></span></span></li>
 												</ul>
 											</div>
@@ -1769,7 +1769,7 @@ else
 														class="css3_grid_row_40 footer_row css3_grid_row_40_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><a
-																href="/shop/wp-gallery-bank/gallery-bank-extended-edition/"
+																href="http://tech-banker.com/shop/wp-gallery-bank/gallery-bank-extended-edition/"
 																class="sign_up sign_up_orange radius3">Order Now!</a></span></span></li>
 												</ul>
 											</div>

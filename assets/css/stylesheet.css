@@ -3951,3 +3951,7 @@ li.active a, li.active a:hover
 {
     min-height:150px;
 }
+.service-div-settings .desc p
+{
+ line-height: 2em !important;
+}
