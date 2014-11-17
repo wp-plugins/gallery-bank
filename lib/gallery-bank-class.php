@@ -395,15 +395,6 @@ function extract_short_code_for_gallery_images($album_id, $album_type, $gallery_
     return $gallery_bank_output_album;
 }
 
-function array_iunique($array)
-{
-    return array_intersect_key(
-        $array,
-        array_unique(array_map("StrToUpper", $array))
-    );
-}
-
-
 /*****************************************************************************************************************/
 add_shortcode("gallery_bank", "gallery_bank_short_code");
 add_action("admin_init", "backend_scripts_calls");

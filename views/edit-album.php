@@ -421,7 +421,7 @@
 				</div>
 			</div>
 		</form>
-		    <script type="text/javascript">
+		<script type="text/javascript">
 		
 		    jQuery(".hovertip").tooltip();
 		    var url = "<?php echo plugins_url("/assets/",dirname(__FILE__)) ?>";

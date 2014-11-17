@@ -256,41 +256,33 @@
 	</form>
 
 	<script type="text/javascript">
-	jQuery(".hovertip").tooltip();
-	jQuery(document).ready(function() 
-	{
-		jQuery(".imgLiquidFill").imgLiquid({fill:true});
-		var oTable = jQuery("#data-table-album").dataTable
-		({
-			"bJQueryUI": false,
-			"bAutoWidth": true,
-			"sPaginationType": "full_numbers",
-			"sDom": '<"datatable-header"fl>t<"datatable-footer"ip>',
-			"oLanguage": 
-			{
-				"sLengthMenu": "<span>Show entries:</span> _MENU_"
-			},
-			"aaSorting": [[ 0, "asc" ]],
-			"aoColumnDefs": [{ "bSortable": false, "aTargets": [5] }]
-		});
-		jQuery("a[rel^=\"prettyPhoto\"]").prettyPhoto
-		({
-			animation_speed: 1000, 
-			slideshow: 4000, 
-			autoplay_slideshow: false,
-			opacity: 0.80, 
-			show_title: false,
-			allow_resize: true
-		});
-	});
-	function close_popup()
-	{
-		jQuery( "#gallery_bank_popup" ).dialog( "close" );
-		jQuery.post(ajaxurl, "param=update_option&action=add_new_album_library", function()
+		jQuery(".hovertip").tooltip();
+		jQuery(document).ready(function() 
 		{
+			jQuery(".imgLiquidFill").imgLiquid({fill:true});
+			var oTable = jQuery("#data-table-album").dataTable
+			({
+				"bJQueryUI": false,
+				"bAutoWidth": true,
+				"sPaginationType": "full_numbers",
+				"sDom": '<"datatable-header"fl>t<"datatable-footer"ip>',
+				"oLanguage": 
+				{
+					"sLengthMenu": "<span>Show entries:</span> _MENU_"
+				},
+				"aaSorting": [[ 0, "asc" ]],
+				"aoColumnDefs": [{ "bSortable": false, "aTargets": [5] }]
+			});
+			jQuery("a[rel^=\"prettyPhoto\"]").prettyPhoto
+			({
+				animation_speed: 1000, 
+				slideshow: 4000, 
+				autoplay_slideshow: false,
+				opacity: 0.80, 
+				show_title: false,
+				allow_resize: true
+			});
 		});
-		
-	}
 	
 		function delete_album(album_id) 
 		{
@@ -298,7 +290,7 @@
 			if(r == true)
 			{
 				//noinspection JSUnresolvedVariable
-	            jQuery.post(ajaxurl, "album_id="+album_id+"&param=Delete_album&action=add_new_album_library", function()
+				jQuery.post(ajaxurl, "album_id="+album_id+"&param=Delete_album&action=add_new_album_library", function()
 				{
 					var check_page = "<?php echo $_REQUEST["page"]; ?>";
 					window.location.href = "admin.php?page="+check_page;

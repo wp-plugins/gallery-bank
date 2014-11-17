@@ -88,11 +88,11 @@ else
 					<div id="advanced" class="meta-box-sortables">
 						<div id="gallery_bank_get_started" class="postbox" >
 							<div class="handlediv" data-target="ux_recommendation" title="Click to toggle" data-toggle="collapse"><br></div>
-							<h3 class="hndle"><span><?php _e("Recommendations", gallery_bank); ?></span></h3>
+							<h3 class="hndle"><span><?php _e("Recommendations", tech_bank); ?></span></h3>
 							<div class="inside">
 								<div id="ux_recommendation" class="gallery_bank_layout">
 									<a class="btn btn-inverse"
-									   href="admin.php?page=gallery_bank"><?php _e("Back to Albums", gallery_bank); ?></a>
+									   href="admin.php?page=gallery_bank"><?php _e("Back to Albums", tech_bank); ?></a>
 									<div class="separator-doubled"></div>
 									<div class="fluid-layout">
 										<div class="layout-span12">
@@ -173,16 +173,16 @@ else
 																	</a>
 																	<div class="name column-name">
 																		<h4>
-																			<a href="<?php echo esc_url( $details_link ); ?>" class="thickbox"><?php _e( $title,gallery_bank); ?></a>
+																			<a href="<?php echo esc_url( $details_link ); ?>" class="thickbox"><?php echo $title; ?></a>
 																		</h4>
 																	</div>
 																	<div class="desc column-description">
 																		<p>
-																			<?php _e( $description,gallery_bank); ?>
+																			<?php echo $description; ?>
 																		</p>
 																		<p class="authors">
 																			<cite>
-																				By <?php _e( $author,gallery_bank); ?>
+																				<?php _e( "By ",tech_bank); echo $author;?>
 																			</cite>
 																		</p>
 																	</div>
@@ -201,40 +201,40 @@ else
 																					case "gallery-bank" :
 																						?>
 																							<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-gallery-bank/pricing/" target="_blank" >
-																								<?php _e("Premium Editions", gallery_bank); ?>
+																								<?php _e("Premium Editions", tech_bank); ?>
 																							</a>
 																							<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-gallery-bank/" target="_blank" >
-																								<?php _e("Visit Website", gallery_bank); ?>
+																								<?php _e("Visit Website", tech_bank); ?>
 																							</a>
 																						<?php
 																					break;
 																					case "contact-bank" :
 																						?>
 																							<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-contact-bank/pricing/" target="_blank" >
-																								<?php _e("Premium Editions", gallery_bank); ?>
+																								<?php _e("Premium Editions", tech_bank); ?>
 																							</a>
 																							<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-contact-bank/" target="_blank" >
-																								<?php _e("Visit Website", gallery_bank); ?>
+																								<?php _e("Visit Website", tech_bank); ?>
 																							</a>
 																						<?php
 																					break;
 																					case "captcha-bank" :
 																						?>
 																							<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-captcha-bank/pricing/" target="_blank" >
-																								<?php _e("Premium Editions", gallery_bank); ?>
+																								<?php _e("Premium Editions", tech_bank); ?>
 																							</a>
 																							<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-captcha-bank/" target="_blank" >
-																								<?php _e("Visit Website", gallery_bank); ?>
+																								<?php _e("Visit Website", tech_bank); ?>
 																							</a>
 																						<?php 
 																					break;
 																					case "wp-clean-up-optimizer" :
 																						?>
 																							<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-clean-up-optimizer/pricing/" target="_blank" >
-																								<?php _e("Premium Editions", gallery_bank); ?>
+																								<?php _e("Premium Editions", tech_bank); ?>
 																							</a>
 																							<a class="plugin-div-button install-now button" href="http://tech-banker.com/products/wp-clean-up-optimizer/" target="_blank" >
-																								<?php _e("Visit Website", gallery_bank); ?>
+																								<?php _e("Visit Website", tech_bank); ?>
 																							</a>
 																						<?php 
 																					break;
