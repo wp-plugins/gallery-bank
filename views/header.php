@@ -72,7 +72,7 @@ $language = get_locale();
 				<h4 class="welcome-screen-margin"><?php _e("More Actions", gallery_bank); ?></h4>
 				<ul>
 					<li>
-						<a href="http://tech-banker.com/shop/uncategorized/order-customization-wp-gallery-bank/" target="_blank" class="welcome-icon">
+						<a href="http://tech-banker.com/shop/plugin-customization/order-customization-wp-gallery-bank/" target="_blank" class="welcome-icon">
 							<?php _e("Plugin Customization", gallery_bank); ?>
 						</a>
 					</li>
