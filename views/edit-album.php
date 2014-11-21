@@ -18,7 +18,6 @@
 	}
 	else
 	{
-
 		$album_id = intval($_REQUEST["album_id"]);
 		$last_albums_id = $wpdb->get_var
 		(

@@ -4,7 +4,7 @@
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.81
+ Version: 3.0.82
  Author URI: http://tech-banker.com
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -45,10 +45,10 @@ if (file_exists(GALLERY_BK_PLUGIN_DIR . "/lib/gallery-bank-class.php")) {
     require_once(GALLERY_BK_PLUGIN_DIR . "/lib/gallery-bank-class.php");
 }
 /*************************************************************************************/
-function plugin_install_script_for_gallery_bank($network_wide)
+function plugin_install_script_for_gallery_bank()
 {
 	global $wpdb;
-	if (is_multisite() && $network_wide)
+	if (is_multisite())
 	{
 		$blog_ids = $wpdb->get_col("SELECT blog_id FROM $wpdb->blogs");
 		foreach($blog_ids as $blog_id)
@@ -56,7 +56,7 @@ function plugin_install_script_for_gallery_bank($network_wide)
 			switch_to_blog($blog_id);
 			if(file_exists(GALLERY_BK_PLUGIN_DIR. "/lib/install-script.php"))
 			{
-				include_once GALLERY_BK_PLUGIN_DIR . "/lib/install-script.php";
+				include GALLERY_BK_PLUGIN_DIR . "/lib/install-script.php";
 			}
 			restore_current_blog();
 		}
@@ -110,11 +110,17 @@ function add_gallery_bank_icon($meta = TRUE)
 	(
 		"SELECT count(album_id) FROM ".gallery_bank_albums()
 	);
-	
-	$role = $wpdb->prefix . "capabilities";
-	$current_user->role = array_keys($current_user->$role);
-	$role = $current_user->role[0];
-	
+
+	if(is_super_admin())
+	{
+		$role = "administrator";
+	}
+	else
+	{
+		$role = $wpdb->prefix . "capabilities";
+		$current_user->role = array_keys($current_user->$role);
+		$role = $current_user->role[0];
+	}
 	switch ($role) {
 		case "administrator":
 			$wp_admin_bar->add_menu(array(
@@ -335,10 +341,6 @@ function add_gallery_bank_icon($meta = TRUE)
 					"title" => __("Our Other Services", gallery_bank))
 			);
 		break;
-		case "contributor":
-			break;
-		case "subscriber":
-			break;
 	}
 }
 function gallery_bank_custom_plugin_row($links,$file)
