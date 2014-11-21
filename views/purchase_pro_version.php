@@ -43,7 +43,7 @@ else
 											<?php _e("WP Gallery Bank is an one time Investment. Its Worth it!", gallery_bank); ?>
 										</h1>
 										<div id="gallery_bank_pricing"
-											class="p_table_responsive p_table_hide_caption_column p_table_1 p_table_1_1 css3_grid_clearfix p_table_hover_disabled">
+											class="p_table_responsive p_table_hide_caption_column p_table_1 p_table_1_1 css3_grid_clearfix p_table_hover_disabled" style="margin-bottom:18px;">
 											<div class="caption_column column_0_responsive"
 												style="width: 20%;">
 												<ul>
@@ -69,12 +69,19 @@ else
 														class="css3_grid_row_3 row_style_2 css3_grid_row_3_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
+																	class="css3_hidden_caption">Multisite Compatibility</span><span
+																	class="css3_grid_tooltip"><span>Allows you to use this Plugin with network of sites / Multisites WordPress. 
+																	But you need to have separate license for each domain. </span>Multisite Compatibility</span></span></span></span></li>
+													<li
+														class="css3_grid_row_3 row_style_4 css3_grid_row_3_responsive"><span
+														class="css3_grid_vertical_align_table"><span
+															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Technical Support</span><span
 																	class="css3_grid_tooltip"><span>Technical Support by the
 																			Development Team for Installation, Bug Fixing, Plugin
 																			Compatibility Issues.</span>Technical Support</span></span></span></span></li>
 													<li
-														class="css3_grid_row_4 row_style_4 css3_grid_row_4_responsive"><span
+														class="css3_grid_row_4 row_style_2 css3_grid_row_4_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Plugin Updates</span><span
@@ -82,35 +89,35 @@ else
 																			Notification with New Features, Bug Fixing and much more.</span>Plugin
 																		Updates</span></span></span></span></li>
 													<li
-														class="css3_grid_row_5 row_style_2 css3_grid_row_5_responsive"><span
+														class="css3_grid_row_5 row_style_4 css3_grid_row_5_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Multi-Lingual</span><span
 																	class="css3_grid_tooltip"><span>Multi-Lingual Facility
 																			allows the plugin to be used in 36 languages.</span>Multi-Lingual</span></span></span></span></li>
 													<li
-														class="css3_grid_row_6 row_style_4 css3_grid_row_6_responsive"><span
+														class="css3_grid_row_6 row_style_2 css3_grid_row_6_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Number of Albums</span><span
 																	class="css3_grid_tooltip"><span>Number of Albums allowed to
 																			be Published.</span>Number of Albums</span></span></span></span></li>
 													<li
-														class="css3_grid_row_7 row_style_2 css3_grid_row_7_responsive"><span
+														class="css3_grid_row_7 row_style_4 css3_grid_row_7_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Images per Album</span><span
 																	class="css3_grid_tooltip"><span>Number of Images per Album
 																			allowed to be Published.</span>Images per Album</span></span></span></span></li>
 													<li
-														class="css3_grid_row_8 row_style_4 css3_grid_row_8_responsive"><span
+														class="css3_grid_row_8 row_style_2 css3_grid_row_8_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Responsive Gallery</span><span
 																	class="css3_grid_tooltip"><span>Optimal Viewing Experience
 																			across a wide range of devices.</span>Responsive Gallery</span></span></span></span></li>
 													<li
-														class="css3_grid_row_9 row_style_2 css3_grid_row_9_responsive"><span
+														class="css3_grid_row_9 row_style_4 css3_grid_row_9_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Shortcode Wizard</span><span
@@ -118,7 +125,7 @@ else
 																			insert albums/images to any Page/Post.</span>Shortcode
 																		Wizard</span></span></span></span></li>
 													<li
-														class="css3_grid_row_10 row_style_4 css3_grid_row_10_responsive"><span
+														class="css3_grid_row_10 row_style_2 css3_grid_row_10_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Basic Thumbnail Gallery</span><span
@@ -126,14 +133,14 @@ else
 																			a grid of images that when clicked on, open in a pop-up
 																			full view.</span>Basic Thumbnail Gallery</span></span></span></span></li>
 													<li
-														class="css3_grid_row_11 row_style_2 css3_grid_row_11_responsive"><span
+														class="css3_grid_row_11 row_style_4 css3_grid_row_11_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Grid Album Format</span><span
 																	class="css3_grid_tooltip"><span>Displays images inside of
 																			the album is in a Grid Format.</span>Grid Album Format</span></span></span></span></li>
 													<li
-														class="css3_grid_row_12 row_style_4 css3_grid_row_12_responsive"><span
+														class="css3_grid_row_12 row_style_2 css3_grid_row_12_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Compact Album</span><span
@@ -142,7 +149,7 @@ else
 																			album, along with the title of the gallery with the
 																			amount of images per gallery.</span>Compact Album</span></span></span></span></li>
 													<li
-														class="css3_grid_row_13 row_style_2 css3_grid_row_13_responsive"><span
+														class="css3_grid_row_13 row_style_4 css3_grid_row_13_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Images</span><span
@@ -150,7 +157,7 @@ else
 																			clicked on, open in a popup full view.</span>Individual
 																		Images</span></span></span></span></li>
 													<li
-														class="css3_grid_row_14 row_style_4 css3_grid_row_14_responsive"><span
+														class="css3_grid_row_14 row_style_2 css3_grid_row_14_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Album</span><span
@@ -158,7 +165,7 @@ else
 																			Album links to a Gallery you include in your Album</span>Individual
 																		Album</span></span></span></span></li>
 													<li
-														class="css3_grid_row_15 row_style_2 css3_grid_row_15_responsive"><span
+														class="css3_grid_row_15 row_style_4 css3_grid_row_15_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Masonry Gallery Format </span><span
@@ -167,7 +174,7 @@ else
 																			optimal position based on available vertical space.</span>Masonry
 																		Gallery Format </span></span></span></span></li>
 													<li
-														class="css3_grid_row_16 row_style_4 css3_grid_row_16_responsive"><span
+														class="css3_grid_row_16 row_style_2 css3_grid_row_16_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">List Album Format</span><span
@@ -175,7 +182,7 @@ else
 																			covers with title and description.</span>List Album
 																		Format</span></span></span></span></li>
 													<li
-														class="css3_grid_row_17 row_style_2 css3_grid_row_17_responsive"><span
+														class="css3_grid_row_17 row_style_4 css3_grid_row_17_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Lightbox</span><span
@@ -183,7 +190,7 @@ else
 																			to overlay images on the current page. It's a snap to
 																			setup and works on all modern browsers.</span>Lightbox</span></span></span></span></li>
 													<li
-														class="css3_grid_row_18 row_style_4 css3_grid_row_18_responsive"><span
+														class="css3_grid_row_18 row_style_2 css3_grid_row_18_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Extended Album</span><span
@@ -193,14 +200,14 @@ else
 																			gallery and amount of images within the gallery.</span>Extended
 																		Album</span></span></span></span></li>
 													<li
-														class="css3_grid_row_19 row_style_2 css3_grid_row_19_responsive"><span
+														class="css3_grid_row_19 row_style_4 css3_grid_row_19_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Upload of Images</span><span
 																	class="css3_grid_tooltip"><span>Bulk Upload of Images in
 																			single time.</span>Bulk Upload of Images</span></span></span></span></li>
 													<li
-														class="css3_grid_row_20 row_style_4 css3_grid_row_20_responsive"><span
+														class="css3_grid_row_20 row_style_2 css3_grid_row_20_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filmstrip Gallery Format</span><span
@@ -208,7 +215,7 @@ else
 																			galleries – great for displaying non-cropped thumbnails
 																			in clean grids.</span>Filmstrip Gallery Format</span></span></span></span></li>
 													<li
-														class="css3_grid_row_21 row_style_2 css3_grid_row_21_responsive"><span
+														class="css3_grid_row_21 row_style_4 css3_grid_row_21_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Blog Style Gallery Format</span><span
@@ -216,14 +223,14 @@ else
 																			thumbnails images common to photography blogs.</span>Blog
 																		Style Gallery Format</span></span></span></span></li>
 													<li
-														class="css3_grid_row_22 row_style_4 css3_grid_row_22_responsive"><span
+														class="css3_grid_row_22 row_style_2 css3_grid_row_22_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Slideshow Gallery</span><span
 																	class="css3_grid_tooltip"><span>Mobile-friendly, non-flash
 																			slideshows with nice transitions.</span>Slideshow Gallery</span></span></span></span></li>
 													<li
-														class="css3_grid_row_23 row_style_2 css3_grid_row_23_responsive"><span
+														class="css3_grid_row_23 row_style_4 css3_grid_row_23_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Videos</span><span
@@ -231,7 +238,7 @@ else
 																			from Youtube, Vimeo and other supportive Media Sharing
 																			sites.</span>Videos</span></span></span></span></li>
 													<li
-														class="css3_grid_row_24 row_style_4 css3_grid_row_24_responsive"><span
+														class="css3_grid_row_24 row_style_2 css3_grid_row_24_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Global Settings</span><span
@@ -239,7 +246,7 @@ else
 																			Thumbnails, Lightbox, Albums, Layout and much more.</span>Global
 																		Settings</span></span></span></span></li>
 													<li
-														class="css3_grid_row_25 row_style_2 css3_grid_row_25_responsive"><span
+														class="css3_grid_row_25 row_style_4 css3_grid_row_25_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Custom Size Thumbnails</span><span
@@ -248,7 +255,7 @@ else
 																			howerver disort the image if not used with TimThumb.</span>Custom
 																		Size Thumbnails</span></span></span></span></li>
 													<li
-														class="css3_grid_row_26 row_style_4 css3_grid_row_26_responsive"><span
+														class="css3_grid_row_26 row_style_2 css3_grid_row_26_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Pagination for Images</span><span
@@ -256,7 +263,7 @@ else
 																			images allowed on a single page and provide navigation
 																			for the rest.</span>Pagination for Images</span></span></span></span></li>
 													<li
-														class="css3_grid_row_27 row_style_2 css3_grid_row_27_responsive"><span
+														class="css3_grid_row_27 row_style_4 css3_grid_row_27_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Images</span><span
@@ -265,7 +272,7 @@ else
 																			per user choice by simply dragging and dropping it.</span>Sorting
 																		of Images</span></span></span></span></li>
 													<li
-														class="css3_grid_row_28 row_style_4 css3_grid_row_28_responsive"><span
+														class="css3_grid_row_28 row_style_2 css3_grid_row_28_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Albums</span><span
@@ -274,35 +281,35 @@ else
 																			per user choice by simply dragging and dropping it.</span>Sorting
 																		of Albums</span></span></span></span></li>
 													<li
-														class="css3_grid_row_29 row_style_2 css3_grid_row_29_responsive"><span
+														class="css3_grid_row_29 row_style_4 css3_grid_row_29_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Animation Effects</span><span
 																	class="css3_grid_tooltip"><span>Animation Effects to
 																			impliment on Thumbnails.</span>Animation Effects</span></span></span></span></li>
 													<li
-														class="css3_grid_row_30 row_style_4 css3_grid_row_30_responsive"><span
+														class="css3_grid_row_30 row_style_2 css3_grid_row_30_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Special Effects</span><span
 																	class="css3_grid_tooltip"><span>Special Effects to
 																			impliment on Thumbnails.</span>Special Effects</span></span></span></span></li>
 													<li
-														class="css3_grid_row_31 row_style_2 css3_grid_row_31_responsive"><span
+														class="css3_grid_row_31 row_style_4 css3_grid_row_31_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Restore Factory Settings</span><span
 																	class="css3_grid_tooltip"><span>Restore Plugin back to
 																			default settings.</span>Restore Factory Settings</span></span></span></span></li>
 													<li
-														class="css3_grid_row_32 row_style_4 css3_grid_row_32_responsive"><span
+														class="css3_grid_row_32 row_style_2 css3_grid_row_32_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filters</span><span
 																	class="css3_grid_tooltip"><span>Filters to categorize the
 																			images by different names.</span>Filters</span></span></span></span></li>
 													<li
-														class="css3_grid_row_33 row_style_2 css3_grid_row_33_responsive"><span
+														class="css3_grid_row_33 row_style_4 css3_grid_row_33_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Rotation of Thumbnails</span><span
@@ -310,7 +317,7 @@ else
 																			rotate images to different directions.</span>Rotation of
 																		Thumbnails</span></span></span></span></li>
 													<li
-														class="css3_grid_row_34 row_style_4 css3_grid_row_34_responsive"><span
+														class="css3_grid_row_34 row_style_2 css3_grid_row_34_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Different Lightboxes</span><span
@@ -320,7 +327,7 @@ else
 																			to Purchase FOO BOX separately).</span>Different
 																		Lightboxes</span></span></span></span></li>
 													<li
-														class="css3_grid_row_35 row_style_2 css3_grid_row_35_responsive"><span
+														class="css3_grid_row_35 row_style_4 css3_grid_row_35_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Social Sharing</span><span
@@ -328,7 +335,7 @@ else
 																			to share your images across social networks with one
 																			click.</span>Social Sharing</span></span></span></span></li>
 													<li
-														class="css3_grid_row_36 row_style_4 css3_grid_row_36_responsive"><span
+														class="css3_grid_row_36 row_style_2 css3_grid_row_36_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Commenting on Images</span><span
@@ -336,14 +343,14 @@ else
 																			your users to post comments on images.</span>Commenting
 																		on Images</span></span></span></span></li>
 													<li
-														class="css3_grid_row_37 row_style_2 css3_grid_row_37_responsive"><span
+														class="css3_grid_row_37 row_style_4 css3_grid_row_37_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Widgets</span><span
 																	class="css3_grid_tooltip"><span>Widgets allows albums and
 																			images to be shown in your sidebar, footer, header etc.</span>Widgets</span></span></span></span></li>
 													<li
-														class="css3_grid_row_38 row_style_4 css3_grid_row_38_responsive"><span
+														class="css3_grid_row_38 row_style_2 css3_grid_row_38_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Deletion</span><span
@@ -351,7 +358,7 @@ else
 																			deletion of images and albums on a single click.</span>Bulk
 																		Deletion</span></span></span></span></li>
 													<li
-														class="css3_grid_row_39 row_style_2 css3_grid_row_39_responsive"><span
+														class="css3_grid_row_39 row_style_4 css3_grid_row_39_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Purging of Albums</span><span
@@ -381,253 +388,260 @@ else
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Domains per License</span>1</span></span></span></li>
 													<li
-														class="css3_grid_row_3 row_style_1 css3_grid_row_3_responsive align_center"><span
+														class="css3_grid_row_4 row_style_1 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_vertical_align_table"><span
+															class="css3_grid_vertical_align"><span><span
+																	class="css3_hidden_caption">Multisite Compatibility</span><img
+																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
+																	alt="yes"></span></span></span></li>
+													<li
+														class="css3_grid_row_3 row_style_3 css3_grid_row_3_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Technical Support</span>None</span></span></span></li>
 													<li
-														class="css3_grid_row_4 row_style_3 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_row_4 row_style_1 css3_grid_row_4_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Plugin Updates</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_5 row_style_1 css3_grid_row_5_responsive align_center"><span
+														class="css3_grid_row_5 row_style_3 css3_grid_row_5_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Multi-Lingual</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_6 row_style_3 css3_grid_row_6_responsive align_center"><span
+														class="css3_grid_row_6 row_style_1 css3_grid_row_6_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Number of Albums</span>3</span></span></span></li>
 													<li
-														class="css3_grid_row_7 row_style_1 css3_grid_row_7_responsive align_center"><span
+														class="css3_grid_row_7 row_style_3 css3_grid_row_7_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Images per Album</span>Unlimited</span></span></span></li>
 													<li
-														class="css3_grid_row_8 row_style_3 css3_grid_row_8_responsive align_center"><span
+														class="css3_grid_row_8 row_style_1 css3_grid_row_8_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Responsive Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_9 row_style_1 css3_grid_row_9_responsive align_center"><span
+														class="css3_grid_row_9 row_style_3 css3_grid_row_9_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Shortcode Wizard</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_10 row_style_3 css3_grid_row_10_responsive align_center"><span
+														class="css3_grid_row_10 row_style_1 css3_grid_row_10_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Basic Thumbnail Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_11 row_style_1 css3_grid_row_11_responsive align_center"><span
+														class="css3_grid_row_11 row_style_3 css3_grid_row_11_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Grid Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_12 row_style_3 css3_grid_row_12_responsive align_center"><span
+														class="css3_grid_row_12 row_style_1 css3_grid_row_12_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Compact Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_13 row_style_1 css3_grid_row_13_responsive align_center"><span
+														class="css3_grid_row_13 row_style_3 css3_grid_row_13_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_14 row_style_3 css3_grid_row_14_responsive align_center"><span
+														class="css3_grid_row_14 row_style_1 css3_grid_row_14_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_15 row_style_1 css3_grid_row_15_responsive align_center"><span
+														class="css3_grid_row_15 row_style_3 css3_grid_row_15_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Masonry Gallery Format </span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_16 row_style_3 css3_grid_row_16_responsive align_center"><span
+														class="css3_grid_row_16 row_style_1 css3_grid_row_16_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">List Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_17 row_style_1 css3_grid_row_17_responsive align_center"><span
+														class="css3_grid_row_17 row_style_3 css3_grid_row_17_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Lightbox</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_18 row_style_3 css3_grid_row_18_responsive align_center"><span
+														class="css3_grid_row_18 row_style_1 css3_grid_row_18_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Extended Album</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_19 row_style_1 css3_grid_row_19_responsive align_center"><span
+														class="css3_grid_row_19 row_style_3 css3_grid_row_19_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Upload of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_20 row_style_3 css3_grid_row_20_responsive align_center"><span
+														class="css3_grid_row_20 row_style_1 css3_grid_row_20_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filmstrip Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_21 row_style_1 css3_grid_row_21_responsive align_center"><span
+														class="css3_grid_row_21 row_style_3 css3_grid_row_21_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Blog Style Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_22 row_style_3 css3_grid_row_22_responsive align_center"><span
+														class="css3_grid_row_22 row_style_1 css3_grid_row_22_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Slideshow Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_23 row_style_1 css3_grid_row_23_responsive align_center"><span
+														class="css3_grid_row_23 row_style_3 css3_grid_row_23_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Videos</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_24 row_style_3 css3_grid_row_24_responsive align_center"><span
+														class="css3_grid_row_24 row_style_1 css3_grid_row_24_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Global Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_25 row_style_1 css3_grid_row_25_responsive align_center"><span
+														class="css3_grid_row_25 row_style_3 css3_grid_row_25_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Custom Size Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_26 row_style_3 css3_grid_row_26_responsive align_center"><span
+														class="css3_grid_row_26 row_style_1 css3_grid_row_26_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Pagination for Images</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_27 row_style_1 css3_grid_row_27_responsive align_center"><span
+														class="css3_grid_row_27 row_style_3 css3_grid_row_27_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_28 row_style_3 css3_grid_row_28_responsive align_center"><span
+														class="css3_grid_row_28 row_style_1 css3_grid_row_28_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Albums</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_29 row_style_1 css3_grid_row_29_responsive align_center"><span
+														class="css3_grid_row_29 row_style_3 css3_grid_row_29_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Animation Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_30 row_style_3 css3_grid_row_30_responsive align_center"><span
+														class="css3_grid_row_30 row_style_1 css3_grid_row_30_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Special Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_31 row_style_1 css3_grid_row_31_responsive align_center"><span
+														class="css3_grid_row_31 row_style_3 css3_grid_row_31_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Restore Factory Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_32 row_style_3 css3_grid_row_32_responsive align_center"><span
+														class="css3_grid_row_32 row_style_1 css3_grid_row_32_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filters</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_33 row_style_1 css3_grid_row_33_responsive align_center"><span
+														class="css3_grid_row_33 row_style_3 css3_grid_row_33_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Rotation of Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_34 row_style_3 css3_grid_row_34_responsive align_center"><span
+														class="css3_grid_row_34 row_style_1 css3_grid_row_34_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Different Lightboxes</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_35 row_style_1 css3_grid_row_35_responsive align_center"><span
+														class="css3_grid_row_35 row_style_3 css3_grid_row_35_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Social Sharing</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_36 row_style_3 css3_grid_row_36_responsive align_center"><span
+														class="css3_grid_row_36 row_style_1 css3_grid_row_36_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Commenting on Images</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_37 row_style_1 css3_grid_row_37_responsive align_center"><span
+														class="css3_grid_row_37 row_style_3 css3_grid_row_37_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Widgets</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_38 row_style_3 css3_grid_row_38_responsive align_center"><span
+														class="css3_grid_row_38 row_style_1 css3_grid_row_38_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Deletion</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_39 row_style_1 css3_grid_row_39_responsive align_center"><span
+														class="css3_grid_row_39 row_style_3 css3_grid_row_39_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Purging of Albums</span><img
@@ -664,253 +678,260 @@ else
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Domains per License</span>1</span></span></span></li>
 													<li
-														class="css3_grid_row_3 row_style_2 css3_grid_row_3_responsive align_center"><span
+														class="css3_grid_row_4 row_style_2 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_vertical_align_table"><span
+															class="css3_grid_vertical_align"><span><span
+																	class="css3_hidden_caption">Multisite Compatibility</span><img
+																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
+																	alt="yes"></span></span></span></li>
+													<li
+														class="css3_grid_row_3 row_style_4 css3_grid_row_3_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Technical Support</span>1 Week</span></span></span></li>
 													<li
-														class="css3_grid_row_4 row_style_4 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_row_4 row_style_2 css3_grid_row_4_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Plugin Updates</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_5 row_style_2 css3_grid_row_5_responsive align_center"><span
+														class="css3_grid_row_5 row_style_4 css3_grid_row_5_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Multi-Lingual</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_6 row_style_4 css3_grid_row_6_responsive align_center"><span
+														class="css3_grid_row_6 row_style_2 css3_grid_row_6_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Number of Albums</span>Unlimited</span></span></span></li>
 													<li
-														class="css3_grid_row_7 row_style_2 css3_grid_row_7_responsive align_center"><span
+														class="css3_grid_row_7 row_style_4 css3_grid_row_7_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Images per Album</span>Unlimited</span></span></span></li>
 													<li
-														class="css3_grid_row_8 row_style_4 css3_grid_row_8_responsive align_center"><span
+														class="css3_grid_row_8 row_style_2 css3_grid_row_8_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Responsive Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_9 row_style_2 css3_grid_row_9_responsive align_center"><span
+														class="css3_grid_row_9 row_style_4 css3_grid_row_9_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Shortcode Wizard</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_10 row_style_4 css3_grid_row_10_responsive align_center"><span
+														class="css3_grid_row_10 row_style_2 css3_grid_row_10_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Basic Thumbnail Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_11 row_style_2 css3_grid_row_11_responsive align_center"><span
+														class="css3_grid_row_11 row_style_4 css3_grid_row_11_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Grid Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_12 row_style_4 css3_grid_row_12_responsive align_center"><span
+														class="css3_grid_row_12 row_style_2 css3_grid_row_12_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Compact Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_13 row_style_2 css3_grid_row_13_responsive align_center"><span
+														class="css3_grid_row_13 row_style_4 css3_grid_row_13_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_14 row_style_4 css3_grid_row_14_responsive align_center"><span
+														class="css3_grid_row_14 row_style_2 css3_grid_row_14_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_15 row_style_2 css3_grid_row_15_responsive align_center"><span
+														class="css3_grid_row_15 row_style_4 css3_grid_row_15_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Masonry Gallery Format </span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_16 row_style_4 css3_grid_row_16_responsive align_center"><span
+														class="css3_grid_row_16 row_style_2 css3_grid_row_16_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">List Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_17 row_style_2 css3_grid_row_17_responsive align_center"><span
+														class="css3_grid_row_17 row_style_4 css3_grid_row_17_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Lightbox</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_18 row_style_4 css3_grid_row_18_responsive align_center"><span
+														class="css3_grid_row_18 row_style_2 css3_grid_row_18_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Extended Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_19 row_style_2 css3_grid_row_19_responsive align_center"><span
+														class="css3_grid_row_19 row_style_4 css3_grid_row_19_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Upload of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_20 row_style_4 css3_grid_row_20_responsive align_center"><span
+														class="css3_grid_row_20 row_style_2 css3_grid_row_20_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filmstrip Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_21 row_style_2 css3_grid_row_21_responsive align_center"><span
+														class="css3_grid_row_21 row_style_4 css3_grid_row_21_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Blog Style Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_22 row_style_4 css3_grid_row_22_responsive align_center"><span
+														class="css3_grid_row_22 row_style_2 css3_grid_row_22_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Slideshow Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_23 row_style_2 css3_grid_row_23_responsive align_center"><span
+														class="css3_grid_row_23 row_style_4 css3_grid_row_23_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Videos</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_24 row_style_4 css3_grid_row_24_responsive align_center"><span
+														class="css3_grid_row_24 row_style_2 css3_grid_row_24_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Global Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_25 row_style_2 css3_grid_row_25_responsive align_center"><span
+														class="css3_grid_row_25 row_style_4 css3_grid_row_25_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Custom Size Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_26 row_style_4 css3_grid_row_26_responsive align_center"><span
+														class="css3_grid_row_26 row_style_2 css3_grid_row_26_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Pagination for Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_27 row_style_2 css3_grid_row_27_responsive align_center"><span
+														class="css3_grid_row_27 row_style_4 css3_grid_row_27_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_28 row_style_4 css3_grid_row_28_responsive align_center"><span
+														class="css3_grid_row_28 row_style_2 css3_grid_row_28_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Albums</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_29 row_style_2 css3_grid_row_29_responsive align_center"><span
+														class="css3_grid_row_29 row_style_4 css3_grid_row_29_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Animation Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_30 row_style_4 css3_grid_row_30_responsive align_center"><span
+														class="css3_grid_row_30 row_style_2 css3_grid_row_30_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Special Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_31 row_style_2 css3_grid_row_31_responsive align_center"><span
+														class="css3_grid_row_31 row_style_4 css3_grid_row_31_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Restore Factory Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_32 row_style_4 css3_grid_row_32_responsive align_center"><span
+														class="css3_grid_row_32 row_style_2 css3_grid_row_32_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filters</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_33 row_style_2 css3_grid_row_33_responsive align_center"><span
+														class="css3_grid_row_33 row_style_4 css3_grid_row_33_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Rotation of Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_34 row_style_4 css3_grid_row_34_responsive align_center"><span
+														class="css3_grid_row_34 row_style_2 css3_grid_row_34_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Different Lightboxes</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_35 row_style_2 css3_grid_row_35_responsive align_center"><span
+														class="css3_grid_row_35 row_style_4 css3_grid_row_35_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Social Sharing</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_36 row_style_4 css3_grid_row_36_responsive align_center"><span
+														class="css3_grid_row_36 row_style_2 css3_grid_row_36_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Commenting on Images</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_37 row_style_2 css3_grid_row_37_responsive align_center"><span
+														class="css3_grid_row_37 row_style_4 css3_grid_row_37_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Widgets</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_38 row_style_4 css3_grid_row_38_responsive align_center"><span
+														class="css3_grid_row_38 row_style_2 css3_grid_row_38_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Deletion</span><img
 																	src="<?php echo plugins_url("/assets/img/cross_04.png" , dirname(__FILE__)); ?>"
 																	alt="no"></span></span></span></li>
 													<li
-														class="css3_grid_row_39 row_style_2 css3_grid_row_39_responsive align_center"><span
+														class="css3_grid_row_39 row_style_4 css3_grid_row_39_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Purging of Albums</span><img
@@ -947,253 +968,260 @@ else
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Domains per License</span>1</span></span></span></li>
 													<li
-														class="css3_grid_row_3 row_style_1 css3_grid_row_3_responsive align_center"><span
+														class="css3_grid_row_4 row_style_1 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_vertical_align_table"><span
+															class="css3_grid_vertical_align"><span><span
+																	class="css3_hidden_caption">Multisite Compatibility</span><img
+																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
+																	alt="yes"></span></span></span></li>
+													<li
+														class="css3_grid_row_3 row_style_3 css3_grid_row_3_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Technical Support</span>1 Month</span></span></span></li>
 													<li
-														class="css3_grid_row_4 row_style_3 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_row_4 row_style_1 css3_grid_row_4_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Plugin Updates</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_5 row_style_1 css3_grid_row_5_responsive align_center"><span
+														class="css3_grid_row_5 row_style_3 css3_grid_row_5_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Multi-Lingual</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_6 row_style_3 css3_grid_row_6_responsive align_center"><span
+														class="css3_grid_row_6 row_style_1 css3_grid_row_6_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Number of Albums</span>Unlimited</span></span></span></li>
 													<li
-														class="css3_grid_row_7 row_style_1 css3_grid_row_7_responsive align_center"><span
+														class="css3_grid_row_7 row_style_3 css3_grid_row_7_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Images per Album</span>Unlimited</span></span></span></li>
 													<li
-														class="css3_grid_row_8 row_style_3 css3_grid_row_8_responsive align_center"><span
+														class="css3_grid_row_8 row_style_1 css3_grid_row_8_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Responsive Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_9 row_style_1 css3_grid_row_9_responsive align_center"><span
+														class="css3_grid_row_9 row_style_3 css3_grid_row_9_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Shortcode Wizard</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_10 row_style_3 css3_grid_row_10_responsive align_center"><span
+														class="css3_grid_row_10 row_style_1 css3_grid_row_10_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Basic Thumbnail Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_11 row_style_1 css3_grid_row_11_responsive align_center"><span
+														class="css3_grid_row_11 row_style_3 css3_grid_row_11_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Grid Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_12 row_style_3 css3_grid_row_12_responsive align_center"><span
+														class="css3_grid_row_12 row_style_1 css3_grid_row_12_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Compact Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_13 row_style_1 css3_grid_row_13_responsive align_center"><span
+														class="css3_grid_row_13 row_style_3 css3_grid_row_13_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_14 row_style_3 css3_grid_row_14_responsive align_center"><span
+														class="css3_grid_row_14 row_style_1 css3_grid_row_14_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_15 row_style_1 css3_grid_row_15_responsive align_center"><span
+														class="css3_grid_row_15 row_style_3 css3_grid_row_15_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Masonry Gallery Format </span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_16 row_style_3 css3_grid_row_16_responsive align_center"><span
+														class="css3_grid_row_16 row_style_1 css3_grid_row_16_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">List Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_17 row_style_1 css3_grid_row_17_responsive align_center"><span
+														class="css3_grid_row_17 row_style_3 css3_grid_row_17_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Lightbox</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_18 row_style_3 css3_grid_row_18_responsive align_center"><span
+														class="css3_grid_row_18 row_style_1 css3_grid_row_18_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Extended Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_19 row_style_1 css3_grid_row_19_responsive align_center"><span
+														class="css3_grid_row_19 row_style_3 css3_grid_row_19_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Upload of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_20 row_style_3 css3_grid_row_20_responsive align_center"><span
+														class="css3_grid_row_20 row_style_1 css3_grid_row_20_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filmstrip Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_21 row_style_1 css3_grid_row_21_responsive align_center"><span
+														class="css3_grid_row_21 row_style_3 css3_grid_row_21_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Blog Style Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_22 row_style_3 css3_grid_row_22_responsive align_center"><span
+														class="css3_grid_row_22 row_style_1 css3_grid_row_22_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Slideshow Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_23 row_style_1 css3_grid_row_23_responsive align_center"><span
+														class="css3_grid_row_23 row_style_3 css3_grid_row_23_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Videos</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_24 row_style_3 css3_grid_row_24_responsive align_center"><span
+														class="css3_grid_row_24 row_style_1 css3_grid_row_24_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Global Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_25 row_style_1 css3_grid_row_25_responsive align_center"><span
+														class="css3_grid_row_25 row_style_3 css3_grid_row_25_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Custom Size Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_26 row_style_3 css3_grid_row_26_responsive align_center"><span
+														class="css3_grid_row_26 row_style_1 css3_grid_row_26_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Pagination for Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_27 row_style_1 css3_grid_row_27_responsive align_center"><span
+														class="css3_grid_row_27 row_style_3 css3_grid_row_27_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_28 row_style_3 css3_grid_row_28_responsive align_center"><span
+														class="css3_grid_row_28 row_style_1 css3_grid_row_28_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Albums</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_29 row_style_1 css3_grid_row_29_responsive align_center"><span
+														class="css3_grid_row_29 row_style_3 css3_grid_row_29_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Animation Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_30 row_style_3 css3_grid_row_30_responsive align_center"><span
+														class="css3_grid_row_30 row_style_1 css3_grid_row_30_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Special Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_31 row_style_1 css3_grid_row_31_responsive align_center"><span
+														class="css3_grid_row_31 row_style_3 css3_grid_row_31_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Restore Factory Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_32 row_style_3 css3_grid_row_32_responsive align_center"><span
+														class="css3_grid_row_32 row_style_1 css3_grid_row_32_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filters</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_33 row_style_1 css3_grid_row_33_responsive align_center"><span
+														class="css3_grid_row_33 row_style_3 css3_grid_row_33_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Rotation of Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_34 row_style_3 css3_grid_row_34_responsive align_center"><span
+														class="css3_grid_row_34 row_style_1 css3_grid_row_34_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Different Lightboxes</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_35 row_style_1 css3_grid_row_35_responsive align_center"><span
+														class="css3_grid_row_35 row_style_3 css3_grid_row_35_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Social Sharing</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_36 row_style_3 css3_grid_row_36_responsive align_center"><span
+														class="css3_grid_row_36 row_style_1 css3_grid_row_36_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Commenting on Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_37 row_style_1 css3_grid_row_37_responsive align_center"><span
+														class="css3_grid_row_37 row_style_3 css3_grid_row_37_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Widgets</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_38 row_style_3 css3_grid_row_38_responsive align_center"><span
+														class="css3_grid_row_38 row_style_1 css3_grid_row_38_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Deletion</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_39 row_style_1 css3_grid_row_39_responsive align_center"><span
+														class="css3_grid_row_39 row_style_3 css3_grid_row_39_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Purging of Albums</span><img
@@ -1230,253 +1258,260 @@ else
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Domains per License</span>5</span></span></span></li>
 													<li
-														class="css3_grid_row_3 row_style_2 css3_grid_row_3_responsive align_center"><span
+														class="css3_grid_row_4 row_style_2 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_vertical_align_table"><span
+															class="css3_grid_vertical_align"><span><span
+																	class="css3_hidden_caption">Multisite Compatibility</span><img
+																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
+																	alt="yes"></span></span></span></li>
+													<li
+														class="css3_grid_row_3 row_style_4 css3_grid_row_3_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Technical Support</span>1 Year</span></span></span></li>
 													<li
-														class="css3_grid_row_4 row_style_4 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_row_4 row_style_2 css3_grid_row_4_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Plugin Updates</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_5 row_style_2 css3_grid_row_5_responsive align_center"><span
+														class="css3_grid_row_5 row_style_4 css3_grid_row_5_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Multi-Lingual</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_6 row_style_4 css3_grid_row_6_responsive align_center"><span
+														class="css3_grid_row_6 row_style_2 css3_grid_row_6_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Number of Albums</span>Unlimited</span></span></span></li>
 													<li
-														class="css3_grid_row_7 row_style_2 css3_grid_row_7_responsive align_center"><span
+														class="css3_grid_row_7 row_style_4 css3_grid_row_7_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Images per Album</span>Unlimited</span></span></span></li>
 													<li
-														class="css3_grid_row_8 row_style_4 css3_grid_row_8_responsive align_center"><span
+														class="css3_grid_row_8 row_style_2 css3_grid_row_8_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Responsive Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_9 row_style_2 css3_grid_row_9_responsive align_center"><span
+														class="css3_grid_row_9 row_style_4 css3_grid_row_9_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Shortcode Wizard</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_10 row_style_4 css3_grid_row_10_responsive align_center"><span
+														class="css3_grid_row_10 row_style_2 css3_grid_row_10_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Basic Thumbnail Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_11 row_style_2 css3_grid_row_11_responsive align_center"><span
+														class="css3_grid_row_11 row_style_4 css3_grid_row_11_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Grid Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_12 row_style_4 css3_grid_row_12_responsive align_center"><span
+														class="css3_grid_row_12 row_style_2 css3_grid_row_12_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Compact Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_13 row_style_2 css3_grid_row_13_responsive align_center"><span
+														class="css3_grid_row_13 row_style_4 css3_grid_row_13_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_14 row_style_4 css3_grid_row_14_responsive align_center"><span
+														class="css3_grid_row_14 row_style_2 css3_grid_row_14_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_15 row_style_2 css3_grid_row_15_responsive align_center"><span
+														class="css3_grid_row_15 row_style_4 css3_grid_row_15_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Masonry Gallery Format </span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_16 row_style_4 css3_grid_row_16_responsive align_center"><span
+														class="css3_grid_row_16 row_style_2 css3_grid_row_16_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">List Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_17 row_style_2 css3_grid_row_17_responsive align_center"><span
+														class="css3_grid_row_17 row_style_4 css3_grid_row_17_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Lightbox</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_18 row_style_4 css3_grid_row_18_responsive align_center"><span
+														class="css3_grid_row_18 row_style_2 css3_grid_row_18_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Extended Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_19 row_style_2 css3_grid_row_19_responsive align_center"><span
+														class="css3_grid_row_19 row_style_4 css3_grid_row_19_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Upload of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_20 row_style_4 css3_grid_row_20_responsive align_center"><span
+														class="css3_grid_row_20 row_style_2 css3_grid_row_20_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filmstrip Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_21 row_style_2 css3_grid_row_21_responsive align_center"><span
+														class="css3_grid_row_21 row_style_4 css3_grid_row_21_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Blog Style Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_22 row_style_4 css3_grid_row_22_responsive align_center"><span
+														class="css3_grid_row_22 row_style_2 css3_grid_row_22_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Slideshow Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_23 row_style_2 css3_grid_row_23_responsive align_center"><span
+														class="css3_grid_row_23 row_style_4 css3_grid_row_23_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Videos</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_24 row_style_4 css3_grid_row_24_responsive align_center"><span
+														class="css3_grid_row_24 row_style_2 css3_grid_row_24_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Global Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_25 row_style_2 css3_grid_row_25_responsive align_center"><span
+														class="css3_grid_row_25 row_style_4 css3_grid_row_25_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Custom Size Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_26 row_style_4 css3_grid_row_26_responsive align_center"><span
+														class="css3_grid_row_26 row_style_2 css3_grid_row_26_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Pagination for Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_27 row_style_2 css3_grid_row_27_responsive align_center"><span
+														class="css3_grid_row_27 row_style_4 css3_grid_row_27_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_28 row_style_4 css3_grid_row_28_responsive align_center"><span
+														class="css3_grid_row_28 row_style_2 css3_grid_row_28_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Albums</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_29 row_style_2 css3_grid_row_29_responsive align_center"><span
+														class="css3_grid_row_29 row_style_4 css3_grid_row_29_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Animation Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_30 row_style_4 css3_grid_row_30_responsive align_center"><span
+														class="css3_grid_row_30 row_style_2 css3_grid_row_30_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Special Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_31 row_style_2 css3_grid_row_31_responsive align_center"><span
+														class="css3_grid_row_31 row_style_4 css3_grid_row_31_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Restore Factory Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_32 row_style_4 css3_grid_row_32_responsive align_center"><span
+														class="css3_grid_row_32 row_style_2 css3_grid_row_32_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filters</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_33 row_style_2 css3_grid_row_33_responsive align_center"><span
+														class="css3_grid_row_33 row_style_4 css3_grid_row_33_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Rotation of Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_34 row_style_4 css3_grid_row_34_responsive align_center"><span
+														class="css3_grid_row_34 row_style_2 css3_grid_row_34_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Different Lightboxes</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_35 row_style_2 css3_grid_row_35_responsive align_center"><span
+														class="css3_grid_row_35 row_style_4 css3_grid_row_35_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Social Sharing</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_36 row_style_4 css3_grid_row_36_responsive align_center"><span
+														class="css3_grid_row_36 row_style_2 css3_grid_row_36_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Commenting on Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_37 row_style_2 css3_grid_row_37_responsive align_center"><span
+														class="css3_grid_row_37 row_style_4 css3_grid_row_37_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Widgets</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_38 row_style_4 css3_grid_row_38_responsive align_center"><span
+														class="css3_grid_row_38 row_style_2 css3_grid_row_38_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Deletion</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_39 row_style_2 css3_grid_row_39_responsive align_center"><span
+														class="css3_grid_row_39 row_style_4 css3_grid_row_39_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Purging of Albums</span><img
@@ -1513,253 +1548,260 @@ else
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Domains per License</span>50</span></span></span></li>
 													<li
-														class="css3_grid_row_3 row_style_1 css3_grid_row_3_responsive align_center"><span
+														class="css3_grid_row_4 row_style_1 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_vertical_align_table"><span
+															class="css3_grid_vertical_align"><span><span
+																	class="css3_hidden_caption">Multisite Compatibility</span><img
+																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
+																	alt="yes"></span></span></span></li>
+													<li
+														class="css3_grid_row_3 row_style_3 css3_grid_row_3_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Technical Support</span>1 Year</span></span></span></li>
 													<li
-														class="css3_grid_row_4 row_style_3 css3_grid_row_4_responsive align_center"><span
+														class="css3_grid_row_4 row_style_1 css3_grid_row_4_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Plugin Updates</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_5 row_style_1 css3_grid_row_5_responsive align_center"><span
+														class="css3_grid_row_5 row_style_3 css3_grid_row_5_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Multi-Lingual</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_6 row_style_3 css3_grid_row_6_responsive align_center"><span
+														class="css3_grid_row_6 row_style_1 css3_grid_row_6_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Number of Albums</span>Unlimited</span></span></span></li>
 													<li
-														class="css3_grid_row_7 row_style_1 css3_grid_row_7_responsive align_center"><span
+														class="css3_grid_row_7 row_style_3 css3_grid_row_7_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Images per Album</span>Unlimited</span></span></span></li>
 													<li
-														class="css3_grid_row_8 row_style_3 css3_grid_row_8_responsive align_center"><span
+														class="css3_grid_row_8 row_style_1 css3_grid_row_8_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Responsive Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_9 row_style_1 css3_grid_row_9_responsive align_center"><span
+														class="css3_grid_row_9 row_style_3 css3_grid_row_9_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Shortcode Wizard</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_10 row_style_3 css3_grid_row_10_responsive align_center"><span
+														class="css3_grid_row_10 row_style_1 css3_grid_row_10_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Basic Thumbnail Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_11 row_style_1 css3_grid_row_11_responsive align_center"><span
+														class="css3_grid_row_11 row_style_3 css3_grid_row_11_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Grid Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_12 row_style_3 css3_grid_row_12_responsive align_center"><span
+														class="css3_grid_row_12 row_style_1 css3_grid_row_12_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Compact Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_13 row_style_1 css3_grid_row_13_responsive align_center"><span
+														class="css3_grid_row_13 row_style_3 css3_grid_row_13_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_14 row_style_3 css3_grid_row_14_responsive align_center"><span
+														class="css3_grid_row_14 row_style_1 css3_grid_row_14_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Individual Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_15 row_style_1 css3_grid_row_15_responsive align_center"><span
+														class="css3_grid_row_15 row_style_3 css3_grid_row_15_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Masonry Gallery Format </span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_16 row_style_3 css3_grid_row_16_responsive align_center"><span
+														class="css3_grid_row_16 row_style_1 css3_grid_row_16_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">List Album Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_17 row_style_1 css3_grid_row_17_responsive align_center"><span
+														class="css3_grid_row_17 row_style_3 css3_grid_row_17_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Lightbox</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_18 row_style_3 css3_grid_row_18_responsive align_center"><span
+														class="css3_grid_row_18 row_style_1 css3_grid_row_18_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Extended Album</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_19 row_style_1 css3_grid_row_19_responsive align_center"><span
+														class="css3_grid_row_19 row_style_3 css3_grid_row_19_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Upload of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_20 row_style_3 css3_grid_row_20_responsive align_center"><span
+														class="css3_grid_row_20 row_style_1 css3_grid_row_20_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filmstrip Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_21 row_style_1 css3_grid_row_21_responsive align_center"><span
+														class="css3_grid_row_21 row_style_3 css3_grid_row_21_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Blog Style Gallery Format</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_22 row_style_3 css3_grid_row_22_responsive align_center"><span
+														class="css3_grid_row_22 row_style_1 css3_grid_row_22_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Slideshow Gallery</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_23 row_style_1 css3_grid_row_23_responsive align_center"><span
+														class="css3_grid_row_23 row_style_3 css3_grid_row_23_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Videos</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_24 row_style_3 css3_grid_row_24_responsive align_center"><span
+														class="css3_grid_row_24 row_style_1 css3_grid_row_24_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Global Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_25 row_style_1 css3_grid_row_25_responsive align_center"><span
+														class="css3_grid_row_25 row_style_3 css3_grid_row_25_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Custom Size Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_26 row_style_3 css3_grid_row_26_responsive align_center"><span
+														class="css3_grid_row_26 row_style_1 css3_grid_row_26_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Pagination for Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_27 row_style_1 css3_grid_row_27_responsive align_center"><span
+														class="css3_grid_row_27 row_style_3 css3_grid_row_27_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_28 row_style_3 css3_grid_row_28_responsive align_center"><span
+														class="css3_grid_row_28 row_style_1 css3_grid_row_28_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Sorting of Albums</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_29 row_style_1 css3_grid_row_29_responsive align_center"><span
+														class="css3_grid_row_29 row_style_3 css3_grid_row_29_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Animation Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_30 row_style_3 css3_grid_row_30_responsive align_center"><span
+														class="css3_grid_row_30 row_style_1 css3_grid_row_30_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Special Effects</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_31 row_style_1 css3_grid_row_31_responsive align_center"><span
+														class="css3_grid_row_31 row_style_3 css3_grid_row_31_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Restore Factory Settings</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_32 row_style_3 css3_grid_row_32_responsive align_center"><span
+														class="css3_grid_row_32 row_style_1 css3_grid_row_32_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Filters</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_33 row_style_1 css3_grid_row_33_responsive align_center"><span
+														class="css3_grid_row_33 row_style_3 css3_grid_row_33_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Rotation of Thumbnails</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_34 row_style_3 css3_grid_row_34_responsive align_center"><span
+														class="css3_grid_row_34 row_style_1 css3_grid_row_34_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Different Lightboxes</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_35 row_style_1 css3_grid_row_35_responsive align_center"><span
+														class="css3_grid_row_35 row_style_3 css3_grid_row_35_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Social Sharing</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_36 row_style_3 css3_grid_row_36_responsive align_center"><span
+														class="css3_grid_row_36 row_style_1 css3_grid_row_36_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Commenting on Images</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_37 row_style_1 css3_grid_row_37_responsive align_center"><span
+														class="css3_grid_row_37 row_style_3 css3_grid_row_37_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Widgets</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_38 row_style_3 css3_grid_row_38_responsive align_center"><span
+														class="css3_grid_row_38 row_style_1 css3_grid_row_38_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Bulk Deletion</span><img
 																	src="<?php echo plugins_url("/assets/img/tick_10.png" , dirname(__FILE__)); ?>"
 																	alt="yes"></span></span></span></li>
 													<li
-														class="css3_grid_row_39 row_style_1 css3_grid_row_39_responsive align_center"><span
+														class="css3_grid_row_39 row_style_3 css3_grid_row_39_responsive align_center"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Purging of Albums</span><img
