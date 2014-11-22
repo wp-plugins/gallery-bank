@@ -4,13 +4,13 @@
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.82
+ Version: 3.0.83
  Author URI: http://tech-banker.com
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //   Define   Constants  ///////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+if (!defined("GALLERY_FILE")) define("GALLERY_FILE","gallery-bank/gallery-bank.php");
 if (!defined("GALLERY_MAIN_DIR")) define("GALLERY_MAIN_DIR", dirname(dirname(dirname(__FILE__)))."/gallery-bank");
 if (!defined("GALLERY_MAIN_UPLOAD_DIR")) define("GALLERY_MAIN_UPLOAD_DIR", dirname(dirname(dirname(__FILE__)))."/gallery-bank/gallery-uploads/");
 if (!defined("GALLERY_MAIN_THUMB_DIR")) define("GALLERY_MAIN_THUMB_DIR", dirname(dirname(dirname(__FILE__)))."/gallery-bank/thumbs/");
@@ -361,11 +361,38 @@ if($version == "" || $version == "3.0")
 {
 	add_action("admin_init", "plugin_install_script_for_gallery_bank");
 }
+//--------------------------------------------------------------------------------------------------------------//
+// CODE FOR PLUGIN UPDATE MESSAGE
+//--------------------------------------------------------------------------------------------------------------//
+if(!function_exists("gallery_bank_plugin_update_message"))
+{
+	function gallery_bank_plugin_update_message($args)
+	{
+		$response = wp_remote_get( 'https://plugins.svn.wordpress.org/gallery-bank/trunk/readme.txt' );
+		if ( ! is_wp_error( $response ) && ! empty( $response['body'] ) )
+		{
+			// Output Upgrade Notice
+			$matches        = null;
+			$regexp         = '~==\s*Changelog\s*==\s*=\s*[0-9.]+\s*=(.*)(=\s*' . preg_quote($args['Version']) . '\s*=|$)~Uis';
+			$upgrade_notice = '';
+			if ( preg_match( $regexp, $response['body'], $matches ) ) {
+				$changelog = (array) preg_split('~[\r\n]+~', trim($matches[1]));
+				$upgrade_notice .= '<div class="gallery_plugin_message">';
+				foreach ( $changelog as $index => $line ) {
+					$upgrade_notice .= "<p>".$line."</p>";
+				}
+				$upgrade_notice .= '</div> ';
+				echo $upgrade_notice;
+			}
+		}
+	}
+}
 
 add_filter("plugin_row_meta","gallery_bank_custom_plugin_row", 10, 2 );
 add_action("plugins_loaded", "plugin_load_textdomain_for_tech_serices");
 add_action("admin_bar_menu", "add_gallery_bank_icon", 100);
 add_action("plugins_loaded", "gallery_bank_plugin_load_text_domain");
+add_action("in_plugin_update_message-".GALLERY_FILE,"gallery_bank_plugin_update_message" );
 register_activation_hook(__FILE__, "plugin_install_script_for_gallery_bank");
 register_uninstall_hook(__FILE__, "plugin_uninstall_script_for_gallery_bank");
 /*************************************************************************************/
