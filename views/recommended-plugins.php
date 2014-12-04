@@ -1,5 +1,5 @@
 <?php 
-switch($role)
+switch($gb_role)
 {
 	case "administrator":
 		$user_role_permission = "manage_options";

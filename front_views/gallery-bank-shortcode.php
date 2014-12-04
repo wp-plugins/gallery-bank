@@ -30,10 +30,10 @@
 			        <?php
 			       global $wpdb,$current_user;
 			        
-			        $role = $wpdb->prefix . "capabilities";
-			        $current_user->role = array_keys($current_user->$role);
-			        $role = $current_user->role[0];
-			        if($role == "administrator")
+			        $gb_role = $wpdb->prefix . "capabilities";
+			        $current_user->role = array_keys($current_user->$gb_role);
+			        $gb_role = $current_user->role[0];
+			        if($gb_role == "administrator")
 			        {
 			        	$albums = $wpdb->get_results
 			        	(

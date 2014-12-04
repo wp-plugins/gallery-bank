@@ -145,7 +145,7 @@ switch($_REQUEST["page"])
 </ul>
 
 <?php
-switch ($role) 
+switch ($gb_role) 
 {
 	case "administrator":
 		?>
