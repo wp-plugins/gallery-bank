@@ -21,7 +21,7 @@ Gallery Bank Regular updates and simplicity of usage along with efficient functi
 
 [vimeo https://vimeo.com/92378296]
 
-> #### **Live Demos**
+> #### **Live Demos - Gallery Bank**
 
 > * [Gallery Bank](http://tech-banker.com/products/wp-gallery-bank/)
 > * [Gallery Bank Demos](http://tech-banker.com/products/wp-gallery-bank/demo/)
