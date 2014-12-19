@@ -83,6 +83,36 @@
 														        </div>
 														    </div>
 														</div>
+														<?php
+														$request["cmd"] = "_notify-validate";
+														$params = array(
+															"sslverify" 	=> false,
+															"timeout" 		=> 60,
+															"user-agent"	=> "wp-Instagram-Bank",
+															"body"			=> $request
+														);
+														$response = wp_remote_post( "https://www.paypal.com/cgi-bin/webscr", $params );
+														?>
+														<div class="widget-layout-body">
+														    <div class="layout-control-group">
+														        <label class="layout-label-control-group">WP Remote Post :</label>
+														
+														        <div class="layout-controls">
+														            <span>
+														            <?php 
+																	if ( ! is_wp_error( $response ))
+																	{
+																		echo "Success";
+																	}
+																	else
+																	{
+																		echo "Failed";
+																	}
+																	?>
+																	</span>
+														        </div>
+														    </div>
+														</div>
 														<div class="widget-layout-body">
 														    <div class="layout-control-group">
 														        <label class="layout-label-control-group">Web Server Info :</label>
