@@ -18,6 +18,7 @@
 	}
 	else
 	{
+		$upload_photos = wp_create_nonce("manage_uploading");
 		$album_id = intval($_REQUEST["album_id"]);
 		$last_albums_id = $wpdb->get_var
 		(
@@ -526,7 +527,7 @@
 		    jQuery("#edit_image_uploader").pluploadQueue
 		    ({
 		        runtimes: "html5,flash,silverlight,html4",
-		        url: ajaxurl + "?param=upload_pic&action=upload_library",
+		        url: ajaxurl + "?param=upload_pic&action=upload_library&_nonce=<?php echo $upload_photos;?>",
 		        chunk_size: "1mb",
 		        filters: {
 		            max_file_size: "100mb",
@@ -546,11 +547,6 @@
 		        },
 		        flash_swf_url: url + "Moxie.swf",
 		        silverlight_xap_url: url + "Moxie.xap",
-		        preinit : {
-		            UploadFile: function(up, file) {
-			            up.setOption('url', ajaxurl + "?file_type="+file.type+"&file_name="+file.name+"&param=upload_pic&action=upload_library");
-		            }
-		        },
 		        init: {
 		            FileUploaded: function (up, file) {
 		                

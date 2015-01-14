@@ -20,7 +20,7 @@ if (!current_user_can($user_role_permission))
 }
 else
 {
-	if ($_REQUEST["param"] == "upload_pic") 
+	if ((wp_verify_nonce($_REQUEST["_nonce"], "manage_uploading")) && ($_REQUEST["param"] == "upload_pic")) 
 	{
 		/**
 		 * upload.php

@@ -386,29 +386,7 @@ if (isset($_REQUEST["action"])) {
 	            	$current_user->role = array_keys($current_user->$gb_role);
 	            	$gb_role = $current_user->role[0];
             	}
-                $filetype = $_REQUEST["file_type"];
-				if($filetype == "image/jpeg" || $filetype == "image/jpg" || $filetype == "image/png" || $filetype == "image/gif" )
-				{
-					$file_name = $_REQUEST["file_name"];
-					$extension = explode(".", $file_name);
-					if(count($extension) == 2)
-					{
-						if($extension[1] == "jpg" || $extension[1] == "jpeg" || $extension[1] == "gif" || $extension[1] == "png" || $extension[1] == "JPG" || $extension[1] == "JPEG" || $extension[1] == "GIF" || $extension[1] == "PNG")
-						{
-							include_once GALLERY_BK_PLUGIN_DIR . "/lib/upload.php";
-						}
-					}
-					else 
-					{
-						die();
-					}
-					
-				}
-				else 
-				{
-					die();
-				}
-                
+				include_once GALLERY_BK_PLUGIN_DIR . "/lib/upload.php";
             }
             break;
     }
