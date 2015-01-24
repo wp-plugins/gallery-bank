@@ -3,7 +3,7 @@ Contributors: Gallery-Bank,contact-banker
 Tags: add album, add gallery, add picture, add pictures, admin, AJAX, album, best gallery, best gallery plugin, best image slider, best portfolio, bilder, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, foto, fotoalbum, galary, galerie, galerij, galery, gallary, Galleria, gallerie, gallery, gallery decription, gallery image, gallery lightbox, Gallery Plugin, gelary, gellary, gellery, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image gallery, image gallery plugin, image lightbox, image rotate, image slider, image slideshow, images, jquery, jquery gallery, jquery slider, jquery slideshow, lightbox, links, media gallery, multiple pictures, nextgen gallery, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, photoset, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio plugin, Post, posts, responsive gallery, responsive image gallery, responsive slider, responsive slideshow, seo, seo image, shortcode, sidebar, slide show, slideshow, thumbnail, twitter, upload images, upload photos, view images, view pictures, website gallery, widget, wordpress gallery plugin, wordpress portfolio plugin, wordpress seo, wp gallery, wp gallery plugin, wp slider
 Requires at least: 3.3
 Tested up to: 4.1
-Stable tag: 3.0.90
+Stable tag: 3.0.91
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -486,6 +486,11 @@ is False in shortcode.
 17. Displaying Individual Album with Images.
 
 == Changelog ==
+
+= 3.0.91 =
+
+* Recommendation section updated.
+* Japanese Language updated.
 
 = 3.0.90 =
 
