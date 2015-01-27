@@ -11,8 +11,6 @@ WP Gallery Bank is an enhanced tool to create Responsive and Beautiful Galleries
 
 == Description ==
 
-[vimeo https://vimeo.com/92378296]
-
 **Gallery Bank** is a WordPress Plugin designed to create Elegant and Beautiful **Photo Gallery** Albums along with Images and videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts along with Special Effects and Animation Effects.
 
 **Gallery Bank** is the only available WordPress Plugin in the market with extra-ordinary features. It is loaded with 200+ features and creates stunning Photo Galleries on any WordPress site.
@@ -64,6 +62,8 @@ Gallery Bank Regular updates and simplicity of usage along with efficient functi
 > * [Demo Using Blog Style Layout with Filters](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-with-filters-blog-style-layout/)
 > * [Demo Using Blog Style Layout with Pagination](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-pagination-blog-style-layout/)
 > * [Demo Using Blog Style Layout with Special Effects](http://tech-banker.com/products/wp-gallery-bank/demo/individual-images-with-title-using-grayscale-effect-blog-style-layout/)
+
+[vimeo https://vimeo.com/92378296]
 
 **[Support Desk - Feel Free to ask your Queries](http://tech-banker.com/forums/forum/gallery-bank-support/)**
 
