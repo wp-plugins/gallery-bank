@@ -1,35 +1,3 @@
-/*div.pp_default .pp_content .ppt
-{
-	position:absolute;
-	top:auto;
-	right:auto;
-	bottom:0;
-	left:0;
-	z-index:9999;
-	overflow:hidden;
-	width:100%;
-	text-align:center;
-	font-size:14px;
-	padding:15px 0px 15px 0px;
-	text-align: left;
-	display:none;
-}
-/*div.ppt{color:#fff;display:none;font-size:17px;z-index:9999;margin:0 0 5px 15px}*/
-/*div.pp_default .pp_content .ppt{background-color:#000;background-color:rgba(0,0,0,.7)}
-div.pp_default .pp_content .ppt h5
-{
-	margin:0px;
-	padding:5px;
-}
-div.pp_default .pp_content .ppt p
-{
-	padding:5px;
-	margin-bottom 0px;
-}*/
-/*.fbx-caption
-{
-	position:fixed;z-index:100007;
-}*/
 div.pp_default .pp_content .pp_description {
     position: absolute;
     top: auto;
@@ -60,11 +28,6 @@ div.pp_default .pp_content .pp_description p {
     line-height: 1.5em !important;
 }
 
-/*.pp_description{font-size:11px;font-weight:700;line-height:14px;margin:5px 50px 5px 0}
-div.pp_default .pp_content .pp_description{position:absolute;margin-right:85px;color:#fff}
-div.pp_default .pp_content .pp_description{position:absolute;color:#fff;margin:0 85px 0 0}
-div.pp_default .pp_content .pp_description{margin:0 37px 0 0}
-div.pp_default .pp_content .pp_description{display:none;margin:0;clear:both;}*/
 div.pp_default .pp_content .ppt {
     border-radius: 0 0 3px 3px
 }
@@ -80,7 +43,6 @@ div.pp_default .pp_content .ppt {
     color: #f8f8f8
 }
 
-/*div.pp_default .pp_content_container .pp_left{background:url(../images/prettyPhoto/default/sprite_y.png) -7px 0 repeat-y;padding-left:13px}*//*div.pp_default .pp_content_container .pp_right{background:url(../images/prettyPhoto/default/sprite_y.png) top right repeat-y;padding-right:13px}*/
 div.pp_default .pp_next:hover {
     background: url(../images/prettyPhoto/default/sprite_next.png) center right no-repeat;
     cursor: pointer
@@ -186,10 +148,6 @@ div.pp_default .pp_close:hover, div.pp_default .pp_nav .pp_play:hover, div.pp_de
     opacity: 0.7
 }
 
-/*div.pp_default .pp_description{font-size:11px;font-weight:700;line-height:14px;margin:5px 50px 5px 0}*/
-/*div.pp_default .pp_bottom .pp_left{background:url(../images/prettyPhoto/default/sprite.png) -78px -127px no-repeat}
-div.pp_default .pp_bottom .pp_middle{background:url(../images/prettyPhoto/default/sprite_x.png) bottom left repeat-x}
-div.pp_default .pp_bottom .pp_right{background:url(../images/prettyPhoto/default/sprite.png) -112px -127px no-repeat}*/
 div.pp_default .pp_loaderIcon {
     background: url(../images/prettyPhoto/default/loader.gif) center center no-repeat
 }

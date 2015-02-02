@@ -1,3 +1,11 @@
+.custom_gallery_layout_label
+{
+	width: 74px !important;
+}
+.custom_gallery_layout_control
+{
+	margin-left: 80px !important;
+}
 .gallery_plugin_message
 {
 	font-weight: 400;

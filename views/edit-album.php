@@ -1,5 +1,4 @@
 <?php
-
 	switch($gb_role)
 	{
 		case "administrator":
@@ -167,7 +166,7 @@
 											</span>
 										</div>
 										<div class="fluid-layout">
-											<div class="layout-span6">
+											<div class="layout-span12">
 												<div class="widget-layout">
 													<div class="widget-layout-title">
 														<h4><?php _e("Album Details", gallery_bank); ?></h4>
@@ -191,13 +190,15 @@
 									                    <div class="layout-control-group">
 									                        <?php
 									                        $ux_content = stripslashes(htmlspecialchars_decode($album->description));
-									                        wp_editor($ux_content, $id = "ux_edit_description", $media_buttons = true, $tab_index = 1);
+									                        wp_editor($ux_content, $id = "ux_edit_description",array("media_buttons" => true,"textarea_rows" => 6, "tabindex" => 1));
 									                        ?>
 									                    </div>
 									                </div>
 									            </div>
-									        </div>
-									        <div class="layout-span6">
+											</div>
+										</div>
+										<div class="fluid-layout">
+											<div class="layout-span7">
 									            <div class="widget-layout">
 									                <div class="widget-layout-title">
 									                    <h4><?php _e("Upload Images", gallery_bank); ?></h4>
@@ -206,8 +207,8 @@
 									                    <p><?php _e("Your browser doesn\"t have Flash, Silverlight or HTML5 support.", gallery_bank) ?></p>
 									                </div>
 									            </div>
-									        </div>
-									        <div class="layout-span6">
+											</div>
+											<div class="layout-span5">
 									            <div class="widget-layout">
 									                <div class="widget-layout-title">
 									                    <h4><?php _e("Upload Videos", gallery_bank); ?>
@@ -216,8 +217,8 @@
 									                </div>
 									                <div class="widget-layout-body" id="edit_video_uploader">
 									                    <div class="layout-control-group">
-									                        <label class="layout-control-label"><?php _e("Video Url", gallery_bank); ?> :</label>
-									                        <div class="layout-controls">
+									                        <label class="layout-control-label custom_gallery_layout_label"><?php _e("Video Url", gallery_bank); ?> :</label>
+									                        <div class="layout-controls custom_gallery_layout_control">
 									                            <input type="text" name="ux_edit_txt_video_url" class="layout-span12" value=""
 								                                   id="ux_edit_txt_video_url"
 								                                   placeholder="<?php _e("Enter your Video Url", gallery_bank); ?>"/>
@@ -243,7 +244,6 @@
 														<table class="table table-striped " id="data-table-edit-album">
 															<thead>
 																<tr>
-																	
 										                            <th style="width:11%">
 										                                <input type="checkbox" id="grp_select_items" name="grp_select_items" style="vertical-align:middle;"/>
 										                                <button type="button" onclick="deleteSelectedImages();" style="vertical-align:middle;"
@@ -524,13 +524,16 @@
 		            });
 		        }
 		    });
-		    jQuery("#edit_image_uploader").pluploadQueue
+		jQuery(document).ready(function()
+		{
+		    jQuery("#edit_image_uploader").plupload
 		    ({
-		        runtimes: "html5,flash,silverlight,html4",
+		        runtimes: "html5,html4,flash,silverlight",
 		        url: ajaxurl + "?param=upload_pic&action=upload_library&_nonce=<?php echo $upload_photos;?>",
+		        max_file_count: 20,
 		        chunk_size: "1mb",
 		        filters: {
-		            max_file_size: "100mb",
+		            max_file_size: "1000mb",
 		            mime_types: [
 		                {title: "Image files", extensions: "jpg,jpeg,gif,png"}
 		            ]
@@ -539,14 +542,13 @@
 		        sortable: true,
 		        dragdrop: true,
 		        unique_names: true,
-		        max_file_count: 20,
 		        views: {
 		            list: true,
 		            thumbs: true, // Show thumbs
 		            active: "thumbs"
 		        },
-		        flash_swf_url: url + "Moxie.swf",
-		        silverlight_xap_url: url + "Moxie.xap",
+		        flash_swf_url: url + "plupload.flash.swf",
+		        silverlight_xap_url: url + "plupload.silverlight.xap",
 		        init: {
 		            FileUploaded: function (up, file) {
 		                
@@ -590,6 +592,7 @@
 		            }
 		        }
 		    });
+		});
 		    function deleteImage(control) {
 		        var r = confirm("<?php _e("Are you sure you want to delete this Image?", gallery_bank)?>");
 		        if (r == true) {

@@ -1,69 +1,68 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Gallery-Bank\n"
-"POT-Creation-Date: 2014-11-17 12:36+0530\n"
-"PO-Revision-Date: 2014-11-17 15:02+0530\n"
+"Project-Id-Version: Gallery Bank\n"
+"POT-Creation-Date: 2015-01-31 15:37+0530\n"
+"PO-Revision-Date: \n"
 "Last-Translator: \n"
-"Language-Team: Tech-Banker <support@tech-banker.com>\n"
-"Language: sl_SI\n"
+"Language-Team: \n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.6.6\n"
-"X-Poedit-Basepath: C:\\xampp\\htdocs\\Gallery-Testing\\wp-content\\plugins"
+"X-Generator: Poedit 1.7.1\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: C:\\xampp\\htdocs\\Development\\wp-content\\plugins"
 "\\gallery-bank\\\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Poedit-KeywordsList: _e;__\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: front_views/gallery-bank-shortcode.php:4
 msgid "Insert Gallery Bank Shortcode"
-msgstr "Vstavi Gallery Bank Kratka koda"
+msgstr "Vstavite bližnjico \"Gallery Bank\""
 
 #: front_views/gallery-bank-shortcode.php:6
 msgid "Select an album below to add it to your post or page."
-msgstr "Izberite album spodaj, da ga dodate na svoj ​​post ali stran."
+msgstr "Izberite album s seznama za dodajanje k prispevku ali strani"
 
 #: front_views/gallery-bank-shortcode.php:11
 msgid "Gallery Type"
-msgstr "Galerija Vrsta"
+msgstr "Vrsta galerije"
 
 #: front_views/gallery-bank-shortcode.php:13
 msgid "Albums with Images"
-msgstr "albumi s Slike"
+msgstr "Albumi s slikami"
 
 #: front_views/gallery-bank-shortcode.php:15
 msgid "Only Images"
-msgstr "le slike"
+msgstr "Samo slike"
 
 #: front_views/gallery-bank-shortcode.php:18
 msgid "Album Format"
-msgstr "albumov formata"
+msgstr "Oblika albuma"
 
 #: front_views/gallery-bank-shortcode.php:20
 msgid "Select Album Format"
-msgstr "Izberite możnost albuma Format "
+msgstr "Izberite obliko albuma"
 
 #: front_views/gallery-bank-shortcode.php:27
 msgid "Select Album"
-msgstr "Izberite- albumu"
+msgstr "Izbira albuma"
 
 #: front_views/gallery-bank-shortcode.php:29
 msgid "Select an Album"
-msgstr "Izberete album"
+msgstr "Izberite album"
 
 #: front_views/gallery-bank-shortcode.php:63
 msgid "Gallery Format"
-msgstr "Galerija formata"
+msgstr "Vrsta galerije"
 
 #: front_views/gallery-bank-shortcode.php:65
 msgid "Select Gallery Format "
-msgstr "Izberite Galerija formata"
+msgstr "Izberite vrsto galerije"
 
 #: front_views/gallery-bank-shortcode.php:74 views/album-preview.php:47
 #: views/images-sorting.php:240
 msgid "Images in Row"
-msgstr "Slike v vrstice"
+msgstr "Slik v vrstici"
 
 #: front_views/gallery-bank-shortcode.php:79
 msgid "Image Width"
@@ -71,15 +70,15 @@ msgstr "Širina slike"
 
 #: front_views/gallery-bank-shortcode.php:86 views/album-sorting.php:190
 msgid "Albums in Row"
-msgstr "albumi v vrstice"
+msgstr "Albumov v vrstici"
 
 #: front_views/gallery-bank-shortcode.php:91
 msgid "Text Format"
-msgstr "oblika besedila"
+msgstr "Oblika besedila"
 
 #: front_views/gallery-bank-shortcode.php:93
 msgid "Select Format "
-msgstr "Izberite Oblika"
+msgstr "Izberite obliko"
 
 #: front_views/gallery-bank-shortcode.php:100
 msgid "Special Effects"
@@ -87,223 +86,223 @@ msgstr "Posebni učinki"
 
 #: front_views/gallery-bank-shortcode.php:122
 msgid "Animation Effects"
-msgstr "animacijski učinki"
+msgstr "Učinki animacije"
 
 #: front_views/gallery-bank-shortcode.php:175
 msgid "Show Responsive Gallery"
-msgstr "Prikaži-Odziven- galerija"
+msgstr "Prikaz odzivne \"Responsive\" galerije"
 
 #: front_views/gallery-bank-shortcode.php:179
 msgid "Show Album Title"
-msgstr "Pokaži albumu Naslov"
+msgstr "Prikaz naslova albuma"
 
 #: front_views/gallery-bank-shortcode.php:184
 msgid "Insert Album"
-msgstr "vstavite albumu"
+msgstr "Vstavi album"
 
 #: front_views/gallery-bank-shortcode.php:187
 msgid "Cancel"
-msgstr "Opusti"
+msgstr "Prekliči"
 
 #: front_views/gallery-bank-shortcode.php:499
 msgid "Please select an Album"
-msgstr "Prosimo, izberite album"
+msgstr "Prosim izberite album"
 
 #: front_views/gallery-bank-shortcode.php:503
 msgid "Please select an Album Format"
-msgstr "Prosimo, izberite  albuma Oblika"
+msgstr "Prosim izberite obliko albuma"
 
 #: front_views/gallery-bank-shortcode.php:507
 msgid "Please select a Gallery Images Format"
-msgstr "prosim izberite Galerija slike formata"
+msgstr "Prosim izberite obliko galerije slik"
 
 #: front_views/gallery-bank-shortcode.php:511
 msgid "Please select a Text Format for the Gallery"
-msgstr "prosim Izberite Besedilo - formata za za Galerija"
+msgstr "Prosim dodajte obliko besedila za galerijo"
 
-#: gallery-bank.php:100 gallery-bank.php:173 gallery-bank.php:246
+#: gallery-bank.php:128 gallery-bank.php:201 gallery-bank.php:274
 msgid "<img src=\""
-msgstr ""
+msgstr "<img src=\""
 
-#: gallery-bank.php:102 gallery-bank.php:175 gallery-bank.php:248
+#: gallery-bank.php:130 gallery-bank.php:203 gallery-bank.php:276
 msgid "/wp-admin/admin.php?page=gallery_bank"
-msgstr ""
+msgstr "/wp-admin/admin.php?page=gallery_bank "
 
-#: gallery-bank.php:109 gallery-bank.php:182 gallery-bank.php:255
-#: lib/gallery-bank-class.php:16 lib/gallery-bank-class.php:31
-#: lib/gallery-bank-class.php:46 views/header.php:153 views/header.php:167
+#: gallery-bank.php:137 gallery-bank.php:210 gallery-bank.php:283
+#: lib/gallery-bank-class.php:22 lib/gallery-bank-class.php:37
+#: lib/gallery-bank-class.php:52 views/header.php:153 views/header.php:167
 #: views/header.php:181
 msgid "Dashboard"
-msgstr "Armaturna plošča"
+msgstr "Nadzorna plošča"
 
-#: gallery-bank.php:117 gallery-bank.php:190 gallery-bank.php:263
+#: gallery-bank.php:145 gallery-bank.php:218 gallery-bank.php:291
 #: views/dashboard.php:129
 msgid "Add New Album"
-msgstr "Dodaj novem albumu"
-
-#: gallery-bank.php:125 gallery-bank.php:198 gallery-bank.php:271
-#: lib/gallery-bank-class.php:17 lib/gallery-bank-class.php:32
-#: lib/gallery-bank-class.php:47 views/dashboard.php:154 views/header.php:154
-#: views/header.php:168 views/header.php:182
-msgid "Short-Codes"
-msgstr "Kratko-kode"
-
-#: gallery-bank.php:132 gallery-bank.php:205 gallery-bank.php:278
-#: lib/gallery-bank-class.php:18 lib/gallery-bank-class.php:33
-#: lib/gallery-bank-class.php:48 views/header.php:155 views/header.php:169
-#: views/header.php:183
-msgid "Album Sorting"
-msgstr "Albuma - za sortiranje"
-
-#: gallery-bank.php:139 gallery-bank.php:212 gallery-bank.php:285
-#: lib/gallery-bank-class.php:19 lib/gallery-bank-class.php:34
-#: lib/gallery-bank-class.php:49 views/header.php:156 views/header.php:170
-#: views/header.php:184 views/settings.php:276
-msgid "Global Settings"
-msgstr "Globalne nastavitev"
-
-#: gallery-bank.php:146 gallery-bank.php:219 gallery-bank.php:292
-#: lib/gallery-bank-class.php:20 lib/gallery-bank-class.php:35
-#: lib/gallery-bank-class.php:50 views/gallery-bank-system-report.php:29
-#: views/header.php:157 views/header.php:171
-msgid "System Status"
-msgstr "Sistem - Statusna"
+msgstr "Dodaj nov album"
 
 #: gallery-bank.php:153 gallery-bank.php:226 gallery-bank.php:299
-#: lib/gallery-bank-class.php:21 lib/gallery-bank-class.php:36
-#: lib/gallery-bank-class.php:51 views/header.php:81 views/header.php:158
-#: views/header.php:172 views/header.php:185
-msgid "Recommendations"
-msgstr "priporočila"
+#: lib/gallery-bank-class.php:23 lib/gallery-bank-class.php:38
+#: lib/gallery-bank-class.php:53 views/dashboard.php:154 views/header.php:154
+#: views/header.php:168 views/header.php:182
+msgid "Short-Codes"
+msgstr "Kratke Kode"
 
 #: gallery-bank.php:160 gallery-bank.php:233 gallery-bank.php:306
-#: lib/gallery-bank-class.php:22 lib/gallery-bank-class.php:37
-#: lib/gallery-bank-class.php:52 views/header.php:159 views/header.php:173
-#: views/header.php:186 views/purchase_pro_version.php:34
-msgid "Premium Editions"
-msgstr "premija za edicije"
+#: lib/gallery-bank-class.php:24 lib/gallery-bank-class.php:39
+#: lib/gallery-bank-class.php:54 views/header.php:155 views/header.php:169
+#: views/header.php:183
+msgid "Album Sorting"
+msgstr "Sortiranje po albumu"
 
 #: gallery-bank.php:167 gallery-bank.php:240 gallery-bank.php:313
-#: lib/gallery-bank-class.php:23 lib/gallery-bank-class.php:38
-#: lib/gallery-bank-class.php:53 views/header.php:86 views/header.php:160
+#: lib/gallery-bank-class.php:25 lib/gallery-bank-class.php:40
+#: lib/gallery-bank-class.php:55 views/header.php:156 views/header.php:170
+#: views/header.php:184 views/settings.php:276
+msgid "Global Settings"
+msgstr "Globalne nastavitve"
+
+#: gallery-bank.php:174 gallery-bank.php:247 gallery-bank.php:320
+#: lib/gallery-bank-class.php:26 lib/gallery-bank-class.php:41
+#: lib/gallery-bank-class.php:56 views/gallery-bank-system-report.php:29
+#: views/header.php:157 views/header.php:171
+msgid "System Status"
+msgstr "Stanje sistema"
+
+#: gallery-bank.php:181 gallery-bank.php:254 gallery-bank.php:327
+#: lib/gallery-bank-class.php:27 lib/gallery-bank-class.php:42
+#: lib/gallery-bank-class.php:57 views/header.php:81 views/header.php:158
+#: views/header.php:172 views/header.php:185
+msgid "Recommendations"
+msgstr "Priporočeno"
+
+#: gallery-bank.php:188 gallery-bank.php:261 gallery-bank.php:334
+#: lib/gallery-bank-class.php:28 lib/gallery-bank-class.php:43
+#: lib/gallery-bank-class.php:58 views/header.php:159 views/header.php:173
+#: views/header.php:186 views/purchase_pro_version.php:28
+msgid "Premium Editions"
+msgstr "Premium različice"
+
+#: gallery-bank.php:195 gallery-bank.php:268 gallery-bank.php:341
+#: lib/gallery-bank-class.php:29 lib/gallery-bank-class.php:44
+#: lib/gallery-bank-class.php:59 views/header.php:86 views/header.php:160
 #: views/header.php:174 views/header.php:187
 msgid "Our Other Services"
-msgstr "Naši Ostale storitve"
+msgstr "Naše druge storitve"
 
-#: gallery-bank.php:327
+#: gallery-bank.php:351
 msgid "View Gallery Bank Documentation"
-msgstr "Poglej Gallery Bank Dokumentacija"
+msgstr "Ogled Gallery Bank dokumentacije"
 
-#: gallery-bank.php:327
+#: gallery-bank.php:351
 msgid "Docs"
 msgstr "Dokumenti"
 
-#: gallery-bank.php:328
+#: gallery-bank.php:352
 msgid "View Gallery Bank Premium Editions"
-msgstr "Poglej Gallery Bank premija za edicije"
+msgstr "Oglej Gallery Bank Premije Edicije"
 
-#: gallery-bank.php:328
+#: gallery-bank.php:352
 msgid "Go for Premium!"
-msgstr "Pojdi za premija za!"
+msgstr "Pojdi za premije!"
 
 #: lib/add-new-album-class.php:44 views/edit-album.php:346
 #: views/edit-album.php:353
 msgid " Set as Album Cover"
-msgstr "Nastavi kot Naslovnico albuma"
+msgstr "Nastavi kot sliko albuma"
 
 #: lib/add-new-album-class.php:47 views/edit-album.php:294
 #: views/edit-album.php:359
 msgid "Enter your Title"
-msgstr "Vnesite vaš Naslovno"
+msgstr "Dodaj naslov"
 
 #: lib/add-new-album-class.php:48 views/edit-album.php:299
 #: views/edit-album.php:364
 msgid "Enter your Description "
-msgstr "Enter your Description "
+msgstr "Dodaj opis"
 
 #: lib/add-new-album-class.php:50 views/edit-album.php:305
 #: views/edit-album.php:370
 msgid "Enter your Tags"
-msgstr "Vnesite vaš oznake"
+msgstr "Dodaj oznake"
 
 #: lib/add-new-album-class.php:54 views/edit-album.php:391
 msgid "Delete Image"
-msgstr "Izbriši sliko"
+msgstr "Izbris slike"
 
-#: lib/gallery-bank-class.php:15 lib/gallery-bank-class.php:30
-#: lib/gallery-bank-class.php:45 views/header.php:141
+#: lib/gallery-bank-class.php:21 lib/gallery-bank-class.php:36
+#: lib/gallery-bank-class.php:51 views/header.php:141
 msgid "Gallery Bank"
 msgstr "Gallery Bank"
 
-#: lib/gallery-bank-class.php:332
+#: lib/gallery-bank-class.php:404
 msgid "Add Gallery using Gallery Bank"
-msgstr "Dodaj Galerija uporabo Gallery - Bank"
+msgstr "Dodaj galerijo z Gallery Bank"
 
 #: views/album-preview.php:31
 msgid "Album Preview"
 msgstr "Predogled albuma"
 
 #: views/album-preview.php:34 views/album-sorting.php:158
-#: views/edit-album.php:161 views/edit-album.php:415
-#: views/images-sorting.php:202 views/purchase_pro_version.php:38
-#: views/settings.php:279 views/shortcode.php:33
+#: views/edit-album.php:160 views/edit-album.php:415
+#: views/images-sorting.php:202 views/purchase_pro_version.php:32
+#: views/settings.php:279 views/shortcode.php:32
 msgid "Back to Albums"
-msgstr "Nazaj na albumi"
+msgstr "Nazaj k albumom"
 
 #: views/album-preview.php:52 views/album-sorting.php:195
 #: views/images-sorting.php:244
 msgid "Please Choose"
-msgstr "Prosimo Izberite"
+msgstr "Prosim izberi"
 
 #: views/album-sorting.php:154
 msgid "Re-Order Albums"
-msgstr "Re-za naročilo Albumi"
+msgstr "Spremeni vrstni red albumov"
 
 #: views/album-sorting.php:160 views/images-sorting.php:204
 msgid "Update Order"
-msgstr "Posodobi za naročilo"
+msgstr "Posodobi vrstni red"
 
 #: views/album-sorting.php:163 views/images-sorting.php:207
 msgid "Sorting Order has been updated."
-msgstr "Vrstni red je bil posodobljen."
+msgstr "Vrstni red je posodobljen"
 
-#: views/album-sorting.php:275 views/dashboard.php:302 views/dashboard.php:306
-#: views/dashboard.php:310 views/edit-album.php:612 views/edit-album.php:628
-#: views/images-sorting.php:308
+#: views/album-sorting.php:275 views/dashboard.php:302
+#: views/dashboard.php:306 views/dashboard.php:310 views/edit-album.php:610
+#: views/edit-album.php:626 views/images-sorting.php:308
 msgid "This feature is only available in Paid Premium Version!"
-msgstr "Ta funkcija je na voljo samo v vplačane premije različica!"
+msgstr "Ta funkcija je na voljo samo v vplačane premije različici!"
 
-#: views/dashboard.php:118 views/shortcode.php:29
+#: views/dashboard.php:118 views/shortcode.php:28
 msgid "Gallery Bank Short-Codes"
-msgstr "sGallery Bank Kratko-kode"
+msgstr "Gallery Bank Kratki-Kode"
 
 #: views/dashboard.php:135
 msgid "Delete All Albums"
-msgstr "Izbriši vse Albumi"
+msgstr "Izbris vseh albumov"
 
 #: views/dashboard.php:136
 msgid "Purge Images & Albums"
-msgstr "Čistka Slike in Albumi"
+msgstr "Odstranitev slik in albumov"
 
 #: views/dashboard.php:137
 msgid "Restore Factory Settings"
-msgstr "Povrnitev tovarniških nastavitev"
+msgstr "Povrnitev na privzete nastavitve"
 
 #: views/dashboard.php:144
 msgid "Existing Albums Overview"
-msgstr "obstoječi albumi Pregled"
+msgstr "Ogled obstoječih albumov"
 
 #: views/dashboard.php:150 views/edit-album.php:253
 msgid "Thumbnail"
-msgstr "Sličica"
+msgstr "Podrobnost"
 
 #: views/dashboard.php:151
 msgid "Title"
-msgstr "Naslovno"
+msgstr "Naslov"
 
 #: views/dashboard.php:152
 msgid "Total Images"
-msgstr "Skupaj slike"
+msgstr "Skupno število slik"
 
 #: views/dashboard.php:153
 msgid "Date"
@@ -311,86 +310,86 @@ msgstr "Datum"
 
 #: views/dashboard.php:218
 msgid "Edit Album"
-msgstr "Uredi albuma"
+msgstr "Uredi album"
 
 #: views/dashboard.php:223 views/images-sorting.php:198
 msgid "Re-Order Images"
-msgstr "Re-naročite slike"
+msgstr "Spremeni vrstni red slik"
 
 #: views/dashboard.php:228
 msgid "Preview Album"
-msgstr "predogled - albuma"
+msgstr "Predogled albuma"
 
 #: views/dashboard.php:233
 msgid "Delete Album"
-msgstr "Izbriši albuma"
+msgstr "Izbriši album"
 
 #: views/dashboard.php:289
 msgid "Are you sure you want to delete this Album?"
-msgstr "Ali ste prepričani, da želite izbrisati ta albumov?"
+msgstr "Si prepričan, da želiš izbrisati ta album?"
 
-#: views/edit-album.php:158
+#: views/edit-album.php:157
 msgid "Album"
-msgstr "albumov"
+msgstr "Album"
 
-#: views/edit-album.php:162 views/edit-album.php:414
+#: views/edit-album.php:161 views/edit-album.php:414
 msgid "Save Album"
-msgstr "Shrani albumov"
+msgstr "Shrani album"
 
-#: views/edit-album.php:166
+#: views/edit-album.php:165
 msgid "Album Saved. Kindly wait for the redirect to happen."
-msgstr "albumov Shranjeni. Vljudno počakajte preusmeriti, da se zgodi."
+msgstr "Album shranjen. Preusmerjam."
 
-#: views/edit-album.php:173
+#: views/edit-album.php:172
 msgid "Album Details"
-msgstr "Podrobnosti albuma"
+msgstr "Podrobnosti o albumu"
 
-#: views/edit-album.php:177
+#: views/edit-album.php:176
 msgid "Album Title"
 msgstr "Naslov albuma"
 
-#: views/edit-album.php:182
+#: views/edit-album.php:181
 msgid "Enter your Album Title"
-msgstr "Vnesite vaš albuma  Naslovno"
+msgstr "Vnos naslova albuma"
 
-#: views/edit-album.php:189
+#: views/edit-album.php:188
 msgid "Description"
-msgstr "Opis Na"
+msgstr "Opis"
 
-#: views/edit-album.php:203
+#: views/edit-album.php:204
 msgid "Upload Images"
-msgstr "Naloži Slike"
+msgstr "Nalaganje slik"
 
-#: views/edit-album.php:206
+#: views/edit-album.php:207
 msgid "Your browser doesn\"t have Flash, Silverlight or HTML5 support."
-msgstr "Vaš brskalnik nima Flash, Silverlight ali HTML5 podporo."
+msgstr "Vaš brskalnik nima podpore Flash, Silverlight ali HTML5."
 
-#: views/edit-album.php:213
+#: views/edit-album.php:214
 msgid "Upload Videos"
-msgstr "Naloži videoposnetki"
+msgstr "Nalaganje videoposnetkov"
 
-#: views/edit-album.php:214 views/edit-album.php:260 views/settings.php:288
+#: views/edit-album.php:215 views/edit-album.php:260 views/settings.php:288
 #: views/settings.php:504 views/settings.php:734 views/settings.php:845
 #: views/settings.php:944 views/settings.php:1266 views/settings.php:1382
 #: views/settings.php:1433 views/settings.php:1485
 msgid " (Available in Premium Versions)"
-msgstr "(Na voljo v Darilo različicah)"
+msgstr "(Na voljo v premije različici)"
 
-#: views/edit-album.php:219
+#: views/edit-album.php:220
 msgid "Video Url"
-msgstr "videa Url"
+msgstr "URL posnetka"
 
-#: views/edit-album.php:223
+#: views/edit-album.php:224
 msgid "Enter your Video Url"
-msgstr "Vnesite svoj URL videoposnetka"
+msgstr "Vstavi URL videoposnetka"
 
-#: views/edit-album.php:229
+#: views/edit-album.php:230
 msgid "Upload Video"
-msgstr "naloži Videoposnetek"
+msgstr "Naloži videoposnetek"
 
-#: views/edit-album.php:240
+#: views/edit-album.php:241
 msgid "Your Gallery Bank Album"
-msgstr "Vaš Gallery-Bank albuma"
+msgstr "Vaš Gallery Bank album"
 
 #: views/edit-album.php:250
 msgid "Delete"
@@ -398,117 +397,117 @@ msgstr "Izbriši"
 
 #: views/edit-album.php:256
 msgid "Title & Description"
-msgstr "Naslovno in Opis Na"
+msgstr "Naslov in podrobnosti"
 
 #: views/edit-album.php:259
 msgid "Tags (comma separated list)"
-msgstr "oznake (z vejico ločen seznam)"
+msgstr "Oznake (z vejico ločen seznam)"
 
 #: views/edit-album.php:263
 msgid "Url to Redirect on click of an Image"
-msgstr "Url preusmeriti na podoba klik"
+msgstr "Povezava URL za preusmeritev klika na sliko"
 
 #: views/edit-album.php:315
 msgid "Delete Video"
-msgstr "Izbriši Videa"
+msgstr "Izbris videoposnetka"
 
-#: views/edit-album.php:599
+#: views/edit-album.php:597
 msgid "Are you sure you want to delete this Image?"
-msgstr "Ali ste prepričani, da želite izbrisati te slike?"
+msgstr "Ali resnično želite izbrisati to sliko?"
 
 #: views/gallery-bank-system-report.php:32
 msgid "Get System Report"
-msgstr "Dobili - Sistem poročilo"
+msgstr "Dobi sistemsko poročilo"
 
 #: views/gallery-bank-system-report.php:36
 msgid "Close System Report"
-msgstr "Zapri Sistem Poročilo"
+msgstr "Zapri sistemsko poročilo"
 
-#: views/gallery-bank-system-report.php:132
+#: views/gallery-bank-system-report.php:162
 msgid "Default"
 msgstr "Privzeto"
 
 #: views/header.php:18
 msgid "Get Started"
-msgstr "ZAČNI"
+msgstr "Začni"
 
 #: views/header.php:21
 msgid "Watch Gallery Video!"
-msgstr "pazi  galerija - Videoposnetek!"
+msgstr "Ogled Gallery videa"
 
 #: views/header.php:25
 msgid "read documentation here"
-msgstr "preberete dokumentacijo tukaj"
+msgstr "branje dokumentacije tukaj"
 
 #: views/header.php:30
 msgid "Go Premium"
-msgstr "Pojdi premija za"
+msgstr "Pojdi Premije"
 
 #: views/header.php:34
 msgid "Features"
-msgstr "značilnosti"
+msgstr "Lastnosti"
 
 #: views/header.php:39
 msgid "Online Demos"
-msgstr "spletne Demosova"
+msgstr "Demo na spletu"
 
 #: views/header.php:44
 msgid "Premium Pricing Plans"
-msgstr "premija za načrti oblikovanja cen"
+msgstr "premije načrti cenik"
 
 #: views/header.php:51
 msgid "Knowledge Base"
-msgstr "baza znanja"
+msgstr "Zbirka znanja"
 
 #: views/header.php:56
 msgid "Support Forum"
-msgstr " za podporo foruma"
+msgstr "Forum podpore"
 
 #: views/header.php:61
 msgid "FAQ's"
-msgstr "Pogosta vprašanja"
+msgstr "Vprašanja in odgovori"
 
 #: views/header.php:66
 msgid "Detailed Features"
-msgstr "Podrobna značilnosti"
+msgstr "Podrobne lastnosti"
 
 #: views/header.php:72
 msgid "More Actions"
-msgstr "več Dejanja"
+msgstr "Več dejanj"
 
 #: views/header.php:76
 msgid "Plugin Customization"
-msgstr "vtičnik Prilagajanje"
+msgstr "Plugin Customization"
 
-#: views/purchase_pro_version.php:43
+#: views/purchase_pro_version.php:37
 msgid "WP Gallery Bank is an one time Investment. Its Worth it!"
-msgstr "WP Galerija Bank je nekoč Naložbe. Njena vredno it!"
+msgstr "WP Gallery Bank je en čas Naložbe. Njena je vredno!"
 
 #: views/settings.php:280
 msgid "Update Settings"
-msgstr "posodobitvi Nastavitve"
+msgstr "Posodobi nastavitve"
 
 #: views/settings.php:287
 msgid "Thumbnail Settings"
-msgstr "Sličica Nastavitve"
+msgstr "Nastavitev sličic"
 
 #: views/settings.php:299
 msgid "Thumbnail Size"
-msgstr "Sličica Velikost"
+msgstr "Velikost sličic"
 
 #: views/settings.php:306 views/settings.php:314 views/settings.php:522
 #: views/settings.php:530
 msgid "Original"
-msgstr "o izvornem"
+msgstr "Original"
 
 #: views/settings.php:309 views/settings.php:317 views/settings.php:525
 #: views/settings.php:533
 msgid "Custom"
-msgstr "meri"
+msgstr "Po meri"
 
 #: views/settings.php:326 views/settings.php:542
 msgid "Width"
-msgstr "širina"
+msgstr "Širina"
 
 #: views/settings.php:336 views/settings.php:552
 msgid "Height"
@@ -516,68 +515,68 @@ msgstr "Višina"
 
 #: views/settings.php:348 views/settings.php:563 views/settings.php:985
 msgid "Opacity"
-msgstr "Opaciteta"
+msgstr "Prosojnost"
 
 #: views/settings.php:360 views/settings.php:575 views/settings.php:996
 msgid "Border Size"
-msgstr "Obmejno velikost"
+msgstr "Velikost okvira"
 
 #: views/settings.php:371 views/settings.php:587 views/settings.php:1007
 msgid "Border Radius"
-msgstr "Obmejno radij"
+msgstr "Polmer okvira"
 
 #: views/settings.php:382 views/settings.php:599 views/settings.php:1032
 msgid "Border Color"
-msgstr "meja barva"
+msgstr "Barva okvira"
 
 #: views/settings.php:396
 msgid "Margin Between Images"
-msgstr "marža med Slike"
+msgstr "Razdalja med slikami"
 
 #: views/settings.php:406 views/settings.php:633 views/settings.php:1018
 msgid "Text Color"
-msgstr "besedila Barvn"
+msgstr "Barva besedila"
 
 #: views/settings.php:420 views/settings.php:650 views/settings.php:1092
 msgid "Text-Align"
-msgstr "Besedilo-uskladiti"
+msgstr "Poravnava besedila"
 
 #: views/settings.php:434 views/settings.php:664 views/settings.php:801
 #: views/settings.php:1106 views/settings.php:1314
 msgid "Font-Family"
-msgstr "Pisave-Družina"
+msgstr "Vrsta pisave"
 
 #: views/settings.php:457 views/settings.php:687 views/settings.php:1129
 msgid "Heading Font-Size"
-msgstr "Razdelek Pisave-Velikost"
+msgstr "Velikost pisave naslovov"
 
 #: views/settings.php:474 views/settings.php:704 views/settings.php:1146
 msgid "Text Font-Size"
-msgstr "Besedilo Velikost pisave"
+msgstr "Velikost besedila"
 
 #: views/settings.php:491 views/settings.php:721
 msgid "Description Length"
-msgstr "Opis Na Dolžina"
+msgstr "Dolžina opisa"
 
 #: views/settings.php:503
 msgid "Album Cover Settings"
-msgstr "Naslovnico albuma Nastavitve"
+msgstr "Nastavitev ovitka albuma"
 
 #: views/settings.php:515
 msgid "Cover Size"
-msgstr "pokrova velikost"
+msgstr "Veličina ovitka"
 
 #: views/settings.php:613
 msgid "Margin Between Albums"
-msgstr "Marža Med Albumi"
+msgstr "Razdalja med albumi"
 
 #: views/settings.php:623
 msgid "Text for Album Click"
-msgstr "Besedilo za Album-Kliknite"
+msgstr "Besedilo za klik na album"
 
 #: views/settings.php:733
 msgid "Filter Settings"
-msgstr "Nastavitve Filtra"
+msgstr "Nastavitve filtra"
 
 #: views/settings.php:745
 msgid "Filters"
@@ -590,7 +589,7 @@ msgstr "Filtri"
 #: views/settings.php:1400 views/settings.php:1408 views/settings.php:1451
 #: views/settings.php:1459
 msgid "Enable"
-msgstr "Omogočite"
+msgstr "Omogoči"
 
 #: views/settings.php:755 views/settings.php:763 views/settings.php:1173
 #: views/settings.php:1181 views/settings.php:1198 views/settings.php:1206
@@ -599,90 +598,90 @@ msgstr "Omogočite"
 #: views/settings.php:1403 views/settings.php:1411 views/settings.php:1454
 #: views/settings.php:1462
 msgid "Disable"
-msgstr "onesposobiti"
+msgstr "Onemogoči"
 
 #: views/settings.php:773
 msgid "Filter Color"
-msgstr " filtrirati-barvna"
+msgstr "Barva filtra"
 
 #: views/settings.php:787
 msgid "Filter Text Color"
-msgstr "Filter Besedilo Barvna"
+msgstr "Barva filtra besedila"
 
 #: views/settings.php:824 views/settings.php:1337
 msgid "Font-Size"
-msgstr "Pisave-Velikost"
+msgstr "Velikost pisave"
 
 #: views/settings.php:844
 msgid "Roles & Capabilities"
-msgstr "vlogeinzmogljivosti"
+msgstr "Vloge in pravice"
 
 #: views/settings.php:856
 msgid "Privileges for Admin"
-msgstr "Privilegiji za Administracijo"
+msgstr "Pravice za administratorja"
 
 #: views/settings.php:860 views/settings.php:876 views/settings.php:892
 #: views/settings.php:909 views/settings.php:927
 msgid "Full Control"
-msgstr "popolnim nadzorom"
+msgstr "Poln nadzor"
 
 #: views/settings.php:863 views/settings.php:879 views/settings.php:895
 #: views/settings.php:912 views/settings.php:930
 msgid "Read"
-msgstr "Preberite"
+msgstr "Branje"
 
 #: views/settings.php:866 views/settings.php:882 views/settings.php:898
 #: views/settings.php:915 views/settings.php:933
 msgid "Write"
-msgstr "Napišite"
+msgstr "Pisanje"
 
 #: views/settings.php:872
 msgid "Privileges for Editor"
-msgstr "Privilegiji za Urednika"
+msgstr "Pravice za urednika"
 
 #: views/settings.php:888
 msgid "Privileges for Author"
-msgstr "Pravice do avtor"
+msgstr "Pravice za avtorja"
 
 #: views/settings.php:904
 msgid "Privileges for Contributor"
-msgstr "pravice za  Plačnica"
+msgstr "Pravice za sodelavca"
 
 #: views/settings.php:921
 msgid "Privileges for Subscriber"
-msgstr "Privilegiji za naročnikom"
+msgstr "Pravice za naročnika"
 
 #: views/settings.php:943
 msgid "Lightbox Settings"
-msgstr " oglasnega okvirja Nastavitve"
+msgstr "Nastavitve za Lightbox"
 
 #: views/settings.php:955
 msgid "Lightbox Type"
-msgstr "oglasnega okvirja Vrsta"
+msgstr "Vrsta Lightbox"
 
 #: views/settings.php:1046
 msgid "Inline Background"
-msgstr "V- vrstici Ozadje"
+msgstr "Ozadje vrstičnega elementa"
 
 #: views/settings.php:1060
 msgid "Overlay Background"
-msgstr "prekrivni ozadje"
+msgstr "Prekrivno ozadje"
 
 #: views/settings.php:1074
 msgid "Fade In Time"
-msgstr "Zbledi v čas"
+msgstr "Čas osvetlitve"
 
 #: views/settings.php:1083
 msgid "Fade Out Time"
-msgstr "Zbledi Out čas"
+msgstr "Čas zatemnitve"
 
 #: views/settings.php:1163
 msgid "Facebook Comments"
-msgstr "Facebooka Komentarji"
+msgstr "Komentarji s Facebooka"
 
 #: views/settings.php:1190
 msgid "Social Sharing"
-msgstr "Socialna osnovi delitve"
+msgstr "Delitev po socialnem omrežju"
 
 #: views/settings.php:1215
 msgid "Image Title"
@@ -690,76 +689,186 @@ msgstr "Naslov slike"
 
 #: views/settings.php:1239
 msgid "Image Description"
-msgstr "Slika Opis"
+msgstr "Opis slike"
 
 #: views/settings.php:1265
 msgid "Front - End Layout Settings"
-msgstr "Spredaj - Konec Postavitev Nastavitve"
+msgstr "Nastavitev razporeditve"
 
 #: views/settings.php:1277
 msgid "Text for Back Button"
-msgstr "Besedilo Za Nazaj Gumb"
+msgstr "Besedilo za gumb \"Nazaj\""
 
 #: views/settings.php:1287
 msgid "Button Color"
-msgstr " Gumb - Barvna"
+msgstr "Barva gumba"
 
 #: views/settings.php:1300
 msgid "Button Text Color"
-msgstr "Gumb Barvna Besedilo"
+msgstr "Barva besedila gumba"
 
 #: views/settings.php:1354
 msgid "Album Seperator"
-msgstr "albumov Ločilo"
+msgstr "Izločitev albumov"
 
 #: views/settings.php:1381
 msgid "Pagination Settings for Images"
-msgstr "Številčenje strani Nastavitve za slike"
+msgstr "Nastavitev številčenja slik"
 
 #: views/settings.php:1393
 msgid "Paging"
-msgstr "Pozivnik"
+msgstr "Številčenje"
 
 #: views/settings.php:1420
 msgid "No. of Images Per Page "
-msgstr "Stevilo slik na stran"
+msgstr "Št. slik na strani"
 
 #: views/settings.php:1432
 msgid "Slide Show Settings"
-msgstr "diapozitiv Prikaži Nastavitve"
+msgstr "Nastavitev predvajalnika slik"
 
 #: views/settings.php:1444
 msgid "Auto Play"
-msgstr "Samodejni Igraj"
+msgstr "Predvajaj samodejno"
 
 #: views/settings.php:1471
 msgid "Interval"
-msgstr "intervala"
+msgstr "Časovni interval"
 
 #: views/settings.php:1484
 msgid "Language Direction Settings"
-msgstr "Jezik smer nastavitve"
+msgstr "Nastavitve za jezike"
 
 #: views/settings.php:1496
 msgid "Language Direction"
-msgstr "Jezik smer"
+msgstr "Jeziki"
 
 #: views/settings.php:1653
 msgid "This Feature is only available in Paid Premium Version!"
-msgstr "Ta funkcija je na voljo samo v vplačane premije različica!"
+msgstr "Ta funkcija je na voljo samo v vplačane premije različici!"
 
-#~ msgid "Purchase Pro Version"
-#~ msgstr "Nakupu- PRO Verzija"
+#~ msgid "VIEW ALL"
+#~ msgstr "PRIKAŽI VSE"
 
-#~ msgid "Save and Submit Changes"
-#~ msgstr "shranite in Oddati Spremembe"
+#~ msgid "Licensing"
+#~ msgstr "Licenca"
 
-#~ msgid "Album Published. Kindly wait for the redirect to happen."
-#~ msgstr "albumov Objavljena. vljudno počakajte za Preusmeriti za zgodilo."
+#~ msgid " Rotate Image"
+#~ msgstr "Zasuk slike"
 
-#~ msgid ""
-#~ "You will be only allowed to add 2 galleries. Kindly purchase Premium "
-#~ "Version for full access!"
-#~ msgstr ""
-#~ "Ti bodo dovoljeni samo dodati 2 galerije. Vljudno kupite Darilo Različica "
-#~ "za popoln dostop!"
+#~ msgid "Select Gallery"
+#~ msgstr "Izberi galerijo"
+
+#~ msgid "Select Gallery Format"
+#~ msgstr "Izberi vrsto galerije"
+
+#~ msgid "Images In Row"
+#~ msgstr "Slik v vrstici"
+
+#~ msgid "Select Text Format"
+#~ msgstr "Izberi obliko besedila"
+
+#~ msgid "Special Effect"
+#~ msgstr "Posebni učinki"
+
+#~ msgid "Select Special Effect"
+#~ msgstr "Izberi poseben učinek"
+
+#~ msgid "Animation Effect"
+#~ msgstr "Efekt animacije"
+
+#~ msgid "Responsive Gallery"
+#~ msgstr "Odzivna \"responsive\" galerija"
+
+#~ msgid "Attention! A new vesion of Gallery Bank is available for download."
+#~ msgstr "Pozor! Na voljo je nova različica Gallery Bank za prenos."
+
+#~ msgid "Click"
+#~ msgstr "Klik"
+
+#~ msgid "here"
+#~ msgstr "tukaj"
+
+#~ msgid "to upgrade your version of Gallery Bank."
+#~ msgstr "za posodobitev trenutne različice Gallery Bank"
+
+#~ msgid "Dashboard - Gallery Bank"
+#~ msgstr "Nadzorna plošča - Gallery Bank"
+
+#~ msgid "Date of Creation"
+#~ msgstr "Ustvarjeno dne"
+
+#~ msgid "Are you sure you want to delete all Albums?"
+#~ msgstr "Si prepričan, da želiš izbrisati vse albume?"
+
+#~ msgid "Are you sure you want to Restore Factory Settings?"
+#~ msgstr "Si prepričan, da želiš povrniti privzete nastavitve?"
+
+#~ msgid "Are you sure you want to Purge all Images & Albums?"
+#~ msgstr "Si prepričan, da želiš __ vse slike in albume?"
+
+#~ msgid "Upload Thumbnails "
+#~ msgstr "Podrobnosti nalaganja"
+
+#~ msgid "Your Wordpress Version doesn\"t support Wp-media."
+#~ msgstr "Ta različica Wordpressa ne podpira wp-media"
+
+#~ msgid "Are you sure you want to delete these Images?"
+#~ msgstr "Ali resnično želite izbrisati te slike?"
+
+#~ msgid "Our Other Products"
+#~ msgstr "Naši ostali produkti"
+
+#~ msgid "Order Customization"
+#~ msgstr "Ročno urejanje vrstnega redu"
+
+#~ msgid "Gallery Bank Licensing Module"
+#~ msgstr "Gallery Bank licenčni modul"
+
+#~ msgid "Update"
+#~ msgstr "Posodobitev"
+
+#~ msgid "Success! Settings have been updated."
+#~ msgstr "Nastavitve so uspešno posodobljene!"
+
+#~ msgid "Restore Settings"
+#~ msgstr "Povrni nastavitve"
+
+#~ msgid "Settings has been updated."
+#~ msgstr "Nastavitve posodobljene."
+
+#~ msgid "Success! Settings have been restored."
+#~ msgstr "Nastavitve so uspešno povrnjene! "
+
+#~ msgid "Show Albums"
+#~ msgstr "Prikaz albumov"
+
+#~ msgid "Responsive"
+#~ msgstr "Odzivno \"Responsive\""
+
+#~ msgid "With Albums in Row"
+#~ msgstr "Z albumi v vrstici"
+
+#~ msgid "Image Uploader Settings"
+#~ msgstr "Nastavitve za nalagalca slk"
+
+#~ msgid "Uploader for Images"
+#~ msgstr "Nalagalec za slike"
+
+#~ msgid "WP Media"
+#~ msgstr "WP medij"
+
+#~ msgid "Change Uploading Image Name"
+#~ msgstr "Sprememba naslova pri nalaganju slike"
+
+#~ msgid "Image url location"
+#~ msgstr "URL slike"
+
+#~ msgid "Open in New Window"
+#~ msgstr "Odpri v novem oknu"
+
+#~ msgid "Same Window"
+#~ msgstr "Istem oknu"
+
+#~ msgid "Are you sure you want to restore settings?"
+#~ msgstr "Želiš povrniti nastavitve?"

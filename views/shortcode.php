@@ -1,5 +1,4 @@
-<?php 
-
+<?php
 switch($gb_role)
 {
 	case "administrator":
@@ -49,6 +48,6 @@ else
 			</div>
 		</div>
 	</form>
-<?php 
+<?php
 }
 ?>

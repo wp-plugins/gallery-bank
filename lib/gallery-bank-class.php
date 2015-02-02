@@ -300,14 +300,14 @@ function backend_scripts_calls()
     wp_enqueue_script("jquery-ui-dialog");
     wp_enqueue_script("farbtastic");
     wp_enqueue_script("imgLiquid.js", plugins_url("/assets/js/imgLiquid.js",dirname(__FILE__)));
-    wp_enqueue_script("jquery.dataTables.min.js", plugins_url("/assets/js/jquery.dataTables.min.js",dirname(__FILE__)));
-    wp_enqueue_script("jquery.validate.min.js", plugins_url("/assets/js/jquery.validate.min.js",dirname(__FILE__)));
     wp_enqueue_script("plupload.full.min.js", plugins_url("/assets/js/plupload.full.min.js",dirname(__FILE__)));
-    wp_enqueue_script("jquery.plupload.queue.js", plugins_url("/assets/js/jquery.plupload.queue.js",dirname(__FILE__)));
+    wp_enqueue_script("jquery.dataTables.min.js", plugins_url("/assets/js/jquery.dataTables.min.js",dirname(__FILE__)), array("jquery-ui-widget","jquery-ui-progressbar"),false);
+    wp_enqueue_script("jquery.validate.min.js", plugins_url("/assets/js/jquery.validate.min.js",dirname(__FILE__)));
+    wp_enqueue_script("jquery.ui.plupload.js", plugins_url("/assets/js/jquery.ui.plupload.js",dirname(__FILE__)));
     wp_enqueue_script("jquery.Tooltip.js", plugins_url("/assets/js/jquery.Tooltip.js",dirname(__FILE__)));
     wp_enqueue_script("bootstrap.js", plugins_url("/assets/js/bootstrap.js",dirname(__FILE__)));
 	wp_enqueue_script("jquery.prettyPhoto.js", plugins_url("/assets/js/jquery.prettyPhoto.js",dirname(__FILE__)));
-	wp_enqueue_style("google-fonts-roboto", "//fonts.googleapis.com/css?family=Roboto Condensed:300|Roboto Condensed:300|Roboto Condensed:300|Roboto Condensed:regular|Roboto Condensed:300");
+	wp_enqueue_style("google-fonts-roboto", "http://fonts.googleapis.com/css?family=Roboto Condensed:300|Roboto Condensed:300|Roboto Condensed:300|Roboto Condensed:regular|Roboto Condensed:300");
 }
 
 function frontend_plugin_js_scripts_gallery_bank()
@@ -325,7 +325,8 @@ function backend_css_calls()
 {
     wp_enqueue_style("farbtastic");
 	wp_enqueue_style("wp-jquery-ui-dialog");
-    wp_enqueue_style("jquery.plupload.queue.css", plugins_url("/assets/css/jquery.plupload.queue.css",dirname(__FILE__)));
+	wp_enqueue_style("jquery-ui.css", plugins_url("/assets/css/jquery-ui.css",dirname(__FILE__)));
+    wp_enqueue_style("jquery.ui.plupload.css", plugins_url("/assets/css/jquery.ui.plupload.css",dirname(__FILE__)));
     wp_enqueue_style("stylesheet.css", plugins_url("/assets/css/stylesheet.css",dirname(__FILE__)));
     wp_enqueue_style("font-awesome.css", plugins_url("/assets/css/font-awesome/css/font-awesome.css",dirname(__FILE__)));
     wp_enqueue_style("system-message.css", plugins_url("/assets/css/system-message.css",dirname(__FILE__)));

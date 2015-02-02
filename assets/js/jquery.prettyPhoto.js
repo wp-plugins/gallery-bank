@@ -369,7 +369,7 @@
             wmode: "opaque",
             autoplay: true,
             modal: false,
-            deeplinking: true,
+            deeplinking: false,
             overlay_gallery: true,
             overlay_gallery_max: 30,
             keyboard_shortcuts: true,
