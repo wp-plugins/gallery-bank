@@ -303,4 +303,10 @@ else if($version == "3.0")
 {
 	update_option("gallery-bank-pro-edition", "3.1");
 }
+
+$option_auto_update = get_option("gallery-bank-automatic_update");
+if($option_auto_update == "")
+{
+	update_option("gallery-bank-automatic_update", "1");
+}
 ?>
