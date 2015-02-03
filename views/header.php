@@ -133,6 +133,9 @@ switch($_REQUEST["page"])
 	case "gallery_bank_other_services":
 		$page = "Our Other Services";
 	break;
+	case "gallery_auto_plugin_update":
+		$page = "Plugin Updates";
+	break;
 }
 ?>
 <ul class="breadcrumb" style="margin-top: 10px;">

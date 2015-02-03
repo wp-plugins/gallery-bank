@@ -4,7 +4,7 @@
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.93
+ Version: 3.0.94
  Author URI: http://tech-banker.com
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -76,6 +76,7 @@ function plugin_uninstall_script_for_gallery_bank()
 {
 	delete_option("gallery-bank-info-popup");
 	delete_option("gallery-bank-banner");
+	delete_option("gallery-bank-automatic_update");
 }
 /*************************************************************************************/
 function gallery_bank_plugin_load_text_domain()
@@ -101,16 +102,6 @@ function add_gallery_bank_icon($meta = TRUE)
         return;
     }
     
-	$last_album_id = $wpdb->get_var
-	(
-		"SELECT album_id FROM " .gallery_bank_albums(). " order by album_id desc limit 1"
-	);
-	$id = count($last_album_id) == 0 ? 1 : $last_album_id + 1;
-	$album_count = $wpdb->get_var
-	(
-		"SELECT count(album_id) FROM ".gallery_bank_albums()
-	);
-
 	if(is_super_admin())
 	{
 		$gb_role = "administrator";
@@ -132,19 +123,16 @@ function add_gallery_bank_icon($meta = TRUE)
 		
 		    $wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
-		        "id" => "dashboard_links",
+		        "id" => "gallery_dashboard_links",
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
 		        "title" => __("Dashboard", gallery_bank))
 		    );
-			if($album_count < 3)
-			{
-			    $wp_admin_bar->add_menu(array(
-			        "parent" => "gallery_bank_links",
-			        "id" => "add_new_album_links",
-			        "href" => site_url() . "/wp-admin/admin.php?page=save_album&album_id=".$id,
-			        "title" => __("Add New Album", gallery_bank))
-			    );
-			}
+		    $wp_admin_bar->add_menu(array(
+	    		"parent" => "gallery_bank_links",
+	    		"id" => "gallery_auto_update_links",
+	    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
+	    		"title" => __("Plugin Updates", gallery_bank))
+		    );
 			
 			$wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
@@ -205,19 +193,16 @@ function add_gallery_bank_icon($meta = TRUE)
 		
 		    $wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
-		        "id" => "dashboard_links",
+		        "id" => "gallery_dashboard_links",
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
 		        "title" => __("Dashboard", gallery_bank))
 		    );
-			if($album_count < 3)
-			{
-			    $wp_admin_bar->add_menu(array(
-			        "parent" => "gallery_bank_links",
-			        "id" => "add_new_album_links",
-			        "href" => site_url() . "/wp-admin/admin.php?page=save_album&album_id=".$id,
-			        "title" => __("Add New Album", gallery_bank))
-			    );
-			}
+		    $wp_admin_bar->add_menu(array(
+	    		"parent" => "gallery_bank_links",
+	    		"id" => "gallery_auto_update_links",
+	    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
+	    		"title" => __("Plugin Updates", gallery_bank))
+		    );
 			
 			$wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
@@ -278,19 +263,16 @@ function add_gallery_bank_icon($meta = TRUE)
 		
 		    $wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
-		        "id" => "dashboard_links",
+		        "id" => "gallery_dashboard_links",
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
 		        "title" => __("Dashboard", gallery_bank))
 		    );
-			if($album_count < 3)
-			{
-			    $wp_admin_bar->add_menu(array(
-			        "parent" => "gallery_bank_links",
-			        "id" => "add_new_album_links",
-			        "href" => site_url() . "/wp-admin/admin.php?page=save_album&album_id=".$id,
-			        "title" => __("Add New Album", gallery_bank))
-			    );
-			}
+		    $wp_admin_bar->add_menu(array(
+	    		"parent" => "gallery_bank_links",
+	    		"id" => "gallery_auto_update_links",
+	    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
+	    		"title" => __("Plugin Updates", gallery_bank))
+		    );
 			
 			$wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
@@ -385,6 +367,44 @@ if(!function_exists("gallery_bank_plugin_update_message"))
 				echo $upgrade_notice;
 			}
 		}
+	}
+}
+
+//--------------------------------------------------------------------------------------------------------------//
+// CODE FOR PLUGIN AUTOMATIC UPDATE
+//--------------------------------------------------------------------------------------------------------------//
+$is_option_auto_update = get_option("gallery-bank-automatic_update");
+
+if($is_option_auto_update == "" || $is_option_auto_update == "1")
+{
+	if (!wp_next_scheduled("gallery_bank_auto_update"))
+	{
+		wp_schedule_event(time(), "daily", "gallery_bank_auto_update");
+	}
+	add_action("gallery_bank_auto_update", "plugin_autoUpdate");
+}
+else
+{
+	wp_clear_scheduled_hook("gallery_bank_auto_update");
+}
+function plugin_autoUpdate()
+{
+	try
+	{
+		require_once(ABSPATH . "wp-admin/includes/class-wp-upgrader.php");
+		require_once(ABSPATH . "wp-admin/includes/misc.php");
+		define("FS_METHOD", "direct");
+		require_once(ABSPATH . "wp-includes/update.php");
+		require_once(ABSPATH . "wp-admin/includes/file.php");
+		wp_update_plugins();
+		ob_start();
+		$plugin_upgrader = new Plugin_Upgrader();
+		$plugin_upgrader->upgrade("gallery-bank/gallery-bank.php");
+		$output = @ob_get_contents();
+		@ob_end_clean();
+	}
+	catch(Exception $e)
+	{
 	}
 }
 

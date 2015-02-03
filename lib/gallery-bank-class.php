@@ -20,9 +20,10 @@ function create_global_menus_for_gallery_bank()
 		case "administrator":
 			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", plugins_url("/assets/images/icon.png" , dirname(__FILE__)));
 			add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
+			add_submenu_page("gallery_bank", "Plugin Updates", __("Plugin Updates", gallery_bank), "read", "gallery_auto_plugin_update", "gallery_auto_plugin_update");
 			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
-			add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
+			add_submenu_page("gallery_bank", "Global Settings", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
 			add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
 			add_submenu_page("gallery_bank", "Recommendations", __("Recommendations", gallery_bank), "read", "gallery_bank_recommended_plugins", "gallery_bank_recommended_plugins");
 			add_submenu_page("gallery_bank", "Premium Editions", __("Premium Editions", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
@@ -35,9 +36,10 @@ function create_global_menus_for_gallery_bank()
 		case "editor":
 			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", plugins_url("/assets/images/icon.png" , dirname(__FILE__)));
 			add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
+			add_submenu_page("gallery_bank", "Plugin Updates", __("Plugin Updates", gallery_bank), "read", "gallery_auto_plugin_update", "gallery_auto_plugin_update");
 			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
-			add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
+			add_submenu_page("gallery_bank", "Global Settings", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
 			add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
 			add_submenu_page("gallery_bank", "Recommendations", __("Recommendations", gallery_bank), "read", "gallery_bank_recommended_plugins", "gallery_bank_recommended_plugins");
 			add_submenu_page("gallery_bank", "Premium Editions", __("Premium Editions", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
@@ -50,9 +52,10 @@ function create_global_menus_for_gallery_bank()
 		case "author":
 			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", plugins_url("/assets/images/icon.png" , dirname(__FILE__)));
 			add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
+			add_submenu_page("gallery_bank", "Plugin Updates", __("Plugin Updates", gallery_bank), "read", "gallery_auto_plugin_update", "gallery_auto_plugin_update");
 			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
-			add_submenu_page("gallery_bank", "Gallery Bank", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
+			add_submenu_page("gallery_bank", "Global Settings", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
 			add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
 			add_submenu_page("gallery_bank", "Recommendations", __("Recommendations", gallery_bank), "read", "gallery_bank_recommended_plugins", "gallery_bank_recommended_plugins");
 			add_submenu_page("gallery_bank", "Premium Editions", __("Premium Editions", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
@@ -288,7 +291,22 @@ function gallery_bank_other_services()
 	include_once GALLERY_BK_PLUGIN_DIR . "/views/other-services.php";
 }
 
-
+function gallery_auto_plugin_update()
+{
+	global $wpdb,$current_user,$user_role_permission;
+	if(is_super_admin())
+	{
+		$gb_role = "administrator";
+	}
+	else
+	{
+		$gb_role = $wpdb->prefix . "capabilities";
+		$current_user->role = array_keys($current_user->$gb_role);
+		$gb_role = $current_user->role[0];
+	}
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/automatic-plugin-update.php";
+}
 //--------------------------------------------------------------------------------------------------------------//
 //CODE FOR CALLING JAVASCRIPT FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------//

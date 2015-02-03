@@ -199,6 +199,11 @@ else
 		        );
 		        die();
 			break;
+			case "gallery_plugin_updates":
+				$gallery_updates = intval($_REQUEST["gallery_updates"]);
+				update_option("gallery-bank-automatic_update", $gallery_updates);
+				die();
+			break;
 		}
 	}
 }

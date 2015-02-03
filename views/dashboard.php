@@ -115,7 +115,7 @@
 					<div id="advanced" class="meta-box-sortables">
 						<div id="gallery_bank_get_started" class="postbox" >
 							<div class="handlediv" data-target="#ux_shortcode" title="Click to toggle" data-toggle="collapse"><br></div>
-							<h3 class="hndle"><span><?php _e("Gallery Bank Short-Codes", gallery_bank); ?></span></h3>
+							<h3 class="hndle"><span><?php _e("Gallery Bank Dashboard", gallery_bank); ?></span></h3>
 							<div class="inside">
 								<div id="ux_dashboard" class="gallery_bank_layout">
 									<?php
