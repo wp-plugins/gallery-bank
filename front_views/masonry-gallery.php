@@ -7,9 +7,9 @@
 		{
 			width:<?php echo $thumbnails_width+1;?>px !important;
 			border-radius:0px !important;
-	        display: block !important;
-	        box-sizing: border-box !important;
-            max-width: 100% !important;
+			display: block !important;
+			box-sizing: border-box !important;
+			max-width: 100% !important;
 		}
 	<?php
 	}
@@ -20,9 +20,9 @@
 		{
 			width:<?php echo $thumbnails_width+1;?>px !important;
 			border-radius:0px !important;
-	        display: block !important;
-	        box-sizing: border-box !important;
-            max-width: 100% !important;
+			display: block !important;
+			box-sizing: border-box !important;
+			max-width: 100% !important;
 		}
 		<?php
 	}
@@ -33,13 +33,13 @@
 		.gallery-sizer { width:<?php echo $thumbnails_width + 10;?>px !important; } 
 	}
 </style>
-<div  class="<?php echo $class_images_in_row;?>" id="masonry-gallery-thumbnails_<?php echo $unique_id;?>" >
+<div class="<?php echo $class_images_in_row;?>" id="masonry-gallery-thumbnails_<?php echo $unique_id;?>" >
 <?php
 	$css_class = $widget == "true" ? "widget_width_thumb". $unique_id : "width_thumb ";
 	for($flag = 0; $flag< count($pics); $flag++) 
 	{
-        $image_title = $image_title_setting == 1 && $pics[$flag]->title != "" ? "<h5>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title)))). "</h5>" : "";
-        $image_description = $image_desc_setting == 1 && $pics[$flag]->description != ""  ? "<p>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description)))) ."</p>" : "";
+		$image_title = $image_title_setting == 1 && $pics[$flag]->title != "" ? "<h5>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title)))). "</h5>" : "";
+		$image_description = $image_desc_setting == 1 && $pics[$flag]->description != ""  ? "<p>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description)))) ."</p>" : "";
 		if( $pics[$flag]->url == "" || $pics[$flag]->url == "undefined" || $pics[$flag]->url == "http://")
 		{
 			if($pics[$flag]->video == 1)
@@ -85,20 +85,14 @@
 				<?php
 					if($pics[$flag]->video == 1)
 					{
-
 						?>
-						<img class="<?php echo $css_class;?>" id="ux_gb_img_<?php echo $unique_id;?>"
-						imageid="<?php echo $pics[$flag]->pic_id;?>"
-                         id="ux_gb_img_<?php echo $unique_id;?>" type="video"
-                             src="<?php echo stripcslashes($video_thumb_url);?>" style="height:<?php echo $thumbnails_height;?>px;"/>
+						<img class="<?php echo $css_class;?>" id="ux_gb_img_<?php echo $unique_id;?>" imageid="<?php echo $pics[$flag]->pic_id;?>" id="ux_gb_img_<?php echo $unique_id;?>" type="video" src="<?php echo stripcslashes($video_thumb_url);?>" style="height:<?php echo $thumbnails_height;?>px;"/>
 						<?php
 					}
 					else
 					{
 						?>
-						<img class="<?php echo $css_class;?>" id="ux_gb_img_<?php echo $unique_id;?>"
-						imageid="<?php echo $pics[$flag]->pic_id;?>"
-                           type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL.$pics[$flag]->thumbnail_url);?>"/>
+						<img class="<?php echo $css_class;?>" id="ux_gb_img_<?php echo $unique_id;?>" imageid="<?php echo $pics[$flag]->pic_id;?>" type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL.$pics[$flag]->thumbnail_url);?>"/>
 						<?php
 					}
 				?>
@@ -113,17 +107,13 @@
 				if($pics[$flag]->video == 1)
 				{
 					?>
-					<img class="<?php echo $css_class;?>" id="ux_gb_img_<?php echo $unique_id;?>"
-					 imageid="<?php echo $pics[$flag]->pic_id;?>"
-                      type="video" src="<?php echo stripcslashes($video_thumb_url);?>" style="height:<?php echo $thumbnails_height;?>px;"/>
+					<img class="<?php echo $css_class;?>" id="ux_gb_img_<?php echo $unique_id;?>" imageid="<?php echo $pics[$flag]->pic_id;?>" type="video" src="<?php echo stripcslashes($video_thumb_url);?>" style="height:<?php echo $thumbnails_height;?>px;"/>
 					<?php
 				}
 				else
 				{
 					?>
-					<img class="<?php echo $css_class;?>" id="ux_gb_img_<?php echo $unique_id;?>"
-					imageid="<?php echo $pics[$flag]->pic_id;?>"
-                      type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL.$pics[$flag]->thumbnail_url);?>"/>
+					<img class="<?php echo $css_class;?>" id="ux_gb_img_<?php echo $unique_id;?>" imageid="<?php echo $pics[$flag]->pic_id;?>" type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL.$pics[$flag]->thumbnail_url);?>"/>
 					<?php
 				}
 				?>
@@ -132,7 +122,7 @@
 		}
 		?>
 		</a>
-	<?php	
+	<?php
 	}
 ?>
 </div>

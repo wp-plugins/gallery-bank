@@ -23,6 +23,7 @@
 
 div.gallery-bank-hover-details {
     display:inline-block !important;
+    display: -webkit-inline-box !important;
     overflow: hidden;
     position: relative;
     transition: all 1s;

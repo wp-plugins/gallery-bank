@@ -1,7 +1,4 @@
-<button class="album_back_btn" id="back_button<?php echo $unique_id; ?>" style="display: none;"
-  onclick="view_albums<?php echo $unique_id; ?>(<?php echo $unique_id; ?>);">
-    <span style="color: <?php echo $button_text_color; ?>;"> <?php echo $back_button_text; ?></span>
-</button>
+<button class="album_back_btn" id="back_button<?php echo $unique_id; ?>" style="display: none;" onclick="view_albums<?php echo $unique_id; ?>(<?php echo $unique_id; ?>);"><span style="color: <?php echo $button_text_color; ?>;"> <?php echo $back_button_text; ?></span></button>
 <!------------------------------------------->
 
 <!------   Code for Back Button Separator ------->
@@ -13,38 +10,32 @@
 	<?php
 	for ($flag = 0;$flag < count($album);$flag++)
 	{
-	    $albumCover = $wpdb->get_row
-	    (
-	        $wpdb->prepare
-	            (
-	                "SELECT album_cover,thumbnail_url FROM " . gallery_bank_pics() . " WHERE album_cover=1 and album_id = %d",
-	                $album[$flag]->album_id
-	            )
-	    );
-   	 ?>
-    	<div class="albums_margin">
+		$albumCover = $wpdb->get_row
+		(
+			$wpdb->prepare
+			(
+				"SELECT album_cover,thumbnail_url FROM " . gallery_bank_pics() . " WHERE album_cover=1 and album_id = %d",
+				$album[$flag]->album_id
+			)
+		);
+		?>
+		<div class="albums_margin">
 			<div class="gallery-bank-hover-details">
-	        <div class="imgLiquid dynamic_cover_css" id="<?php echo $unique_id; ?>"
-				onclick="view_album_images<?php echo $unique_id; ?>(<?php echo $album[$flag]->album_id; ?>,<?php echo $unique_id; ?>)">
+				<div class="imgLiquid dynamic_cover_css" id="<?php echo $unique_id; ?>" onclick="view_album_images<?php echo $unique_id; ?>(<?php echo $album[$flag]->album_id; ?>,<?php echo $unique_id; ?>)">
 				<?php
 					if (count($albumCover) != 0) {
 						if ($albumCover->album_cover == 0) {
 							?>
-							<img id="albumOrder_<?php echo $album[$flag]->album_id; ?>"
-							 src="<?php echo stripcslashes(plugins_url("/assets/images/album-cover.png",dirname(__FILE__))); ?>"
-							style="height:<?php echo $cover_thumbnail_height; ?>px;"/>
+							<img id="albumOrder_<?php echo $album[$flag]->album_id; ?>" src="<?php echo stripcslashes(plugins_url("/assets/images/album-cover.png",dirname(__FILE__))); ?>" style="height:<?php echo $cover_thumbnail_height; ?>px;"/>
 							<?php
 						} else {
 							?>
-							<img id="albumOrder_<?php echo $album[$flag]->album_id; ?>"
-								src="<?php echo stripcslashes(GALLERY_BK_ALBUM_THUMB_URL . $albumCover->thumbnail_url); ?>"/>
+							<img id="albumOrder_<?php echo $album[$flag]->album_id; ?>" src="<?php echo stripcslashes(GALLERY_BK_ALBUM_THUMB_URL . $albumCover->thumbnail_url); ?>"/>
 							<?php
 						}
 					} else {
 						?>
-						<img id="albumOrder_<?php echo $album[$flag]->album_id; ?>"
-							src="<?php echo stripcslashes(plugins_url("/assets/images/album-cover.png",dirname(__FILE__))); ?>"
-							style="height:<?php echo $cover_thumbnail_height; ?>px;"/>
+						<img id="albumOrder_<?php echo $album[$flag]->album_id; ?>" src="<?php echo stripcslashes(plugins_url("/assets/images/album-cover.png",dirname(__FILE__))); ?>" style="height:<?php echo $cover_thumbnail_height; ?>px;"/>
 						<?php
 					}
 					?>
@@ -70,11 +61,11 @@
 					<?php
 				}
 					?>
-                <div class="album_link">
-                    <a onclick="view_album_images<?php echo $unique_id; ?>(<?php echo $album[$flag]->album_id; ?>,<?php echo $unique_id; ?>)">
-                        <?php echo $album_click_text; ?>
-                    </a>
-                </div>
+				<div class="album_link">
+					<a onclick="view_album_images<?php echo $unique_id; ?>(<?php echo $album[$flag]->album_id; ?>,<?php echo $unique_id; ?>)">
+						<?php echo $album_click_text; ?>
+					</a>
+				</div>
 			</div>
 		</div>
 	<?php
@@ -83,11 +74,11 @@
 </div>
 <?php
 if ($album_seperator == 1) {
-    ?>
-    <div id="seperator1<?php echo $unique_id; ?>" class="separator-doubled"></div>
+	?>
+	<div id="seperator1<?php echo $unique_id; ?>" class="separator-doubled"></div>
 <?php
 }
-    ?>
+	?>
 <div id="bank_album_images_div<?php echo $unique_id; ?>" style="display: none;">
 	<div id="show_bank_album_images<?php echo $unique_id; ?>" style="margin-top: 5px;">
 	</div>

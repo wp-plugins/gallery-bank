@@ -1,3 +1,4 @@
+<?php remove_filter ('comment_text', 'wpautop');?>
 <style>
 .<?php echo $class_images_in_row ?> > a
 {
@@ -8,9 +9,9 @@
 <?php
 	for($flag = 0; $flag< count($pics); $flag++) 
 	{
-        $image_title = $image_title_setting == 1 && $pics[$flag]->title != "" ? "<h5>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title)))). "</h5>" : "";
-        $image_description = $image_desc_setting == 1 && $pics[$flag]->description != ""  ? "<p>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description)))) ."</p>" : "";
-        if( $pics[$flag]->url == "" || $pics[$flag]->url == "undefined" || $pics[$flag]->url == "http://")
+		$image_title = $image_title_setting == 1 && $pics[$flag]->title != "" ? "<h5>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title)))). "</h5>" : "";
+		$image_description = $image_desc_setting == 1 && $pics[$flag]->description != ""  ? "<p>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description)))) ."</p>" : "";
+		if( $pics[$flag]->url == "" || $pics[$flag]->url == "undefined" || $pics[$flag]->url == "http://")
 		{
 			if($pics[$flag]->video == 1)
 			{
@@ -33,8 +34,7 @@
 		}
 		if($img_title == "true" || $img_desc == "true")
 		{
-			?>
-			<div class="dynamic_css margin_thumbs thumbnail_width<?php echo $unique_id;?> widget_margin_thumbs<?php echo $unique_id;?> gb_overlay">
+			?><div class="dynamic_css margin_thumbs thumbnail_width<?php echo $unique_id;?> widget_margin_thumbs<?php echo $unique_id;?> gb_overlay">
 				<div class="widgetImgLiquidFill<?php echo $unique_id;?> imgLiquidFill opactiy_thumbs">
 					<div class="overlay_text">
 						<h5><?php echo stripcslashes(htmlspecialchars_decode($pics[$flag]->title));?></h5>
@@ -57,16 +57,13 @@
 						if($pics[$flag]->video == 1)
 						{
 							?>
-							<img imageid="<?php echo $pics[$flag]->pic_id;?>"
-                                 id="ux_gb_img_<?php echo $pics[$flag]->pic_id;?>" type="video"
-                                 src="<?php echo stripcslashes($video_thumb_url);?>" style="height:<?php echo $thumbnails_height;?>px;"/>
+							<img imageid="<?php echo $pics[$flag]->pic_id;?>" id="ux_gb_img_<?php echo $pics[$flag]->pic_id;?>" type="video" src="<?php echo stripcslashes($video_thumb_url);?>" style="height:<?php echo $thumbnails_height;?>px;"/>
 							<?php
 						}
 						else
 						{
 							?>
-							<img imageid="<?php echo $pics[$flag]->pic_id;?>" id="ux_gb_img_<?php echo $unique_id;?>"
-                                 type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL.$pics[$flag]->thumbnail_url);?>"/>
+							<img imageid="<?php echo $pics[$flag]->pic_id;?>" id="ux_gb_img_<?php echo $unique_id;?>" type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL.$pics[$flag]->thumbnail_url);?>"/>
 							<?php
 						}
 					?>
@@ -76,32 +73,25 @@
 		}
 		else
 		{
-			?>
-			<div class="imgLiquidFill widgetImgLiquidFill<?php echo $unique_id;?> shutter-gb-img-wrap opactiy_thumbs dynamic_css margin_thumbs thumbnail_width<?php echo $unique_id;?> widget_margin_thumbs<?php echo $unique_id;?>" >
+			?><div class="imgLiquidFill widgetImgLiquidFill<?php echo $unique_id;?> shutter-gb-img-wrap opactiy_thumbs dynamic_css margin_thumbs thumbnail_width<?php echo $unique_id;?> widget_margin_thumbs<?php echo $unique_id;?>" >
 				<?php
 				if($pics[$flag]->video == 1)
 				{
 					?>
-					<img imageid="<?php echo $pics[$flag]->pic_id;?>"
-                         id="ux_gb_img_<?php echo $pics[$flag]->pic_id;?>" type="video"
-                         src="<?php echo stripcslashes($video_thumb_url);?>" style="height:<?php echo $thumbnails_height;?>px;"/>
+					<img imageid="<?php echo $pics[$flag]->pic_id;?>" id="ux_gb_img_<?php echo $pics[$flag]->pic_id;?>" type="video" src="<?php echo stripcslashes($video_thumb_url);?>" style="height:<?php echo $thumbnails_height;?>px;"/>
 					<?php
 				}
 				else
 				{
 					?>
-					<img imageid="<?php echo $pics[$flag]->pic_id;?>" id="ux_gb_img_<?php echo $unique_id;?>"
-                         type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL.$pics[$flag]->thumbnail_url);?>"/>
+					<img imageid="<?php echo $pics[$flag]->pic_id;?>" id="ux_gb_img_<?php echo $unique_id;?>" type="image" src="<?php echo stripcslashes(GALLERY_BK_THUMB_SMALL_URL.$pics[$flag]->thumbnail_url);?>"/>
 					<?php
 				}
 				?>
 			</div>
 			<?php
 		}
-		?>
-		</a>
+		?></a>
 		<?php
 	}
-	?>
-	
-</div>
+	?></div>
