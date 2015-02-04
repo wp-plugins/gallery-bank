@@ -547,8 +547,8 @@
 		            thumbs: true, // Show thumbs
 		            active: "thumbs"
 		        },
-		        flash_swf_url: url + "plupload.flash.swf",
-		        silverlight_xap_url: url + "plupload.silverlight.xap",
+		        flash_swf_url: url + "Moxie.swf",
+		        silverlight_xap_url: url + "Moxie.xap",
 		        init: {
 		            FileUploaded: function (up, file) {
 		                

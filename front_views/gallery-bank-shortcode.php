@@ -25,7 +25,7 @@
 			</div>
 			<div class="layout-control-group" id="ux_select_album" style="display: block;">
 			    <label class="custom-layout-label"><?php _e("Select Album", gallery_bank); ?> : </label>
-			    <select id="add_album_id" class="layout-span9">
+			    <select id="ux_ddl_select_album" class="layout-span9">
 			        <option value=""> <?php _e("Select an Album", gallery_bank); ?>  </option>
 			        <?php
 			       global $wpdb,$current_user;
@@ -470,7 +470,7 @@ function select_album() {
 }
 function InsertGallery() {
     var gallery_effect;
-    var album_id = jQuery("#add_album_id").val();
+    var album_id = jQuery("#ux_ddl_select_album").val();
     var album_format = jQuery("#ux_album_format").val();
     var gallery_format = jQuery("#ux_gallery_format").val();
     var text_format = jQuery("#ux_text_format").val();
