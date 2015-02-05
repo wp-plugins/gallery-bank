@@ -45,20 +45,20 @@
 			if($pics[$flag]->video == 1)
 			{
 				?>
-				<a rel="<?php echo $unique_id;?>prettyPhoto[gallery]" class="element gallery-sizer" href="<?php echo stripcslashes($pics[$flag]->pic_name); ?>" data-title="<?php echo $image_title.$image_description;?>" id="ux_img_div_<?php echo $unique_id;?>">
+				<a rel="<?php echo $unique_id;?>prettyPhoto[gallery]" class="element gallery-sizer" href="<?php echo stripcslashes($pics[$flag]->pic_name); ?>" data-title="<?php echo esc_html($image_title.$image_description);?>" id="ux_img_div_<?php echo $unique_id;?>">
 				<?php
 			}
 			else
 			{
 				?>
-				<a rel="<?php echo $unique_id;?>prettyPhoto[gallery]" class="element gallery-sizer" href="<?php echo stripcslashes(GALLERY_BK_THUMB_URL.$pics[$flag]->thumbnail_url); ?>" data-title="<?php echo $image_title.$image_description;?>" id="ux_img_div_<?php echo $unique_id;?>">
+				<a rel="<?php echo $unique_id;?>prettyPhoto[gallery]" class="element gallery-sizer" href="<?php echo stripcslashes(GALLERY_BK_THUMB_URL.$pics[$flag]->thumbnail_url); ?>" data-title="<?php echo esc_html($image_title.$image_description);?>" id="ux_img_div_<?php echo $unique_id;?>">
 				<?php
 			}
 		}
 		else 
 		{
 			?>
-			<a class="element gallery-sizer" href="<?php echo $pics[$flag]->url; ?>" id="ux_img_div_<?php echo $unique_id;?>" target="_blank" data-title="<?php echo $image_title;?>">
+			<a class="element gallery-sizer" href="<?php echo $pics[$flag]->url; ?>" id="ux_img_div_<?php echo $unique_id;?>" target="_blank" data-title="<?php echo esc_html($image_title);?>">
 			<?php
 		}
 		if($img_title == "true" || $img_desc == "true")

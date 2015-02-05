@@ -10,26 +10,26 @@
 	for($flag = 0; $flag< count($pics); $flag++) 
 	{
 		$image_title = $image_title_setting == 1 && $pics[$flag]->title != "" ? "<h5>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->title)))). "</h5>" : "";
-		$image_description = $image_desc_setting == 1 && $pics[$flag]->description != ""  ? "<p>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description)))) ."</p>" : "";
+		$image_description = $image_desc_setting == 1 && $pics[$flag]->description != "" ? "<p>" . esc_attr(html_entity_decode(stripcslashes(htmlspecialchars($pics[$flag]->description)))) ."</p>" : "";
 		if( $pics[$flag]->url == "" || $pics[$flag]->url == "undefined" || $pics[$flag]->url == "http://")
 		{
 			if($pics[$flag]->video == 1)
 			{
 				?>
-				<a rel="<?php echo $unique_id;?>prettyPhoto[gallery]"  href="<?php echo stripcslashes($pics[$flag]->pic_name); ?>" data-title="<?php echo $image_title.$image_description;?>" id="ux_img_div_<?php echo $unique_id; ?>">
+				<a rel="<?php echo $unique_id;?>prettyPhoto[gallery]"  href="<?php echo stripcslashes($pics[$flag]->pic_name); ?>" data-title="<?php echo esc_html($image_title.$image_description);?>" id="ux_img_div_<?php echo $unique_id; ?>">
 				<?php
 			}
 			else
 			{
 				?>
-				<a rel="<?php echo $unique_id;?>prettyPhoto[gallery]"  href="<?php echo stripcslashes(GALLERY_BK_THUMB_URL.$pics[$flag]->thumbnail_url); ?>" data-title="<?php echo $image_title.$image_description;?>" id="ux_img_div_<?php echo $unique_id;?>">
+				<a rel="<?php echo $unique_id;?>prettyPhoto[gallery]"  href="<?php echo stripcslashes(GALLERY_BK_THUMB_URL.$pics[$flag]->thumbnail_url); ?>" data-title="<?php echo esc_html($image_title.$image_description);?>" id="ux_img_div_<?php echo $unique_id;?>">
 				<?php
 			}
 		}
 		else 
 		{
 			?>
-			<a href="<?php echo $pics[$flag]->url; ?>" id="ux_img_div_<?php echo $unique_id;?>" target="_blank" data-title="<?php echo $image_title;?>">
+			<a href="<?php echo $pics[$flag]->url; ?>" id="ux_img_div_<?php echo $unique_id;?>" target="_blank" data-title="<?php echo esc_html($image_title);?>">
 			<?php
 		}
 		if($img_title == "true" || $img_desc == "true")
