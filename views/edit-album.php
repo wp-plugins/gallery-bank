@@ -530,7 +530,6 @@
 		    ({
 		        runtimes: "html5,html4,flash,silverlight",
 		        url: ajaxurl + "?param=upload_pic&action=upload_library&_nonce=<?php echo $upload_photos;?>",
-		        max_file_count: 20,
 		        chunk_size: "1mb",
 		        filters: {
 		            max_file_size: "1000mb",

@@ -2,11 +2,10 @@
 $gb_lang = array();
 $gb_translated_lang = array();
 
-array_push($gb_lang, "bg_BG", "ko_KR", "ms_MY", "sq_AL", "sr_RS");
+array_push($gb_lang, "bg_BG", "ms_MY", "sq", "sr_RS");
 
-array_push($gb_translated_lang, "en_GB", "en_US", "es_ES", "nl_NL", "uk", "sv_SE", "fr_FR", "pt_PT", "pt_BR", "et", "it_IT",
- "de_DE", "fi", "he_IL", "ru_RU", "be_BY", "tr", "th", "ar", "hu_HU", "cs_CZ", "pl_PL", "da_DK", "sk_SK", "zh_CN", "id_ID", "el_GR",
- "hr", "nb", "ro_RO", "ja", "sl_SI");
+array_push($gb_translated_lang,"fr_BE","fr_BE","fr_CA","fr_CH","fr_FR","ru_RU","ru_UA","en_US","en_GB","es_ES","es_CL","es_PE","es_PR","es_VE","es_CO","nl_NL","nl_BE","hu_HU","de_DE","pt_BR","pt_PT","he_IL","tr","it_IT","da_DK","pl_PL","sv_SE","zh_CN","zh_HK","zh_sg","zh_TW","zh","cs_CZ","sk_SK","el","hr","sl_SL","id_ID","ro_RO","nn_NO","hr","el","uk");
+
 $language = get_locale();
 ?>
 <div id="welcome-panel" class="welcome-panel" style="padding:0px !important;background-color: #f9f9f9 !important">
@@ -199,7 +198,7 @@ if(in_array($language, $gb_lang))
 	<div class="custom-message red" style="display: block;margin-top:30px">
 		<span style="padding: 4px 0;">
 			<strong><p style="font:12px/1.0em Arial !important;">This plugin language is translated with the help of Google Translator.</p>
-				<p style="font:12px/1.0em Arial !important;">If you would like to translate & help us, we will reward you with a free Pro Version License of Gallery Bank worth 18£.</p>
+				<p style="font:12px/1.0em Arial !important;">If you would like to translate & help us, we will reward you with a free Eco Version License of Gallery Bank worth &euro;18.</p>
 				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
 			</strong>
 		</span>
@@ -211,7 +210,7 @@ elseif(!(in_array($language, $gb_translated_lang)) && !(in_array($language, $gb_
 	?>
 	<div class="custom-message red" style="display: block;margin-top:30px">
 		<span style="padding: 4px 0;">
-			<strong><p style="font:12px/1.0em Arial !important;">If you would like to translate Gallery Bank in your native language, we will reward you with a free Pro Version License of Gallery Bank worth 18£.</p>
+			<strong><p style="font:12px/1.0em Arial !important;">If you would like to translate Gallery Bank in your native language, we will reward you with a free Eco Version License of Gallery Bank worth &euro;18.</p>
 				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
 			</strong>
 		</span>

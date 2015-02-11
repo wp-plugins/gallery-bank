@@ -3,7 +3,7 @@ Contributors: Gallery-Bank,contact-banker
 Tags:  add album, add gallery, add picture, add pictures, admin, AJAX, album, banner rotator, best gallery, best gallery plugin, best image slider, best portfolio, bilder, comments, easy media gallery, fancy gallery, filterable gallery, filterable portfolio, foto, fotoalbum, fotogalerie, free photo gallery, fullscreen gallery, galary, galeri, galerie, galerij, galery, gallary, Galleria, gallerie, galleries, gallery, gallery decription, gallery image, gallery lightbox, Gallery Plugin, gallery shortcode, gallery slider, gelary, gellary, gellery, google, grid gallery, html5 player, html5 video, html5-audio, image, image album, image gallery, image gallery plugin, image lightbox, image rotate, image slider, image slideshow, images, images gallery, jquery, jquery gallery, jquery slider, jquery slideshow, lightbox, links, media, media gallery, multiple pictures, nextgen gallery, page, pagination gallery, pagination portfolio, photo, photo album, photo albums, photo gallery, Photo Slider, photoalbum, photogallery, photos, photoset, picture, pictures, plugin, plugin for gallery, plugin gallery, portfolio, portfolio gallery, portfolio plugin, Post, posts, responsive gallery, responsive image gallery, responsive slider, responsive slideshow, responsive wordpress photo gallery, seo, seo image, shortcode, sidebar, Simple gallery, slide show, slideshow, thumbnail, twitter, upload images, upload photos, video gallery, view images, view pictures, website gallery, widget, widget gallery, wordpress gallery, wordpress gallery plugin, wordpress photo gallery plugin, wordpress portfolio plugin, wordpress seo, wp gallery, wp gallery plugin, wp gallery plugins, wp slider
 Requires at least: 3.4
 Tested up to: 4.1
-Stable tag: 3.0.98
+Stable tag: 3.0.99
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -160,22 +160,30 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 
 = Gallery Bank is now available in the following Languages =
 
-* Albanian (sq_AL)
+* Albanian (sq)
 * Arabic (ar)
-* Belarusian(be_BY)
 * Brazilian Portuguese (pt_BR)
 * Bulgarian (bg_BG)
+* Croatian (hr)
 * Chinese (zh_CN)
-* Croation (hr)
+* Chinese - Hong Kong (zh_HK)
+* Chinese - Singapore (zh_sg)
+* Chinese - Taiwan (zh_TW)
+* Chinese - (zh)
 * Czech (cs_CZ)
 * Danish (da_DK)
 * Dutch (nl_NL)
+* Dutch - Belgium (nl_BE)
 * English (en_GB)
+* English (en_US)
 * Estonian (et)
-* Finnish (fi_FI)
+* Finnish (fi)
 * French (fr_FR)
+* French - Belgium (fr_BE)
+* French - Canada (fr_CA)
+* French - Switzerland (fr_ch)
 * German (de_DE)
-* Greek (el_GR)
+* Greek (el)
 * Hebrew (he_IL)
 * Hungarian (hu_HU)
 * Indonesian (id_ID)
@@ -183,17 +191,22 @@ With Global Settings, you can define different settings for Thumbnails, Albums, 
 * Japanese (ja)
 * Korean (ko_KR)
 * Malay Malaysia (ms_MY)
-* Norwegian (nb)
 * Polish (pl_PL)
 * Portuguese (pt_PT)
 * Romanian (ro_RO)
 * Russian (ru_RU)
+* Russian - Ukraine (ru_UA)
 * Serbian (sr_RS)
-* Slovenian (sl_SI)
+* Slovenian (sl_SL)
 * Slovak (sk_SK)
-* Spanish (es_ES)
+* Spanish - Chile (es_CL)
+* Spanish - Peru (es_PE)
+* Spanish - Puerto Rico (es_PR)
+* Spanish - Venezuela (es_VE)
+* Spanish - Columbia (es_CO)
+* Spanish - Spain (es_ES)
 * Swedish (sv_SE)
-* Turkish (tr)
+* Turkish (tr_TR)
 * Thai (th)
 * Ukrainian (uk)
 
@@ -486,6 +499,12 @@ is False in shortcode.
 17. Displaying Individual Album with Images.
 
 == Changelog ==
+
+= 3.0.99 =
+
+* Korean Language Updated.
+* Udpated Po & Mo Files for all Languages.
+* Added New Languages
 
 = 3.0.98 =
 
