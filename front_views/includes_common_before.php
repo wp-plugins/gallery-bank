@@ -67,7 +67,7 @@ switch ($album_type) {
         if ($img_in_row == "") {
             $img_in_row = 0;
         }
-        if($show_albums == "all")
+        if($show_albums == "all" || $show_albums == "")
         {
         	$album = $wpdb->get_results
         	(
