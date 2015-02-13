@@ -416,7 +416,7 @@ add_action("media_buttons_context", "add_gallery_shortcode_button", 1);
 function add_gallery_shortcode_button($context)
 {
     add_thickbox();
-    $context .= "<a href=\"#TB_inline?width=500&height=600&inlineId=my-gallery-content-id\"  class=\"button thickbox\"
+    $context .= "<a href=\"#TB_inline?width=500&height=500&inlineId=my-gallery-content-id\"  class=\"button thickbox\"
      title=\"" . __("Add Gallery using Gallery Bank", gallery_bank) . "\"><span class=\"gallery_icon\"></span> Gallery Bank</a>";
     return $context;
 }
@@ -444,13 +444,14 @@ function gallery_bank_short_code($atts)
         "animation_effect" => "",
         "image_width" => "",
         "album_title" => "",
+        "show_albums" => "",
         "thumb_width" => "",
         "thumb_height" => "",
         "widget" => "",
     ), $atts));
-    return extract_short_code_for_gallery_images($album_id, $type, $format, $title, $desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, $thumb_width, $thumb_height, $widget);
+    return extract_short_code_for_gallery_images($album_id, $type, $format, $title, $desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, $show_albums, $thumb_width, $thumb_height, $widget);
 }
-function extract_short_code_for_gallery_images($album_id, $album_type, $gallery_type, $img_title, $img_desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, $thumb_width, $thumb_height, $widget)
+function extract_short_code_for_gallery_images($album_id, $album_type, $gallery_type, $img_title, $img_desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, $show_albums, $thumb_width, $thumb_height, $widget)
 {
     ob_start();
     global $wpdb;

@@ -4,7 +4,9 @@ $gb_translated_lang = array();
 
 array_push($gb_lang, "bg_BG", "ms_MY", "sq", "sr_RS");
 
-array_push($gb_translated_lang,"fr_BE","fr_BE","fr_CA","fr_CH","fr_FR","ru_RU","ru_UA","en_US","en_GB","es_ES","es_CL","es_PE","es_PR","es_VE","es_CO","nl_NL","nl_BE","hu_HU","de_DE","pt_BR","pt_PT","he_IL","tr","it_IT","da_DK","pl_PL","sv_SE","zh_CN","zh_HK","zh_sg","zh_TW","zh","cs_CZ","sk_SK","el","hr","sl_SL","id_ID","ro_RO","nn_NO","hr","el","uk");
+array_push($gb_translated_lang,"ar","be_BY","et","fi","ja","ko_KR","nb_NO","no","fr_BE","fr_CA","fr_CH","fr_FR","ru_RU","ru_UA","en_US","en_GB","es_ES","es_CL","es_PE",
+"es_PR","es_VE","es_CO","nl_NL","nl_BE","hu_HU","de_DE","pt_BR","pt_PT","he_IL","it_IT","da_DK","pl_PL","sv_SE","zh_CN","zh_HK",
+"zh_sg","zh_TW","zh","cs_CZ","sk_SK","el","hr","sl_SL","id_ID","ro_RO","nn_NO","uk","sl_SL", "th","tr_TR");
 
 $language = get_locale();
 ?>

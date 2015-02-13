@@ -23,6 +23,30 @@
 			        <option value="individual">Individual Album</option>
 			    </select>
 			</div>
+			<div class="layout-control-group" id="ux_show_multiple_albums" style="display: none;">
+			    <label class="custom-layout-label"><?php _e("Choose Type", gallery_bank); ?> : </label>
+			    <select id="ddl_show_albums" class="layout-span9" onchange="show_gallery_albums();" onchange="select_album();">
+			        <option value="all">All Albums</option>
+			        <option value="selected">Only Selected Albums</option>
+			    </select>
+			</div>
+			<div class="layout-control-group" id="ux_select_multiple_albums" style="display: none;">
+			    <label class="custom-layout-label"><?php _e("Choose Albums", gallery_bank); ?> : </label>
+			    <select id="ddl_add_multi_album" class="layout-span9" multiple="multiple">
+			        <?php
+			        global $wpdb;
+			        $albums = $wpdb->get_results
+		            (
+	                   "SELECT * FROM ".gallery_bank_albums()." order by album_order asc "
+		            );
+			        for ($flag = 0; $flag < count($albums); $flag++) {
+			            ?>
+			            <option value="<?php echo intval($albums[$flag]->album_id); ?>"><?php echo esc_html($albums[$flag]->album_name) ?></option>
+			        <?php
+			        }
+			        ?>
+			    </select>
+			</div>
 			<div class="layout-control-group" id="ux_select_album" style="display: block;">
 			    <label class="custom-layout-label"><?php _e("Select Album", gallery_bank); ?> : </label>
 			    <select id="ux_ddl_select_album" class="layout-span9">
@@ -431,6 +455,18 @@ function show_special_effect() {
         jQuery("#rounded_images_div").css("display", "none");
     }
 }
+function show_gallery_albums()
+{
+	var show_albums = jQuery("#ddl_show_albums").val();
+	if(show_albums == "all")
+	{
+		jQuery("#ux_select_multiple_albums").css("display", "none");
+	}
+	else
+	{
+		jQuery("#ux_select_multiple_albums").css("display", "block");
+	}
+}
 function check_gallery_type() {
     var gallery_type = jQuery("input:radio[name=ux_gallery]:checked").val();
     var album_format = jQuery("#ux_album_format").val();
@@ -439,6 +475,8 @@ function check_gallery_type() {
         jQuery("#div_albums_in_row").css("display", "none");
         jQuery("#ux_select_album").css("display", "block");
         jQuery("#slide_show").css("display", "none");
+        jQuery("#ux_show_multiple_albums").css("display", "none");
+        jQuery("#ux_select_multiple_albums").css("display", "none");
     }
     else {
         jQuery("#album_format").css("display", "block");
@@ -447,15 +485,20 @@ function check_gallery_type() {
             if (album_format == "grid") {
                 jQuery("#div_albums_in_row").css("display", "block");
                 jQuery("#slide_show").css("display", "block");
+                jQuery("#ux_show_multiple_albums").css("display", "block");
             }
             else {
                 jQuery("#div_albums_in_row").css("display", "none");
                 jQuery("#slide_show").css("display", "block");
+                jQuery("#ux_show_multiple_albums").css("display", "block");
             }
+            show_gallery_albums();
         }
         else {
             jQuery("#div_albums_in_row").css("display", "none");
             jQuery("#slide_show").css("display", "block");
+            jQuery("#ux_show_multiple_albums").css("display", "none");
+            jQuery("#ux_select_multiple_albums").css("display", "none");
         }
     }
 }
@@ -478,6 +521,8 @@ function InsertGallery() {
     var album_in_row = jQuery("#ux_album_in_row").val();
     var filmstrip_width = jQuery("#ux_img_width").val();
     var gallery_type = jQuery("input:radio[name=ux_gallery]:checked").val();
+    var album_type = jQuery("#ddl_show_albums").val();
+    var selected_albums = jQuery("#ddl_add_multi_album").val();
 
     var special_effect = jQuery("#ux_special_effects").val();
     var rotation = jQuery("#ux_rotation").val();
@@ -503,6 +548,11 @@ function InsertGallery() {
         alert("<?php _e("Please select an Album Format", gallery_bank) ?>");
         return;
     }
+    else if(gallery_type == 1 && ((album_format == "grid" || album_format == "list") && selected_albums == ""))
+    {
+    	alert("<?php _e("Please select Albums", gallery_bank) ?>");
+        return;
+    }
     else if (gallery_format == "") {
         alert("<?php _e("Please select a Gallery Images Format", gallery_bank) ?>");
         return;
@@ -524,7 +574,14 @@ function InsertGallery() {
 	{
 		responsive = "img_in_row=\""+ images_in_row+"\"";
 	}
-	
+	if(album_type == "all")
+	{
+		var display_selected_albums = "show_albums=\"all\"";
+	}
+	else
+	{
+		var display_selected_albums = "show_albums=\""+ selected_albums+"\"";
+	}
     if (gallery_type == 1) {
         if (album_format == "individual") {
             if (gallery_format == "thumbnail" || gallery_format == "masonry") {
@@ -542,26 +599,26 @@ function InsertGallery() {
         else if (album_format == "grid") {
             if (gallery_format == "thumbnail" || gallery_format == "masonry") {
                 if (text_format == "title_only") {
-                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" title=\"true\" desc=\"false\" "+responsive+" albums_in_row=\"" + album_in_row + "\" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
+                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" "+display_selected_albums+" title=\"true\" desc=\"false\" "+responsive+" albums_in_row=\"" + album_in_row + "\" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
                 }
                 else if (text_format == "title_desc") {
-                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" title=\"true\" desc=\"true\" "+responsive+" albums_in_row=\"" + album_in_row + "\" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
+                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" "+display_selected_albums+" title=\"true\" desc=\"true\" "+responsive+" albums_in_row=\"" + album_in_row + "\" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
                 }
                 else if (text_format == "no_text") {
-                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" title=\"false\" desc=\"false\" "+responsive+" albums_in_row=\"" + album_in_row + "\" special_effect=\"\" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
+                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" "+display_selected_albums+" title=\"false\" desc=\"false\" "+responsive+" albums_in_row=\"" + album_in_row + "\" special_effect=\"\" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
                 }
             }
         }
         else {
             if (gallery_format == "thumbnail" || gallery_format == "masonry") {
                 if (text_format == "title_only") {
-                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" title=\"true\" desc=\"false\" "+responsive+" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
+                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" "+display_selected_albums+" title=\"true\" desc=\"false\" "+responsive+" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
                 }
                 else if (text_format == "title_desc") {
-                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" title=\"true\" desc=\"true\" "+responsive+" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
+                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" "+display_selected_albums+" title=\"true\" desc=\"true\" "+responsive+" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
                 }
                 else if (text_format == "no_text") {
-                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" title=\"false\" desc=\"false\" "+responsive+" special_effect=\"\" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
+                    window.send_to_editor("[gallery_bank type=\"" + album_format + "\" format=\"" + gallery_format + "\" "+display_selected_albums+" title=\"false\" desc=\"false\" "+responsive+" special_effect=\"\" animation_effect=\"\" album_title=\"" + displayAlbumTitle + "\"]");
                 }
             }
         }

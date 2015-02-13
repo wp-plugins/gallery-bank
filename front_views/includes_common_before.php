@@ -67,10 +67,20 @@ switch ($album_type) {
         if ($img_in_row == "") {
             $img_in_row = 0;
         }
-        $album = $wpdb->get_results
-		(
-			"SELECT * FROM " . gallery_bank_albums() . " order by album_order asc"
-		);
+        if($show_albums == "all")
+        {
+        	$album = $wpdb->get_results
+        	(
+        		"SELECT * FROM " . gallery_bank_albums() . " order by album_order asc"
+        	);
+        }
+        else
+        {
+        	$album = $wpdb->get_results
+        	(
+        		"SELECT * FROM " . gallery_bank_albums() . " where album_id in ($show_albums) order by album_order asc"
+        	);
+        }
 	break;
 }
 

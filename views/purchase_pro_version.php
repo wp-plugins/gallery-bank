@@ -55,9 +55,9 @@ else
 														class="css3_grid_row_2 row_style_4 css3_grid_row_2_responsive"><span
 														class="css3_grid_vertical_align_table"><span
 															class="css3_grid_vertical_align"><span><span
-																	class="css3_hidden_caption">Domains per License</span><span
+																	class="css3_hidden_caption">Installation per License</span><span
 																	class="css3_grid_tooltip"><span>Number of websites that can
-																			use the plugin on purchase of a License.</span>Domains
+																			use the plugin on purchase of a License.</span>Installation
 																		per License</span></span></span></span></li>
 													<li
 														class="css3_grid_row_3 row_style_2 css3_grid_row_3_responsive"><span
@@ -88,7 +88,7 @@ else
 															class="css3_grid_vertical_align"><span><span
 																	class="css3_hidden_caption">Multi-Lingual</span><span
 																	class="css3_grid_tooltip"><span>Multi-Lingual Facility
-																			allows the plugin to be used in 36 languages.</span>Multi-Lingual</span></span></span></span></li>
+																			allows the plugin to be used in 53 languages.</span>Multi-Lingual</span></span></span></span></li>
 													<li
 														class="css3_grid_row_6 row_style_2 css3_grid_row_6_responsive"><span
 														class="css3_grid_vertical_align_table"><span
