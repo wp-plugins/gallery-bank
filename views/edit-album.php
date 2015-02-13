@@ -540,7 +540,7 @@
 		        rename: true,
 		        sortable: true,
 		        dragdrop: true,
-		        unique_names: false,
+		        unique_names: true,
 		        views: {
 		            list: true,
 		            thumbs: true, // Show thumbs
@@ -555,12 +555,12 @@
 						var albumid = jQuery("#ux_hidden_album_id").val();
 		                var controlType = "image";
 		                var image_name = file.name;
-		                //var img_gb_path = file.target_name;
+		                var img_gb_path = file.target_name;
 		                jQuery.post(ajaxurl, "album_id=" + albumid + "&controlType=" + controlType + "&imagename=" + image_name +
-		                    "&img_gb_path=" + image_name + "&cover_height=" + cover_height + "&cover_width=" + cover_width +
+		                    "&img_gb_path=" + img_gb_path + "&cover_height=" + cover_height + "&cover_width=" + cover_width +
 		                    "&param=add_pic&action=add_new_album_library", function (result) {
 		                    	
-		                    	jQuery.post(ajaxurl, "img_path=" + file.name + "&img_name=" + file.name + "&image_width=" + image_width +
+		                    	jQuery.post(ajaxurl, "img_path=" + file.target_name + "&img_name=" + file.name + "&image_width=" + image_width +
 				                "&image_height=" + image_height + "&picid=" + result +
 				                "&param=add_new_dynamic_row_for_image&action=add_new_album_library", function (data) {
 					                
