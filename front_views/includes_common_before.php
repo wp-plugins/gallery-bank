@@ -8,87 +8,88 @@ $album_css = $wpdb->get_results
 	"SELECT * FROM " . gallery_bank_settings()
 );
 if (count($album_css) != 0) {
-    $setting_keys = array();
-    for ($flag = 0; $flag < count($album_css); $flag++) {
-        array_push($setting_keys, $album_css[$flag]->setting_key);
-    }
+	$setting_keys = array();
+	for ($flag = 0; $flag < count($album_css); $flag++) {
+		array_push($setting_keys, $album_css[$flag]->setting_key);
+	}
 }
 switch ($album_type) {
-    case "images":
-        $album = $wpdb->get_var
-            (
-                $wpdb->prepare
-                    (
-                        "SELECT album_name FROM " . gallery_bank_albums() . " where album_id = %d",
-                        $album_id
-                    )
-            );
-        $pics = $wpdb->get_results
-            (
-                $wpdb->prepare
-                    (
-                        "SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d order by sorting_order asc",
-                        $album_id
-                    )
-            );
+	case "images":
+		$album = $wpdb->get_var
+			(
+				$wpdb->prepare
+					(
+						"SELECT album_name FROM " . gallery_bank_albums() . " where album_id = %d",
+						$album_id
+					)
+			);
+		$pics = $wpdb->get_results
+			(
+				$wpdb->prepare
+					(
+						"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d order by sorting_order asc",
+						$album_id
+					)
+			);
 	break;
-    case "individual":
-        if (isset($widget)) {
-            $galleryWidget = $widget;
-        } else {
-            $galleryWidget = "";
-        }
-        if ($img_in_row == "") {
-            $img_in_row = 0;
-        }
-        $album = $wpdb->get_row
-            (
-                $wpdb->prepare
-                    (
-                        "SELECT * FROM " . gallery_bank_albums() . " WHERE album_id = %d",
-                        $album_id
-                    )
-            );
-        $albumCover = $wpdb->get_row
-            (
-                $wpdb->prepare
-                    (
-                        "SELECT album_cover,thumbnail_url,video FROM " . gallery_bank_pics() . " WHERE album_cover=1 and album_id = %d",
-                        $album_id
-                    )
-            );
+	case "individual":
+		if (isset($widget)) {
+			$galleryWidget = $widget;
+		} else {
+			$galleryWidget = "";
+		}
+		if ($img_in_row == "") {
+			$img_in_row = 0;
+		}
+		$album = $wpdb->get_row
+			(
+				$wpdb->prepare
+					(
+						"SELECT * FROM " . gallery_bank_albums() . " WHERE album_id = %d",
+						$album_id
+					)
+			);
+		$albumCover = $wpdb->get_row
+			(
+				$wpdb->prepare
+					(
+						"SELECT album_cover,thumbnail_url,video FROM " . gallery_bank_pics() . " WHERE album_cover=1 and album_id = %d",
+						$album_id
+					)
+			);
 	break;
-    case "grid" || "list":
-        if (isset($widget)) {
-            $galleryWidget = $widget;
-        } else {
-            $galleryWidget = "";
-        }
-        if ($img_in_row == "") {
-            $img_in_row = 0;
-        }
-        if($show_albums == "all" || $show_albums == "")
-        {
-        	$album = $wpdb->get_results
-        	(
-        		"SELECT * FROM " . gallery_bank_albums() . " order by album_order asc"
-        	);
-        }
-        else
-        {
-        	$album = $wpdb->get_results
-        	(
-        		"SELECT * FROM " . gallery_bank_albums() . " where album_id in ($show_albums) order by album_order asc"
-        	);
-        }
+	case "grid" || "list":
+		if (isset($widget)) {
+			$galleryWidget = $widget;
+		} else {
+			$galleryWidget = "";
+		}
+		if ($img_in_row == "") {
+			$img_in_row = 0;
+		}
+		if($show_albums == "all" || $show_albums == "")
+		{
+			$album = $wpdb->get_results
+			(
+				"SELECT * FROM " . gallery_bank_albums() . " order by album_order asc"
+			);
+		}
+		else
+		{
+			if(preg_match("/^\d+(?:,\d+)*$/", $show_albums))
+			{
+				$album = $wpdb->get_results
+				(
+					"SELECT * FROM " . gallery_bank_albums() . " where album_id in ($show_albums) order by album_order asc"
+				);
+			}
+		}
 	break;
 }
-
 /** Switch for global settings **/
-
 switch ($album_type) {
-    case "images":
-        $index = array_search("thumbnails_width", $setting_keys);
+	case "images":
+		$index = array_search("thumbnails_width", $setting_keys);
 		if($widget == "true")
 		{
 			$thumbnails_width = intval($thumb_width);
@@ -98,7 +99,7 @@ switch ($album_type) {
 			$thumbnails_width = intval($album_css[$index]->setting_value);
 		}
 
-        $index = array_search("thumbnails_height", $setting_keys);
+		$index = array_search("thumbnails_height", $setting_keys);
 		if($widget  == "true")
 		{
 			$thumbnails_height = intval($thumb_height);
@@ -107,183 +108,182 @@ switch ($album_type) {
 		{
 			 $thumbnails_height = intval($album_css[$index]->setting_value);
 		}
-       
 
-        $index = array_search("thumbnails_opacity", $setting_keys);
-        $thumbnails_opacity = doubleval($album_css[$index]->setting_value);
+		$index = array_search("thumbnails_opacity", $setting_keys);
+		$thumbnails_opacity = doubleval($album_css[$index]->setting_value);
 
-        $index = array_search("thumbnails_border_size", $setting_keys);
-        $thumbnails_border_size = intval($album_css[$index]->setting_value);
+		$index = array_search("thumbnails_border_size", $setting_keys);
+		$thumbnails_border_size = intval($album_css[$index]->setting_value);
 
-        $index = array_search("thumbnails_border_radius", $setting_keys);
-        $thumbnails_border_radius = intval($album_css[$index]->setting_value);
+		$index = array_search("thumbnails_border_radius", $setting_keys);
+		$thumbnails_border_radius = intval($album_css[$index]->setting_value);
 
-        $index = array_search("thumbnails_border_color", $setting_keys);
-        $thumbnails_border_color = $album_css[$index]->setting_value;
+		$index = array_search("thumbnails_border_color", $setting_keys);
+		$thumbnails_border_color = $album_css[$index]->setting_value;
 
-        $index = array_search("margin_btw_thumbnails", $setting_keys);
-        $margin_btw_thumbnails = intval($album_css[$index]->setting_value);
-        $newMargin = $margin_btw_thumbnails * 2;
+		$index = array_search("margin_btw_thumbnails", $setting_keys);
+		$margin_btw_thumbnails = intval($album_css[$index]->setting_value);
+		$newMargin = $margin_btw_thumbnails * 2;
 
-        $perspective_margin_right = $margin_btw_thumbnails + 20;
-        $perspective_margin_bottom = $margin_btw_thumbnails + 50;
+		$perspective_margin_right = $margin_btw_thumbnails + 20;
+		$perspective_margin_bottom = $margin_btw_thumbnails + 50;
 
-        $index = array_search("thumbnail_text_color", $setting_keys);
-        $thumbnail_text_color = $album_css[$index]->setting_value;
+		$index = array_search("thumbnail_text_color", $setting_keys);
+		$thumbnail_text_color = $album_css[$index]->setting_value;
 
-        $index = array_search("thumbnail_text_align", $setting_keys);
-        $thumbnail_text_align = $album_css[$index]->setting_value;
+		$index = array_search("thumbnail_text_align", $setting_keys);
+		$thumbnail_text_align = $album_css[$index]->setting_value;
 
-        $index = array_search("thumbnail_font_family", $setting_keys);
-        $thumbnail_font_family = $album_css[$index]->setting_value;
+		$index = array_search("thumbnail_font_family", $setting_keys);
+		$thumbnail_font_family = $album_css[$index]->setting_value;
 
-        $index = array_search("heading_font_size", $setting_keys);
-        $heading_font_size = intval($album_css[$index]->setting_value);
+		$index = array_search("heading_font_size", $setting_keys);
+		$heading_font_size = intval($album_css[$index]->setting_value);
 
-        $index = array_search("text_font_size", $setting_keys);
-        $text_font_size = intval($album_css[$index]->setting_value);
+		$index = array_search("text_font_size", $setting_keys);
+		$text_font_size = intval($album_css[$index]->setting_value);
 
-        $index = array_search("thumbnail_desc_length", $setting_keys);
-        $thumbnail_desc_length = intval($album_css[$index]->setting_value);
+		$index = array_search("thumbnail_desc_length", $setting_keys);
+		$thumbnail_desc_length = intval($album_css[$index]->setting_value);
 
-        $index = array_search("lightbox_type", $setting_keys);
-        $lightbox_type = $album_css[$index]->setting_value;
+		$index = array_search("lightbox_type", $setting_keys);
+		$lightbox_type = $album_css[$index]->setting_value;
 
-        $index = array_search("lightbox_overlay_opacity", $setting_keys);
-        $lightbox_overlay_opacity = doubleval($album_css[$index]->setting_value);
+		$index = array_search("lightbox_overlay_opacity", $setting_keys);
+		$lightbox_overlay_opacity = doubleval($album_css[$index]->setting_value);
 
-        $index = array_search("lightbox_overlay_border_size", $setting_keys);
-        $lightbox_overlay_border_size = intval($album_css[$index]->setting_value);
+		$index = array_search("lightbox_overlay_border_size", $setting_keys);
+		$lightbox_overlay_border_size = intval($album_css[$index]->setting_value);
 
-        $index = array_search("lightbox_overlay_border_radius", $setting_keys);
-        $lightbox_overlay_border_radius = intval($album_css[$index]->setting_value);
+		$index = array_search("lightbox_overlay_border_radius", $setting_keys);
+		$lightbox_overlay_border_radius = intval($album_css[$index]->setting_value);
 
-        $index = array_search("lightbox_text_color", $setting_keys);
-        $lightbox_text_color = $album_css[$index]->setting_value;
+		$index = array_search("lightbox_text_color", $setting_keys);
+		$lightbox_text_color = $album_css[$index]->setting_value;
 
-        $index = array_search("lightbox_overlay_border_color", $setting_keys);
-        $lightbox_overlay_border_color = $album_css[$index]->setting_value;
-        $lightbox_border_color_value = $lightbox_overlay_border_size . "px solid " . $lightbox_overlay_border_color;
+		$index = array_search("lightbox_overlay_border_color", $setting_keys);
+		$lightbox_overlay_border_color = $album_css[$index]->setting_value;
+		$lightbox_border_color_value = $lightbox_overlay_border_size . "px solid " . $lightbox_overlay_border_color;
 
-        $index = array_search("lightbox_inline_bg_color", $setting_keys);
-        $lightbox_inline_bg_color = $album_css[$index]->setting_value;
+		$index = array_search("lightbox_inline_bg_color", $setting_keys);
+		$lightbox_inline_bg_color = $album_css[$index]->setting_value;
 
-        $index = array_search("lightbox_overlay_bg_color", $setting_keys);
-        $lightbox_overlay_bg_color = $album_css[$index]->setting_value;
-       
+		$index = array_search("lightbox_overlay_bg_color", $setting_keys);
+		$lightbox_overlay_bg_color = $album_css[$index]->setting_value;
+	   
 
-        $index = array_search("lightbox_fade_in_time", $setting_keys);
-        $lightbox_fade_in_time = intval($album_css[$index]->setting_value);
+		$index = array_search("lightbox_fade_in_time", $setting_keys);
+		$lightbox_fade_in_time = intval($album_css[$index]->setting_value);
 
-        $index = array_search("lightbox_fade_out_time", $setting_keys);
-        $lightbox_fade_out_time = intval($album_css[$index]->setting_value);
+		$index = array_search("lightbox_fade_out_time", $setting_keys);
+		$lightbox_fade_out_time = intval($album_css[$index]->setting_value);
 
-        $index = array_search("lightbox_text_align", $setting_keys);
-        $lightbox_text_align = $album_css[$index]->setting_value;
+		$index = array_search("lightbox_text_align", $setting_keys);
+		$lightbox_text_align = $album_css[$index]->setting_value;
 
-        $index = array_search("lightbox_font_family", $setting_keys);
-        $lightbox_font_family = $album_css[$index]->setting_value;
+		$index = array_search("lightbox_font_family", $setting_keys);
+		$lightbox_font_family = $album_css[$index]->setting_value;
 
-        $index = array_search("lightbox_heading_font_size", $setting_keys);
-        $lightbox_heading_font_size = intval($album_css[$index]->setting_value);
+		$index = array_search("lightbox_heading_font_size", $setting_keys);
+		$lightbox_heading_font_size = intval($album_css[$index]->setting_value);
 
-        $index = array_search("lightbox_text_font_size", $setting_keys);
-        $lightbox_text_font_size = intval($album_css[$index]->setting_value);
+		$index = array_search("lightbox_text_font_size", $setting_keys);
+		$lightbox_text_font_size = intval($album_css[$index]->setting_value);
 
-        $index = array_search("image_title_setting", $setting_keys);
-        $image_title_setting = intval($album_css[$index]->setting_value);
+		$index = array_search("image_title_setting", $setting_keys);
+		$image_title_setting = intval($album_css[$index]->setting_value);
 
-        $index = array_search("image_desc_setting", $setting_keys);
-        $image_desc_setting = intval($album_css[$index]->setting_value);
+		$index = array_search("image_desc_setting", $setting_keys);
+		$image_desc_setting = intval($album_css[$index]->setting_value);
 
-        $index = array_search("autoplay_setting", $setting_keys);
-        $autoplay_setting = intval($album_css[$index]->setting_value);
-        $autoplay = ($autoplay_setting == 1) ? "true" : "false";
+		$index = array_search("autoplay_setting", $setting_keys);
+		$autoplay_setting = intval($album_css[$index]->setting_value);
+		$autoplay = ($autoplay_setting == 1) ? "true" : "false";
 
-        $index = array_search("slide_interval", $setting_keys);
-        $slide_interval = intval($album_css[$index]->setting_value);
+		$index = array_search("slide_interval", $setting_keys);
+		$slide_interval = intval($album_css[$index]->setting_value);
 
-        $index = array_search("album_seperator", $setting_keys);
-        $album_seperator = intval($album_css[$index]->setting_value);
+		$index = array_search("album_seperator", $setting_keys);
+		$album_seperator = intval($album_css[$index]->setting_value);
 
-        $index = array_search("language_direction", $setting_keys);
-        $lang_dir_setting = $album_css[$index]->setting_value;
+		$index = array_search("language_direction", $setting_keys);
+		$lang_dir_setting = $album_css[$index]->setting_value;
 		
-        $video_thumb_url = plugins_url("/assets/images/video.jpg",dirname(__FILE__));
-        
+		$video_thumb_url = plugins_url("/assets/images/video.jpg",dirname(__FILE__));
+		
 
 	break;
-    case "grid" || "list" || "individual":
-        $index = array_search("cover_thumbnail_width", $setting_keys);
-        $cover_thumbnail_width = $album_css[$index]->setting_value;
+	case "grid" || "list" || "individual":
+		$index = array_search("cover_thumbnail_width", $setting_keys);
+		$cover_thumbnail_width = $album_css[$index]->setting_value;
 
-        $index = array_search("cover_thumbnail_height", $setting_keys);
-        $cover_thumbnail_height = $album_css[$index]->setting_value;
+		$index = array_search("cover_thumbnail_height", $setting_keys);
+		$cover_thumbnail_height = $album_css[$index]->setting_value;
 
-        $index = array_search("cover_thumbnail_opacity", $setting_keys);
-        $cover_thumbnail_opacity = $album_css[$index]->setting_value;
+		$index = array_search("cover_thumbnail_opacity", $setting_keys);
+		$cover_thumbnail_opacity = $album_css[$index]->setting_value;
 
-        $index = array_search("cover_thumbnail_border_size", $setting_keys);
-        $cover_thumbnail_border_size = $album_css[$index]->setting_value;
+		$index = array_search("cover_thumbnail_border_size", $setting_keys);
+		$cover_thumbnail_border_size = $album_css[$index]->setting_value;
 
 
-        $index = array_search("cover_thumbnail_border_radius", $setting_keys);
-        $cover_thumbnail_border_radius = $album_css[$index]->setting_value;
+		$index = array_search("cover_thumbnail_border_radius", $setting_keys);
+		$cover_thumbnail_border_radius = $album_css[$index]->setting_value;
 
-        $index = array_search("cover_thumbnail_border_color", $setting_keys);
-        $cover_thumbnail_border_color = $album_css[$index]->setting_value;
+		$index = array_search("cover_thumbnail_border_color", $setting_keys);
+		$cover_thumbnail_border_color = $album_css[$index]->setting_value;
 
-        $index = array_search("margin_btw_cover_thumbnails", $setting_keys);
-        $margin_btw_cover_thumbnails = $album_css[$index]->setting_value;
-        $margin = $margin_btw_cover_thumbnails + 10;
+		$index = array_search("margin_btw_cover_thumbnails", $setting_keys);
+		$margin_btw_cover_thumbnails = $album_css[$index]->setting_value;
+		$margin = $margin_btw_cover_thumbnails + 10;
 
-        $index = array_search("album_text_align", $setting_keys);
-        $album_text_align = $album_css[$index]->setting_value;
+		$index = array_search("album_text_align", $setting_keys);
+		$album_text_align = $album_css[$index]->setting_value;
 
-        $index = array_search("album_font_family", $setting_keys);
-        $album_font_family = $album_css[$index]->setting_value;
+		$index = array_search("album_font_family", $setting_keys);
+		$album_font_family = $album_css[$index]->setting_value;
 
-        $index = array_search("album_heading_font_size", $setting_keys);
-        $album_heading_font_size = intval($album_css[$index]->setting_value);
+		$index = array_search("album_heading_font_size", $setting_keys);
+		$album_heading_font_size = intval($album_css[$index]->setting_value);
 
-        $index = array_search("album_text_font_size", $setting_keys);
-        $album_text_font_size = intval($album_css[$index]->setting_value);
+		$index = array_search("album_text_font_size", $setting_keys);
+		$album_text_font_size = intval($album_css[$index]->setting_value);
 
-        $index = array_search("album_click_text", $setting_keys);
-        $album_click_text = $album_css[$index]->setting_value;
+		$index = array_search("album_click_text", $setting_keys);
+		$album_click_text = $album_css[$index]->setting_value;
 
-        $index = array_search("album_text_color", $setting_keys);
-        $album_text_color = $album_css[$index]->setting_value;
+		$index = array_search("album_text_color", $setting_keys);
+		$album_text_color = $album_css[$index]->setting_value;
 
-        $index = array_search("album_desc_length", $setting_keys);
-        $album_desc_length = $album_css[$index]->setting_value;
+		$index = array_search("album_desc_length", $setting_keys);
+		$album_desc_length = $album_css[$index]->setting_value;
 
-        $index = array_search("back_button_text", $setting_keys);
-        $back_button_text = $album_css[$index]->setting_value;
+		$index = array_search("back_button_text", $setting_keys);
+		$back_button_text = $album_css[$index]->setting_value;
 
-        $index = array_search("button_color", $setting_keys);
-        $button_color = $album_css[$index]->setting_value;
+		$index = array_search("button_color", $setting_keys);
+		$button_color = $album_css[$index]->setting_value;
 
-        $index = array_search("button_text_color", $setting_keys);
-        $button_text_color = $album_css[$index]->setting_value;
+		$index = array_search("button_text_color", $setting_keys);
+		$button_text_color = $album_css[$index]->setting_value;
 
-        $index = array_search("album_seperator", $setting_keys);
-        $album_seperator = intval($album_css[$index]->setting_value);
+		$index = array_search("album_seperator", $setting_keys);
+		$album_seperator = intval($album_css[$index]->setting_value);
 
-        $index = array_search("language_direction", $setting_keys);
-        $lang_dir_setting = $album_css[$index]->setting_value;
+		$index = array_search("language_direction", $setting_keys);
+		$lang_dir_setting = $album_css[$index]->setting_value;
 
 	break;
 }
 
 ?>
-    <!-- Switch for global css  -->
+	<!-- Switch for global css  -->
 <style type="text/css">
-    <?php
-    switch($album_type)
-    {
-        case "images":
-                ?>
+	<?php
+	switch($album_type)
+	{
+		case "images":
+				?>
 				/*noinspection ALL*/
 				.dynamic_css {
 					border: <?php echo $thumbnails_border_size;?>px solid <?php echo $thumbnails_border_color;?> !important;
