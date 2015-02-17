@@ -1,6 +1,6 @@
 === Gallery Bank - Responsive Photo Gallery ===
 Contributors: Gallery-Bank,contact-banker
-Tags: admin, gallery, photo gallery, albums, photos, pictures, galleria, photo albums, pics, plugin, wp gallery, best gallery plugin 
+Tags: admin, gallery, photo gallery, albums, photos, pictures, galleria, photo albums, pics, plugin, wp gallery, best gallery plugin,album, albums, gallery, image, image gallery, images, photo album, photo gallery, plugins
 Requires at least: 3.4
 Tested up to: 4.1
 Stable tag: 3.0.102
