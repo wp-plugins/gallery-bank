@@ -20,10 +20,11 @@ function create_global_menus_for_gallery_bank()
 		case "administrator":
 			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", plugins_url("/assets/images/icon.png" , dirname(__FILE__)));
 			add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
-			add_submenu_page("gallery_bank", "Plugin Updates", __("Plugin Updates", gallery_bank), "read", "gallery_auto_plugin_update", "gallery_auto_plugin_update");
 			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
 			add_submenu_page("gallery_bank", "Global Settings", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
+			add_submenu_page("gallery_bank", "Plugin Updates", __("Plugin Updates", gallery_bank), "read", "gallery_auto_plugin_update", "gallery_auto_plugin_update");
+			add_submenu_page("gallery_bank", "Feature Requests", __("Feature Requests", gallery_bank), "read", "gallery_bank_feature_request", "gallery_bank_feature_request");
 			add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
 			add_submenu_page("gallery_bank", "Recommendations", __("Recommendations", gallery_bank), "read", "gallery_bank_recommended_plugins", "gallery_bank_recommended_plugins");
 			add_submenu_page("gallery_bank", "Premium Editions", __("Premium Editions", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
@@ -36,10 +37,11 @@ function create_global_menus_for_gallery_bank()
 		case "editor":
 			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", plugins_url("/assets/images/icon.png" , dirname(__FILE__)));
 			add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
-			add_submenu_page("gallery_bank", "Plugin Updates", __("Plugin Updates", gallery_bank), "read", "gallery_auto_plugin_update", "gallery_auto_plugin_update");
 			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
 			add_submenu_page("gallery_bank", "Global Settings", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
+			add_submenu_page("gallery_bank", "Plugin Updates", __("Plugin Updates", gallery_bank), "read", "gallery_auto_plugin_update", "gallery_auto_plugin_update");
+			add_submenu_page("gallery_bank", "Feature Requests", __("Feature Requests", gallery_bank), "read", "gallery_bank_feature_request", "gallery_bank_feature_request");
 			add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
 			add_submenu_page("gallery_bank", "Recommendations", __("Recommendations", gallery_bank), "read", "gallery_bank_recommended_plugins", "gallery_bank_recommended_plugins");
 			add_submenu_page("gallery_bank", "Premium Editions", __("Premium Editions", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
@@ -52,10 +54,11 @@ function create_global_menus_for_gallery_bank()
 		case "author":
 			add_menu_page("Gallery Bank", __("Gallery Bank", gallery_bank), "read", "gallery_bank", "", plugins_url("/assets/images/icon.png" , dirname(__FILE__)));
 			add_submenu_page("gallery_bank", "Dashboard", __("Dashboard", gallery_bank), "read", "gallery_bank", "gallery_bank");
-			add_submenu_page("gallery_bank", "Plugin Updates", __("Plugin Updates", gallery_bank), "read", "gallery_auto_plugin_update", "gallery_auto_plugin_update");
 			add_submenu_page("gallery_bank", "Short-Codes", __("Short-Codes", gallery_bank), "read", "gallery_bank_shortcode", "gallery_bank_shortcode");
 			add_submenu_page("gallery_bank", "Album Sorting", __("Album Sorting", gallery_bank), "read", "gallery_album_sorting", "gallery_album_sorting");
 			add_submenu_page("gallery_bank", "Global Settings", __("Global Settings", gallery_bank), "read", "global_settings", "global_settings");
+			add_submenu_page("gallery_bank", "Plugin Updates", __("Plugin Updates", gallery_bank), "read", "gallery_auto_plugin_update", "gallery_auto_plugin_update");
+			add_submenu_page("gallery_bank", "Feature Requests", __("Feature Requests", gallery_bank), "read", "gallery_bank_feature_request", "gallery_bank_feature_request");
 			add_submenu_page("gallery_bank", "System Status", __("System Status", gallery_bank), "read", "gallery_bank_system_status", "gallery_bank_system_status");
 			add_submenu_page("gallery_bank", "Recommendations", __("Recommendations", gallery_bank), "read", "gallery_bank_recommended_plugins", "gallery_bank_recommended_plugins");
 			add_submenu_page("gallery_bank", "Premium Editions", __("Premium Editions", gallery_bank), "read", "gallery_bank_purchase", "gallery_bank_purchase");
@@ -307,6 +310,23 @@ function gallery_auto_plugin_update()
 	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
 	include_once GALLERY_BK_PLUGIN_DIR . "/views/automatic-plugin-update.php";
 }
+
+function gallery_bank_feature_request()
+{
+	global $wpdb,$current_user,$user_role_permission;
+	if(is_super_admin())
+	{
+		$gb_role = "administrator";
+	}
+	else
+	{
+		$gb_role = $wpdb->prefix . "capabilities";
+		$current_user->role = array_keys($current_user->$gb_role);
+		$gb_role = $current_user->role[0];
+	}
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/header.php";
+	include_once GALLERY_BK_PLUGIN_DIR . "/views/gallery-feedback.php";
+}
 //--------------------------------------------------------------------------------------------------------------//
 //CODE FOR CALLING JAVASCRIPT FUNCTIONS
 //--------------------------------------------------------------------------------------------------------------//
@@ -417,7 +437,7 @@ add_action("media_buttons_context", "add_gallery_shortcode_button", 1);
 function add_gallery_shortcode_button($context)
 {
 	add_thickbox();
-	$context .= "<a href=\"#TB_inline?width=500&height=500&inlineId=my-gallery-content-id\"  class=\"button thickbox\" 
+	$context .= "<a href=\"#TB_inline?width=800&height=530&inlineId=my-gallery-content-id\"  class=\"button thickbox\" 
 	 title=\"" . __("Add Gallery using Gallery Bank", gallery_bank) . "\"><span class=\"gallery_icon\"></span> Gallery Bank</a>";
 	return $context;
 }
@@ -448,11 +468,14 @@ function gallery_bank_short_code($atts)
 		"show_albums" => "",
 		"thumb_width" => "",
 		"thumb_height" => "",
+		"display" => "",
+		"no_of_images" => "",
+		"sort_by" => "",
 		"widget" => "",
 	), $atts));
-	return extract_short_code_for_gallery_images(intval($album_id), $type, $format, $title, $desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, urldecode($show_albums), $thumb_width, $thumb_height, $widget);
+	return extract_short_code_for_gallery_images(intval($album_id), $type, $format, $title, $desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, urldecode($show_albums), $thumb_width, $thumb_height, $display, intval($no_of_images), $sort_by, $widget);
 }
-function extract_short_code_for_gallery_images($album_id, $album_type, $gallery_type, $img_title, $img_desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, $show_albums, $thumb_width, $thumb_height, $widget)
+function extract_short_code_for_gallery_images($album_id, $album_type, $gallery_type, $img_title, $img_desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, $show_albums, $thumb_width, $thumb_height, $display, $no_of_images, $sort_by, $widget)
 {
 	if(preg_match("/^\d+(?:,\d+)*$/", $show_albums) || $show_albums == "all" || $show_albums == "")
 	{

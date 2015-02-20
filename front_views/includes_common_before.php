@@ -23,14 +23,128 @@ switch ($album_type) {
 						$album_id
 					)
 			);
-		$pics = $wpdb->get_results
-			(
-				$wpdb->prepare
+		if($display == "all" || $display == "")
+		{
+			switch($sort_by)
+			{
+				case "random":
+					$pics = $wpdb->get_results
 					(
-						"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d order by sorting_order asc",
-						$album_id
-					)
-			);
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY RAND()",
+							$album_id
+						)
+					);
+				break;
+				case "pic_id":
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY pic_id asc",
+							$album_id
+						)
+					);
+				break;
+				case "pic_name":
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY pic_name asc",
+							$album_id
+						)
+					);
+				break;
+				case "title":
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY title asc",
+							$album_id
+						)
+					);
+				break;
+				case "date":
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY date asc",
+							$album_id
+						)
+					);
+				break;
+				default:
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d order by sorting_order asc",
+							$album_id
+						)
+					);
+				break;
+			}
+		}
+		else
+		{
+			switch($sort_by)
+			{
+				case "random":
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY RAND() LIMIT $no_of_images",
+							$album_id
+						)
+					);
+				break;
+				case "pic_id":
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY pic_id asc LIMIT $no_of_images",
+							$album_id
+						)
+					);
+				break;
+				case "pic_name":
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY pic_name asc LIMIT $no_of_images",
+							$album_id
+						)
+					);
+				break;
+				case "title":
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY title asc LIMIT $no_of_images",
+							$album_id
+						)
+					);
+				break;
+				case "date":
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY date asc LIMIT $no_of_images",
+							$album_id
+						)
+					);
+				break;
+			}
+		}
 	break;
 	case "individual":
 		if (isset($widget)) {

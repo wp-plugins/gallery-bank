@@ -2,8 +2,8 @@
 Contributors: Gallery-Bank,contact-banker
 Tags: admin, gallery, photo gallery, albums, photos, pictures, galleria, photo albums, pics, plugin, wp gallery, best gallery plugin,album, albums, gallery, image, image gallery, images, photo album, photo gallery, plugins
 Requires at least: 3.4
-Tested up to: 4.1
-Stable tag: 3.0.102
+Tested up to: 4.1.1
+Stable tag: 3.0.103
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -499,6 +499,11 @@ is False in shortcode.
 17. Displaying Individual Album with Images.
 
 == Changelog ==
+
+= 3.0.103 =
+
+* Added new feature of Feature Request.
+* Shortcode Editor Redesigned.
 
 = 3.0.102 =
 

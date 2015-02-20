@@ -75,6 +75,9 @@ switch ($album_type) {
 					var show_album_title = "<?php echo $album_title; ?>";
 					var filmstrip_width = "<?php echo $image_width; ?>";
 					var isResponsive = "<?php echo $responsive;?>";
+					var display = "<?php echo $display;?>";
+					var sort_order = "<?php echo $sort_by;?>";
+					var display_no_of_images = "<?php echo $no_of_images;?>";
 						jQuery(".albums-in-row_" + unique_id).css("display", "none");
 						jQuery("#back_button" + unique_id).css("display", "none");
 						jQuery("#seperator" + unique_id).css("display", "none");
@@ -84,7 +87,7 @@ switch ($album_type) {
 							"&images_in_row=" + images_in_row + "&iswidget=" + iswidget +
 							"&special_effects=" + special_effects + "&animation_effects=" + animation_effects +
 							"&filmstrip_width=" + filmstrip_width + "&show_album_title=" + show_album_title +
-							"&isResponsive="+isResponsive+
+							"&isResponsive="+isResponsive+"&no_of_images="+display_no_of_images+"&display="+display+"&sort_by="+sort_order+
 							"&param=show_album_gallery&action=front_view_all_albums_library", function (data) {
 							jQuery("#back_button" + unique_id).css("display", "block");
 							jQuery("#seperator" + unique_id).css("display", "block");
@@ -127,6 +130,9 @@ switch ($album_type) {
 						var show_album_title = "<?php echo $album_title; ?>";
 						var filmstrip_width = "<?php echo $image_width; ?>";
 						var isResponsive = "<?php echo $responsive;?>";
+						var display = "<?php echo $display;?>";
+						var sort_order = "<?php echo $sort_by;?>";
+						var display_no_of_images = "<?php echo $no_of_images;?>";
 						jQuery("#view_gallery_bank_albums_" + unique_id).css("display", "none");
 						jQuery("#back_button" + unique_id).css("display", "none");
 						jQuery("#seperator" + unique_id).css("display", "none");
@@ -136,7 +142,7 @@ switch ($album_type) {
 							"&images_in_row=" + images_in_row + "&iswidget=" + iswidget +
 							"&special_effects=" + special_effects + "&animation_effects=" + animation_effects +
 							"&filmstrip_width=" + filmstrip_width + "&show_album_title=" + show_album_title +
-							"&isResponsive="+isResponsive+
+							"&isResponsive="+isResponsive+"&no_of_images="+display_no_of_images+"&display="+display+"&sort_by="+sort_order+
 							"&param=show_album_gallery&action=front_view_all_albums_library", function (data) {
 							jQuery("#back_button" + unique_id).css("display", "block");
 							jQuery("#seperator" + unique_id).css("display", "block");
@@ -179,6 +185,9 @@ switch ($album_type) {
 						var show_album_title = "<?php echo $album_title; ?>";
 						var filmstrip_width = "<?php echo $image_width; ?>";
 						var isResponsive = "<?php echo $responsive;?>";
+						var display = "<?php echo $display;?>";
+						var sort_order = "<?php echo $sort_by;?>";
+						var display_no_of_images = "<?php echo $no_of_images;?>";
 						jQuery("#ux_individual_main_div" + unique_id).css("display", "none");
 						jQuery("#back_button" + unique_id).css("display", "none");
 						jQuery("#seperator" + unique_id).css("display", "none");
@@ -188,7 +197,7 @@ switch ($album_type) {
 							"&images_in_row=" + images_in_row + "&iswidget=" + iswidget +
 							"&special_effects=" + special_effects + "&animation_effects=" + animation_effects +
 							"&filmstrip_width=" + filmstrip_width + "&show_album_title=" + show_album_title +
-							"&isResponsive="+isResponsive+
+							"&isResponsive="+isResponsive+"&no_of_images="+display_no_of_images+"&display="+display+"&sort_by="+sort_order+
 							"&param=show_album_gallery&action=front_view_all_albums_library", function (data) {
 							jQuery("#back_button" + unique_id).css("display", "block");
 							jQuery("#seperator" + unique_id).css("display", "block");

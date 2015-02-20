@@ -4,7 +4,7 @@
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.102
+ Version: 3.0.103
  Author URI: http://tech-banker.com
 */
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -126,12 +126,6 @@ function add_gallery_bank_icon($meta = TRUE)
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
 		        "title" => __("Dashboard", gallery_bank))
 		    );
-		    $wp_admin_bar->add_menu(array(
-	    		"parent" => "gallery_bank_links",
-	    		"id" => "gallery_auto_update_links",
-	    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
-	    		"title" => __("Plugin Updates", gallery_bank))
-		    );
 			
 			$wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
@@ -154,6 +148,13 @@ function add_gallery_bank_icon($meta = TRUE)
 		        "title" => __("Global Settings", gallery_bank))
 		    );
 		
+			$wp_admin_bar->add_menu(array(
+				"parent" => "gallery_bank_links",
+				"id" => "gallery_auto_update_links",
+				"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
+				"title" => __("Plugin Updates", gallery_bank))
+			);
+			
 		    $wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
 		        "id" => "system_status_links",
@@ -196,12 +197,6 @@ function add_gallery_bank_icon($meta = TRUE)
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
 		        "title" => __("Dashboard", gallery_bank))
 		    );
-		    $wp_admin_bar->add_menu(array(
-	    		"parent" => "gallery_bank_links",
-	    		"id" => "gallery_auto_update_links",
-	    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
-	    		"title" => __("Plugin Updates", gallery_bank))
-		    );
 			
 			$wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
@@ -224,6 +219,20 @@ function add_gallery_bank_icon($meta = TRUE)
 		        "title" => __("Global Settings", gallery_bank))
 		    );
 		
+		    $wp_admin_bar->add_menu(array(
+		    		"parent" => "gallery_bank_links",
+		    		"id" => "gallery_auto_update_links",
+		    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
+		    		"title" => __("Plugin Updates", gallery_bank))
+		    );
+		    
+		    $wp_admin_bar->add_menu(array(
+		    		"parent" => "gallery_bank_links",
+		    		"id" => "gallery_feature_request_links",
+		    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_feature_request",
+		    		"title" => __("Feature Requests", gallery_bank))
+		    );
+		    
 		    $wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
 		        "id" => "system_status_links",
@@ -266,13 +275,7 @@ function add_gallery_bank_icon($meta = TRUE)
 		        "href" => site_url() . "/wp-admin/admin.php?page=gallery_bank",
 		        "title" => __("Dashboard", gallery_bank))
 		    );
-		    $wp_admin_bar->add_menu(array(
-	    		"parent" => "gallery_bank_links",
-	    		"id" => "gallery_auto_update_links",
-	    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
-	    		"title" => __("Plugin Updates", gallery_bank))
-		    );
-			
+		    
 			$wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
 		        "id" => "shortcode_links",
@@ -294,6 +297,20 @@ function add_gallery_bank_icon($meta = TRUE)
 		        "title" => __("Global Settings", gallery_bank))
 		    );
 		
+		    $wp_admin_bar->add_menu(array(
+		    		"parent" => "gallery_bank_links",
+		    		"id" => "gallery_auto_update_links",
+		    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
+		    		"title" => __("Plugin Updates", gallery_bank))
+		    );
+		    
+		    $wp_admin_bar->add_menu(array(
+		    		"parent" => "gallery_bank_links",
+		    		"id" => "gallery_feature_request_links",
+		    		"href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_feature_request",
+		    		"title" => __("Feature Requests", gallery_bank))
+		    );
+		    
 		    $wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
 		        "id" => "system_status_links",

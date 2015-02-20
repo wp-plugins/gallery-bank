@@ -137,6 +137,9 @@ switch($_REQUEST["page"])
 	case "gallery_auto_plugin_update":
 		$page = "Plugin Updates";
 	break;
+	case "gallery_bank_feature_request":
+		$page = "Feature Request";
+	break;
 }
 ?>
 <ul class="breadcrumb" style="margin-top: 10px;">
@@ -193,17 +196,26 @@ switch ($gb_role)
 		<?php
 	break;
 }
-
+if($_REQUEST["page"] != "gallery_bank_feature_request")
+{
+	?>
+	<div class="custom-message green" style="display: block;margin-top:30px">
+		<div style="padding: 4px 0;">
+			<p style="font:12px/1.0em Arial !important;font-weight:bold;">If you don't find any features you were looking for in this Plugin, 
+				please write us <a target="_self" href="admin.php?page=gallery_bank_feature_request">here</a> and we shall try to implement this for you as soon as possible! We are looking forward for your valuable <a target="_self" href="admin.php?page=gallery_bank_feature_request">Feedback</a></p>
+		</div>
+	</div>
+	<?php
+}
 if(in_array($language, $gb_lang))
 {
 	?>
 	<div class="custom-message red" style="display: block;margin-top:30px">
-		<span style="padding: 4px 0;">
-			<strong><p style="font:12px/1.0em Arial !important;">This plugin language is translated with the help of Google Translator.</p>
-				<p style="font:12px/1.0em Arial !important;">If you would like to translate & help us, we will reward you with a free Eco Version License of Gallery Bank worth &euro;18.</p>
+		<div style="padding: 4px 0;">
+			<p style="font:12px/1.0em Arial !important;font-weight:bold;">This plugin language is translated with the help of Google Translator.</p>
+				<p style="font:12px/1.0em Arial !important;">If you would like to translate &amp; help us, we will reward you with a free Eco Version License of Gallery Bank worth &euro;18.</p>
 				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
-			</strong>
-		</span>
+		</div>
 	</div>
 	<?php
 }
@@ -211,11 +223,10 @@ elseif(!(in_array($language, $gb_translated_lang)) && !(in_array($language, $gb_
 {
 	?>
 	<div class="custom-message red" style="display: block;margin-top:30px">
-		<span style="padding: 4px 0;">
-			<strong><p style="font:12px/1.0em Arial !important;">If you would like to translate Gallery Bank in your native language, we will reward you with a free Eco Version License of Gallery Bank worth &euro;18.</p>
+		<div style="padding: 4px 0;">
+			<p style="font:12px/1.0em Arial !important;font-weight:bold;">If you would like to translate Gallery Bank in your native language, we will reward you with a free Eco Version License of Gallery Bank worth &euro;18.</p>
 				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
-			</strong>
-		</span>
+		</div>
 	</div>
 	<?php
 }
@@ -226,7 +237,7 @@ if (!(is_dir(GALLERY_MAIN_THUMB_DIR)))
 		?>
 		<div class="custom-message red" style="display: block;margin-top:15px">
 			<span>
-				<strong>If you are getting problems with thumbnails, then you need to set 777(write) permissions to <?php echo GALLERY_MAIN_DIR ?> (recursive files & directories) in order to save the images/thumbnails. </strong>
+				<strong>If you are getting problems with thumbnails, then you need to set 775(write) permissions to <?php echo GALLERY_MAIN_DIR ?> (recursive files &amp; directories) in order to save the images/thumbnails. </strong>
 			</span>
 		</div>
 		<?php

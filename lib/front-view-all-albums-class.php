@@ -13,6 +13,9 @@ if (isset($_REQUEST["param"])) {
         $image_width = esc_attr($_REQUEST["filmstrip_width"]);
         $album_title = esc_attr($_REQUEST["show_album_title"]);
 		$responsive = esc_attr($_REQUEST["isResponsive"]);
+		$no_of_images = esc_attr($_REQUEST["no_of_images"]);
+		$display = esc_attr($_REQUEST["display"]);
+		$sort_by = esc_attr($_REQUEST["sort_by"]);
 		
         $album_type = "images";
         include GALLERY_BK_PLUGIN_DIR . "/front_views/includes_common_before.php";
