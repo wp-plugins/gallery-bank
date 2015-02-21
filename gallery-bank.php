@@ -154,7 +154,12 @@ function add_gallery_bank_icon($meta = TRUE)
 				"href" => site_url() . "/wp-admin/admin.php?page=gallery_auto_plugin_update",
 				"title" => __("Plugin Updates", gallery_bank))
 			);
-			
+			$wp_admin_bar->add_menu(array(
+				"parent" => "gallery_bank_links",
+				"id" => "gallery_feature_request_links",
+				"href" => site_url() . "/wp-admin/admin.php?page=gallery_bank_feature_request",
+				"title" => __("Feature Requests", gallery_bank))
+			);
 		    $wp_admin_bar->add_menu(array(
 		        "parent" => "gallery_bank_links",
 		        "id" => "system_status_links",
