@@ -17,6 +17,182 @@
 	}
 	else
 	{
+		$show_gallery_demo = get_option("gallery-bank-demo");
+		if($show_gallery_demo == "")
+		{
+			/******************************************Code for Thumbnails Creation**********************/
+			if(!function_exists("uploading_gallery_image"))
+			{
+				function uploading_gallery_image($image, $width, $height)
+				{
+					$temp_image_path = GALLERY_MAIN_UPLOAD_DIR . $image;
+					$temp_image_name = $image;
+					list(, , $temp_image_type) = getimagesize($temp_image_path);
+					if ($temp_image_type === NULL) {
+						return false;
+					}
+					$uploaded_image_path = GALLERY_MAIN_UPLOAD_DIR . $temp_image_name;
+					move_uploaded_file($temp_image_path, $uploaded_image_path);
+					$type = explode(".", $image);
+					$thumbnail_image_path = GALLERY_MAIN_THUMB_DIR . preg_replace('{\\.[^\\.]+$}', '.'.$type[1], $temp_image_name);
+			
+					$result = generating_gallery_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
+					return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
+				}
+			}
+			if(!function_exists("uploading_gallery_album"))
+			{
+				function uploading_gallery_album($album_image, $width, $height)
+				{
+					$temp_image_path = GALLERY_MAIN_UPLOAD_DIR . $album_image;
+					$temp_image_name = $album_image;
+					list(, , $temp_image_type) = getimagesize($temp_image_path);
+					if ($temp_image_type === NULL) {
+						return false;
+					}
+					$uploaded_image_path = GALLERY_MAIN_UPLOAD_DIR . $temp_image_name;
+					move_uploaded_file($temp_image_path, $uploaded_image_path);
+					$type = explode(".", $album_image);
+					$thumbnail_image_path = GALLERY_MAIN_ALB_THUMB_DIR . preg_replace("{\\.[^\\.]+$}", ".".$type[1], $temp_image_name);
+			
+					$result = generating_gallery_thumbnail($uploaded_image_path, $thumbnail_image_path, $width, $height);
+					return $result ? array($uploaded_image_path, $thumbnail_image_path) : false;
+				}
+			}
+			/****************************** COMMON FUNCTION TO GENERATE THUMBNAILS********************************/
+			if(!function_exists("generating_gallery_thumbnail"))
+			{
+				function generating_gallery_thumbnail($source_image_path, $thumbnail_image_path, $imageWidth, $imageHeight)
+				{
+					list($source_image_width, $source_image_height, $source_image_type) = getimagesize($source_image_path);
+					$source_gd_image = false;
+					switch ($source_image_type) {
+			
+						case IMAGETYPE_GIF:
+							$source_gd_image = imagecreatefromgif($source_image_path);
+							break;
+						case IMAGETYPE_JPEG:
+							$source_gd_image = imagecreatefromjpeg($source_image_path);
+							break;
+						case IMAGETYPE_PNG:
+							$source_gd_image = imagecreatefrompng($source_image_path);
+							break;
+					}
+					if ($source_gd_image === false) {
+						return false;
+					}
+					$source_aspect_ratio = $source_image_width / $source_image_height;
+					if ($source_image_width > $source_image_height) {
+						(int)$real_height = $imageHeight;
+						(int)$real_width = $imageHeight * $source_aspect_ratio;
+					} else if ($source_image_height > $source_image_width) {
+						(int)$real_height = $imageWidth / $source_aspect_ratio;
+						(int)$real_width = $imageWidth;
+			
+					} else {
+			
+						(int)$real_height = $imageHeight > $imageWidth ? $imageHeight : $imageWidth;
+						(int)$real_width = $imageWidth > $imageHeight ? $imageWidth : $imageHeight;
+					}
+					$thumbnail_gd_image = imagecreatetruecolor($real_width, $real_height);
+					$bg_color = imagecolorallocate($thumbnail_gd_image, 255, 255, 255);
+					imagefilledrectangle($thumbnail_gd_image, 0, 0, $real_width, $real_height, $bg_color);
+					imagecopyresampled($thumbnail_gd_image, $source_gd_image, 0, 0, 0, 0, $real_width, $real_height, $source_image_width, $source_image_height);
+			
+					imagejpeg($thumbnail_gd_image, $thumbnail_image_path, 100);
+					imagedestroy($source_gd_image);
+					imagedestroy($thumbnail_gd_image);
+					return true;
+				}
+			}
+			/******************************************End of Code for Thumbnails Creation **********************/
+			$total_albums = $wpdb->get_var
+			(
+				"SELECT count(album_id) FROM ".gallery_bank_albums()
+			);
+			if($total_albums == 0)
+			{
+				$wpdb->query
+				(
+					$wpdb->prepare
+					(
+						"INSERT INTO " . gallery_bank_albums() . "(album_name, description, album_date, author)
+						VALUES(%s, %s, CURDATE(), %s)",
+						"Demo Album",
+						"",
+						$current_user->display_name
+					)
+				);
+				$demo_albumid = $wpdb->insert_id;
+				$wpdb->query
+				(
+					$wpdb->prepare
+					(
+						"UPDATE " . gallery_bank_albums() . " SET album_order = %d WHERE album_id = %d",
+						$demo_albumid,
+						$demo_albumid
+					)
+				);
+				$cover_pic_id = 0;
+				$images_array = array("coffee.jpg","hunter.jpg","ice-cream.jpg","like.jpg","pawns.jpg","wallpaper.jpg");
+				
+				foreach ($images_array as $image)
+				{
+					$src_image = GALLERY_BK_PLUGIN_DIR."images/".$image;
+					$destination_image = GALLERY_MAIN_UPLOAD_DIR.$image;
+					if (PHP_VERSION > 5)
+					{
+						copy($src_image, $destination_image);
+					}
+					else
+					{
+						$content = file_get_contents($src_image);
+						$fp = fopen($destination_image, "w");
+						fwrite($fp, $content);
+						fclose($fp);
+					}
+					if(file_exists($destination_image))
+					{
+						uploading_gallery_image($image, 160, 120);
+					}
+					
+					$wpdb->query
+					(
+						$wpdb->prepare
+						(
+							"INSERT INTO " . gallery_bank_pics() . " (album_id,thumbnail_url,title,description,url,video,date,tags,pic_name,album_cover)
+							VALUES(%d,%s,%s,%s,%s,%d,CURDATE(),%s,%s,%d)",
+							$demo_albumid,
+							$image,
+							"",
+							"",
+							"http://",
+							0,
+							"",
+							$image,
+							($cover_pic_id == 0 ? 1 : 0)
+						)
+					);
+					$image_id = $wpdb->insert_id;
+					$wpdb->query
+					(
+						$wpdb->prepare
+						(
+							"UPDATE " . gallery_bank_pics() . " SET sorting_order = %d WHERE pic_id = %d",
+							$image_id,
+							$image_id
+						)
+					);
+					if($cover_pic_id == 0)
+					{
+						$cover_pic_id = 1;
+						uploading_gallery_album($image, 160, 120);
+					}
+				}
+			}
+			update_option("gallery-bank-demo", "1");
+		}
+		
 		$last_album_id = $wpdb->get_var
 		(
 			"SELECT album_id FROM " .gallery_bank_albums(). " order by album_id desc limit 1"
