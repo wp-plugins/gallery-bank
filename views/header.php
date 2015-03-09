@@ -213,7 +213,7 @@ if(in_array($language, $gb_lang))
 	<div class="custom-message red" style="display: block;margin-top:30px">
 		<div style="padding: 4px 0;">
 			<p style="font:12px/1.0em Arial !important;font-weight:bold;">This plugin language is translated with the help of Google Translator.</p>
-				<p style="font:12px/1.0em Arial !important;">If you would like to translate &amp; help us, we will reward you with a free Eco Version License of Gallery Bank worth &euro;18.</p>
+				<p style="font:12px/1.0em Arial !important;">If you would like to translate &amp; help us, we will reward you with a free Eco Version License of Gallery Bank.</p>
 				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
 		</div>
 	</div>
@@ -224,7 +224,7 @@ elseif(!(in_array($language, $gb_translated_lang)) && !(in_array($language, $gb_
 	?>
 	<div class="custom-message red" style="display: block;margin-top:30px">
 		<div style="padding: 4px 0;">
-			<p style="font:12px/1.0em Arial !important;font-weight:bold;">If you would like to translate Gallery Bank in your native language, we will reward you with a free Eco Version License of Gallery Bank worth &euro;18.</p>
+			<p style="font:12px/1.0em Arial !important;font-weight:bold;">If you would like to translate Gallery Bank in your native language, we will reward you with a free Eco Version License of Gallery Bank.</p>
 				<p style="font:12px/1.0em Arial !important;">Contact Us at <a target="_blank" href="http://tech-banker.com">http://tech-banker.com</a> or email us at <a href="mailto:support@tech-banker.com">support@tech-banker.com</a></p>
 		</div>
 	</div>
