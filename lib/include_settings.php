@@ -1,5 +1,9 @@
 <?php
-global $wpdb;
+global $wpdb,$current_user;
+if (!is_user_logged_in()) {
+	return;
+}
+
 $settings = array();
 
 $settings["thumbnails_custom_enable"] = "1";

@@ -1810,6 +1810,9 @@ else
 												</ul>
 											</div>
 										</div>
+										<div class="layout-control-group">
+											<strong><span style="text-decoration: underline;">NOTE FOR MULTISITE*</span> :</strong> Allows you to use this Plugin with network of sites / Multisites WordPress. But you need to have separate license for each Installation.
+										</div>
 									</div>
 								</div>
 							</div>

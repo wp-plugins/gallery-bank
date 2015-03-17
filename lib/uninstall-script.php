@@ -1,5 +1,9 @@
 <?php
-global $wpdb;
+global $wpdb,$current_user;
+if (!is_user_logged_in()) {
+	return;
+}
+
 $sql = "DROP TABLE " . gallery_bank_albums();
 $wpdb->query($sql);
 
