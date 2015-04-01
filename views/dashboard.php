@@ -284,6 +284,14 @@
 	        display: none !important;
 	    }
 	</style>
+	<div class="custom-message red">
+		<span style="line-height: inherit;">
+			<?php echo( sprintf( __( "<b>Notice:</b> Your server allows you to upload <b>%s</b> files of maximum total <b>%s</b> bytes and allows <b>%s</b> seconds to complete.", gallery_bank ), $max_files_upload, $max_files_size, $max_files_time));?>
+			<?php _e( "<br />If your request exceeds these limitations, it will fail, probably without an errormessage.", gallery_bank); ?>
+			<?php _e( "<br />Additionally your hosting provider may have set other limitations on uploading files.", gallery_bank); ?>
+			<?php echo check_server_configuration();?>
+		</span>
+	</div>
 	<form id="frmdashboard" class="layout-form">
 		<div id="poststuff" style="width: 99% !important;">
 			<div id="post-body" class="metabox-holder">

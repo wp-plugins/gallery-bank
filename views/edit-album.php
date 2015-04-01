@@ -197,6 +197,14 @@
 									            </div>
 											</div>
 										</div>
+										<div class="custom-message red" style="margin:0px;">
+											<span style="line-height: inherit;">
+												<?php echo( sprintf( __( "<b>Notice:</b> Your server allows you to upload <b>%s</b> files of maximum total <b>%s</b> bytes and allows <b>%s</b> seconds to complete.", gallery_bank ), $max_files_upload, $max_files_size, $max_files_time));?>
+												<?php _e( "<br />If your request exceeds these limitations, it will fail, probably without an errormessage.", gallery_bank); ?>
+												<?php _e( "<br />Additionally your hosting provider may have set other limitations on uploading files.", gallery_bank); ?>
+												<?php echo check_server_configuration();?>
+											</span>
+										</div>
 										<div class="fluid-layout">
 											<div class="layout-span7">
 									            <div class="widget-layout">
