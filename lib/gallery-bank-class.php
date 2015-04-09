@@ -338,8 +338,8 @@ function backend_scripts_calls()
 	wp_enqueue_script("jquery-ui-dialog");
 	wp_enqueue_script("farbtastic");
 	wp_enqueue_script("imgLiquid.js", plugins_url("/assets/js/imgLiquid.js",dirname(__FILE__)));
-	wp_enqueue_script("plupload.full.min.js", plugins_url("/assets/js/plupload.full.min.js",dirname(__FILE__)));
-	wp_enqueue_script("jquery.dataTables.min.js", plugins_url("/assets/js/jquery.dataTables.min.js",dirname(__FILE__)), array("jquery-ui-widget","jquery-ui-progressbar"),false);
+	wp_enqueue_script("plupload.full.min.js", plugins_url("/assets/js/plupload.full.min.js",dirname(__FILE__)), array("jquery-ui-widget","jquery-ui-progressbar"),false);
+	wp_enqueue_script("jquery.dataTables.min.js", plugins_url("/assets/js/jquery.dataTables.min.js",dirname(__FILE__)));
 	wp_enqueue_script("jquery.validate.min.js", plugins_url("/assets/js/jquery.validate.min.js",dirname(__FILE__)));
 	wp_enqueue_script("jquery.ui.plupload.js", plugins_url("/assets/js/jquery.ui.plupload.js",dirname(__FILE__)));
 	wp_enqueue_script("jquery.Tooltip.js", plugins_url("/assets/js/jquery.Tooltip.js",dirname(__FILE__)));
