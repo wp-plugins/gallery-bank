@@ -7,11 +7,11 @@ Stable tag: 3.0.113
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-WP Gallery Bank is an enhanced tool to create Responsive and Beautiful Photo Galleries for WordPress Websites.
+WP Gallery Bank is an enhanced tool to create Responsive and Beautiful Photo Galleries and Albums for WordPress Websites.
 
 == Description ==
 
-**Gallery Bank** is a WordPress Plugin designed to create Elegant and Beautiful **Photo Gallery** Albums along with Images and videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts along with Special Effects and Animation Effects.
+**Gallery Bank** is a WordPress Plugin designed to create Elegant and Beautiful **Photo Gallery Albums** along with Images and videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts along with Special Effects and Animation Effects.
 
 **Gallery Bank** is the only available WordPress Plugin in the market with extra-ordinary features. It is loaded with 200+ features and creates stunning Photo Galleries on any WordPress site.
 
@@ -503,6 +503,7 @@ is False in shortcode.
 = 3.0.113 =
 
 * Added Compatibility with 4.2 WordPress.
+* Fixed Few Minor Bugs
 
 = 3.0.112 =
 
