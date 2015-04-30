@@ -137,6 +137,7 @@
 					<option value="pic_name">File Name</option>
 					<option value="title">Title Text</option>
 					<option value="date">Date</option>
+					<option value="sort_order">Sorting Order</option>
 				</select>
 			</div>
 		</div>

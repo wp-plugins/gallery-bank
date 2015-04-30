@@ -77,6 +77,16 @@ switch ($album_type) {
 						)
 					);
 				break;
+				case "sort_order" :
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d order by sorting_order asc",
+							$album_id
+						)
+					);
+				break;
 				default:
 					$pics = $wpdb->get_results
 					(
@@ -139,6 +149,16 @@ switch ($album_type) {
 						$wpdb->prepare
 						(
 							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d ORDER BY date asc LIMIT $no_of_images",
+							$album_id
+						)
+					);
+				break;
+				case "sort_order" :
+					$pics = $wpdb->get_results
+					(
+						$wpdb->prepare
+						(
+							"SELECT * FROM " . gallery_bank_pics() . " WHERE album_id = %d order by sorting_order asc LIMIT $no_of_images",
 							$album_id
 						)
 					);
