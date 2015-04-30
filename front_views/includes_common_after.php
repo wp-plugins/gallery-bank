@@ -29,13 +29,13 @@ switch ($album_type) {
 							queue: false
 						},
 						masonry : {
-							columnWidth: ".gallery-sizer"
+							columnWidth: 4
 						}
 					});
 				});
 			 	jQuery(window).smartresize(function(){
 					$container1_<?php echo $unique_id;?>.isotope({
-						masonry: { columnWidth: ".gallery-sizer" }
+						masonry: { columnWidth: 4 }
 					});
 				});
 				<?php
