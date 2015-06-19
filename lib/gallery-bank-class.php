@@ -473,7 +473,11 @@ function gallery_bank_short_code($atts)
 		"sort_by" => "",
 		"widget" => "",
 	), $atts));
-	return extract_short_code_for_gallery_images(intval($album_id), $type, $format, $title, $desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, urldecode($show_albums), $thumb_width, $thumb_height, $display, intval($no_of_images), $sort_by, $widget);
+	
+	if(!is_feed())
+	{
+		return extract_short_code_for_gallery_images(intval($album_id), $type, $format, $title, $desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, urldecode($show_albums), $thumb_width, $thumb_height, $display, intval($no_of_images), $sort_by, $widget);
+	}
 }
 function extract_short_code_for_gallery_images($album_id, $album_type, $gallery_type, $img_title, $img_desc, $img_in_row, $responsive, $albums_in_row, $special_effect, $animation_effect, $image_width, $album_title, $show_albums, $thumb_width, $thumb_height, $display, $no_of_images, $sort_by, $widget)
 {
