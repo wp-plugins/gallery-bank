@@ -7,7 +7,7 @@ Stable tag: 3.0.223
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-WP Gallery Bank is an enhanced tool to create Responsive and Beautiful Photo Galleries and Albums for WordPress Websites.
+WP Gallery Bank is an enhanced gallery tool to create Responsive and Beautiful Photo Galleries and Albums for WordPress Websites.
 
 == Description ==
 
