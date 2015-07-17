@@ -11,7 +11,7 @@ WP Gallery Bank is an enhanced gallery tool to create Responsive and Beautiful P
 
 == Description ==
 
-**Gallery Bank** is a WordPress Plugin designed to create Elegant and Beautiful **Photo Gallery Albums** along with Images and videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts along with Special Effects and Animation Effects.
+**Gallery Bank** is a WordPress Gallery Plugin designed to create Elegant and Beautiful **Photo Gallery Albums** along with Images and videos using Grid Albums, List Albums, Individual Albums, Masonry Layouts and Thumbnail Layouts along with Special Effects and Animation Effects.
 
 **Gallery Bank** is the only available WordPress Plugin in the market with extra-ordinary features. It is loaded with 200+ features and creates stunning Photo Galleries on any WordPress site.
 
