@@ -4,7 +4,7 @@
  Plugin URI: http://tech-banker.com
  Description: Gallery Bank is an easy to use Responsive WordPress Gallery Plugin for photos, videos, galleries and albums.
  Author: Tech Banker
- Version: 3.0.223
+ Version: 3.0.224
  Author URI: http://tech-banker.com
  License: GPLv3 or later
 */
@@ -75,7 +75,6 @@ function plugin_install_script_for_gallery_bank()
 /*************************************************************************************/
 function plugin_uninstall_script_for_gallery_bank()
 {
-	delete_option("gallery-bank-automatic_update");
 	wp_clear_scheduled_hook("gallery_bank_auto_update");
 }
 /*************************************************************************************/
@@ -419,13 +418,14 @@ function plugin_autoUpdate()
 	}
 	catch(Exception $e)
 	{
+
 	}
 }
 
-add_filter("plugin_row_meta","gallery_bank_custom_plugin_row", 10, 2 );
+add_filter("plugin_row_meta","gallery_bank_custom_plugin_row", 10, 2);
 add_action("admin_bar_menu", "add_gallery_bank_icon", 100);
 add_action("plugins_loaded", "gallery_bank_plugin_load_text_domain");
-add_action("in_plugin_update_message-".GALLERY_FILE,"gallery_bank_plugin_update_message" );
+add_action("in_plugin_update_message-".GALLERY_FILE,"gallery_bank_plugin_update_message");
 register_activation_hook(__FILE__, "plugin_install_script_for_gallery_bank");
 register_uninstall_hook(__FILE__, "plugin_uninstall_script_for_gallery_bank");
 /*************************************************************************************/
